@@ -1,0 +1,17 @@
+name: Personal package candidate
+description: Propose a bounded additional core package, not an entire distribution.
+body:
+  - type: input
+    id: formula
+    attributes:
+      label: Canonical homebrew/core formula name
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Why a compatible official bottle is unavailable
+  - type: textarea
+    id: scope
+    attributes:
+      label: Dependencies, expected build burden and source/license obligations

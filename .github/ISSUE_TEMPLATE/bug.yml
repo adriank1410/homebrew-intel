@@ -1,0 +1,22 @@
+name: Bug or failed build
+description: Report a reproducible problem without private machine data.
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: run
+    attributes:
+      label: Workflow URL or command (no tokens)
+  - type: textarea
+    id: environment
+    attributes:
+      label: Minimal relevant environment
+      description: macOS major version, architecture and Homebrew version only; no full env or audit archive.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted relevant log excerpt
