@@ -1,0 +1,31 @@
+name: Native environment
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, implementation/sequoia-bottles]
+    paths: ['.github/workflows/environment.yml']
+permissions:
+  contents: read
+jobs:
+  sequoia:
+    name: Sequoia Intel environment
+    runs-on: macos-15-intel
+    timeout-minutes: 10
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_ANALYTICS: '1'
+    steps:
+      - name: Verify platform and available native tools without installing packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(uname -m)" = x86_64
+          case "$(/usr/bin/sw_vers -productVersion)" in 15.*) ;; *) exit 1 ;; esac
+          test "$(brew --prefix)" = /usr/local
+          /usr/bin/sw_vers
+          /usr/bin/python3 --version
+          /usr/bin/ruby --version
+          brew --version
+          brew config
+          gh --version
