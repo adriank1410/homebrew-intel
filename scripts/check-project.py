@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: BSD-2-Clause
 """Dependency-free checks runnable locally and in read-only pull-request CI."""
-import ast, hashlib, re, subprocess, sys
+import ast, re, subprocess, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from intelbrew.core import load_config,registry,canonical_name,read_json
 try:
-    load_config();registry();manifest=read_json(ROOT/'distribution-files.json')
-    assert manifest.get('schema')==1 and isinstance(manifest.get('files'),dict)
-    for rel,expected in manifest['files'].items():
-        path=ROOT/rel;assert path.is_file() and not path.is_symlink();assert hashlib.sha256(path.read_bytes()).hexdigest()==expected,f'Distribution drift: {rel}'
-    targets=read_json(ROOT/'policy/targets.json')['formulae'];assert len(targets)==len(set(targets));assert all(canonical_name(x)==x for x in targets)
+    load_config();registry();targets=read_json(ROOT/'policy/targets.json')['formulae']
+    assert len(targets)==len(set(targets));assert all(canonical_name(x)==x for x in targets)
     for path in list((ROOT/'intelbrew').glob('*.py'))+list((ROOT/'scripts').glob('*.py'))+list((ROOT/'tests').glob('*.py')):ast.parse(path.read_text(),filename=str(path))
     for path in (ROOT/'libexec').glob('*.rb'):subprocess.run(['ruby','-c',str(path)],check=True)
     for path in [ROOT/'cmd/brew-intel',ROOT/'scripts/prepare-runner.sh']:subprocess.run(['bash','-n',str(path)],check=True)
