@@ -44,6 +44,11 @@ and its registry must contain a valid personal bottle, or an official compatible
 bottle must be available. `gh` must already be installed for personal-artifact
 attestation verification. There is no verification bypass or automatic `gh` install.
 
+Homebrew now blocks loading package paths by default. For a verified local
+bottle, the Ruby bridge temporarily permits path loading inside that one process,
+then restores the setting. An explicit `HOMEBREW_FORBID_PACKAGES_FROM_PATHS`
+still stops installation; no global setting is changed.
+
 All package-changing operations require `--apply`. `plan`, `doctor`, and
 `upgrade` without `--apply` do not install packages. They can read/fetch Homebrew
 metadata or bootstrap Homebrew's own Ruby dependencies; this is not a promise of

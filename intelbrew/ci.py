@@ -8,6 +8,8 @@ from .core import (ROOT, Error, Planner, artifact_url, basename, brew_env, canon
                    check_bottle, digest, download, load_config, native, read_json,
                    registry, require_sha, run, validate_record, write_json_new)
 
+BOTTLE_OPTIONS = ("--json", "--no-rebuild")
+
 
 def require_ci_mac() -> None:
     expected={"GITHUB_ACTIONS":"true","RUNNER_ENVIRONMENT":"github-hosted","RUNNER_OS":"macOS","RUNNER_ARCH":"X64"}
@@ -73,6 +75,12 @@ def source_bundle(name,meta,sources,output,core_commit):
     return archive
 
 
+def extract_bottle_metadata(details:dict, tag:str)->tuple[str,str]:
+    bottle=next(iter(details.values()))["bottle"]
+    tag_data=bottle["tags"][tag]
+    return tag_data["sha256"], str(bottle["cellar"]).lstrip(":")
+
+
 def install_binary(name,meta,*,local=None,sha=None,as_dependency=True):
     req={"mode":"install","name":name,"pkg_version":meta["pkg_version"],"formula_sha256":meta["formula_sha256"],"as_dependency":as_dependency,"target":str(local.resolve()) if local else f"homebrew/core/{name}"}
     if local:req["sha256"]=sha
@@ -100,12 +108,12 @@ def build(root:str,output:Path)->None:
         if meta["provider"]!="build":raise Error("Unexpected CI package provider")
         sources=native({"mode":"sources","name":name},ci=True);source_path=source_bundle(name,meta,sources,output,core_commit)
         run(["brew","install","--build-bottle","--no-ask",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True))
-        bw=work/name;bw.mkdir();run(["brew","bottle","--json","--no-rebuild","--no-all-checks",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True),cwd=bw)
+        bw=work/name;bw.mkdir();run(["brew","bottle",*BOTTLE_OPTIONS,f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True),cwd=bw)
         files=list(bw.glob("*.sequoia.bottle*.tar.gz"));js=list(bw.glob("*.bottle.json"))
         if len(files)!=1 or len(js)!=1:raise Error("Expected one Sequoia bottle and JSON")
-        details=read_json(js[0]);bmeta=next(iter(details.values()))["bottle"]["tags"]["sequoia"];filename=basename(files[0].name);target=output/filename;shutil.copyfile(files[0],target)
-        if digest(target)!=bmeta["sha256"]:raise Error("Bottle checksum mismatch")
-        rec={"schema":1,"name":name,"version":meta["version"],"revision":meta["revision"],"version_scheme":meta["version_scheme"],"pkg_version":meta["pkg_version"],"formula_sha256":meta["formula_sha256"],"recipe_sha256":sources["recipe_sha256"],"core_commit":core_commit,"brew_commit":config["brew_commit"],"tag":"sequoia","arch":"x86_64","cellar":str(bmeta["cellar"]).lstrip(":"),"filename":filename,"sha256":digest(target),"size":target.stat().st_size,"license":meta["license"],"runtime_dependencies":[{"name":d,"pkg_version":plan["nodes"][d]["pkg_version"],"formula_sha256":plan["nodes"][d]["formula_sha256"]} for d in runtime_closure(name,plan["nodes"])],"source":{"filename":source_path.name,"sha256":digest(source_path),"size":source_path.stat().st_size},"release":None,"workflow_commit":workflow_commit,"run_id":os.environ["GITHUB_RUN_ID"]}
+        details=read_json(js[0]);bottle_sha,bottle_cellar=extract_bottle_metadata(details,"sequoia");filename=basename(files[0].name);target=output/filename;shutil.copyfile(files[0],target)
+        if digest(target)!=bottle_sha:raise Error("Bottle checksum mismatch")
+        rec={"schema":1,"name":name,"version":meta["version"],"revision":meta["revision"],"version_scheme":meta["version_scheme"],"pkg_version":meta["pkg_version"],"formula_sha256":meta["formula_sha256"],"recipe_sha256":sources["recipe_sha256"],"core_commit":core_commit,"brew_commit":config["brew_commit"],"tag":"sequoia","arch":"x86_64","cellar":bottle_cellar,"filename":filename,"sha256":digest(target),"size":target.stat().st_size,"license":meta["license"],"runtime_dependencies":[{"name":d,"pkg_version":plan["nodes"][d]["pkg_version"],"formula_sha256":plan["nodes"][d]["formula_sha256"]} for d in runtime_closure(name,plan["nodes"])],"source":{"filename":source_path.name,"sha256":digest(source_path),"size":source_path.stat().st_size},"release":None,"workflow_commit":workflow_commit,"run_id":os.environ["GITHUB_RUN_ID"]}
         check_bottle(target,rec);manifest["packages"].append(rec)
     write_json_new(output/"manifest.json",manifest);validate_candidate(output,expected_root=root,verified=False)
 

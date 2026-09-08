@@ -23,13 +23,30 @@ module IntelbrewNative
   end
   def receipt(name);f=core_formula(name);raise "Expected installed current version" unless f.latest_version_installed?;t=Tab.for_formula(f);{"name"=>f.name,"pkg_version"=>f.pkg_version.to_s,"tap"=>t.source["tap"],"poured_from_bottle"=>t.poured_from_bottle,"built_as_bottle"=>t.built_as_bottle,"installed_versions"=>f.installed_kegs.map{|k|k.version.to_s}};end
   def sources(name)
-    f=core_formula(name);raise "Source collection requires local recipe" unless f.path.file?;entries=[["main",f.stable.resource]];f.resources.each{|r|entries<<["resource-#{r.name}",r]};f.patchlist.each_with_index{|p,i|entries<<["patch-#{i}",p.resource] if p.respond_to?(:resource)};result=entries.map{|label,r|r.fetch;r.verify_download_integrity;c=r.cached_download;raise "Non-archive/VCS resource needs review" unless c.file?;raise "Resource lacks checksum" unless r.checksum;{"label"=>label,"path"=>c.realpath.to_s,"url"=>r.url,"sha256"=>Digest::SHA256.file(c).hexdigest}};text=f.path.read;{"formula_path"=>f.path.realpath.to_s,"formula_sha256"=>Digest::SHA256.hexdigest(text),"recipe_sha256"=>Digest::SHA256.hexdigest(text.gsub(/  bottle do.+?end\n\n?/m,"")),"resources"=>result}
+    f=core_formula(name);raise "Source collection requires local recipe" unless f.path.file?;entries=[["main",f.stable.resource]];f.resources.each{|r|entries<<["resource-#{r.name}",r]};f.patchlist.each_with_index{|p,i|entries<<["patch-#{i}",p.resource] if p.respond_to?(:resource)};result=entries.map{|label,r|r.fetch(verify_download_integrity:true);c=r.cached_download;raise "Non-archive/VCS resource needs review" unless c.file?;raise "Resource lacks checksum" unless r.checksum;{"label"=>label,"path"=>c.realpath.to_s,"url"=>r.url,"sha256"=>Digest::SHA256.file(c).hexdigest}};text=f.path.read;{"formula_path"=>f.path.realpath.to_s,"formula_sha256"=>Digest::SHA256.hexdigest(text),"recipe_sha256"=>Digest::SHA256.hexdigest(text.gsub(/  bottle do.+?end\n\n?/m,"")),"resources"=>result}
   end
   def bottle_only_install(request)
     require "formula_installer";require "cmd/install";require_relative "bottle_only";methods=FormulaInstaller.instance_methods+FormulaInstaller.private_instance_methods;raise "Homebrew changed installer API" unless methods.include?(:build)&&FormulaInstaller.instance_method(:build).arity==0;raise "Homebrew changed install command API" unless defined?(Homebrew::Cmd::InstallCmd);FormulaInstaller.prepend(IntelbrewBottleOnly)
     target=request.fetch("target");name=request.fetch("name");before=metadata(name);raise "Refusing same-version reinstall/downgrade" if before["installed_current"]||before["installed_newer"];raise "Refusing foreign/options/HEAD/pinned" if before["foreign_install"]||before["installed_options"].any?||before["installed_head"]||before["pinned"];raise "Recipe changed" unless before["formula_sha256"]==request.fetch("formula_sha256")&&before["pkg_version"]==request.fetch("pkg_version")
-    if target.start_with?("homebrew/core/");raise "Wrong target" unless target=="homebrew/core/#{name}"&&before["official_bottle"];else;raise "Expected absolute local bottle" unless target.start_with?("/")&&target.end_with?(".tar.gz")&&File.file?(target)&&!File.symlink?(target);raise "Bottle changed" unless Digest::SHA256.file(target).hexdigest==request.fetch("sha256");local=Formulary.factory(target,force_bottle:true);raise "Local bottle identity/version differs" unless local.name==name&&local.tap&.name=="homebrew/core"&&local.pkg_version.to_s==request.fetch("pkg_version");end
-    old=before["installed_versions"];args=["--force-bottle","--no-ask","--formula"];args<<"--as-dependency" if request["as_dependency"];args<<target;Homebrew::Cmd::InstallCmd.new(args).run;raise "Homebrew installation failed" if Homebrew.respond_to?(:failed?)&&Homebrew.failed?;installed=receipt(name);raise "Package was not poured as core bottle" unless installed["poured_from_bottle"]&&installed["tap"]=="homebrew/core";raise "Old keg unexpectedly removed" unless (old-installed["installed_versions"]).empty?
+    local_bottle=!target.start_with?("homebrew/core/")
+    if local_bottle
+      raise "Expected absolute local bottle" unless target.start_with?("/")&&target.end_with?(".tar.gz")&&File.file?(target)&&!File.symlink?(target)
+      raise "Bottle changed" unless Digest::SHA256.file(target).hexdigest==request.fetch("sha256")
+    else
+      raise "Wrong target" unless target=="homebrew/core/#{name}"&&before["official_bottle"]
+    end
+    install=proc do
+      if local_bottle
+        local=Formulary.factory(target,force_bottle:true)
+        raise "Local bottle identity/version differs" unless local.name==name&&local.tap&.name=="homebrew/core"&&local.pkg_version.to_s==request.fetch("pkg_version")
+      end
+      old=before["installed_versions"];args=["--force-bottle","--no-ask","--formula"];args<<"--as-dependency" if request["as_dependency"];args<<target;Homebrew::Cmd::InstallCmd.new(args).run;raise "Homebrew installation failed" if Homebrew.respond_to?(:failed?)&&Homebrew.failed?;installed=receipt(name);raise "Package was not poured as core bottle" unless installed["poured_from_bottle"]&&installed["tap"]=="homebrew/core";raise "Old keg unexpectedly removed" unless (old-installed["installed_versions"]).empty?
+    end
+    if local_bottle
+      IntelbrewBottleOnly.with_local_bottle(&install)
+    else
+      install.call
+    end
   end
 end
 begin

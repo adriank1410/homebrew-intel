@@ -12,6 +12,9 @@ spec=importlib.util.spec_from_file_location('intelbrew_deployment_script',ROOT/'
 deploy=importlib.util.module_from_spec(spec);spec.loader.exec_module(deploy)
 
 class DeploymentTests(unittest.TestCase):
+    def test_external_brew_command_is_executable(self):
+        self.assertTrue((ROOT/'cmd/brew-intel').stat().st_mode & 0o111,
+                        'Homebrew external commands must be executable')
     def test_default_is_dry_run_without_gh_or_auth(self):
         with patch.object(deploy,'checked_files',return_value=[Path('README.md')]), patch.object(deploy,'command') as command,patch.object(deploy,'api') as api, patch('sys.argv',['deploy.py']):
             self.assertEqual(deploy.main(),0);command.assert_not_called();api.assert_not_called()
