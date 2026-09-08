@@ -57,11 +57,23 @@ formula from the local core checkout, so it is not counted as evidence for the
 new version. The version-specific benchmark and conversion tests above exercised
 9.1.1 directly. Fresh-runner CI tested 9.1.1 through `brew test`.
 
+## Additional local acceptance checks
+
+`node` 26.8.1 passed UTF-8 conversion checks after the library update. A run with
+`DYLD_PRINT_LIBRARIES=1` confirmed that it loaded
+`/usr/local/Cellar/simdutf/9.1.1/lib/libsimdutf.35.0.0.dylib`.
+
+`HOMEBREW_NO_AUTO_UPDATE=1 brew intel upgrade qt --apply` exited with status 1 and
+`No compatible matching bottle; nothing installed`. No installation was started.
+The new `--available` mode was exercised locally through `python3.11 -m
+intelbrew.cli upgrade --available --apply`: all 39 unavailable Qt roots were
+reported and skipped, with zero installations. Its `--json` output parsed as JSON.
+
 ## Limits of this result
 
 This validates two published packages and the local client installation path for
 `simdutf`, not every target or future Homebrew revision. The 44 target names are candidates. Scheduled
-builds are disabled, license review can block dependencies, and a failing root
-in the current `all` matrix can block downstream verification for the batch.
-Registry updates still require review. There is no claim of complete Intel or Qt
+builds remain disabled until the automation deployment is accepted. License
+review can block dependencies. Failure isolation and automatic registry PR
+maintenance are under validation; no unattended production cycle is claimed yet. There is no claim of complete Intel or Qt
 coverage, reproducible builds, atomic rollback, or support outside Intel Sequoia.

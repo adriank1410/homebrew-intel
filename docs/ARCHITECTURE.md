@@ -40,8 +40,12 @@ The verifier starts with a fresh Cellar, installs only bottles, checks receipts,
 linkage and formula tests, then confirms idempotent installed state. Publication
 validates expected filenames, sizes, hashes, recipe and core receipt before
 signing outputs and creating a unique release. Artifacts are never treated as
-shell scripts. Registry updates require an owner-reviewed PR opened from the
-publisher's review branch. No automatic merge is used.
+shell scripts. Completed artifacts determine independent downstream matrices,
+so a failed sibling cannot suppress verified packages. The publisher opens a
+registry-only PR. A trusted main-branch reconciler verifies its records against
+the attested release manifest, updates an outdated base, dispatches required
+tests and enables ruleset-compliant auto-merge. Source changes still require
+manual review; this does not approve or auto-merge arbitrary PRs.
 
 ## Client source-build guard
 

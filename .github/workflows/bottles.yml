@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       formula:
-        description: Canonical reviewed core formula, or all (licensing/build limits still apply)
+        description: Reviewed formula or comma-separated reviewed formulas, or all
         required: true
         default: simdutf
         type: string
@@ -74,14 +74,35 @@ jobs:
           if-no-files-found: error
           retention-days: 1
           compression-level: 0
-  verify:
+  collect-candidates:
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
     needs: [plan, build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      matrix: ${{ steps.select.outputs.matrix }}
+      has_artifacts: ${{ steps.select.outputs.has_artifacts }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - id: select
+        env:
+          PLANNED_ROOTS: ${{ needs.plan.outputs.matrix }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/select_artifacts.py --prefix candidate --planned-roots "$PLANNED_ROOTS"
+  verify:
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.collect-candidates.result == 'success' && needs.collect-candidates.outputs.has_artifacts == 'true' }}
+    needs: [plan, collect-candidates]
     runs-on: macos-15-intel
     timeout-minutes: 180
     strategy:
       fail-fast: false
       max-parallel: 2
-      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+      matrix: ${{ fromJSON(needs.collect-candidates.outputs.matrix) }}
     env:
       INTELBREW_CORE_COMMIT: ${{ needs.plan.outputs.core_commit }}
       ROOT_FORMULA: ${{ matrix.root }}
@@ -108,20 +129,41 @@ jobs:
           if-no-files-found: error
           retention-days: 1
           compression-level: 0
-  publish:
-    if: github.ref == 'refs/heads/main'
+  collect-verified:
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
     needs: [plan, verify]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      matrix: ${{ steps.select.outputs.matrix }}
+      has_artifacts: ${{ steps.select.outputs.has_artifacts }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - id: select
+        env:
+          PLANNED_ROOTS: ${{ needs.plan.outputs.matrix }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/select_artifacts.py --prefix verified --planned-roots "$PLANNED_ROOTS"
+  publish:
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' && needs.plan.result == 'success' && needs.collect-verified.result == 'success' && needs.collect-verified.outputs.has_artifacts == 'true' }}
+    needs: [plan, collect-verified]
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: write
+      pull-requests: write
       actions: write
       id-token: write
       attestations: write
     strategy:
       fail-fast: false
       max-parallel: 1
-      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+      matrix: ${{ fromJSON(needs.collect-verified.outputs.matrix) }}
     env:
       INTELBREW_CORE_COMMIT: ${{ needs.plan.outputs.core_commit }}
       ROOT_FORMULA: ${{ matrix.root }}
@@ -144,6 +186,6 @@ jobs:
           subject-path: |
             ${{ runner.temp }}/verified/*.tar.gz
             ${{ runner.temp }}/verified/manifest.json
-      - name: Create non-overwritten release and review-required registry branch
+      - name: Publish immutable release and attested registry PR
         if: steps.validate.outputs.has_bottles == 'true'
         run: python3 -m intelbrew.publish --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/verified"

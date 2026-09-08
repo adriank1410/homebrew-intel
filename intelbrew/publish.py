@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from .ci import validate_candidate
 from .core import ROOT, Error, canonical_name, load_config, require_sha, run, validate_record
+from .registry_pr import ensure_pr
 
 
 def release_tag(root: str, run_id: str, attempt: str) -> str:
@@ -75,14 +76,14 @@ def publish(candidate: Path, root: str) -> None:
     git(["add", "--", *changed])
     git(["commit", "-m", f"bottles: {root} on Sequoia Intel ({run_id}/{attempt})"])
     git(["push", "origin", f"HEAD:refs/heads/{branch}"])
-    compare_url = f"https://github.com/{repo}/compare/main...{branch}?expand=1"
-    message = ("Verified release and registry branch published. "
-               f"Owner review PR required: {compare_url}")
+    ensure_pr(repo, branch, tag, title=f"Publish Intel bottles: {root} ({run_id}/{attempt})",
+              body=notes)
+    message = ("Verified release and registry PR published with checks dispatched and "
+               "squash auto-merge enabled after required review.")
     print(f"::notice::{message}")
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
             summary.write("\n" + message + "\n")
-    run(["gh", "workflow", "run", "checks.yml", "--repo", repo, "--ref", branch], capture=False)
 
 
 def main() -> int:
