@@ -95,8 +95,15 @@ def _trusted_merged_head(repository: str, login: str, head: str) -> bool:
                for pr in prs)
 
 
+def _merge_targets(targets: list[str], additions: list[str]) -> list[str]:
+    merged = sorted(set(targets) | set(additions))
+    if len(merged) > MAX_INSTALLED:
+        raise Error("Coverage target limit exceeded")
+    return merged
+
+
 def _publish(repository: str, targets: list[str], additions: list[str]) -> str | None:
-    desired = sorted(set(targets) | set(additions))
+    desired = _merge_targets(targets, additions)
     if desired == targets or set(desired) == set(targets): return None
     identity = gh_json(["api", "user"])
     expected_owner = repository.partition("/")[0]
@@ -132,7 +139,7 @@ def _publish(repository: str, targets: list[str], additions: list[str]) -> str |
         if current.get("schema") != 1 or not isinstance(current.get("formulae"), list):
             raise Error("Invalid target policy")
         current_names = [canonical_name(item) for item in current["formulae"]]
-        merged = sorted(set(current_names) | set(additions))
+        merged = _merge_targets(current_names, additions)
         if merged == current_names: return None
         path.write_text(json.dumps({"schema": 1, "formulae": merged}, indent=2) + "\n", encoding="utf-8")
         _git(["config", "user.name", "intelbrew coverage sync"], directory)
@@ -250,7 +257,7 @@ def _official_metadata() -> dict[str, dict[str, Any]]:
     return result
 
 
-def validate_pr(repository: str, pr: dict[str, Any]) -> None:
+def _validate_pr_boundary(repository: str, pr: dict[str, Any]) -> str:
     if not _allowed_pr(repository, pr): raise Error("Refusing coverage PR outside its exact owner and branch boundary")
     number = pr.get("number")
     if not isinstance(number, int): raise Error("Coverage PR has invalid number")
@@ -262,6 +269,11 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
     head = pr.get("headRefOid")
     if not isinstance(head, str) or not re.fullmatch(r"[0-9a-f]{40}", head): raise Error("Coverage PR has invalid head")
     _require_regular_target(repository, head)
+    return head
+
+
+def validate_pr(repository: str, pr: dict[str, Any]) -> None:
+    head = _validate_pr_boundary(repository, pr)
     base = _content(repository, "policy/targets.json", MAIN)["formulae"]
     proposed = _content(repository, "policy/targets.json", head)["formulae"]
     base_names = [canonical_name(x) for x in base]; proposed_names = [canonical_name(x) for x in proposed]
@@ -280,11 +292,12 @@ def reconcile(repository: str) -> None:
     if not _allowed_pr(repository, pr):
         raise Error("Refusing coverage PR outside its exact owner and branch boundary")
     pr = _disable_existing_auto_merge(repository, pr)
-    validate_pr(repository, pr)
     if pr.get("mergeStateStatus") == "BEHIND":
+        _validate_pr_boundary(repository, pr)
         gh(["api", "--method", "PUT", f"repos/{repository}/pulls/{pr['number']}/update-branch",
             "-f", f"expected_head_sha={pr['headRefOid']}"], capture=False)
         return
+    validate_pr(repository, pr)
     if pr.get("mergeStateStatus") == "DIRTY": raise Error("Coverage PR has conflicts")
     state = _dispatch_checks(repository, BRANCH, pr)
     _merge_if_ready(repository, pr, state)

@@ -51,7 +51,6 @@ To update only packages whose entire dependency chain has a bottle:
 
 ```sh
 brew update &&
-brew intel sync --apply &&
 brew intel upgrade --available --apply &&
 brew upgrade --cask &&
 brew cleanup
@@ -87,7 +86,9 @@ missing GCC build dependency prevents its build.
 policy. Both are read-only without `--apply`; `--json` includes individual reasons.
 
 `brew intel sync --apply` publishes eligible new core names through one additive
-coverage PR. It requires the repository owner's authenticated `gh` account. The
+coverage PR. It requires the repository owner's authenticated `gh` account. The owner can
+insert `brew intel sync --apply &&` after `brew update &&` in the update chain
+above. Other users can inspect coverage with `brew intel sync` without publishing. The
 hourly maintenance job rechecks eligibility and merges only the exact validated
 head after protected checks pass. A later `brew update` brings the new list to the
 Mac. Repeated sync reuses the pending PR; uninstalling a formula does not remove

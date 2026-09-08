@@ -112,7 +112,9 @@ Inter-job artifacts expire after one day. No paid-runner selection is automatic.
 Conflicting registry changes or unreviewed licenses require attention; they do
 not relax the policy or permit source fallback on clients.
 
-Client updates remain manual:
+Client updates remain manual. The following chain includes coverage publication
+and requires the repository owner's authenticated `gh` account; other users omit
+`brew intel sync --apply` (or use read-only `brew intel sync` separately):
 
 ```sh
 brew update &&

@@ -52,7 +52,6 @@ Aby aktualizować tylko pakiety z kompletem dostępnych zależności:
 
 ```sh
 brew update &&
-brew intel sync --apply &&
 brew intel upgrade --available --apply &&
 brew upgrade --cask &&
 brew cleanup
@@ -89,7 +88,10 @@ licencyjną. Bez `--apply` niczego nie wysyła ani nie zmienia. `--json` podaje
 indywidualne powody pominięcia pakietów.
 
 `brew intel sync --apply` zgłasza kwalifikujące się nowe nazwy z core w jednym PR.
-Wymaga zalogowanego przez `gh` właściciela repozytorium. Cogodzinny automat ponownie
+Wymaga zalogowanego przez `gh` właściciela repozytorium. Właściciel może dodać
+`brew intel sync --apply &&` po `brew update &&` w powyższym ciągu. Pozostali
+użytkownicy mogą sprawdzać pokrycie przez `brew intel sync` bez publikowania PR-a.
+Cogodzinny automat ponownie
 sprawdza dopuszczalność dodatków i scala dokładnie zweryfikowany commit po testach
 wymaganych przez ochronę gałęzi. Kolejne `brew update` pobiera rozszerzoną listę.
 Powtórzenie sync wykorzystuje oczekujący PR. Odinstalowanie pakietu nie usuwa go

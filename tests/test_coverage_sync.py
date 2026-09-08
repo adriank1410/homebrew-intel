@@ -4,6 +4,7 @@ import io
 import json
 import os
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 from helpers import meta
@@ -67,6 +68,37 @@ class CoverageSyncTests(unittest.TestCase):
             _publish("adriank1410/homebrew-intel", [], ["good"])
         gh_call.assert_not_called()
 
+    def test_publish_rejects_desired_target_limit_before_github_io(self):
+        targets = [f"formula-{number}" for number in range(2000)]
+        with patch("intelbrew.coverage_sync.gh", side_effect=AssertionError("GitHub I/O must not run")), \
+             self.assertRaisesRegex(Error, "target limit"):
+            _publish("adriank1410/homebrew-intel", targets, ["overflow"])
+
+    def test_publish_rejects_freshly_merged_target_limit_before_commit(self):
+        current = [f"formula-{number}" for number in range(2000)]
+        git_calls = []
+
+        def github(args, **kwargs):
+            if args[:2] == ["repo", "clone"]:
+                directory = Path(args[3])
+                (directory / "policy").mkdir(parents=True)
+                (directory / "policy" / "targets.json").write_text(
+                    json.dumps({"schema": 1, "formulae": current}))
+                return ""
+            raise AssertionError(args)
+
+        def git(args, directory):
+            git_calls.append(args)
+            return ""
+
+        with patch("intelbrew.coverage_sync.gh_json", return_value={"login": "adriank1410"}), \
+             patch("intelbrew.coverage_sync._find_pr", return_value=None), \
+             patch("intelbrew.coverage_sync.gh", side_effect=github), \
+             patch("intelbrew.coverage_sync._git", side_effect=git), \
+             self.assertRaisesRegex(Error, "target limit"):
+            _publish("adriank1410/homebrew-intel", [], ["overflow"])
+        self.assertFalse(any(call[0] in {"commit", "push"} for call in git_calls))
+
     def test_publish_reuses_existing_pr_when_it_already_contains_additions(self):
         pr = {"number": 12, "state": "OPEN", "headRefOid": "a" * 40,
               "headRefName": "coverage/intel-installed", "baseRefName": "main",
@@ -91,7 +123,7 @@ class CoverageSyncTests(unittest.TestCase):
             _require_regular_target("adriank1410/homebrew-intel", head)
 
     def _reconcile_fixture(self, *, merge_state="CLEAN", mode="100644", second_file=False,
-                           auto_merge=True):
+                           auto_merge=True, base_formulae=None, proposed_formulae=None):
         repository = "adriank1410/homebrew-intel"; head = "a" * 40
         root_tree = "b" * 40; policy_tree = "c" * 40
         pr = {"number": 9, "state": "OPEN", "author": {"login": "app/intelbrew"},
@@ -117,7 +149,9 @@ class CoverageSyncTests(unittest.TestCase):
             if f"git/trees/{root_tree}" in joined: return json.dumps({"tree": [{"path": "policy", "mode": "040000", "type": "tree", "sha": policy_tree}]})
             if f"git/trees/{policy_tree}" in joined: return json.dumps({"tree": [{"path": "targets.json", "mode": mode, "type": "blob", "sha": "d" * 40}]})
             if "contents/policy/targets.json" in joined:
-                return json.dumps(encoded(["good", "known"] if f"ref={head}" in args else ["known"]))
+                base = ["known"] if base_formulae is None else base_formulae
+                proposed = ["good", "known"] if proposed_formulae is None else proposed_formulae
+                return json.dumps(encoded(proposed if f"ref={head}" in args else base))
             if "actions/runs?" in joined:
                 return json.dumps({"workflow_runs": [{"head_sha": head, "path": ".github/workflows/checks.yml",
                                                        "status": "completed", "conclusion": "success"}]})
@@ -145,16 +179,29 @@ class CoverageSyncTests(unittest.TestCase):
                     self.assertTrue(any("update-branch" in " ".join(call) and "expected_head_sha=" + "a" * 40 in call for call in calls))
                     self.assertFalse(any("--match-head-commit" in call for call in calls))
 
+    def test_reconcile_updates_behind_pr_before_mutable_main_policy_validation(self):
+        repository, calls, boundary, catalog = self._reconcile_fixture(
+            merge_state="BEHIND", auto_merge=False,
+            base_formulae=["known", "other"], proposed_formulae=["good", "known"])
+        with patch.dict(os.environ, {"INTELBREW_COVERAGE_LOGIN": "app/intelbrew"}), \
+             patch("intelbrew.registry_pr.gh", side_effect=boundary), \
+             patch("intelbrew.coverage_sync.gh", side_effect=boundary), \
+             patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)):
+            reconcile(repository)
+        self.assertTrue(any("update-branch" in " ".join(call) and
+                            "expected_head_sha=" + "a" * 40 in call for call in calls))
+
     def test_reconcile_real_validation_rejects_second_file_and_symlink(self):
-        for options, message in (({"second_file": True}, "exactly one file"), ({"mode": "120000"}, "100644")):
-            with self.subTest(options=options):
-                repository, _, boundary, catalog = self._reconcile_fixture(auto_merge=False, **options)
-                with patch.dict(os.environ, {"INTELBREW_COVERAGE_LOGIN": "app/intelbrew"}), \
-                     patch("intelbrew.registry_pr.gh", side_effect=boundary), \
-                     patch("intelbrew.coverage_sync.gh", side_effect=boundary), \
-                     patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)), \
-                     self.assertRaisesRegex(Error, message):
-                    reconcile(repository)
+        for merge_state in ("CLEAN", "BEHIND"):
+            for options, message in (({"second_file": True}, "exactly one file"), ({"mode": "120000"}, "100644")):
+                with self.subTest(options=options):
+                    repository, _, boundary, catalog = self._reconcile_fixture(auto_merge=False, merge_state=merge_state, **options)
+                    with patch.dict(os.environ, {"INTELBREW_COVERAGE_LOGIN": "app/intelbrew"}), \
+                         patch("intelbrew.registry_pr.gh", side_effect=boundary), \
+                         patch("intelbrew.coverage_sync.gh", side_effect=boundary), \
+                         patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)), \
+                         self.assertRaisesRegex(Error, message):
+                        reconcile(repository)
 
     def test_reconcile_rejects_foreign_author_before_disabling_auto_merge(self):
         repository, calls, boundary, catalog = self._reconcile_fixture()
