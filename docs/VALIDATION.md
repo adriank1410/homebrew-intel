@@ -46,6 +46,17 @@ After approval, [registry maintenance](https://github.com/adriank1410/homebrew-i
 validated and merged it as `github-actions[bot]` through the protected branch.
 This proves the controller's merge path, but not a fully unattended cycle.
 
+The private App subsequently completed the unattended path for `mpdecimal` 4.0.1:
+[build, fresh-runner tests and publication](https://github.com/adriank1410/homebrew-intel/actions/runs/34270876910),
+[PR #21](https://github.com/adriank1410/homebrew-intel/pull/21) with automatically
+started required tests, and
+[registry maintenance](https://github.com/adriank1410/homebrew-intel/actions/runs/34272007473)
+which merged it as `app/intel-bottle-publisher`. No human CI approval or manual
+merge was used. Local download, SHA-256, attestation and archive checks passed;
+`brew intel upgrade mpdecimal --apply` correctly installed zero packages because
+4.0.1 was already installed. The complete local suite with native tests enabled
+passed all 124 tests at that revision.
+
 ## Local client verification
 
 ```sh
@@ -85,11 +96,10 @@ reported and skipped, with zero installations. Its `--json` output parsed as JSO
 
 ## Limits of this result
 
-This validates three published packages and the local client installation path for
-`simdutf`, not every target or future Homebrew revision. The 44 target names are candidates. Scheduled
+This validates four published packages and the local client installation path for
+`simdutf`, not every target or future Homebrew revision. The target names are candidates. Scheduled
 builds and hourly registry maintenance were enabled on 2026-09-08. License
 review can block dependencies. A separate branch run confirmed that a blocked
 `gnupg` root did not suppress building and verifying `simdjson`. The private App
-authentication change is pending production acceptance; no fully unattended
-production cycle is claimed yet. There is no claim of complete Intel or Qt
+production cycle passed as described above. There is no claim of complete Intel or Qt
 coverage, reproducible builds, atomic rollback, or support outside Intel Sequoia.

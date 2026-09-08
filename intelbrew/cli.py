@@ -15,7 +15,7 @@ from pathlib import Path
 from . import __version__
 from .core import (Error, Planner, artifact_url, brew_env, check_bottle,
                    download, ensure_complete, load_config, matching_record,
-                   native, registry, require_sha, run, write_json_new)
+                   native, read_json, registry, require_sha, run, write_json_new)
 
 
 def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None) -> None:
@@ -82,6 +82,47 @@ def filter_available_plan(plan: dict) -> tuple[dict, list[dict]]:
         "nodes": {name: nodes[name] for name in order if name in retained_nodes},
     }
     return filtered, skipped
+
+
+def coverage_report(installed: dict, targets: list[str], exclusions: list[str]) -> dict:
+    core = set(installed.get("core", ()))
+    target_set = set(targets)
+    exclusion_set = set(exclusions)
+    monitored = core & target_set
+    unmonitored = core - target_set
+    policy_exclusions = unmonitored & exclusion_set
+    return {
+        "schema": 1,
+        "monitored_core": sorted(monitored),
+        "unmonitored_core": sorted(unmonitored),
+        "policy_exclusions": sorted(policy_exclusions),
+        "proposed_candidates": sorted(unmonitored - exclusion_set),
+        "external_tap_formulae": sorted(set(installed.get("external_taps", ()))),
+    }
+
+
+def render_coverage(report: dict) -> None:
+    monitored = report["monitored_core"]
+    unmonitored = report["unmonitored_core"]
+    exclusions = report["policy_exclusions"]
+    proposed = report["proposed_candidates"]
+    external = report["external_tap_formulae"]
+    print(f"Monitored core formulae ({len(monitored)}): "
+          f'{", ".join(monitored) if monitored else "none"}')
+    print(f"Core formulae not explicitly on target list ({len(unmonitored)})")
+    print(f"Policy exclusions ({len(exclusions)}): "
+          f'{", ".join(exclusions) if exclusions else "none"}')
+    print(f"Proposed candidates ({len(proposed)}): "
+          f'{", ".join(proposed) if proposed else "none"}')
+    print(f"External tap formulae ({len(external)}): "
+          f'{", ".join(external) if external else "none"}')
+
+
+def render_skipped(skipped: list[dict]) -> None:
+    roots = [item["root"] for item in skipped]
+    missing = sorted({name for item in skipped for name in item["missing_dependencies"]})
+    print(f"Skipped unavailable upgrade roots ({len(roots)}): {', '.join(roots)}")
+    print(f"Missing providers ({len(missing)}): {', '.join(missing) if missing else 'none'}")
 
 
 def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
@@ -153,7 +194,7 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--version", action="version", version=__version__)
-    parser.add_argument("command", choices=("plan", "install", "upgrade", "doctor"))
+    parser.add_argument("command", choices=("plan", "install", "upgrade", "doctor", "coverage"))
     parser.add_argument("formulae", nargs="*")
     parser.add_argument("--apply", action="store_true", help="Install the complete validated plan (otherwise dry run)")
     parser.add_argument("--json", action="store_true", help="Print plan JSON")
@@ -167,6 +208,19 @@ def main(argv: list[str] | None = None) -> int:
         records = registry()
         if args.available and args.command != "upgrade":
             raise Error("--available is only supported with upgrade")
+        if args.command == "coverage":
+            if args.apply or args.formulae or args.available:
+                raise Error("coverage takes neither formula names, --apply nor --available")
+            targets_doc = read_json(Path(__file__).resolve().parents[1] / "policy/targets.json")
+            if targets_doc.get("schema") != 1 or not isinstance(targets_doc.get("formulae"), list):
+                raise Error("Invalid coverage target policy")
+            installed = native({"mode": "coverage"})
+            report = coverage_report(installed, targets_doc["formulae"], config.get("blocked_source_builds", []))
+            if args.json:
+                print(json.dumps(report, indent=2, sort_keys=True))
+            else:
+                render_coverage(report)
+            return 0
         if args.command == "doctor":
             if args.apply or args.formulae:
                 raise Error("doctor takes neither formula names nor --apply")
@@ -181,6 +235,15 @@ def main(argv: list[str] | None = None) -> int:
             if args.command == "install":
                 raise Error("install needs at least one formula name")
             names = native({"mode": "outdated"})
+            if args.command == "upgrade":
+                targets_doc = read_json(Path(__file__).resolve().parents[1] / "policy/targets.json")
+                installed = native({"mode": "coverage"})
+                report = coverage_report(installed, targets_doc["formulae"], config.get("blocked_source_builds", []))
+                if report["unmonitored_core"] and not args.json:
+                    stream = sys.stdout
+                    print("Coverage notice: "
+                          f'{len(report["unmonitored_core"])} installed core formulae are not explicitly '
+                          "on the target list; run `brew intel coverage` to review.", file=stream)
         if not names:
             print("No unpinned, outdated core formulae.")
             return 0
@@ -190,7 +253,10 @@ def main(argv: list[str] | None = None) -> int:
         if args.available:
             plan, skipped = filter_available_plan(plan)
             if skipped:
-                print(json.dumps({"skipped": skipped}, indent=2), file=sys.stderr)
+                if args.json:
+                    print(json.dumps({"skipped": skipped}, indent=2), file=sys.stderr)
+                else:
+                    render_skipped(skipped)
             if not plan["roots"]:
                 if args.json:
                     print(json.dumps(plan, indent=2))
