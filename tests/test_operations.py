@@ -66,6 +66,8 @@ class OperationTests(unittest.TestCase):
         with patch.dict(os.environ,env,clear=True):require_ci_mac()
     def test_permissive_declared_license(self):
         for license in ['MIT','BSD-2-Clause','MIT OR Apache-2.0']:allowed_redistribution(meta(license=license),load_config())
+    def test_tor_license_combination_including_ncsa_is_allowed(self):
+        allowed_redistribution(meta(license={'all_of': ['BSD-2-Clause', 'BSD-3-Clause', 'MIT', 'NCSA']}), load_config())
     def test_unknown_or_copyleft_requires_review(self):
         for license in [None,'GPL-3.0-only','LGPL-2.1-or-later','MPL-2.0',{'any_of':['MIT','GPL-3.0-only']}]:
             with self.subTest(license=license),self.assertRaises(Error):allowed_redistribution(meta(license=license),load_config())

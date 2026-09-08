@@ -76,7 +76,7 @@ global Homebrew settings are not changed.
 ## Coverage and builds
 
 [The registry](registry/) lists the bottles available to the client.
-The 45 names in [the target list](policy/targets.json) are build candidates,
+The 46 names in [the target list](policy/targets.json) are build candidates,
 not guaranteed coverage. New package names are not added automatically.
 Qt and other heavy builds listed in [the policy](policy/config.json) are excluded.
 License review, dependency availability and build limits can also block a target.
