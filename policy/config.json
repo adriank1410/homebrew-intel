@@ -45,6 +45,11 @@
     "bzip2-1.0.6"
   ],
   "redistribution_exceptions": {},
+  "required_license_notices": {
+    "tor": {
+      "LICENSE": "5dc29ea302cc75db6db4a7c88d7b5d4638b4e0f5f1d2e6d21ce71f707470b766"
+    }
+  },
   "schedule_enabled_by_default": false,
   "max_candidate_bytes": 500000000
 }

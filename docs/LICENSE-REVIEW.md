@@ -19,7 +19,10 @@ for `src/ext/mulodi4.c` (also offered under MIT).
 NCSA is admitted to the permissive-license policy. This does not waive its notice
 requirements or admit other licenses. The source bundle retains the original
 source archive unchanged. Homebrew copies top-level license metadata into the
-installed keg before bottling; acceptance of the first Tor bottle must verify
-that its `LICENSE` matches the upstream file, including all component notices.
+installed keg before bottling. Candidate validation before independent testing
+and publication requires the bottled `LICENSE` to match the upstream file,
+including all component notices. Its SHA-256 is pinned in
+`policy/config.json` under `required_license_notices`; missing or changed notices
+block publication until the new upstream text is reviewed.
 Adding Tor to the candidate list does not guarantee that its dependency build
 and independent installation tests will pass.

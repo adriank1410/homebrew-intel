@@ -134,7 +134,8 @@ def validate_candidate(directory:Path,*,expected_root:str,verified=None)->dict:
         names.add(rec["name"])
         for key in ("core_commit","brew_commit","workflow_commit"):
             if rec[key]!=manifest[key]:raise Error("Candidate provenance mismatch")
-        check_bottle(directory/rec["filename"],rec);src=rec["source"];sp=directory/src["filename"]
+        notices=load_config().get("required_license_notices",{}).get(rec["name"],{})
+        check_bottle(directory/rec["filename"],rec,license_notices=notices);src=rec["source"];sp=directory/src["filename"]
         if sp.is_symlink() or not sp.is_file() or sp.stat().st_size!=src["size"] or digest(sp)!=src["sha256"]:raise Error("Source bundle missing/corrupt")
         allowed_files.update((rec["filename"],src["filename"]))
     if {p.name for p in directory.iterdir()}!=allowed_files:raise Error("Unexpected candidate files")

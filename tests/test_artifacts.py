@@ -1,13 +1,29 @@
 # SPDX-License-Identifier: BSD-2-Clause
 import tarfile
+import hashlib
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
-from intelbrew.core import Error, check_bottle, digest, write_json_new
+from intelbrew.core import Error, check_bottle, digest, write_json_new, load_config
 from intelbrew.ci import extract_bottle_metadata, validate_candidate
 from helpers import G, archive
 
 class ArchiveTests(unittest.TestCase):
+    def test_required_license_notice_matches_exact_bytes(self):
+        notice = b'Copyright example; all license conditions and disclaimers\n'
+        expected = {'LICENSE': hashlib.sha256(notice).hexdigest()}
+        with tempfile.TemporaryDirectory() as d:
+            entry = tarfile.TarInfo('tool/1.0/LICENSE'); entry.size = len(notice)
+            p, r = archive(Path(d), extra=(entry, notice))
+            check_bottle(p, r, license_notices=expected)
+            with self.assertRaises(Error):
+                check_bottle(p, r, license_notices={'LICENSE': 'a' * 64})
+        with tempfile.TemporaryDirectory() as d:
+            p, r = archive(Path(d))
+            with self.assertRaises(Error):
+                check_bottle(p, r, license_notices=expected)
+
     def test_bottle_json_keeps_cellar_at_bottle_level(self):
         details = {
             'tool': {
@@ -91,6 +107,15 @@ class ArchiveTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             self.candidate(Path(d));m=validate_candidate(Path(d),expected_root='tool',verified=True)
             self.assertEqual(len(m['packages']),1)
+    def test_candidate_validation_enforces_configured_notice_before_publication(self):
+        config=load_config()
+        config['required_license_notices']={'tool': {'LICENSE': 'a' * 64}}
+        for verified in (False, True):
+            with self.subTest(verified=verified), tempfile.TemporaryDirectory() as d:
+                self.candidate(Path(d), verified)
+                with patch('intelbrew.ci.load_config', return_value=config):
+                    with self.assertRaisesRegex(Error, 'license notice missing'):
+                        validate_candidate(Path(d),expected_root='tool',verified=verified)
     def test_unverified_candidate_not_published(self):
         with tempfile.TemporaryDirectory() as d:
             self.candidate(Path(d),False)

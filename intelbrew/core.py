@@ -177,10 +177,12 @@ def download(url,target,expected_sha,expected_size):
     if total!=expected_size or h.hexdigest()!=expected_sha:raise Error(f'Checksum/size mismatch; retained at {part}')
     os.link(part,target);return target
 
-def check_bottle(path,record):
+def check_bottle(path,record,*,license_notices=None):
     validate_record(record,published=record['release'] is not None)
     if path.is_symlink() or path.stat().st_size!=record['size'] or digest(path)!=record['sha256']:raise Error('Bottle digest/size mismatch')
     base=PurePosixPath(record['name'],record['pkg_version']);recipe_name=str(base/'.brew'/(record['name']+'.rb'));tab_name=str(base/'INSTALL_RECEIPT.json');recipe=tab=None;seen=set();symlinks=set();expanded=0
+    required_notices={str(base/basename(name)):require_sha(sha) for name,sha in (license_notices or {}).items()}
+    found_notices=set()
     try:
         with tarfile.open(path,'r:gz') as ar:
             for entry in ar:
@@ -193,6 +195,11 @@ def check_bottle(path,record):
                 if entry.isdev() or entry.isfifo() or entry.islnk():raise Error('Unsupported special file/hard link')
                 expanded+=entry.size
                 if expanded>15_000_000_000:raise Error('Expansion budget exceeded')
+                if norm in required_notices:
+                    if not entry.isfile() or not 0<entry.size<=MAX_JSON:raise Error('Invalid required license notice')
+                    notice=ar.extractfile(entry).read(MAX_JSON+1)
+                    if hashlib.sha256(notice).hexdigest()!=required_notices[norm]:raise Error('Required license notice changed; review needed')
+                    found_notices.add(norm)
                 if norm in {recipe_name,tab_name}:
                     if not entry.isfile() or entry.size>MAX_JSON:raise Error('Invalid embedded metadata')
                     value=ar.extractfile(entry).read(MAX_JSON+1)
@@ -201,5 +208,6 @@ def check_bottle(path,record):
     except (tarfile.TarError,ValueError,OSError) as exc:raise Error(f'Invalid bottle archive: {exc}') from exc
     for filename in seen:
         if any(parent in symlinks for parent in PurePosixPath(filename).parents):raise Error('Bottle writes beneath archive symlink')
+    if found_notices!=set(required_notices):raise Error('Required license notice missing')
     if recipe is None or hashlib.sha256(recipe).hexdigest()!=record['recipe_sha256']:raise Error('Embedded formula differs')
     if not isinstance(tab,dict) or tab.get('source',{}).get('tap')!='homebrew/core' or not tab.get('built_as_bottle'):raise Error('Bottle does not retain core identity')
