@@ -88,7 +88,8 @@ def _api_snapshot(item):
         # used by the native bridge. Such formulas must remain eligible for
         # native planning rather than being skipped from stale assumptions.
         'conditional': bool(item.get('uses_from_macos') or item.get('requirements')
-                            or item.get('variations') or item.get('pour_bottle_only_if')),
+                            or item.get('variations') or item.get('pour_bottle_only_if')
+                            or item.get('recommended_dependencies')),
     }
 
 
@@ -115,7 +116,14 @@ def scheduled_roots(roots, index, records, *, core_commit=None):
             snapshots[name] = None
             return None
         loading.add(name)
-        value = _api_snapshot(item)
+        try:
+            value = _api_snapshot(item)
+        except (Error, KeyError, TypeError, AttributeError):
+            # Incomplete individual API records must not suppress other roots.
+            # The native planner will inspect this formula on macOS instead.
+            snapshots[name] = None
+            loading.remove(name)
+            return None
         snapshots[name] = value
         for dependency in value['dependencies']:
             snapshot(dependency)

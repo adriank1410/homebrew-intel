@@ -17,6 +17,25 @@ TARGETS = ["simdjson", "gnupg", "curl"]
 
 
 class PlanWorkflowTests(unittest.TestCase):
+    def test_recommended_dependency_keeps_root_eligible(self):
+        item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
+                "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
+                "dependencies": [], "recommended_dependencies": ["missing"],
+                "bottle": {"stable": {"files": {"x86_64_sequoia": {
+                    "sha256": "f" * 64, "cellar": ":any"}}}}}
+        self.assertEqual(plan.scheduled_roots(["root"], {"root": item}, {}), ["root"])
+
+    def test_incomplete_api_entry_does_not_abort_siblings(self):
+        good = {"name": "good", "versions": {"stable": "1.0"}, "revision": 0,
+                "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
+                "dependencies": [], "bottle": {"stable": {"files": {"x86_64_sequoia": {
+                    "sha256": "f" * 64, "cellar": ":any"}}}}}
+        for broken in ({"name": "bad"}, dict(good, name="bad", ruby_source_checksum=None),
+                       dict(good, name="bad", bottle=None)):
+            with self.subTest(broken=broken):
+                self.assertEqual(plan.scheduled_roots(["bad", "good"],
+                    {"bad": broken, "good": good}, {}), ["bad"])
+
     def test_top_level_pour_condition_requires_native_planning(self):
         item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
                 "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
