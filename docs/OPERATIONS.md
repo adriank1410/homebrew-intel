@@ -93,7 +93,12 @@ file to Trash manually after checking its path.
 ## Scheduling, costs and privacy
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` after native validation. The bottle workflow
-checks all reviewed roots every Tuesday at 03:41 UTC. Registry maintenance runs
+checks reviewed roots daily at 03:41 UTC. A Linux preflight may omit roots whose
+complete graph has matching bottle metadata from the exact resolved core revision.
+Conditional recipes, uncertain metadata and unavailable bottles still go to native
+planning. API revision differences can therefore leave most roots eligible; this
+is conservative filtering, not a guarantee of minimal runner use. Manual requests
+always run native verification for the requested targets. Registry maintenance runs
 hourly at minute 17, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most
 three dispatch attempts per head commit. A test failure or exhausted retry budget
