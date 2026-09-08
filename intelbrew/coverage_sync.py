@@ -13,7 +13,8 @@ from typing import Any, Callable
 
 from .ci import permissive_license
 from .core import MAX_JSON, ROOT, Error, canonical_name, load_config, native, read_json, run
-from .registry_pr import _dispatch_checks, _find_pr, _merge_if_ready, gh, gh_json
+from .registry_pr import (_disable_existing_auto_merge, _dispatch_checks,
+                          _find_pr, _merge_if_ready, gh, gh_json)
 
 BRANCH = "coverage/intel-installed"
 MAIN = "main"
@@ -88,13 +89,17 @@ def _publish(repository: str, targets: list[str], additions: list[str]) -> str |
     expected_owner = repository.partition("/")[0]
     if not isinstance(identity, dict) or identity.get("login") != expected_owner:
         raise Error("Authenticated GitHub identity is not the configured repository owner")
+    existing = _find_pr(repository, BRANCH)
+    if existing:
+        if not _owned_pr(repository, existing, expected_owner):
+            raise Error("Existing coverage PR is outside the repository-owner boundary")
+        current = _content(repository, "policy/targets.json", existing["headRefOid"])["formulae"]
+        if set(additions) <= set(current):
+            return f"https://github.com/{repository}/pull/{existing['number']}"
     with tempfile.TemporaryDirectory(prefix="intelbrew-coverage-") as raw:
         directory = Path(raw) / "repo"
         gh(["repo", "clone", repository, str(directory), "--", "--filter=blob:none"])
-        existing = _find_pr(repository, BRANCH)
         if existing:
-            if not _owned_pr(repository, existing, expected_owner):
-                raise Error("Existing coverage PR is outside the repository-owner boundary")
             _git(["fetch", "origin", f"refs/heads/{BRANCH}:refs/remotes/origin/{BRANCH}"], directory)
             _git(["switch", "--create", BRANCH, f"origin/{BRANCH}"], directory)
             _git(["rebase", "origin/main"], directory)
@@ -182,6 +187,28 @@ def _pr_files(repository: str, number: int) -> list[dict[str, Any]]:
     return payload
 
 
+def _require_regular_target(repository: str, head: str) -> None:
+    commit = gh_json(["api", f"repos/{repository}/git/commits/{head}"])
+    root_sha = (commit.get("tree") or {}).get("sha") if isinstance(commit, dict) else None
+    if not isinstance(root_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", root_sha):
+        raise Error("Coverage head has no valid root tree")
+    root = gh_json(["api", f"repos/{repository}/git/trees/{root_sha}"])
+    root_items = root.get("tree") if isinstance(root, dict) else None
+    if not isinstance(root_items, list) or len(root_items) > 10000: raise Error("Invalid coverage root tree")
+    policy = [item for item in root_items if isinstance(item, dict) and item.get("path") == "policy"]
+    if len(policy) != 1 or policy[0].get("mode") != "040000" or policy[0].get("type") != "tree":
+        raise Error("Coverage policy path is not a tree")
+    policy_sha = policy[0].get("sha")
+    if not isinstance(policy_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", policy_sha):
+        raise Error("Coverage policy tree has invalid identity")
+    tree = gh_json(["api", f"repos/{repository}/git/trees/{policy_sha}"])
+    items = tree.get("tree") if isinstance(tree, dict) else None
+    if not isinstance(items, list) or len(items) > 10000: raise Error("Invalid coverage policy tree")
+    target = [item for item in items if isinstance(item, dict) and item.get("path") == "targets.json"]
+    if len(target) != 1 or target[0].get("mode") != "100644" or target[0].get("type") != "blob":
+        raise Error("Coverage target policy is not a regular 100644 blob")
+
+
 def _official_metadata() -> dict[str, dict[str, Any]]:
     url = "https://formulae.brew.sh/api/formula.json"
     limit = 64 * 1024 * 1024
@@ -213,6 +240,7 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
         raise Error("Coverage PR changes outside policy/targets.json")
     head = pr.get("headRefOid")
     if not isinstance(head, str) or not re.fullmatch(r"[0-9a-f]{40}", head): raise Error("Coverage PR has invalid head")
+    _require_regular_target(repository, head)
     base = _content(repository, "policy/targets.json", MAIN)["formulae"]
     proposed = _content(repository, "policy/targets.json", head)["formulae"]
     base_names = [canonical_name(x) for x in base]; proposed_names = [canonical_name(x) for x in proposed]
@@ -228,6 +256,7 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
 def reconcile(repository: str) -> None:
     pr = _find_pr(repository, BRANCH)
     if pr is None: return
+    pr = _disable_existing_auto_merge(repository, pr)
     validate_pr(repository, pr)
     if pr.get("mergeStateStatus") == "BEHIND":
         gh(["api", "--method", "PUT", f"repos/{repository}/pulls/{pr['number']}/update-branch",
