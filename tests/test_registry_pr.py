@@ -182,12 +182,15 @@ class RegistryPullRequestTests(unittest.TestCase):
 
     def test_reconcile_continues_after_conflicting_sibling(self):
         pr = pull_request(statusCheckRollup=[{"name": "tests", "status": "COMPLETED", "conclusion": "SUCCESS"}])
-        bad = pull_request(number=8, mergeStateStatus="DIRTY")
+        bad = pull_request(number=8, headRefName="bottles/intel-123-1-conflict", mergeStateStatus="DIRTY")
         fake, manifest_bytes = self._gh_fixture(pr, workflow_runs=[{"head_sha": HEAD, "path": ".github/workflows/checks.yml",
                                                                      "status": "completed", "conclusion": "success"}])
         def boundary(args, **kwargs):
             if args[:2] == ["pr", "list"]:
-                return json.dumps([bad, pr])
+                if "--head" not in args:
+                    return json.dumps([bad, pr])
+                branch = args[args.index("--head") + 1]
+                return json.dumps([bad if branch == bad["headRefName"] else pr])
             return fake(args, **kwargs)
         with patch("intelbrew.registry_pr.gh", side_effect=boundary) as calls, \
              patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifest_bytes)), \
@@ -203,6 +206,94 @@ class RegistryPullRequestTests(unittest.TestCase):
         calls = [call.args[0] for call in boundary.call_args_list]
         self.assertTrue(any("expected_head_sha=" + HEAD in call for call in calls))
         self.assertFalse(any(call[:2] == ["workflow", "run"] or call[:2] == ["pr", "merge"] for call in calls))
+
+    def test_reconcile_refreshes_each_candidate_after_an_earlier_merge(self):
+        branch25 = "bottles/intel-123-1-first"
+        branch24 = "bottles/intel-123-1-second"
+        head25 = "d" * 40
+        head24 = "e" * 40
+        first = pull_request(number=25, headRefName=branch25, headRefOid=head25,
+                             statusCheckRollup=[{"name": "tests", "status": "COMPLETED",
+                                                 "conclusion": "SUCCESS"}])
+        second = pull_request(number=24, headRefName=branch24, headRefOid=head24,
+                              statusCheckRollup=[{"name": "tests", "status": "COMPLETED",
+                                                  "conclusion": "SUCCESS"}])
+        refreshed_second = dict(second, mergeStateStatus="BEHIND")
+        release_data = {}
+        for branch, pr in ((branch25, first), (branch24, second)):
+            release = branch.removeprefix("bottles/")
+            item = record(release=None)
+            manifest = {"schema": 1, "verified": True, "root": "tool", "core_commit": G,
+                        "brew_commit": G, "workflow_commit": G, "packages": [item]}
+            manifest_bytes = json.dumps(manifest, sort_keys=True).encode()
+            asset_url = f"https://github.com/{release}.json"
+            asset = {"name": "manifest.json", "browser_download_url": asset_url,
+                     "digest": "sha256:" + __import__("hashlib").sha256(manifest_bytes).hexdigest(),
+                     "size": len(manifest_bytes)}
+            content = base64.b64encode(json.dumps(record(release=release)).encode()).decode()
+            release_data[branch] = (release, asset, manifest_bytes, content, pr["headRefOid"])
+
+        merged25 = False
+
+        def boundary(args, **kwargs):
+            nonlocal merged25
+            if args[:3] == ["pr", "list", "--repo"]:
+                if "--head" not in args:
+                    return json.dumps([first, second])
+                branch = args[args.index("--head") + 1]
+                if branch == branch25:
+                    return json.dumps([] if merged25 else [first])
+                return json.dumps([refreshed_second if merged25 else second])
+            if args[:2] == ["pr", "merge"] and args[2] == "25":
+                merged25 = True
+                return ""
+            if args[:2] == ["pr", "merge"] and args[2] == "24":
+                raise AssertionError(f"stale reconcile attempted merge: {args}")
+            if args[:2] == ["api", "--method"] and "update-branch" in args[3]:
+                return "{}"
+            if args[:2] == ["api", "--paginate"]:
+                return json.dumps([[{"filename": "registry/tool.json", "status": "modified"}]])
+            if args[:3] == ["api", "--method", "GET"]:
+                ref = next(value.removeprefix("ref=") for value in args[4:] if value.startswith("ref="))
+                branch = branch25 if ref == head25 else branch24
+                return json.dumps({"type": "file", "content": release_data[branch][3]})
+            if args[0:2] == ["api", f"repos/{REPOSITORY}/releases/tags/{release_data[branch25][0]}"]:
+                return json.dumps({"assets": [release_data[branch25][1]]})
+            if args[0:2] == ["api", f"repos/{REPOSITORY}/releases/tags/{release_data[branch24][0]}"]:
+                return json.dumps({"assets": [release_data[branch24][1]]})
+            if args[0] == "api" and f"repos/{REPOSITORY}/actions/runs?head_sha=" in args[1]:
+                head = args[1].split("head_sha=", 1)[1].split("&", 1)[0]
+                return json.dumps({"workflow_runs": [{"head_sha": head, "path": ".github/workflows/checks.yml",
+                                                       "status": "completed", "conclusion": "success"}]})
+            raise AssertionError(f"unexpected gh call: {args}")
+
+        manifests = {value[1]["browser_download_url"]: value[2] for value in release_data.values()}
+        with patch("intelbrew.registry_pr.gh", side_effect=boundary) as gh_mock, \
+             patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifests[url])), \
+             patch("intelbrew.registry_pr.attest"):
+            reconcile(REPOSITORY)
+
+        calls = [call.args[0] for call in gh_mock.call_args_list]
+        self.assertTrue(merged25)
+        self.assertTrue(any("pulls/24/update-branch" in " ".join(call) for call in calls))
+        self.assertFalse(any(call[:3] == ["pr", "merge", "24"] for call in calls))
+
+    def test_reconcile_rechecks_refreshed_pr_ownership(self):
+        candidate = pull_request()
+        refreshed = dict(candidate, author={"login": "someone"})
+
+        def boundary(args, **kwargs):
+            if args[:3] == ["pr", "list", "--repo"]:
+                if "--head" not in args:
+                    return json.dumps([candidate])
+                return json.dumps([refreshed])
+            return ""
+
+        with patch("intelbrew.registry_pr.gh", side_effect=boundary) as gh_mock, \
+             self.assertRaisesRegex(Error, "outside the bot-owned"):
+            reconcile(REPOSITORY)
+        self.assertFalse(any(call.args[0][:3] == ["pr", "merge", "7"]
+                             for call in gh_mock.call_args_list))
 
     def test_existing_checks_and_auto_merge_are_not_dispatched_again(self):
         pr = pull_request(autoMergeRequest={"enabledAt": "now"},
