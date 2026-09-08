@@ -342,7 +342,16 @@ def reconcile(repository: str) -> None:
             errors.append(f"PR {candidate.get('number', '?')}: outside the allowed bot surface")
             continue
         try:
-            pr = _disable_existing_auto_merge(repository, candidate)
+            # The initial list is only a snapshot.  Earlier candidates may
+            # merge and change the base branch before this candidate is
+            # processed, so make every decision from a fresh exact-head
+            # lookup and re-apply the ownership boundary to that object.
+            pr = _find_pr(repository, branch)
+            if pr is None:
+                raise Error("Registry PR disappeared before reconciliation")
+            if not allowed_pr(pr, repository=repository):
+                raise Error("Refusing a refreshed PR outside the bot-owned same-repository registry surface")
+            pr = _disable_existing_auto_merge(repository, pr)
             if pr.get("mergeStateStatus") == "BEHIND":
                 number = pr.get("number")
                 head = pr.get("headRefOid")
