@@ -1,7 +1,7 @@
 # Gotowe pakiety Homebrew dla Maców z Intelem
 
-**Wersja testowa (preview):** trzy pakiety przeszły budowanie i weryfikację butelek;
-pełny odbiór rozwiązania nie jest jeszcze zakończony. Zobacz
+**Wersja testowa (preview):** cztery pakiety przeszły budowanie i weryfikację butelek;
+automatyczna publikacja i scalenie rejestru przeszły test produkcyjny. Zobacz
 [wyniki walidacji](docs/VALIDATION.md) i [warunki odbioru](CONTRIBUTING.md).
 
 Gotowe pakiety binarne (*bottles*) dla Maców z Intelem i macOS Sequoia (15).
@@ -77,12 +77,20 @@ instalację. Ustawienia globalne pozostają bez zmian.
 ## Dostępne pakiety i budowanie
 
 [Rejestr](registry/) zawiera pakiety dostępne dla klienta.
-44 nazwy na [liście celów](policy/targets.json) to kandydaci do budowania,
+45 nazw na [liście celów](policy/targets.json) to kandydaci do budowania,
 a nie gwarancja dostępności. Nowe nazwy pakietów nie są dodawane automatycznie.
 Qt i inne ciężkie buildy wskazane w [polityce](policy/config.json) są wyłączone.
 Przeszkodą mogą być też wymagania licencyjne, brakujące zależności i limity
-budowania. Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza cotygodniowe
-buildy i cogodzinną obsługę PR rejestru.
+budowania. Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza codzienne
+sprawdzanie kandydatów i cogodzinną obsługę PR rejestru.
+
+`brew intel coverage` porównuje lokalnie zainstalowane formuły z listą celów.
+Pokazuje nazwy wymagające rozważenia, jawne wykluczenia polityki i formuły
+z innych tapów. `--json` daje pełny raport do dalszego przetwarzania. Raport
+nie jest wysyłany na GitHuba i nie dopisuje pakietów automatycznie. Brak nazwy
+na liście nie oznacza braku oficjalnej butelki; zależności celów są też
+rozwiązywane podczas budowania. Dodanie nowego celu wymaga przeglądu zmiany
+`policy/targets.json` i próbnego builda.
 
 Workflow buduje i weryfikuje pakiety na `macos-15-intel`, a następnie je publikuje.
 Korzysta z oficjalnych formuł, przypiętej wersji Homebrew, instalacji gotowego

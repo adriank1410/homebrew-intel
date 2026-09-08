@@ -1,6 +1,6 @@
 # Homebrew Intel bottles
 
-**Preview:** three packages have passed build and bottle verification; broader
+**Preview:** four packages have passed build and bottle verification; broader
 release acceptance is still incomplete. See [validation results](docs/VALIDATION.md)
 and the [acceptance checklist](CONTRIBUTING.md).
 
@@ -76,12 +76,19 @@ global Homebrew settings are not changed.
 ## Coverage and builds
 
 [The registry](registry/) lists the bottles available to the client.
-The 44 names in [the target list](policy/targets.json) are build candidates,
+The 45 names in [the target list](policy/targets.json) are build candidates,
 not guaranteed coverage. New package names are not added automatically.
 Qt and other heavy builds listed in [the policy](policy/config.json) are excluded.
 License review, dependency availability and build limits can also block a target.
-Weekly builds are enabled by setting `INTELBREW_ENABLE_SCHEDULE=true` in the
+Daily candidate checks are enabled by setting `INTELBREW_ENABLE_SCHEDULE=true` in the
 repository Actions variables. The same switch enables hourly registry maintenance.
+
+`brew intel coverage` compares installed formulae with the target list locally.
+It reports candidates for review, explicit policy exclusions, and external-tap
+formulae. Use `--json` for structured output. It neither uploads your inventory
+nor adds targets automatically. An unlisted name may still have official bottles
+or be built as a target dependency. Add a new target through a reviewed change
+to `policy/targets.json` and a trial build.
 
 The workflow builds and verifies on `macos-15-intel`, then publishes through a
 separate validation step. It uses official core recipes, a pinned Homebrew

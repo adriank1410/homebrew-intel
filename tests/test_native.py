@@ -49,3 +49,10 @@ class NativeTests(unittest.TestCase):
 
     def test_real_installer_source_guard(self):
         self.assertEqual(native({"mode": "guard-test"}), {"guard": "passed"})
+
+    def test_real_coverage_separates_core_and_full_external_tap_names(self):
+        result = native({"mode": "coverage"})
+        self.assertEqual(set(result), {"core", "external_taps"})
+        self.assertEqual(result["core"], sorted(set(result["core"])))
+        self.assertEqual(result["external_taps"], sorted(set(result["external_taps"])))
+        self.assertTrue(all("/" in name for name in result["external_taps"]))

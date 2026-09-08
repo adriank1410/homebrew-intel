@@ -25,6 +25,19 @@ module IntelbrewNative
   def sources(name)
     f=core_formula(name);raise "Source collection requires local recipe" unless f.path.file?;entries=[["main",f.stable.resource]];f.resources.each{|r|entries<<["resource-#{r.name}",r]};f.patchlist.each_with_index{|p,i|entries<<["patch-#{i}",p.resource] if p.respond_to?(:resource)};result=entries.map{|label,r|r.fetch(verify_download_integrity:true);c=r.cached_download;raise "Non-archive/VCS resource needs review" unless c.file?;raise "Resource lacks checksum" unless r.checksum;{"label"=>label,"path"=>c.realpath.to_s,"url"=>r.url,"sha256"=>Digest::SHA256.file(c).hexdigest}};text=f.path.read;{"formula_path"=>f.path.realpath.to_s,"formula_sha256"=>Digest::SHA256.hexdigest(text),"recipe_sha256"=>Digest::SHA256.hexdigest(text.gsub(/  bottle do.+?end\n\n?/m,"")),"resources"=>result}
   end
+  def coverage
+    installed=Formula.installed
+    raise "Too many installed formulae" if installed.length>2000
+    core=[];external=[]
+    installed.each do |f|
+      if f.tap&.name=="homebrew/core"
+        core<<f.name
+      else
+        external<<f.full_name.to_s
+      end
+    end
+    {"core"=>core.uniq.sort,"external_taps"=>external.uniq.sort}
+  end
   def bottle_only_install(request)
     require "formula_installer";require "cmd/install";require_relative "bottle_only";methods=FormulaInstaller.instance_methods+FormulaInstaller.private_instance_methods;raise "Homebrew changed installer API" unless methods.include?(:build)&&FormulaInstaller.instance_method(:build).arity==0;raise "Homebrew changed install command API" unless defined?(Homebrew::Cmd::InstallCmd);FormulaInstaller.prepend(IntelbrewBottleOnly)
     target=request.fetch("target");name=request.fetch("name");before=metadata(name);raise "Refusing same-version reinstall/downgrade" if before["installed_current"]||before["installed_newer"];raise "Refusing foreign/options/HEAD/pinned" if before["foreign_install"]||before["installed_options"].any?||before["installed_head"]||before["pinned"];raise "Recipe changed" unless before["formula_sha256"]==request.fetch("formula_sha256")&&before["pkg_version"]==request.fetch("pkg_version")
@@ -55,6 +68,7 @@ begin
   when "outdated";puts JSON.generate(Formula.installed.select{|f|f.tap&.name=="homebrew/core"&&!f.pinned?&&f.outdated?}.map(&:name).sort)
   when "receipt";puts JSON.generate(IntelbrewNative.receipt(request.fetch("name")))
   when "sources";saved=$stdout.dup;begin;$stdout.reopen($stderr);r=IntelbrewNative.sources(request.fetch("name"));ensure;$stdout.reopen(saved);saved.close;end;puts JSON.generate(r)
+  when "coverage";puts JSON.generate(IntelbrewNative.coverage)
   when "install";IntelbrewNative.bottle_only_install(request)
   when "guard-test";require "formula_installer";require_relative "bottle_only";FormulaInstaller.prepend(IntelbrewBottleOnly);begin;FormulaInstaller.allocate.send(:build);raise "guard absent";rescue IntelbrewBottleOnly::SourceBuildRefused;puts JSON.generate({"guard"=>"passed"});end
   else;raise "Unknown bridge operation";end

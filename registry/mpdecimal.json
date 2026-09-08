@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "77f4bb7e8aa136e72360b5ad90c2b51968689d4e",
+  "filename": "mpdecimal--4.0.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "cddb32a786744a117cb04a973d91e76bc872ce770c83bb54ce35943124951bf7",
+  "license": "BSD-2-Clause",
+  "name": "mpdecimal",
+  "pkg_version": "4.0.1",
+  "recipe_sha256": "0cf22ce0dbe07dec382d39cc6ea186be825dc571a8c065ac718d77cfcad91971",
+  "release": "intel-34270876910-1-mpdecimal",
+  "revision": 0,
+  "run_id": "34270876910",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "01517d3d98f084e0218cd5ccef4564c59c24a661c074c20860a1a558b84490e6",
+  "size": 191776,
+  "source": {
+    "filename": "mpdecimal--4.0.1.sources.tar.gz",
+    "sha256": "123cbdb5f9de50ca77aa6e205a45f9f2ce94405a711328df7d94267de60b424c",
+    "size": 317725
+  },
+  "tag": "sequoia",
+  "version": "4.0.1",
+  "version_scheme": 0,
+  "workflow_commit": "08225b01b264a2f7067bcb4055b95ff571792164"
+}

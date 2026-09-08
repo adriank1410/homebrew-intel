@@ -11,7 +11,7 @@ on:
         default: simdutf
         type: string
   schedule:
-    - cron: '41 3 * * 2'
+    - cron: '41 3 * * *'
 permissions:
   contents: read
 concurrency:
@@ -29,6 +29,7 @@ jobs:
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
       core_commit: ${{ steps.plan.outputs.core_commit }}
+      has_work: ${{ steps.plan.outputs.has_work }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -44,6 +45,7 @@ jobs:
         run: python3 scripts/plan-workflow.py
   build:
     needs: plan
+    if: ${{ needs.plan.outputs.has_work == 'true' }}
     runs-on: macos-15-intel
     timeout-minutes: 350
     strategy:
@@ -75,7 +77,7 @@ jobs:
           retention-days: 1
           compression-level: 0
   collect-candidates:
-    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true' }}
     needs: [plan, build]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -95,7 +97,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/select_artifacts.py --prefix candidate --planned-roots "$PLANNED_ROOTS"
   verify:
-    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.collect-candidates.result == 'success' && needs.collect-candidates.outputs.has_artifacts == 'true' }}
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true' && needs.collect-candidates.result == 'success' && needs.collect-candidates.outputs.has_artifacts == 'true' }}
     needs: [plan, collect-candidates]
     runs-on: macos-15-intel
     timeout-minutes: 180
@@ -130,7 +132,7 @@ jobs:
           retention-days: 1
           compression-level: 0
   collect-verified:
-    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true' }}
     needs: [plan, verify]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
