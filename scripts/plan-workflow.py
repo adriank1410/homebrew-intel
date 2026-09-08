@@ -9,8 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from intelbrew.core import ROOT, Error, canonical_name, read_json, registry, require_sha, run
 
-
-def requested_roots(requested, targets, *, allow_csv):
+def requested_roots(requested, targets, *, allow_csv, max_roots=50):
     if not isinstance(requested, str):
         raise Error('Requested formula must be a string')
     if requested == 'all':
@@ -24,7 +23,8 @@ def requested_roots(requested, targets, *, allow_csv):
             raise Error('Formula list contains duplicates')
     else:
         roots = [canonical_name(requested.strip())]
-    if not roots or len(roots) > 50 or any(root not in targets for root in roots):
+    if (not roots or (max_roots is not None and len(roots) > max_roots)
+            or any(root not in targets for root in roots)):
         raise Error('Requested formula is outside the reviewed target list')
     return roots
 
@@ -193,7 +193,14 @@ def main():
                 or type(request['sequence']) is not int or request['sequence'] < 1):
             raise Error('Invalid checked-in build request')
         requested = request['formula']
-    roots = requested_roots(requested, targets, allow_csv=source != 'push')
+    roots = requested_roots(
+        requested,
+        targets,
+        allow_csv=source != 'push',
+        # A scheduled sweep must inspect every reviewed target before selecting
+        # its bounded batch. Manual and push-triggered matrices stay capped.
+        max_roots=None if requested == 'all' and source in {'schedule', 'workflow_dispatch'} else 50,
+    )
     upstream = run(['git', 'ls-remote', 'https://github.com/Homebrew/homebrew-core.git',
                     'refs/heads/main']).split()
     if len(upstream) != 2 or upstream[1] != 'refs/heads/main':

@@ -10,6 +10,7 @@ import platform
 import shutil
 import sys
 import tempfile
+from collections import Counter
 from pathlib import Path
 
 from . import __version__
@@ -125,6 +126,23 @@ def render_skipped(skipped: list[dict]) -> None:
     print(f"Missing providers ({len(missing)}): {', '.join(missing) if missing else 'none'}")
 
 
+def render_sync(report: dict, *, apply: bool) -> None:
+    print(f"Coverage: {len(report['monitored_core'])} monitored, "
+          f"{len(report['eligible'])} eligible additions, {len(report['excluded'])} excluded.")
+    if report["eligible"]:
+        print("Eligible additions: " + ", ".join(report["eligible"]))
+    reasons = Counter(item["reason"] for item in report["excluded"])
+    if reasons:
+        print("Excluded: " + "; ".join(f"{reason}: {count}" for reason, count in sorted(reasons.items())))
+        print("Use `brew intel sync --json` for individual exclusion reasons.")
+    if report.get("pr_url"):
+        print(f"Coverage PR: {report['pr_url']} (eligible additions await protected checks and maintenance).")
+    elif not apply:
+        print("Dry run. Add --apply to propose eligible names to GitHub; no packages are installed.")
+    else:
+        print("No new coverage PR needed.")
+
+
 def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
     ensure_complete(plan)
     cache.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -194,7 +212,7 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--version", action="version", version=__version__)
-    parser.add_argument("command", choices=("plan", "install", "upgrade", "doctor", "coverage"))
+    parser.add_argument("command", choices=("plan", "install", "upgrade", "doctor", "coverage", "sync"))
     parser.add_argument("formulae", nargs="*")
     parser.add_argument("--apply", action="store_true", help="Install the complete validated plan (otherwise dry run)")
     parser.add_argument("--json", action="store_true", help="Print plan JSON")
@@ -208,6 +226,16 @@ def main(argv: list[str] | None = None) -> int:
         records = registry()
         if args.available and args.command != "upgrade":
             raise Error("--available is only supported with upgrade")
+        if args.command == "sync":
+            if args.formulae:
+                raise Error("sync takes installed core formulae, not explicit names")
+            from .coverage_sync import sync
+            report = sync(config, apply=args.apply)
+            if args.json:
+                print(json.dumps(report, indent=2, sort_keys=True))
+            else:
+                render_sync(report, apply=args.apply)
+            return 0
         if args.command == "coverage":
             if args.apply or args.formulae or args.available:
                 raise Error("coverage takes neither formula names, --apply nor --available")
@@ -215,7 +243,7 @@ def main(argv: list[str] | None = None) -> int:
             if targets_doc.get("schema") != 1 or not isinstance(targets_doc.get("formulae"), list):
                 raise Error("Invalid coverage target policy")
             installed = native({"mode": "coverage"})
-            report = coverage_report(installed, targets_doc["formulae"], config.get("blocked_source_builds", []))
+            report = coverage_report(installed, targets_doc["formulae"], [*config.get("blocked_source_builds", []), *config.get("target_exclusions", {})])
             if args.json:
                 print(json.dumps(report, indent=2, sort_keys=True))
             else:
@@ -238,7 +266,7 @@ def main(argv: list[str] | None = None) -> int:
             if args.command == "upgrade":
                 targets_doc = read_json(Path(__file__).resolve().parents[1] / "policy/targets.json")
                 installed = native({"mode": "coverage"})
-                report = coverage_report(installed, targets_doc["formulae"], config.get("blocked_source_builds", []))
+                report = coverage_report(installed, targets_doc["formulae"], [*config.get("blocked_source_builds", []), *config.get("target_exclusions", {})])
                 if report["unmonitored_core"] and not args.json:
                     stream = sys.stdout
                     print("Coverage notice: "

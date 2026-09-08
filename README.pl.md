@@ -1,6 +1,6 @@
 # Gotowe pakiety Homebrew dla Maców z Intelem
 
-**Wersja testowa (preview):** cztery pakiety przeszły budowanie i weryfikację butelek;
+**Wersja testowa (preview):** siedem pakietów przeszło budowanie i weryfikację butelek;
 automatyczna publikacja i scalenie rejestru przeszły test produkcyjny. Zobacz
 [wyniki walidacji](docs/VALIDATION.md) i [warunki odbioru](CONTRIBUTING.md).
 
@@ -52,6 +52,7 @@ Aby aktualizować tylko pakiety z kompletem dostępnych zależności:
 
 ```sh
 brew update &&
+brew intel sync --apply &&
 brew intel upgrade --available --apply &&
 brew upgrade --cask &&
 brew cleanup
@@ -77,20 +78,30 @@ instalację. Ustawienia globalne pozostają bez zmian.
 ## Dostępne pakiety i budowanie
 
 [Rejestr](registry/) zawiera pakiety dostępne dla klienta.
-46 nazw na [liście celów](policy/targets.json) to kandydaci do budowania,
-a nie gwarancja dostępności. Nowe nazwy pakietów nie są dodawane automatycznie.
-Qt i inne ciężkie buildy wskazane w [polityce](policy/config.json) są wyłączone.
-Przeszkodą mogą być też wymagania licencyjne, brakujące zależności i limity
-budowania. Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza codzienne
-sprawdzanie kandydatów i cogodzinną obsługę PR rejestru.
+[Lista celów](policy/targets.json) zawiera monitorowanych kandydatów, a nie
+obietnicę dostępności butelek. Build mogą blokować licencje, brakujące zależności
+i limity. Qt ma jawne wykluczenia. NumPy może być monitorowane, mimo że brakująca
+zależność kompilacyjna GCC blokuje jego budowanie.
 
 `brew intel coverage` porównuje lokalnie zainstalowane formuły z listą celów.
-Pokazuje nazwy wymagające rozważenia, jawne wykluczenia polityki i formuły
-z innych tapów. `--json` daje pełny raport do dalszego przetwarzania. Raport
-nie jest wysyłany na GitHuba i nie dopisuje pakietów automatycznie. Brak nazwy
-na liście nie oznacza braku oficjalnej butelki; zależności celów są też
-rozwiązywane podczas budowania. Dodanie nowego celu wymaga przeglądu zmiany
-`policy/targets.json` i próbnego builda.
+`brew intel sync` dodatkowo sprawdza bieżące metadane i istniejącą politykę
+licencyjną. Bez `--apply` niczego nie wysyła ani nie zmienia. `--json` podaje
+indywidualne powody pominięcia pakietów.
+
+`brew intel sync --apply` zgłasza kwalifikujące się nowe nazwy z core w jednym PR.
+Wymaga zalogowanego przez `gh` właściciela repozytorium. Cogodzinny automat ponownie
+sprawdza dopuszczalność dodatków i scala dokładnie zweryfikowany commit po testach
+wymaganych przez ochronę gałęzi. Kolejne `brew update` pobiera rozszerzoną listę.
+Powtórzenie sync wykorzystuje oczekujący PR. Odinstalowanie pakietu nie usuwa go
+z monitorowania. Nazwy obcych tapów, caski, lokalne ścieżki i pełny eksport
+inwentarza nie są wysyłane. Instalacja pakietów pozostaje osobną komendą.
+
+Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza codzienne sprawdzanie
+kandydatów i cogodzinną obsługę PR-ów. Niepewni kandydaci są sprawdzani wspólnie
+na jednym runnerze Intel; dopiero rzeczywiście brakujące buildy trafiają do
+ograniczonej partii. Pakiety z dostępnymi butelkami nie zajmują osobnych runnerów
+budowania i weryfikacji. Blokady są raportowane niezależnie od pozostałych
+pakietów, a oczekujące buildy są wybierane rotacyjnie.
 
 Workflow buduje i weryfikuje pakiety na `macos-15-intel`, a następnie je publikuje.
 Korzysta z oficjalnych formuł, przypiętej wersji Homebrew, instalacji gotowego
