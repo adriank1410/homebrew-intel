@@ -77,7 +77,7 @@ instalację. Ustawienia globalne pozostają bez zmian.
 ## Dostępne pakiety i budowanie
 
 [Rejestr](registry/) zawiera pakiety dostępne dla klienta.
-45 nazw na [liście celów](policy/targets.json) to kandydaci do budowania,
+46 nazw na [liście celów](policy/targets.json) to kandydaci do budowania,
 a nie gwarancja dostępności. Nowe nazwy pakietów nie są dodawane automatycznie.
 Qt i inne ciężkie buildy wskazane w [polityce](policy/config.json) są wyłączone.
 Przeszkodą mogą być też wymagania licencyjne, brakujące zależności i limity
