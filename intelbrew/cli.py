@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import fcntl
 import json
+import os
 import platform
 import shutil
 import sys
@@ -17,14 +18,19 @@ from .core import (Error, Planner, artifact_url, brew_env, check_bottle,
                    native, registry, require_sha, run, write_json_new)
 
 
-def attest(path: Path, repository: str, workflow_commit: str) -> None:
+def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None) -> None:
     require_sha(workflow_commit, git=True)
     if not shutil.which("gh"):
         raise Error("GitHub CLI (gh) is required to verify personal bottles; no verification bypass exists")
+    env = None
+    if token is not None:
+        env = os.environ.copy()
+        env["GH_TOKEN"] = token
     run(["gh", "attestation", "verify", str(path), "--repo", repository,
          "--signer-workflow", f"{repository}/.github/workflows/bottles.yml",
          "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
-         "--signer-digest", workflow_commit, "--deny-self-hosted-runners"], capture=False)
+         "--signer-digest", workflow_commit, "--deny-self-hosted-runners"],
+        capture=False, env=env)
 
 
 def render(plan: dict) -> None:

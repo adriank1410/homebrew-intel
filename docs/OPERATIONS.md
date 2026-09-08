@@ -10,10 +10,22 @@ Recommended server-side settings are squash-only merge, update-branch support,
 automatic deletion of merged topic branches, read-by-default Actions permissions,
 required `tests`, no force-push/deletion of `main`, and protected `v*`/`intel-*`
 tags. Workflow actions are pinned to reviewed full commit SHAs. Registry automation
-requires the GitHub setting "Allow GitHub Actions to
-create and approve pull requests". GitHub bundles these permissions; the code
-creates PRs but never approves reviews. Default Actions permissions remain read-only.
-Only publication and registry maintenance request `pull-requests: write`.
+uses a private GitHub App installed only on this repository. Configure repository
+variable `INTELBREW_APP_CLIENT_ID` and secret `INTELBREW_APP_PRIVATE_KEY`. The App
+needs Contents, Pull requests and Actions read/write permissions; Metadata read
+is mandatory. It needs no webhook, OAuth user authorization or account permissions.
+Only the main-branch publication and registry jobs create an installation token,
+explicitly restricted to `homebrew-intel` and those three permissions. Tokens
+expire after one hour and the pinned action revokes them at job completion.
+The controller accepts only the exact `app/<slug>` identity returned by that
+action. Missing identity or credentials do not fall back to a personal token.
+
+Using the App to create/update PRs avoids the human workflow-approval gate that
+GitHub applies to PRs created with `GITHUB_TOKEN`. The repository's "Allow GitHub
+Actions to create and approve pull requests" switch alone does not remove that
+gate. The controller never approves reviews. Attestation verification uses the
+separate built-in token (`INTELBREW_ATTESTATION_TOKEN`); the App needs no extra
+attestation permission. Its private key is not passed to builds or package tests.
 Verify GitHub settings separately before treating them as a security boundary.
 
 To request a reviewed native build through the repository, edit
@@ -38,7 +50,8 @@ Open the workflow run on GitHub. Verify both Intel jobs, native receipts,
 `brew linkage --test`, `brew test` and attestation. Inspect package versions/
 revisions, recipe hashes, core/engine commits, dependency closure and licenses.
 The publisher creates a registry PR and dispatches `checks.yml` explicitly.
-This avoids relying on recursive events from `GITHUB_TOKEN`. Only bot-authored,
+The App also triggers ordinary PR checks without a human approval step. Only
+PRs authored by the configured App,
 same-repository registry changes matching the attested release manifest qualify
 for immediate, head-pinned automated merging. The protected `main` still requires the `tests` check and an
 up-to-date base. Do not bypass a missing check.

@@ -46,6 +46,14 @@ class OperationTests(unittest.TestCase):
         with patch('intelbrew.cli.shutil.which',return_value='/bin/gh'),patch('intelbrew.cli.run') as run:
             attest(Path('/file'), 'adriank1410/homebrew-intel',G);args=run.call_args.args[0]
             self.assertIn('--deny-self-hosted-runners',args);self.assertIn('refs/heads/main',args);self.assertIn(G,args)
+
+    def test_attestation_token_is_scoped_to_subprocess_environment(self):
+        with patch('intelbrew.cli.shutil.which',return_value='/bin/gh'), patch('intelbrew.cli.run') as run, patch.dict(os.environ, {}, clear=True):
+            attest(Path('/file'), 'adriank1410/homebrew-intel', G, token='secret')
+            args, kwargs = run.call_args
+            self.assertNotIn('secret', args[0])
+            self.assertEqual(kwargs['env']['GH_TOKEN'], 'secret')
+            self.assertNotIn('GH_TOKEN', os.environ)
     def test_no_attestation_bypass_without_gh(self):
         with patch('intelbrew.cli.shutil.which',return_value=None),self.assertRaises(Error):attest(Path('/file'),'adriank1410/homebrew-intel',G)
     def test_ci_refuses_normal_machine(self):

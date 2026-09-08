@@ -1,6 +1,6 @@
 # Homebrew Intel bottles
 
-**Preview:** two packages have passed build and bottle verification; broader
+**Preview:** three packages have passed build and bottle verification; broader
 release acceptance is still incomplete. See [validation results](docs/VALIDATION.md)
 and the [acceptance checklist](CONTRIBUTING.md).
 

@@ -18,7 +18,8 @@ from .core import (MAX_JSON, ROOT, Error,
                    download, load_config, read_json, require_sha, run,
                    canonical_name, validate_record)
 
-BOT = "app/github-actions"  # gh normalizes GraphQL bot authors to app/<slug>.
+BOT_LOGIN_ENV = "INTELBREW_BOT_LOGIN"
+APP_LOGIN_RE = re.compile(r"app/[a-z0-9][a-z0-9-]*\Z")
 BRANCH_RE = re.compile(r"bottles/intel-[0-9]+-[0-9]+-[a-z0-9_.+@-]+\Z")
 MAIN = "main"
 
@@ -35,6 +36,14 @@ def gh_json(arguments: list[str]) -> Any:
         raise Error("GitHub CLI returned invalid JSON") from exc
 
 
+def _configured_bot_login() -> str | None:
+    """Return the exact configured GitHub App login, or None if unusable."""
+    value = os.environ.get(BOT_LOGIN_ENV)
+    if value is None or APP_LOGIN_RE.fullmatch(value) is None:
+        return None
+    return value
+
+
 def allowed_pr(pr: dict[str, Any], *, repository: str) -> bool:
     """Return whether a PR is exactly the bot-owned registry surface."""
     head = pr.get("headRepository") or {}
@@ -43,12 +52,14 @@ def allowed_pr(pr: dict[str, Any], *, repository: str) -> bool:
     head_repo = head.get("nameWithOwner") or pr.get("headRepositoryNameWithOwner")
     base_repo = (base.get("nameWithOwner") or pr.get("baseRepositoryNameWithOwner") or
                  (repository if not pr.get("isCrossRepository", False) else None))
-    return (pr.get("state", "OPEN") == "OPEN" and
+    bot_login = _configured_bot_login()
+    return (bot_login is not None and
+            pr.get("state", "OPEN") == "OPEN" and
             pr.get("baseRefName") == MAIN and
             pr.get("headRefName", "") and BRANCH_RE.fullmatch(pr["headRefName"]) and
             head_repo == repository and base_repo == repository and
             not pr.get("isCrossRepository", False) and
-            author.get("login") == BOT and
+            author.get("login") == bot_login and
             (author.get("is_bot", True) is True))
 
 
@@ -262,7 +273,8 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
         manifest = _download_manifest(repository, release, Path(temp))
         workflow_commit = manifest.get("workflow_commit")
         require_sha(workflow_commit, git=True)
-        attest(Path(temp) / "manifest.json", repository, workflow_commit)
+        attest(Path(temp) / "manifest.json", repository, workflow_commit,
+               token=os.environ.get("INTELBREW_ATTESTATION_TOKEN"))
         validate_manifest_records(manifest, records, release=release)
 
 
