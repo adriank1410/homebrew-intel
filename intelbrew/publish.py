@@ -56,7 +56,7 @@ def publish(candidate: Path, root: str) -> None:
              "SHA-256 and associated source bundles are in manifest.json. Artifact attestations "
              "identify the publishing workflow; they are not a reproducibility or security certificate. "
              "Package licenses remain independent from the tap's BSD-2-Clause license.\n\n"
-             "These bottles become discoverable only after the registry PR is reviewed and merged.")
+             "These bottles become discoverable after the registry PR passes manifest validation and required checks, then merges.")
     run(["gh", "release", "create", tag, "--repo", repo, "--target", commit,
          "--title", f"Intel bottles: {root} ({run_id}/{attempt})", "--notes", notes,
          *[str(p) for p in assets]], capture=False)
@@ -78,8 +78,8 @@ def publish(candidate: Path, root: str) -> None:
     git(["push", "origin", f"HEAD:refs/heads/{branch}"])
     ensure_pr(repo, branch, tag, title=f"Publish Intel bottles: {root} ({run_id}/{attempt})",
               body=notes)
-    message = ("Verified release and registry PR published with checks dispatched and "
-               "squash auto-merge enabled after required review.")
+    message = ("Verified release and registry PR published. Required checks are dispatched; "
+               "registry maintenance merges only the validated passing head.")
     print(f"::notice::{message}")
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:

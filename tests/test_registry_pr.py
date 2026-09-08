@@ -52,6 +52,8 @@ class RegistryPullRequestTests(unittest.TestCase):
         def fake(args, **kwargs):
             if args[:3] == ["pr", "list", "--repo"]:
                 return json.dumps([pr])
+            if args[:3] == ["api", "--paginate", "--slurp"]:
+                return json.dumps([[{"filename": "registry/tool.json", "status": "modified"}]])
             if args[:2] == ["api", "--method"] and "contents/registry/tool.json" in args[3]:
                 return json.dumps({"type": "file", "content": content})
             if args[:2] == ["api", "repos/adriank1410/homebrew-intel/releases/tags/intel-123-1-tool"]:
@@ -118,6 +120,15 @@ class RegistryPullRequestTests(unittest.TestCase):
              self.assertRaisesRegex(Error, "three transient"):
             _workflow_state(REPOSITORY, HEAD)
 
+    def test_unhandled_terminal_conclusions_and_malformed_status_fail_visibly(self):
+        for conclusion in ('neutral', 'skipped', 'startup_failure', None, 'unknown'):
+            data = {"workflow_runs": [{"head_sha": HEAD, "path": ".github/workflows/checks.yml", "status": "completed", "conclusion": conclusion}]}
+            with self.subTest(conclusion=conclusion), patch("intelbrew.registry_pr.gh", return_value=json.dumps(data)), self.assertRaises(Error):
+                _workflow_state(REPOSITORY, HEAD)
+        data = {"workflow_runs": [{"head_sha": HEAD, "path": ".github/workflows/checks.yml", "status": "unexpected", "conclusion": None}]}
+        with patch("intelbrew.registry_pr.gh", return_value=json.dumps(data)), self.assertRaisesRegex(Error, "malformed"):
+            _workflow_state(REPOSITORY, HEAD)
+
     def test_completed_failure_requires_review_and_is_not_retried(self):
         run = {"head_sha": HEAD, "path": ".github/workflows/checks.yml",
                "status": "completed", "conclusion": "failure"}
@@ -136,12 +147,13 @@ class RegistryPullRequestTests(unittest.TestCase):
             reconcile(REPOSITORY)
         calls = [call.args[0] for call in boundary.call_args_list]
         self.assertIn(["workflow", "run", "checks.yml", "--repo", REPOSITORY, "--ref", BRANCH], calls)
-        self.assertTrue(any(call[:3] == ["pr", "merge", "7"] for call in calls))
+        self.assertFalse(any(call[:3] == ["pr", "merge", "7"] for call in calls))
 
     def test_reconcile_continues_after_conflicting_sibling(self):
-        pr = pull_request()
+        pr = pull_request(statusCheckRollup=[{"name": "tests", "status": "COMPLETED", "conclusion": "SUCCESS"}])
         bad = pull_request(number=8, mergeStateStatus="DIRTY")
-        fake, manifest_bytes = self._gh_fixture(pr)
+        fake, manifest_bytes = self._gh_fixture(pr, workflow_runs=[{"head_sha": HEAD, "path": ".github/workflows/checks.yml",
+                                                                     "status": "completed", "conclusion": "success"}])
         def boundary(args, **kwargs):
             if args[:2] == ["pr", "list"]:
                 return json.dumps([bad, pr])
@@ -162,14 +174,21 @@ class RegistryPullRequestTests(unittest.TestCase):
         self.assertFalse(any(call[:2] == ["workflow", "run"] or call[:2] == ["pr", "merge"] for call in calls))
 
     def test_existing_checks_and_auto_merge_are_not_dispatched_again(self):
-        pr = pull_request(isAutoMergeEnabled=True)
+        pr = pull_request(autoMergeRequest={"enabledAt": "now"},
+                          statusCheckRollup=[{"name": "tests", "status": "COMPLETED", "conclusion": "SUCCESS"}])
         fake, manifest_bytes = self._gh_fixture(pr, workflow_runs=[{"head_sha": HEAD, "name": "Checks",
-                                                                     "path": ".github/workflows/checks.yml"}])
+                                                                     "path": ".github/workflows/checks.yml",
+                                                                     "status": "completed", "conclusion": "success"}])
         with patch("intelbrew.registry_pr.gh", side_effect=fake) as gh_mock, \
              patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifest_bytes)), \
              patch("intelbrew.registry_pr.attest"):
             ensure_pr(REPOSITORY, BRANCH, RELEASE)
-        self.assertFalse(any(call.args[0][:2] == ["workflow", "run"] for call in gh_mock.call_args_list))
+        calls = [call.args[0] for call in gh_mock.call_args_list]
+        disable = next(call for call in calls if "--disable-auto" in call)
+        merge = next(call for call in calls if call[:3] == ["pr", "merge", "7"] and "--disable-auto" not in call)
+        self.assertIn("--disable-auto", disable)
+        self.assertIn("--match-head-commit", merge)
+        self.assertNotIn("--auto", merge)
 
     def test_new_pr_dispatches_checks_and_matches_head_for_auto_merge(self):
         pr = pull_request()
@@ -180,8 +199,20 @@ class RegistryPullRequestTests(unittest.TestCase):
             ensure_pr(REPOSITORY, BRANCH, RELEASE)
         calls = [call.args[0] for call in gh_mock.call_args_list]
         self.assertIn(["workflow", "run", "checks.yml", "--repo", REPOSITORY, "--ref", BRANCH], calls)
+        self.assertFalse(any(call[:3] == ["pr", "merge", "7"] for call in calls))
+
+    def test_clean_successful_checks_merge_immediately_at_exact_head(self):
+        pr = pull_request(statusCheckRollup=[{"name": "tests", "status": "COMPLETED", "conclusion": "SUCCESS"}])
+        fake, manifest_bytes = self._gh_fixture(pr, workflow_runs=[{"head_sha": HEAD, "name": "Checks",
+                                                                     "path": ".github/workflows/checks.yml",
+                                                                     "status": "completed", "conclusion": "success"}])
+        with patch("intelbrew.registry_pr.gh", side_effect=fake) as gh_mock, \
+             patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifest_bytes)), \
+             patch("intelbrew.registry_pr.attest"):
+            ensure_pr(REPOSITORY, BRANCH, RELEASE)
+        calls = [call.args[0] for call in gh_mock.call_args_list]
         merge = next(call for call in calls if call[:3] == ["pr", "merge", "7"])
-        self.assertIn("--auto", merge)
+        self.assertNotIn("--auto", merge)
         self.assertIn("--squash", merge)
         self.assertEqual(merge[-1], HEAD)
 

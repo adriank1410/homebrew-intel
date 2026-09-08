@@ -10,7 +10,7 @@ Recommended server-side settings are squash-only merge, update-branch support,
 automatic deletion of merged topic branches, read-by-default Actions permissions,
 required `tests`, no force-push/deletion of `main`, and protected `v*`/`intel-*`
 tags. Workflow actions are pinned to reviewed full commit SHAs. Registry automation
-requires repository auto-merge and the GitHub setting "Allow GitHub Actions to
+requires the GitHub setting "Allow GitHub Actions to
 create and approve pull requests". GitHub bundles these permissions; the code
 creates PRs but never approves reviews. Default Actions permissions remain read-only.
 Only publication and registry maintenance request `pull-requests: write`.
@@ -40,7 +40,7 @@ revisions, recipe hashes, core/engine commits, dependency closure and licenses.
 The publisher creates a registry PR and dispatches `checks.yml` explicitly.
 This avoids relying on recursive events from `GITHUB_TOKEN`. Only bot-authored,
 same-repository registry changes matching the attested release manifest qualify
-for auto-merge. The protected `main` still requires the `tests` check and an
+for immediate, head-pinned automated merging. The protected `main` still requires the `tests` check and an
 up-to-date base. Do not bypass a missing check.
 
 Source and workflow PRs still need explicit owner approval to merge. On a client run
@@ -93,11 +93,15 @@ not relax the policy or permit source fallback on clients.
 Client updates remain manual:
 
 ```sh
-brew update
-brew intel upgrade --available --apply
+brew update &&
+brew intel upgrade --available --apply &&
+brew upgrade --cask &&
+brew cleanup
 ```
 
-`--available` omits roots with missing bottle dependencies and reports them.
+The Intel step includes official core bottles; the following step updates casks
+with standard Homebrew dependency handling. Other taps are outside the client
+scope. `--available` omits roots with missing bottle dependencies and reports them.
 Without it, incomplete coverage stops the whole operation. A separate
 `brew cleanup` can remove retained old kegs; it is never run by this client.
 
@@ -110,4 +114,4 @@ original archive or full installed-info snapshot belongs in this public repo.
 A commit to `policy/build-request.json` on `main` starts the guarded workflow.
 Set `formula` to one reviewed target and increment `sequence`; every edit is
 visible in Git history. Registry PRs then follow the same attestation, required
-checks and protected-branch auto-merge path as scheduled builds.
+checks and protected-branch merge path as scheduled builds.

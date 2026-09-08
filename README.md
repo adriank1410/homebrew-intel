@@ -50,11 +50,15 @@ for example, `brew intel upgrade simdutf --apply` does not wait for Qt.
 To update only packages whose entire dependency chain has a bottle:
 
 ```sh
-brew update
-brew intel upgrade --available --apply
+brew update &&
+brew intel upgrade --available --apply &&
+brew upgrade --cask &&
+brew cleanup
 ```
 
-Unavailable roots are reported and skipped. Without `--available`, incomplete
+The Intel command covers official and repository bottles for `homebrew/core`.
+Casks use standard Homebrew, including its dependency handling. Formulae from
+other taps need separate updates. Unavailable roots are reported and skipped. Without `--available`, incomplete
 coverage still stops the entire operation. Installation remains manual; no local
 background service is installed. `brew cleanup` is a separate user choice and
 can remove the old versions retained by this client.
@@ -84,8 +88,8 @@ separate validation step. It uses official core recipes, a pinned Homebrew
 engine, fresh-runner bottle installation, formula tests, linkage checks, and
 attestation. Each successful root can proceed even if another root fails.
 Publication creates a registry PR. Automation checks its records against the
-attested release manifest, dispatches tests, and requests auto-merge through the
-protected branch rules. The client sees the records after that merge.
+attested release manifest, dispatches tests, and merges the exact validated head
+once the protected branch checks pass. It never queues GitHub auto-merge. The client sees the records after that merge.
 
 To request one reviewed target, edit `policy/build-request.json` on `main` and
 increment `sequence`. See [Operations](docs/OPERATIONS.md) for the review and

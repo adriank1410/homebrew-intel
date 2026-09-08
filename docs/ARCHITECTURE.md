@@ -44,7 +44,8 @@ shell scripts. Completed artifacts determine independent downstream matrices,
 so a failed sibling cannot suppress verified packages. The publisher opens a
 registry-only PR. A trusted main-branch reconciler verifies its records against
 the attested release manifest, updates an outdated base, dispatches required
-tests and enables ruleset-compliant auto-merge. Source changes still require
+tests and merges only the exact validated head once the ruleset checks pass.
+No pending GitHub auto-merge request survives a later push. Source changes still require
 manual review; this does not approve or auto-merge arbitrary PRs.
 
 ## Client source-build guard

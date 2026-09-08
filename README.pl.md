@@ -51,11 +51,16 @@ pakietów pozwala pominąć brakującego kandydata, na przykład
 Aby aktualizować tylko pakiety z kompletem dostępnych zależności:
 
 ```sh
-brew update
-brew intel upgrade --available --apply
+brew update &&
+brew intel upgrade --available --apply &&
+brew upgrade --cask &&
+brew cleanup
 ```
 
-Brakujące pakiety są zgłaszane i pomijane. Bez `--available` brak kompletu nadal
+Komenda Intel obsługuje oficjalne i nasze butelki dla `homebrew/core`. Caski
+aktualizuje zwykły Homebrew, z jego standardową obsługą zależności. Formuły z
+innych tapów wymagają osobnych aktualizacji. Brakujące pakiety są zgłaszane
+i pomijane. Bez `--available` brak kompletu nadal
 zatrzymuje całą operację. Instalację uruchamiasz ręcznie; projekt nie instaluje
 usługi działającej w tle na Macu. `brew cleanup` pozostaje osobnym krokiem
 użytkownika i może usunąć zachowane wcześniejsze wersje.
@@ -84,7 +89,8 @@ Korzysta z oficjalnych formuł, przypiętej wersji Homebrew, instalacji gotowego
 pakietu na świeżym runnerze, testów formuł, kontroli powiązań bibliotek oraz
 poświadczeń GitHub. Błąd jednego pakietu nie blokuje pozostałych. Publikacja
 tworzy PR rejestru; automat porównuje wpisy z poświadczonym manifestem wydania,
-uruchamia testy i zleca scalenie zgodnie z ochroną gałęzi. Klient widzi nowe
+uruchamia testy i scala dokładnie sprawdzony commit, gdy przejdzie on wymagane
+kontrole ochrony gałęzi. Nie pozostawia włączonego oczekującego auto-merge. Klient widzi nowe
 wpisy po scaleniu.
 
 Aby zlecić build jednego pakietu z listy celów, zmień `policy/build-request.json` na

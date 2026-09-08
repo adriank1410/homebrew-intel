@@ -46,9 +46,11 @@ boundary: untrusted inputs should not be promoted to trusted source.
 
 Downloaded artifacts are validated as bounded data. The publishing stage never
 sources a downloaded shell/Python/Ruby script. The writer creates a unique
-release and registry branch. Registry automation opens PRs and enables auto-merge
+release and registry branch. Registry automation opens PRs and performs immediate head-pinned merges
 only for same-repository bot PRs whose complete registry diff matches an attested
-release manifest. Required tests and branch protection remain effective. It does
+release manifest. Required tests and branch protection remain effective. GitHub
+auto-merge is not queued: each merge revalidates the current head and supplies
+`--match-head-commit`, so later branch changes cannot inherit approval. It does
 not approve reviews, replace release assets, move tags, or force-push. GitHub
 bundles permission to create and approve PRs in one repository setting; the
 workflow uses creation only. Inspect repository

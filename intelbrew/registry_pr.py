@@ -48,7 +48,8 @@ def allowed_pr(pr: dict[str, Any], *, repository: str) -> bool:
             pr.get("headRefName", "") and BRANCH_RE.fullmatch(pr["headRefName"]) and
             head_repo == repository and base_repo == repository and
             not pr.get("isCrossRepository", False) and
-            author.get("login") == BOT)
+            author.get("login") == BOT and
+            (author.get("is_bot", True) is True))
 
 
 def changed_registry_files(pr: dict[str, Any]) -> list[str]:
@@ -63,7 +64,7 @@ def changed_registry_files(pr: dict[str, Any]) -> list[str]:
         change = item.get("status", item.get("changeType", "")).lower()
         if change not in {"added", "modified"}:
             raise Error("Registry PR contains a deletion or unsupported file change")
-        path = item.get("path")
+        path = item.get("filename", item.get("path"))
         if not isinstance(path, str) or not re.fullmatch(r"registry/[a-z0-9][a-z0-9+_.-]*(?:@[0-9][a-z0-9+_.-]*)?\.json", path):
             raise Error("Registry PR changes a file outside registry/*.json")
         paths.append(path)
@@ -181,27 +182,33 @@ def _workflow_state(repository: str, head_sha: str) -> str:
     conclusion = str(latest.get("conclusion", "")).lower()
     if status in {"queued", "in_progress", "waiting", "requested", "pending"}:
         return "wait"
+    if status != "completed":
+        raise Error(f"Checks workflow has malformed status {status!r}")
     if conclusion in TRANSIENT_CONCLUSIONS:
         attempts = sum(1 for item in matching
                        if str(item.get("conclusion", "")).lower() in TRANSIENT_CONCLUSIONS)
         if attempts >= 3:
             raise Error("Checks workflow reached three transient cancellations for this head; manual review required")
         return "dispatch"
+    if conclusion == "success":
+        return "ready"
     if conclusion in {"failure", "timed_out", "action_required"}:
         raise Error(f"Checks workflow completed with {conclusion}; manual review required")
-    return "wait"
+    raise Error(f"Checks workflow completed with unsupported conclusion {conclusion!r}; manual review required")
 
 
-def _dispatch_checks(repository: str, branch: str, pr: dict[str, Any]) -> None:
+def _dispatch_checks(repository: str, branch: str, pr: dict[str, Any]) -> str:
     head_sha = pr.get("headRefOid")
     if not isinstance(head_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", head_sha):
         raise Error("PR has no valid head commit")
-    if _workflow_state(repository, head_sha) == "dispatch":
+    state = _workflow_state(repository, head_sha)
+    if state == "dispatch":
         gh(["workflow", "run", "checks.yml", "--repo", repository, "--ref", branch], capture=False)
+    return state
 
 
-def _enable_auto_merge(repository: str, pr: dict[str, Any]) -> None:
-    if pr.get("isAutoMergeEnabled") or pr.get("autoMergeRequest"):
+def _merge_if_ready(repository: str, pr: dict[str, Any], workflow_state: str) -> None:
+    if pr.get("mergeStateStatus") != "CLEAN":
         return
     number = pr.get("number")
     if not isinstance(number, int):
@@ -209,12 +216,32 @@ def _enable_auto_merge(repository: str, pr: dict[str, Any]) -> None:
     head = pr.get("headRefOid")
     if not isinstance(head, str) or not re.fullmatch(r"[0-9a-f]{40}", head):
         raise Error("PR has no valid head commit")
-    gh(["pr", "merge", str(number), "--repo", repository, "--auto", "--squash",
+    if workflow_state != "ready":
+        return
+    rollup = pr.get("statusCheckRollup") or []
+    tests_clean = any(isinstance(check, dict) and check.get("name") == "tests" and
+                      str(check.get("status", "")).upper() == "COMPLETED" and
+                      str(check.get("conclusion", "")).upper() == "SUCCESS"
+                      for check in rollup)
+    if not tests_clean:
+        return
+    gh(["pr", "merge", str(number), "--repo", repository, "--squash",
         "--match-head-commit", head], capture=False)
 
 
 def _fetch_pr_files(repository: str, pr: dict[str, Any]) -> list[dict[str, Any]]:
-    paths = changed_registry_files(pr)
+    number = pr.get("number")
+    if not isinstance(number, int):
+        raise Error("PR has no number")
+    payload = gh_json(["api", "--paginate", "--slurp", f"repos/{repository}/pulls/{number}/files"])
+    if not isinstance(payload, list):
+        raise Error("GitHub returned an invalid pull-file list")
+    files: list[dict[str, Any]] = []
+    for page in payload:
+        if not isinstance(page, list):
+            raise Error("GitHub returned an invalid pull-file page")
+        files.extend(page)
+    paths = changed_registry_files({"files": files})
     sha = pr.get("headRefOid")
     if not isinstance(sha, str):
         raise Error("PR has no head commit")
@@ -239,11 +266,24 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
         validate_manifest_records(manifest, records, release=release)
 
 
+def _disable_existing_auto_merge(repository: str, pr: dict[str, Any]) -> dict[str, Any]:
+    if not pr.get("autoMergeRequest"):
+        return pr
+    number = pr.get("number")
+    if not isinstance(number, int):
+        raise Error("PR has no number")
+    gh(["pr", "merge", str(number), "--repo", repository, "--disable-auto"], capture=False)
+    refreshed = _find_pr(repository, pr.get("headRefName", ""))
+    if refreshed is None:
+        raise Error("PR disappeared after disabling auto-merge")
+    return refreshed
+
+
 def _find_pr(repository: str, branch: str) -> dict[str, Any] | None:
     prs = gh_json(["pr", "list", "--repo", repository, "--limit", "100", "--state", "open", "--head", branch,
                    "--base", MAIN, "--json",
                    "number,state,author,headRefName,headRefOid,baseRefName,headRepository,"
-                   "isCrossRepository,files,autoMergeRequest,mergeStateStatus"])
+                   "isCrossRepository,files,statusCheckRollup,autoMergeRequest,mergeStateStatus"])
     if not isinstance(prs, list):
         raise Error("GitHub CLI returned an invalid PR list")
     if len(prs) > 1:
@@ -253,20 +293,21 @@ def _find_pr(repository: str, branch: str) -> dict[str, Any] | None:
 
 def ensure_pr(repository: str, branch: str, release: str, *, title: str | None = None,
               body: str | None = None) -> dict[str, Any]:
-    """Create/find, validate, check, and auto-merge one registry PR."""
+    """Create/find a registry PR and merge its validated head only after checks."""
     if not BRANCH_RE.fullmatch(branch) or not re.fullmatch(r"intel-[0-9]+-[0-9]+-[a-z0-9_.+@-]+", release):
         raise Error("Invalid registry branch or release")
     pr = _find_pr(repository, branch)
     if pr is None:
         gh(["pr", "create", "--repo", repository, "--base", MAIN, "--head", branch,
             "--title", title or f"Publish Intel bottles: {release}",
-            "--body", body or "Automated registry update; owner review remains required."], capture=False)
+            "--body", body or "Automated registry update; attested manifest and protected-branch checks required."], capture=False)
         pr = _find_pr(repository, branch)
         if pr is None:
             raise Error("PR creation succeeded but the open PR was not found")
+    pr = _disable_existing_auto_merge(repository, pr)
     validate_pr(repository, pr)
-    _dispatch_checks(repository, branch, pr)
-    _enable_auto_merge(repository, pr)
+    state = _dispatch_checks(repository, branch, pr)
+    _merge_if_ready(repository, pr, state)
     return pr
 
 
@@ -274,7 +315,7 @@ def reconcile(repository: str) -> None:
     """Revalidate and advance every eligible open bot registry PR."""
     prs = gh_json(["pr", "list", "--repo", repository, "--limit", "100", "--state", "open", "--base", MAIN,
                    "--json", "number,state,author,headRefName,headRefOid,baseRefName,headRepository,"
-                   "isCrossRepository,files,"
+                   "isCrossRepository,files,statusCheckRollup,"
                    "autoMergeRequest,mergeStateStatus"])
     if not isinstance(prs, list):
         raise Error("GitHub CLI returned an invalid PR list")
@@ -289,7 +330,7 @@ def reconcile(repository: str) -> None:
             errors.append(f"PR {candidate.get('number', '?')}: outside the allowed bot surface")
             continue
         try:
-            pr = candidate
+            pr = _disable_existing_auto_merge(repository, candidate)
             if pr.get("mergeStateStatus") == "BEHIND":
                 number = pr.get("number")
                 head = pr.get("headRefOid")
@@ -305,11 +346,12 @@ def reconcile(repository: str) -> None:
                     # GitHub may acknowledge update-branch before the PR object
                     # exposes its new head.  The next hourly run will continue.
                     continue
-            elif pr.get("mergeStateStatus") in {"DIRTY", "UNKNOWN"}:
+            elif pr.get("mergeStateStatus") == "DIRTY":
                 raise Error(f"Registry PR {pr.get('number')} cannot be safely reconciled: {pr.get('mergeStateStatus')}")
+            pr = _disable_existing_auto_merge(repository, pr)
             validate_pr(repository, pr)
-            _dispatch_checks(repository, branch, pr)
-            _enable_auto_merge(repository, pr)
+            state = _dispatch_checks(repository, branch, pr)
+            _merge_if_ready(repository, pr, state)
         except Error as exc:
             errors.append(f"PR {candidate.get('number', '?')}: {exc}")
     if errors:
