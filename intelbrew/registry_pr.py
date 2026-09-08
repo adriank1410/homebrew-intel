@@ -157,26 +157,46 @@ def validate_manifest_records(manifest: dict[str, Any], records: list[dict[str, 
         raise Error("Registry records do not match the immutable release manifest")
 
 
-def _workflow_run_exists(repository: str, head_sha: str) -> bool:
+TRANSIENT_CONCLUSIONS = {"cancelled", "timed_out", "action_required", "stale"}
+
+
+def _workflow_state(repository: str, head_sha: str) -> str:
+    """Return dispatch/wait or raise for a terminal failure for this head."""
     data = gh_json(["api", f"repos/{repository}/actions/runs?head_sha={head_sha}&event=workflow_dispatch&per_page=100"])
     runs = data.get("workflow_runs") if isinstance(data, dict) else None
     if not isinstance(runs, list):
         raise Error("GitHub returned an invalid workflow run list")
+    matching = []
     for item in runs:
         if not isinstance(item, dict) or item.get("head_sha") != head_sha:
             continue
         path = item.get("path", "")
-        name = item.get("name", "")
-        if str(path).endswith(".github/workflows/checks.yml") or name == "Checks":
-            return True
-    return False
+        if str(path).endswith(".github/workflows/checks.yml"):
+            matching.append(item)
+    if not matching:
+        return "dispatch"
+    matching.sort(key=lambda item: (item.get("run_number", 0), item.get("created_at", "")))
+    latest = matching[-1]
+    status = str(latest.get("status", "")).lower()
+    conclusion = str(latest.get("conclusion", "")).lower()
+    if status in {"queued", "in_progress", "waiting", "requested", "pending"}:
+        return "wait"
+    if conclusion in TRANSIENT_CONCLUSIONS:
+        attempts = sum(1 for item in matching
+                       if str(item.get("conclusion", "")).lower() in TRANSIENT_CONCLUSIONS)
+        if attempts >= 3:
+            raise Error("Checks workflow reached three transient cancellations for this head; manual review required")
+        return "dispatch"
+    if conclusion in {"failure", "timed_out", "action_required"}:
+        raise Error(f"Checks workflow completed with {conclusion}; manual review required")
+    return "wait"
 
 
 def _dispatch_checks(repository: str, branch: str, pr: dict[str, Any]) -> None:
     head_sha = pr.get("headRefOid")
     if not isinstance(head_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", head_sha):
         raise Error("PR has no valid head commit")
-    if not _workflow_run_exists(repository, head_sha):
+    if _workflow_state(repository, head_sha) == "dispatch":
         gh(["workflow", "run", "checks.yml", "--repo", repository, "--ref", branch], capture=False)
 
 

@@ -8,7 +8,8 @@ from unittest.mock import patch
 from helpers import G, record
 from intelbrew.core import Error
 from intelbrew.registry_pr import (BOT, allowed_pr, changed_registry_files,
-                                   ensure_pr, validate_manifest_records, _record_from_content)
+                                   ensure_pr, validate_manifest_records, _record_from_content,
+                                   _workflow_state, reconcile)
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
@@ -104,9 +105,63 @@ class RegistryPullRequestTests(unittest.TestCase):
         wrapped = base64.b64encode(value).decode().replace("a", "a\n", 1)
         self.assertEqual(_record_from_content({"type": "file", "content": wrapped}, "registry/tool.json")["name"], "tool")
 
+    def test_cancelled_checks_are_retried_until_three_attempts(self):
+        run = {"head_sha": HEAD, "path": ".github/workflows/checks.yml",
+               "status": "completed", "conclusion": "cancelled"}
+        with patch("intelbrew.registry_pr.gh_json", return_value={"workflow_runs": [run]}):
+            self.assertEqual(_workflow_state(REPOSITORY, HEAD), "dispatch")
+        runs = [dict(run, run_number=n) for n in (1, 2, 3)]
+        with patch("intelbrew.registry_pr.gh_json", return_value={"workflow_runs": runs}), \
+             self.assertRaisesRegex(Error, "three transient"):
+            _workflow_state(REPOSITORY, HEAD)
+
+    def test_completed_failure_requires_review_and_is_not_retried(self):
+        run = {"head_sha": HEAD, "path": ".github/workflows/checks.yml",
+               "status": "completed", "conclusion": "failure"}
+        with patch("intelbrew.registry_pr.gh_json", return_value={"workflow_runs": [run]}), \
+             self.assertRaisesRegex(Error, "completed with failure"):
+            _workflow_state(REPOSITORY, HEAD)
+
+    def test_reconcile_retries_cancelled_check_through_real_validation(self):
+        pr = pull_request()
+        fake, manifest_bytes = self._gh_fixture(pr, workflow_runs=[{
+            "head_sha": HEAD, "path": ".github/workflows/checks.yml",
+            "status": "completed", "conclusion": "cancelled"}])
+        with patch("intelbrew.registry_pr.gh", side_effect=fake) as boundary, \
+             patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifest_bytes)), \
+             patch("intelbrew.registry_pr.attest"):
+            reconcile(REPOSITORY)
+        calls = [call.args[0] for call in boundary.call_args_list]
+        self.assertIn(["workflow", "run", "checks.yml", "--repo", REPOSITORY, "--ref", BRANCH], calls)
+        self.assertTrue(any(call[:3] == ["pr", "merge", "7"] for call in calls))
+
+    def test_reconcile_continues_after_conflicting_sibling(self):
+        pr = pull_request()
+        bad = pull_request(number=8, mergeStateStatus="DIRTY")
+        fake, manifest_bytes = self._gh_fixture(pr)
+        def boundary(args, **kwargs):
+            if args[:2] == ["pr", "list"]:
+                return json.dumps([bad, pr])
+            return fake(args, **kwargs)
+        with patch("intelbrew.registry_pr.gh", side_effect=boundary) as calls, \
+             patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifest_bytes)), \
+             patch("intelbrew.registry_pr.attest"), self.assertRaisesRegex(Error, "PR 8"):
+            reconcile(REPOSITORY)
+        self.assertTrue(any(call.args[0][:3] == ["pr", "merge", "7"] for call in calls.call_args_list))
+
+    def test_async_branch_update_waits_for_new_head_before_any_merge(self):
+        pr = pull_request(mergeStateStatus="BEHIND")
+        fake, _ = self._gh_fixture(pr)
+        with patch("intelbrew.registry_pr.gh", side_effect=fake) as boundary:
+            reconcile(REPOSITORY)
+        calls = [call.args[0] for call in boundary.call_args_list]
+        self.assertTrue(any("expected_head_sha=" + HEAD in call for call in calls))
+        self.assertFalse(any(call[:2] == ["workflow", "run"] or call[:2] == ["pr", "merge"] for call in calls))
+
     def test_existing_checks_and_auto_merge_are_not_dispatched_again(self):
         pr = pull_request(isAutoMergeEnabled=True)
-        fake, manifest_bytes = self._gh_fixture(pr, workflow_runs=[{"head_sha": HEAD, "name": "Checks"}])
+        fake, manifest_bytes = self._gh_fixture(pr, workflow_runs=[{"head_sha": HEAD, "name": "Checks",
+                                                                     "path": ".github/workflows/checks.yml"}])
         with patch("intelbrew.registry_pr.gh", side_effect=fake) as gh_mock, \
              patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifest_bytes)), \
              patch("intelbrew.registry_pr.attest"):

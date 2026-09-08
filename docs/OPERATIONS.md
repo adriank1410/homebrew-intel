@@ -82,7 +82,9 @@ file to Trash manually after checking its path.
 Set `INTELBREW_ENABLE_SCHEDULE=true` after native validation. The bottle workflow
 checks all reviewed roots every Tuesday at 03:41 UTC. Registry maintenance runs
 hourly at minute 17, revalidates eligible PRs, updates outdated branches, and
-restarts required checks when needed. GitHub can delay scheduled runs.
+dispatches missing checks and retries cancelled or timed-out checks, with at most
+three dispatch attempts per head commit. A test failure or exhausted retry budget
+requires attention. GitHub can delay scheduled runs.
 Disable the variable to pause both schedules; manual dispatch remains available.
 Inter-job artifacts expire after one day. No paid-runner selection is automatic.
 Conflicting registry changes or unreviewed licenses require attention; they do
