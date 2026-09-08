@@ -4,10 +4,22 @@ import tempfile
 import unittest
 from pathlib import Path
 from intelbrew.core import Error, check_bottle, digest, write_json_new
-from intelbrew.ci import validate_candidate
+from intelbrew.ci import extract_bottle_metadata, validate_candidate
 from helpers import G, archive
 
 class ArchiveTests(unittest.TestCase):
+    def test_bottle_json_keeps_cellar_at_bottle_level(self):
+        details = {
+            'tool': {
+                'bottle': {
+                    'cellar': 'any_skip_relocation',
+                    'tags': {'sequoia': {'sha256': 'a' * 64}},
+                },
+            },
+        }
+        self.assertEqual(extract_bottle_metadata(details, 'sequoia'),
+                         ('a' * 64, 'any_skip_relocation'))
+
     def test_valid_native_identity_archive(self):
         with tempfile.TemporaryDirectory() as d:
             p,r=archive(Path(d));check_bottle(p,r)
