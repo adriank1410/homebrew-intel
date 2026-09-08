@@ -82,6 +82,19 @@ def _git(arguments: list[str], directory: Path) -> str:
                 "-c", "commit.gpgsign=false", "-c", "rebase.updateRefs=false", *arguments], cwd=directory)
 
 
+def _trusted_merged_head(repository: str, login: str, head: str) -> bool:
+    prs = gh_json(["pr", "list", "--repo", repository, "--limit", "10", "--state", "merged",
+                   "--head", BRANCH, "--base", MAIN, "--json",
+                   "number,state,author,headRefName,headRefOid,baseRefName,headRepository,isCrossRepository"])
+    if not isinstance(prs, list): raise Error("GitHub returned an invalid merged coverage PR list")
+    return any(isinstance(pr, dict) and pr.get("state") == "MERGED" and
+               pr.get("headRefName") == BRANCH and pr.get("headRefOid") == head and
+               pr.get("baseRefName") == MAIN and
+               (pr.get("headRepository") or {}).get("nameWithOwner") == repository and
+               not pr.get("isCrossRepository", False) and (pr.get("author") or {}).get("login") == login
+               for pr in prs)
+
+
 def _publish(repository: str, targets: list[str], additions: list[str]) -> str | None:
     desired = sorted(set(targets) | set(additions))
     if desired == targets or set(desired) == set(targets): return None
@@ -104,8 +117,15 @@ def _publish(repository: str, targets: list[str], additions: list[str]) -> str |
             _git(["switch", "--create", BRANCH, f"origin/{BRANCH}"], directory)
             _git(["rebase", "origin/main"], directory)
         else:
-            if _git(["ls-remote", "--heads", "origin", f"refs/heads/{BRANCH}"], directory).strip():
-                raise Error("Coverage branch exists without its expected open PR")
+            remote = _git(["ls-remote", "--heads", "origin", f"refs/heads/{BRANCH}"], directory).strip()
+            previous_head = None
+            if remote:
+                fields = remote.split()
+                if len(fields) != 2 or fields[1] != f"refs/heads/{BRANCH}" or not re.fullmatch(r"[0-9a-f]{40}", fields[0]):
+                    raise Error("Coverage branch has an invalid remote identity")
+                previous_head = fields[0]
+                if not _trusted_merged_head(repository, expected_owner, previous_head):
+                    raise Error("Coverage branch exists without its exact trusted merged PR")
             _git(["switch", "--create", BRANCH, "origin/main"], directory)
         path = directory / "policy" / "targets.json"
         current = read_json(path)
@@ -119,7 +139,8 @@ def _publish(repository: str, targets: list[str], additions: list[str]) -> str |
         _git(["config", "user.email", "coverage-sync@users.noreply.github.com"], directory)
         _git(["add", "--", "policy/targets.json"], directory)
         _git(["commit", "-m", "policy: add installed Intel formulae"], directory)
-        lease = f"--force-with-lease=refs/heads/{BRANCH}:{existing['headRefOid']}" if existing else "--force-with-lease=refs/heads/coverage/intel-installed:"
+        lease_head = existing["headRefOid"] if existing else previous_head or ""
+        lease = f"--force-with-lease=refs/heads/{BRANCH}:{lease_head}"
         _git(["push", lease, "origin", f"HEAD:refs/heads/{BRANCH}"], directory)
     if not existing:
         gh(["pr", "create", "--repo", repository, "--base", MAIN, "--head", BRANCH,
@@ -256,6 +277,8 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
 def reconcile(repository: str) -> None:
     pr = _find_pr(repository, BRANCH)
     if pr is None: return
+    if not _allowed_pr(repository, pr):
+        raise Error("Refusing coverage PR outside its exact owner and branch boundary")
     pr = _disable_existing_auto_merge(repository, pr)
     validate_pr(repository, pr)
     if pr.get("mergeStateStatus") == "BEHIND":

@@ -156,5 +156,22 @@ class CoverageSyncTests(unittest.TestCase):
                      self.assertRaisesRegex(Error, message):
                     reconcile(repository)
 
+    def test_reconcile_rejects_foreign_author_before_disabling_auto_merge(self):
+        repository, calls, boundary, catalog = self._reconcile_fixture()
+        original = boundary
+        def foreign(args, **kwargs):
+            value = original(args, **kwargs)
+            if args[:2] == ["pr", "list"]:
+                prs = json.loads(value); prs[0]["author"] = {"login": "attacker"}; return json.dumps(prs)
+            return value
+        with patch.dict(os.environ, {"INTELBREW_COVERAGE_LOGIN": "app/intelbrew"}), \
+             patch("intelbrew.registry_pr.gh", side_effect=foreign), \
+             patch("intelbrew.coverage_sync.gh", side_effect=foreign), \
+             patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)), \
+             self.assertRaisesRegex(Error, "owner and branch boundary"):
+            reconcile(repository)
+        self.assertFalse(any(call[:3] == ["pr", "merge", "9"] or "update-branch" in " ".join(call)
+                             for call in calls))
+
 
 if __name__ == "__main__": unittest.main()

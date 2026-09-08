@@ -1,5 +1,8 @@
 import json
+import subprocess
+import sys
 import unittest
+from pathlib import Path
 from contextlib import redirect_stdout
 from io import StringIO
 from unittest.mock import patch
@@ -9,6 +12,13 @@ from helpers import meta
 
 
 class SyncCommandTests(unittest.TestCase):
+    def test_workflow_script_imports_from_clean_python_path(self):
+        script = Path(__file__).resolve().parents[1] / "scripts" / "sync-coverage.py"
+        result = subprocess.run([sys.executable, "-E", str(script), "--help"],
+                                cwd=script.parent, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("--reconcile", result.stdout)
+
     def test_sync_json_uses_real_eligibility_without_publishing(self):
         def native(request):
             if request["mode"] == "coverage":
