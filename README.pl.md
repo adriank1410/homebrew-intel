@@ -48,6 +48,11 @@ tapa, ale nie izoluje jej kodu od Maca. Klient sprawdza SHA-256, receptę, wersj
 rewizję, zależności oraz attestation z właściwego repozytorium, gałęzi, workflowu
 i commita. Potrzebuje istniejącego `gh`; nie instaluje go automatycznie.
 
+Homebrew domyślnie blokuje ładowanie pakietów ze ścieżek. Dla zweryfikowanego
+lokalnego bottle bridge Ruby dopuszcza je tylko na czas operacji w swoim procesie,
+a następnie przywraca ustawienie. Jawne `HOMEBREW_FORBID_PACKAGES_FROM_PATHS`
+nadal zatrzymuje instalację; ustawienia globalne pozostają bez zmian.
+
 Brak dopasowanego bottle'a zatrzymuje operację zamiast kompilować lokalnie. Nie
 ma `rm`, odinstalowywania, wymuszania nadpisania, czyszczenia starych wersji ani
 zmian globalnych. Nie jest to transakcja atomowa: przy błędzie późniejszego
