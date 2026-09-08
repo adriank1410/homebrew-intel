@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "77f4bb7e8aa136e72360b5ad90c2b51968689d4e",
+  "filename": "libmaxminddb--1.14.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "d764e762006b2b94e224347a8b4233cfd39727a5a79385c6d68509982f1881bb",
+  "license": "Apache-2.0",
+  "name": "libmaxminddb",
+  "pkg_version": "1.14.0",
+  "recipe_sha256": "730786f60a4d89c8975ba6d374432676f77ff5cd4f855645deaa11510917415e",
+  "release": "intel-34280013654-1-libmaxminddb",
+  "revision": 0,
+  "run_id": "34280013654",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "c10731bf4218da61555be117ee469ba10a758a89a4536fc8d73f2de41a0b3c40",
+  "size": 64518,
+  "source": {
+    "filename": "libmaxminddb--1.14.0.sources.tar.gz",
+    "sha256": "46cf0bb76f09e6dfb528ea0fbef2f8c5a5edc60c4aec667772514a92873861c9",
+    "size": 834263
+  },
+  "tag": "sequoia",
+  "version": "1.14.0",
+  "version_scheme": 0,
+  "workflow_commit": "933f40f7f5013294d0ec8d71e1e0a07d2297fe25"
+}
