@@ -16,13 +16,21 @@ CLI arguments, generated JSON layout, and scoped local-bottle loading. Native
 checks verify that explicit path restrictions remain effective and temporary
 settings are restored after errors.
 
-## Published bottle
+## Published bottles
 
 The [simdutf pipeline](https://github.com/adriank1410/homebrew-intel/actions/runs/34242870987)
 passed build, independent installation on a fresh Intel runner, receipt checks,
 `brew linkage --test`, formula tests, attestation and publication.
 The [release](https://github.com/adriank1410/homebrew-intel/releases/tag/intel-34242870987-1-simdutf)
 contains the bottle, source bundle and manifest.
+
+The [pkgconf pipeline](https://github.com/adriank1410/homebrew-intel/actions/runs/34243895959)
+independently passed the same build, fresh-runner verification and publication
+stages for version 3.0.7. Its
+[release](https://github.com/adriank1410/homebrew-intel/releases/tag/intel-34243895959-1-pkgconf)
+was also downloaded on the local Mac: SHA-256, attestation, archive contents and
+local formula identity checks passed. The local installation was already current,
+so it was not reinstalled.
 
 ## Local client verification
 
@@ -51,7 +59,8 @@ new version. The version-specific benchmark and conversion tests above exercised
 
 ## Limits of this result
 
-This validates one published package and the client installation path, not every
+This validates two published packages and the local client installation path for
+`simdutf`, not every
 target or future Homebrew revision. The 44 target names are candidates. Scheduled
 builds are disabled, license review can block dependencies, and a failing root
 in the current `all` matrix can block downstream verification for the batch.
