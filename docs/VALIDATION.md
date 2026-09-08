@@ -1,23 +1,59 @@
-# Validation record for source preview 0.1.0
+# Validation
 
-## Executed before publication
+Verified on 2026-09-08 for Intel macOS Sequoia (15.7.9), Homebrew in `/usr/local`.
 
-- 88 Python unittest methods passed, including 50 deterministic generated dependency DAGs.
-- Python parsing, Ruby syntax, Bash syntax and Ruby/Psych workflow YAML parsing passed.
-- Repository policy checks passed: full-commit action pins, no `pull_request_target`, no persisted checkout credentials, canonical target list and strict registry validation.
-- Deployment helper dry-run tests cover allowlist-only transfers, changed files, traversal, 403/404 distinction, no-write settings recommendations and Git credential use.
-- The source-build guard was executed against a Ruby fixture installer.
+## Source checks
 
-## Remote/native validation status
+```sh
+INTELBREW_NATIVE_TESTS=1 python3.11 -m unittest discover -s tests -q
+python3.11 scripts/check-project.py
+git diff --check
+```
 
-The repository was created by the owner and implementation is published through
-the connected GitHub write API. Remote Linux and native Intel macOS workflow
-results are not inferred from local tests; GitHub Actions job conclusions and
-logs are authoritative. Real package installation on the owner's Mac remains
-intentionally outside deployment.
+All 86 tests passed with native tests enabled. Repository checks also passed.
+Regressions cover the source-download API, executable command discovery, bottle
+CLI arguments, generated JSON layout, and scoped local-bottle loading. Native
+checks verify that explicit path restrictions remain effective and temporary
+settings are restored after errors.
 
-## Initial distribution contents
+## Published bottle
 
-44 reviewed candidate formula names; zero published bottle records; no third-party
-binary or original personal audit export. A native build must succeed before the
-registry can contain a real bottle.
+The [simdutf pipeline](https://github.com/adriank1410/homebrew-intel/actions/runs/34242870987)
+passed build, independent installation on a fresh Intel runner, receipt checks,
+`brew linkage --test`, formula tests, attestation and publication.
+The [release](https://github.com/adriank1410/homebrew-intel/releases/tag/intel-34242870987-1-simdutf)
+contains the bottle, source bundle and manifest.
+
+## Local client verification
+
+```sh
+brew intel doctor
+brew intel plan simdutf
+brew intel upgrade simdutf --apply
+brew linkage --test homebrew/core/simdutf
+brew intel upgrade simdutf --apply
+/usr/local/Cellar/simdutf/9.1.1/bin/sutf-benchmark --random-utf8 10240 -I 10
+```
+
+The client downloaded the published bottle, verified its attestation and metadata,
+and upgraded `simdutf` from 9.1.0 to 9.1.1 by pouring the archive. The receipt
+reports `poured_from_bottle: true`, `built_as_bottle: true`, and `homebrew/core`.
+The old keg remains, while the executable and `opt` links point to 9.1.1.
+The second apply installed zero packages.
+
+The new x86_64 executable also converted `Zażółć gęślą jaźń 😀` from UTF-8 to
+UTF-16LE and back with an exact byte comparison. Test files were temporary.
+
+A local `brew test homebrew/core/simdutf` invocation selected the older 9.1.0
+formula from the local core checkout, so it is not counted as evidence for the
+new version. The version-specific benchmark and conversion tests above exercised
+9.1.1 directly. Fresh-runner CI tested 9.1.1 through `brew test`.
+
+## Limits of this result
+
+This validates one published package and the client installation path, not every
+target or future Homebrew revision. The 44 target names are candidates. Scheduled
+builds are disabled, license review can block dependencies, and a failing root
+in the current `all` matrix can block downstream verification for the batch.
+Registry updates still require review. There is no claim of complete Intel or Qt
+coverage, reproducible builds, atomic rollback, or support outside Intel Sequoia.
