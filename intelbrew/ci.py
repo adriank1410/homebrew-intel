@@ -8,6 +8,8 @@ from .core import (ROOT, Error, Planner, artifact_url, basename, brew_env, canon
                    check_bottle, digest, download, load_config, native, read_json,
                    registry, require_sha, run, validate_record, write_json_new)
 
+BOTTLE_OPTIONS = ("--json", "--no-rebuild")
+
 
 def require_ci_mac() -> None:
     expected={"GITHUB_ACTIONS":"true","RUNNER_ENVIRONMENT":"github-hosted","RUNNER_OS":"macOS","RUNNER_ARCH":"X64"}
@@ -100,7 +102,7 @@ def build(root:str,output:Path)->None:
         if meta["provider"]!="build":raise Error("Unexpected CI package provider")
         sources=native({"mode":"sources","name":name},ci=True);source_path=source_bundle(name,meta,sources,output,core_commit)
         run(["brew","install","--build-bottle","--no-ask",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True))
-        bw=work/name;bw.mkdir();run(["brew","bottle","--json","--no-rebuild","--no-all-checks",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True),cwd=bw)
+        bw=work/name;bw.mkdir();run(["brew","bottle",*BOTTLE_OPTIONS,f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True),cwd=bw)
         files=list(bw.glob("*.sequoia.bottle*.tar.gz"));js=list(bw.glob("*.bottle.json"))
         if len(files)!=1 or len(js)!=1:raise Error("Expected one Sequoia bottle and JSON")
         details=read_json(js[0]);bmeta=next(iter(details.values()))["bottle"]["tags"]["sequoia"];filename=basename(files[0].name);target=output/filename;shutil.copyfile(files[0],target)
