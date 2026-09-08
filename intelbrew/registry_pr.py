@@ -18,7 +18,7 @@ from .core import (MAX_JSON, ROOT, Error,
                    download, load_config, read_json, require_sha, run,
                    canonical_name, validate_record)
 
-BOT = "github-actions[bot]"
+BOT = "app/github-actions"  # gh normalizes GraphQL bot authors to app/<slug>.
 BRANCH_RE = re.compile(r"bottles/intel-[0-9]+-[0-9]+-[a-z0-9_.+@-]+\Z")
 MAIN = "main"
 

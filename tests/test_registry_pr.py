@@ -61,6 +61,9 @@ class RegistryPullRequestTests(unittest.TestCase):
             return ""
         return fake, manifest_bytes
 
+    def test_accepts_actual_gh_cli_actions_author(self):
+        self.assertTrue(allowed_pr(pull_request(author={"is_bot": True, "login": "app/github-actions"}), repository=REPOSITORY))
+
     def test_only_same_repo_bot_registry_pr_is_allowed(self):
         self.assertTrue(allowed_pr(pull_request(), repository=REPOSITORY))
         for changes in (
