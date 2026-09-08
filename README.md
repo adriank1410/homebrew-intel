@@ -47,6 +47,22 @@ Normal `brew upgrade` does not read this registry. Use `brew intel plan` and
 upgrade. An explicit package list is useful when another candidate is missing;
 for example, `brew intel upgrade simdutf --apply` does not wait for Qt.
 
+To update only packages whose entire dependency chain has a bottle:
+
+```sh
+brew update &&
+brew intel upgrade --available --apply &&
+brew upgrade --cask &&
+brew cleanup
+```
+
+The Intel command covers official and repository bottles for `homebrew/core`.
+Casks use standard Homebrew, including its dependency handling. Formulae from
+other taps need separate updates. Unavailable roots are reported and skipped. Without `--available`, incomplete
+coverage still stops the entire operation. Installation remains manual; no local
+background service is installed. `brew cleanup` is a separate user choice and
+can remove the old versions retained by this client.
+
 Every repository bottle is checked before installation for its hash, formula and
 revision, recipe and dependency metadata, original core identity, and GitHub
 attestation. The source-build guard is process-local and fails closed if
@@ -64,13 +80,16 @@ The 44 names in [the target list](policy/targets.json) are build candidates,
 not guaranteed coverage. New package names are not added automatically.
 Qt and other heavy builds listed in [the policy](policy/config.json) are excluded.
 License review, dependency availability and build limits can also block a target.
-Scheduled builds are disabled by default.
+Weekly builds are enabled by setting `INTELBREW_ENABLE_SCHEDULE=true` in the
+repository Actions variables. The same switch enables hourly registry maintenance.
 
 The workflow builds and verifies on `macos-15-intel`, then publishes through a
 separate validation step. It uses official core recipes, a pinned Homebrew
 engine, fresh-runner bottle installation, formula tests, linkage checks, and
-attestation. Publication creates a registry review branch; the registry is not
-client-visible until the reviewed change is merged.
+attestation. Each successful root can proceed even if another root fails.
+Publication creates a registry PR. Automation checks its records against the
+attested release manifest, dispatches tests, and merges the exact validated head
+once the protected branch checks pass. It never queues GitHub auto-merge. The client sees the records after that merge.
 
 To request one reviewed target, edit `policy/build-request.json` on `main` and
 increment `sequence`. See [Operations](docs/OPERATIONS.md) for the review and

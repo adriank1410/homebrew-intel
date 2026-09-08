@@ -11,7 +11,7 @@ try:
     for path in list((ROOT/'intelbrew').glob('*.py'))+list((ROOT/'scripts').glob('*.py'))+list((ROOT/'tests').glob('*.py')):ast.parse(path.read_text(),filename=str(path))
     for path in (ROOT/'libexec').glob('*.rb'):subprocess.run(['ruby','-c',str(path)],check=True)
     for path in [ROOT/'cmd/brew-intel',ROOT/'scripts/prepare-runner.sh']:subprocess.run(['bash','-n',str(path)],check=True)
-    workflows=[ROOT/'.github/workflows/checks.yml',ROOT/'.github/workflows/bottles.yml'];subprocess.run(['ruby','-ryaml','-e','ARGV.each { |p| YAML.parse_file(p) }',*[str(p) for p in workflows]],check=True)
+    workflows=sorted((ROOT/'.github/workflows').glob('*.yml'));subprocess.run(['ruby','-ryaml','-e','ARGV.each { |p| YAML.parse_file(p) }',*[str(p) for p in workflows]],check=True)
     for path in workflows:
         text=path.read_text();assert 'pull_request_target' not in text;assert 'persist-credentials: true' not in text
         for action in re.findall(r'uses:\s*(\S+)',text):assert re.fullmatch(r'(?:actions|github)/[\w-]+@[0-9a-f]{40}',action),f'Unpinned action: {action}'

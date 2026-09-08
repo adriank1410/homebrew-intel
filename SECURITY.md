@@ -46,8 +46,14 @@ boundary: untrusted inputs should not be promoted to trusted source.
 
 Downloaded artifacts are validated as bounded data. The publishing stage never
 sources a downloaded shell/Python/Ruby script. The writer creates a unique
-release and registry review branch plus compare link; it does not open/approve/
-merge a PR, replace release assets, move tags or force-push. Inspect repository
+release and registry branch. Registry automation opens PRs and performs immediate head-pinned merges
+only for same-repository bot PRs whose complete registry diff matches an attested
+release manifest. Required tests and branch protection remain effective. GitHub
+auto-merge is not queued: each merge revalidates the current head and supplies
+`--match-head-commit`, so later branch changes cannot inherit approval. It does
+not approve reviews, replace release assets, move tags, or force-push. GitHub
+bundles permission to create and approve PRs in one repository setting; the
+workflow uses creation only. Inspect repository
 protections separately; Markdown policy is not a server-side access control.
 
 ## Retained state and limitations

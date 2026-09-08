@@ -36,6 +36,48 @@ def render(plan: dict) -> None:
     print("\nNo core remote, formula definitions or dependency names are changed.")
 
 
+def filter_available_plan(plan: dict) -> tuple[dict, list[dict]]:
+    """Keep only roots whose complete runtime plan has no missing provider."""
+    nodes = plan["nodes"]
+    order = plan["order"]
+    skipped: list[dict] = []
+    retained_roots: list[str] = []
+    retained_nodes: set[str] = set()
+
+    def closure(root: str) -> set[str]:
+        reachable: set[str] = set()
+        pending = [root]
+        while pending:
+            name = pending.pop()
+            if name in reachable:
+                continue
+            if name not in nodes:
+                raise Error(f"Incomplete plan: missing node {name}")
+            reachable.add(name)
+            pending.extend(nodes[name].get("dependencies", ()))
+        return reachable
+
+    for root in plan["roots"]:
+        reachable = closure(root)
+        missing = [
+            name for name in order
+            if name in reachable and nodes[name]["provider"] == "missing"
+        ]
+        if missing:
+            skipped.append({"root": root, "missing_dependencies": missing})
+            continue
+        retained_roots.append(root)
+        retained_nodes.update(reachable)
+
+    filtered = {
+        "schema": plan["schema"],
+        "roots": retained_roots,
+        "order": [name for name in order if name in retained_nodes],
+        "nodes": {name: nodes[name] for name in order if name in retained_nodes},
+    }
+    return filtered, skipped
+
+
 def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
     ensure_complete(plan)
     cache.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -109,12 +151,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("formulae", nargs="*")
     parser.add_argument("--apply", action="store_true", help="Install the complete validated plan (otherwise dry run)")
     parser.add_argument("--json", action="store_true", help="Print plan JSON")
+    parser.add_argument("--available", action="store_true",
+                        help="For upgrade, omit roots with missing runtime providers")
     args = parser.parse_args(argv)
     try:
         if platform.system() != "Darwin" or platform.machine() != "x86_64":
             raise Error("Supported client: native Intel macOS 15 (Sequoia), /usr/local Homebrew")
         config = load_config()
         records = registry()
+        if args.available and args.command != "upgrade":
+            raise Error("--available is only supported with upgrade")
         if args.command == "doctor":
             if args.apply or args.formulae:
                 raise Error("doctor takes neither formula names nor --apply")
@@ -134,6 +180,17 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         inspector = lambda batch: native({"mode": "inspect", "names": batch})
         plan = Planner(inspector, records, max_nodes=config["max_graph_nodes"]).make(names)
+        skipped: list[dict] = []
+        if args.available:
+            plan, skipped = filter_available_plan(plan)
+            if skipped:
+                print(json.dumps({"skipped": skipped}, indent=2), file=sys.stderr)
+            if not plan["roots"]:
+                if args.json:
+                    print(json.dumps(plan, indent=2))
+                else:
+                    print("No fully available upgrade roots; nothing installed.")
+                return 0
         if args.json:
             print(json.dumps(plan, indent=2))
         else:

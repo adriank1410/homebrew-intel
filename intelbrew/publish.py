@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from .ci import validate_candidate
 from .core import ROOT, Error, canonical_name, load_config, require_sha, run, validate_record
+from .registry_pr import ensure_pr
 
 
 def release_tag(root: str, run_id: str, attempt: str) -> str:
@@ -55,7 +56,7 @@ def publish(candidate: Path, root: str) -> None:
              "SHA-256 and associated source bundles are in manifest.json. Artifact attestations "
              "identify the publishing workflow; they are not a reproducibility or security certificate. "
              "Package licenses remain independent from the tap's BSD-2-Clause license.\n\n"
-             "These bottles become discoverable only after the registry PR is reviewed and merged.")
+             "These bottles become discoverable after the registry PR passes manifest validation and required checks, then merges.")
     run(["gh", "release", "create", tag, "--repo", repo, "--target", commit,
          "--title", f"Intel bottles: {root} ({run_id}/{attempt})", "--notes", notes,
          *[str(p) for p in assets]], capture=False)
@@ -75,14 +76,14 @@ def publish(candidate: Path, root: str) -> None:
     git(["add", "--", *changed])
     git(["commit", "-m", f"bottles: {root} on Sequoia Intel ({run_id}/{attempt})"])
     git(["push", "origin", f"HEAD:refs/heads/{branch}"])
-    compare_url = f"https://github.com/{repo}/compare/main...{branch}?expand=1"
-    message = ("Verified release and registry branch published. "
-               f"Owner review PR required: {compare_url}")
+    ensure_pr(repo, branch, tag, title=f"Publish Intel bottles: {root} ({run_id}/{attempt})",
+              body=notes)
+    message = ("Verified release and registry PR published. Required checks are dispatched; "
+               "registry maintenance merges only the validated passing head.")
     print(f"::notice::{message}")
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
             summary.write("\n" + message + "\n")
-    run(["gh", "workflow", "run", "checks.yml", "--repo", repo, "--ref", branch], capture=False)
 
 
 def main() -> int:

@@ -43,7 +43,7 @@ def exists():
 def configure(report):
     report['settings']='manual-verification-required'
     print('Recommended settings: squash-only; update branch; delete merged branches; read-only default Actions;')
-    print('Actions PR approval/creation disabled; protect main and require tests; protect v*/intel-* tags.')
+    print('Enable Actions PR creation for registry automation; protect main and require tests; protect v*/intel-* tags.')
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--apply',action='store_true');p.add_argument('--resume-settings',action='store_true');p.add_argument('--bootstrap',action='store_true');args=p.parse_args()

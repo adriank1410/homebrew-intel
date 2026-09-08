@@ -48,6 +48,23 @@ uruchom `brew intel plan` oraz `brew intel upgrade --apply`. Jawna lista
 pakietów pozwala pominąć brakującego kandydata, na przykład
 `brew intel upgrade simdutf --apply` nie czeka na Qt.
 
+Aby aktualizować tylko pakiety z kompletem dostępnych zależności:
+
+```sh
+brew update &&
+brew intel upgrade --available --apply &&
+brew upgrade --cask &&
+brew cleanup
+```
+
+Komenda Intel obsługuje oficjalne i nasze butelki dla `homebrew/core`. Caski
+aktualizuje zwykły Homebrew, z jego standardową obsługą zależności. Formuły z
+innych tapów wymagają osobnych aktualizacji. Brakujące pakiety są zgłaszane
+i pomijane. Bez `--available` brak kompletu nadal
+zatrzymuje całą operację. Instalację uruchamiasz ręcznie; projekt nie instaluje
+usługi działającej w tle na Macu. `brew cleanup` pozostaje osobnym krokiem
+użytkownika i może usunąć zachowane wcześniejsze wersje.
+
 Przed instalacją klient sprawdza sumę kontrolną, wersję i treść formuły,
 zależności, pochodzenie z `homebrew/core` oraz poświadczenie GitHub.
 Ochrona działająca w procesie instalatora zatrzymuje próbę kompilacji;
@@ -64,13 +81,17 @@ instalację. Ustawienia globalne pozostają bez zmian.
 a nie gwarancja dostępności. Nowe nazwy pakietów nie są dodawane automatycznie.
 Qt i inne ciężkie buildy wskazane w [polityce](policy/config.json) są wyłączone.
 Przeszkodą mogą być też wymagania licencyjne, brakujące zależności i limity
-budowania. Harmonogram jest domyślnie wyłączony.
+budowania. Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza cotygodniowe
+buildy i cogodzinną obsługę PR rejestru.
 
 Workflow buduje i weryfikuje pakiety na `macos-15-intel`, a następnie je publikuje.
 Korzysta z oficjalnych formuł, przypiętej wersji Homebrew, instalacji gotowego
 pakietu na świeżym runnerze, testów formuł, kontroli powiązań bibliotek oraz
-poświadczeń GitHub. Publikacja tworzy gałąź rejestru do przeglądu;
-klient nie widzi rejestru, dopóki zatwierdzona zmiana nie zostanie scalona.
+poświadczeń GitHub. Błąd jednego pakietu nie blokuje pozostałych. Publikacja
+tworzy PR rejestru; automat porównuje wpisy z poświadczonym manifestem wydania,
+uruchamia testy i scala dokładnie sprawdzony commit, gdy przejdzie on wymagane
+kontrole ochrony gałęzi. Nie pozostawia włączonego oczekującego auto-merge. Klient widzi nowe
+wpisy po scaleniu.
 
 Aby zlecić build jednego pakietu z listy celów, zmień `policy/build-request.json` na
 `main` i zwiększ `sequence`. Procedurę przeglądu i odzyskiwania po błędach
