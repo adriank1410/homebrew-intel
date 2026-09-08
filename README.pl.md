@@ -1,6 +1,6 @@
 # Gotowe pakiety Homebrew dla Maców z Intelem
 
-**Wersja testowa (preview):** dwa pakiety przeszły budowanie i weryfikację butelek;
+**Wersja testowa (preview):** trzy pakiety przeszły budowanie i weryfikację butelek;
 pełny odbiór rozwiązania nie jest jeszcze zakończony. Zobacz
 [wyniki walidacji](docs/VALIDATION.md) i [warunki odbioru](CONTRIBUTING.md).
 

@@ -42,7 +42,9 @@ validates expected filenames, sizes, hashes, recipe and core receipt before
 signing outputs and creating a unique release. Artifacts are never treated as
 shell scripts. Completed artifacts determine independent downstream matrices,
 so a failed sibling cannot suppress verified packages. The publisher opens a
-registry-only PR. A trusted main-branch reconciler verifies its records against
+registry-only PR using a repository-scoped private GitHub App installation token.
+This lets PR checks start without the approval gate for `GITHUB_TOKEN`-authored PRs.
+A trusted main-branch reconciler accepts the configured App identity and verifies its records against
 the attested release manifest, updates an outdated base, dispatches required
 tests and merges only the exact validated head once the ruleset checks pass.
 No pending GitHub auto-merge request survives a later push. Source changes still require

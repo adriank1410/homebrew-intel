@@ -47,13 +47,16 @@ boundary: untrusted inputs should not be promoted to trusted source.
 Downloaded artifacts are validated as bounded data. The publishing stage never
 sources a downloaded shell/Python/Ruby script. The writer creates a unique
 release and registry branch. Registry automation opens PRs and performs immediate head-pinned merges
-only for same-repository bot PRs whose complete registry diff matches an attested
+only for same-repository PRs from the configured App whose complete registry diff matches an attested
 release manifest. Required tests and branch protection remain effective. GitHub
 auto-merge is not queued: each merge revalidates the current head and supplies
 `--match-head-commit`, so later branch changes cannot inherit approval. It does
 not approve reviews, replace release assets, move tags, or force-push. GitHub
-bundles permission to create and approve PRs in one repository setting; the
-workflow uses creation only. Inspect repository
+App tokens are restricted to this repository, expire after one hour and are
+revoked at job completion. The private key is supplied only to the token action
+in trusted main-branch publishing/registry jobs. The built-in token separately
+reads/verifies attestations; the App has only Contents, Pull requests and Actions
+write permissions plus mandatory Metadata read. Inspect repository
 protections separately; Markdown policy is not a server-side access control.
 
 ## Retained state and limitations

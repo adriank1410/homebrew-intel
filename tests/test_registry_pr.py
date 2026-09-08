@@ -2,20 +2,22 @@
 import base64
 import copy
 import json
+import os
 import unittest
-from unittest.mock import patch
+from unittest.mock import ANY, patch
 
 from helpers import G, record
 from intelbrew.core import Error
-from intelbrew.registry_pr import (BOT, allowed_pr, changed_registry_files,
+from intelbrew.registry_pr import (allowed_pr, changed_registry_files,
                                    ensure_pr, validate_manifest_records, _record_from_content,
-                                   _workflow_state, reconcile)
+                                   _workflow_state, reconcile, validate_pr)
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
 BRANCH = "bottles/intel-123-1-tool"
 RELEASE = "intel-123-1-tool"
 HEAD = "c" * 40
+BOT = "app/github-actions"
 
 
 def pull_request(**changes):
@@ -40,6 +42,13 @@ def pull_request(**changes):
 
 
 class RegistryPullRequestTests(unittest.TestCase):
+    def setUp(self):
+        self._bot_env = patch.dict(os.environ, {"INTELBREW_BOT_LOGIN": BOT})
+        self._bot_env.start()
+
+    def tearDown(self):
+        self._bot_env.stop()
+
     def _gh_fixture(self, pr, *, workflow_runs=()):
         manifest_record = copy.deepcopy(record(release=None))
         manifest = {"schema": 1, "verified": True, "root": "tool", "core_commit": G,
@@ -65,6 +74,28 @@ class RegistryPullRequestTests(unittest.TestCase):
 
     def test_accepts_actual_gh_cli_actions_author(self):
         self.assertTrue(allowed_pr(pull_request(author={"is_bot": True, "login": "app/github-actions"}), repository=REPOSITORY))
+
+    def test_requires_exact_configured_app_login(self):
+        with patch.dict(os.environ, {"INTELBREW_BOT_LOGIN": "app/intelbrew-publisher"}):
+            self.assertTrue(allowed_pr(pull_request(author={"is_bot": True, "login": "app/intelbrew-publisher"}), repository=REPOSITORY))
+            self.assertFalse(allowed_pr(pull_request(author={"is_bot": True, "login": BOT}), repository=REPOSITORY))
+
+    def test_missing_or_malformed_app_login_fails_closed(self):
+        for value in (None, "", "intelbrew-publisher", "app/", "app/foo/bar", "app/UPPER"):
+            with self.subTest(value=value):
+                env = {} if value is None else {"INTELBREW_BOT_LOGIN": value}
+                with patch.dict(os.environ, env, clear=True):
+                    self.assertFalse(allowed_pr(pull_request(), repository=REPOSITORY))
+
+    def test_validate_pr_forwards_optional_attestation_token(self):
+        pr = pull_request()
+        fake, manifest_bytes = self._gh_fixture(pr)
+        with patch.dict(os.environ, {"INTELBREW_ATTESTATION_TOKEN": "secret"}), \
+             patch("intelbrew.registry_pr.gh", side_effect=fake), \
+             patch("intelbrew.registry_pr.download", side_effect=lambda url, target, digest, size: target.write_bytes(manifest_bytes)), \
+             patch("intelbrew.registry_pr.attest") as attest_mock:
+            validate_pr(REPOSITORY, pr)
+        attest_mock.assert_called_once_with(ANY, REPOSITORY, G, token="secret")
 
     def test_only_same_repo_bot_registry_pr_is_allowed(self):
         self.assertTrue(allowed_pr(pull_request(), repository=REPOSITORY))

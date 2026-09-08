@@ -32,6 +32,20 @@ was also downloaded on the local Mac: SHA-256, attestation, archive contents and
 local formula identity checks passed. The local installation was already current,
 so it was not reinstalled.
 
+The [simdjson pipeline](https://github.com/adriank1410/homebrew-intel/actions/runs/34253631041)
+passed build and fresh-runner installation for 4.6.11. Publication succeeded on
+attempt 2 after a transient GitHub artifact-download HTTP 403. The
+[release](https://github.com/adriank1410/homebrew-intel/releases/tag/intel-34253631041-2-simdjson)
+was downloaded and verified locally (SHA-256, attestation, archive checks).
+`brew intel upgrade simdjson --apply` installed zero packages because 4.6.11 was
+already installed. No local reinstall or compilation was forced.
+
+The publisher created [PR #19](https://github.com/adriank1410/homebrew-intel/pull/19).
+Its required PR workflow needed a one-time human approval under `GITHUB_TOKEN`.
+After approval, [registry maintenance](https://github.com/adriank1410/homebrew-intel/actions/runs/34255586336)
+validated and merged it as `github-actions[bot]` through the protected branch.
+This proves the controller's merge path, but not a fully unattended cycle.
+
 ## Local client verification
 
 ```sh
@@ -71,9 +85,11 @@ reported and skipped, with zero installations. Its `--json` output parsed as JSO
 
 ## Limits of this result
 
-This validates two published packages and the local client installation path for
+This validates three published packages and the local client installation path for
 `simdutf`, not every target or future Homebrew revision. The 44 target names are candidates. Scheduled
-builds remain disabled until the automation deployment is accepted. License
-review can block dependencies. Failure isolation and automatic registry PR
-maintenance are under validation; no unattended production cycle is claimed yet. There is no claim of complete Intel or Qt
+builds and hourly registry maintenance were enabled on 2026-09-08. License
+review can block dependencies. A separate branch run confirmed that a blocked
+`gnupg` root did not suppress building and verifying `simdjson`. The private App
+authentication change is pending production acceptance; no fully unattended
+production cycle is claimed yet. There is no claim of complete Intel or Qt
 coverage, reproducible builds, atomic rollback, or support outside Intel Sequoia.
