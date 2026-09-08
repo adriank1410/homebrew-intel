@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "77f4bb7e8aa136e72360b5ad90c2b51968689d4e",
+  "filename": "openssl@3--3.6.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+  "license": "Apache-2.0",
+  "name": "openssl@3",
+  "pkg_version": "3.6.4",
+  "recipe_sha256": "6216802c53421571f69c2be676bed96c42a559e2dc6c230949f47181909a2f80",
+  "release": "intel-34280013654-1-tor",
+  "revision": 0,
+  "run_id": "34280013654",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    }
+  ],
+  "schema": 1,
+  "sha256": "9b3fca279967229a3b5034fd0acd6d79401c414adf87910736b5113eb07151f4",
+  "size": 10465692,
+  "source": {
+    "filename": "openssl@3--3.6.4.sources.tar.gz",
+    "sha256": "f061cec5f3e41bceee9d5160738da3daa0a615cde220e96f8b2173d184bced47",
+    "size": 54986360
+  },
+  "tag": "sequoia",
+  "version": "3.6.4",
+  "version_scheme": 0,
+  "workflow_commit": "933f40f7f5013294d0ec8d71e1e0a07d2297fe25"
+}
