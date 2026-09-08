@@ -1,5 +1,9 @@
 # Gotowe pakiety Homebrew dla Maców z Intelem
 
+**Wersja testowa (preview):** dwa pakiety przeszły budowanie i weryfikację butelek;
+pełny odbiór rozwiązania nie jest jeszcze zakończony. Zobacz
+[wyniki walidacji](docs/VALIDATION.md) i [warunki odbioru](CONTRIBUTING.md).
+
 Gotowe pakiety binarne (*bottles*) dla Maców z Intelem i macOS Sequoia (15).
 Komenda `brew intel` korzysta z oficjalnych pakietów, a gdy ich brakuje —
 ze zweryfikowanych buildów tego repozytorium. Pakiety zachowują tożsamość

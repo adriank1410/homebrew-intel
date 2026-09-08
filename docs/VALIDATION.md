@@ -60,8 +60,7 @@ new version. The version-specific benchmark and conversion tests above exercised
 ## Limits of this result
 
 This validates two published packages and the local client installation path for
-`simdutf`, not every
-target or future Homebrew revision. The 44 target names are candidates. Scheduled
+`simdutf`, not every target or future Homebrew revision. The 44 target names are candidates. Scheduled
 builds are disabled, license review can block dependencies, and a failing root
 in the current `all` matrix can block downstream verification for the batch.
 Registry updates still require review. There is no claim of complete Intel or Qt

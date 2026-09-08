@@ -1,5 +1,9 @@
 # Homebrew Intel bottles
 
+**Preview:** two packages have passed build and bottle verification; broader
+release acceptance is still incomplete. See [validation results](docs/VALIDATION.md)
+and the [acceptance checklist](CONTRIBUTING.md).
+
 Prebuilt Homebrew packages for Intel Macs running macOS Sequoia (15).
 `brew intel` uses official bottles when available and verified builds from this
 repository when they are missing. Packages keep their `homebrew/core` identity;
