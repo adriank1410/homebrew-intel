@@ -21,8 +21,9 @@ jobs:
   plan:
     if: >-
       github.repository == 'adriank1410/homebrew-intel' &&
-      github.ref == 'refs/heads/main' &&
-      (github.event_name == 'workflow_dispatch' || github.event_name == 'push' || vars.INTELBREW_ENABLE_SCHEDULE == 'true')
+      (github.event_name == 'workflow_dispatch' ||
+       (github.ref == 'refs/heads/main' &&
+        (github.event_name == 'push' || vars.INTELBREW_ENABLE_SCHEDULE == 'true')))
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     outputs:
@@ -62,6 +63,8 @@ jobs:
           persist-credentials: false
       - name: Isolate preseeded kegs and pin official Homebrew/core
         run: bash scripts/prepare-runner.sh
+      - name: Exercise the native bridge before building
+        run: INTELBREW_NATIVE_TESTS=1 /usr/bin/python3 -m unittest discover -s tests -p test_native.py -v
       - name: Build only missing bottles, with bounded licensing policy
         run: /usr/bin/python3 -m intelbrew.ci build --root "$ROOT_FORMULA" --output "$RUNNER_TEMP/candidate"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -106,6 +109,7 @@ jobs:
           retention-days: 1
           compression-level: 0
   publish:
+    if: github.ref == 'refs/heads/main'
     needs: [plan, verify]
     runs-on: ubuntu-24.04
     timeout-minutes: 30

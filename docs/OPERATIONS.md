@@ -19,6 +19,16 @@ To request a reviewed native build through the repository, edit
 and increment `sequence`. Only that path is a push trigger for the expensive
 bottle workflow; ordinary code/docs commits are not.
 
+Before merging pipeline changes, dispatch `bottles.yml` on the review branch
+with `formula=simdutf`. This runs the native source/guard tests, build and fresh
+runner verification. Publication remains restricted to `main`; a branch run
+cannot produce client-trusted releases. On an Intel Sequoia Mac, the read-only
+native tests (which may download source archives into Homebrew's cache) run with:
+
+```sh
+INTELBREW_NATIVE_TESTS=1 python3.11 -m unittest discover -s tests -p test_native.py -v
+```
+
 ## Review a build
 
 Open the workflow run on GitHub. Verify both Intel jobs, native receipts,
