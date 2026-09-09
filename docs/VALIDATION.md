@@ -125,3 +125,97 @@ disabled recipe and one unavailable current recipe (`openssl@1.1`). NumPy was
 eligible for monitoring; the current recipe had no Intel bottle and a blocked GCC
 source dependency. This is an eligibility audit, not proof that every added target
 can already be built or installed.
+
+The implemented expansion passed all 172 tests with native Homebrew integration
+enabled on the deployed revision, plus `python3.11 scripts/check-project.py` and
+`git diff --check`. PR #27 added shared native preflight, bounded additive sync,
+behind-branch recovery and runner preparation fixes.
+
+The [corrected Pydantic trial](https://github.com/adriank1410/homebrew-intel/actions/runs/34291062114)
+built `lz4` 1.10.0 and `pydantic` 2.13.5, then installed and verified them on a
+separate fresh Intel runner. The runner preparation moved 23 preinstalled
+framework-Python symlinks into its ephemeral backup; Python 3.13 and 3.14 bottles
+then poured and linked successfully. Publication was correctly skipped on this
+source branch. An earlier trial had exposed this collision; its preflight and
+`pcre2`/`protobuf` builds passed before the superseded run was cancelled.
+
+The real coverage publication lifecycle completed in two batches. The App updated
+[PR #28](https://github.com/adriank1410/homebrew-intel/pull/28) onto the current base,
+started the required checks and merged its 167 additions through branch protection.
+A normal local `brew intel sync --apply` then safely reused the retained branch to
+propose `yyjson` in [PR #29](https://github.com/adriank1410/homebrew-intel/pull/29);
+the App validated and merged that PR too. No manual merge or bypass was used for
+either coverage PR. Both changes were pulled into the installed tap on `main`.
+
+A subsequent `brew intel sync --apply` reported **214 monitored, zero eligible
+additions, 196 exclusions**, and created no PR. Exclusions still comprise 150
+license reviews, 39 Qt entries, four blocked source roots, one options/HEAD
+installation, one disabled formula and one unavailable current recipe. Local
+`brew intel doctor` passed; `brew intel upgrade --available --json` returned an
+empty installation plan and reported NumPy plus 39 Qt roots as unavailable.
+The local verification did not trigger source compilation or broad upgrades.
+
+
+The production `all` run on the expanded list used one native preflight for all
+214 roots. It found 129 already covered roots, 45 eligible build candidates and
+40 blocked roots, then selected `you-get`, `yyjson`, `aom` and `archi-steam-farm`
+under the four-root rotating batch limit. NumPy's GCC dependency remained an
+explicit source-build exclusion. This confirms the full-list selection path;
+build and publication outcomes are recorded separately below.
+
+
+The `aom` build stopped at the source-provenance boundary: its upstream recipe
+fetches a Git checkout instead of a checksum-backed archive, so the native bridge
+rejected it with `Non-archive/VCS resource needs review`. Native metadata now identifies VCS sources in the stable recipe, resources and
+patch resources. Planning rejects source builds with that metadata before
+traversing dependencies or allocating a build job. Official and exact personal
+bottles remain usable; the late source guard is unchanged.
+
+
+`archi-steam-farm` exposed another preinstalled runner link: the official .NET
+bottle poured, but `/usr/local/bin/dotnet` still pointed into the runner account's
+`.dotnet` directory. Runner preparation now also retains that exact symlink in
+its backup, deriving the account home from the OS account database. Other links
+and regular files remain untouched. The helper was renamed to
+`scripts/quarantine-runner-links.py` to describe its expanded scope.
+
+
+In that expanded production run, `you-get` and `yyjson` both passed build,
+independent verification and publication despite the failed siblings. The
+`you-get` plan published its missing `lz4` dependency; its root already had a
+usable bottle. The App merged registry PRs #31 and #32 through required checks,
+adding `lz4` 1.10.0 and `yyjson` 0.13.0. The registry then contained nine package
+records. This is evidence of partial-success publication, not an all-green run.
+
+
+Local downloads of the new `lz4` and `yyjson` release bottles passed SHA-256,
+GitHub attestation and archive checks. The temporary downloads were removed.
+
+
+After `brew update` refreshed the local recipe, `brew intel upgrade yyjson --apply`
+poured the published 0.13.0 bottle over the installed 0.12.0. The receipt reports
+`poured_from_bottle: true` and `homebrew/core`; `opt/yyjson` points to 0.13.0 and
+the old keg remains. `brew linkage --test yyjson` passed, as did a small C program
+using the installed library to parse Polish UTF-8 text and an integer. A second
+apply installed zero bottles. Temporary smoke-test files were removed.
+
+
+The installed reverse dependency `fastfetch` 2.68.1 still started, emitted valid
+JSON for 29 modules, and passed `brew linkage --test fastfetch` after the yyjson
+upgrade. The temporary hardware-output file was removed without publication.
+
+
+The corrected .NET trial (run 34296998659, core commit
+`17e093e46e5f83c187f71f00983f6dbb8d5eed98`) passed the former dotnet link failure
+and progressed into its Node build dependency. It was cancelled after inspection
+confirmed that ArchiSteamFarm also uses Git sources. It did not prove an ASF
+bottle build. This prompted the generic early VCS-source check, covering both
+AOM and ASF and future targets with the same source format. Existing VCS recipes
+with usable official or exact personal bottles are not rejected.
+
+
+After the generic VCS check, all 181 tests passed locally with native Homebrew
+integration enabled. Real Homebrew `Resource` objects exercised VCS detection in
+main sources, named resources and patch resources; planner tests confirmed early
+refusal, binary-provider preservation and sibling isolation. Project checks and
+`git diff --check` also passed.

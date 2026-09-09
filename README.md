@@ -1,8 +1,9 @@
 # Homebrew Intel bottles
 
-**Preview:** seven packages have passed build and bottle verification; broader
-release acceptance is still incomplete. See [validation results](docs/VALIDATION.md)
-and the [acceptance checklist](CONTRIBUTING.md).
+**Preview:** bottle builds, independent verification and automated publication
+have passed production tests. Coverage remains limited; see the current
+[bottle registry](registry/), [validation results](docs/VALIDATION.md) and
+[acceptance checklist](CONTRIBUTING.md).
 
 Prebuilt Homebrew packages for Intel Macs running macOS Sequoia (15).
 `brew intel` uses official bottles when available and verified builds from this
@@ -97,7 +98,7 @@ snapshots are not uploaded. Package installation remains a separate command.
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` to enable daily candidate checks and hourly
 PR maintenance. Scheduled checks inspect uncertain candidates together on one
-Intel runner and select a bounded batch of actual missing builds. Already covered
+Intel runner and select at most four roots needing builds per daily run. Already covered
 roots do not receive separate build/verification runners. Blocked roots are
 reported without stopping eligible siblings; pending builds rotate across runs.
 

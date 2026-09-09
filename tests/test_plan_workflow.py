@@ -250,6 +250,7 @@ class PlanWorkflowTests(unittest.TestCase):
                 "formula_sha256": (("a" if name == "missing" else "b") * 64),
                 "runtime": [], "build": [],
                 "test": [], "official_bottle": official, "license": "MIT",
+                "vcs_source": False,
             }
 
         class Inspector:
@@ -282,6 +283,7 @@ class PlanWorkflowTests(unittest.TestCase):
                     "revision": 0, "version_scheme": 0, "pkg_version": "1.0",
                     "formula_sha256": ("a" if name == "valid" else "b") * 64,
                     "runtime": [], "build": [], "test": [], "official_bottle": False,
+                    "vcs_source": False,
                     "license": "MIT" if name == "valid" else "GPL-3.0-only",
                 } for name in names}
 
@@ -292,6 +294,25 @@ class PlanWorkflowTests(unittest.TestCase):
             ["blocked", "valid"], Inspector(), {}, config)
         self.assertEqual(needed, ["valid"])
         self.assertIn("redistribution review required", blocked["blocked"])
+
+    def test_native_preflight_vcs_root_does_not_hide_buildable_sibling(self):
+        class Inspector:
+            def prime(self, names): pass
+            def __call__(self, names):
+                return {name: {
+                    "name": name, "tap": "homebrew/core", "version": "1.0",
+                    "revision": 0, "version_scheme": 0, "pkg_version": "1.0",
+                    "formula_sha256": ("a" if name == "valid" else "b") * 64,
+                    "runtime": [], "build": ["never-inspected"] if name == "vcs" else [],
+                    "test": [], "official_bottle": False, "vcs_source": name == "vcs",
+                    "license": "MIT",
+                } for name in names}
+        config = {"max_graph_nodes": 20, "max_source_builds": 5,
+                  "blocked_source_builds": [], "permissive_license_tokens": ["MIT"],
+                  "redistribution_exceptions": {}}
+        needed, blocked = native_plan.roots_needing_build(["vcs", "valid"], Inspector(), {}, config)
+        self.assertEqual(needed, ["valid"])
+        self.assertEqual(blocked, {"vcs": "VCS source needs review: vcs"})
 
 
 if __name__ == "__main__":

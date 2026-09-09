@@ -1,8 +1,9 @@
 # Gotowe pakiety Homebrew dla Maców z Intelem
 
-**Wersja testowa (preview):** siedem pakietów przeszło budowanie i weryfikację butelek;
-automatyczna publikacja i scalenie rejestru przeszły test produkcyjny. Zobacz
-[wyniki walidacji](docs/VALIDATION.md) i [warunki odbioru](CONTRIBUTING.md).
+**Wersja testowa (preview):** budowanie, niezależna weryfikacja i automatyczna
+publikacja butelek przeszły testy produkcyjne. Pokrycie pozostaje ograniczone;
+zobacz aktualny [rejestr butelek](registry/), [wyniki walidacji](docs/VALIDATION.md)
+i [warunki odbioru](CONTRIBUTING.md).
 
 Gotowe pakiety binarne (*bottles*) dla Maców z Intelem i macOS Sequoia (15).
 Komenda `brew intel` korzysta z oficjalnych pakietów, a gdy ich brakuje —
@@ -100,8 +101,8 @@ inwentarza nie są wysyłane. Instalacja pakietów pozostaje osobną komendą.
 
 Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza codzienne sprawdzanie
 kandydatów i cogodzinną obsługę PR-ów. Niepewni kandydaci są sprawdzani wspólnie
-na jednym runnerze Intel; dopiero rzeczywiście brakujące buildy trafiają do
-ograniczonej partii. Pakiety z dostępnymi butelkami nie zajmują osobnych runnerów
+na jednym runnerze Intel; do dziennej partii trafiają najwyżej cztery cele
+wymagające budowania. Pakiety z dostępnymi butelkami nie zajmują osobnych runnerów
 budowania i weryfikacji. Blokady są raportowane niezależnie od pozostałych
 pakietów, a oczekujące buildy są wybierane rotacyjnie.
 

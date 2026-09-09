@@ -83,6 +83,20 @@ class PlannerTests(unittest.TestCase):
         with self.assertRaisesRegex(Error,'exceeds'):self.plan({'tool':meta(runtime=['dep'],official=True),'dep':meta('dep',official=True)},max_nodes=1)
     def test_blocked_heavy(self):
         with self.assertRaisesRegex(Error,'excluded'):self.plan({'tool':meta()},build=True,blocked=['tool'])
+    def test_vcs_source_build_is_rejected_before_dependencies_are_inspected(self):
+        calls=[]
+        def inspect(names):
+            calls.append(list(names))
+            return {name: copy.deepcopy({'tool':meta('tool',build=['dep'],vcs_source=True),
+                                         'dep':meta('dep')}[name]) for name in names}
+        with self.assertRaisesRegex(Error,'VCS source needs review: tool'):
+            Planner(inspect,{},build=True).make(['tool'])
+        self.assertEqual(calls,[['tool']])
+    def test_vcs_source_metadata_does_not_block_binary_providers(self):
+        official=self.plan({'tool':meta(official=True,vcs_source=True)},build=True)
+        personal=self.plan({'tool':meta(vcs_source=True)},records={'tool':record()},build=True)
+        self.assertEqual(official['nodes']['tool']['provider'],'official')
+        self.assertEqual(personal['nodes']['tool']['provider'],'personal')
     def test_alias_not_accepted(self):
         with self.assertRaises(Error):self.plan({'tool':meta('canonical')})
     def test_root_dedup(self):self.assertEqual(self.plan({'tool':meta(official=True)},roots=['tool','homebrew/core/tool'])['roots'],['tool'])

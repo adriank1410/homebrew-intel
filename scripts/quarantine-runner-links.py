@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # SPDX-License-Identifier: BSD-2-Clause
-"""Move conflicting Apple/GitHub Python framework links on ephemeral runners."""
+"""Move known conflicting tool links on ephemeral GitHub Intel runners."""
 import os
+import pwd
 import sys
 from pathlib import Path
 
@@ -22,15 +23,18 @@ def require_ci_runner():
 
 
 def quarantine_links(bin_dir, backup_dir, *, framework_root=Path(
-        "/Library/Frameworks/Python.framework")):
+        "/Library/Frameworks/Python.framework"), runner_home=None):
     bin_dir = Path(bin_dir)
     backup_dir = Path(backup_dir)
     framework_root = Path(os.path.abspath(str(framework_root)))
+    if runner_home is None:
+        runner_home = Path(pwd.getpwuid(os.getuid()).pw_dir)
+    runner_dotnet = Path(os.path.abspath(str(Path(runner_home) / ".dotnet/dotnet")))
     if backup_dir.is_symlink() or not backup_dir.is_dir():
         raise Error("Invalid runner backup directory")
-    destination = backup_dir / "framework-python-links"
+    destination = backup_dir / "runner-links"
     if destination.is_symlink():
-        raise Error("Invalid framework link backup directory")
+        raise Error("Invalid runner link backup directory")
 
     candidates = []
     for entry in sorted(bin_dir.iterdir(), key=lambda item: item.name):
@@ -41,19 +45,20 @@ def quarantine_links(bin_dir, backup_dir, *, framework_root=Path(
         if not target.is_absolute():
             target = bin_dir / target
         target = Path(os.path.abspath(str(target)))
+        is_framework_python = False
         try:
-            relative = target.relative_to(framework_root)
+            parts = target.relative_to(framework_root).parts
+            is_framework_python = (
+                len(parts) == 4 and parts[0] == "Versions" and parts[2] == "bin")
         except ValueError:
-            continue
-        parts = relative.parts
-        if len(parts) != 4 or parts[0] != "Versions" or parts[2] != "bin":
-            continue
-        candidates.append(entry)
+            pass
+        if is_framework_python or (entry.name == "dotnet" and target == runner_dotnet):
+            candidates.append(entry)
 
     for entry in candidates:
         target = destination / entry.name
         if target.exists() or target.is_symlink():
-            raise Error(f"Framework link backup destination exists: {entry.name}")
+            raise Error(f"Runner link backup destination exists: {entry.name}")
     if candidates:
         destination.mkdir()
         for entry in candidates:
@@ -67,9 +72,9 @@ def main():
         if len(sys.argv) != 2:
             raise Error("Expected runner backup directory")
         moved = quarantine_links(Path("/usr/local/bin"), Path(sys.argv[1]))
-        print("Framework Python links retained: " + (", ".join(moved) if moved else "none"))
+        print("Runner tool links retained: " + (", ".join(moved) if moved else "none"))
         return 0
-    except (Error, OSError, ValueError) as exc:
+    except (Error, OSError, KeyError, ValueError) as exc:
         print(exc, file=sys.stderr)
         return 1
 
