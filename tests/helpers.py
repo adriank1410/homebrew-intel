@@ -15,6 +15,7 @@ def meta(name='tool', runtime=(), build=(), test=(), official=False, installed=F
                   official_bottle={'tag': 'sonoma'} if official else None,
                   disabled=False, installed_current=installed, installed_newer=False,
                   installed_options=[], installed_head=False, foreign_install=False, pinned=False,
+                  vcs_source=False,
                   installed_versions=['1.0'] if installed else [], runtime=list(runtime), build=list(build), test=list(test))
     result.update(extra)
     return result

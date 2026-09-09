@@ -114,9 +114,11 @@ class Planner:
                 if m.get('foreign_install'):raise Error(f'Foreign install: {name}')
                 if m.get('installed_newer'):raise Error(f'Refusing downgrade: {name}')
                 if m.get('pinned') and not m.get('installed_current'):raise Error(f'Pinned formula would change: {name}')
+                if type(m.get('vcs_source')) is not bool:raise Error(f'Invalid source strategy metadata: {name}')
                 rec=matching_record(m,self.records)
                 provider='installed' if m.get('installed_current') and not self.build else 'official' if m.get('official_bottle') else 'personal' if rec else 'build' if self.build else 'missing'
                 if provider=='build' and name in self.blocked:raise Error(f'Source build excluded by policy: {name}')
+                if provider=='build' and m['vcs_source']:raise Error(f'VCS source needs review: {name}')
                 deps=set(m.get('runtime',[]))
                 if provider=='build':deps.update(m.get('build',[]));deps.update(m.get('test',[]))
                 m.update(provider=provider,dependencies=sorted(deps));self.nodes[name]=m;pending.update(deps-set(self.nodes))

@@ -166,9 +166,10 @@ build and publication outcomes are recorded separately below.
 
 The `aom` build stopped at the source-provenance boundary: its upstream recipe
 fetches a Git checkout instead of a checksum-backed archive, so the native bridge
-rejected it with `Non-archive/VCS resource needs review`. The source-build policy
-now excludes `aom` before runner allocation for that root. It stays monitored and
-can still use an available official bottle; the source guard was not weakened.
+rejected it with `Non-archive/VCS resource needs review`. Native metadata now identifies VCS sources in the stable recipe, resources and
+patch resources. Planning rejects source builds with that metadata before
+traversing dependencies or allocating a build job. Official and exact personal
+bottles remain usable; the late source guard is unchanged.
 
 
 `archi-steam-farm` exposed another preinstalled runner link: the official .NET
@@ -177,3 +178,44 @@ bottle poured, but `/usr/local/bin/dotnet` still pointed into the runner account
 its backup, deriving the account home from the OS account database. Other links
 and regular files remain untouched. The helper was renamed to
 `scripts/quarantine-runner-links.py` to describe its expanded scope.
+
+
+In that expanded production run, `you-get` and `yyjson` both passed build,
+independent verification and publication despite the failed siblings. The
+`you-get` plan published its missing `lz4` dependency; its root already had a
+usable bottle. The App merged registry PRs #31 and #32 through required checks,
+adding `lz4` 1.10.0 and `yyjson` 0.13.0. The registry then contained nine package
+records. This is evidence of partial-success publication, not an all-green run.
+
+
+Local downloads of the new `lz4` and `yyjson` release bottles passed SHA-256,
+GitHub attestation and archive checks. The temporary downloads were removed.
+
+
+After `brew update` refreshed the local recipe, `brew intel upgrade yyjson --apply`
+poured the published 0.13.0 bottle over the installed 0.12.0. The receipt reports
+`poured_from_bottle: true` and `homebrew/core`; `opt/yyjson` points to 0.13.0 and
+the old keg remains. `brew linkage --test yyjson` passed, as did a small C program
+using the installed library to parse Polish UTF-8 text and an integer. A second
+apply installed zero bottles. Temporary smoke-test files were removed.
+
+
+The installed reverse dependency `fastfetch` 2.68.1 still started, emitted valid
+JSON for 29 modules, and passed `brew linkage --test fastfetch` after the yyjson
+upgrade. The temporary hardware-output file was removed without publication.
+
+
+The corrected .NET trial (run 34296998659, core commit
+`17e093e46e5f83c187f71f00983f6dbb8d5eed98`) passed the former dotnet link failure
+and progressed into its Node build dependency. It was cancelled after inspection
+confirmed that ArchiSteamFarm also uses Git sources. It did not prove an ASF
+bottle build. This prompted the generic early VCS-source check, covering both
+AOM and ASF and future targets with the same source format. Existing VCS recipes
+with usable official or exact personal bottles are not rejected.
+
+
+After the generic VCS check, all 181 tests passed locally with native Homebrew
+integration enabled. Real Homebrew `Resource` objects exercised VCS detection in
+main sources, named resources and patch resources; planner tests confirmed early
+refusal, binary-provider preservation and sibling isolation. Project checks and
+`git diff --check` also passed.
