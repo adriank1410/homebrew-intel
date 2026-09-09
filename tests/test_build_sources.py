@@ -31,8 +31,11 @@ class BuildSourcesTests(unittest.TestCase):
             subprocess.run(["git", "-C", str(checkout), "remote", "add", "origin",
                             "https://github.com/example/project"], check=True)
             (checkout / "src").mkdir(); (checkout / "src/main.rs").write_bytes(b"git source")
+            helper = checkout / "scripts/helper.sh"
+            helper.parent.mkdir(); helper.write_bytes(b"#!/bin/sh\nexit 0\n"); helper.chmod(0o755)
             (checkout / "docs/target").mkdir(parents=True); (checkout / "docs/target/guide.md").write_bytes(b"docs")
-            subprocess.run(["git", "-C", str(checkout), "add", "src/main.rs", "docs/target/guide.md"], check=True)
+            subprocess.run(["git", "-C", str(checkout), "add", "src/main.rs", "scripts/helper.sh",
+                            "docs/target/guide.md"], check=True)
             subprocess.run(["git", "-C", str(checkout), "commit", "-q", "-m", "fixture"], check=True)
             result = collect_build_sources({"homebrew_cache": str(cache), "go_mod_cache": str(go),
                                             "cargo_cache": str(cargo)}, Path(raw) / "out")
@@ -45,6 +48,11 @@ class BuildSourcesTests(unittest.TestCase):
             self.assertIn("cargo/registry/cache/index/pkg-1.0.0.crate", labels)
             self.assertIn("cargo/git/checkouts/repo/rev/src/main.rs", labels)
             self.assertIn("cargo/git/checkouts/repo/rev/docs/target/guide.md", labels)
+            helper_record = next(item for item in result["files"]
+                                 if item["label"] == "cargo/git/checkouts/repo/rev/scripts/helper.sh")
+            self.assertEqual(helper_record["mode"], 0o755)
+            self.assertEqual(Path(helper_record["path"]).stat().st_mode & 0o777, 0o755)
+            self.assertTrue(all(item["mode"] in {0o644, 0o755} for item in result["files"]))
             revision = "cargo/git-revisions/repo/rev.json"
             self.assertIn(revision, labels)
             metadata = json.loads(Path(next(item["path"] for item in result["files"]

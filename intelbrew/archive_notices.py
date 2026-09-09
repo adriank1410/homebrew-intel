@@ -103,7 +103,7 @@ def archive_notices(path: Path, max_notice_size: int, max_notices: int):
             with zipfile.ZipFile(path) as archive:
                 for member in archive.infolist():
                     mode = (member.external_attr >> 16) & 0o170000
-                    if (not member.is_dir() and mode != 0o120000 and _safe_name(member.filename)
+                    if (not member.is_dir() and mode in (0, 0o100000) and _safe_name(member.filename)
                             and NOTICE_NAME.fullmatch(PurePosixPath(member.filename).name)
                             and 0 < member.file_size <= max_notice_size):
                         if len(found) >= max_notices:

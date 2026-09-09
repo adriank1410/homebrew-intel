@@ -184,7 +184,7 @@ def download(url,target,expected_sha,expected_size):
 def check_bottle(path,record,*,license_notices=None):
     validate_record(record,published=record['release'] is not None)
     if path.is_symlink() or path.stat().st_size!=record['size'] or digest(path)!=record['sha256']:raise Error('Bottle digest/size mismatch')
-    base=PurePosixPath(record['name'],record['pkg_version']);recipe_name=str(base/'.brew'/(record['name']+'.rb'));tab_name=str(base/'INSTALL_RECEIPT.json');recipe=tab=None;seen=set();symlinks=set();expanded=0
+    base=PurePosixPath(record['name'],record['pkg_version']);recipe_name=str(base/'.brew'/(record['name']+'.rb'));tab_name=str(base/'INSTALL_RECEIPT.json');recipe=tab=None;seen=set();symlinks=set();regular={};expanded=0
     required_notices={str(base/basename(name)):require_sha(sha) for name,sha in (license_notices or {}).items()}
     found_notices=set()
     try:
@@ -196,7 +196,13 @@ def check_bottle(path,record,*,license_notices=None):
                 if entry.issym():symlinks.add(name)
                 if len(seen)>250000:raise Error('Too many archive members')
                 if not (name==PurePosixPath(record['name']) or name==base or base in name.parents):raise Error('Files outside declared keg')
-                if entry.isdev() or entry.isfifo() or entry.islnk():raise Error('Unsupported special file/hard link')
+                if not (entry.isfile() or entry.isdir() or entry.issym() or entry.islnk()):raise Error('Unsupported special file')
+                if entry.islnk():
+                    target=PurePosixPath(entry.linkname)
+                    if target.is_absolute() or '..' in target.parts or str(target) not in regular:
+                        raise Error('Unsafe or unresolved archive hard link')
+                    expanded+=regular[str(target)]
+                elif entry.isfile():regular[norm]=entry.size
                 expanded+=entry.size
                 if expanded>15_000_000_000:raise Error('Expansion budget exceeded')
                 if norm in required_notices:

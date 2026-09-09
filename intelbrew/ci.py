@@ -42,11 +42,61 @@ def permissive_license(expression, allowed:set[str], *, depth:int=0)->bool:
     return not want and par==0
 
 
+def _string_license_requirements(expression:str,config:dict):
+    if len(expression)>4096:return None
+    tokens=re.findall(r"[A-Za-z0-9][A-Za-z0-9._+-]*|[()]",expression)
+    if not tokens or len(tokens)>256 or "".join(tokens)!=re.sub(r"\s+","",expression):return None
+    permissive=set(config["permissive_license_tokens"]);source=set(config.get("source_required_license_tokens",()))
+    exceptions=set(config.get("source_required_license_exceptions",()))
+    position=0
+    def primary(depth):
+        nonlocal position
+        if depth>12 or position>=len(tokens):raise ValueError
+        token=tokens[position]
+        if token=="(":
+            position+=1;requirements=or_expression(depth+1)
+            if position>=len(tokens) or tokens[position]!=")":raise ValueError
+            position+=1;return requirements,None
+        if token in {"AND","OR","WITH",")"}:raise ValueError
+        position+=1
+        if token in permissive:return (),token
+        if token in source:return (token,),token
+        raise ValueError
+    def with_expression(depth):
+        nonlocal position
+        requirements,license_id=primary(depth)
+        if position<len(tokens) and tokens[position]=="WITH":
+            if license_id is None or position+1>=len(tokens):raise ValueError
+            exception=tokens[position+1]
+            if exception in {"AND","OR","WITH","(",")"}:raise ValueError
+            pair=f"{license_id} WITH {exception}"
+            if pair not in exceptions:raise ValueError
+            position+=2;return (pair,)
+        return requirements
+    def and_expression(depth):
+        nonlocal position
+        requirements=with_expression(depth)
+        while position<len(tokens) and tokens[position]=="AND":
+            position+=1;other=with_expression(depth)
+            requirements=tuple(sorted(set(requirements)|set(other)))
+        return requirements
+    def or_expression(depth):
+        nonlocal position
+        choices=[and_expression(depth)]
+        while position<len(tokens) and tokens[position]=="OR":
+            position+=1;choices.append(and_expression(depth))
+        return min(choices,key=lambda item:(len(item),item))
+    try:
+        result=or_expression(0)
+        return result if position==len(tokens) else None
+    except ValueError:return None
+
+
 def _license_requirements(expression,config:dict,*,depth:int=0):
     if depth>12:return None
+    if isinstance(expression,str):return _string_license_requirements(expression,config)
     if permissive_license(expression,set(config["permissive_license_tokens"])):return ()
     source=set(config.get("source_required_license_tokens",()))
-    if isinstance(expression,str):return (expression,) if expression in source else None
     if not isinstance(expression,dict) or len(expression)!=1:return None
     key,value=next(iter(expression.items()))
     if key in {"any_of","all_of"}:
@@ -144,8 +194,10 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
         for i,item in enumerate(build_sources):
             path=Path(item["path"]);sha=require_sha(item["sha256"])
             if path.is_symlink() or not path.is_file() or path.stat().st_size!=item["size"] or digest(path)!=sha:raise Error("Build source changed")
+            mode=item["mode"]
+            if type(mode) is not int or mode not in (0o644,0o755) or path.stat().st_mode&0o7777!=mode:raise Error("Build source mode changed")
             filename=f"build-inputs/{i:03d}-{basename(path.name)}";bundle.add(path,arcname=filename,recursive=False)
-            index["build_sources"].append({"filename":filename,"label":item["label"],"sha256":sha,"size":item["size"]})
+            index["build_sources"].append({"filename":filename,"label":item["label"],"sha256":sha,"size":item["size"],"mode":mode})
         if requirements and not index["notices"]:raise Error(f"{name}: source-required license notice missing from upstream archives")
         data=(json.dumps(index,indent=2)+"\n").encode()
         if len(data)>MAX_JSON:raise Error("Source index exceeds budget")
@@ -204,10 +256,11 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
                 if member_hash(item["filename"])!=require_sha(item["sha256"]):raise Error("Source resource checksum mismatch")
                 expected.add(item["filename"])
             for item in build_sources:
-                if not isinstance(item,dict) or set(item)!={"filename","label","sha256","size"}:raise Error("Invalid build source")
+                if not isinstance(item,dict) or set(item)!={"filename","label","sha256","size","mode"}:raise Error("Invalid build source")
                 if not item["filename"].startswith("build-inputs/") or not _safe_archive_name(item["filename"]):raise Error("Invalid build source path")
                 if item["filename"] in expected:raise Error("Duplicate build source")
                 if type(item["size"]) is not int or item["size"]<0 or member_hash(item["filename"],size=item["size"])!=require_sha(item["sha256"]):raise Error("Build source checksum mismatch")
+                if type(item["mode"]) is not int or item["mode"] not in (0o644,0o755) or regular[item["filename"]].mode!=item["mode"]:raise Error("Build source mode mismatch")
                 expected.add(item["filename"])
             for item in notices:
                 if not isinstance(item,dict) or set(item)!={"filename","source","sha256"} or not _safe_archive_name(item["source"]):raise Error("Invalid source notice")

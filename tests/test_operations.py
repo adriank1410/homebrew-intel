@@ -81,6 +81,28 @@ class OperationTests(unittest.TestCase):
         cfg=load_config()
         self.assertEqual(allowed_redistribution(meta(license={'any_of':['MIT','GPL-3.0-only']}),cfg),())
         self.assertEqual(allowed_redistribution(meta(license={'all_of':['MIT','GPL-3.0-only','MPL-2.0']}),cfg),('GPL-3.0-only','MPL-2.0'))
+    def test_spdx_string_precedence_parentheses_and_exact_with(self):
+        cfg=load_config()
+        cases={
+            'MIT AND GPL-2.0-only':('GPL-2.0-only',),
+            'GPL-2.0-only OR GPL-3.0-only':('GPL-2.0-only',),
+            'MIT OR GPL-2.0-only AND MPL-2.0':(),
+            '(MIT OR GPL-2.0-only) AND MPL-2.0':('MPL-2.0',),
+            'Apache-2.0 WITH LLVM-exception':('Apache-2.0 WITH LLVM-exception',),
+            '(GPL-2.0-only OR GPL-3.0-only) AND MPL-2.0':('GPL-2.0-only','MPL-2.0'),
+        }
+        for expression,requirements in cases.items():
+            with self.subTest(expression=expression):
+                self.assertEqual(allowed_redistribution(meta(license=expression),cfg),requirements)
+    def test_spdx_string_rejects_unknown_or_malformed_compounds(self):
+        cfg=load_config()
+        expressions=['MIT AND Unknown','MIT OR','OR MIT','MIT WITH unknown','(MIT OR GPL-2.0-only',
+                     'MIT GPL-2.0-only','MIT WITH LLVM-exception WITH LLVM-exception',
+                     '(Apache-2.0) WITH LLVM-exception','MIT and GPL-2.0-only',
+                     '('*13+'MIT'+')'*13,' OR '.join(['MIT']*129)]
+        for expression in expressions:
+            with self.subTest(expression=expression),self.assertRaises(Error):
+                allowed_redistribution(meta(license=expression),cfg)
     def test_exact_reviewed_license_exception(self):
         expression={'GPL-2.0-only':{'with':'Classpath-exception-2.0'}}
         self.assertEqual(allowed_redistribution(meta(license=expression),load_config()),('GPL-2.0-only WITH Classpath-exception-2.0',))
@@ -209,6 +231,23 @@ class SourceBundleTests(unittest.TestCase):
             bundle=source_bundle('nmap',item,sources,folder,sha[:40],G,requirements=requirements)
             rec=record(name='nmap',formula_sha256=sha,core_commit=sha[:40],license='cannot_represent')
             _validate_source_bundle(bundle,rec,cfg)
+    def test_build_input_executable_mode_is_indexed_and_verified(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder);helper=folder/'helper.sh'
+            helper.write_bytes(b'#!/bin/sh\nexit 0\n');helper.chmod(0o755)
+            entry={'path':str(helper),'label':'cargo/git/checkouts/repo/rev/helper.sh',
+                   'sha256':hashlib.sha256(helper.read_bytes()).hexdigest(),'size':helper.stat().st_size,'mode':0o755}
+            bundle=source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,
+                                 requirements=('GPL-3.0-only',),build_sources=[entry])
+            rec=record(formula_sha256=item['formula_sha256'],core_commit=item['formula_sha256'][:40],license='GPL-3.0-only')
+            with tarfile.open(bundle) as archive:
+                index=json.load(archive.extractfile('sources.json'))
+                self.assertEqual(index['build_sources'][0]['mode'],0o755)
+                self.assertEqual(archive.getmember(index['build_sources'][0]['filename']).mode,0o755)
+            _validate_source_bundle(bundle,rec,load_config())
+            index['build_sources'][0]['mode']=0o644
+            self._replace_member(bundle,'sources.json',json.dumps(index).encode())
+            with self.assertRaisesRegex(Error,'mode'):_validate_source_bundle(bundle,rec,load_config())
     def test_infozip_build_instructions_mark_the_patched_distribution(self):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);item,sources=self._fixture(folder);item['license']='Info-ZIP'

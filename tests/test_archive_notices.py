@@ -27,9 +27,14 @@ class ArchiveNoticeTests(unittest.TestCase):
             zip_path = root / "source.zip"
             with zipfile.ZipFile(zip_path, "w") as archive:
                 archive.writestr("pkg/NOTICE", b"zip notice")
-                link = zipfile.ZipInfo("pkg/COPYING"); link.external_attr = 0o120777 << 16
-                archive.writestr(link, b"NOTICE")
-            self.assertEqual(archive_notices(zip_path, 1024, 4), [("pkg/NOTICE", b"zip notice")])
+                regular = zipfile.ZipInfo("pkg/LICENSE.txt"); regular.external_attr = 0o100644 << 16
+                archive.writestr(regular, b"regular notice")
+                for name, mode in (("COPYING", 0o120777), ("LICENSE", 0o010644),
+                                   ("LICENCE", 0o020644), ("COPYRIGHT", 0o140644)):
+                    special = zipfile.ZipInfo("pkg/" + name); special.external_attr = mode << 16
+                    archive.writestr(special, b"fake notice")
+            self.assertEqual(archive_notices(zip_path, 1024, 4),
+                             [("pkg/NOTICE", b"zip notice"), ("pkg/LICENSE.txt", b"regular notice")])
 
     def test_enforces_size_count_and_argument_bounds(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -76,6 +76,7 @@ def collect_build_sources(context: dict[str, Any], output: Path) -> dict[str, An
                 source_handle.close()
                 raise Error(f"Unsafe package-manager cache entry: {source}")
             size = source_stat.st_size
+            mode = 0o755 if source_stat.st_mode & 0o111 else 0o644
             total += size
             if len(records) >= MAX_FILES or total > MAX_BYTES:
                 source_handle.close()
@@ -92,8 +93,9 @@ def collect_build_sources(context: dict[str, Any], output: Path) -> dict[str, An
                 final_stat = os.fstat(source_handle.fileno())
             if copied != size or (final_stat.st_size, final_stat.st_mtime_ns) != (size, source_stat.st_mtime_ns):
                 raise Error(f"Package-manager cache entry changed during collection: {source}")
+            destination.chmod(mode)
             records.append({"label": label, "path": str(destination),
-                            "sha256": digest.hexdigest(), "size": size})
+                            "sha256": digest.hexdigest(), "size": size, "mode": mode})
     revisions = sorted({roots[1] / Path(*relative.parts[:4])
                         for _, kind, relative, _ in candidates
                         if kind == "cargo" and relative.parts[:2] == ("git", "checkouts") and
@@ -121,7 +123,8 @@ def collect_build_sources(context: dict[str, Any], output: Path) -> dict[str, An
         if len(records) >= MAX_FILES or total > MAX_BYTES:
             raise Error("Package-manager source cache exceeds collection limit")
         destination.write_bytes(data)
+        destination.chmod(0o644)
         records.append({"label": label, "path": str(destination),
-                        "sha256": hashlib.sha256(data).hexdigest(), "size": len(data)})
+                        "sha256": hashlib.sha256(data).hexdigest(), "size": len(data), "mode": 0o644})
     records.sort(key=lambda item: item["label"])
     return {"schema": 1, "files": records}
