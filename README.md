@@ -78,13 +78,18 @@ global Homebrew settings are not changed.
 
 [The registry](registry/) lists the bottles available to the client.
 [The target list](policy/targets.json) contains monitored build candidates, not
-guaranteed bottles. License review, dependency availability and build limits can
-still block a target. Qt has explicit exclusions; NumPy can be monitored while a
-missing GCC build dependency prevents its build.
+guaranteed bottles. Monitoring includes stable, correctly identified installed
+`homebrew/core` formulae regardless of license or source-build feasibility.
+Redistribution policy, VCS sources, blocked source builds and Qt constraints are
+enforced later when planning a source build; they do not prevent use of an
+available official or personal bottle.
 
 `brew intel coverage` compares installed formulae with the target list locally.
-`brew intel sync` additionally checks current metadata and the existing license
-policy. Both are read-only without `--apply`; `--json` includes individual reasons.
+`brew intel sync` additionally checks current metadata and installation state. It
+excludes aliases and non-core names, disabled formulae or those without a stable
+version, options or HEAD installs, foreign installs, versions newer than stable,
+and missing or invalid metadata. Both are read-only without `--apply`; `--json`
+includes individual reasons.
 
 `brew intel sync --apply` publishes eligible new core names through one additive
 coverage PR. It requires the repository owner's authenticated `gh` account. The owner can
@@ -98,9 +103,11 @@ snapshots are not uploaded. Package installation remains a separate command.
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` to enable daily candidate checks and hourly
 PR maintenance. Scheduled checks inspect uncertain candidates together on one
-Intel runner and select at most four roots needing builds per daily run. Already covered
-roots do not receive separate build/verification runners. Blocked roots are
-reported without stopping eligible siblings; pending builds rotate across runs.
+Intel runner and select every eligible root needing a build. Already covered roots
+do not receive separate build/verification runners. Blocked roots are reported
+without stopping eligible siblings. Build and verification jobs remain limited to
+two concurrent Intel runners. Planning fails explicitly if more than GitHub's
+256-job matrix limit need builds, rather than silently omitting roots.
 
 The workflow builds and verifies on `macos-15-intel`, then publishes through a
 separate validation step. It uses official core recipes, a pinned Homebrew

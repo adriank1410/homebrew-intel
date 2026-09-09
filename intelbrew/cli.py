@@ -85,19 +85,17 @@ def filter_available_plan(plan: dict) -> tuple[dict, list[dict]]:
     return filtered, skipped
 
 
-def coverage_report(installed: dict, targets: list[str], exclusions: list[str]) -> dict:
+def coverage_report(installed: dict, targets: list[str]) -> dict:
     core = set(installed.get("core", ()))
     target_set = set(targets)
-    exclusion_set = set(exclusions)
     monitored = core & target_set
     unmonitored = core - target_set
-    policy_exclusions = unmonitored & exclusion_set
     return {
         "schema": 1,
         "monitored_core": sorted(monitored),
         "unmonitored_core": sorted(unmonitored),
-        "policy_exclusions": sorted(policy_exclusions),
-        "proposed_candidates": sorted(unmonitored - exclusion_set),
+        "policy_exclusions": [],
+        "proposed_candidates": sorted(unmonitored),
         "external_tap_formulae": sorted(set(installed.get("external_taps", ()))),
     }
 
@@ -111,7 +109,7 @@ def render_coverage(report: dict) -> None:
     print(f"Monitored core formulae ({len(monitored)}): "
           f'{", ".join(monitored) if monitored else "none"}')
     print(f"Core formulae not explicitly on target list ({len(unmonitored)})")
-    print(f"Policy exclusions ({len(exclusions)}): "
+    print(f"Monitoring exclusions ({len(exclusions)}): "
           f'{", ".join(exclusions) if exclusions else "none"}')
     print(f"Proposed candidates ({len(proposed)}): "
           f'{", ".join(proposed) if proposed else "none"}')
@@ -169,6 +167,8 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
                      record["sha256"], record["size"])
             attest(path, config["repository"], record["workflow_commit"])
             check_bottle(path, record)
+            source_url = artifact_url(config["repository"], record, record["source"]["filename"])
+            print(f"Source and license notices for {name}: {source_url}")
             downloaded[name] = path
         for name in plan["order"]:
             if plan["nodes"][name]["provider"] == "official":
@@ -243,7 +243,7 @@ def main(argv: list[str] | None = None) -> int:
             if targets_doc.get("schema") != 1 or not isinstance(targets_doc.get("formulae"), list):
                 raise Error("Invalid coverage target policy")
             installed = native({"mode": "coverage"})
-            report = coverage_report(installed, targets_doc["formulae"], [*config.get("blocked_source_builds", []), *config.get("target_exclusions", {})])
+            report = coverage_report(installed, targets_doc["formulae"])
             if args.json:
                 print(json.dumps(report, indent=2, sort_keys=True))
             else:
@@ -266,7 +266,7 @@ def main(argv: list[str] | None = None) -> int:
             if args.command == "upgrade":
                 targets_doc = read_json(Path(__file__).resolve().parents[1] / "policy/targets.json")
                 installed = native({"mode": "coverage"})
-                report = coverage_report(installed, targets_doc["formulae"], [*config.get("blocked_source_builds", []), *config.get("target_exclusions", {})])
+                report = coverage_report(installed, targets_doc["formulae"])
                 if report["unmonitored_core"] and not args.json:
                     stream = sys.stdout
                     print("Coverage notice: "

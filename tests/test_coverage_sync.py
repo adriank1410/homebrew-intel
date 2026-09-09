@@ -27,8 +27,8 @@ class CoverageSyncTests(unittest.TestCase):
         def inspect(names): calls.append(names); return {name: metadata[name] for name in names}
         report = coverage_report({"core": ["known", "qt6", "good", "llvm", "copyleft", "disabled"],
                                   "external_taps": ["tap/private"]}, ["known"], self.config, inspect)
-        self.assertEqual(report["eligible"], ["good"])
-        self.assertEqual([x["name"] for x in report["excluded"]], ["copyleft", "disabled", "llvm", "qt6"])
+        self.assertEqual(report["eligible"], ["copyleft", "good", "llvm", "qt6"])
+        self.assertEqual(report["excluded"], [{"name": "disabled", "reason": "disabled or non-stable formula"}])
         self.assertEqual(calls, [["copyleft", "disabled"], ["good", "llvm"], ["qt6"]])
         self.assertEqual(report["external_tap_count"], 1)
         self.assertNotIn("tap/private", str(report))
@@ -61,6 +61,16 @@ class CoverageSyncTests(unittest.TestCase):
                                  lambda _: {"head": meta("head", installed_head=True)})
         self.assertEqual(report["eligible"], [])
         self.assertEqual(report["excluded"][0]["reason"], "options or HEAD install requires review")
+
+    def test_monitoring_does_not_apply_source_build_or_redistribution_policy(self):
+        metadata = {
+            "blocked": meta("blocked", license="GPL-3.0-only"),
+            "qt6": meta("qt6", license="Proprietary"),
+        }
+        report = coverage_report({"core": ["blocked", "qt6"], "external_taps": []}, [], self.config,
+                                 lambda names: {name: metadata[name] for name in names})
+        self.assertEqual(report["eligible"], ["blocked", "qt6"])
+        self.assertEqual(report["excluded"], [])
 
     def test_publish_refuses_non_owner_identity_before_clone(self):
         with patch("intelbrew.coverage_sync.gh_json", return_value={"login": "someone-else"}), \
@@ -123,7 +133,8 @@ class CoverageSyncTests(unittest.TestCase):
             _require_regular_target("adriank1410/homebrew-intel", head)
 
     def _reconcile_fixture(self, *, merge_state="CLEAN", mode="100644", second_file=False,
-                           auto_merge=True, base_formulae=None, proposed_formulae=None):
+                           auto_merge=True, base_formulae=None, proposed_formulae=None,
+                           addition="good", license="MIT"):
         repository = "adriank1410/homebrew-intel"; head = "a" * 40
         root_tree = "b" * 40; policy_tree = "c" * 40
         pr = {"number": 9, "state": "OPEN", "author": {"login": "app/intelbrew"},
@@ -150,7 +161,7 @@ class CoverageSyncTests(unittest.TestCase):
             if f"git/trees/{policy_tree}" in joined: return json.dumps({"tree": [{"path": "targets.json", "mode": mode, "type": "blob", "sha": "d" * 40}]})
             if "contents/policy/targets.json" in joined:
                 base = ["known"] if base_formulae is None else base_formulae
-                proposed = ["good", "known"] if proposed_formulae is None else proposed_formulae
+                proposed = sorted([addition, "known"]) if proposed_formulae is None else proposed_formulae
                 return json.dumps(encoded(proposed if f"ref={head}" in args else base))
             if "actions/runs?" in joined:
                 return json.dumps({"workflow_runs": [{"head_sha": head, "path": ".github/workflows/checks.yml",
@@ -158,8 +169,8 @@ class CoverageSyncTests(unittest.TestCase):
             if args[:3] == ["pr", "merge", "9"]: return ""
             if "update-branch" in joined: return ""
             raise AssertionError(args)
-        catalog = json.dumps([{"name": "good", "tap": "homebrew/core", "versions": {"stable": "1.0"},
-                               "disabled": False, "license": "MIT"}]).encode()
+        catalog = json.dumps([{"name": addition, "tap": "homebrew/core", "versions": {"stable": "1.0"},
+                               "disabled": False, "license": license}]).encode()
         return repository, calls, boundary, catalog
 
     def test_reconcile_real_validation_merges_or_updates_and_disables_auto_merge(self):
@@ -202,6 +213,16 @@ class CoverageSyncTests(unittest.TestCase):
                          patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)), \
                          self.assertRaisesRegex(Error, message):
                         reconcile(repository)
+
+    def test_reconcile_uses_monitoring_rules_for_qt_and_license(self):
+        repository, calls, boundary, catalog = self._reconcile_fixture(
+            auto_merge=False, addition="qt", license="GPL-3.0-only")
+        with patch.dict(os.environ, {"INTELBREW_COVERAGE_LOGIN": "app/intelbrew"}), \
+             patch("intelbrew.registry_pr.gh", side_effect=boundary), \
+             patch("intelbrew.coverage_sync.gh", side_effect=boundary), \
+             patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)):
+            reconcile(repository)
+        self.assertTrue(any("--match-head-commit" in call for call in calls))
 
     def test_reconcile_rejects_foreign_author_before_disabling_auto_merge(self):
         repository, calls, boundary, catalog = self._reconcile_fixture()
