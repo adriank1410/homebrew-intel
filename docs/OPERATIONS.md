@@ -98,10 +98,11 @@ checks reviewed roots daily at 03:41 UTC. Linux preflight can omit fully covered
 roots only when its API metadata matches the resolved core revision. Uncertain
 roots are inspected together on a pinned Intel runner before allocating build
 jobs. This native preflight reuses metadata, checks source policy and reports
-blocked roots independently. Only roots needing a build enter the bounded rotating
-batch of at most four roots (with two concurrent build jobs). This limits daily work; it does not promise all missing packages are built
-on the day they first lose official bottles. Explicit small manual selections
-still force native verification; `all` uses the bounded preflight.
+blocked roots independently. Every eligible root needing a build enters the matrix,
+with at most two concurrent build jobs. Planning fails explicitly if more than
+GitHub's 256-job matrix limit need builds, rather than silently omitting roots.
+Explicit small manual selections still force native verification; `all` uses the
+same native preflight.
 Registry maintenance runs
 hourly at minute 17, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most
@@ -152,12 +153,13 @@ packages. The fixed `coverage/intel-installed` branch avoids duplicate PRs.
 Hourly coverage maintenance runs on trusted `main` with the same short-lived App
 token. It accepts only the expected owner, branch, repository and base; exactly
 `policy/targets.json` may change, strictly by adding canonical names. Current
-official metadata and the existing license and exclusion policy gate every new
-name. Required checks, an up-to-date branch and the validated head commit remain
+official metadata must identify a stable, enabled core formula. Licensing and
+source-build restrictions do not exclude monitoring. Required checks, an
+up-to-date branch and the validated head commit remain
 mandatory. It never approves a review or relaxes bottle publication checks.
 
 A new target is monitoring intent, not a distribution exception. The build
 planner still checks every dependency that must be compiled. For example, NumPy's
-permissive license does not authorize a blocked GCC source build; Qt modules stay
-excluded pending separate build and redistribution work. Metadata or license
-changes can stop an already-proposed addition and require review.
+permissive license does not resolve a blocked GCC source build. Qt modules are
+monitored too, while missing source-build and redistribution support is reported
+by build planning. Removal or disabling upstream can stop a proposed addition.

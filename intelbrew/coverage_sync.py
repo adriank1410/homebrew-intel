@@ -11,7 +11,6 @@ import urllib.request
 from pathlib import Path
 from typing import Any, Callable
 
-from .ci import permissive_license
 from .core import MAX_JSON, ROOT, Error, canonical_name, load_config, native, read_json, run
 from .registry_pr import (_disable_existing_auto_merge, _dispatch_checks,
                           _find_pr, _merge_if_ready, gh, gh_json)
@@ -21,23 +20,12 @@ MAIN = "main"
 MAX_INSTALLED = 2000
 
 
-def _exclusion_reason(name: str, meta: dict[str, Any], config: dict[str, Any]) -> str | None:
-    configured = config.get("target_exclusions", {})
-    if not isinstance(configured, dict):
-        raise Error("target_exclusions must be an object of exact formula names and reasons")
-    if name in configured:
-        reason = configured[name]
-        if not isinstance(reason, str) or not reason.strip():
-            raise Error(f"Invalid target exclusion reason: {name}")
-        return reason.strip()
-    if name in config.get("blocked_source_builds", ()): return "source build blocked by policy"
+def _exclusion_reason(name: str, meta: dict[str, Any]) -> str | None:
     if meta.get("name") != name or meta.get("tap") != "homebrew/core": return "non-core or renamed formula"
     if meta.get("disabled") or not meta.get("version"): return "disabled or non-stable formula"
     if meta.get("installed_options") or meta.get("installed_head"): return "options or HEAD install requires review"
     if meta.get("foreign_install"): return "foreign install"
     if meta.get("installed_newer"): return "installed version is newer than stable"
-    if not permissive_license(meta.get("license"), set(config["permissive_license_tokens"])):
-        return "license requires review"
     return None
 
 
@@ -68,7 +56,7 @@ def coverage_report(installed: dict[str, Any], targets: list[str], config: dict[
     for name in candidates:
         meta = metadata.get(name)
         reason = ("metadata inspection failed" if name in metadata_errors else
-                  "metadata missing" if not isinstance(meta, dict) else _exclusion_reason(name, meta, config))
+                  "metadata missing" if not isinstance(meta, dict) else _exclusion_reason(name, meta))
         if reason: excluded.append({"name": name, "reason": reason})
         else: eligible.append(name)
     return {"schema": 1, "monitored_core": sorted(set(names) & target_set),
@@ -283,7 +271,7 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
     official = _official_metadata()
     for name in sorted(set(proposed_names) - set(base_names)):
         meta = official.get(name)
-        if not meta or _exclusion_reason(name, meta, config): raise Error(f"Coverage target is no longer eligible: {name}")
+        if not meta or _exclusion_reason(name, meta): raise Error(f"Coverage target is no longer eligible: {name}")
 
 
 def reconcile(repository: str) -> None:
