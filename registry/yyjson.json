@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "7a78a07640f0fb60163644548b6f2236234be01e",
+  "filename": "yyjson--0.13.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "a955abb1405bfa364bb9a927ace9b0981fb786fdee69c690b1b3efabc648da86",
+  "license": "MIT",
+  "name": "yyjson",
+  "pkg_version": "0.13.0",
+  "recipe_sha256": "0d5e5e104557abf1f6b4f043340283c6b1dd12311bdc46302240f50aa0bbc152",
+  "release": "intel-34295549597-1-yyjson",
+  "revision": 0,
+  "run_id": "34295549597",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "7e4bbc99669e416019db711772d383a9c1adef66f564aced3c516afb1af0f9b6",
+  "size": 157496,
+  "source": {
+    "filename": "yyjson--0.13.0.sources.tar.gz",
+    "sha256": "5debd8e745943e3c06e5661537b6edfc47964686ab4aaa3714918179b08a7e34",
+    "size": 1638162
+  },
+  "tag": "sequoia",
+  "version": "0.13.0",
+  "version_scheme": 0,
+  "workflow_commit": "d3627f25d4ff6fe0a936f3508e6ac3067973feda"
+}
