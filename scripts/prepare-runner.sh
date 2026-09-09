@@ -12,6 +12,7 @@ brew_origin="$(/usr/bin/git -C "$brew_dir" remote get-url origin)";[[ "$brew_ori
 /usr/bin/git -C "$brew_dir" fetch --depth=1 origin "$brew_commit";/usr/bin/git -C "$brew_dir" checkout --detach "$brew_commit"
 core_dir="$brew_dir/Library/Taps/homebrew/homebrew-core";core_origin="$(/usr/bin/git -C "$core_dir" remote get-url origin)";[[ "$core_origin" == https://github.com/Homebrew/homebrew-core || "$core_origin" == https://github.com/Homebrew/homebrew-core.git ]] || exit 1
 backup_dir="$(/usr/bin/mktemp -d "${RUNNER_TEMP:?}/intelbrew-runner-backup.XXXXXXXX")";/bin/mv "$core_dir" "$backup_dir/homebrew-core-preseeded"
+/usr/bin/python3 "$project_dir/scripts/quarantine-framework-python-links.py" "$backup_dir"
 /usr/bin/git clone --filter=blob:none --no-checkout https://github.com/Homebrew/homebrew-core.git "$core_dir";[[ "$(/usr/bin/git -C "$core_dir" remote get-url origin)" == https://github.com/Homebrew/homebrew-core.git ]] || exit 1
 /usr/bin/git -C "$core_dir" fetch --depth=1 origin "$INTELBREW_CORE_COMMIT";/usr/bin/git -C "$core_dir" checkout --detach "$INTELBREW_CORE_COMMIT"
 [[ "$(/usr/bin/git -C "$brew_dir" rev-parse HEAD)" == "$brew_commit" && "$(/usr/bin/git -C "$core_dir" rev-parse HEAD)" == "$INTELBREW_CORE_COMMIT" ]] || exit 1

@@ -1,6 +1,6 @@
 # Homebrew Intel bottles
 
-**Preview:** four packages have passed build and bottle verification; broader
+**Preview:** seven packages have passed build and bottle verification; broader
 release acceptance is still incomplete. See [validation results](docs/VALIDATION.md)
 and the [acceptance checklist](CONTRIBUTING.md).
 
@@ -76,19 +76,30 @@ global Homebrew settings are not changed.
 ## Coverage and builds
 
 [The registry](registry/) lists the bottles available to the client.
-The 46 names in [the target list](policy/targets.json) are build candidates,
-not guaranteed coverage. New package names are not added automatically.
-Qt and other heavy builds listed in [the policy](policy/config.json) are excluded.
-License review, dependency availability and build limits can also block a target.
-Daily candidate checks are enabled by setting `INTELBREW_ENABLE_SCHEDULE=true` in the
-repository Actions variables. The same switch enables hourly registry maintenance.
+[The target list](policy/targets.json) contains monitored build candidates, not
+guaranteed bottles. License review, dependency availability and build limits can
+still block a target. Qt has explicit exclusions; NumPy can be monitored while a
+missing GCC build dependency prevents its build.
 
 `brew intel coverage` compares installed formulae with the target list locally.
-It reports candidates for review, explicit policy exclusions, and external-tap
-formulae. Use `--json` for structured output. It neither uploads your inventory
-nor adds targets automatically. An unlisted name may still have official bottles
-or be built as a target dependency. Add a new target through a reviewed change
-to `policy/targets.json` and a trial build.
+`brew intel sync` additionally checks current metadata and the existing license
+policy. Both are read-only without `--apply`; `--json` includes individual reasons.
+
+`brew intel sync --apply` publishes eligible new core names through one additive
+coverage PR. It requires the repository owner's authenticated `gh` account. The owner can
+insert `brew intel sync --apply &&` after `brew update &&` in the update chain
+above. Other users can inspect coverage with `brew intel sync` without publishing. The
+hourly maintenance job rechecks eligibility and merges only the exact validated
+head after protected checks pass. A later `brew update` brings the new list to the
+Mac. Repeated sync reuses the pending PR; uninstalling a formula does not remove
+it from monitoring. External-tap names, casks, local paths and full inventory
+snapshots are not uploaded. Package installation remains a separate command.
+
+Set `INTELBREW_ENABLE_SCHEDULE=true` to enable daily candidate checks and hourly
+PR maintenance. Scheduled checks inspect uncertain candidates together on one
+Intel runner and select a bounded batch of actual missing builds. Already covered
+roots do not receive separate build/verification runners. Blocked roots are
+reported without stopping eligible siblings; pending builds rotate across runs.
 
 The workflow builds and verifies on `macos-15-intel`, then publishes through a
 separate validation step. It uses official core recipes, a pinned Homebrew

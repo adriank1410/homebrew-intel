@@ -43,15 +43,44 @@ jobs:
           REQUESTED_FORMULA: ${{ inputs.formula || 'all' }}
           REQUEST_SOURCE: ${{ github.event_name }}
         run: python3 scripts/plan-workflow.py
-  build:
+  schedule-plan:
+    if: >-
+      ${{ needs.plan.outputs.has_work == 'true' &&
+          (github.event_name == 'schedule' || inputs.formula == 'all') }}
     needs: plan
-    if: ${{ needs.plan.outputs.has_work == 'true' }}
+    runs-on: macos-15-intel
+    timeout-minutes: 30
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+    env:
+      INTELBREW_CORE_COMMIT: ${{ needs.plan.outputs.core_commit }}
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_INSTALL_FROM_API: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Pin official Homebrew/core for native scheduled planning
+        run: bash scripts/prepare-runner.sh
+      - id: plan
+        name: Select only roots with missing or stale bottles
+        env:
+          PLANNED_ROOTS: ${{ needs.plan.outputs.matrix }}
+        run: /usr/bin/python3 scripts/native-plan.py
+  build:
+    needs: [plan, schedule-plan]
+    if: >-
+      ${{ always() && !cancelled() && needs.plan.result == 'success' &&
+          (((github.event_name == 'schedule' || inputs.formula == 'all') && needs.schedule-plan.result == 'success' && needs.schedule-plan.outputs.has_work == 'true') ||
+           (github.event_name != 'schedule' && inputs.formula != 'all' && needs.plan.outputs.has_work == 'true')) }}
     runs-on: macos-15-intel
     timeout-minutes: 350
     strategy:
       fail-fast: false
       max-parallel: 2
-      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+      matrix: ${{ fromJSON((github.event_name == 'schedule' || inputs.formula == 'all') && needs.schedule-plan.outputs.matrix || needs.plan.outputs.matrix) }}
     env:
       INTELBREW_CORE_COMMIT: ${{ needs.plan.outputs.core_commit }}
       ROOT_FORMULA: ${{ matrix.root }}
