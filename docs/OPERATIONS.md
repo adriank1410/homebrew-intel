@@ -99,7 +99,7 @@ roots only when its API metadata matches the resolved core revision. Uncertain
 roots are inspected together on a pinned Intel runner before allocating build
 jobs. This native preflight reuses metadata, checks source policy and reports
 blocked roots independently. Only roots needing a build enter the bounded rotating
-batch. This limits daily work; it does not promise all missing packages are built
+batch of at most four roots (with two concurrent build jobs). This limits daily work; it does not promise all missing packages are built
 on the day they first lose official bottles. Explicit small manual selections
 still force native verification; `all` uses the bounded preflight.
 Registry maintenance runs

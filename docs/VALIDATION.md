@@ -125,3 +125,55 @@ disabled recipe and one unavailable current recipe (`openssl@1.1`). NumPy was
 eligible for monitoring; the current recipe had no Intel bottle and a blocked GCC
 source dependency. This is an eligibility audit, not proof that every added target
 can already be built or installed.
+
+The implemented expansion passed all 172 tests with native Homebrew integration
+enabled on the deployed revision, plus `python3.11 scripts/check-project.py` and
+`git diff --check`. PR #27 added shared native preflight, bounded additive sync,
+behind-branch recovery and runner preparation fixes.
+
+The [corrected Pydantic trial](https://github.com/adriank1410/homebrew-intel/actions/runs/34291062114)
+built `lz4` 1.10.0 and `pydantic` 2.13.5, then installed and verified them on a
+separate fresh Intel runner. The runner preparation moved 23 preinstalled
+framework-Python symlinks into its ephemeral backup; Python 3.13 and 3.14 bottles
+then poured and linked successfully. Publication was correctly skipped on this
+source branch. An earlier trial had exposed this collision; its preflight and
+`pcre2`/`protobuf` builds passed before the superseded run was cancelled.
+
+The real coverage publication lifecycle completed in two batches. The App updated
+[PR #28](https://github.com/adriank1410/homebrew-intel/pull/28) onto the current base,
+started the required checks and merged its 167 additions through branch protection.
+A normal local `brew intel sync --apply` then safely reused the retained branch to
+propose `yyjson` in [PR #29](https://github.com/adriank1410/homebrew-intel/pull/29);
+the App validated and merged that PR too. No manual merge or bypass was used for
+either coverage PR. Both changes were pulled into the installed tap on `main`.
+
+A subsequent `brew intel sync --apply` reported **214 monitored, zero eligible
+additions, 196 exclusions**, and created no PR. Exclusions still comprise 150
+license reviews, 39 Qt entries, four blocked source roots, one options/HEAD
+installation, one disabled formula and one unavailable current recipe. Local
+`brew intel doctor` passed; `brew intel upgrade --available --json` returned an
+empty installation plan and reported NumPy plus 39 Qt roots as unavailable.
+The local verification did not trigger source compilation or broad upgrades.
+
+
+The production `all` run on the expanded list used one native preflight for all
+214 roots. It found 129 already covered roots, 45 eligible build candidates and
+40 blocked roots, then selected `you-get`, `yyjson`, `aom` and `archi-steam-farm`
+under the four-root rotating batch limit. NumPy's GCC dependency remained an
+explicit source-build exclusion. This confirms the full-list selection path;
+build and publication outcomes are recorded separately below.
+
+
+The `aom` build stopped at the source-provenance boundary: its upstream recipe
+fetches a Git checkout instead of a checksum-backed archive, so the native bridge
+rejected it with `Non-archive/VCS resource needs review`. The source-build policy
+now excludes `aom` before runner allocation for that root. It stays monitored and
+can still use an available official bottle; the source guard was not weakened.
+
+
+`archi-steam-farm` exposed another preinstalled runner link: the official .NET
+bottle poured, but `/usr/local/bin/dotnet` still pointed into the runner account's
+`.dotnet` directory. Runner preparation now also retains that exact symlink in
+its backup, deriving the account home from the OS account database. Other links
+and regular files remain untouched. The helper was renamed to
+`scripts/quarantine-runner-links.py` to describe its expanded scope.

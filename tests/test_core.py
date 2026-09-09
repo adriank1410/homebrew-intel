@@ -3,7 +3,7 @@ import copy, os, random, tempfile, unittest
 from pathlib import Path
 from unittest.mock import patch
 from intelbrew.core import (Error, Planner, artifact_url, basename, brew_env, canonical_name,
-                            download, ensure_complete, matching_record, read_json, require_sha,
+                            download, ensure_complete, load_config, matching_record, read_json, require_sha,
                             validate_record, write_json_new)
 from helpers import G,H,meta,record
 
@@ -83,6 +83,14 @@ class PlannerTests(unittest.TestCase):
         with self.assertRaisesRegex(Error,'exceeds'):self.plan({'tool':meta(runtime=['dep'],official=True),'dep':meta('dep',official=True)},max_nodes=1)
     def test_blocked_heavy(self):
         with self.assertRaisesRegex(Error,'excluded'):self.plan({'tool':meta()},build=True,blocked=['tool'])
+    def test_aom_source_policy_keeps_official_bottle_and_siblings_usable(self):
+        blocked=load_config()['blocked_source_builds']
+        with self.assertRaisesRegex(Error,'Source build excluded by policy: aom'):
+            self.plan({'aom':meta('aom')},roots=['aom'],build=True,blocked=blocked)
+        plan=self.plan({'aom':meta('aom',official=True),'sibling':meta('sibling')},
+                       roots=['aom','sibling'],build=True,blocked=blocked)
+        self.assertEqual(plan['nodes']['aom']['provider'],'official')
+        self.assertEqual(plan['nodes']['sibling']['provider'],'build')
     def test_alias_not_accepted(self):
         with self.assertRaises(Error):self.plan({'tool':meta('canonical')})
     def test_root_dedup(self):self.assertEqual(self.plan({'tool':meta(official=True)},roots=['tool','homebrew/core/tool'])['roots'],['tool'])

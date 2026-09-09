@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location(
-    "quarantine_links", ROOT / "scripts/quarantine-framework-python-links.py")
+    "quarantine_links", ROOT / "scripts/quarantine-runner-links.py")
 links = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(links)
 
@@ -33,7 +33,7 @@ class FrameworkPythonLinkTests(unittest.TestCase):
             self.assertEqual(moved, ["pip3.12", "python3.13"])
             for name in moved:
                 self.assertFalse((bin_dir / name).is_symlink())
-                self.assertTrue((backup / "framework-python-links" / name).is_symlink())
+                self.assertTrue((backup / "runner-links" / name).is_symlink())
 
     def test_retains_regular_files_directories_and_unrelated_or_nested_links(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -60,7 +60,7 @@ class FrameworkPythonLinkTests(unittest.TestCase):
             bin_dir = root / "bin"
             backup = root / "backup"
             framework = root / "framework"
-            destination = backup / "framework-python-links"
+            destination = backup / "runner-links"
             bin_dir.mkdir()
             destination.mkdir(parents=True)
             (bin_dir / "python3.13").symlink_to(
@@ -75,6 +75,40 @@ class FrameworkPythonLinkTests(unittest.TestCase):
     def test_non_ci_guard_fails_closed(self):
         with patch.dict(os.environ, {}, clear=True), self.assertRaises(links.Error):
             links.require_ci_runner()
+
+    def test_moves_absolute_and_relative_runner_dotnet_links(self):
+        for relative in (False, True):
+            with self.subTest(relative=relative), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                bin_dir = root / "usr/local/bin"
+                backup = root / "backup"
+                runner_home = root / "runner"
+                bin_dir.mkdir(parents=True)
+                backup.mkdir()
+                target = runner_home / ".dotnet/dotnet"
+                link_target = os.path.relpath(target, bin_dir) if relative else target
+                (bin_dir / "dotnet").symlink_to(link_target)
+
+                self.assertEqual(links.quarantine_links(
+                    bin_dir, backup, runner_home=runner_home), ["dotnet"])
+                self.assertFalse((bin_dir / "dotnet").is_symlink())
+                self.assertTrue((backup / "runner-links/dotnet").is_symlink())
+
+    def test_dotnet_uses_account_home_and_retains_spoofed_or_regular_targets(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            bin_dir = root / "bin"
+            backup = root / "backup"
+            runner_home = root / "runner"
+            bin_dir.mkdir()
+            backup.mkdir()
+            (bin_dir / "dotnet").symlink_to(root / "spoofed/.dotnet/dotnet")
+            (bin_dir / "dotnet-file").write_text("keep")
+            with patch.dict(os.environ, {"HOME": str(root / "spoofed")}, clear=False):
+                self.assertEqual(links.quarantine_links(
+                    bin_dir, backup, runner_home=runner_home), [])
+            self.assertTrue((bin_dir / "dotnet").is_symlink())
+            self.assertEqual((bin_dir / "dotnet-file").read_text(), "keep")
 
 
 if __name__ == "__main__":
