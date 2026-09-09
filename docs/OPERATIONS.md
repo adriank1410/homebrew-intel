@@ -55,6 +55,10 @@ PRs authored by the configured App,
 same-repository registry changes matching the attested release manifest qualify
 for immediate, head-pinned automated merging. The protected `main` still requires the `tests` check and an
 up-to-date base. Do not bypass a missing check.
+When independent builds publish the same dependency, the controller can rebuild
+a conflicted registry branch from main after checking both attested manifests.
+It preserves the already-published dependency only when its recipe, version and
+provenance match; incompatible records or a changed main snapshot stop the repair.
 
 Source and workflow PRs still need explicit owner approval to merge. The narrowly
 scoped owner-authored `coverage/intel-installed` PR is the exception described below. On a client run
