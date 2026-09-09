@@ -14,6 +14,14 @@ def workflow(name):
 
 
 class AppWorkflowTests(unittest.TestCase):
+    def test_coverage_maintenance_is_independent_and_owner_scoped(self):
+        steps = workflow("registry.yml")["jobs"]["reconcile"]["steps"]
+        operation = next(step for step in steps if "sync-coverage.py --reconcile" in step.get("run", ""))
+        self.assertEqual(operation["env"]["GH_TOKEN"], "${{ steps.app-token.outputs.token }}")
+        self.assertEqual(operation["env"]["INTELBREW_COVERAGE_LOGIN"], "${{ github.repository_owner }}")
+        self.assertIn("!cancelled()", operation["if"])
+        self.assertIn("steps.app-token.outcome == 'success'", operation["if"])
+
     def test_private_key_is_only_used_by_main_publication_jobs(self):
         for filename, privileged_job in (("bottles.yml", "publish"), ("registry.yml", "reconcile")):
             jobs = workflow(filename)["jobs"]

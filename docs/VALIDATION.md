@@ -57,6 +57,17 @@ merge was used. Local download, SHA-256, attestation and archive checks passed;
 4.0.1 was already installed. The complete local suite with native tests enabled
 passed all 124 tests at that revision.
 
+The [Tor and libmaxminddb pipeline](https://github.com/adriank1410/homebrew-intel/actions/runs/34280013654)
+passed build, independent runner verification and publication for Tor 0.4.9.12,
+libmaxminddb 1.14.0 and the missing OpenSSL 3.6.4 dependency bottle. The App merged
+registry PRs #24 and #25. Local verification checked hashes, attestations and
+archives, including Tor's required LICENSE bytes. The Mac then poured Tor
+0.4.9.11 -> 0.4.9.12 and libmaxminddb 1.13.3 -> 1.14.0; both receipts retained
+`homebrew/core` and `poured_from_bottle: true`. `brew linkage --test tor libmaxminddb`
+and version checks passed; the second apply installed zero bottles. OpenSSL was
+already current locally. A stale sibling-PR merge-state error observed during
+registry reconciliation was fixed in PR #26 with a regression test.
+
 ## Local client verification
 
 ```sh
@@ -96,10 +107,21 @@ reported and skipped, with zero installations. Its `--json` output parsed as JSO
 
 ## Limits of this result
 
-This validates four published packages and the local client installation path for
-`simdutf`, not every target or future Homebrew revision. The target names are candidates. Scheduled
+This validates seven published package records and local bottle installation for
+`simdutf`, `tor` and `libmaxminddb`, not every target or future Homebrew revision. The target names are candidates. Scheduled
 builds and hourly registry maintenance were enabled on 2026-09-08. License
 review can block dependencies. A separate branch run confirmed that a blocked
 `gnupg` root did not suppress building and verifying `simdjson`. The private App
 production cycle passed as described above. There is no claim of complete Intel or Qt
 coverage, reproducible builds, atomic rollback, or support outside Intel Sequoia.
+
+## Installed coverage expansion (2026-09-09)
+
+The real read-only `python3.11 -m intelbrew.cli sync --json` inspected the Mac's
+installed core metadata: 46 existing monitored names, 168 eligible additions and
+196 exclusions. The exclusions comprised 150 requiring license review, 39 Qt
+family exclusions, four blocked source roots, one HEAD/options installation, one
+disabled recipe and one unavailable current recipe (`openssl@1.1`). NumPy was
+eligible for monitoring; the current recipe had no Intel bottle and a blocked GCC
+source dependency. This is an eligibility audit, not proof that every added target
+can already be built or installed.

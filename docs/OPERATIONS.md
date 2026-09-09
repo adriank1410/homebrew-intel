@@ -56,7 +56,8 @@ same-repository registry changes matching the attested release manifest qualify
 for immediate, head-pinned automated merging. The protected `main` still requires the `tests` check and an
 up-to-date base. Do not bypass a missing check.
 
-Source and workflow PRs still need explicit owner approval to merge. On a client run
+Source and workflow PRs still need explicit owner approval to merge. The narrowly
+scoped owner-authored `coverage/intel-installed` PR is the exception described below. On a client run
 `brew update`, then `brew intel doctor` and `brew intel plan NAME`. Apply a small
 subset first. Build dispatch or release creation is not permission to change the
 user's Cellar.
@@ -93,12 +94,15 @@ file to Trash manually after checking its path.
 ## Scheduling, costs and privacy
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` after native validation. The bottle workflow
-checks reviewed roots daily at 03:41 UTC. A Linux preflight may omit roots whose
-complete graph has matching bottle metadata from the exact resolved core revision.
-Conditional recipes, uncertain metadata and unavailable bottles still go to native
-planning. API revision differences can therefore leave most roots eligible; this
-is conservative filtering, not a guarantee of minimal runner use. Manual requests
-always run native verification for the requested targets. Registry maintenance runs
+checks reviewed roots daily at 03:41 UTC. Linux preflight can omit fully covered
+roots only when its API metadata matches the resolved core revision. Uncertain
+roots are inspected together on a pinned Intel runner before allocating build
+jobs. This native preflight reuses metadata, checks source policy and reports
+blocked roots independently. Only roots needing a build enter the bounded rotating
+batch. This limits daily work; it does not promise all missing packages are built
+on the day they first lose official bottles. Explicit small manual selections
+still force native verification; `all` uses the bounded preflight.
+Registry maintenance runs
 hourly at minute 17, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most
 three dispatch attempts per head commit. A test failure or exhausted retry budget
@@ -108,10 +112,13 @@ Inter-job artifacts expire after one day. No paid-runner selection is automatic.
 Conflicting registry changes or unreviewed licenses require attention; they do
 not relax the policy or permit source fallback on clients.
 
-Client updates remain manual:
+Client updates remain manual. The following chain includes coverage publication
+and requires the repository owner's authenticated `gh` account; other users omit
+`brew intel sync --apply` (or use read-only `brew intel sync` separately):
 
 ```sh
 brew update &&
+brew intel sync --apply &&
 brew intel upgrade --available --apply &&
 brew upgrade --cask &&
 brew cleanup
@@ -133,3 +140,24 @@ A commit to `policy/build-request.json` on `main` starts the guarded workflow.
 Set `formula` to one reviewed target and increment `sequence`; every edit is
 visible in Git history. Registry PRs then follow the same attestation, required
 checks and protected-branch merge path as scheduled builds.
+
+## Updating installed-package coverage
+
+Run `brew intel sync --json` for the detailed local eligibility report. Add
+`--apply` to publish eligible additions using the repository owner's existing
+GitHub CLI login. The client operates in a temporary checkout; it does not edit
+the installed tap, change core remotes, remove existing targets, or install
+packages. The fixed `coverage/intel-installed` branch avoids duplicate PRs.
+
+Hourly coverage maintenance runs on trusted `main` with the same short-lived App
+token. It accepts only the expected owner, branch, repository and base; exactly
+`policy/targets.json` may change, strictly by adding canonical names. Current
+official metadata and the existing license and exclusion policy gate every new
+name. Required checks, an up-to-date branch and the validated head commit remain
+mandatory. It never approves a review or relaxes bottle publication checks.
+
+A new target is monitoring intent, not a distribution exception. The build
+planner still checks every dependency that must be compiled. For example, NumPy's
+permissive license does not authorize a blocked GCC source build; Qt modules stay
+excluded pending separate build and redistribution work. Metadata or license
+changes can stop an already-proposed addition and require review.

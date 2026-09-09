@@ -98,7 +98,8 @@ class AvailablePlanTests(unittest.TestCase):
     def test_coverage_reports_candidates_and_keeps_external_taps_separate(self):
         config = {
             "repository": "adriank1410/homebrew-intel",
-            "blocked_source_builds": ["llvm", "qt"],
+            "blocked_source_builds": ["llvm"],
+            "target_exclusions": {"zlib": "test exclusion"},
             "max_graph_nodes": 400,
         }
         installed = {"core": ["curl", "llvm", "zlib"],
@@ -116,8 +117,8 @@ class AvailablePlanTests(unittest.TestCase):
             "schema": 1,
             "monitored_core": ["curl"],
             "unmonitored_core": ["llvm", "zlib"],
-            "policy_exclusions": ["llvm"],
-            "proposed_candidates": ["zlib"],
+            "policy_exclusions": ["llvm", "zlib"],
+            "proposed_candidates": [],
             "external_tap_formulae": ["other/curl", "thirdparty/mytool"],
         })
 
