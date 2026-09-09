@@ -15,7 +15,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: intelbrew-bottles
+  group: intelbrew-bottles-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   plan:
@@ -79,7 +79,7 @@ jobs:
     timeout-minutes: 350
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 5
       matrix: ${{ fromJSON((github.event_name == 'schedule' || inputs.formula == 'all') && needs.schedule-plan.outputs.matrix || needs.plan.outputs.matrix) }}
     env:
       INTELBREW_CORE_COMMIT: ${{ needs.plan.outputs.core_commit }}
@@ -103,7 +103,7 @@ jobs:
           name: candidate-${{ matrix.root }}
           path: ${{ runner.temp }}/candidate/*
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 35
           compression-level: 0
   collect-candidates:
     if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true' }}
@@ -132,7 +132,7 @@ jobs:
     timeout-minutes: 180
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 5
       matrix: ${{ fromJSON(needs.collect-candidates.outputs.matrix) }}
     env:
       INTELBREW_CORE_COMMIT: ${{ needs.plan.outputs.core_commit }}
@@ -158,7 +158,7 @@ jobs:
           name: verified-${{ matrix.root }}
           path: ${{ runner.temp }}/verified/*
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 35
           compression-level: 0
   collect-verified:
     if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true' }}
