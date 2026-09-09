@@ -164,7 +164,10 @@ def _building_text(name:str,core_commit:str,brew_commit:str,requirements=())->by
             f"Rebuild command: brew install --build-bottle homebrew/core/{name}\n\n"
             "Use the pinned recipe in recipe/ with the commits above. sources.json lists the "
             "original source archives and their hashes. Its build_sources labels preserve the "
-            "original Go or Cargo cache paths for files stored in build-inputs/. Build output "
+            "original Go or Cargo cache paths for files stored in build-inputs/. Restore their indexed "
+            "modes after copying. For cargo/git-symlinks/<repo>/<rev>.json, recreate each symlinks "
+            "entry at cargo/git/checkouts/<checkout>/<path> using its relative target, after "
+            "restoring regular files. Cargo registry/index contains resolution metadata. Build output "
             "can vary with the build environment and is not guaranteed to be bit-for-bit identical.\n"
             f"{altered}").encode()
 
@@ -190,7 +193,11 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
                 if len(index["notices"])>=MAX_SOURCE_NOTICES:raise Error("Too many upstream license notices")
                 notice_name=f"upstream-notices/{i:03d}-{len(index['notices']):03d}-{basename(PurePosixPath(source_name).name)}"
                 info=tarfile.TarInfo(notice_name);info.size=len(data);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(data))
-                index["notices"].append({"filename":notice_name,"source":source_name,"sha256":hashlib.sha256(data).hexdigest()})
+                index["notices"].append({"filename":notice_name,"resource":f"inputs/{filename}","source":source_name,"sha256":hashlib.sha256(data).hexdigest()})
+        if requirements:
+            main_resources=[item["filename"] for item in index["resources"] if item["label"]=="main"]
+            if not any(item["resource"] in main_resources for item in index["notices"]):
+                raise Error(f"{name}: source-required license notice missing from main source archive")
         for i,item in enumerate(build_sources):
             path=Path(item["path"]);sha=require_sha(item["sha256"])
             if path.is_symlink() or not path.is_file() or path.stat().st_size!=item["size"] or digest(path)!=sha:raise Error("Build source changed")
@@ -198,7 +205,6 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
             if type(mode) is not int or mode not in (0o644,0o755) or path.stat().st_mode&0o7777!=mode:raise Error("Build source mode changed")
             filename=f"build-inputs/{i:03d}-{basename(path.name)}";bundle.add(path,arcname=filename,recursive=False)
             index["build_sources"].append({"filename":filename,"label":item["label"],"sha256":sha,"size":item["size"],"mode":mode})
-        if requirements and not index["notices"]:raise Error(f"{name}: source-required license notice missing from upstream archives")
         data=(json.dumps(index,indent=2)+"\n").encode()
         if len(data)>MAX_JSON:raise Error("Source index exceeds budget")
         info=tarfile.TarInfo("sources.json");info.size=len(data);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(data))
@@ -236,6 +242,7 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
             if not isinstance(notices,list) or not 0<len(notices)<=MAX_SOURCE_NOTICES:raise Error("Source-required license notices missing")
             if not isinstance(build_sources,list) or len(build_sources)>MAX_BUILD_SOURCE_FILES:raise Error("Invalid build source index")
             if sum(item.get("label")=="main" for item in resources if isinstance(item,dict))!=1:raise Error("Main source resource missing")
+            resource_labels={}
             expected={f"recipe/{record['name']}.rb","LICENSES/Homebrew-BSD-2-Clause.txt","BUILDING.txt","sources.json"}
             def member_hash(filename,*,size=None):
                 member=regular.get(filename)
@@ -254,6 +261,8 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
                 if not item["filename"].startswith("inputs/") or not _safe_archive_name(item["filename"]):raise Error("Invalid source resource path")
                 if item["filename"] in expected:raise Error("Duplicate source resource")
                 if member_hash(item["filename"])!=require_sha(item["sha256"]):raise Error("Source resource checksum mismatch")
+                if not isinstance(item["label"],str) or not item["label"]:raise Error("Invalid source resource label")
+                resource_labels[item["filename"]]=item["label"]
                 expected.add(item["filename"])
             for item in build_sources:
                 if not isinstance(item,dict) or set(item)!={"filename","label","sha256","size","mode"}:raise Error("Invalid build source")
@@ -263,13 +272,16 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
                 if type(item["mode"]) is not int or item["mode"] not in (0o644,0o755) or regular[item["filename"]].mode!=item["mode"]:raise Error("Build source mode mismatch")
                 expected.add(item["filename"])
             for item in notices:
-                if not isinstance(item,dict) or set(item)!={"filename","source","sha256"} or not _safe_archive_name(item["source"]):raise Error("Invalid source notice")
+                if not isinstance(item,dict) or set(item)!={"filename","resource","source","sha256"} or not _safe_archive_name(item["source"]):raise Error("Invalid source notice")
+                if not isinstance(item["resource"],str) or item["resource"] not in resource_labels:raise Error("Invalid source notice resource")
                 filename=item["filename"];member=regular.get(filename)
                 if not filename.startswith("upstream-notices/") or member is None or member.size>MAX_JSON:raise Error("Invalid source notice")
                 if filename in expected:raise Error("Duplicate source notice")
                 handle=archive.extractfile(member);data=handle.read(MAX_JSON+1) if handle else b""
                 if hashlib.sha256(data).hexdigest()!=require_sha(item["sha256"]):raise Error("Source notice checksum mismatch")
                 expected.add(filename)
+            if not any(resource_labels.get(item.get("resource"))=="main" for item in notices):
+                raise Error("Source-required license notice missing from main source archive")
             if set(regular)!=expected:raise Error("Unexpected source bundle files")
     except (tarfile.TarError,json.JSONDecodeError,EOFError) as exc:raise Error("Invalid source bundle") from exc
 

@@ -259,6 +259,34 @@ class SourceBundleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);item,sources=self._fixture(folder,zip_source=True,notice=False)
             with self.assertRaisesRegex(Error,'notice missing'):source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
+    def test_source_required_bundle_rejects_auxiliary_notice_without_main_notice(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder,zip_source=True,notice=False)
+            auxiliary=folder/'auxiliary.tar.gz'
+            with tarfile.open(auxiliary,'w:gz') as archive:
+                data=b'auxiliary license';member=tarfile.TarInfo('dep/LICENSE');member.size=len(data)
+                archive.addfile(member,io.BytesIO(data))
+            sources['resources'].append({'label':'patch-0','url':'https://example.test/auxiliary','path':str(auxiliary),'sha256':hashlib.sha256(auxiliary.read_bytes()).hexdigest()})
+            with self.assertRaisesRegex(Error,'notice missing'):
+                source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
+
+    def test_source_required_bundle_rejects_notice_relabelled_as_auxiliary(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder)
+            auxiliary=folder/'auxiliary.tar.gz'
+            with tarfile.open(auxiliary,'w:gz') as archive:
+                data=b'auxiliary license';member=tarfile.TarInfo('dep/LICENSE');member.size=len(data)
+                archive.addfile(member,io.BytesIO(data))
+            sources['resources'].append({'label':'patch-0','url':'https://example.test/auxiliary','path':str(auxiliary),'sha256':hashlib.sha256(auxiliary.read_bytes()).hexdigest()})
+            bundle=source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
+            rec=record(formula_sha256=item['formula_sha256'],core_commit=item['formula_sha256'][:40],license='GPL-3.0-only')
+            with tarfile.open(bundle) as archive:index=json.load(archive.extractfile('sources.json'))
+            index['notices'][0]['resource']=[]
+            self._replace_member(bundle,'sources.json',json.dumps(index).encode())
+            with self.assertRaisesRegex(Error,'notice resource'):_validate_source_bundle(bundle,rec,load_config())
+            index['notices'][0]['resource']='inputs/001-auxiliary.tar.gz'
+            self._replace_member(bundle,'sources.json',json.dumps(index).encode())
+            with self.assertRaisesRegex(Error,'notice.*main'):_validate_source_bundle(bundle,rec,load_config())
     def test_zip_symlink_is_not_accepted_as_notice(self):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);item,sources=self._fixture(folder,zip_source=True)

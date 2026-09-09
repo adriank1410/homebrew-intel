@@ -19,6 +19,7 @@ class BuildSourcesTests(unittest.TestCase):
                 go / "pkg/mod/cache/download/example.org/mod/@v/v1.0.0.ziphash": b"hash",
                 go / "pkg/mod/cache/download/example.org/target/@v/v1.0.0.zip": b"target module",
                 cargo / "registry/cache/index/pkg-1.0.0.crate": b"crate",
+                cargo / "registry/index/github.com-1ecc6299db9ec823/pa/package": b"index metadata",
                 cargo / "registry/src/index/pkg-1.0.0/src/lib.rs": b"source",
                 cargo / "credentials.toml": b"secret",
             }
@@ -31,10 +32,12 @@ class BuildSourcesTests(unittest.TestCase):
             subprocess.run(["git", "-C", str(checkout), "remote", "add", "origin",
                             "https://github.com/example/project"], check=True)
             (checkout / "src").mkdir(); (checkout / "src/main.rs").write_bytes(b"git source")
+            (checkout / "src/link.rs").symlink_to("main.rs")
+            (checkout / "linked-src").symlink_to("src", target_is_directory=True)
             helper = checkout / "scripts/helper.sh"
             helper.parent.mkdir(); helper.write_bytes(b"#!/bin/sh\nexit 0\n"); helper.chmod(0o755)
             (checkout / "docs/target").mkdir(parents=True); (checkout / "docs/target/guide.md").write_bytes(b"docs")
-            subprocess.run(["git", "-C", str(checkout), "add", "src/main.rs", "scripts/helper.sh",
+            subprocess.run(["git", "-C", str(checkout), "add", "src/main.rs", "src/link.rs", "linked-src", "scripts/helper.sh",
                             "docs/target/guide.md"], check=True)
             subprocess.run(["git", "-C", str(checkout), "commit", "-q", "-m", "fixture"], check=True)
             result = collect_build_sources({"homebrew_cache": str(cache), "go_mod_cache": str(go),
@@ -46,6 +49,7 @@ class BuildSourcesTests(unittest.TestCase):
             self.assertIn("go/pkg/mod/cache/download/example.org/mod/@v/v1.0.0.ziphash", labels)
             self.assertIn("go/pkg/mod/cache/download/example.org/target/@v/v1.0.0.zip", labels)
             self.assertIn("cargo/registry/cache/index/pkg-1.0.0.crate", labels)
+            self.assertIn("cargo/registry/index/github.com-1ecc6299db9ec823/pa/package", labels)
             self.assertIn("cargo/git/checkouts/repo/rev/src/main.rs", labels)
             self.assertIn("cargo/git/checkouts/repo/rev/docs/target/guide.md", labels)
             helper_record = next(item for item in result["files"]
@@ -59,6 +63,14 @@ class BuildSourcesTests(unittest.TestCase):
                                             if item["label"] == revision)).read_text())
             self.assertRegex(metadata["commit"], r"^[0-9a-f]{40}$")
             self.assertEqual(metadata["origin"], "https://github.com/example/project")
+            symlink_label = "cargo/git-symlinks/repo/rev.json"
+            symlink_metadata = json.loads(Path(next(item["path"] for item in result["files"]
+                                                if item["label"] == symlink_label)).read_text())
+            self.assertEqual(symlink_metadata["symlinks"], [{"path": "linked-src", "target": "src"}, {"path": "src/link.rs", "target": "main.rs"}])
+            restored = Path(raw) / "out/cargo/git/checkouts" / symlink_metadata["checkout"]
+            for link in symlink_metadata["symlinks"]:
+                (restored / link["path"]).symlink_to(link["target"])
+            self.assertEqual((restored / "linked-src/link.rs").read_bytes(), b"git source")
             self.assertFalse(any("registry/src" in item or "credentials" in item
                                  for item in labels))
             self.assertTrue(all(Path(item["path"]).read_bytes() for item in result["files"]))
@@ -103,6 +115,22 @@ class BuildSourcesTests(unittest.TestCase):
             outside = base / "outside/mod/cache/download"; outside.mkdir(parents=True)
             (outside / "source.zip").write_bytes(b"source")
             go.mkdir(parents=True); (go / "pkg").symlink_to(base / "outside")
+            with self.assertRaisesRegex(Error, "Unsafe"):
+                collect_build_sources({"homebrew_cache": str(cache), "go_mod_cache": str(go),
+                                       "cargo_cache": str(cargo)}, base / "out")
+
+    def test_rejects_cargo_checkout_symlink_escape(self):
+        with tempfile.TemporaryDirectory() as raw:
+            base = Path(raw); cache = base / "cache"; go = cache / "go_mod_cache"; cargo = cache / "cargo_cache"
+            checkout = cargo / "git/checkouts/repo/rev"; checkout.mkdir(parents=True)
+            subprocess.run(["git", "init", "-q", str(checkout)], check=True)
+            subprocess.run(["git", "-C", str(checkout), "config", "user.name", "test"], check=True)
+            subprocess.run(["git", "-C", str(checkout), "config", "user.email", "test@example.invalid"], check=True)
+            subprocess.run(["git", "-C", str(checkout), "config", "commit.gpgsign", "false"], check=True)
+            (checkout / "source").write_text("source")
+            (checkout / "escape").symlink_to(base / "outside")
+            subprocess.run(["git", "-C", str(checkout), "add", "source", "escape"], check=True)
+            subprocess.run(["git", "-C", str(checkout), "commit", "-q", "-m", "fixture"], check=True)
             with self.assertRaisesRegex(Error, "Unsafe"):
                 collect_build_sources({"homebrew_cache": str(cache), "go_mod_cache": str(go),
                                        "cargo_cache": str(cargo)}, base / "out")
