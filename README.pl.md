@@ -79,14 +79,18 @@ instalację. Ustawienia globalne pozostają bez zmian.
 
 [Rejestr](registry/) zawiera pakiety dostępne dla klienta.
 [Lista celów](policy/targets.json) zawiera monitorowanych kandydatów, a nie
-obietnicę dostępności butelek. Build mogą blokować licencje, brakujące zależności
-i limity. Qt ma jawne wykluczenia. NumPy może być monitorowane, mimo że brakująca
-zależność kompilacyjna GCC blokuje jego budowanie.
+obietnicę dostępności butelek. Monitoring obejmuje stabilne, poprawnie rozpoznane
+zainstalowane formuły z `homebrew/core` niezależnie od licencji i możliwości
+budowania ze źródeł. Polityka licencji i redystrybucji, źródła VCS, blokady buildów
+i ograniczenia Qt są sprawdzane później podczas planowania budowania ze źródeł;
+nie blokują użycia dostępnej oficjalnej lub własnej butelki.
 
 `brew intel coverage` porównuje lokalnie zainstalowane formuły z listą celów.
-`brew intel sync` dodatkowo sprawdza bieżące metadane i istniejącą politykę
-licencyjną. Bez `--apply` niczego nie wysyła ani nie zmienia. `--json` podaje
-indywidualne powody pominięcia pakietów.
+`brew intel sync` dodatkowo sprawdza bieżące metadane i stan instalacji. Pomija
+między innymi aliasy i nazwy spoza core, formuły wyłączone lub bez stabilnej
+wersji, instalacje z opcjami lub HEAD, obce instalacje, wersje nowsze od stabilnej
+oraz brak albo błąd metadanych. Bez `--apply` niczego nie wysyła ani nie zmienia.
+`--json` podaje indywidualne powody pominięcia pakietów.
 
 `brew intel sync --apply` zgłasza kwalifikujące się nowe nazwy z core w jednym PR.
 Wymaga zalogowanego przez `gh` właściciela repozytorium. Właściciel może dodać
@@ -101,10 +105,12 @@ inwentarza nie są wysyłane. Instalacja pakietów pozostaje osobną komendą.
 
 Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza codzienne sprawdzanie
 kandydatów i cogodzinną obsługę PR-ów. Niepewni kandydaci są sprawdzani wspólnie
-na jednym runnerze Intel; do dziennej partii trafiają najwyżej cztery cele
+na jednym runnerze Intel; do macierzy trafiają wszystkie kwalifikujące cele
 wymagające budowania. Pakiety z dostępnymi butelkami nie zajmują osobnych runnerów
 budowania i weryfikacji. Blokady są raportowane niezależnie od pozostałych
-pakietów, a oczekujące buildy są wybierane rotacyjnie.
+pakietów. Jednocześnie działają najwyżej dwa buildy i dwie weryfikacje. Jeśli
+budowania wymaga więcej niż dopuszczalne przez GitHub 256 zadań macierzy,
+planowanie kończy się jawnym błędem zamiast pominięcia części pakietów.
 
 Workflow buduje i weryfikuje pakiety na `macos-15-intel`, a następnie je publikuje.
 Korzysta z oficjalnych formuł, przypiętej wersji Homebrew, instalacji gotowego

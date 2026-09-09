@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: BSD-2-Clause
-"""Resolve one official core commit and validate a bounded matrix of roots."""
+"""Resolve one official core commit and validate the requested roots."""
 import json
 import os
 import sys
@@ -197,8 +197,8 @@ def main():
         requested,
         targets,
         allow_csv=source != 'push',
-        # A scheduled sweep must inspect every reviewed target before selecting
-        # its bounded batch. Manual and push-triggered matrices stay capped.
+        # A scheduled sweep must inspect every reviewed target. Manual and
+        # push-triggered requests stay capped before native planning.
         max_roots=None if requested == 'all' and source in {'schedule', 'workflow_dispatch'} else 50,
     )
     upstream = run(['git', 'ls-remote', 'https://github.com/Homebrew/homebrew-core.git',
