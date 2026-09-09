@@ -68,6 +68,12 @@ def allowed_redistribution(meta:dict,config:dict)->tuple[str,...]:
     expression=meta.get("license")
     requirements=_license_requirements(expression,config)
     if requirements is not None:return requirements
+    source_exception=config.get("source_required_formula_exceptions",{}).get(meta["name"],{})
+    if (source_exception.get("formula_sha256")==meta["formula_sha256"]
+            and source_exception.get("license")==expression
+            and isinstance(source_exception.get("requirement"),str) and source_exception["requirement"]
+            and isinstance(source_exception.get("review"),str) and len(source_exception["review"].strip())>=30):
+        return (source_exception["requirement"],)
     exception=config["redistribution_exceptions"].get(meta["name"],{})
     if exception.get("formula_sha256")==meta["formula_sha256"] and isinstance(exception.get("review"),str) and len(exception["review"].strip())>=30:return ()
     raise Error(f'{meta["name"]}: redistribution review required for {expression!r}')
@@ -98,7 +104,10 @@ def _safe_archive_name(value:str)->bool:
     return bool(value) and not path.is_absolute() and ".." not in path.parts
 
 
-def _building_text(name:str,core_commit:str,brew_commit:str)->bytes:
+def _building_text(name:str,core_commit:str,brew_commit:str,requirements=())->bytes:
+    altered=("\nThis is a Homebrew-packaged and patched build, not an unmodified upstream "
+             "Info-ZIP release. The recipe and indexed patch archive identify every applied change.\n"
+             if "Info-ZIP" in requirements else "")
     return (f"Build inputs for homebrew/core/{name}\n\n"
             f"Homebrew/brew: https://github.com/Homebrew/brew/tree/{brew_commit}\n"
             f"Homebrew/core: https://github.com/Homebrew/homebrew-core/tree/{core_commit}\n\n"
@@ -106,7 +115,8 @@ def _building_text(name:str,core_commit:str,brew_commit:str)->bytes:
             "Use the pinned recipe in recipe/ with the commits above. sources.json lists the "
             "original source archives and their hashes. Its build_sources labels preserve the "
             "original Go or Cargo cache paths for files stored in build-inputs/. Build output "
-            "can vary with the build environment and is not guaranteed to be bit-for-bit identical.\n").encode()
+            "can vary with the build environment and is not guaranteed to be bit-for-bit identical.\n"
+            f"{altered}").encode()
 
 
 def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirements=(),build_sources=()):
@@ -120,7 +130,7 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
         if recipe.is_symlink() or not recipe.is_file() or digest(recipe)!=meta["formula_sha256"]:raise Error("Recipe changed during source collection")
         bundle.add(recipe,arcname=f"recipe/{name}.rb",recursive=False)
         bundle.add(ROOT/"LICENSES/Homebrew-BSD-2-Clause.txt",arcname="LICENSES/Homebrew-BSD-2-Clause.txt",recursive=False)
-        building=_building_text(name,core_commit,brew_commit);info=tarfile.TarInfo("BUILDING.txt");info.size=len(building);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(building))
+        building=_building_text(name,core_commit,brew_commit,requirements);info=tarfile.TarInfo("BUILDING.txt");info.size=len(building);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(building))
         for i,res in enumerate(sources["resources"]):
             path=Path(res["path"])
             if path.is_symlink() or not path.is_file() or digest(path)!=res["sha256"]:raise Error("Source archive changed")
@@ -186,7 +196,7 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
             if member_hash(f"recipe/{record['name']}.rb")!=record["formula_sha256"]:raise Error("Source recipe checksum mismatch")
             building=regular.get("BUILDING.txt")
             handle=archive.extractfile(building) if building else None
-            if handle is None or handle.read(MAX_JSON+1)!=_building_text(record["name"],record["core_commit"],record["brew_commit"]):raise Error("Source build instructions mismatch")
+            if handle is None or handle.read(MAX_JSON+1)!=_building_text(record["name"],record["core_commit"],record["brew_commit"],requirements):raise Error("Source build instructions mismatch")
             for item in resources:
                 if not isinstance(item,dict) or set(item)!={"filename","label","url","sha256"}:raise Error("Invalid source resource")
                 if not item["filename"].startswith("inputs/") or not _safe_archive_name(item["filename"]):raise Error("Invalid source resource path")

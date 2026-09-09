@@ -86,6 +86,29 @@ class OperationTests(unittest.TestCase):
         self.assertEqual(allowed_redistribution(meta(license=expression),load_config()),('GPL-2.0-only WITH Classpath-exception-2.0',))
         for expression in [None,'Proprietary',{'GPL-2.0-only':{'with':'unknown'}},{'all_of':['MIT','Proprietary']}]:
             with self.subTest(license=expression),self.assertRaises(Error):allowed_redistribution(meta(license=expression),load_config())
+    def test_remaining_installed_spdx_families_are_source_supported(self):
+        cfg=load_config()
+        tokens=['AML-glslang','APSL-1.0','BSD-2-Clause-Darwin','BSD-2-Clause-Patent','BSD-2-Clause-Views',
+                'BSD-3-Clause-Open-MPI','BSD-4-Clause-UC','EPL-1.0','EUPL-1.2','FSFULLR','GFDL-1.3-only',
+                'HPND','HPND-sell-variant','ImageMagick','Info-ZIP','JasPer-2.0','LZMA-SDK-9.22','MIT-CMU',
+                'MIT-Khronos-old','MIT-Modern-Variant','NCL','OLDAP-2.8','Ruby','SGI-B-2.0','SSH-OpenSSH',
+                'SunPro','TCL','Unicode-DFS-2015','Unicode-TOU','X11-distribute-modifications-variant','public_domain']
+        for token in tokens:
+            with self.subTest(token=token):self.assertEqual(allowed_redistribution(meta(license=token),cfg),(token,))
+        self.assertEqual(allowed_redistribution(meta(license={'Apache-2.0':{'with':'LLVM-exception'}}),cfg),('Apache-2.0 WITH LLVM-exception',))
+        for token in ['CC-PDDC','blessing']:
+            with self.subTest(token=token):self.assertEqual(allowed_redistribution(meta(license=token),cfg),())
+    def test_current_special_recipe_expressions_except_nmap_are_supported(self):
+        cfg=load_config()
+        expressions=[{'all_of':['BSD-4-Clause-UC','APSL-1.0']},
+                     {'all_of':['GFDL-1.3-only','GPL-2.0-only','GPL-3.0-only','LGPL-2.1-only','LGPL-3.0-only']},
+                     'Info-ZIP']
+        for expression in expressions:
+            with self.subTest(expression=expression):self.assertTrue(allowed_redistribution(meta(license=expression),cfg))
+        nmap=meta(name='nmap',license='cannot_represent',formula_sha256='d308fc0ef788a969c120462d850cd2f5928ef65cbfd9aba16ac85785f62f66dc')
+        self.assertEqual(allowed_redistribution(nmap,cfg),('Nmap-Public-Source-License',))
+        for changed in [{**nmap,'name':'other'},{**nmap,'license':'unknown'},{**nmap,'formula_sha256':'c'*64}]:
+            with self.assertRaises(Error):allowed_redistribution(changed,cfg)
     def test_license_review_exact_hash(self):
         cfg=load_config();cfg['redistribution_exceptions']['tool']={'formula_sha256':H,'review':'Explicit upstream distribution obligations reviewed for this exact recipe.'}
         allowed_redistribution(meta(license='Proprietary',formula_sha256=H),cfg)
@@ -176,6 +199,23 @@ class SourceBundleTests(unittest.TestCase):
             rec=record(formula_sha256=item['formula_sha256'],core_commit=item['formula_sha256'][:40],license='GPL-3.0-only')
             self._replace_member(bundle,'BUILDING.txt',b'brew install something-else')
             with self.assertRaisesRegex(Error,'instructions mismatch'):_validate_source_bundle(bundle,rec,load_config())
+    def test_pinned_nmap_exception_still_requires_a_valid_source_bundle(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder);recipe=folder/'nmap.rb';Path(sources['formula_path']).rename(recipe)
+            sha=hashlib.sha256(recipe.read_bytes()).hexdigest();item.update(name='nmap',license='cannot_represent',formula_sha256=sha)
+            sources.update(formula_sha256=sha,formula_path=str(recipe))
+            cfg=load_config();cfg['source_required_formula_exceptions']['nmap']['formula_sha256']=sha
+            requirements=allowed_redistribution(item,cfg)
+            bundle=source_bundle('nmap',item,sources,folder,sha[:40],G,requirements=requirements)
+            rec=record(name='nmap',formula_sha256=sha,core_commit=sha[:40],license='cannot_represent')
+            _validate_source_bundle(bundle,rec,cfg)
+    def test_infozip_build_instructions_mark_the_patched_distribution(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder);item['license']='Info-ZIP'
+            bundle=source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('Info-ZIP',))
+            with tarfile.open(bundle) as archive:
+                text=archive.extractfile('BUILDING.txt').read().decode()
+            self.assertIn('not an unmodified upstream Info-ZIP release',text)
     def test_source_required_bundle_rejects_missing_notice(self):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);item,sources=self._fixture(folder,zip_source=True,notice=False)
