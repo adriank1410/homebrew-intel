@@ -84,6 +84,13 @@ Redistribution policy, VCS sources, blocked source builds and Qt constraints are
 enforced later when planning a source build; they do not prevent use of an
 available official or personal bottle.
 
+GPL, LGPL, AGPL and MPL packages use a source-required publication profile.
+Their releases include the recipe, declared sources and patches, upstream license
+notices and downloaded Go/Cargo source inputs, with a checked source index.
+The client prints a link to the matching source bundle. Git sources pinned to a
+full commit, including submodules pinned by that commit, can be archived; unpinned VCS and other VCS strategies still require further
+support. See [source publication requirements](docs/LICENSE-REVIEW.md).
+
 `brew intel coverage` compares installed formulae with the target list locally.
 `brew intel sync` additionally checks current metadata and installation state. It
 excludes aliases and non-core names, disabled formulae or those without a stable
@@ -106,7 +113,7 @@ PR maintenance. Scheduled checks inspect uncertain candidates together on one
 Intel runner and select every eligible root needing a build. Already covered roots
 do not receive separate build/verification runners. Blocked roots are reported
 without stopping eligible siblings. Build and verification jobs remain limited to
-two concurrent Intel runners. Planning fails explicitly if more than GitHub's
+five concurrent Intel runners. Planning fails explicitly if more than GitHub's
 256-job matrix limit need builds, rather than silently omitting roots.
 
 The workflow builds and verifies on `macos-15-intel`, then publishes through a

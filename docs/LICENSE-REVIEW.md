@@ -26,3 +26,38 @@ including all component notices. Its SHA-256 is pinned in
 block publication until the new upstream text is reviewed.
 Adding Tor to the candidate list does not guarantee that its dependency build
 and independent installation tests will pass.
+
+## Source-required licenses (2026-09-09)
+
+Standard archive recipes may be built when their SPDX expression consists only
+of reviewed permissive terms and the configured GPL, LGPL, AGPL, MPL, GFDL
+without invariant sections, libtiff, or libpng terms. For `any_of`, one fully
+supported branch is sufficient. Every branch of `all_of` must be supported.
+License exceptions are admitted only as exact configured `LICENSE WITH
+exception` pairs; an unknown term or exception still requires a recipe-specific
+review pinned to its formula hash.
+
+For a source-required result, publication requires a source bundle containing
+the exact Homebrew recipe, every main/resource/patch archive reported by the
+pinned Homebrew source collector, captured Go/Cargo build inputs, and an index
+binding those files to their hashes and provenance. License and notice files
+found inside upstream tar or ZIP archives are copied into the bundle without
+extracting the archive. Candidate validation rejects missing notices, changed
+notice bytes, links, special files, traversal names, unindexed files, or an
+index that does not match the bottle record. Raw patch resources remain in the
+bundle but are not treated as archives.
+
+This profile covers unmodified standard archive source distribution. It does
+not by itself establish compliance for applications with additional linking or
+relinking obligations, recipes whose build downloads are not captured, Qt as a
+whole, or sources from an unpinned VCS revision. Those cases remain blocked
+until their concrete recipe path is verified.
+
+Primary license texts and guidance:
+
+- GNU GPL 2.0 and 3.0: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html and https://www.gnu.org/licenses/gpl-3.0.en.html
+- GNU LGPL 2.1 and 3.0: https://www.gnu.org/licenses/lgpl-2.1.html and https://www.gnu.org/licenses/lgpl.html
+- GNU AGPL 3.0: https://www.gnu.org/licenses/agpl-3.0.html
+- GNU FDL 1.3: https://www.gnu.org/licenses/fdl-1.3.en.html
+- Mozilla Public License 2.0: https://www.mozilla.org/MPL/2.0/
+- SPDX libtiff and libpng 2.0 texts: https://spdx.org/licenses/libtiff.html and https://spdx.org/licenses/libpng-2.0.html

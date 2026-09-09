@@ -89,8 +89,10 @@ def run(args,*,capture=True,input_text=None,env=None,cwd=None):
     if p.returncode:raise Error(f'{args[0]} failed ({p.returncode}): {(p.stderr or "").strip() if capture else "see output"}')
     return p.stdout or ''
 
-def native(request,*,capture=True,ci=False):
-    out=run(['brew','ruby',str(ROOT/'libexec/native.rb')],input_text=json.dumps(request),capture=capture,env=brew_env(ci=ci))
+def native(request,*,capture=True,ci=False,cache=None):
+    env=brew_env(ci=ci)
+    if cache is not None:env['HOMEBREW_CACHE']=os.fspath(cache)
+    out=run(['brew','ruby',str(ROOT/'libexec/native.rb')],input_text=json.dumps(request),capture=capture,env=env)
     if not capture:return None
     try:return json.loads(out)
     except ValueError as exc:raise Error('Native bridge returned non-JSON') from exc
@@ -118,7 +120,7 @@ class Planner:
                 rec=matching_record(m,self.records)
                 provider='installed' if m.get('installed_current') and not self.build else 'official' if m.get('official_bottle') else 'personal' if rec else 'build' if self.build else 'missing'
                 if provider=='build' and name in self.blocked:raise Error(f'Source build excluded by policy: {name}')
-                if provider=='build' and m['vcs_source']:raise Error(f'VCS source needs review: {name}')
+                if provider=='build' and m['vcs_source'] and m.get('pinned_git_source') is not True:raise Error(f'VCS source needs review: {name}')
                 deps=set(m.get('runtime',[]))
                 if provider=='build':deps.update(m.get('build',[]));deps.update(m.get('test',[]))
                 m.update(provider=provider,dependencies=sorted(deps));self.nodes[name]=m;pending.update(deps-set(self.nodes))

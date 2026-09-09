@@ -67,14 +67,23 @@ user's Cellar.
 A missing bottle on the client is an error, not a source fallback. Trigger a
 build for the desired root. A compatible official bottle is preferred. Recipe,
 revision or runtime drift triggers rebuilding. Unreviewed licensing obligations,
-dynamic/VCS resources, cycles, excluded heavy builds, >60 source nodes or >500 MB
+unsupported VCS resources, cycles, excluded heavy builds, >60 source nodes or >2 GB
 of candidate artifacts stop the run. Never remove a safety check merely to make
 CI green.
+
+The source-required profile supports standard copyleft archives with retained
+license notices and verified source contents. Full-commit Git exports are also
+supported, including submodules at their recorded Git commit. Unpinned Git and
+other VCS strategies fail explicitly before compiling dependencies. Source sets are fetched before building, then Go/Cargo source caches
+are captured after compilation. See [License review](LICENSE-REVIEW.md) for the
+supported expressions and remaining limitations.
 
 `all` checks the reviewed target list. Manual dispatch also accepts a comma-separated
 subset. Completed candidate and verified artifacts select the downstream matrices;
 a failed root stays failed but does not block successful siblings. No artifact
 means no downstream job for that root. Existing matching bottles are reused.
+Candidate and verified artifacts are retained for 35 days, covering the maximum
+workflow duration so early results survive long build queues.
 The workflow summary and failed root logs identify remaining coverage gaps.
 
 ## Client failure and recovery
@@ -99,7 +108,7 @@ roots only when its API metadata matches the resolved core revision. Uncertain
 roots are inspected together on a pinned Intel runner before allocating build
 jobs. This native preflight reuses metadata, checks source policy and reports
 blocked roots independently. Every eligible root needing a build enters the matrix,
-with at most two concurrent build jobs. Planning fails explicitly if more than
+with at most five concurrent build jobs. Planning fails explicitly if more than
 GitHub's 256-job matrix limit need builds, rather than silently omitting roots.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight.
