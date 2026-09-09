@@ -9,7 +9,7 @@ from intelbrew.core import Error
 
 
 class BuildSourcesTests(unittest.TestCase):
-    def test_collects_go_and_cargo_sources_but_not_build_outputs_or_credentials(self):
+    def test_collects_go_and_cargo_sources_without_duplicate_registry_or_credentials(self):
         with tempfile.TemporaryDirectory() as raw:
             cache = Path(raw) / "cache"; go = cache / "go_mod_cache"; cargo = cache / "cargo_cache"
             files = {
@@ -17,6 +17,7 @@ class BuildSourcesTests(unittest.TestCase):
                 go / "pkg/mod/cache/download/example.org/mod/@v/v1.0.0.mod": b"module",
                 go / "pkg/mod/cache/download/example.org/mod/@v/v1.0.0.info": b"info",
                 go / "pkg/mod/cache/download/example.org/mod/@v/v1.0.0.ziphash": b"hash",
+                go / "pkg/mod/cache/download/example.org/target/@v/v1.0.0.zip": b"target module",
                 cargo / "registry/cache/index/pkg-1.0.0.crate": b"crate",
                 cargo / "registry/src/index/pkg-1.0.0/src/lib.rs": b"source",
                 cargo / "credentials.toml": b"secret",
@@ -30,8 +31,8 @@ class BuildSourcesTests(unittest.TestCase):
             subprocess.run(["git", "-C", str(checkout), "remote", "add", "origin",
                             "https://github.com/example/project"], check=True)
             (checkout / "src").mkdir(); (checkout / "src/main.rs").write_bytes(b"git source")
-            (checkout / "target/release").mkdir(parents=True); (checkout / "target/release/app").write_bytes(b"compiled")
-            subprocess.run(["git", "-C", str(checkout), "add", "src/main.rs"], check=True)
+            (checkout / "docs/target").mkdir(parents=True); (checkout / "docs/target/guide.md").write_bytes(b"docs")
+            subprocess.run(["git", "-C", str(checkout), "add", "src/main.rs", "docs/target/guide.md"], check=True)
             subprocess.run(["git", "-C", str(checkout), "commit", "-q", "-m", "fixture"], check=True)
             result = collect_build_sources({"homebrew_cache": str(cache), "go_mod_cache": str(go),
                                             "cargo_cache": str(cargo)}, Path(raw) / "out")
@@ -40,15 +41,17 @@ class BuildSourcesTests(unittest.TestCase):
             self.assertIn("go/pkg/mod/cache/download/example.org/mod/@v/v1.0.0.zip", labels)
             self.assertIn("go/pkg/mod/cache/download/example.org/mod/@v/v1.0.0.info", labels)
             self.assertIn("go/pkg/mod/cache/download/example.org/mod/@v/v1.0.0.ziphash", labels)
+            self.assertIn("go/pkg/mod/cache/download/example.org/target/@v/v1.0.0.zip", labels)
             self.assertIn("cargo/registry/cache/index/pkg-1.0.0.crate", labels)
             self.assertIn("cargo/git/checkouts/repo/rev/src/main.rs", labels)
+            self.assertIn("cargo/git/checkouts/repo/rev/docs/target/guide.md", labels)
             revision = "cargo/git-revisions/repo/rev.json"
             self.assertIn(revision, labels)
             metadata = json.loads(Path(next(item["path"] for item in result["files"]
                                             if item["label"] == revision)).read_text())
             self.assertRegex(metadata["commit"], r"^[0-9a-f]{40}$")
             self.assertEqual(metadata["origin"], "https://github.com/example/project")
-            self.assertFalse(any("registry/src" in item or "target" in item or "credentials" in item
+            self.assertFalse(any("registry/src" in item or "credentials" in item
                                  for item in labels))
             self.assertTrue(all(Path(item["path"]).read_bytes() for item in result["files"]))
 

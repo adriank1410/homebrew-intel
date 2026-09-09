@@ -30,7 +30,7 @@ def _regular_files(root: Path, includes: tuple[Path, ...]):
             symlinks = [name for name in names if (current / name).is_symlink()]
             if symlinks:
                 raise Error(f"Unsafe package-manager cache entry: {current / symlinks[0]}")
-            names[:] = sorted(name for name in names if name not in {".git", "target"})
+            names[:] = sorted(name for name in names if name != ".git")
             for name in sorted(files):
                 if name == ".git":
                     continue
