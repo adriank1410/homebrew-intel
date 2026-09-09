@@ -2,6 +2,7 @@
 # Run only via `brew ruby`. Homebrew evaluates its own recipes and decides
 # which older bottle tags and uses_from_macos dependencies are compatible.
 require "json";require "digest";require "open3";require "formula";require "formulary";require "tab";require "utils/bottles";require "download_strategy";require "package_manager_cache";require "tmpdir";require_relative "git_sources"
+require_relative "source_mirrors"
 module IntelbrewNative
   module_function
   def check_platform!
@@ -32,6 +33,7 @@ module IntelbrewNative
         directory=Dir.mktmpdir("intelbrew-git-source-",ENV["RUNNER_TEMP"])
         GitSources.export(r,directory).merge("label"=>label)
       else
+        SourceMirrors.add_gnu_fallback(r)
         r.fetch(verify_download_integrity:true);c=r.cached_download
         raise "Non-archive/VCS resource needs review" unless c.file?
         raise "Resource lacks checksum" unless r.checksum
