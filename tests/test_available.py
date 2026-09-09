@@ -117,8 +117,8 @@ class AvailablePlanTests(unittest.TestCase):
             "schema": 1,
             "monitored_core": ["curl"],
             "unmonitored_core": ["llvm", "zlib"],
-            "policy_exclusions": ["llvm", "zlib"],
-            "proposed_candidates": [],
+            "policy_exclusions": [],
+            "proposed_candidates": ["llvm", "zlib"],
             "external_tap_formulae": ["other/curl", "thirdparty/mytool"],
         })
 
@@ -138,7 +138,7 @@ class AvailablePlanTests(unittest.TestCase):
         self.assertEqual(output.getvalue(),
                          "Monitored core formulae (0): none\n"
                          "Core formulae not explicitly on target list (1)\n"
-                         "Policy exclusions (0): none\n"
+                         "Monitoring exclusions (0): none\n"
                          "Proposed candidates (1): zlib\n"
                          "External tap formulae (1): tap/tool\n")
 

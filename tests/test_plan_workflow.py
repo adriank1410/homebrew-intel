@@ -21,29 +21,14 @@ TARGETS = ["simdjson", "gnupg", "curl"]
 
 
 class PlanWorkflowTests(unittest.TestCase):
-    def test_schedule_batch_is_bounded_and_rotates_without_dropping_candidates(self):
-        candidates = [f"formula-{number}" for number in range(19)]
-        batches = [native_plan.bounded_schedule(candidates, rotation_key=run_number, limit=8)
-                   for run_number in range(1, 4)]
+    def test_native_schedule_selects_every_build_candidate(self):
+        candidates = [f"formula-{number}" for number in range(256)]
+        self.assertEqual(native_plan.matrix_roots(candidates), candidates)
 
-        self.assertTrue(all(len(batch) <= 8 for batch in batches))
-        self.assertEqual(batches[0], candidates[:8])
-        self.assertEqual(batches[1], candidates[8:16])
-        self.assertEqual(batches[2], candidates[16:] + candidates[:5])
-        self.assertEqual(set().union(*map(set, batches)), set(candidates))
-
-    def test_native_schedule_default_is_two_parallel_waves(self):
-        candidates = [f"formula-{number}" for number in range(9)]
-        self.assertEqual(native_plan.SCHEDULE_BATCH_SIZE, 4)
-        self.assertEqual(
-            native_plan.bounded_schedule(candidates, rotation_key=2),
-            candidates[4:8],
-        )
-
-    def test_schedule_batch_rejects_invalid_rotation_inputs(self):
-        for run_number, limit in ((0, 8), (-1, 8), (1, 0), (1, -1)):
-            with self.subTest(run_number=run_number, limit=limit), self.assertRaises(plan.Error):
-                native_plan.bounded_schedule(["root"], rotation_key=run_number, limit=limit)
+    def test_native_schedule_rejects_more_than_one_github_matrix_can_run(self):
+        candidates = [f"formula-{number}" for number in range(257)]
+        with self.assertRaisesRegex(native_plan.Error, "257.*256"):
+            native_plan.matrix_roots(candidates)
 
     def test_recommended_dependency_keeps_root_eligible(self):
         item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
