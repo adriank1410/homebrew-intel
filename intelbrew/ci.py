@@ -11,6 +11,10 @@ from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, brew_
                    registry, require_sha, run, validate_record, write_json_new)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
+# Large dependency bundles (notably Node plus its npm tree) can contain many
+# notices per package. Keep the bound finite while avoiding rejection of
+# otherwise valid source-complete archives.
+MAX_SOURCE_NOTICES = 2048
 MAX_SOURCE_NOTICES = 128
 
 
