@@ -7,7 +7,7 @@ from io import StringIO
 from unittest.mock import patch
 
 import intelbrew.cli as cli
-from helpers import meta
+from helpers import meta, record
 from intelbrew.core import Planner
 
 
@@ -181,6 +181,83 @@ class AvailablePlanTests(unittest.TestCase):
         available.assert_not_called()
         apply.assert_called_once()
         self.assertEqual(apply.call_args.args[0]["roots"], ["bad"])
+
+    def test_available_skips_drifted_personal_bottle_and_applies_clean_root(self):
+        records = {
+            "drifted": record(
+                "drifted",
+                formula_sha256="0" * 64,
+                runtime_dependencies=[{"name": "dep", "pkg_version": "1.0", "formula_sha256": "1" * 64}],
+            ),
+            "clean": record(
+                "clean",
+                formula_sha256="3" * 64,
+                runtime_dependencies=[],
+            ),
+        }
+        nodes = {
+            "drifted": meta("drifted", formula_sha256="0" * 64, runtime=["dep"]),
+            "dep": meta("dep", official=True, formula_sha256="2" * 64),
+            "clean": meta("clean", formula_sha256="3" * 64),
+        }
+        def fake_native(payload):
+            mode = payload.get("mode")
+            if mode == "outdated":
+                return ["drifted", "clean"]
+            if mode == "coverage":
+                return {"core": [], "external_taps": []}
+            if mode == "inspect":
+                return {name: nodes[name] for name in payload["names"]}
+            raise ValueError(f"Unexpected mode: {mode}")
+
+        config = {"repository": "adriank1410/homebrew-intel", "max_graph_nodes": 400}
+        with patch.object(cli.platform, "system", return_value="Darwin"), \
+             patch.object(cli.platform, "machine", return_value="x86_64"), \
+             patch.object(cli, "load_config", return_value=config), \
+             patch.object(cli, "registry", return_value=records), \
+             patch.object(cli, "native", side_effect=fake_native), \
+             patch.object(cli, "apply_plan") as apply:
+            stdout = StringIO()
+            stderr = StringIO()
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                self.assertEqual(cli.main(["upgrade", "--available", "--apply"]), 0)
+        apply.assert_called_once()
+        self.assertEqual(apply.call_args.args[0]["roots"], ["clean"])
+        self.assertIn("Skipped unavailable upgrade roots (1): drifted", stdout.getvalue())
+        self.assertIn("Missing providers (1): drifted", stdout.getvalue())
+
+    def test_upgrade_without_available_still_raises_on_dependency_drift(self):
+        records = {
+            "drifted": record(
+                "drifted",
+                formula_sha256="0" * 64,
+                runtime_dependencies=[{"name": "dep", "pkg_version": "1.0", "formula_sha256": "1" * 64}],
+            ),
+        }
+        nodes = {
+            "drifted": meta("drifted", formula_sha256="0" * 64, runtime=["dep"]),
+            "dep": meta("dep", official=True, formula_sha256="2" * 64),
+        }
+        def fake_native(payload):
+            mode = payload.get("mode")
+            if mode == "outdated":
+                return ["drifted"]
+            if mode == "coverage":
+                return {"core": [], "external_taps": []}
+            if mode == "inspect":
+                return {name: nodes[name] for name in payload["names"]}
+            raise ValueError(f"Unexpected mode: {mode}")
+
+        config = {"repository": "adriank1410/homebrew-intel", "max_graph_nodes": 400}
+        with patch.object(cli.platform, "system", return_value="Darwin"), \
+             patch.object(cli.platform, "machine", return_value="x86_64"), \
+             patch.object(cli, "load_config", return_value=config), \
+             patch.object(cli, "registry", return_value=records), \
+             patch.object(cli, "native", side_effect=fake_native):
+            stderr = StringIO()
+            with redirect_stderr(stderr):
+                self.assertEqual(cli.main(["upgrade", "--apply"]), 1)
+            self.assertIn("Personal bottle dependency drift: drifted -> dep", stderr.getvalue())
 
     def test_available_is_only_valid_for_upgrade(self):
         for command in ("plan", "install", "doctor"):
