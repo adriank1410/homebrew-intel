@@ -119,7 +119,7 @@ GitHub's 256-job matrix limit need builds, rather than silently omitting roots.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight.
 Registry maintenance runs
-hourly at minute 17, revalidates eligible PRs, updates outdated branches, and
+every five minutes, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most
 three dispatch attempts per head commit. A test failure or exhausted retry budget
 requires attention. GitHub can delay scheduled runs.
