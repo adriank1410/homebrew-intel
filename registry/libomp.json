@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "libomp--23.1.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "649face31f036e172edc9e9cf0714d2829c6615edfafae7499ee112217b12a04",
+  "license": "MIT",
+  "name": "libomp",
+  "pkg_version": "23.1.1",
+  "recipe_sha256": "07e2cf6ca9790df7cfcf37e888bbd160c2394abfb94237929327e22af714e148",
+  "release": "intel-34388221074-1-sherlock",
+  "revision": 0,
+  "run_id": "34388221074",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "80070f019e86fa4f024ad6632f2df6bd88c11aa18eb93350d176e85c479c4097",
+  "size": 603617,
+  "source": {
+    "filename": "libomp--23.1.1.sources.tar.gz",
+    "sha256": "98c6972b85481f401654739f27b5191a7acf553637c73338810a5a1beb99c4d0",
+    "size": 179246245
+  },
+  "tag": "sequoia",
+  "version": "23.1.1",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
