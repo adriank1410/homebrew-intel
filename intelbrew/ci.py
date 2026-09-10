@@ -13,9 +13,9 @@ from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, brew_
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
 # notices per package. Keep the bound finite while avoiding rejection of
-# otherwise valid source-complete archives.
-MAX_SOURCE_NOTICES = 2048
-MAX_SOURCE_NOTICES = 128
+# otherwise valid source-complete archives. The JSON index remains bounded by
+# MAX_JSON and the expanded source bundle remains bounded below.
+MAX_SOURCE_NOTICES = 16_384
 
 
 def require_ci_mac() -> None:
@@ -193,7 +193,13 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
             if path.is_symlink() or not path.is_file() or digest(path)!=res["sha256"]:raise Error("Source archive changed")
             filename=f'{i:03d}-{basename(path.name)}';bundle.add(path,arcname=f"inputs/{filename}",recursive=False)
             index["resources"].append({"filename":f"inputs/{filename}","label":res["label"],"url":res["url"],"sha256":res["sha256"]})
-            for source_name,data in archive_notices(path, MAX_JSON, MAX_SOURCE_NOTICES):
+            try:
+                notices = archive_notices(path, MAX_JSON, MAX_SOURCE_NOTICES)
+            except Error as exc:
+                if "Too many upstream license notices" in str(exc):
+                    raise Error(f"{name} {res['label']}: {exc}") from exc
+                raise
+            for source_name,data in notices:
                 if len(index["notices"])>=MAX_SOURCE_NOTICES:raise Error("Too many upstream license notices")
                 notice_name=f"upstream-notices/{i:03d}-{len(index['notices']):03d}-{basename(PurePosixPath(source_name).name)}"
                 info=tarfile.TarInfo(notice_name);info.size=len(data);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(data))
