@@ -14,6 +14,21 @@ def workflow(name):
 
 
 class AppWorkflowTests(unittest.TestCase):
+    def test_candidate_artifacts_outlive_the_maximum_workflow_duration(self):
+        document = workflow("bottles.yml")
+        for stage in ("build", "verify"):
+            upload = next(step for step in document["jobs"][stage]["steps"]
+                          if step.get("uses", "").startswith("actions/upload-artifact@"))
+            self.assertGreaterEqual(upload["with"]["retention-days"], 35)
+
+    def test_source_branch_trials_do_not_queue_behind_main_publication(self):
+        document = workflow("bottles.yml")
+        self.assertIn("${{ github.ref }}", document["concurrency"]["group"])
+        self.assertFalse(document["concurrency"]["cancel-in-progress"])
+        for stage in ("build", "verify"):
+            self.assertEqual(document["jobs"][stage]["strategy"]["max-parallel"], 5)
+        self.assertIn("refs/heads/main", document["jobs"]["publish"]["if"])
+
     def test_coverage_maintenance_is_independent_and_owner_scoped(self):
         steps = workflow("registry.yml")["jobs"]["reconcile"]["steps"]
         operation = next(step for step in steps if "sync-coverage.py --reconcile" in step.get("run", ""))
