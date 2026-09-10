@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "sdl2-compat--2.32.72.sequoia.bottle.tar.gz",
+  "formula_sha256": "cfb05d01617df7a0f5bd49278af4261bae61bf773807529254a36d628ebef8c2",
+  "license": "Zlib",
+  "name": "sdl2-compat",
+  "pkg_version": "2.32.72",
+  "recipe_sha256": "d7b046512e8cff5e55cc3b25e24e503cb6ec07c1e441c1cfd1e9e898409c99ba",
+  "release": "intel-34338885775-1-unpaper",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "d6b7c185f97778f779eb638ab565a73b4bbbc0a6070106fe4b1b8c6f2077a165",
+      "name": "sdl3",
+      "pkg_version": "3.4.16"
+    }
+  ],
+  "schema": 1,
+  "sha256": "10b2f834355b718ae9c54219972efd34e14ecf4678f4802abaeb9cfe48a3fa4e",
+  "size": 654279,
+  "source": {
+    "filename": "sdl2-compat--2.32.72.sources.tar.gz",
+    "sha256": "8a5abe099ccf4a62673fae7d0e69ec60f79b4952a950524abb45bcea5902e674",
+    "size": 2736201
+  },
+  "tag": "sequoia",
+  "version": "2.32.72",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
