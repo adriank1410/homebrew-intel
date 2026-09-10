@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "nss--3.128.sequoia.bottle.tar.gz",
+  "formula_sha256": "239f95ee603bb922e50f1b154e3aa892b70788cd0501e17eab2214ae0dcb201a",
+  "license": "MPL-2.0",
+  "name": "nss",
+  "pkg_version": "3.128",
+  "recipe_sha256": "b5f6510530978e79bc3f69eb1e844098447f57a409327113932b4ce3b10c8ab9",
+  "release": "intel-34388221074-1-poppler",
+  "revision": 0,
+  "run_id": "34388221074",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f1f859e8b6f12c179c5c0822e405a286e444ea713ff59f7f007ba9e34f88b4a9",
+      "name": "nspr",
+      "pkg_version": "4.40"
+    }
+  ],
+  "schema": 1,
+  "sha256": "1951ce31378eb8d7082905e724cc58c78841e94cb4c6cf4634eb9986f6ec0ab9",
+  "size": 6546623,
+  "source": {
+    "filename": "nss--3.128.sources.tar.gz",
+    "sha256": "a817997e0f357bc3797b22b7aa2ddfd85b87d1f0d76e59af8e956ab937d7cb34",
+    "size": 86991274
+  },
+  "tag": "sequoia",
+  "version": "3.128",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
