@@ -50,6 +50,18 @@ class ArchiveNoticeTests(unittest.TestCase):
                 with self.assertRaisesRegex(Error, "limits"):
                     archive_notices(path, size, count)
 
+    def test_deduplicates_identical_notice_text_without_hiding_distinct_text(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "duplicates.tar"
+            with tarfile.open(path, "w") as archive:
+                for name, data in (("a/LICENSE", b"same"), ("b/NOTICE", b"same"),
+                                   ("c/COPYING", b"different")):
+                    member = tarfile.TarInfo(name); member.size = len(data)
+                    archive.addfile(member, io.BytesIO(data))
+            self.assertEqual(len(archive_notices(path, 1024, 3)), 3)
+            self.assertEqual(archive_notices(path, 1024, 2, deduplicate=True),
+                             [("a/LICENSE", b"same"), ("c/COPYING", b"different")])
+
     def test_accepts_large_but_bounded_notice_sets(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "many-notices.tar"
