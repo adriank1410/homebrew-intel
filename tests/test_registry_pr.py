@@ -310,6 +310,17 @@ class RegistryPullRequestTests(unittest.TestCase):
         merge = next(call for call in calls if call[:3] == ["pr", "merge", "8"])
         self.assertIn("--match-head-commit", merge)
 
+    def test_reconcile_closes_root_dependency_conflict(self):
+        stale = pull_request(number=7)
+        with patch("intelbrew.registry_pr.gh_json", return_value=[stale]), \
+             patch("intelbrew.registry_pr._find_pr", return_value=stale), \
+             patch("intelbrew.registry_pr.validate_pr",
+                   side_effect=Error("Refusing to replace a registry root with an existing dependency record")), \
+             patch("intelbrew.registry_pr.gh") as gh_mock:
+            reconcile(REPOSITORY)
+        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY],
+                      [call.args[0] for call in gh_mock.call_args_list])
+
     def test_async_branch_update_waits_for_new_head_before_any_merge(self):
         pr = pull_request(mergeStateStatus="BEHIND")
         fake, _ = self._gh_fixture(pr)
