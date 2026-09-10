@@ -51,7 +51,10 @@ class CachedInspector:
         return {name: self.cache[name] for name in names}
 
 
-def matrix_roots(candidates):
+def matrix_roots(candidates, *, max_roots=None):
+    candidates = list(candidates)
+    if max_roots is not None and max_roots > 0:
+        candidates = candidates[:max_roots]
     if len(candidates) > MATRIX_MAX_ROOTS:
         raise Error(
             f'{len(candidates)} build candidates exceed the GitHub matrix limit '
@@ -71,7 +74,7 @@ def roots_needing_build(roots, inspector, records, config):
                 records,
                 build=True,
                 max_nodes=config['max_graph_nodes'],
-                blocked=config['blocked_source_builds'],
+                blocked=config.get('blocked_source_builds', []),
             ).make([root])
             builds = [name for name in plan['order'] if plan['nodes'][name]['provider'] == 'build']
             if not builds:
@@ -80,10 +83,11 @@ def roots_needing_build(roots, inspector, records, config):
                 raise Error(f'{root}: source build budget exceeded')
             for name in builds:
                 allowed_redistribution(plan['nodes'][name], config)
-            needed.append(root)
+            needed.append((len(builds), root))
         except (Error, KeyError, OSError, TypeError, ValueError) as exc:
             blocked[root] = str(exc)
-    return needed, blocked
+    needed.sort(key=lambda item: (item[0], item[1]))
+    return [root for _, root in needed], blocked
 
 
 def main():
@@ -96,9 +100,10 @@ def main():
         roots = [canonical_name(root) for root in roots]
         if len(roots) != len(set(roots)):
             raise Error('Planned roots contain duplicates')
+        config = load_config()
         candidates, blocked = roots_needing_build(
-            roots, CachedInspector(), registry(), load_config())
-        selected = matrix_roots(candidates)
+            roots, CachedInspector(), registry(), config)
+        selected = matrix_roots(candidates, max_roots=config.get('scheduled_batch_size', 12))
         with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as handle:
             handle.write('matrix=' + json.dumps({'root': selected}, separators=(',', ':')) + '\n')
             handle.write('has_work=' + str(bool(selected)).lower() + '\n')
