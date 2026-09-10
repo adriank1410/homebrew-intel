@@ -57,14 +57,21 @@ class NativeTests(unittest.TestCase):
         self.assertEqual(result["external_taps"], sorted(set(result["external_taps"])))
         self.assertTrue(all("/" in name for name in result["external_taps"]))
 
+    def test_build_context_uses_homebrew_package_manager_caches(self):
+        result = native({"mode": "build-context"})
+        cache = Path(result["homebrew_cache"])
+        self.assertEqual(Path(result["go_mod_cache"]), cache / "go_mod_cache")
+        self.assertEqual(Path(result["cargo_cache"]), cache / "cargo_cache")
+
     def test_real_inspect_classifies_vcs_stable_sources_without_fetching(self):
         result = native({"mode": "inspect", "names": ["aom", "archi-steam-farm", "simdutf"]})
         self.assertTrue(all(type(result[name]["vcs_source"]) is bool for name in result))
+        self.assertTrue(all(type(result[name]["pinned_git_source"]) is bool for name in result))
 
     def test_real_vcs_roots_are_rejected_before_dependency_inspection(self):
         inspected = native({"mode": "inspect", "names": ["aom", "archi-steam-farm"]})
         for root in ("aom", "archi-steam-farm"):
-            if not inspected[root]["vcs_source"] or inspected[root]["official_bottle"]:
+            if not inspected[root]["vcs_source"] or inspected[root]["official_bottle"] or inspected[root]["pinned_git_source"]:
                 continue
             calls = []
             def inspect(names):
@@ -84,6 +91,7 @@ def resource(url, using=nil)
 end
 curl = resource("https://example.invalid/source.tar.gz")
 git = resource("https://example.invalid/source.git", :git)
+pinned = Resource.new("pinned"); pinned.url("https://example.invalid/source.git", using: :git, revision: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 stable = Struct.new(:resource); patch = Struct.new(:resource)
 formula = Struct.new(:stable, :resources, :patchlist)
 cases = [
@@ -92,10 +100,15 @@ cases = [
   formula.new(stable.new(curl), [git], []),
   formula.new(stable.new(curl), [], [patch.new(git)])
 ]
-puts JSON.generate(cases.map {{ |item| IntelbrewNative.vcs_source?(item) }})
+pins = [formula.new(stable.new(pinned), [], []),
+        formula.new(stable.new(curl), [pinned], []),
+        formula.new(stable.new(curl), [], [patch.new(pinned)]),
+        formula.new(stable.new(pinned), [git], [])]
+puts JSON.generate([cases.map {{ |item| IntelbrewNative.vcs_source?(item) }},
+                    pins.map {{ |item| IntelbrewNative.pinned_git_source?(item) }}])
 '''
         output = run(["brew", "ruby", "-e", script], env=brew_env())
-        self.assertEqual(json.loads(output.splitlines()[-1]), [False, True, True, True])
+        self.assertEqual(json.loads(output.splitlines()[-1]), [[False, True, True, True], [True, True, True, False]])
 
     def test_planner_rejects_missing_or_non_boolean_source_strategy_metadata(self):
         current = native({"mode": "inspect", "names": ["simdutf"]})["simdutf"]
