@@ -1,0 +1,119 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "gnupg--2.5.22.sequoia.bottle.tar.gz",
+  "formula_sha256": "04d5206f38cbe2007470f11cd5cad3f6bbe7733751c73905ea37da78705dc950",
+  "license": "GPL-3.0-or-later",
+  "name": "gnupg",
+  "pkg_version": "2.5.22",
+  "recipe_sha256": "eced11d0ab27f2f5d36c4cca6c39ae01af2e47355ee8470f1b6824352b384540",
+  "release": "intel-34388221074-1-gnupg",
+  "revision": 0,
+  "run_id": "34388221074",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "bd0322f7114c68dd627c974ec16ceaa6295bf68eac55995ee2dfb59ce6fefd51",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "530b0e587a38b20ea46927d5289761905e0ebe959b23a07b8a21bfc9f372f641",
+      "name": "gmp",
+      "pkg_version": "6.3.0"
+    },
+    {
+      "formula_sha256": "e498e8a75686acb7f03e334af46b75f11d69617cc11fac79822de58edba48d9f",
+      "name": "gnutls",
+      "pkg_version": "3.8.13_2"
+    },
+    {
+      "formula_sha256": "0d591f5386cc0aa8b457f1aea3c5d68655fa2f3ca5df5db87005e8c9d703b60b",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "d5856b35f7d536d342be309246f1f7133bd18bad9830c78e13a24707b5dc89f5",
+      "name": "libassuan",
+      "pkg_version": "3.0.2"
+    },
+    {
+      "formula_sha256": "56f971e6f4892ef664280fe35a78e74bcbcf9936c7c572ba6e38a9ce15f19913",
+      "name": "libgcrypt",
+      "pkg_version": "1.12.3"
+    },
+    {
+      "formula_sha256": "bf6d10eeeefe65ae342c619326c834844e3b5c3996d25095c8b3eeb13f732d5d",
+      "name": "libgpg-error",
+      "pkg_version": "1.61"
+    },
+    {
+      "formula_sha256": "63e4e2c0138c3a5c25ede16f2859de5bc4e0d76c5d466e42184027d412d5e775",
+      "name": "libidn2",
+      "pkg_version": "2.3.8"
+    },
+    {
+      "formula_sha256": "9189905770835fdf30ea7554ac37161e5bbbed7a5bf75a9fbb2113795376addd",
+      "name": "libksba",
+      "pkg_version": "1.8.1"
+    },
+    {
+      "formula_sha256": "ebe7f8e2821e42172fc8dd00dff1d65a562730d46baff435523562d60d6ca644",
+      "name": "libtasn1",
+      "pkg_version": "4.21.0"
+    },
+    {
+      "formula_sha256": "1b55a601632c423775155c55d86043aeea6456acc080a152e650a3c24b9f8e7e",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "5da3b9c199276c00cd14ef7da6a10e4dc7fd8b65eaa638ab356a049597491d74",
+      "name": "libusb",
+      "pkg_version": "1.0.30"
+    },
+    {
+      "formula_sha256": "1b9ed4a0fc0e732ab288996a64f50c974110e9d4af5d3a4d7719ffd0ed0a6f33",
+      "name": "nettle",
+      "pkg_version": "4.0"
+    },
+    {
+      "formula_sha256": "89c38cd595893c5ab2f622d41295df4983a8d4aed869d1f1579001a2d48a8517",
+      "name": "npth",
+      "pkg_version": "1.8"
+    },
+    {
+      "formula_sha256": "c0be8d7d6053e036b3f8006ccc1d7dde8c5548985f90122bfe317e0defcd124a",
+      "name": "p11-kit",
+      "pkg_version": "0.26.5"
+    },
+    {
+      "formula_sha256": "6a73d244439297f9c75d477785ec56aaadd520ca1a0f031e311a7df93fee82b9",
+      "name": "pinentry",
+      "pkg_version": "1.3.3"
+    },
+    {
+      "formula_sha256": "660d4099f7dcd652c78f530672ffaf01103a00b3ee72aca4059f10c1038b1228",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "2c8d36ebfe8f2ab254de2a726b0aab28320521991a1b94e7fbdbd3102d1aade3",
+  "size": 5734208,
+  "source": {
+    "filename": "gnupg--2.5.22.sources.tar.gz",
+    "sha256": "9be69034e714fef30c811f49ea45990bfb7df78278145441aaa8462488479405",
+    "size": 8388336
+  },
+  "tag": "sequoia",
+  "version": "2.5.22",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
