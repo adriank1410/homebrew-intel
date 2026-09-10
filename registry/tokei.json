@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "tokei--15.0.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "55739d246480cc2ac8db54c06bc5f92a341e4bc8169b8bb1ea7c81e64636f5a7",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "MIT"
+    ]
+  },
+  "name": "tokei",
+  "pkg_version": "15.0.0",
+  "recipe_sha256": "e07f6c8a917f83aa2014196d75a99e3dcdd3a107f95ba58336d35f0496ec87c7",
+  "release": "intel-34338885775-1-tokei",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "f9deafbb60140b74cbed5fb0adb701d86baa50c5f1b04399c897686a61f0ad78",
+  "size": 1901685,
+  "source": {
+    "filename": "tokei--15.0.0.sources.tar.gz",
+    "sha256": "8336bc6ffda7646988cbdc34c57763c01ed3e0d3fa51cc5bc0e365966e02c1c3",
+    "size": 168172
+  },
+  "tag": "sequoia",
+  "version": "15.0.0",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
