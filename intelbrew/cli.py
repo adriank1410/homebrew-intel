@@ -13,10 +13,14 @@ import tempfile
 from collections import Counter
 from pathlib import Path
 
+from typing import Any
+
 from . import __version__
 from .core import (Error, Planner, artifact_url, brew_env, check_bottle,
                    download, ensure_complete, load_config, matching_record,
                    native, read_json, registry, require_sha, run, write_json_new)
+from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
+                         BOLD_YELLOW, DIM, is_color_enabled, ohai, onoe, opoo, style)
 
 
 def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None) -> None:
@@ -34,13 +38,45 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
         capture=False, env=env)
 
 
-def render(plan: dict) -> None:
-    print("Formula                     Version             Source")
-    print("-" * 70)
-    for name in plan["order"]:
-        item = plan["nodes"][name]
-        print(f'{name:27} {item["pkg_version"]:19} {item["provider"]}')
-    print("\nNo core remote, formula definitions or dependency names are changed.")
+def render(plan: dict, stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
+    if is_color_enabled(stream):
+        header = f"{style('Formula', BOLD, stream):36} {style('Version', BOLD, stream):28} {style('Source', BOLD, stream)}"
+        sep = style("─" * 70, DIM, stream)
+        print(header, file=stream)
+        print(sep, file=stream)
+        for name in plan["order"]:
+            item = plan["nodes"][name]
+            provider = item["provider"]
+            if provider == "personal":
+                prov_styled = style(f"{provider:10}", BOLD_CYAN, stream)
+                name_styled = style(f"{name:27}", BOLD, stream)
+            elif provider == "official":
+                prov_styled = style(f"{provider:10}", BOLD_GREEN, stream)
+                name_styled = f"{name:27}"
+            elif provider == "installed":
+                prov_styled = style(f"{provider:10}", DIM, stream)
+                name_styled = style(f"{name:27}", DIM, stream)
+            elif provider == "missing":
+                prov_styled = style(f"{provider:10}", BOLD_RED, stream)
+                name_styled = style(f"{name:27}", BOLD_RED, stream)
+            elif provider == "build":
+                prov_styled = style(f"{provider:10}", BOLD_YELLOW, stream)
+                name_styled = style(f"{name:27}", BOLD_YELLOW, stream)
+            else:
+                prov_styled = f"{provider:10}"
+                name_styled = f"{name:27}"
+            ver_styled = f"{item['pkg_version']:19}"
+            print(f"{name_styled} {ver_styled} {prov_styled}", file=stream)
+        print(f"\n{style('No core remote, formula definitions or dependency names are changed.', DIM, stream)}", file=stream)
+    else:
+        print("Formula                     Version             Source", file=stream)
+        print("-" * 70, file=stream)
+        for name in plan["order"]:
+            item = plan["nodes"][name]
+            print(f'{name:27} {item["pkg_version"]:19} {item["provider"]}', file=stream)
+        print("\nNo core remote, formula definitions or dependency names are changed.", file=stream)
 
 
 def filter_available_plan(plan: dict) -> tuple[dict, list[dict]]:
@@ -100,45 +136,88 @@ def coverage_report(installed: dict, targets: list[str]) -> dict:
     }
 
 
-def render_coverage(report: dict) -> None:
+def render_coverage(report: dict, stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
     monitored = report["monitored_core"]
     unmonitored = report["unmonitored_core"]
     exclusions = report["policy_exclusions"]
     proposed = report["proposed_candidates"]
     external = report["external_tap_formulae"]
-    print(f"Monitored core formulae ({len(monitored)}): "
-          f'{", ".join(monitored) if monitored else "none"}')
-    print(f"Core formulae not explicitly on target list ({len(unmonitored)})")
-    print(f"Monitoring exclusions ({len(exclusions)}): "
-          f'{", ".join(exclusions) if exclusions else "none"}')
-    print(f"Proposed candidates ({len(proposed)}): "
-          f'{", ".join(proposed) if proposed else "none"}')
-    print(f"External tap formulae ({len(external)}): "
-          f'{", ".join(external) if external else "none"}')
+    if is_color_enabled(stream):
+        ohai(f"Monitored core formulae ({len(monitored)})", stream=stream)
+        if monitored:
+            print(f"    {', '.join(monitored)}", file=stream)
+        if unmonitored:
+            opoo(f"Core formulae not explicitly on target list ({len(unmonitored)})", stream=stream)
+            print(f"    {', '.join(unmonitored)}", file=stream)
+        if exclusions:
+            ohai(f"Monitoring exclusions ({len(exclusions)})", stream=stream)
+            print(f"    {', '.join(exclusions)}", file=stream)
+        if proposed:
+            ohai(f"Proposed candidates ({len(proposed)})", stream=stream)
+            print(f"    {', '.join(proposed)}", file=stream)
+        if external:
+            ohai(f"External tap formulae ({len(external)})", stream=stream)
+            print(f"    {', '.join(external)}", file=stream)
+    else:
+        print(f"Monitored core formulae ({len(monitored)}): "
+              f'{", ".join(monitored) if monitored else "none"}', file=stream)
+        print(f"Core formulae not explicitly on target list ({len(unmonitored)})", file=stream)
+        print(f"Monitoring exclusions ({len(exclusions)}): "
+              f'{", ".join(exclusions) if exclusions else "none"}', file=stream)
+        print(f"Proposed candidates ({len(proposed)}): "
+              f'{", ".join(proposed) if proposed else "none"}', file=stream)
+        print(f"External tap formulae ({len(external)}): "
+              f'{", ".join(external) if external else "none"}', file=stream)
 
 
-def render_skipped(skipped: list[dict]) -> None:
+def render_skipped(skipped: list[dict], stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
     roots = [item["root"] for item in skipped]
     missing = sorted({name for item in skipped for name in item["missing_dependencies"]})
-    print(f"Skipped unavailable upgrade roots ({len(roots)}): {', '.join(roots)}")
-    print(f"Missing providers ({len(missing)}): {', '.join(missing) if missing else 'none'}")
-
-
-def render_sync(report: dict, *, apply: bool) -> None:
-    print(f"Coverage: {len(report['monitored_core'])} monitored, "
-          f"{len(report['eligible'])} eligible additions, {len(report['excluded'])} excluded.")
-    if report["eligible"]:
-        print("Eligible additions: " + ", ".join(report["eligible"]))
-    reasons = Counter(item["reason"] for item in report["excluded"])
-    if reasons:
-        print("Excluded: " + "; ".join(f"{reason}: {count}" for reason, count in sorted(reasons.items())))
-        print("Use `brew intel sync --json` for individual exclusion reasons.")
-    if report.get("pr_url"):
-        print(f"Coverage PR: {report['pr_url']} (eligible additions await protected checks and maintenance).")
-    elif not apply:
-        print("Dry run. Add --apply to propose eligible names to GitHub; no packages are installed.")
+    if is_color_enabled(stream):
+        opoo(f"Skipped unavailable upgrade roots ({style(str(len(roots)), BOLD, stream)}): {style(', '.join(roots), BOLD, stream)}", stream=stream)
+        opoo(f"Missing providers ({style(str(len(missing)), BOLD, stream)}): {', '.join(missing) if missing else 'none'}", stream=stream)
     else:
-        print("No new coverage PR needed.")
+        print(f"Skipped unavailable upgrade roots ({len(roots)}): {', '.join(roots)}", file=stream)
+        print(f"Missing providers ({len(missing)}): {', '.join(missing) if missing else 'none'}", file=stream)
+
+
+def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
+    if is_color_enabled(stream):
+        ohai(f"Coverage: {len(report['monitored_core'])} monitored, "
+             f"{len(report['eligible'])} eligible additions, {len(report['excluded'])} excluded.", stream=stream)
+        if report["eligible"]:
+            print(f"    Eligible additions: {style(', '.join(report['eligible']), BOLD_GREEN, stream)}", file=stream)
+        reasons = Counter(item["reason"] for item in report["excluded"])
+        if reasons:
+            print("    Excluded: " + "; ".join(f"{reason}: {count}" for reason, count in sorted(reasons.items())), file=stream)
+            print(f"    Use {style('`brew intel sync --json`', BOLD, stream)} for individual exclusion reasons.", file=stream)
+        if report.get("pr_url"):
+            print(f"    Coverage PR: {style(report['pr_url'], BOLD_CYAN, stream)} (eligible additions await protected checks and maintenance).", file=stream)
+        elif not apply:
+            print(f"    {style('Dry run.', BOLD_YELLOW, stream)} Add {style('--apply', BOLD, stream)} to propose eligible names to GitHub; no packages are installed.", file=stream)
+        else:
+            print("    No new coverage PR needed.", file=stream)
+    else:
+        print(f"Coverage: {len(report['monitored_core'])} monitored, "
+              f"{len(report['eligible'])} eligible additions, {len(report['excluded'])} excluded.", file=stream)
+        if report["eligible"]:
+            print("Eligible additions: " + ", ".join(report["eligible"]), file=stream)
+        reasons = Counter(item["reason"] for item in report["excluded"])
+        if reasons:
+            print("Excluded: " + "; ".join(f"{reason}: {count}" for reason, count in sorted(reasons.items())), file=stream)
+            print("Use `brew intel sync --json` for individual exclusion reasons.", file=stream)
+        if report.get("pr_url"):
+            print(f"Coverage PR: {report['pr_url']} (eligible additions await protected checks and maintenance).", file=stream)
+        elif not apply:
+            print("Dry run. Add --apply to propose eligible names to GitHub; no packages are installed.", file=stream)
+        else:
+            print("No new coverage PR needed.", file=stream)
 
 
 def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
@@ -163,8 +242,10 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
             if record is None:
                 raise Error("Registry changed after planning")
             path = cache / record["sha256"] / record["filename"]
+            ohai(f"Downloading bottle: {name}")
             download(artifact_url(config["repository"], record), path,
                      record["sha256"], record["size"])
+            ohai(f"Verifying bottle attestation for {name}")
             attest(path, config["repository"], record["workflow_commit"])
             check_bottle(path, record)
             source_url = artifact_url(config["repository"], record, record["source"]["filename"])
@@ -190,6 +271,8 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
                 item = plan["nodes"][name]
                 if item["provider"] == "installed":
                     continue
+                filename = records[name]["filename"] if name in records else name
+                ohai(f"Pouring {filename}")
                 request = {
                     "mode": "install", "name": name,
                     "target": str(downloaded[name]) if name in downloaded else f"homebrew/core/{name}",
@@ -201,12 +284,14 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
                 native(request, capture=False)
                 receipt = native({"mode": "receipt", "name": name})
                 write_json_new(journal_dir / f"{completed:04d}-{name}.json", receipt)
+                print(f"🍺  /usr/local/Cellar/{name}/{item['pkg_version']}")
                 completed += 1
         except Error as exc:
             raise Error(f"Stopped after {completed} package(s); this is not a transaction rollback. "
                         f"Old versioned kegs are retained. Journal: {journal_dir}. {exc}") from exc
-        print(f"Installed {completed} bottle(s). No Homebrew source build was permitted.")
-        print("No cleanup was run. Existing reverse dependencies may still need a linkage review.")
+        ohai("Summary")
+        print(f"🍺  Installed {completed} bottle(s). No Homebrew source build was permitted.")
+        print("==> No cleanup was run. Existing reverse dependencies may still need a linkage review.")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -269,11 +354,18 @@ def main(argv: list[str] | None = None) -> int:
                 report = coverage_report(installed, targets_doc["formulae"])
                 if report["unmonitored_core"] and not args.json:
                     stream = sys.stdout
-                    print("Coverage notice: "
-                          f'{len(report["unmonitored_core"])} installed core formulae are not explicitly '
-                          "on the target list; run `brew intel coverage` to review.", file=stream)
+                    if is_color_enabled(stream):
+                        opoo(f"{len(report['unmonitored_core'])} installed core formulae are not explicitly "
+                             "on the target list; run `brew intel coverage` to review.", stream=stream)
+                    else:
+                        print("Coverage notice: "
+                              f'{len(report["unmonitored_core"])} installed core formulae are not explicitly '
+                              "on the target list; run `brew intel coverage` to review.", file=stream)
         if not names:
-            print("No unpinned, outdated core formulae.")
+            if is_color_enabled():
+                ohai("No unpinned, outdated core formulae.")
+            else:
+                print("No unpinned, outdated core formulae.")
             return 0
         inspector = lambda batch: native({"mode": "inspect", "names": batch})
         plan = Planner(inspector, records, max_nodes=config["max_graph_nodes"],
@@ -290,7 +382,10 @@ def main(argv: list[str] | None = None) -> int:
                 if args.json:
                     print(json.dumps(plan, indent=2))
                 else:
-                    print("No fully available upgrade roots; nothing installed.")
+                    if is_color_enabled():
+                        ohai("No fully available upgrade roots; nothing installed.")
+                    else:
+                        print("No fully available upgrade roots; nothing installed.")
                 return 0
         if args.json:
             print(json.dumps(plan, indent=2))
@@ -305,7 +400,7 @@ def main(argv: list[str] | None = None) -> int:
             print("\nDry run only. Add --apply to install. Missing bottles cause an error, not compilation.")
         return 0
     except (Error, KeyError, TypeError, OSError) as exc:
-        print(f"intelbrew: {exc}", file=sys.stderr)
+        onoe(str(exc))
         return 1
 
 
