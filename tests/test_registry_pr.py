@@ -312,7 +312,7 @@ class RegistryPullRequestTests(unittest.TestCase):
              patch("intelbrew.registry_pr.gh") as gh_mock:
             reconcile(REPOSITORY)
         calls = [call.args[0] for call in gh_mock.call_args_list]
-        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY], calls)
+        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY, "--delete-branch"], calls)
         merge = next(call for call in calls if call[:3] == ["pr", "merge", "8"])
         self.assertIn("--match-head-commit", merge)
 
@@ -324,7 +324,7 @@ class RegistryPullRequestTests(unittest.TestCase):
                    side_effect=Error("Refusing to replace a registry root with an existing dependency record")), \
              patch("intelbrew.registry_pr.gh") as gh_mock:
             reconcile(REPOSITORY)
-        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY],
+        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY, "--delete-branch"],
                       [call.args[0] for call in gh_mock.call_args_list])
 
     def test_async_branch_update_waits_for_new_head_before_any_merge(self):
