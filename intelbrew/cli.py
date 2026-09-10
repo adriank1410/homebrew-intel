@@ -276,7 +276,8 @@ def main(argv: list[str] | None = None) -> int:
             print("No unpinned, outdated core formulae.")
             return 0
         inspector = lambda batch: native({"mode": "inspect", "names": batch})
-        plan = Planner(inspector, records, max_nodes=config["max_graph_nodes"]).make(names)
+        plan = Planner(inspector, records, max_nodes=config["max_graph_nodes"],
+                       allow_drift_as_missing=bool(args.available)).make(names)
         skipped: list[dict] = []
         if args.available:
             plan, skipped = filter_available_plan(plan)
