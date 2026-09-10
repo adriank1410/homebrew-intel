@@ -485,7 +485,7 @@ def reconcile(repository: str) -> None:
                 pr = refreshed
                 if pr.get("headRefOid") == head:
                     # GitHub may acknowledge update-branch before the PR object
-                    # exposes its new head.  The next hourly run will continue.
+                    # exposes its new head.  The next maintenance run will continue.
                     continue
             elif pr.get("mergeStateStatus") == "DIRTY":
                 records, existing, manifest = validate_pr(repository, pr)
