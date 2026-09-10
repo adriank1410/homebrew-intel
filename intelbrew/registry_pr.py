@@ -256,7 +256,19 @@ def _merge_if_ready(repository: str, pr: dict[str, Any], workflow_state: str) ->
     if not tests_clean:
         return
     gh(["pr", "merge", str(number), "--repo", repository, "--squash",
-        "--match-head-commit", head], capture=False)
+        "--match-head-commit", head, "--delete-branch"], capture=False)
+
+
+def _release_order(pr: dict[str, Any]) -> tuple[int, int, str]:
+    """Order duplicate formula releases newest-first, independent of API order."""
+    branch = pr.get("headRefName", "")
+    match = BRANCH_RE.fullmatch(branch) if isinstance(branch, str) else None
+    if match is None:
+        return (-1, -1, "")
+    run_id, attempt, formula = re.match(
+        r"bottles/intel-([0-9]+)-([0-9]+)-(.+)", branch
+    ).groups()
+    return (int(run_id), int(attempt), formula)
 
 
 def _fetch_pr_files(repository: str, pr: dict[str, Any]) -> list[dict[str, Any]]:
@@ -390,6 +402,14 @@ def _rebuild_conflicted_pr(repository: str, pr: dict[str, Any], records: list[di
               f"HEAD:refs/heads/{branch}"], directory)
 
 
+def _close_stale_pr(repository: str, pr: dict[str, Any], error: Error) -> None:
+    """Close an obsolete bot PR so one stale release cannot block the queue."""
+    number = pr.get("number")
+    if not isinstance(number, int):
+        raise Error("Stale registry PR has no number") from error
+    gh(["pr", "close", str(number), "--repo", repository], capture=False)
+
+
 def _disable_existing_auto_merge(repository: str, pr: dict[str, Any]) -> dict[str, Any]:
     if not pr.get("autoMergeRequest"):
         return pr
@@ -444,6 +464,15 @@ def reconcile(repository: str) -> None:
     if not isinstance(prs, list):
         raise Error("GitHub CLI returned an invalid PR list")
     errors: list[str] = []
+    # GitHub normally returns newest PRs first, but that is not an API
+    # contract.  Sort only within each formula group so an older duplicate
+    # release cannot win when two updates for that formula are queued together,
+    # while preserving the API order between unrelated formulas.
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for candidate in prs:
+        grouped.setdefault(_release_order(candidate)[2], []).append(candidate)
+    prs = [candidate for group in grouped.values()
+           for candidate in sorted(group, key=_release_order, reverse=True)]
     for candidate in prs:
         if not isinstance(candidate, dict):
             continue
@@ -477,7 +506,7 @@ def reconcile(repository: str) -> None:
                 pr = refreshed
                 if pr.get("headRefOid") == head:
                     # GitHub may acknowledge update-branch before the PR object
-                    # exposes its new head.  The next hourly run will continue.
+                    # exposes its new head.  The next maintenance run will continue.
                     continue
             elif pr.get("mergeStateStatus") == "DIRTY":
                 records, existing, manifest = validate_pr(repository, pr)
@@ -488,6 +517,12 @@ def reconcile(repository: str) -> None:
             state = _dispatch_checks(repository, branch, pr)
             _merge_if_ready(repository, pr, state)
         except Error as exc:
+            message = str(exc)
+            if ("Refusing to replace a registry root already present on main" in message or
+                    "Refusing to replace a registry root with an existing dependency record" in message or
+                    "Refusing to overwrite incompatible registry dependency:" in message):
+                _close_stale_pr(repository, candidate, exc)
+                continue
             errors.append(f"PR {candidate.get('number', '?')}: {exc}")
     if errors:
         raise Error("; ".join(errors))

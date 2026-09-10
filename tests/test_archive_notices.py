@@ -50,6 +50,20 @@ class ArchiveNoticeTests(unittest.TestCase):
                 with self.assertRaisesRegex(Error, "limits"):
                     archive_notices(path, size, count)
 
+    def test_accepts_large_but_bounded_notice_sets(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "many-notices.tar"
+            with tarfile.open(path, "w") as archive:
+                for index in range(129):
+                    data = f"license {index}".encode()
+                    member = tarfile.TarInfo(f"pkg/LICENSE-{index:03d}")
+                    member.size = len(data)
+                    archive.addfile(member, io.BytesIO(data))
+            notices = archive_notices(path, 1024, 512)
+            self.assertEqual(len(notices), 129)
+            with self.assertRaisesRegex(Error, "Too many"):
+                archive_notices(path, 1024, 128)
+
     def test_unknown_resource_is_ignored_but_corrupt_supported_archives_fail(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
