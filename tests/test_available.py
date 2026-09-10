@@ -102,7 +102,7 @@ class AvailablePlanTests(unittest.TestCase):
             "target_exclusions": {"zlib": "test exclusion"},
             "max_graph_nodes": 400,
         }
-        installed = {"core": ["curl", "llvm", "zlib"],
+        installed = {"core": ["curl", "llvm", "qt", "zlib"],
                      "external_taps": ["thirdparty/mytool", "other/curl"]}
         with patch.object(cli.platform, "system", return_value="Darwin"), \
              patch.object(cli.platform, "machine", return_value="x86_64"), \
@@ -116,9 +116,9 @@ class AvailablePlanTests(unittest.TestCase):
         self.assertEqual(json.loads(output.getvalue()), {
             "schema": 1,
             "monitored_core": ["curl"],
-            "unmonitored_core": ["llvm", "zlib"],
+            "unmonitored_core": ["llvm", "qt", "zlib"],
             "policy_exclusions": [],
-            "proposed_candidates": ["llvm", "zlib"],
+            "proposed_candidates": ["llvm", "qt", "zlib"],
             "external_tap_formulae": ["other/curl", "thirdparty/mytool"],
         })
 
