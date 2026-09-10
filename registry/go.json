@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "go--1.27.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "6e046de91b7997808dd967e438a5f87c0f694056306ed9a09200b9ddd749d984",
+  "license": "BSD-3-Clause",
+  "name": "go",
+  "pkg_version": "1.27.1",
+  "recipe_sha256": "f6998cbf7c1c72bfa04de274c87f6b66d8323b0e5913a4758157c2ce907193a3",
+  "release": "intel-34388221074-1-mole",
+  "revision": 0,
+  "run_id": "34388221074",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "0e2137a5764da2d63ff8ba3797abeb0fd311e0c67b8f045f783b4e113a665ad6",
+  "size": 71529417,
+  "source": {
+    "filename": "go--1.27.1.sources.tar.gz",
+    "sha256": "944f22f1936b2e42e5ae8af0c4b552aa3f6f7ce694afb0fa4c8b0f30178a0bfc",
+    "size": 113964229
+  },
+  "tag": "sequoia",
+  "version": "1.27.1",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
