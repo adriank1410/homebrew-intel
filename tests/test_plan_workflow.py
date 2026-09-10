@@ -30,6 +30,16 @@ class PlanWorkflowTests(unittest.TestCase):
         with self.assertRaisesRegex(native_plan.Error, "257.*256"):
             native_plan.matrix_roots(candidates)
 
+    def test_matrix_roots_caps_to_batch_size(self):
+        candidates = [f"formula-{number}" for number in range(50)]
+        self.assertEqual(native_plan.matrix_roots(candidates, max_roots=12), candidates[:12])
+        self.assertEqual(len(native_plan.matrix_roots(candidates, max_roots=12)), 12)
+
+    def test_matrix_roots_caps_to_batch_size_before_matrix_limit(self):
+        candidates = [f"formula-{number}" for number in range(300)]
+        self.assertEqual(native_plan.matrix_roots(candidates, max_roots=12), candidates[:12])
+        self.assertEqual(len(native_plan.matrix_roots(candidates, max_roots=12)), 12)
+
     def test_recommended_dependency_keeps_root_eligible(self):
         item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
                 "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
@@ -298,6 +308,44 @@ class PlanWorkflowTests(unittest.TestCase):
         needed, blocked = native_plan.roots_needing_build(["vcs", "valid"], Inspector(), {}, config)
         self.assertEqual(needed, ["valid"])
         self.assertEqual(blocked, {"vcs": "VCS source needs review: vcs"})
+
+    def test_roots_needing_build_prioritizes_fewer_builds(self):
+        class Inspector:
+            def prime(self, names):
+                pass
+
+            def __call__(self, names):
+                items = {
+                    "base": {
+                        "name": "base", "tap": "homebrew/core", "version": "1.0",
+                        "revision": 0, "version_scheme": 0, "pkg_version": "1.0",
+                        "formula_sha256": "a" * 64, "runtime": [], "build": [],
+                        "test": [], "official_bottle": False, "vcs_source": False,
+                        "license": "MIT",
+                    },
+                    "app": {
+                        "name": "app", "tap": "homebrew/core", "version": "1.0",
+                        "revision": 0, "version_scheme": 0, "pkg_version": "1.0",
+                        "formula_sha256": "b" * 64, "runtime": ["base"], "build": [],
+                        "test": [], "official_bottle": False, "vcs_source": False,
+                        "license": "MIT",
+                    },
+                    "other-base": {
+                        "name": "other-base", "tap": "homebrew/core", "version": "1.0",
+                        "revision": 0, "version_scheme": 0, "pkg_version": "1.0",
+                        "formula_sha256": "c" * 64, "runtime": [], "build": [],
+                        "test": [], "official_bottle": False, "vcs_source": False,
+                        "license": "MIT",
+                    },
+                }
+                return {name: items[name] for name in names}
+
+        config = {"max_graph_nodes": 20, "max_source_builds": 5,
+                  "blocked_source_builds": [], "permissive_license_tokens": ["MIT"],
+                  "redistribution_exceptions": {}}
+        needed, blocked = native_plan.roots_needing_build(["app", "other-base", "base"], Inspector(), {}, config)
+        self.assertEqual(needed, ["base", "other-base", "app"])
+        self.assertEqual(blocked, {})
 
 
 if __name__ == "__main__":
