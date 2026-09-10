@@ -289,6 +289,27 @@ class RegistryPullRequestTests(unittest.TestCase):
             reconcile(REPOSITORY)
         self.assertTrue(any(call.args[0][:3] == ["pr", "merge", "7"] for call in calls.call_args_list))
 
+    def test_reconcile_closes_stale_registry_conflict_and_merges_next_pr(self):
+        stale = pull_request(number=7)
+        next_pr = pull_request(
+            number=8,
+            headRefName="bottles/intel-124-1-next",
+            headRefOid="d" * 40,
+            statusCheckRollup=[{"name": "tests", "status": "COMPLETED", "conclusion": "SUCCESS"}],
+        )
+        with patch("intelbrew.registry_pr.gh_json", return_value=[stale, next_pr]), \
+             patch("intelbrew.registry_pr._find_pr", side_effect=[stale, next_pr]), \
+             patch("intelbrew.registry_pr.validate_pr",
+                   side_effect=[Error("Refusing to replace a registry root already present on main"),
+                                ([], [], {})]), \
+             patch("intelbrew.registry_pr._dispatch_checks", return_value="ready"), \
+             patch("intelbrew.registry_pr.gh") as gh_mock:
+            reconcile(REPOSITORY)
+        calls = [call.args[0] for call in gh_mock.call_args_list]
+        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY], calls)
+        merge = next(call for call in calls if call[:3] == ["pr", "merge", "8"])
+        self.assertIn("--match-head-commit", merge)
+
     def test_async_branch_update_waits_for_new_head_before_any_merge(self):
         pr = pull_request(mergeStateStatus="BEHIND")
         fake, _ = self._gh_fixture(pr)
