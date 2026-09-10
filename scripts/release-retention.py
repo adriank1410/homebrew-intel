@@ -30,6 +30,7 @@ def main() -> int:
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--max-delete", type=int, default=20)
     args = parser.parse_args()
+    apply_mode = args.apply or os.environ.get("INTELBREW_RETENTION_APPLY", "").lower() == "true"
     releases = gh_json(["release", "list", "--repo", REPOSITORY, "--limit", "1000",
                         "--json", "tagName,createdAt,isDraft,isPrerelease"])
     prs = gh_json(["pr", "list", "--repo", REPOSITORY, "--state", "open", "--limit", "100",
@@ -37,12 +38,12 @@ def main() -> int:
     selected = select_releases(releases, referenced=referenced_releases(ROOT / "registry"),
                                active=active_release_tags(prs), now=datetime.now(timezone.utc))
     selected = selected[:max(0, args.max_delete)]
-    mode = "APPLY" if args.apply else "DRY-RUN"
+    mode = "APPLY" if apply_mode else "DRY-RUN"
     print(f"{mode}: {len(selected)} release(s) selected for deletion")
     for release in selected:
         tag = release["tagName"]
         print(tag)
-        if args.apply:
+        if apply_mode:
             subprocess.run(["gh", "release", "delete", tag, "--repo", REPOSITORY,
                             "--yes", "--cleanup-tag"], cwd=ROOT, check=True)
     return 0

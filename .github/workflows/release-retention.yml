@@ -41,6 +41,5 @@ jobs:
       - name: Retain referenced releases and remove old duplicates
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: >-
-          python3 scripts/release-retention.py
-          ${{ github.event_name == 'schedule' && '--apply' || '' }}
+          INTELBREW_RETENTION_APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+        run: python3 scripts/release-retention.py
