@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "protobuf--36.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "206d83e79b78c0227dc6ffc529a21a667ad1372564d567da0dbc9d19b8a5bd93",
+  "license": "BSD-3-Clause",
+  "name": "protobuf",
+  "pkg_version": "36.1",
+  "recipe_sha256": "f9f4766073c22d8ec4a1031145e1476be1ef539a3da82de8038e5b8816088926",
+  "release": "intel-34338885775-1-protobuf",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e9b5c8fd496b39c1b362fbacab290511d1ba3c639731b30a990947979fcee0d1",
+      "name": "abseil",
+      "pkg_version": "20260817.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "bbc3b8800dd1f852138404adceaac13766c606628f9897fdc526dd238a38e133",
+  "size": 3945068,
+  "source": {
+    "filename": "protobuf--36.1.sources.tar.gz",
+    "sha256": "325b05e166be683ca371e160dcd37941af3f1502c287c4e6d4f259f354a68362",
+    "size": 7290505
+  },
+  "tag": "sequoia",
+  "version": "36.1",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
