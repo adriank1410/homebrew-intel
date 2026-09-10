@@ -4,10 +4,15 @@ from pathlib import Path
 from unittest.mock import patch
 from intelbrew.core import (Error, Planner, artifact_url, basename, brew_env, canonical_name,
                             download, ensure_complete, matching_record, read_json, require_sha,
-                            validate_record, write_json_new)
+                            validate_record, write_json_new, native)
 from helpers import G,H,meta,record
 
 class ValidationTests(unittest.TestCase):
+    def test_native_can_use_an_isolated_build_cache_without_changing_process_env(self):
+        with patch.dict(os.environ, {"HOMEBREW_CACHE": "/original-cache"}), patch('intelbrew.core.run', return_value='{}') as call:
+            native({"mode":"build-context"}, ci=True, cache=Path('/isolated-cache'))
+            self.assertEqual(call.call_args.kwargs['env']['HOMEBREW_CACHE'], '/isolated-cache')
+            self.assertEqual(os.environ['HOMEBREW_CACHE'], '/original-cache')
     def test_canonical_names(self):
         for n in ['openssl@3','c++','python@3.14','foo-bar','gtk+3']:self.assertEqual(canonical_name('homebrew/core/'+n),n)
     def test_name_injection_rejected(self):
@@ -97,6 +102,12 @@ class PlannerTests(unittest.TestCase):
         personal=self.plan({'tool':meta(vcs_source=True)},records={'tool':record()},build=True)
         self.assertEqual(official['nodes']['tool']['provider'],'official')
         self.assertEqual(personal['nodes']['tool']['provider'],'personal')
+    def test_pinned_git_source_can_be_built(self):
+        result=self.plan({'tool':meta(vcs_source=True,pinned_git_source=True)},build=True)
+        self.assertEqual(result['nodes']['tool']['provider'],'build')
+    def test_string_pinned_git_flag_cannot_enable_source_build(self):
+        with self.assertRaisesRegex(Error,'VCS source needs review'):
+            self.plan({'tool':meta(vcs_source=True,pinned_git_source='true')},build=True)
     def test_alias_not_accepted(self):
         with self.assertRaises(Error):self.plan({'tool':meta('canonical')})
     def test_root_dedup(self):self.assertEqual(self.plan({'tool':meta(official=True)},roots=['tool','homebrew/core/tool'])['roots'],['tool'])
