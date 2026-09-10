@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "jpeg-turbo--3.2.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "3d37ac54b50b2ad5ef71be976a03e9d8a83389311389f657396c0fd3a7cc7199",
+  "license": {
+    "all_of": [
+      "IJG",
+      "Zlib",
+      "BSD-3-Clause"
+    ]
+  },
+  "name": "jpeg-turbo",
+  "pkg_version": "3.2.0",
+  "recipe_sha256": "860c0c90f8c2d0541de067218452d57f555dd4da5b5dc49151f13b563229ab24",
+  "release": "intel-34338885775-1-webp",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "38c7b8dce186596adef1488b1c0847cd10e47fd99d087716f3bf8d9f2dbc4425",
+  "size": 1565608,
+  "source": {
+    "filename": "jpeg-turbo--3.2.0.sources.tar.gz",
+    "sha256": "404203427f9476507543ad8fb36dbd64c63dae3172d550e7b31b2ab89d33bd20",
+    "size": 2537836
+  },
+  "tag": "sequoia",
+  "version": "3.2.0",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
