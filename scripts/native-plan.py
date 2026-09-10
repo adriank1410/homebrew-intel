@@ -52,13 +52,14 @@ class CachedInspector:
 
 
 def matrix_roots(candidates, *, max_roots=None):
+    candidates = list(candidates)
+    if max_roots is not None and max_roots > 0:
+        candidates = candidates[:max_roots]
     if len(candidates) > MATRIX_MAX_ROOTS:
         raise Error(
             f'{len(candidates)} build candidates exceed the GitHub matrix limit '
             f'of {MATRIX_MAX_ROOTS}'
         )
-    if max_roots is not None and max_roots > 0:
-        return list(candidates[:max_roots])
     return list(candidates)
 
 

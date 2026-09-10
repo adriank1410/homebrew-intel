@@ -35,6 +35,11 @@ class PlanWorkflowTests(unittest.TestCase):
         self.assertEqual(native_plan.matrix_roots(candidates, max_roots=12), candidates[:12])
         self.assertEqual(len(native_plan.matrix_roots(candidates, max_roots=12)), 12)
 
+    def test_matrix_roots_caps_to_batch_size_before_matrix_limit(self):
+        candidates = [f"formula-{number}" for number in range(300)]
+        self.assertEqual(native_plan.matrix_roots(candidates, max_roots=12), candidates[:12])
+        self.assertEqual(len(native_plan.matrix_roots(candidates, max_roots=12)), 12)
+
     def test_recommended_dependency_keeps_root_eligible(self):
         item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
                 "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
