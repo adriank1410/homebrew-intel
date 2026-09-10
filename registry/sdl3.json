@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "sdl3--3.4.16.sequoia.bottle.tar.gz",
+  "formula_sha256": "d6b7c185f97778f779eb638ab565a73b4bbbc0a6070106fe4b1b8c6f2077a165",
+  "license": "Zlib",
+  "name": "sdl3",
+  "pkg_version": "3.4.16",
+  "recipe_sha256": "ea859e2cfd17ca6d57421658fe0ecfc01d723c74a85ef6ce690a19b789373b77",
+  "release": "intel-34338885775-1-ffmpeg",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "121e03d5abdb0f53eb0db722ce1bb03004c6bc0aa2e649401e2f3d9da21b877b",
+  "size": 1676280,
+  "source": {
+    "filename": "sdl3--3.4.16.sources.tar.gz",
+    "sha256": "9d19e9610c96874c4d56ec03e832d7ae64352deac4ce58f419353e866f016159",
+    "size": 15579581
+  },
+  "tag": "sequoia",
+  "version": "3.4.16",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
