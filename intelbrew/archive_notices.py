@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 import re
+import hashlib
 import subprocess
 import tarfile
 import tempfile
@@ -25,19 +26,29 @@ def _safe_name(value: str) -> bool:
     return bool(value) and not name.is_absolute() and ".." not in name.parts
 
 
-def _read_tar(archive: tarfile.TarFile, max_size: int, max_count: int):
+def _append_notice(found, seen, name, data, max_count, deduplicate):
+    if deduplicate:
+        digest = hashlib.sha256(data).digest()
+        if digest in seen:
+            return
+        seen.add(digest)
+    if len(found) >= max_count:
+        raise Error("Too many upstream license notices")
+    found.append((name, data))
+
+
+def _read_tar(archive: tarfile.TarFile, max_size: int, max_count: int, deduplicate: bool):
     found = []
+    seen = set()
     for member in archive:
         if (member.isfile() and _safe_name(member.name)
                 and NOTICE_NAME.fullmatch(PurePosixPath(member.name).name)
                 and 0 < member.size <= max_size):
-            if len(found) >= max_count:
-                raise Error("Too many upstream license notices")
             handle = archive.extractfile(member)
             data = handle.read(max_size + 1) if handle else b""
             if len(data) != member.size:
                 raise Error("Invalid upstream license notice")
-            found.append((member.name, data))
+            _append_notice(found, seen, member.name, data, max_count, deduplicate)
     return found
 
 
@@ -53,7 +64,7 @@ class _BoundedReader:
         return data
 
 
-def _libarchive_notices(path: Path, max_size: int, max_count: int):
+def _libarchive_notices(path: Path, max_size: int, max_count: int, deduplicate: bool):
     command = ["/usr/bin/bsdtar", "-cf", "-", "@" + os.fspath(path.resolve())]
     with tempfile.TemporaryFile() as stderr:
         try:
@@ -68,7 +79,7 @@ def _libarchive_notices(path: Path, max_size: int, max_count: int):
         try:
             assert process.stdout is not None
             with tarfile.open(fileobj=_BoundedReader(process.stdout), mode="r|") as archive:
-                found = _read_tar(archive, max_size, max_count)
+                found = _read_tar(archive, max_size, max_count, deduplicate)
             return_code = process.wait()
         except BaseException:
             process.kill(); process.wait()
@@ -84,7 +95,7 @@ def _libarchive_notices(path: Path, max_size: int, max_count: int):
         return found
 
 
-def archive_notices(path: Path, max_notice_size: int, max_notices: int):
+def archive_notices(path: Path, max_notice_size: int, max_notices: int, *, deduplicate: bool = False):
     """Return safe regular notice members as ``(archive_name, bytes)`` pairs."""
     path = Path(path)
     if max_notice_size <= 0 or max_notices <= 0:
@@ -96,25 +107,23 @@ def archive_notices(path: Path, max_notice_size: int, max_notices: int):
         if lower.endswith(PYTHON_TAR_SUFFIXES) or (
                 not lower.endswith(LIBARCHIVE_SUFFIXES) and tarfile.is_tarfile(path)):
             with tarfile.open(path, "r:*") as archive:
-                return _read_tar(archive, max_notice_size, max_notices)
+                return _read_tar(archive, max_notice_size, max_notices, deduplicate)
         if lower.endswith(".zip") or (
                 not lower.endswith(LIBARCHIVE_SUFFIXES) and zipfile.is_zipfile(path)):
-            found = []
+            found = []; seen = set()
             with zipfile.ZipFile(path) as archive:
                 for member in archive.infolist():
                     mode = (member.external_attr >> 16) & 0o170000
                     if (not member.is_dir() and mode in (0, 0o100000) and _safe_name(member.filename)
                             and NOTICE_NAME.fullmatch(PurePosixPath(member.filename).name)
                             and 0 < member.file_size <= max_notice_size):
-                        if len(found) >= max_notices:
-                            raise Error("Too many upstream license notices")
                         data = archive.read(member)
                         if len(data) != member.file_size:
                             raise Error("Invalid upstream license notice")
-                        found.append((member.filename, data))
+                        _append_notice(found, seen, member.filename, data, max_notices, deduplicate)
             return found
         if lower.endswith(LIBARCHIVE_SUFFIXES):
-            return _libarchive_notices(path, max_notice_size, max_notices)
+            return _libarchive_notices(path, max_notice_size, max_notices, deduplicate)
         return []
     except Error:
         raise
