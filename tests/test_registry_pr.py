@@ -3,14 +3,17 @@ import base64
 import copy
 import json
 import os
+import subprocess
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import ANY, patch
 
 from helpers import G, record
 from intelbrew.core import Error
 from intelbrew.registry_pr import (allowed_pr, changed_registry_files,
                                    ensure_pr, validate_manifest_records, _record_from_content,
-                                   _workflow_state, reconcile, validate_pr)
+                                   _rebuild_conflicted_pr, _workflow_state, reconcile, validate_pr)
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
@@ -135,6 +138,94 @@ class RegistryPullRequestTests(unittest.TestCase):
                     "brew_commit": G, "workflow_commit": G, "packages": [item]}
         with self.assertRaises(Error):
             validate_manifest_records(manifest, [record(release=RELEASE), record(name="other", release=RELEASE)], release=RELEASE)
+
+    def test_manifest_accepts_matching_published_dependency_with_different_artifact(self):
+        dependency = record(release=None)
+        root = record(name="root", release=None, runtime_dependencies=[{
+            "name": "tool", "pkg_version": dependency["pkg_version"],
+            "formula_sha256": dependency["formula_sha256"]}])
+        manifest = {"schema": 1, "verified": True, "root": "root", "core_commit": G,
+                    "brew_commit": G, "workflow_commit": G, "packages": [root, dependency]}
+        existing = record(release="intel-999-1-tool", sha256="d" * 64, size=999,
+                          source={**dependency["source"], "sha256": "e" * 64, "size": 888})
+        validate_manifest_records(manifest, [{**root, "release": RELEASE}], release=RELEASE,
+                                  existing=[existing])
+        for field, value in (("formula_sha256", "d" * 64), ("filename", "other.tar.gz")):
+            with self.subTest(field=field), self.assertRaises(Error):
+                validate_manifest_records(manifest, [{**root, "release": RELEASE}], release=RELEASE,
+                                          existing=[{**existing, field: value}])
+
+    def test_manifest_never_replaces_root_from_main(self):
+        item = record(release=None)
+        manifest = {"schema": 1, "verified": True, "root": "tool", "core_commit": G,
+                    "brew_commit": G, "workflow_commit": G, "packages": [item]}
+        with self.assertRaisesRegex(Error, "do not match"):
+            validate_manifest_records(manifest, [], release=RELEASE,
+                                      existing=[record(release="intel-999-1-tool")])
+
+    def test_conflicted_rebuild_keeps_main_dependency_and_exactly_replaces_branch(self):
+        with tempfile.TemporaryDirectory() as raw:
+            base = Path(raw); origin = base / "origin.git"; seed = base / "seed"
+            subprocess.run(["git", "init", "--bare", "-q", str(origin)], check=True)
+            subprocess.run(["git", "init", "-q", str(seed)], check=True)
+            for key, value in (("user.name", "test"), ("user.email", "test@example.invalid"),
+                               ("commit.gpgsign", "false")):
+                subprocess.run(["git", "-C", str(seed), "config", key, value], check=True)
+            dependency = record(release="intel-999-1-tool", sha256="d" * 64, size=999)
+            (seed / "registry").mkdir(); (seed / "registry/tool.json").write_text(json.dumps(dependency))
+            (seed / "README").write_text("base")
+            subprocess.run(["git", "-C", str(seed), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(seed), "commit", "-q", "-m", "base"], check=True)
+            subprocess.run(["git", "-C", str(seed), "branch", "-M", "main"], check=True)
+            subprocess.run(["git", "-C", str(seed), "remote", "add", "origin", str(origin)], check=True)
+            subprocess.run(["git", "-C", str(seed), "push", "-q", "origin", "main"], check=True)
+            subprocess.run(["git", "-C", str(seed), "switch", "-q", "-c", BRANCH], check=True)
+            (seed / "conflict").write_text("old")
+            subprocess.run(["git", "-C", str(seed), "add", "conflict"], check=True)
+            subprocess.run(["git", "-C", str(seed), "commit", "-q", "-m", "branch"], check=True)
+            subprocess.run(["git", "-C", str(seed), "push", "-q", "origin", BRANCH], check=True)
+            head = subprocess.run(["git", "-C", str(seed), "rev-parse", "HEAD"], text=True,
+                                  capture_output=True, check=True).stdout.strip()
+            root = record(name="root", release=RELEASE)
+            proposed_dependency = {**dependency, "release": RELEASE, "sha256": "e" * 64, "size": 1000}
+            manifest = {"schema": 1, "verified": True, "root": "root", "core_commit": G,
+                        "brew_commit": G, "workflow_commit": G,
+                        "packages": [{**root, "release": None}, {**proposed_dependency, "release": None}]}
+            def boundary(args, **kwargs):
+                self.assertEqual(args[:2], ["repo", "clone"])
+                subprocess.run(["git", "clone", "-q", str(origin), args[3]], check=True)
+                return ""
+            with patch("intelbrew.registry_pr.gh", side_effect=boundary):
+                _rebuild_conflicted_pr(REPOSITORY, pull_request(headRefOid=head),
+                                       [root, proposed_dependency], [dependency], manifest)
+            inspect = base / "inspect"
+            subprocess.run(["git", "clone", "-q", "-b", BRANCH, str(origin), str(inspect)], check=True)
+            self.assertEqual(json.loads((inspect / "registry/tool.json").read_text()), dependency)
+            self.assertEqual(json.loads((inspect / "registry/root.json").read_text()), root)
+            self.assertFalse((inspect / "conflict").exists())
+            rebuilt_head = subprocess.run(["git", "--git-dir", str(origin), "rev-parse", BRANCH],
+                                          text=True, capture_output=True, check=True).stdout.strip()
+            stale_snapshot = {**dependency, "release": "intel-998-1-tool"}
+            with patch("intelbrew.registry_pr.gh", side_effect=boundary), self.assertRaisesRegex(
+                    Error, "main changed"):
+                _rebuild_conflicted_pr(REPOSITORY, pull_request(headRefOid=rebuilt_head),
+                                       [root, proposed_dependency], [stale_snapshot], manifest)
+            self.assertEqual(subprocess.run(["git", "--git-dir", str(origin), "rev-parse", BRANCH],
+                                            text=True, capture_output=True, check=True).stdout.strip(), rebuilt_head)
+
+    def test_conflicted_rebuild_refuses_incompatible_existing_record_before_git_io(self):
+        dependency = record(release=None)
+        root = record(name="root", release=RELEASE)
+        manifest = {"schema": 1, "verified": True, "root": "root", "core_commit": G,
+                    "brew_commit": G, "workflow_commit": G,
+                    "packages": [{**root, "release": None}, dependency]}
+        incompatible = {**record(release="intel-999-1-tool"), "formula_sha256": "d" * 64}
+        with patch("intelbrew.registry_pr.gh") as boundary, self.assertRaisesRegex(
+                Error, "incompatible registry dependency"):
+            _rebuild_conflicted_pr(REPOSITORY, pull_request(headRefOid=HEAD),
+                                   [root, {**dependency, "release": RELEASE}],
+                                   [incompatible], manifest)
+        boundary.assert_not_called()
 
     def test_contents_api_base64_whitespace_is_accepted(self):
         value = json.dumps(record(release=RELEASE)).encode()
