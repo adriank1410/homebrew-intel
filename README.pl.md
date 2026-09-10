@@ -85,6 +85,14 @@ budowania ze źródeł. Polityka licencji i redystrybucji, źródła VCS, blokad
 i ograniczenia Qt są sprawdzane później podczas planowania budowania ze źródeł;
 nie blokują użycia dostępnej oficjalnej lub własnej butelki.
 
+Publikacja pakietów GPL, LGPL, AGPL i MPL wymaga dołączenia źródeł. Wydanie zawiera
+recepturę, zadeklarowane źródła i patche, informacje licencyjne oraz pobrane źródła
+zależności Go/Cargo wraz ze sprawdzanym indeksem. Klient podaje link do właściwej
+paczki źródeł. Źródła Git przypięte do pełnego commita można archiwizować
+wraz z przypiętymi submodułami. Nieprzypięte źródła i pozostałe systemy VCS
+nadal wymagają dodatkowej obsługi.
+Szczegóły opisuje [dokumentacja publikacji źródeł](docs/LICENSE-REVIEW.md).
+
 `brew intel coverage` porównuje lokalnie zainstalowane formuły z listą celów.
 `brew intel sync` dodatkowo sprawdza bieżące metadane i stan instalacji. Pomija
 między innymi aliasy i nazwy spoza core, formuły wyłączone lub bez stabilnej
@@ -108,7 +116,7 @@ kandydatów i cogodzinną obsługę PR-ów. Niepewni kandydaci są sprawdzani ws
 na jednym runnerze Intel; do macierzy trafiają wszystkie kwalifikujące cele
 wymagające budowania. Pakiety z dostępnymi butelkami nie zajmują osobnych runnerów
 budowania i weryfikacji. Blokady są raportowane niezależnie od pozostałych
-pakietów. Jednocześnie działają najwyżej dwa buildy i dwie weryfikacje. Jeśli
+pakietów. Każdy etap dopuszcza do pięciu równoległych zadań. Jeśli
 budowania wymaga więcej niż dopuszczalne przez GitHub 256 zadań macierzy,
 planowanie kończy się jawnym błędem zamiast pominięcia części pakietów.
 
