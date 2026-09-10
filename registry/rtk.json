@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "44fff8ff6baf4a777e388187534d3409d4927372",
+  "filename": "rtk--0.48.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "373f75ed73e51c350978776e56d0a5b93c6a0aa034545da567c240d52fe2d344",
+  "license": "Apache-2.0",
+  "name": "rtk",
+  "pkg_version": "0.48.0",
+  "recipe_sha256": "e320bdb1f258e7e95ee548346b088615128f52a9ebddb6367cbba227d14f9a5b",
+  "release": "intel-34328739726-1-rtk",
+  "revision": 0,
+  "run_id": "34328739726",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "42a5866e8ff95a1623703b38498b9e5f7c2fcfd9255276f2a9bebd37f82ca4ae",
+  "size": 3515234,
+  "source": {
+    "filename": "rtk--0.48.0.sources.tar.gz",
+    "sha256": "cbbdf970e4895657ffc37b8e22ccb5bfc3e109716a01f2019dc670152af60957",
+    "size": 1169297
+  },
+  "tag": "sequoia",
+  "version": "0.48.0",
+  "version_scheme": 0,
+  "workflow_commit": "8fb32d5d1312ff6a42b701b3b67f349e6c44f0d5"
+}
