@@ -13,7 +13,8 @@ from helpers import G, record
 from intelbrew.core import Error
 from intelbrew.registry_pr import (allowed_pr, changed_registry_files,
                                    ensure_pr, validate_manifest_records, _record_from_content,
-                                   _rebuild_conflicted_pr, _workflow_state, reconcile, validate_pr)
+                                   _rebuild_conflicted_pr, _release_order, _workflow_state,
+                                   reconcile, validate_pr)
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
@@ -77,6 +78,11 @@ class RegistryPullRequestTests(unittest.TestCase):
 
     def test_accepts_actual_gh_cli_actions_author(self):
         self.assertTrue(allowed_pr(pull_request(author={"is_bot": True, "login": "app/github-actions"}), repository=REPOSITORY))
+
+    def test_release_order_puts_newer_duplicate_formula_first(self):
+        older = pull_request(headRefName="bottles/intel-34338885775-1-go")
+        newer = pull_request(headRefName="bottles/intel-34388221074-1-go")
+        self.assertLess(_release_order(older), _release_order(newer))
 
     def test_requires_exact_configured_app_login(self):
         with patch.dict(os.environ, {"INTELBREW_BOT_LOGIN": "app/intelbrew-publisher"}):
@@ -289,6 +295,38 @@ class RegistryPullRequestTests(unittest.TestCase):
             reconcile(REPOSITORY)
         self.assertTrue(any(call.args[0][:3] == ["pr", "merge", "7"] for call in calls.call_args_list))
 
+    def test_reconcile_closes_stale_registry_conflict_and_merges_next_pr(self):
+        stale = pull_request(number=7)
+        next_pr = pull_request(
+            number=8,
+            headRefName="bottles/intel-124-1-next",
+            headRefOid="d" * 40,
+            statusCheckRollup=[{"name": "tests", "status": "COMPLETED", "conclusion": "SUCCESS"}],
+        )
+        with patch("intelbrew.registry_pr.gh_json", return_value=[stale, next_pr]), \
+             patch("intelbrew.registry_pr._find_pr", side_effect=[stale, next_pr]), \
+             patch("intelbrew.registry_pr.validate_pr",
+                   side_effect=[Error("Refusing to replace a registry root already present on main"),
+                                ([], [], {})]), \
+             patch("intelbrew.registry_pr._dispatch_checks", return_value="ready"), \
+             patch("intelbrew.registry_pr.gh") as gh_mock:
+            reconcile(REPOSITORY)
+        calls = [call.args[0] for call in gh_mock.call_args_list]
+        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY], calls)
+        merge = next(call for call in calls if call[:3] == ["pr", "merge", "8"])
+        self.assertIn("--match-head-commit", merge)
+
+    def test_reconcile_closes_root_dependency_conflict(self):
+        stale = pull_request(number=7)
+        with patch("intelbrew.registry_pr.gh_json", return_value=[stale]), \
+             patch("intelbrew.registry_pr._find_pr", return_value=stale), \
+             patch("intelbrew.registry_pr.validate_pr",
+                   side_effect=Error("Refusing to replace a registry root with an existing dependency record")), \
+             patch("intelbrew.registry_pr.gh") as gh_mock:
+            reconcile(REPOSITORY)
+        self.assertIn(["pr", "close", "7", "--repo", REPOSITORY],
+                      [call.args[0] for call in gh_mock.call_args_list])
+
     def test_async_branch_update_waits_for_new_head_before_any_merge(self):
         pr = pull_request(mergeStateStatus="BEHIND")
         fake, _ = self._gh_fixture(pr)
@@ -427,7 +465,7 @@ class RegistryPullRequestTests(unittest.TestCase):
         merge = next(call for call in calls if call[:3] == ["pr", "merge", "7"])
         self.assertNotIn("--auto", merge)
         self.assertIn("--squash", merge)
-        self.assertEqual(merge[-1], HEAD)
+        self.assertIn(HEAD, merge)
 
 
 if __name__ == "__main__":
