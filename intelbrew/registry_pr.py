@@ -135,8 +135,8 @@ def _download_manifest(repository: str, release: str, directory: Path) -> dict[s
 
 
 def validate_manifest_records(manifest: dict[str, Any], records: list[dict[str, Any]], *,
-                              release: str) -> None:
-    """Bind PR records to the signed release manifest, ignoring only release."""
+                              release: str, existing: list[dict[str, Any]] | None = None) -> None:
+    """Bind PR records, or compatible already-published dependencies, to a manifest."""
     if manifest.get("schema") != 1 or manifest.get("verified") is not True:
         raise Error("Release manifest is not a verified candidate manifest")
     canonical_name(manifest.get("root"))
@@ -165,8 +165,27 @@ def validate_manifest_records(manifest: dict[str, Any], records: list[dict[str, 
             raise Error("Registry record release does not match branch release")
         item["release"] = None
         normalized_records[item["name"]] = item
+    existing = existing or []
+    for record in existing:
+        validate_record(record, published=True)
+        name = record["name"]
+        if name == manifest["root"] or name in normalized_records or name not in normalized_manifest:
+            continue
+        if _compatible_dependency(record, normalized_manifest[name]):
+            normalized_records[name] = normalized_manifest[name]
     if normalized_records != normalized_manifest:
         raise Error("Registry records do not match the immutable release manifest")
+
+
+def _compatible_dependency(current: dict[str, Any], proposed: dict[str, Any]) -> bool:
+    current = copy.deepcopy(current); proposed = copy.deepcopy(proposed)
+    current["release"] = proposed["release"] = None
+    for item in (current, proposed):
+        item.pop("sha256", None); item.pop("size", None)
+        source = item.get("source")
+        if isinstance(source, dict):
+            source.pop("sha256", None); source.pop("size", None)
+    return current == proposed
 
 
 TRANSIENT_CONCLUSIONS = {"cancelled", "timed_out", "action_required", "stale"}
@@ -264,7 +283,48 @@ def _fetch_pr_files(repository: str, pr: dict[str, Any]) -> list[dict[str, Any]]
     return records
 
 
-def validate_pr(repository: str, pr: dict[str, Any]) -> None:
+def _existing_manifest_records(repository: str, manifest: dict[str, Any], directory: Path,
+                               changed: set[str], *, include_changed: bool) -> list[dict[str, Any]]:
+    packages = manifest.get("packages")
+    if not isinstance(packages, list):
+        raise Error("Manifest has no package records")
+    records = []
+    for package in packages:
+        if not isinstance(package, dict):
+            raise Error("Manifest contains an invalid package record")
+        name = canonical_name(package.get("name"))
+        if name in changed and not include_changed:
+            continue
+        try:
+            payload = gh_json(["api", "--method", "GET",
+                               f"repos/{repository}/contents/registry/{name}.json", "-f", "ref=main"])
+            record = _record_from_content(payload, f"registry/{name}.json")
+        except Error as exc:
+            if "HTTP 404" in str(exc):
+                continue
+            raise
+        release = record["release"]
+        existing_dir = directory / name
+        existing_dir.mkdir()
+        existing_manifest = _download_manifest(repository, release, existing_dir)
+        workflow_commit = existing_manifest.get("workflow_commit")
+        require_sha(workflow_commit, git=True)
+        attest(existing_dir / "manifest.json", repository, workflow_commit,
+               token=os.environ.get("INTELBREW_ATTESTATION_TOKEN"))
+        packages = existing_manifest.get("packages")
+        if not isinstance(packages, list):
+            raise Error("Published dependency manifest has no package records")
+        matching = [package for package in packages
+                    if isinstance(package, dict) and package.get("name") == name]
+        if len(matching) != 1:
+            raise Error("Published dependency is absent from its attested manifest")
+        validate_manifest_records({**existing_manifest, "root": name, "packages": matching},
+                                  [record], release=release)
+        records.append(record)
+    return records
+
+
+def validate_pr(repository: str, pr: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     if not allowed_pr(pr, repository=repository):
         raise Error("Refusing a PR outside the bot-owned same-repository registry surface")
     release = pr["headRefName"].removeprefix("bottles/")
@@ -275,7 +335,59 @@ def validate_pr(repository: str, pr: dict[str, Any]) -> None:
         require_sha(workflow_commit, git=True)
         attest(Path(temp) / "manifest.json", repository, workflow_commit,
                token=os.environ.get("INTELBREW_ATTESTATION_TOKEN"))
-        validate_manifest_records(manifest, records, release=release)
+        existing = _existing_manifest_records(repository, manifest, Path(temp),
+                                              {record["name"] for record in records},
+                                              include_changed=pr.get("mergeStateStatus") == "DIRTY")
+        validate_manifest_records(manifest, records, release=release, existing=existing)
+    return records, existing, manifest
+
+
+def _git(arguments: list[str], directory: Path) -> str:
+    return run(["git", "-c", "credential.helper=", "-c",
+                "credential.https://github.com.helper=!gh auth git-credential",
+                "-c", "commit.gpgsign=false", *arguments], cwd=directory)
+
+
+def _rebuild_conflicted_pr(repository: str, pr: dict[str, Any], records: list[dict[str, Any]],
+                           existing: list[dict[str, Any]], manifest: dict[str, Any]) -> None:
+    root = manifest["root"]
+    existing_by_name = {record["name"]: record for record in existing}
+    manifest_by_name = {record["name"]: record for record in manifest["packages"]}
+    compatible = set()
+    for record in records:
+        current = existing_by_name.get(record["name"])
+        if current is None:
+            continue
+        if record["name"] == root:
+            raise Error("Refusing to replace a registry root already present on main")
+        if not _compatible_dependency(current, manifest_by_name[record["name"]]):
+            raise Error(f"Refusing to overwrite incompatible registry dependency: {record['name']}")
+        compatible.add(record["name"])
+    retained = [record for record in records if record["name"] not in compatible]
+    if not any(record["name"] == root for record in retained):
+        raise Error("Refusing to replace a registry root with an existing dependency record")
+    branch, head = pr["headRefName"], pr["headRefOid"]
+    with tempfile.TemporaryDirectory(prefix="intelbrew-registry-rebuild-") as raw:
+        directory = Path(raw) / "repo"
+        gh(["repo", "clone", repository, str(directory), "--", "--filter=blob:none"], capture=False)
+        _git(["switch", "--create", branch, "origin/main"], directory)
+        for name in manifest_by_name:
+            path = directory / "registry" / f"{name}.json"
+            snapshot = existing_by_name.get(name)
+            if snapshot is None:
+                if path.exists():
+                    raise Error(f"Registry main changed during reconciliation: {name}")
+            elif not path.is_file() or read_json(path) != snapshot:
+                raise Error(f"Registry main changed during reconciliation: {name}")
+        for record in retained:
+            path = directory / "registry" / f"{record['name']}.json"
+            path.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        _git(["config", "user.name", "intelbrew registry controller"], directory)
+        _git(["config", "user.email", "registry-controller@users.noreply.github.com"], directory)
+        _git(["add", "--", *[f"registry/{record['name']}.json" for record in retained]], directory)
+        _git(["commit", "-m", "registry: reconcile attested bottle records"], directory)
+        _git(["push", f"--force-with-lease=refs/heads/{branch}:{head}", "origin",
+              f"HEAD:refs/heads/{branch}"], directory)
 
 
 def _disable_existing_auto_merge(repository: str, pr: dict[str, Any]) -> dict[str, Any]:
@@ -368,7 +480,9 @@ def reconcile(repository: str) -> None:
                     # exposes its new head.  The next hourly run will continue.
                     continue
             elif pr.get("mergeStateStatus") == "DIRTY":
-                raise Error(f"Registry PR {pr.get('number')} cannot be safely reconciled: {pr.get('mergeStateStatus')}")
+                records, existing, manifest = validate_pr(repository, pr)
+                _rebuild_conflicted_pr(repository, pr, records, existing, manifest)
+                continue
             pr = _disable_existing_auto_merge(repository, pr)
             validate_pr(repository, pr)
             state = _dispatch_checks(repository, branch, pr)
