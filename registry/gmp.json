@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "gmp--6.3.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "530b0e587a38b20ea46927d5289761905e0ebe959b23a07b8a21bfc9f372f641",
+  "license": {
+    "any_of": [
+      "LGPL-3.0-or-later",
+      "GPL-2.0-or-later"
+    ]
+  },
+  "name": "gmp",
+  "pkg_version": "6.3.0",
+  "recipe_sha256": "48e3695140b8b9ce2cba663bf47e2015cf2c4b489d1ce5728f4c719afc65adc8",
+  "release": "intel-34388221074-1-nettle",
+  "revision": 0,
+  "run_id": "34388221074",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "0f20eb1248160ee137394f8af535fc377635fa9d251139001997eeff90e9e948",
+  "size": 1068726,
+  "source": {
+    "filename": "gmp--6.3.0.sources.tar.gz",
+    "sha256": "58eed0a71dae1312795ff480c4369bc9b17e6821f1e1484be1cec231d1373016",
+    "size": 2113959
+  },
+  "tag": "sequoia",
+  "version": "6.3.0",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
