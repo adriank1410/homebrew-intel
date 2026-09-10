@@ -59,6 +59,32 @@ class ArchiveTests(unittest.TestCase):
             entry=tarfile.TarInfo('tool/1.0/.brew/tool.rb');entry.size=1
             p,r=archive(Path(d),extra=(entry,b'x'))
             with self.assertRaises(Error):check_bottle(p,r)
+    def test_in_keg_hardlink_to_previous_regular_file_is_accepted(self):
+        with tempfile.TemporaryDirectory() as d:
+            entry=tarfile.TarInfo('tool/1.0/bin/tool-alias');entry.type=tarfile.LNKTYPE
+            entry.linkname='tool/1.0/bin/tool'
+            p,r=archive(Path(d),extra=(entry,None));check_bottle(p,r)
+    def test_system_tar_hardlink_roundtrip(self):
+        import os,subprocess
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);p,r=archive(folder);tree=folder/'tree';tree.mkdir()
+            with tarfile.open(p) as source:source.extractall(tree)  # Only our own fixed fixture.
+            original=tree/'tool/1.0/bin/tool';alias=tree/'tool/1.0/bin/tool-alias';os.link(original,alias)
+            subprocess.run(['tar','-czf',str(p),'-C',str(tree),'tool'],check=True)
+            r.update(sha256=digest(p),size=p.stat().st_size)
+            with tarfile.open(p) as source:self.assertTrue(any(member.islnk() for member in source))
+            check_bottle(p,r)
+            poured=folder/'poured';poured.mkdir()
+            subprocess.run(['tar','-xzf',str(p),'-C',str(poured)],check=True)
+            self.assertEqual((poured/'tool/1.0/bin/tool').stat().st_ino,
+                             (poured/'tool/1.0/bin/tool-alias').stat().st_ino)
+    def test_unsafe_or_unresolved_hardlink_targets_are_rejected(self):
+        for target in ['/tmp/outside','other/1.0/bin/tool','tool/1.0/../bin/tool',
+                       'tool/1.0/missing','tool/1.0/bin/tool-alias']:
+            with self.subTest(target=target),tempfile.TemporaryDirectory() as d:
+                entry=tarfile.TarInfo('tool/1.0/bin/tool-alias');entry.type=tarfile.LNKTYPE;entry.linkname=target
+                p,r=archive(Path(d),extra=(entry,None))
+                with self.assertRaises(Error):check_bottle(p,r)
     def test_special_file_rejected(self):
         for kind in [tarfile.FIFOTYPE,tarfile.CHRTYPE,tarfile.LNKTYPE]:
             with self.subTest(kind=kind),tempfile.TemporaryDirectory() as d:
