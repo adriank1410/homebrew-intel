@@ -8,14 +8,8 @@
   "runner": "macos-15-intel",
   "target_os": "sequoia",
   "arch": "x86_64",
-  "blocked_source_builds": [
-    "qt",
-    "qtwebengine",
-    "llvm",
-    "llvm@22",
-    "rust",
-    "ghc"
-  ],
+  "blocked_source_builds": [],
+  "scheduled_batch_size": 12,
   "permissive_license_tokens": [
     "0BSD",
     "Apache-2.0",
