@@ -102,13 +102,13 @@ includes individual reasons.
 coverage PR. It requires the repository owner's authenticated `gh` account. The owner can
 insert `brew intel sync --apply &&` after `brew update &&` in the update chain
 above. Other users can inspect coverage with `brew intel sync` without publishing. The
-hourly maintenance job rechecks eligibility and merges only the exact validated
+five-minute maintenance job rechecks eligibility and merges only the exact validated
 head after protected checks pass. A later `brew update` brings the new list to the
 Mac. Repeated sync reuses the pending PR; uninstalling a formula does not remove
 it from monitoring. External-tap names, casks, local paths and full inventory
 snapshots are not uploaded. Package installation remains a separate command.
 
-Set `INTELBREW_ENABLE_SCHEDULE=true` to enable daily candidate checks and hourly
+Set `INTELBREW_ENABLE_SCHEDULE=true` to enable daily candidate checks and five-minute
 PR maintenance. Scheduled checks inspect uncertain candidates together on one
 Intel runner and select every eligible root needing a build. Already covered roots
 do not receive separate build/verification runners. Blocked roots are reported
