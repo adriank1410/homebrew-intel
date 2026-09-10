@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "qpdf--12.4.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "8fbc746acf9ef9be107db808bb1153d3880cdae427ac0871d7ab1d5344971863",
+  "license": "Apache-2.0",
+  "name": "qpdf",
+  "pkg_version": "12.4.1",
+  "recipe_sha256": "c59f5bcbc98c7f6dc07cd289b569dde593bce12bb1632e94bf616bf3b44744b7",
+  "release": "intel-34338885775-1-qpdf",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "3d37ac54b50b2ad5ef71be976a03e9d8a83389311389f657396c0fd3a7cc7199",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "3787bb946cfaf2c8a6456ae13970d44b1ae6993790a11c9930230546b54f3527",
+  "size": 2827604,
+  "source": {
+    "filename": "qpdf--12.4.1.sources.tar.gz",
+    "sha256": "5e573593f8f4be55412bbfb8f12c035de54a6f01d6c0e0eb914b18878b8ea7fd",
+    "size": 19335845
+  },
+  "tag": "sequoia",
+  "version": "12.4.1",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
