@@ -1,0 +1,79 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "numpy--2.5.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "c2ce71f9369ae6eef3f5e50b9437d8feb3eee658861d3e8bb573d8004b19f57e",
+  "license": "BSD-3-Clause",
+  "name": "numpy",
+  "pkg_version": "2.5.3",
+  "recipe_sha256": "0c4eb46294a80e20d2ab13de54580d9968da358d46d27c979b06568d867340aa",
+  "release": "intel-34388221074-1-numpy",
+  "revision": 0,
+  "run_id": "34388221074",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "0683955ef01d30162abfcfff3fe9b0e73eebba9a5f9920fb53cb94bc8cdc3f43",
+      "name": "gcc",
+      "pkg_version": "16.2.0"
+    },
+    {
+      "formula_sha256": "530b0e587a38b20ea46927d5289761905e0ebe959b23a07b8a21bfc9f372f641",
+      "name": "gmp",
+      "pkg_version": "6.3.0"
+    },
+    {
+      "formula_sha256": "d7c0e40a1575c6d604dd4a10b414dee0ec710400a96aac13414836c9fc6d585a",
+      "name": "isl",
+      "pkg_version": "0.28"
+    },
+    {
+      "formula_sha256": "c9caccef0a0d42fc1b58b35f37a919033bcb17afa0fd4c656f00594921ad7404",
+      "name": "libmpc",
+      "pkg_version": "1.4.1"
+    },
+    {
+      "formula_sha256": "649face31f036e172edc9e9cf0714d2829c6615edfafae7499ee112217b12a04",
+      "name": "libomp",
+      "pkg_version": "23.1.1"
+    },
+    {
+      "formula_sha256": "fd3222d24e20ec501ac116622330cf4c650e0c7926c337c8e864328851c438ca",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "88aec43a37c51ba3498eb17f5dc7dd4ad650a781992bb914bcc825c4fba379cc",
+      "name": "mpfr",
+      "pkg_version": "4.2.2"
+    },
+    {
+      "formula_sha256": "b6c9d393f4c2a6ebe1b66354decd9d7da8ce66952f9e760454fd601689e2d89a",
+      "name": "openblas",
+      "pkg_version": "0.3.34"
+    },
+    {
+      "formula_sha256": "4695e50a53c739d3dc09d219d290cf19dbd04f15a14d38410f49564996feab26",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "b6e64c37fadab73bcf41322cd34dd6b56e8e1fbcad44daa7d634934b9f6852a5",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "6561e32b95e9af7f3034a45537c81eee0a5fd5d5f867c1c9f57cdee6c21fd893",
+  "size": 11163733,
+  "source": {
+    "filename": "numpy--2.5.3.sources.tar.gz",
+    "sha256": "e46c487879095b20427ebfae3dedc9c577752085ed5dd914c6b231a494347886",
+    "size": 20769846
+  },
+  "tag": "sequoia",
+  "version": "2.5.3",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
