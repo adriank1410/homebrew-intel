@@ -390,6 +390,14 @@ def _rebuild_conflicted_pr(repository: str, pr: dict[str, Any], records: list[di
               f"HEAD:refs/heads/{branch}"], directory)
 
 
+def _close_stale_pr(repository: str, pr: dict[str, Any], error: Error) -> None:
+    """Close an obsolete bot PR so one stale release cannot block the queue."""
+    number = pr.get("number")
+    if not isinstance(number, int):
+        raise Error("Stale registry PR has no number") from error
+    gh(["pr", "close", str(number), "--repo", repository], capture=False)
+
+
 def _disable_existing_auto_merge(repository: str, pr: dict[str, Any]) -> dict[str, Any]:
     if not pr.get("autoMergeRequest"):
         return pr
@@ -488,6 +496,11 @@ def reconcile(repository: str) -> None:
             state = _dispatch_checks(repository, branch, pr)
             _merge_if_ready(repository, pr, state)
         except Error as exc:
+            message = str(exc)
+            if ("Refusing to replace a registry root already present on main" in message or
+                    "Refusing to overwrite incompatible registry dependency:" in message):
+                _close_stale_pr(repository, candidate, exc)
+                continue
             errors.append(f"PR {candidate.get('number', '?')}: {exc}")
     if errors:
         raise Error("; ".join(errors))
