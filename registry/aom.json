@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "aom--3.15.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "128d20801469faed070d32538bf3cdb24674899c5cb20968fc5adaa483d1d5bd",
+  "license": "BSD-2-Clause",
+  "name": "aom",
+  "pkg_version": "3.15.0",
+  "recipe_sha256": "a411ce8a610539439fbc5f92e92dc4ff8d9f242f68bf7a736dd856d7fff464e6",
+  "release": "intel-34388221074-1-zbar",
+  "revision": 0,
+  "run_id": "34388221074",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "b915fac393127f39f1270e3e66093e9e91ff91d1f210ecac0292dcb4922917a1",
+      "name": "libvmaf",
+      "pkg_version": "3.2.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "a2a37fc3efca8856d862a6b14f07218692fd3de0f8f45f48c83af233c0bab7b5",
+  "size": 4724144,
+  "source": {
+    "filename": "aom--3.15.0.sources.tar.gz",
+    "sha256": "839e1ed8f31d66d0f250bcc8f4693a78934c9950ed40e145dac9ddbb8cea3ff7",
+    "size": 6519041
+  },
+  "tag": "sequoia",
+  "version": "3.15.0",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
