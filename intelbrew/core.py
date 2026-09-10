@@ -98,7 +98,7 @@ def native(request,*,capture=True,ci=False,cache=None):
     except ValueError as exc:raise Error('Native bridge returned non-JSON') from exc
 
 class Planner:
-    def __init__(self,inspect,records,*,build=False,max_nodes=400,blocked=()):self.inspect=inspect;self.records=records;self.build=build;self.max_nodes=max_nodes;self.blocked=set(blocked);self.nodes={}
+    def __init__(self,inspect,records,*,build=False,max_nodes=400,blocked=(),allow_drift_as_missing=False):self.inspect=inspect;self.records=records;self.build=build;self.max_nodes=max_nodes;self.blocked=set(blocked);self.allow_drift_as_missing=allow_drift_as_missing;self.nodes={}
     def make(self,roots):
         requested=list(dict.fromkeys(canonical_name(n) for n in roots))
         if not requested:raise Error('At least one formula required')
@@ -131,9 +131,9 @@ class Planner:
             for dep in self.records[name]['runtime_dependencies']:
                 actual=self.nodes.get(dep['name'])
                 if actual is None or actual['pkg_version']!=dep['pkg_version'] or actual['formula_sha256']!=dep['formula_sha256']:
-                    if not self.build:raise Error(f'Personal bottle dependency drift: {name} -> {dep["name"]}; rebuild needed')
+                    if not self.build and not self.allow_drift_as_missing:raise Error(f'Personal bottle dependency drift: {name} -> {dep["name"]}; rebuild needed')
                     stale.add(name)
-        if stale:return Planner(self.inspect,{n:r for n,r in self.records.items() if n not in stale},build=True,max_nodes=self.max_nodes,blocked=self.blocked).make(requested)
+        if stale:return Planner(self.inspect,{n:r for n,r in self.records.items() if n not in stale},build=self.build,max_nodes=self.max_nodes,blocked=self.blocked,allow_drift_as_missing=self.allow_drift_as_missing).make(requested)
         ordered=[];visiting=[];done=set()
         def visit(name):
             if name in done:return
