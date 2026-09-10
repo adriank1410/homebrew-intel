@@ -1,0 +1,45 @@
+name: Release retention
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Apply deletions (otherwise run a dry-run)
+        required: true
+        default: false
+        type: boolean
+  schedule:
+    - cron: '17 4 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: intelbrew-release-retention
+  cancel-in-progress: false
+jobs:
+  retention:
+    if: >-
+      github.repository == 'adriank1410/homebrew-intel' &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Issue a short-lived token for this repository only
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        with:
+          client-id: ${{ vars.INTELBREW_APP_CLIENT_ID }}
+          private-key: ${{ secrets.INTELBREW_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: homebrew-intel
+          permission-contents: write
+          permission-pull-requests: read
+      - name: Retain referenced releases and remove old duplicates
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          INTELBREW_RETENTION_APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+        run: python3 scripts/release-retention.py
