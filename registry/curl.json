@@ -1,0 +1,84 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "curl--8.22.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "3210527e91f1a9c2ef45125368981b7c4c0ce351428cceabbca7e94f80573d72",
+  "license": "curl",
+  "name": "curl",
+  "pkg_version": "8.22.0",
+  "recipe_sha256": "518c363f0092cc18c09a385768edea00ccdb8ffc76796eb403a76b146f624932",
+  "release": "intel-34338885775-1-curl",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "93505d7431bb04deab0ebf7a7cb44e05a936df1c4af84f92df68fdcae1db5473",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "f5c4f37e3100750979a7c022acd9a4912987402dfbfa2c957803315ad7b38a6f",
+      "name": "libnghttp2",
+      "pkg_version": "1.70.0"
+    },
+    {
+      "formula_sha256": "1a1ad3dcb395427220bc04e5e4c08e4972ffe382475965c991a23049dfb14f4d",
+      "name": "libnghttp3",
+      "pkg_version": "1.18.0"
+    },
+    {
+      "formula_sha256": "97adc2220050013e6264b9c2eb517dd383150818ff45936b9d1d919ce4ac358a",
+      "name": "libngtcp2",
+      "pkg_version": "1.25.0"
+    },
+    {
+      "formula_sha256": "9d06b88ce39c4b95e8d901fd464f97093208ab74d9fdac3cbdc1321a4eeb565c",
+      "name": "libpsl",
+      "pkg_version": "0.23.3"
+    },
+    {
+      "formula_sha256": "5b1f095396a3d847f317414b1b7f2c9e9c9902c30613b2577209888decdec355",
+      "name": "libssh2",
+      "pkg_version": "1.11.1_4"
+    },
+    {
+      "formula_sha256": "fd3222d24e20ec501ac116622330cf4c650e0c7926c337c8e864328851c438ca",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "4695e50a53c739d3dc09d219d290cf19dbd04f15a14d38410f49564996feab26",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "b6e64c37fadab73bcf41322cd34dd6b56e8e1fbcad44daa7d634934b9f6852a5",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "d510f16ec5872db3a3dcc1ee87d03db605ad30fca4e2be2b773d3d00ae233973",
+  "size": 1695385,
+  "source": {
+    "filename": "curl--8.22.0.sources.tar.gz",
+    "sha256": "14331dd8d9c5b6348cd4db983d73e6fe2e4c3ab423f680053b03f0693ccf5e88",
+    "size": 3400904
+  },
+  "tag": "sequoia",
+  "version": "8.22.0",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
