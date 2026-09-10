@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "filename": "mosh--1.4.0_42.sequoia.bottle.tar.gz",
+  "formula_sha256": "1c4253abfd4fd8f15a53c35f02d3f511f16b64cba66d7b231fd3dcaca1a771b4",
+  "license": "GPL-3.0-or-later",
+  "name": "mosh",
+  "pkg_version": "1.4.0_42",
+  "recipe_sha256": "ed73347c64839cae10b6566d6bfd0937f9fe1cd1ba1cd41de6fc1760adf72b91",
+  "release": "intel-34388221074-1-mosh",
+  "revision": 42,
+  "run_id": "34388221074",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e9b5c8fd496b39c1b362fbacab290511d1ba3c639731b30a990947979fcee0d1",
+      "name": "abseil",
+      "pkg_version": "20260817.0"
+    },
+    {
+      "formula_sha256": "206d83e79b78c0227dc6ffc529a21a667ad1372564d567da0dbc9d19b8a5bd93",
+      "name": "protobuf",
+      "pkg_version": "36.1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "27b53fd057a0b407e9601e2934aeeb49e43db01d68108f719109ab612e7efe31",
+  "size": 287409,
+  "source": {
+    "filename": "mosh--1.4.0_42.sources.tar.gz",
+    "sha256": "3ec99e8ab2bc2f84799640d8dd55b1645b08a885a7ad3bdd774a0f100543edae",
+    "size": 409128
+  },
+  "tag": "sequoia",
+  "version": "1.4.0",
+  "version_scheme": 0,
+  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+}
