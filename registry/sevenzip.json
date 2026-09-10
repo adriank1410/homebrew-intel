@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "0b0ae88116bd88b1477bd92c4ba50ea7870ce703",
+  "filename": "sevenzip--26.03.sequoia.bottle.tar.gz",
+  "formula_sha256": "646d24e4a60156cf482d0c6d13db38fe0bbdd3ab8325226420080f77e510f72a",
+  "license": {
+    "all_of": [
+      "LGPL-2.1-or-later",
+      "BSD-3-Clause"
+    ]
+  },
+  "name": "sevenzip",
+  "pkg_version": "26.03",
+  "recipe_sha256": "161f7a06119e5a8949c2b1088daba2a5a7ec72e4fa9c58f7b5734213f4da2663",
+  "release": "intel-34528841501-1-binwalk",
+  "revision": 0,
+  "run_id": "34528841501",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "6f890ce5cbd8c24b0438630e95c3dc2391176a27ce7bf924b9bdc1c07055508d",
+  "size": 1960406,
+  "source": {
+    "filename": "sevenzip--26.03.sources.tar.gz",
+    "sha256": "f8b39d717b0c5036143756b1c1132c78f0024d8b1712367b22c6418091be2c8c",
+    "size": 1568971
+  },
+  "tag": "sequoia",
+  "version": "26.03",
+  "version_scheme": 0,
+  "workflow_commit": "4f4f86ece3c98d9b985c50ede117d11977964076"
+}
