@@ -55,6 +55,10 @@ PRs authored by the configured App,
 same-repository registry changes matching the attested release manifest qualify
 for immediate, head-pinned automated merging. The protected `main` still requires the `tests` check and an
 up-to-date base. Do not bypass a missing check.
+When independent builds publish the same dependency, the controller can rebuild
+a conflicted registry branch from main after checking both attested manifests.
+It preserves the already-published dependency only when its recipe, version and
+provenance match; incompatible records or a changed main snapshot stop the repair.
 
 Source and workflow PRs still need explicit owner approval to merge. The narrowly
 scoped owner-authored `coverage/intel-installed` PR is the exception described below. On a client run
@@ -67,14 +71,25 @@ user's Cellar.
 A missing bottle on the client is an error, not a source fallback. Trigger a
 build for the desired root. A compatible official bottle is preferred. Recipe,
 revision or runtime drift triggers rebuilding. Unreviewed licensing obligations,
-dynamic/VCS resources, cycles, excluded heavy builds, >60 source nodes or >500 MB
+unsupported VCS resources, cycles, excluded heavy builds, >60 source nodes or >2 GB
 of candidate artifacts stop the run. Never remove a safety check merely to make
 CI green.
+
+The source-required profile supports standard copyleft archives with retained
+license notices and verified source contents. Full-commit Git exports are also
+supported, including submodules at their recorded Git commit. Unpinned Git and
+other VCS strategies fail explicitly before compiling dependencies. Source sets are fetched before building, then Go/Cargo source caches
+are captured after compilation. GNU ftpmirror resources gain the canonical
+ftp.gnu.org mirror; the original recipe and required checksum stay unchanged.
+See [License review](LICENSE-REVIEW.md) for the
+supported expressions and remaining limitations.
 
 `all` checks the reviewed target list. Manual dispatch also accepts a comma-separated
 subset. Completed candidate and verified artifacts select the downstream matrices;
 a failed root stays failed but does not block successful siblings. No artifact
 means no downstream job for that root. Existing matching bottles are reused.
+Candidate and verified artifacts are retained for 35 days, covering the maximum
+workflow duration so early results survive long build queues.
 The workflow summary and failed root logs identify remaining coverage gaps.
 
 ## Client failure and recovery
@@ -99,7 +114,7 @@ roots only when its API metadata matches the resolved core revision. Uncertain
 roots are inspected together on a pinned Intel runner before allocating build
 jobs. This native preflight reuses metadata, checks source policy and reports
 blocked roots independently. Every eligible root needing a build enters the matrix,
-with at most two concurrent build jobs. Planning fails explicitly if more than
+with at most five concurrent build jobs. Planning fails explicitly if more than
 GitHub's 256-job matrix limit need builds, rather than silently omitting roots.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight.
