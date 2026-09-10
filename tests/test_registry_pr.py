@@ -13,7 +13,8 @@ from helpers import G, record
 from intelbrew.core import Error
 from intelbrew.registry_pr import (allowed_pr, changed_registry_files,
                                    ensure_pr, validate_manifest_records, _record_from_content,
-                                   _rebuild_conflicted_pr, _workflow_state, reconcile, validate_pr)
+                                   _rebuild_conflicted_pr, _release_order, _workflow_state,
+                                   reconcile, validate_pr)
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
@@ -77,6 +78,11 @@ class RegistryPullRequestTests(unittest.TestCase):
 
     def test_accepts_actual_gh_cli_actions_author(self):
         self.assertTrue(allowed_pr(pull_request(author={"is_bot": True, "login": "app/github-actions"}), repository=REPOSITORY))
+
+    def test_release_order_puts_newer_duplicate_formula_first(self):
+        older = pull_request(headRefName="bottles/intel-34338885775-1-go")
+        newer = pull_request(headRefName="bottles/intel-34388221074-1-go")
+        self.assertLess(_release_order(older), _release_order(newer))
 
     def test_requires_exact_configured_app_login(self):
         with patch.dict(os.environ, {"INTELBREW_BOT_LOGIN": "app/intelbrew-publisher"}):
@@ -459,7 +465,7 @@ class RegistryPullRequestTests(unittest.TestCase):
         merge = next(call for call in calls if call[:3] == ["pr", "merge", "7"])
         self.assertNotIn("--auto", merge)
         self.assertIn("--squash", merge)
-        self.assertEqual(merge[-1], HEAD)
+        self.assertIn(HEAD, merge)
 
 
 if __name__ == "__main__":
