@@ -23,10 +23,10 @@ BOLD_CYAN = "\033[1;36m"
 def is_color_enabled(stream: Any = None) -> bool:
     if stream is None:
         stream = sys.stdout
-    if os.environ.get("HOMEBREW_NO_COLOR") or os.environ.get("NO_COLOR"):
-        return False
     if os.environ.get("HOMEBREW_COLOR") == "1":
         return True
+    if os.environ.get("HOMEBREW_NO_COLOR") or os.environ.get("NO_COLOR"):
+        return False
     if os.environ.get("TERM") == "dumb":
         return False
     if not hasattr(stream, "isatty"):
