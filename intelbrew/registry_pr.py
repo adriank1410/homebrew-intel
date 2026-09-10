@@ -407,7 +407,7 @@ def _close_stale_pr(repository: str, pr: dict[str, Any], error: Error) -> None:
     number = pr.get("number")
     if not isinstance(number, int):
         raise Error("Stale registry PR has no number") from error
-    gh(["pr", "close", str(number), "--repo", repository], capture=False)
+    gh(["pr", "close", str(number), "--repo", repository, "--delete-branch"], capture=False)
 
 
 def _disable_existing_auto_merge(repository: str, pr: dict[str, Any]) -> dict[str, Any]:

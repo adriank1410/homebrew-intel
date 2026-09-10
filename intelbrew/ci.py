@@ -12,10 +12,9 @@ from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, brew_
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
-# notices per package. Keep the bound finite while avoiding rejection of
-# otherwise valid source-complete archives. The JSON index remains bounded by
-# MAX_JSON and the expanded source bundle remains bounded below.
-MAX_SOURCE_NOTICES = 16_384
+# notice paths, most of them carrying identical text. Deduplicate each source
+# archive by content and retain a finite bound for genuinely distinct notices.
+MAX_SOURCE_NOTICES = 100_000
 
 
 def require_ci_mac() -> None:
@@ -194,7 +193,7 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
             filename=f'{i:03d}-{basename(path.name)}';bundle.add(path,arcname=f"inputs/{filename}",recursive=False)
             index["resources"].append({"filename":f"inputs/{filename}","label":res["label"],"url":res["url"],"sha256":res["sha256"]})
             try:
-                notices = archive_notices(path, MAX_JSON, MAX_SOURCE_NOTICES)
+                notices = archive_notices(path, MAX_JSON, MAX_SOURCE_NOTICES, deduplicate=True)
             except Error as exc:
                 if "Too many upstream license notices" in str(exc):
                     raise Error(f"{name} {res['label']}: {exc}") from exc
