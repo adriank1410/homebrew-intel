@@ -2,7 +2,9 @@ name: Registry maintenance
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 * * * *'
+    # Reconcile branch refreshes and merges promptly; concurrency below keeps
+    # scheduled runs from overlapping while a previous pass is still active.
+    - cron: '*/5 * * * *'
 permissions:
   contents: read
 concurrency:
