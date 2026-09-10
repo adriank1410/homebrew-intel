@@ -11,7 +11,7 @@ on:
         default: simdutf
         type: string
   schedule:
-    - cron: '41 3 * * *'
+    - cron: '15 */2 * * *'
 permissions:
   contents: read
 concurrency:
@@ -76,7 +76,7 @@ jobs:
           (((github.event_name == 'schedule' || inputs.formula == 'all') && needs.schedule-plan.result == 'success' && needs.schedule-plan.outputs.has_work == 'true') ||
            (github.event_name != 'schedule' && inputs.formula != 'all' && needs.plan.outputs.has_work == 'true')) }}
     runs-on: macos-15-intel
-    timeout-minutes: 350
+    timeout-minutes: 360
     strategy:
       fail-fast: false
       max-parallel: 5
