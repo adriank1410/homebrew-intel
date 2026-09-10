@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "pydantic--2.13.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "700f0f6d2ecdeb365113f4d253e208d5017bb29d59ed8a292157d2a3ff9df793",
+  "license": "MIT",
+  "name": "pydantic",
+  "pkg_version": "2.13.5",
+  "recipe_sha256": "3f3b8dcce2e7b11dfc12bbc5724c57e4fcbd25f8029bc5154cc94bb67c0bdf27",
+  "release": "intel-34338885775-1-pydantic",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "5d37b5a7b572d002646e090775fae2c9371dff16b9ffd8bfd6eaf8b7ec21d7be",
+  "size": 4975770,
+  "source": {
+    "filename": "pydantic--2.13.5.sources.tar.gz",
+    "sha256": "2c97258afc144ea4ff7827c642feaef8102338af227b97095015a4e81289ce4e",
+    "size": 1529626
+  },
+  "tag": "sequoia",
+  "version": "2.13.5",
+  "version_scheme": 1,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
