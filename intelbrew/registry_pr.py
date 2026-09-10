@@ -498,6 +498,7 @@ def reconcile(repository: str) -> None:
         except Error as exc:
             message = str(exc)
             if ("Refusing to replace a registry root already present on main" in message or
+                    "Refusing to replace a registry root with an existing dependency record" in message or
                     "Refusing to overwrite incompatible registry dependency:" in message):
                 _close_stale_pr(repository, candidate, exc)
                 continue
