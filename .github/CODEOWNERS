@@ -1,2 +1,3 @@
-# Review responsibility; server-side protections are configured separately.
-* @adriank1410
+# Review is opt-in for this repository.  In particular, automated bottle PRs
+# must not request the repository owner for every published bottle.
+# Required checks and the registry controller remain the merge gate.
