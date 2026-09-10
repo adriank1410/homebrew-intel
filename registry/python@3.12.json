@@ -1,0 +1,59 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "python@3.12--3.12.14.sequoia.bottle.tar.gz",
+  "formula_sha256": "1833a37a709989f133b3d4c38e8748a380c295247f18fb7cd54e5e1c3577637a",
+  "license": "Python-2.0",
+  "name": "python@3.12",
+  "pkg_version": "3.12.14",
+  "recipe_sha256": "798b28f0006ecd4fddacd130187177541b2217922b67041fc99a18f4a2cc034b",
+  "release": "intel-34338885775-1-python-at-3.12",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "cddb32a786744a117cb04a973d91e76bc872ce770c83bb54ce35943124951bf7",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "660d4099f7dcd652c78f530672ffaf01103a00b3ee72aca4059f10c1038b1228",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    },
+    {
+      "formula_sha256": "065af05579adeae47ac51a3bc4de6dceb618051e78cf2f1010f9d1004fe2ce06",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "4695e50a53c739d3dc09d219d290cf19dbd04f15a14d38410f49564996feab26",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "9734dd04457db3c9d8eefff0af1a51ff0046684c00da218e44abe3c19bbd960a",
+  "size": 18058147,
+  "source": {
+    "filename": "python@3.12--3.12.14.sources.tar.gz",
+    "sha256": "ba64fb4b5c478ddde3c52ed520e741ea1cbcfdfb8dc11d042802f9c370dad4b3",
+    "size": 29466049
+  },
+  "tag": "sequoia",
+  "version": "3.12.14",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}

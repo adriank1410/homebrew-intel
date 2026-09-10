@@ -1,0 +1,149 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "node--26.8.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "12a257a3b306f594e8a9b2825e5246664d915674abd444d51ec6a046ff3acba8",
+  "license": "MIT",
+  "name": "node",
+  "pkg_version": "26.8.1",
+  "recipe_sha256": "38f81596255532f26e92535ccf87ab53a802bfac4e44f3a9c0d35e448ebcf82a",
+  "release": "intel-34338885775-1-node",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "bf706c94ab208b771fe2cf33b706f5232c3e1a497befdb2540719660fbac08d1",
+      "name": "ada-url",
+      "pkg_version": "4.0.0"
+    },
+    {
+      "formula_sha256": "93505d7431bb04deab0ebf7a7cb44e05a936df1c4af84f92df68fdcae1db5473",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "ffb9deb66a92eafe54f56fd5377167eade77f3f8154eb0f711e0c1ef7acf2de6",
+      "name": "c-ares",
+      "pkg_version": "1.34.8"
+    },
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "570147f9c574cc37eb0d03c79c3ab72219c10bf25c02b125e15794ff8df2d5c8",
+      "name": "fmt",
+      "pkg_version": "12.2.0"
+    },
+    {
+      "formula_sha256": "a7d9faf35413ba6004834e96c80256c49baaab6457820099e4ef82a0601416f6",
+      "name": "hdrhistogram_c",
+      "pkg_version": "0.11.10"
+    },
+    {
+      "formula_sha256": "5f7abd5592becdfd8f29bc6fd2b783a6456359bf733ba21084140812838b017a",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "9efce8c6ebf1e97879eb183ea1ddfb0d7d3773908a7ef1b033ce3dec57f21389",
+      "name": "libffi",
+      "pkg_version": "3.8.0"
+    },
+    {
+      "formula_sha256": "f5c4f37e3100750979a7c022acd9a4912987402dfbfa2c957803315ad7b38a6f",
+      "name": "libnghttp2",
+      "pkg_version": "1.70.0"
+    },
+    {
+      "formula_sha256": "1a1ad3dcb395427220bc04e5e4c08e4972ffe382475965c991a23049dfb14f4d",
+      "name": "libnghttp3",
+      "pkg_version": "1.18.0"
+    },
+    {
+      "formula_sha256": "97adc2220050013e6264b9c2eb517dd383150818ff45936b9d1d919ce4ac358a",
+      "name": "libngtcp2",
+      "pkg_version": "1.25.0"
+    },
+    {
+      "formula_sha256": "9072d1ecc33dde87de83627b2f9548a6d254ec4c19e551504c4c1f3e891df3d4",
+      "name": "libuv",
+      "pkg_version": "1.52.1"
+    },
+    {
+      "formula_sha256": "b8757b852c7ea711433612cf1bdcd035c63fe17a623c1e8410b2f2584ce14f5f",
+      "name": "llhttp",
+      "pkg_version": "9.4.3"
+    },
+    {
+      "formula_sha256": "fd3222d24e20ec501ac116622330cf4c650e0c7926c337c8e864328851c438ca",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "c7a54d184552b2322c2afe77cd50927d6fac7459676af42c5d6380236ede2f5e",
+      "name": "merve",
+      "pkg_version": "1.2.2_2"
+    },
+    {
+      "formula_sha256": "40bfe63190c8e3001e72823c58132b216c1a6ce1fed7e8363e3ee15a17839810",
+      "name": "nbytes",
+      "pkg_version": "0.1.4"
+    },
+    {
+      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "660d4099f7dcd652c78f530672ffaf01103a00b3ee72aca4059f10c1038b1228",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    },
+    {
+      "formula_sha256": "5a806b5f3786ca3c0aacd9b301d00e3553bd3cdb543b053e113855c4479423ca",
+      "name": "simdjson",
+      "pkg_version": "4.6.11"
+    },
+    {
+      "formula_sha256": "df0a168d1625d323bb97d9380f0a4624ccb86cacf162431fdaa643a3892937f3",
+      "name": "simdutf",
+      "pkg_version": "9.1.1"
+    },
+    {
+      "formula_sha256": "065af05579adeae47ac51a3bc4de6dceb618051e78cf2f1010f9d1004fe2ce06",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "7d856245cbd99c3779b6d9d537cbdbf0ebd82b6e6cfd88d2fdef7156bbe9f21b",
+      "name": "uvwasi",
+      "pkg_version": "0.0.23"
+    },
+    {
+      "formula_sha256": "4695e50a53c739d3dc09d219d290cf19dbd04f15a14d38410f49564996feab26",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "b6e64c37fadab73bcf41322cd34dd6b56e8e1fbcad44daa7d634934b9f6852a5",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "48278f96a75b6391ab606d78fcece0c75e29a32ffff5fd605f68ccdb697d736a",
+  "size": 20408149,
+  "source": {
+    "filename": "node--26.8.1.sources.tar.gz",
+    "sha256": "1ac94ecd47cf338ca92ac4921c967a957218101481568f49be11fea033a5a378",
+    "size": 64297433
+  },
+  "tag": "sequoia",
+  "version": "26.8.1",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
