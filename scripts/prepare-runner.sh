@@ -21,7 +21,7 @@ brew list --formula > "$backup_dir/formulae.txt";brew ruby -e 'require "keg"; HO
 # GitHub's Intel image owns parts of /usr/local as root. sudo is used only after all
 # github-hosted/Intel/Sequoia guards above and only to move/recreate fixed Homebrew paths
 # on this disposable runner. It is never part of the client command.
-for old_dir in /usr/local/Cellar /usr/local/opt /usr/local/var/homebrew/linked;do
+for old_dir in /usr/local/Cellar /usr/local/opt /usr/local/var/homebrew/linked /usr/local/etc;do
   if [[ -e "$old_dir" || -L "$old_dir" ]];then /usr/bin/sudo /bin/mv "$old_dir" "$backup_dir/$(basename "$old_dir")";fi
   /usr/bin/sudo /bin/mkdir -p "$old_dir";/usr/bin/sudo /usr/sbin/chown "$(id -u):$(id -g)" "$old_dir"
 done
