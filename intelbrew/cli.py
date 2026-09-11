@@ -80,6 +80,50 @@ def render(plan: dict, stream: Any = None) -> None:
         print("\nNo core remote, formula definitions or dependency names are changed.", file=stream)
 
 
+def render_upgrade(plan: dict, stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
+    roots = [r for r in plan["roots"] if plan["nodes"][r].get("provider") != "installed"]
+    count = len(roots)
+    if count > 0:
+        plural = "s" if count != 1 else ""
+        ohai(f"Upgrading {count} outdated package{plural}:", stream=stream)
+        for name in roots:
+            item = plan["nodes"][name]
+            installed = item.get("installed_versions") or []
+            old_ver = installed[-1] if installed else None
+            new_ver = item["pkg_version"]
+            name_disp = style(name, BOLD, stream)
+            if old_ver:
+                print(f"{name_disp} {old_ver} -> {new_ver}", file=stream)
+            else:
+                print(f"{name_disp} {new_ver}", file=stream)
+    deps = [n for n in plan["order"] if n not in plan["roots"] and plan["nodes"][n].get("provider") != "installed"]
+    if deps:
+        plural = "ies" if len(deps) != 1 else "y"
+        ohai(f"Installing {len(deps)} dependenc{plural}:", stream=stream)
+        for name in deps:
+            name_disp = style(name, BOLD, stream)
+            print(f"{name_disp} {plan['nodes'][name]['pkg_version']}", file=stream)
+
+
+def render_install(plan: dict, stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
+    deps = [n for n in plan["order"] if n not in plan["roots"] and plan["nodes"][n].get("provider") != "installed"]
+    if deps:
+        roots_str = ", ".join(plan["roots"])
+        dep_str = ", ".join(deps)
+        ohai(f"Installing dependencies for {roots_str}: {dep_str}", stream=stream)
+    roots = [r for r in plan["roots"] if plan["nodes"][r].get("provider") != "installed"]
+    if roots:
+        plural = "s" if len(roots) != 1 else ""
+        ohai(f"Installing {len(roots)} package{plural}:", stream=stream)
+        for name in roots:
+            name_disp = style(name, BOLD, stream)
+            print(f"{name_disp} {plan['nodes'][name]['pkg_version']}", file=stream)
+
+
 def filter_available_plan(plan: dict) -> tuple[dict, list[dict]]:
     """Keep only roots whose complete runtime plan has no missing provider."""
     nodes = plan["nodes"]
@@ -391,6 +435,10 @@ def main(argv: list[str] | None = None) -> int:
                 return 0
         if args.json:
             print(json.dumps(plan, indent=2))
+        elif args.command == "upgrade":
+            render_upgrade(plan)
+        elif args.command == "install":
+            render_install(plan)
         else:
             render(plan)
         if args.apply:
