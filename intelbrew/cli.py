@@ -296,8 +296,9 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                 checkmark = style("✔", BOLD_GREEN) if is_color_enabled() else "✔"
                 print(f"{checkmark} Attestation verified (SLSA Provenance v1)")
             check_bottle(path, record)
-            source_url = artifact_url(config["repository"], record, record["source"]["filename"])
-            print(f"Source and license notices for {name}: {source_url}")
+            if verbose:
+                source_url = artifact_url(config["repository"], record, record["source"]["filename"])
+                print(f"Source and license notices for {name}: {source_url}")
             downloaded[name] = path
         for name in plan["order"]:
             if plan["nodes"][name]["provider"] == "official":
@@ -312,7 +313,8 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                     raise Error(f"Homebrew state changed for {name}; re-run the plan")
         journal_dir = Path(tempfile.mkdtemp(prefix="transaction-", dir=cache))
         write_json_new(journal_dir / "plan.json", plan)
-        print(f"Installation journal: {journal_dir}")
+        if verbose:
+            print(f"Installation journal: {journal_dir}")
         completed = 0
         try:
             for name in plan["order"]:
