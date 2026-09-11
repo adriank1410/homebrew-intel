@@ -1,6 +1,6 @@
 # Changelog
  
-## Unreleased
+## 0.2.0 – native experience & visual polish
 
 - Native Homebrew output format: `upgrade` shows `==> Upgrading N outdated package(s):` with `<formula> <old> -> <new>` and hides already-installed dependencies.
 - Retain full dependency resolution table exclusively for `brew intel plan`.

@@ -306,3 +306,7 @@ class SourceBundleTests(unittest.TestCase):
                 member=zipfile.ZipInfo('COPYING');member.external_attr=0o120777<<16;archive.writestr(member,b'target')
             sources['resources'][0]['sha256']=hashlib.sha256(source.read_bytes()).hexdigest()
             with self.assertRaisesRegex(Error,'notice missing'):source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
+
+    def test_version_matches_changelog(self):
+        from intelbrew import __version__
+        self.assertEqual(__version__, "0.2.0")
