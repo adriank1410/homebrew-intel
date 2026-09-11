@@ -23,7 +23,8 @@ from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
                          BOLD_YELLOW, DIM, is_color_enabled, ohai, onoe, opoo, style)
 
 
-def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None) -> None:
+def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None,
+           verbose: bool = False) -> None:
     require_sha(workflow_commit, git=True)
     if not shutil.which("gh"):
         raise Error("GitHub CLI (gh) is required to verify personal bottles; no verification bypass exists")
@@ -35,7 +36,7 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
          "--signer-workflow", f"{repository}/.github/workflows/bottles.yml",
          "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
          "--signer-digest", workflow_commit, "--deny-self-hosted-runners"],
-        capture=False, env=env)
+        capture=not verbose, env=env)
 
 
 def render(plan: dict, stream: Any = None) -> None:
@@ -220,7 +221,7 @@ def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:
             print("No new coverage PR needed.", file=stream)
 
 
-def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
+def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose: bool = False) -> None:
     ensure_complete(plan)
     cache.mkdir(parents=True, exist_ok=True, mode=0o700)
     if cache.is_symlink():
@@ -246,7 +247,10 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
             download(artifact_url(config["repository"], record), path,
                      record["sha256"], record["size"])
             ohai(f"Verifying bottle attestation for {name}")
-            attest(path, config["repository"], record["workflow_commit"])
+            attest(path, config["repository"], record["workflow_commit"], verbose=verbose)
+            if not verbose:
+                checkmark = style("✔", BOLD_GREEN) if is_color_enabled() else "✔"
+                print(f"{checkmark} Attestation verified (SLSA Provenance v1)")
             check_bottle(path, record)
             source_url = artifact_url(config["repository"], record, record["source"]["filename"])
             print(f"Source and license notices for {name}: {source_url}")
@@ -303,6 +307,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--json", action="store_true", help="Print plan JSON")
     parser.add_argument("--available", action="store_true",
                         help="For upgrade, omit roots with missing runtime providers")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Print verbose output")
     args = parser.parse_args(argv)
     try:
         if platform.system() != "Darwin" or platform.machine() != "x86_64":
@@ -395,7 +400,8 @@ def main(argv: list[str] | None = None) -> int:
             if args.command == "plan":
                 raise Error("plan is read-only; use install/upgrade --apply")
             apply_plan(plan, records, config,
-                       cache=Path.home() / "Library/Caches/homebrew-intel")
+                       cache=Path.home() / "Library/Caches/homebrew-intel",
+                       verbose=args.verbose)
         elif not args.json:
             print("\nDry run only. Add --apply to install. Missing bottles cause an error, not compilation.")
         return 0
