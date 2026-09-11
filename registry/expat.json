@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "9a526813eeca23c6e5fd659e7b4bd40cf99decc7",
+  "filename": "expat--2.8.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "f0fdee7460a2a8664756a264800f94e0aff4dd3783f5d124cad43b0015b131b2",
+  "license": "MIT",
+  "name": "expat",
+  "pkg_version": "2.8.4",
+  "recipe_sha256": "29d51fc1e42ca5fe40d33c17ca16f48299c38f494270bedef28eaa73ea971473",
+  "release": "intel-34621863546-1-expat",
+  "revision": 0,
+  "run_id": "34621863546",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "1ed9f70dc3f9608fc6d30065bb68ded455e0cf38fdc926db370f0722ff98be0d",
+  "size": 256576,
+  "source": {
+    "filename": "expat--2.8.4.sources.tar.gz",
+    "sha256": "04304ad2a0b2377f6ca934113cc5ae33f0d2f347e81255b67a12a92a04aeeb20",
+    "size": 525137
+  },
+  "tag": "sequoia",
+  "version": "2.8.4",
+  "version_scheme": 0,
+  "workflow_commit": "e8b9bc59d0e0d492c6d2f9362111f122b9732e51"
+}
