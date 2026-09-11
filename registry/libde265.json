@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "4627442a29070e8ff842a49da7e28dd3cec9385e",
+  "filename": "libde265--1.1.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "ea234237ffa941686634c069aa55bfa475ad65485503e3d7d643da45d63fa5fc",
+  "license": "LGPL-3.0-or-later",
+  "name": "libde265",
+  "pkg_version": "1.1.2",
+  "recipe_sha256": "a432b1c4c6d6eb444e210c9cecadafb63d29e329f22cc4d668afc18dd900b65f",
+  "release": "intel-34628041075-1-libde265",
+  "revision": 0,
+  "run_id": "34628041075",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "d9b7a8fb43d8406c268f3b8d1349054677aff8f43da797db43b90644383cd7b5",
+  "size": 210673,
+  "source": {
+    "filename": "libde265--1.1.2.sources.tar.gz",
+    "sha256": "201838041461660ab6275ca8e8305fd85ac7ca2ee90ef8a8681574ace8761479",
+    "size": 339360
+  },
+  "tag": "sequoia",
+  "version": "1.1.2",
+  "version_scheme": 0,
+  "workflow_commit": "4d27c0ee227b9d72e36318c071d6feaca0dfe8c1"
+}
