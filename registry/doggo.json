@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "fc57ee22f7cfc8908c489fd43cb315f8f937ef1a",
+  "filename": "doggo--1.4.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "1afab0e06b6e2fb123e5973db865edde649e646ce2bbb1965c2c8c4e20385fcc",
+  "license": "GPL-3.0-or-later",
+  "name": "doggo",
+  "pkg_version": "1.4.0",
+  "recipe_sha256": "418955710688a08af0e8975c407d5291325377d5adab7bcd737fe7ea33a3c665",
+  "release": "intel-34593121163-1-doggo",
+  "revision": 0,
+  "run_id": "34593121163",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "3b2a235a69fa4d829eaeb97d5451dfc3b023cb92549ff33aab990854e25552bc",
+  "size": 6166980,
+  "source": {
+    "filename": "doggo--1.4.0.sources.tar.gz",
+    "sha256": "224ca39918718ee9119fa70f0b42cf3b660fc64e62d19c4ee1acc62ef0e52965",
+    "size": 20899592
+  },
+  "tag": "sequoia",
+  "version": "1.4.0",
+  "version_scheme": 0,
+  "workflow_commit": "c3e7c726f80433c8f62aa55f2a7f2f79cfbc3454"
+}
