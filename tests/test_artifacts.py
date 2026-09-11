@@ -154,3 +154,18 @@ class ArchiveTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             self.candidate(Path(d))
             with self.assertRaises(Error):validate_candidate(Path(d),expected_root='other',verified=True)
+
+    def test_candidate_validation_accepts_registry_commit(self):
+        with tempfile.TemporaryDirectory() as d:
+            m = self.candidate(Path(d))
+            m['registry_commit'] = 'a' * 40
+            (Path(d) / 'manifest.json').write_text(__import__('json').dumps(m) + '\n')
+            validated = validate_candidate(Path(d), expected_root='tool', verified=True)
+            self.assertEqual(validated['registry_commit'], 'a' * 40)
+
+        with tempfile.TemporaryDirectory() as d:
+            m = self.candidate(Path(d))
+            m['registry_commit'] = 'invalid-sha'
+            (Path(d) / 'manifest.json').write_text(__import__('json').dumps(m) + '\n')
+            with self.assertRaises(Error):
+                validate_candidate(Path(d), expected_root='tool', verified=True)
