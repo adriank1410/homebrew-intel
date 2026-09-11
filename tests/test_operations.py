@@ -60,6 +60,17 @@ class OperationTests(unittest.TestCase):
             self.assertNotIn('secret', args[0])
             self.assertEqual(kwargs['env']['GH_TOKEN'], 'secret')
             self.assertNotIn('GH_TOKEN', os.environ)
+
+    def test_attestation_output_captured_by_default(self):
+        with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), patch('intelbrew.cli.run') as run:
+            attest(Path('/file'), 'adriank1410/homebrew-intel', G)
+            self.assertTrue(run.call_args.kwargs.get('capture'))
+
+    def test_attestation_output_streamed_when_verbose(self):
+        with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), patch('intelbrew.cli.run') as run:
+            attest(Path('/file'), 'adriank1410/homebrew-intel', G, verbose=True)
+            self.assertFalse(run.call_args.kwargs.get('capture'))
+
     def test_no_attestation_bypass_without_gh(self):
         with patch('intelbrew.cli.shutil.which',return_value=None),self.assertRaises(Error):attest(Path('/file'),'adriank1410/homebrew-intel',G)
     def test_ci_refuses_normal_machine(self):
