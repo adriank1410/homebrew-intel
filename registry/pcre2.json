@@ -2,27 +2,27 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "core_commit": "ef68097286da0438c5b7e37cddb13040b493caf8",
   "filename": "pcre2--10.48.sequoia.bottle.tar.gz",
-  "formula_sha256": "f06664ef1a0dc19ee3b6daefd7027be7f33b98dd98a9809818d6aec07222f9d3",
+  "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
   "license": "BSD-3-Clause",
   "name": "pcre2",
   "pkg_version": "10.48",
   "recipe_sha256": "493c6e81fa41064d8cdbb554f0884a9afe856f11c62d250ed747ce5f565a3f0d",
-  "release": "intel-34338885775-1-ttfautohint",
+  "release": "intel-34545111333-1-aircrack-ng",
   "revision": 0,
-  "run_id": "34338885775",
+  "run_id": "34545111333",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "7e8933e31c88cd068f09c7e5485330f7bf5d81b1342cfc7aaba77267105e06de",
-  "size": 2508840,
+  "sha256": "dc1255242b355dca863e7ddd2ad1a35c92fdae1ebc06fa1f0976525edcd4b6b7",
+  "size": 2508800,
   "source": {
     "filename": "pcre2--10.48.sources.tar.gz",
-    "sha256": "18577cee76b1f7fc5dd90ea7cf2f960e4e07545aa9d80d657e9add3457a246dc",
-    "size": 2211927
+    "sha256": "7f2b3541cca87f68c9c5375c2d9a61ddbf569fcd541ede656d734b659580beab",
+    "size": 2215656
   },
   "tag": "sequoia",
   "version": "10.48",
   "version_scheme": 0,
-  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+  "workflow_commit": "b7b499f2c01f7f611a359f8b54c4ebf9090cec92"
 }
