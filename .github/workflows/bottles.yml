@@ -11,7 +11,7 @@ on:
         default: simdutf
         type: string
   schedule:
-    - cron: '15 */2 * * *'
+    - cron: '15 * * * *'
 permissions:
   contents: read
 concurrency:
@@ -234,3 +234,10 @@ jobs:
           INTELBREW_BOT_LOGIN: app/${{ steps.app-token.outputs.app-slug }}
           INTELBREW_ATTESTATION_TOKEN: ${{ github.token }}
         run: python3 -m intelbrew.publish --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/verified"
+      - name: Trigger registry reconciliation immediately after publishing
+        if: steps.validate.outputs.has_bottles == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: gh workflow run registry.yml --repo "$GITHUB_REPOSITORY"
+
+
