@@ -307,6 +307,81 @@ class SourceBundleTests(unittest.TestCase):
             sources['resources'][0]['sha256']=hashlib.sha256(source.read_bytes()).hexdigest()
             with self.assertRaisesRegex(Error,'notice missing'):source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
 
+    def test_sync_registry_fetches_and_checks_out_origin_main(self):
+        from intelbrew.ci import sync_registry
+        with patch.dict(os.environ, {"GITHUB_ACTIONS": "true"}), \
+             patch("intelbrew.ci.run") as mock_run, \
+             patch("intelbrew.ci.shutil.rmtree") as mock_rmtree:
+            mock_run.side_effect = lambda args, **kw: "b" * 40 if "rev-parse" in args else ""
+            result = sync_registry()
+            self.assertEqual(result, "b" * 40)
+            mock_run.assert_any_call(["git", "fetch", "--depth=1", "origin", "main"], cwd=ROOT)
+            mock_run.assert_any_call(["git", "checkout", "b" * 40, "--", "registry"], cwd=ROOT)
+            mock_rmtree.assert_called_once_with(ROOT / "registry", ignore_errors=True)
+
+    def test_sync_registry_specific_commit_skips_fetch_if_present(self):
+        from intelbrew.ci import sync_registry
+        with patch.dict(os.environ, {"GITHUB_ACTIONS": "true"}), \
+             patch("subprocess.run") as mock_subproc, \
+             patch("intelbrew.ci.run") as mock_run, \
+             patch("intelbrew.ci.shutil.rmtree") as mock_rmtree:
+            mock_subproc.return_value.returncode = 0
+            result = sync_registry("c" * 40)
+            self.assertEqual(result, "c" * 40)
+            mock_run.assert_called_once_with(["git", "checkout", "c" * 40, "--", "registry"], cwd=ROOT)
+            mock_rmtree.assert_called_once_with(ROOT / "registry", ignore_errors=True)
+
+    def test_sync_registry_retries_fetch_on_transient_failure(self):
+        from intelbrew.ci import sync_registry
+        calls = []
+        def fake_run(args, **kw):
+            if "fetch" in args:
+                calls.append("fetch")
+                if len(calls) < 2:
+                    raise Error("transient network failure")
+                return ""
+            if "rev-parse" in args:
+                return "d" * 40
+            return ""
+        with patch.dict(os.environ, {"GITHUB_ACTIONS": "true"}), \
+             patch("intelbrew.ci.run", side_effect=fake_run) as mock_run, \
+             patch("intelbrew.ci.shutil.rmtree"):
+            result = sync_registry()
+            self.assertEqual(result, "d" * 40)
+            self.assertEqual(calls, ["fetch", "fetch"])
+
+    def test_sync_registry_disabled_outside_ci(self):
+        from intelbrew.ci import sync_registry
+        with patch.dict(os.environ, {"GITHUB_ACTIONS": "false"}, clear=True), \
+             patch("intelbrew.ci.run") as mock_run:
+            result = sync_registry()
+            self.assertEqual(result, "0" * 40)
+            mock_run.assert_not_called()
+
+    def test_build_skips_compilation_when_root_already_in_synced_registry(self):
+        from intelbrew.ci import build
+        env = {
+            "GITHUB_ACTIONS": "true",
+            "RUNNER_ENVIRONMENT": "github-hosted",
+            "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64",
+            "INTELBREW_CORE_COMMIT": "a" * 40,
+            "GITHUB_SHA": "b" * 40,
+        }
+        with tempfile.TemporaryDirectory() as d, \
+             patch.dict(os.environ, env, clear=True), \
+             patch("intelbrew.ci.sync_registry", return_value="c" * 40), \
+             patch("intelbrew.ci.registry", return_value={"simdutf": record(name="simdutf")}), \
+             patch("intelbrew.ci.native", return_value={"simdutf": meta(name="simdutf")}), \
+             patch("intelbrew.ci.run") as mock_run:
+            out = Path(d) / "candidate"
+            build("simdutf", out)
+            manifest = json.loads((out / "manifest.json").read_text())
+            self.assertEqual(manifest["packages"], [])
+            self.assertEqual(manifest["registry_commit"], "c" * 40)
+            self.assertFalse(manifest["verified"])
+            mock_run.assert_not_called()
+
     def test_version_matches_changelog(self):
         from intelbrew import __version__
         self.assertEqual(__version__, "0.2.0")
