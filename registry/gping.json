@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "filename": "gping--1.21.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "9ced0c46f5402e704e10126a4a18c692e89daadae9d55361c1de09cf7ce2ce81",
+  "license": "MIT",
+  "name": "gping",
+  "pkg_version": "1.21.0",
+  "recipe_sha256": "a7afe6b530abc24c25fe0f573ef09dafefc4de8211bac3d9dbd585d0aaf26641",
+  "release": "intel-34338885775-1-gping",
+  "revision": 0,
+  "run_id": "34338885775",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "38a40ed2ad2179aefcb12049b1ce16abf2dffdf41583c109036f83d13998adad",
+  "size": 1308317,
+  "source": {
+    "filename": "gping--1.21.0.sources.tar.gz",
+    "sha256": "e742f8323cace30d1d1d070161340553938ebe639ae43628cbc1efd8c9f622c8",
+    "size": 887866
+  },
+  "tag": "sequoia",
+  "version": "1.21.0",
+  "version_scheme": 0,
+  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+}
