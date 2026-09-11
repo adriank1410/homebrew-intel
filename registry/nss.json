@@ -2,33 +2,33 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
-  "filename": "nss--3.128.sequoia.bottle.tar.gz",
-  "formula_sha256": "239f95ee603bb922e50f1b154e3aa892b70788cd0501e17eab2214ae0dcb201a",
+  "core_commit": "4627442a29070e8ff842a49da7e28dd3cec9385e",
+  "filename": "nss--3.129.sequoia.bottle.tar.gz",
+  "formula_sha256": "3acba5c410ae5db6fe4610adf66c325d1e8027d30a768cfc734cbb64aa8f34db",
   "license": "MPL-2.0",
   "name": "nss",
-  "pkg_version": "3.128",
-  "recipe_sha256": "b5f6510530978e79bc3f69eb1e844098447f57a409327113932b4ce3b10c8ab9",
-  "release": "intel-34388221074-1-nss",
+  "pkg_version": "3.129",
+  "recipe_sha256": "7386f010cb63e7f8de35a65f4d5aac84cd9e4c2081609074c2ccfc6960c012f2",
+  "release": "intel-34628041075-1-nss",
   "revision": 0,
-  "run_id": "34388221074",
+  "run_id": "34628041075",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f1f859e8b6f12c179c5c0822e405a286e444ea713ff59f7f007ba9e34f88b4a9",
+      "formula_sha256": "3a04bd722494d824572512fd40cf3e284a1d86aa42ed0af1d3682665e424b554",
       "name": "nspr",
       "pkg_version": "4.40"
     }
   ],
   "schema": 1,
-  "sha256": "1cf60c1ac6f9846325fb5b7831fb748f14d5a1e56037f38f6ba961219ba4adcd",
-  "size": 6546642,
+  "sha256": "f83fa842237f5dc0540297ad9e16d13c34d47de4f4da58c219f8b8164751c8fc",
+  "size": 6390896,
   "source": {
-    "filename": "nss--3.128.sources.tar.gz",
-    "sha256": "825fde9a5de51b8984f6c46ed6afeb0319e1e395f28b22cfac2aa0779440b32b",
-    "size": 86991283
+    "filename": "nss--3.129.sources.tar.gz",
+    "sha256": "073526ad67c5121e5c488a9a2e0ceedb2423554e6abf95d342a7fa5e710313db",
+    "size": 87193055
   },
   "tag": "sequoia",
-  "version": "3.128",
+  "version": "3.129",
   "version_scheme": 0,
-  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+  "workflow_commit": "4d27c0ee227b9d72e36318c071d6feaca0dfe8c1"
 }
