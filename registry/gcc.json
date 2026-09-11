@@ -2,9 +2,9 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "core_commit": "4627442a29070e8ff842a49da7e28dd3cec9385e",
   "filename": "gcc--16.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "0683955ef01d30162abfcfff3fe9b0e73eebba9a5f9920fb53cb94bc8cdc3f43",
+  "formula_sha256": "6e051fe2856a2fd4b8f714c6f4a24e8234146bfd526dec268cdab5850fabc1d8",
   "license": {
     "GPL-3.0-or-later": {
       "with": "GCC-exception-3.1"
@@ -13,56 +13,56 @@
   "name": "gcc",
   "pkg_version": "16.2.0",
   "recipe_sha256": "12bfeec69dce50d92fb20869b4aca8b89e7028b962b656303017331ca5daffdf",
-  "release": "intel-34388221074-1-numpy",
+  "release": "intel-34628041075-1-openblas",
   "revision": 0,
-  "run_id": "34388221074",
+  "run_id": "34628041075",
   "runtime_dependencies": [
     {
-      "formula_sha256": "530b0e587a38b20ea46927d5289761905e0ebe959b23a07b8a21bfc9f372f641",
+      "formula_sha256": "c2142bae7387c1517ef8fb1fcaebb4d1ab04829884af47d04df3f4fa30ba35ca",
       "name": "gmp",
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "d7c0e40a1575c6d604dd4a10b414dee0ec710400a96aac13414836c9fc6d585a",
+      "formula_sha256": "7c26187c57f112fea09a04ea6d7c7a34a8a3037e35394733c5f4df6c9e60c1a3",
       "name": "isl",
       "pkg_version": "0.28"
     },
     {
-      "formula_sha256": "c9caccef0a0d42fc1b58b35f37a919033bcb17afa0fd4c656f00594921ad7404",
+      "formula_sha256": "9f5bfa18bfa962157a3a945796f0996fe706ca9ad45d07e746f5b5fbf89a6446",
       "name": "libmpc",
       "pkg_version": "1.4.1"
     },
     {
-      "formula_sha256": "fd3222d24e20ec501ac116622330cf4c650e0c7926c337c8e864328851c438ca",
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "88aec43a37c51ba3498eb17f5dc7dd4ad650a781992bb914bcc825c4fba379cc",
+      "formula_sha256": "5621d3c083815b534fead778a7bb08f869c77e218208aa5f77f350f1d2e359c5",
       "name": "mpfr",
       "pkg_version": "4.2.2"
     },
     {
-      "formula_sha256": "4695e50a53c739d3dc09d219d290cf19dbd04f15a14d38410f49564996feab26",
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
       "name": "xz",
       "pkg_version": "5.8.3"
     },
     {
-      "formula_sha256": "b6e64c37fadab73bcf41322cd34dd6b56e8e1fbcad44daa7d634934b9f6852a5",
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
       "name": "zstd",
       "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "f48930173755cd4d048f4e647cfbb039f0df2c3065ecc20ef5cfb349ff449292",
-  "size": 175568284,
+  "sha256": "bbde9e601f57a7a83409a32cc729eef33d39798976860802b57a916a64838f9e",
+  "size": 175570155,
   "source": {
     "filename": "gcc--16.2.0.sources.tar.gz",
-    "sha256": "98e8e4834e2856de11a3b36a7fe395626df891755ea69aa9b62d3b3214ad17f3",
-    "size": 107314643
+    "sha256": "0bf03107ab08d8e94364359061a0b64ca5776ec735feb54f70b4a7c28cf25673",
+    "size": 107304567
   },
   "tag": "sequoia",
   "version": "16.2.0",
   "version_scheme": 0,
-  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+  "workflow_commit": "4d27c0ee227b9d72e36318c071d6feaca0dfe8c1"
 }
