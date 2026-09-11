@@ -28,7 +28,8 @@ The first two commands add the tap and trust its `intel` command.
 An existing `gh` installation is required to verify GitHub attestations.
 
 `plan`, `doctor`, and `upgrade` without `--apply` are non-installing client
-operations. Package changes require `--apply`.
+operations. Package changes require `--apply`. Add `-v` / `--verbose` for
+detailed attestation verification diagnostics, source URLs, and transaction journal paths.
 
 ## How updates are selected
 
@@ -87,7 +88,7 @@ available official or personal bottle.
 GPL, LGPL, AGPL and MPL packages use a source-required publication profile.
 Their releases include the recipe, declared sources and patches, upstream license
 notices and downloaded Go/Cargo source inputs, with a checked source index.
-The client prints a link to the matching source bundle. Git sources pinned to a
+The client provides a link to the matching source bundle (displayed with `-v` / `--verbose`). Git sources pinned to a
 full commit, including submodules pinned by that commit, can be archived; unpinned VCS and other VCS strategies still require further
 support. See [source publication requirements](docs/LICENSE-REVIEW.md).
 
