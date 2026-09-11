@@ -275,8 +275,6 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                 item = plan["nodes"][name]
                 if item["provider"] == "installed":
                     continue
-                filename = records[name]["filename"] if name in records else name
-                ohai(f"Pouring {filename}")
                 request = {
                     "mode": "install", "name": name,
                     "target": str(downloaded[name]) if name in downloaded else f"homebrew/core/{name}",
@@ -288,7 +286,6 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                 native(request, capture=False)
                 receipt = native({"mode": "receipt", "name": name})
                 write_json_new(journal_dir / f"{completed:04d}-{name}.json", receipt)
-                print(f"🍺  /usr/local/Cellar/{name}/{item['pkg_version']}")
                 completed += 1
         except Error as exc:
             raise Error(f"Stopped after {completed} package(s); this is not a transaction rollback. "
