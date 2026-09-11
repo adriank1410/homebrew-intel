@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "8bfe72656e191b6c5e45c41d5d50b66306deeb2b",
+  "filename": "gh--2.100.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "73c8f4e8c7dde7d656d2d64ae314ccfabb0e8b1c4cc93c5651c59bf2588de61c",
+  "license": "MIT",
+  "name": "gh",
+  "pkg_version": "2.100.0",
+  "recipe_sha256": "877e44b26aa637105cd70d65db5638b47ddb597d9273d5dcaa2b6ceca299800c",
+  "release": "intel-34611774853-1-gh",
+  "revision": 0,
+  "run_id": "34611774853",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "8a0ca3f54265ac5724bed31eb887f5334d1d09359918edad982790272311b79b",
+  "size": 15010919,
+  "source": {
+    "filename": "gh--2.100.0.sources.tar.gz",
+    "sha256": "550bc82c7967cbb1f819b55a6af53b695bc21fb4f1b7f0ba709fc067e76c5030",
+    "size": 124295967
+  },
+  "tag": "sequoia",
+  "version": "2.100.0",
+  "version_scheme": 0,
+  "workflow_commit": "17c93bfe67d3a78119e4fa574f02b97f564aa3f1"
+}
