@@ -9,7 +9,7 @@
   "target_os": "sequoia",
   "arch": "x86_64",
   "blocked_source_builds": [],
-  "scheduled_batch_size": 12,
+  "scheduled_batch_size": 24,
   "permissive_license_tokens": [
     "0BSD",
     "Apache-2.0",
