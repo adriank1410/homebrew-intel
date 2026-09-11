@@ -29,6 +29,8 @@ class SourceNoticeTests(unittest.TestCase):
         self.assertIn("Source and license notices for tool:", output.getvalue())
         self.assertIn(expected, output.getvalue())
         self.assertIn("Attestation verified (SLSA Provenance v1)", output.getvalue())
+        self.assertNotIn("Pouring ", output.getvalue())
+        self.assertNotIn("/usr/local/Cellar/", output.getvalue())
 
     def test_personal_install_verbose_passes_verbose_to_attest(self):
         item = meta()
