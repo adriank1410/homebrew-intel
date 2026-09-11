@@ -520,7 +520,8 @@ def reconcile(repository: str) -> None:
             message = str(exc)
             if ("Refusing to replace a registry root already present on main" in message or
                     "Refusing to replace a registry root with an existing dependency record" in message or
-                    "Refusing to overwrite incompatible registry dependency:" in message):
+                    "Refusing to overwrite incompatible registry dependency:" in message or
+                    "Registry records do not match the immutable release manifest" in message):
                 _close_stale_pr(repository, candidate, exc)
                 continue
             errors.append(f"PR {candidate.get('number', '?')}: {exc}")
