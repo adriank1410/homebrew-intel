@@ -15,7 +15,8 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: intelbrew-bottles-${{ github.ref }}
+  # Explicit single-root repairs must not queue behind a long scheduled sweep.
+  group: intelbrew-bottles-${{ github.ref }}${{ github.event_name == 'workflow_dispatch' && inputs.formula != 'all' && !contains(inputs.formula, ',') && format('-{0}', inputs.formula) || '' }}
   cancel-in-progress: false
 jobs:
   plan:

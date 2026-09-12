@@ -38,6 +38,14 @@ class RootWorkflowTests(unittest.TestCase):
         self.assertIn("github.event_name == 'schedule'", job["if"])
         self.assertIn("inputs.formula == 'all'", job["if"])
 
+    def test_manual_single_root_does_not_wait_for_sweep(self):
+        group = workflow("bottles.yml")["concurrency"]["group"]
+        self.assertIn("github.event_name == 'workflow_dispatch'", group)
+        self.assertIn("inputs.formula != 'all'", group)
+        self.assertIn("!contains(inputs.formula, ',')", group)
+        self.assertIn("format('-{0}', inputs.formula)", group)
+        self.assertIn("${{ github.ref }}", group)
+
     def test_root_workflow_declares_explicit_inputs_and_secret(self):
         document = workflow("bottle-root.yml")
         trigger = document.get("on", document.get("true"))

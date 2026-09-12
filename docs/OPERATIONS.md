@@ -151,7 +151,10 @@ The reusable `bottle-root.yml` signs new artifacts; the CLI also accepts the leg
 `bottles.yml` signer, with the same exact commit, main-ref and hosted-runner checks.
 Remaining roots are reconsidered by the next scheduled run.
 Explicit small manual selections still force native verification; `all` uses the
-same native preflight.
+same native preflight. A manual single-root request has its own concurrency group,
+so an urgent repair can run alongside a sweep. Repeated requests for the same root
+remain serialized; manual requests can temporarily add runners beyond the sweep's
+five-root limit.
 Registry maintenance runs
 after successful Checks runs from this repository and every five minutes, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most
