@@ -2,9 +2,9 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4627442a29070e8ff842a49da7e28dd3cec9385e",
+  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
   "filename": "gcc--16.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "6e051fe2856a2fd4b8f714c6f4a24e8234146bfd526dec268cdab5850fabc1d8",
+  "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
   "license": {
     "GPL-3.0-or-later": {
       "with": "GCC-exception-3.1"
@@ -12,13 +12,13 @@
   },
   "name": "gcc",
   "pkg_version": "16.2.0",
-  "recipe_sha256": "12bfeec69dce50d92fb20869b4aca8b89e7028b962b656303017331ca5daffdf",
-  "release": "intel-34628041075-1-gcc",
+  "recipe_sha256": "3de4fc891d72dd8936080ecabae3ffe736a5f8b4352ce843c57688588d9820d8",
+  "release": "intel-34707292687-1-gcc",
   "revision": 0,
-  "run_id": "34628041075",
+  "run_id": "34707292687",
   "runtime_dependencies": [
     {
-      "formula_sha256": "c2142bae7387c1517ef8fb1fcaebb4d1ab04829884af47d04df3f4fa30ba35ca",
+      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
       "name": "gmp",
       "pkg_version": "6.3.0"
     },
@@ -28,7 +28,7 @@
       "pkg_version": "0.28"
     },
     {
-      "formula_sha256": "9f5bfa18bfa962157a3a945796f0996fe706ca9ad45d07e746f5b5fbf89a6446",
+      "formula_sha256": "ec5aa4cc6dc378bab0d004706d32da1415fdbda086648e12945b5233c7faac3e",
       "name": "libmpc",
       "pkg_version": "1.4.1"
     },
@@ -38,7 +38,7 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "5621d3c083815b534fead778a7bb08f869c77e218208aa5f77f350f1d2e359c5",
+      "formula_sha256": "1593024dfeecac26b44bf22f9d40f56f4339fcc100dac9d364e5dfb4be473f56",
       "name": "mpfr",
       "pkg_version": "4.2.2"
     },
@@ -54,15 +54,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9def22fbafceaf951017de6d5796b797e551975c5c4259daec657a4848ca0719",
-  "size": 175568592,
+  "sha256": "548a4a5ef727ffb45ad90e7b55d2e236752cf76fb2535a1a1bbc84cd93562bce",
+  "size": 175571496,
   "source": {
     "filename": "gcc--16.2.0.sources.tar.gz",
-    "sha256": "c2d946b7c6b460295849520cd5727f088bf12fa171e6dd8f4f0b85646ef17a39",
-    "size": 107304567
+    "sha256": "4e7fb283623d53c7cba9b083618f103dce3e1515e39d85b34f744ea12076b47a",
+    "size": 107304559
   },
   "tag": "sequoia",
   "version": "16.2.0",
   "version_scheme": 0,
-  "workflow_commit": "4d27c0ee227b9d72e36318c071d6feaca0dfe8c1"
+  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
 }
