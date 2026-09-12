@@ -1,4 +1,12 @@
 # Changelog
+ 
+## 0.2.0 – native experience & visual polish
+
+- Native Homebrew output format: `upgrade` shows `==> Upgrading N outdated package(s):` with `<formula> <old> -> <new>` and hides already-installed dependencies.
+- Retain full dependency resolution table exclusively for `brew intel plan`.
+- Native SLSA Provenance verification indicator: clean `✔ Attestation verified (SLSA Provenance v1)`.
+- Added `-v` / `--verbose` CLI flag to access detailed attestation policy diagnostics, source bundle URLs, and transaction journal paths.
+- Removed redundant pouring and cellar prints in Python installer wrapper to rely directly on Homebrew's native status messages.
 
 ## 0.1.0 – source preview
 
