@@ -1,0 +1,64 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "06272af86fc79b2a64b767109063c2b7bc00c66b",
+  "filename": "libtiff--4.7.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+  "license": "libtiff",
+  "name": "libtiff",
+  "pkg_version": "4.7.2",
+  "recipe_sha256": "fc00430585b1c694cc6c2749f0479a910cbc0a4dcc0e5dcb0d77efd5db6fa8ae",
+  "release": "intel-34640164552-1-openjph",
+  "revision": 0,
+  "run_id": "34640164552",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "name": "giflib",
+      "pkg_version": "6.1.3"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "name": "libpng",
+      "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
+      "name": "webp",
+      "pkg_version": "1.6.0"
+    },
+    {
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "3f5b14eb1cb0b734fa0dbd4631f79d712400dc5cac8b3c39d3e3b4506dd4e04c",
+  "size": 1995614,
+  "source": {
+    "filename": "libtiff--4.7.2.sources.tar.gz",
+    "sha256": "7d1db3f87ffe72341539d91280b343f7d29cf95f9491cd9c11dc04dd3dfb62a1",
+    "size": 4085481
+  },
+  "tag": "sequoia",
+  "version": "4.7.2",
+  "version_scheme": 0,
+  "workflow_commit": "40f3e94dec54df7fefb784dfddb9981c61e4d17c"
+}
