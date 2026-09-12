@@ -24,7 +24,7 @@ def git(arguments: list[str]) -> str:
                 "credential.https://github.com.helper=!gh auth git-credential", *arguments], cwd=ROOT)
 
 
-def publish(candidate: Path, root: str) -> None:
+def publish(candidate: Path, root: str, *, source_run: str | None = None) -> None:
     config = load_config()
     repo = config["repository"]
     if (os.environ.get("GITHUB_ACTIONS") != "true" or
@@ -34,15 +34,20 @@ def publish(candidate: Path, root: str) -> None:
         os.environ.get("RUNNER_OS") != "Linux"):
         raise Error("Publication is restricted to the main-branch GitHub-hosted Linux job")
     commit = require_sha(os.environ["GITHUB_SHA"], git=True)
-    core_commit = require_sha(os.environ["INTELBREW_CORE_COMMIT"], git=True)
     manifest = validate_candidate(candidate, expected_root=root, verified=True)
+    if source_run is not None:
+        from .recovery import validate_recovery
+        commit, core_commit, run_id, attempt = validate_recovery(
+            candidate, root, source_run, manifest, repo)
+    else:
+        core_commit = require_sha(os.environ["INTELBREW_CORE_COMMIT"], git=True)
+        run_id, attempt = os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_RUN_ATTEMPT"]
     if (manifest["workflow_commit"] != commit or manifest["core_commit"] != core_commit
             or manifest["brew_commit"] != config["brew_commit"]):
         raise Error("Candidate belongs to another source/workflow snapshot")
     if not manifest["packages"]:
         print("No new bottles; no release or review branch created.")
         return
-    run_id, attempt = os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_RUN_ATTEMPT"]
     tag = release_tag(root, run_id, attempt)
     branch = f"bottles/{tag}"
     assets = [candidate / "manifest.json"]
@@ -90,9 +95,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", required=True)
     parser.add_argument("--candidate", type=Path, required=True)
+    parser.add_argument("--source-run", help="Recover original attested artifacts from a completed main run")
     args = parser.parse_args()
     try:
-        publish(args.candidate.resolve(), canonical_name(args.root))
+        publish(args.candidate.resolve(), canonical_name(args.root), source_run=args.source_run)
         return 0
     except (Error, KeyError, OSError, TypeError, ValueError) as exc:
         print(f"intelbrew publish: {exc}", file=sys.stderr)
