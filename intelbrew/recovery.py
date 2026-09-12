@@ -85,7 +85,7 @@ def _publication_attempt(jobs: list[dict[str, Any]], root: str,
                          source_attempt: int) -> str:
     matches = [job for job in jobs if _job_root(job.get("name"), "publish") == root]
     if (len(matches) != 1 or matches[0].get("status") != "completed"
-            or matches[0].get("conclusion") != "failure"):
+            or matches[0].get("conclusion") not in {"failure", "timed_out"}):
         raise Error("Expected exactly one failed publication job for root")
     attempt = _number(matches[0].get("run_attempt"), "publication job attempt")
     if int(attempt) > source_attempt:
@@ -93,11 +93,13 @@ def _publication_attempt(jobs: list[dict[str, Any]], root: str,
     return attempt
 
 
-def _job_roots(jobs: list[dict[str, Any]], stage: str, conclusion: str) -> set[str]:
+def _job_roots(jobs: list[dict[str, Any]], stage: str,
+               conclusion: str | set[str]) -> set[str]:
+    conclusions = {conclusion} if isinstance(conclusion, str) else conclusion
     roots: set[str] = set()
     for job in jobs:
         if (job.get("status") != "completed"
-                or job.get("conclusion") != conclusion):
+                or job.get("conclusion") not in conclusions):
             continue
         root = _job_root(job.get("name"), stage)
         if root is not None:
@@ -142,11 +144,11 @@ def discover_recovery_roots(repository: str, source_run: str | int) -> list[str]
         raise Error("Workflow run is from another repository")
     if str(run.get("status", "")).lower() != "completed":
         raise Error("Workflow run is not completed")
-    if str(run.get("conclusion", "")).lower() != "failure":
+    if str(run.get("conclusion", "")).lower() not in {"failure", "timed_out"}:
         raise Error("Workflow run has no failed publication to recover")
     source_attempt = int(_number(run.get("run_attempt"), "workflow run attempt"))
     jobs = _attempt_jobs(repository, run_id)
-    failed = _job_roots(jobs, "publish", "failure")
+    failed = _job_roots(jobs, "publish", {"failure", "timed_out"})
     if len(failed) > MAX_AUTOMATIC_RECOVERY_ROOTS:
         raise Error("Recovery root count exceeds bound")
     for root in failed:
@@ -210,7 +212,7 @@ def validate_recovery(candidate: Path, root: str, source_run: str | int,
         raise Error("Workflow run workflow commit differs from manifest")
     if str(run.get("status", "")).lower() != "completed":
         raise Error("Workflow run is not completed")
-    if str(run.get("conclusion", "")).lower() not in {"success", "failure"}:
+    if str(run.get("conclusion", "")).lower() not in {"success", "failure", "timed_out"}:
         raise Error("Workflow run has an unsupported conclusion")
     attempt_text = _number(run.get("run_attempt"), "workflow run attempt")
     attempt = int(attempt_text)

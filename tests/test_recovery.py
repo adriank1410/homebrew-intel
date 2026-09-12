@@ -123,6 +123,22 @@ class RecoveryValidationTests(unittest.TestCase):
         result, _ = self.validate(run=self.run_payload(conclusion="failure"))
         self.assertEqual(result, (G, G, RUN_ID, "1"))
 
+    def test_accepts_timed_out_source_and_publication(self):
+        result, _ = self.validate(
+            run=self.run_payload(conclusion="timed_out"),
+            jobs=[self.successful_job(), self.failed_publisher_job(conclusion="timed_out")],
+        )
+        self.assertEqual(result, (G, G, RUN_ID, "1"))
+
+    def test_rejects_canceled_source(self):
+        with self.assertRaisesRegex(Error, "unsupported conclusion"):
+            self.validate(run=self.run_payload(conclusion="cancelled"))
+
+    def test_rejects_canceled_publication(self):
+        with self.assertRaisesRegex(Error, "publication job"):
+            self.validate(jobs=[self.successful_job(),
+                                self.failed_publisher_job(conclusion="cancelled")])
+
     def test_discovers_failed_published_roots_with_live_verified_artifacts(self):
         run = self.run_payload(conclusion="failure")
         jobs = [self.failed_publisher_job(),
@@ -201,6 +217,30 @@ class RecoveryValidationTests(unittest.TestCase):
     def test_discovery_rejects_a_successful_source_run(self):
         with patch("intelbrew.recovery.gh_json", return_value=self.run_payload(conclusion="success")):
             with self.assertRaisesRegex(Error, "failed"):
+                discover_recovery_roots(REPOSITORY, RUN_ID)
+
+    def test_discovery_accepts_timed_out_source_and_publication(self):
+        run = self.run_payload(conclusion="timed_out")
+        jobs = [self.successful_job(), self.failed_publisher_job(conclusion="timed_out")]
+        artifacts = [{"name": "verified-tool", "expired": False}]
+
+        def fake(arguments):
+            if arguments == ["api", f"repos/{REPOSITORY}/actions/runs/{RUN_ID}"]:
+                return run
+            jobs_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/jobs?filter=latest&per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", jobs_endpoint]:
+                return [{"jobs": jobs}]
+            artifacts_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/artifacts?per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", artifacts_endpoint]:
+                return [{"artifacts": artifacts}]
+            raise AssertionError(arguments)
+
+        with patch("intelbrew.recovery.gh_json", side_effect=fake):
+            self.assertEqual(discover_recovery_roots(REPOSITORY, RUN_ID), [ROOT])
+
+    def test_discovery_excludes_canceled_source(self):
+        with patch("intelbrew.recovery.gh_json", return_value=self.run_payload(conclusion="cancelled")):
+            with self.assertRaisesRegex(Error, "failed publication"):
                 discover_recovery_roots(REPOSITORY, RUN_ID)
 
     def test_discovery_rejects_more_than_the_matrix_bound(self):

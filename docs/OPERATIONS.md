@@ -40,7 +40,7 @@ Verify GitHub settings separately before treating them as a security boundary.
 `recover.yml` can publish existing `verified-<root>` artifacts from a completed
 `bottles.yml` run on `main`, without rebuilding or issuing replacement attestations.
 A failed main bottle run triggers one automatic recovery pass for failed
-publication jobs with retained verified artifacts. Recovery does not trigger
+publication jobs (including timeouts) with retained verified artifacts. Recovery does not trigger
 itself, and build or verification failures are not treated as publish failures.
 For an explicit retry after repairing a persistent failure, dispatch it on `main`
 with `source_run` and `roots` (a JSON array, at most 24 roots).
@@ -153,8 +153,9 @@ Remaining roots are reconsidered by the next scheduled run.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight. A manual single-root request has its own concurrency group,
 so an urgent repair can run alongside a sweep. Repeated requests for the same root
-remain serialized; manual requests can temporarily add runners beyond the sweep's
-five-root limit.
+remain serialized through a lock on the canonical planned root, also shared with
+scheduled builds; aliases and whitespace cannot bypass it. Manual requests can
+temporarily add runners beyond the sweep's five-root limit.
 Registry maintenance runs
 after successful Checks runs from this repository and every five minutes, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most

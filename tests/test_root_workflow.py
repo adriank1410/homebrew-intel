@@ -38,6 +38,19 @@ class RootWorkflowTests(unittest.TestCase):
         self.assertIn("github.event_name == 'schedule'", job["if"])
         self.assertIn("inputs.formula == 'all'", job["if"])
 
+    def test_root_lock_uses_canonical_planned_root_not_raw_dispatch(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("root_lock_planner", ROOT / "scripts/plan-workflow.py")
+        planner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(planner)
+        for requested in ("simdutf", " simdutf ", "homebrew/core/simdutf"):
+            self.assertEqual(planner.requested_roots(requested, ["simdutf"], allow_csv=True), ["simdutf"])
+        job = workflow("bottles.yml")["jobs"]["root-pipeline"]
+        self.assertEqual(job["concurrency"], {
+            "group": "intelbrew-root-${{ github.ref }}-${{ matrix.root }}",
+            "cancel-in-progress": False,
+        })
+
     def test_manual_single_root_does_not_wait_for_sweep(self):
         group = workflow("bottles.yml")["concurrency"]["group"]
         self.assertIn("github.event_name == 'workflow_dispatch'", group)

@@ -78,6 +78,11 @@ jobs:
           (((github.event_name == 'schedule' || inputs.formula == 'all') && needs.schedule-plan.result == 'success' && needs.schedule-plan.outputs.has_work == 'true') ||
            (github.event_name != 'schedule' && inputs.formula != 'all' && needs.plan.outputs.has_work == 'true')) }}
     uses: ./.github/workflows/bottle-root.yml
+    # Planner canonicalizes aliases and whitespace before matrix expansion.
+    # Share the lock between manual repairs and scheduled roots as well.
+    concurrency:
+      group: intelbrew-root-${{ github.ref }}-${{ matrix.root }}
+      cancel-in-progress: false
     permissions:
       contents: read
       actions: read
