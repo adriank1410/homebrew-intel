@@ -14,6 +14,20 @@ def workflow(name):
 
 
 class AppWorkflowTests(unittest.TestCase):
+    def test_recovery_never_builds_or_reattests_source_artifacts(self):
+        doc = workflow("recover.yml")
+        job = doc["jobs"]["recover"]
+        self.assertIn("refs/heads/main", job["if"])
+        self.assertEqual(job["permissions"]["attestations"], "read")
+        self.assertEqual(job["strategy"]["max-parallel"], 1)
+        steps = job["steps"]
+        self.assertFalse(any(s.get("uses", "").startswith("actions/attest@") for s in steps))
+        download = next(s for s in steps if s.get("uses", "").startswith("actions/download-artifact@"))
+        self.assertEqual(download["with"]["run-id"], "${{ inputs.source_run }}")
+        publish = next(s for s in steps if "intelbrew.publish" in s.get("run", ""))
+        self.assertIn('--source-run "$SOURCE_RUN"', publish["run"])
+        self.assertNotIn("GITHUB_SHA", publish.get("env", {}))
+
     def test_registry_resumes_after_checks_without_recursive_dispatch(self):
         document = workflow("registry.yml")
         trigger = document.get("on", document.get("true"))
@@ -48,7 +62,7 @@ class AppWorkflowTests(unittest.TestCase):
         self.assertIn("steps.app-token.outcome == 'success'", operation["if"])
 
     def test_private_key_is_only_used_by_main_publication_jobs(self):
-        for filename, privileged_job in (("bottles.yml", "publish"), ("registry.yml", "reconcile")):
+        for filename, privileged_job in (("bottles.yml", "publish"), ("registry.yml", "reconcile"), ("recover.yml", "recover")):
             jobs = workflow(filename)["jobs"]
             for name, job in jobs.items():
                 tokens = [step for step in job["steps"]
@@ -69,7 +83,7 @@ class AppWorkflowTests(unittest.TestCase):
                 expected = {"permission-contents": "write",
                             "permission-pull-requests": "write",
                             "permission-actions": "write"}
-                if filename == "bottles.yml":
+                if filename in ("bottles.yml", "recover.yml"):
                     # Releases retain the verified SHA even if main's workflows
                     # have changed while a long-running build was in progress.
                     expected["permission-workflows"] = "write"

@@ -35,6 +35,22 @@ separate built-in token (`INTELBREW_ATTESTATION_TOKEN`); the App needs no extra
 attestation permission. Its private key is not passed to builds or package tests.
 Verify GitHub settings separately before treating them as a security boundary.
 
+### Recover a failed publication
+
+`recover.yml` can publish existing `verified-<root>` artifacts from a completed
+`bottles.yml` run on `main`, without rebuilding or issuing replacement attestations.
+Dispatch it on `main` with `source_run` and `roots` (a JSON array, at most 24 roots).
+It checks the source run, successful independent verification, original manifest
+and asset attestations before publishing with a fresh App token. The records and
+release targets retain the original build run and commit; the recovery job runs
+the current trusted code. Artifacts must still be available and the pinned Brew
+commit must still match. An existing release is not overwritten; investigate a
+partially completed publication before retrying that root.
+
+The recovery job also requests Workflows write, scoped to this repository.
+Use this after fixing publication credentials: rerunning an old workflow uses
+its old token-permission inputs even when the default branch has been fixed.
+
 To request a reviewed native build through the repository, edit
 `policy/build-request.json` on `main`, choose one name from `policy/targets.json`,
 and increment `sequence`. Only that path is a push trigger for the expensive

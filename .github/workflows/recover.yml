@@ -1,0 +1,87 @@
+name: Recover verified publications
+on:
+  workflow_dispatch:
+    inputs:
+      source_run:
+        description: Completed main bottles workflow run ID
+        required: true
+        type: string
+      roots:
+        description: JSON array of formula roots to recover (maximum 24)
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: intelbrew-publication-recovery
+  cancel-in-progress: false
+jobs:
+  plan:
+    if: github.repository == 'adriank1410/homebrew-intel' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    outputs:
+      roots: ${{ steps.plan.outputs.roots }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - id: plan
+        env:
+          SOURCE_RUN: ${{ inputs.source_run }}
+          ROOTS: ${{ inputs.roots }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from intelbrew.core import canonical_name
+          roots = json.loads(os.environ['ROOTS'])
+          assert os.environ['SOURCE_RUN'].isascii() and os.environ['SOURCE_RUN'].isdigit()
+          assert isinstance(roots, list) and 1 <= len(roots) <= 24
+          roots = [canonical_name(root) for root in roots]
+          assert len(roots) == len(set(roots))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('roots=' + json.dumps(roots) + '\n')
+          PY
+  recover:
+    if: github.repository == 'adriank1410/homebrew-intel' && github.ref == 'refs/heads/main'
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+      attestations: read
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        root: ${{ fromJSON(needs.plan.outputs.roots) }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: verified-${{ matrix.root }}
+          path: ${{ runner.temp }}/verified
+          run-id: ${{ inputs.source_run }}
+          github-token: ${{ github.token }}
+      - name: Issue a short-lived token for this repository only
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        with:
+          client-id: ${{ vars.INTELBREW_APP_CLIENT_ID }}
+          private-key: ${{ secrets.INTELBREW_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: homebrew-intel
+          permission-contents: write
+          permission-pull-requests: write
+          permission-actions: write
+          permission-workflows: write
+      - name: Verify original provenance and recover publication
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          INTELBREW_BOT_LOGIN: app/${{ steps.app-token.outputs.app-slug }}
+          INTELBREW_ATTESTATION_TOKEN: ${{ github.token }}
+          SOURCE_RUN: ${{ inputs.source_run }}
+          ROOT_FORMULA: ${{ matrix.root }}
+        run: python3 -m intelbrew.publish --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/verified" --source-run "$SOURCE_RUN"
