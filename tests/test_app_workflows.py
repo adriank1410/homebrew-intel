@@ -41,6 +41,7 @@ class AppWorkflowTests(unittest.TestCase):
         plan = doc["jobs"]["plan"]
         self.assertIn("github.event.workflow_run.head_branch == 'main'", plan["if"])
         self.assertIn("github.event.workflow_run.conclusion == 'failure'", plan["if"])
+        self.assertIn("github.event.workflow_run.conclusion == 'timed_out'", plan["if"])
         plan_run = next(step for step in plan["steps"] if step.get("id") == "plan")
         self.assertIn("discover_recovery_roots", plan_run["run"])
         self.assertIn("MAX_AUTOMATIC_RECOVERY_ROOTS", plan_run["run"])
