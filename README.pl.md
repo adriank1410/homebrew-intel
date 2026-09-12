@@ -28,7 +28,8 @@ Dwie pierwsze komendy dodają tap i nadają zaufanie jego komendzie `intel`.
 Do weryfikacji poświadczeń pochodzenia GitHub potrzebny jest wcześniej zainstalowany `gh`.
 
 `plan`, `doctor` i `upgrade` bez `--apply` nie instalują pakietów. Zmiany
-pakietów wymagają `--apply`.
+pakietów wymagają `--apply`. Flaga `-v` / `--verbose` włącza szczegółową
+diagnostykę atestacji, linki do paczek ze źródłami oraz ścieżkę dziennika transakcji.
 
 ## Wybór aktualizacji
 
@@ -87,8 +88,8 @@ nie blokują użycia dostępnej oficjalnej lub własnej butelki.
 
 Publikacja pakietów GPL, LGPL, AGPL i MPL wymaga dołączenia źródeł. Wydanie zawiera
 recepturę, zadeklarowane źródła i patche, informacje licencyjne oraz pobrane źródła
-zależności Go/Cargo wraz ze sprawdzanym indeksem. Klient podaje link do właściwej
-paczki źródeł. Źródła Git przypięte do pełnego commita można archiwizować
+zależności Go/Cargo wraz ze sprawdzanym indeksem. Klient udostępnia link do właściwej
+paczki źródeł (wyświetlany przy użyciu flagi `-v` / `--verbose`). Źródła Git przypięte do pełnego commita można archiwizować
 wraz z przypiętymi submodułami. Nieprzypięte źródła i pozostałe systemy VCS
 nadal wymagają dodatkowej obsługi.
 Szczegóły opisuje [dokumentacja publikacji źródeł](docs/LICENSE-REVIEW.md).

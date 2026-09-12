@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 """Build and verification stages. This module refuses to mutate non-CI hosts."""
 from __future__ import annotations
-import argparse, copy, hashlib, io, json, os, re, shutil, sys, tarfile, tempfile
+import argparse, copy, hashlib, io, json, os, re, shutil, subprocess, sys, tarfile, tempfile
 from pathlib import Path, PurePosixPath
 from .archive_notices import archive_notices
 from .build_sources import MAX_FILES as MAX_BUILD_SOURCE_FILES, collect_build_sources
@@ -21,6 +21,32 @@ def require_ci_mac() -> None:
     expected={"GITHUB_ACTIONS":"true","RUNNER_ENVIRONMENT":"github-hosted","RUNNER_OS":"macOS","RUNNER_ARCH":"X64"}
     if any(os.environ.get(k)!=v for k,v in expected.items()):raise Error("This operation is restricted to ephemeral GitHub-hosted Intel macOS runners")
     require_sha(os.environ.get("INTELBREW_CORE_COMMIT"),git=True);require_sha(os.environ.get("GITHUB_SHA"),git=True)
+
+
+def sync_registry(commit: str | None = None, *, force: bool = False) -> str:
+    """Synchronize the local registry/ directory with origin/main or a specific commit in CI."""
+    if not force and os.environ.get("GITHUB_ACTIONS") != "true":
+        return require_sha(os.environ.get("GITHUB_SHA", "0" * 40), git=True)
+    target = commit or "main"
+    if commit:
+        has_commit = subprocess.run(["git", "cat-file", "-e", commit],
+                                    cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0
+        if has_commit:
+            shutil.rmtree(ROOT / "registry", ignore_errors=True)
+            run(["git", "checkout", commit, "--", "registry"], cwd=ROOT)
+            return commit
+    for attempt in range(3):
+        try:
+            run(["git", "fetch", "--depth=1", "origin", target], cwd=ROOT)
+            break
+        except Error:
+            if attempt == 2:
+                raise
+    resolved = run(["git", "rev-parse", "FETCH_HEAD"], cwd=ROOT).strip()
+    require_sha(resolved, git=True)
+    shutil.rmtree(ROOT / "registry", ignore_errors=True)
+    run(["git", "checkout", resolved, "--", "registry"], cwd=ROOT)
+    return resolved
 
 
 def permissive_license(expression, allowed:set[str], *, depth:int=0)->bool:
@@ -311,14 +337,17 @@ def build(root:str,output:Path)->None:
     require_ci_mac();config=load_config();allowed=read_json(ROOT/"policy/targets.json")["formulae"]
     if root not in allowed:raise Error("Root is not in reviewed target list")
     if output.exists():raise Error("Build output must be fresh")
-    output.mkdir(parents=True);records=registry();inspector=lambda batch:native({"mode":"inspect","names":batch},ci=True)
+    output.mkdir(parents=True);registry_commit=sync_registry();records=registry();inspector=lambda batch:native({"mode":"inspect","names":batch},ci=True)
     plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"]).make([root])
     to_build=[n for n in plan["order"] if plan["nodes"][n]["provider"]=="build"]
     if len(to_build)>config["max_source_builds"]:raise Error("Source build budget exceeded")
     license_requirements={name:allowed_redistribution(plan["nodes"][name],config) for name in to_build}
     core_commit=require_sha(os.environ["INTELBREW_CORE_COMMIT"],git=True);workflow_commit=require_sha(os.environ["GITHUB_SHA"],git=True)
-    manifest={"schema":1,"root":root,"core_commit":core_commit,"brew_commit":config["brew_commit"],"workflow_commit":workflow_commit,"plan":plan,"packages":[],"verified":False}
-    if not to_build:write_json_new(output/"manifest.json",manifest);return
+    manifest={"schema":1,"root":root,"core_commit":core_commit,"brew_commit":config["brew_commit"],"workflow_commit":workflow_commit,"registry_commit":registry_commit,"plan":plan,"packages":[],"verified":False}
+    if not to_build:
+        write_json_new(output/"manifest.json",manifest)
+        validate_candidate(output,expected_root=root,verified=False)
+        return
     work=Path(tempfile.mkdtemp(prefix="intelbrew-build-",dir=os.environ["RUNNER_TEMP"]))
     package_caches,source_sets=_prepare_source_sets(to_build,work)
     for name in plan["order"]:
@@ -349,8 +378,10 @@ def validate_candidate(directory:Path,*,expected_root:str,verified=None)->dict:
     if sum(p.stat().st_size for p in directory.iterdir() if p.is_file())>config["max_candidate_bytes"]:raise Error("Candidate exceeds transfer budget")
     manifest=read_json(directory/"manifest.json")
     required={"schema","root","core_commit","brew_commit","workflow_commit","plan","packages","verified"}
-    if not isinstance(manifest,dict) or set(manifest)!=required or manifest["schema"]!=1 or manifest["root"]!=expected_root:raise Error("Unexpected candidate manifest")
+    keys=set(manifest) if isinstance(manifest,dict) else set()
+    if not isinstance(manifest,dict) or keys not in (required,required|{"registry_commit"}) or manifest["schema"]!=1 or manifest["root"]!=expected_root:raise Error("Unexpected candidate manifest")
     for key in ("core_commit","brew_commit","workflow_commit"):require_sha(manifest[key],git=True)
+    if "registry_commit" in manifest:require_sha(manifest["registry_commit"],git=True)
     if type(manifest["verified"]) is not bool or (verified is not None and manifest["verified"] is not verified):raise Error("Candidate verification state invalid")
     if not isinstance(manifest["packages"],list) or len(manifest["packages"])>60:raise Error("Invalid candidate count")
     allowed_files={"manifest.json"};names=set()
@@ -374,6 +405,7 @@ def verify(root:str,candidate:Path,output:Path)->None:
     if manifest["workflow_commit"]!=os.environ["GITHUB_SHA"] or manifest["core_commit"]!=os.environ["INTELBREW_CORE_COMMIT"]:raise Error("Candidate provenance mismatch")
     if output.exists():raise Error("Verification output must be new")
     output.mkdir(parents=True)
+    if manifest.get("registry_commit"):sync_registry(manifest["registry_commit"])
     if manifest["packages"]:
         native({"mode":"guard-test"},ci=True);plan=manifest["plan"]
         independent=Planner(lambda batch:native({"mode":"inspect","names":batch},ci=True),registry(),build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"]).make([root])

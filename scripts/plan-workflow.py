@@ -7,6 +7,7 @@ import sys
 import urllib.request
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from intelbrew.ci import sync_registry
 from intelbrew.core import ROOT, Error, canonical_name, read_json, registry, require_sha, run
 
 def requested_roots(requested, targets, *, allow_csv, max_roots=50):
@@ -207,6 +208,7 @@ def main():
         raise Error('Cannot resolve the official main branch')
     commit = require_sha(upstream[0], git=True)
     if source == 'schedule':
+        sync_registry()
         roots = scheduled_roots(roots, load_formula_index(), registry(), core_commit=commit)
     with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as handle:
         handle.write('matrix=' + json.dumps({'root': roots}, separators=(',', ':')) + '\n')
