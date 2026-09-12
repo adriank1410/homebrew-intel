@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 from helpers import G, archive, record
 from intelbrew.core import Error
-from intelbrew.recovery import validate_recovery
+from intelbrew.recovery import discover_recovery_roots, validate_recovery
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
@@ -71,6 +71,14 @@ class RecoveryValidationTests(unittest.TestCase):
         return {"name": f"publish ({root})", "status": "completed",
                 "conclusion": conclusion, "run_attempt": attempt}
 
+    @staticmethod
+    def reusable_job(stage, root=ROOT, *, conclusion="success", attempt=None):
+        job = {"name": f"root-pipeline ({root}) / {stage} ({root})",
+               "status": "completed", "conclusion": conclusion}
+        if attempt is not None:
+            job["run_attempt"] = attempt
+        return job
+
     def gh_fixture(self, run, *, jobs=None, previous_jobs=None):
         jobs = [self.successful_job(), self.failed_publisher_job()] if jobs is None else jobs
         previous_jobs = [] if previous_jobs is None else previous_jobs
@@ -114,6 +122,111 @@ class RecoveryValidationTests(unittest.TestCase):
     def test_accepts_completed_run_failed_only_by_publication_jobs(self):
         result, _ = self.validate(run=self.run_payload(conclusion="failure"))
         self.assertEqual(result, (G, G, RUN_ID, "1"))
+
+    def test_discovers_failed_published_roots_with_live_verified_artifacts(self):
+        run = self.run_payload(conclusion="failure")
+        jobs = [self.failed_publisher_job(),
+                {"name": "publish (other)", "status": "completed", "conclusion": "failure",
+                 "run_attempt": 1},
+                self.successful_job(),
+                {"name": "verify (other)", "status": "completed", "conclusion": "success"}]
+        artifacts = [{"name": "verified-tool", "expired": False},
+                     {"name": "verified-other", "expired": True},
+                     {"name": "verified-unpublished", "expired": False}]
+
+        def fake(arguments):
+            if arguments == ["api", f"repos/{REPOSITORY}/actions/runs/{RUN_ID}"]:
+                return run
+            jobs_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/jobs?filter=latest&per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", jobs_endpoint]:
+                return [{"jobs": jobs}]
+            artifacts_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/artifacts?per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", artifacts_endpoint]:
+                return [{"artifacts": artifacts}]
+            raise AssertionError(arguments)
+
+        with patch("intelbrew.recovery.gh_json", side_effect=fake):
+            self.assertEqual(discover_recovery_roots(REPOSITORY, RUN_ID), [ROOT])
+
+    def test_discovery_uses_prior_successful_verification_attempt(self):
+        run = self.run_payload(run_attempt=2, conclusion="failure")
+        latest = [self.failed_publisher_job(attempt=2)]
+        prior = [self.successful_job()]
+        artifacts = [{"name": "verified-tool", "expired": False}]
+
+        def fake(arguments):
+            if arguments == ["api", f"repos/{REPOSITORY}/actions/runs/{RUN_ID}"]:
+                return run
+            latest_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/jobs?filter=latest&per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", latest_endpoint]:
+                return [{"jobs": latest}]
+            prior_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/attempts/1/jobs?per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", prior_endpoint]:
+                return [{"jobs": prior}]
+            artifacts_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/artifacts?per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", artifacts_endpoint]:
+                return [{"artifacts": artifacts}]
+            raise AssertionError(arguments)
+
+        with patch("intelbrew.recovery.gh_json", side_effect=fake):
+            self.assertEqual(discover_recovery_roots(REPOSITORY, RUN_ID), [ROOT])
+
+    def test_discovery_accepts_reusable_workflow_job_prefix(self):
+        run = self.run_payload(conclusion="failure")
+        jobs = [self.reusable_job("verify"),
+                self.reusable_job("publish", conclusion="failure", attempt=1)]
+        artifacts = [{"name": "verified-tool", "expired": False}]
+
+        def fake(arguments):
+            if arguments == ["api", f"repos/{REPOSITORY}/actions/runs/{RUN_ID}"]:
+                return run
+            jobs_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/jobs?filter=latest&per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", jobs_endpoint]:
+                return [{"jobs": jobs}]
+            artifacts_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/artifacts?per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", artifacts_endpoint]:
+                return [{"artifacts": artifacts}]
+            raise AssertionError(arguments)
+
+        with patch("intelbrew.recovery.gh_json", side_effect=fake):
+            self.assertEqual(discover_recovery_roots(REPOSITORY, RUN_ID), [ROOT])
+
+    def test_reusable_workflow_job_prefix_must_match_stage_root(self):
+        jobs = [self.reusable_job("verify"),
+                {"name": "root-pipeline (other) / publish (tool)",
+                 "status": "completed", "conclusion": "failure", "run_attempt": 1}]
+        with self.assertRaisesRegex(Error, "publication job"):
+            self.validate(jobs=jobs)
+
+    def test_discovery_rejects_a_successful_source_run(self):
+        with patch("intelbrew.recovery.gh_json", return_value=self.run_payload(conclusion="success")):
+            with self.assertRaisesRegex(Error, "failed"):
+                discover_recovery_roots(REPOSITORY, RUN_ID)
+
+    def test_discovery_rejects_more_than_the_matrix_bound(self):
+        roots = [f"formula{i}" for i in range(257)]
+        jobs = ([{"name": f"publish ({root})", "status": "completed",
+                  "conclusion": "failure", "run_attempt": 1}
+                 for root in roots] +
+                [{"name": f"verify ({root})", "status": "completed",
+                  "conclusion": "success"}
+                 for root in roots])
+        artifacts = [{"name": f"verified-{root}", "expired": False} for root in roots]
+
+        def fake(arguments):
+            if arguments == ["api", f"repos/{REPOSITORY}/actions/runs/{RUN_ID}"]:
+                return self.run_payload(conclusion="failure")
+            jobs_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/jobs?filter=latest&per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", jobs_endpoint]:
+                return [{"jobs": jobs}]
+            artifacts_endpoint = f"repos/{REPOSITORY}/actions/runs/{RUN_ID}/artifacts?per_page=100"
+            if arguments == ["api", "--paginate", "--slurp", artifacts_endpoint]:
+                return [{"artifacts": artifacts}]
+            raise AssertionError(arguments)
+
+        with patch("intelbrew.recovery.gh_json", side_effect=fake):
+            with self.assertRaisesRegex(Error, "bound"):
+                discover_recovery_roots(REPOSITORY, RUN_ID)
 
     def test_rejects_foreign_workflow_path(self):
         with self.assertRaisesRegex(Error, "workflow path"):

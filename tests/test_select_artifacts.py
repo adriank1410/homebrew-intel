@@ -61,17 +61,19 @@ class SelectArtifactsTests(unittest.TestCase):
             check=True, capture_output=True, text=True,
         )
 
-    def test_workflow_checks_out_selector_and_guards_empty_matrices(self):
-        workflow = (ROOT / ".github/workflows/bottles.yml").read_text()
-        for job in ('collect-candidates', 'collect-verified'):
-            block = workflow.split('  ' + job + ':\n', 1)[1]
-            import re
-            block = re.split(r'\n  [a-z-]+:', block, maxsplit=1)[0]
-            self.assertIn('contents: read', block)
-            self.assertIn('actions: read', block)
-            self.assertLess(block.index('actions/checkout@'), block.index('python3 scripts/select_artifacts.py'))
-        self.assertIn("needs.collect-candidates.outputs.has_artifacts == 'true'", workflow)
-        self.assertIn("needs.collect-verified.outputs.has_artifacts == 'true'", workflow)
+    def test_workflow_uses_bounded_reusable_root_pipelines(self):
+        caller = (ROOT / ".github/workflows/bottles.yml").read_text()
+        self.assertIn("root-pipeline:", caller)
+        self.assertIn("uses: ./.github/workflows/bottle-root.yml", caller)
+        self.assertIn("max-parallel: 5", caller)
+        self.assertNotIn("collect-candidates:", caller)
+        self.assertNotIn("collect-verified:", caller)
+
+        root_workflow = (ROOT / ".github/workflows/bottle-root.yml").read_text()
+        self.assertIn("name: candidate-${{ inputs.root }}", root_workflow)
+        self.assertIn("name: verified-${{ inputs.root }}", root_workflow)
+        self.assertIn("needs: build", root_workflow)
+        self.assertIn("needs: verify", root_workflow)
 
 
 if __name__ == "__main__":

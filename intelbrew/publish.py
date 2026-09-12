@@ -8,8 +8,8 @@ import os
 import sys
 from pathlib import Path
 from .ci import validate_candidate
-from .core import ROOT, Error, canonical_name, load_config, require_sha, run, validate_record
-from .registry_pr import ensure_pr
+from .core import ROOT, Error, canonical_name, load_config, require_sha, run, validate_record, digest
+from .registry_pr import ensure_pr, gh_json
 
 
 def release_tag(root: str, run_id: str, attempt: str) -> str:
@@ -22,6 +22,53 @@ def release_tag(root: str, run_id: str, attempt: str) -> str:
 def git(arguments: list[str]) -> str:
     return run(["git", "-c", "credential.helper=", "-c",
                 "credential.https://github.com.helper=!gh auth git-credential", *arguments], cwd=ROOT)
+
+
+def ensure_release(repo: str, tag: str, commit: str, title: str, notes: str,
+                   assets: list[Path]) -> None:
+    """Resume an interrupted upload without replacing any published bytes."""
+    try:
+        run(["gh", "release", "create", tag, "--repo", repo, "--target", commit,
+             "--title", title, "--notes", notes, *map(str, assets)], capture=False)
+        return
+    except Error:
+        # A failed request can have created the release before losing its
+        # response. Read its actual state; a missing release still fails here.
+        release = gh_json(["api", f"repos/{repo}/releases/tags/{tag}"])
+    if (not isinstance(release, dict) or release.get("tag_name") != tag
+            or type(release.get("draft")) is not bool or not isinstance(release.get("assets"), list)):
+        raise Error("Existing release has an unexpected identity or state")
+    expected = {p.name: p for p in assets}
+    seen = set()
+    for asset in release["assets"]:
+        if not isinstance(asset, dict):
+            raise Error("Existing release has malformed assets")
+        name = asset.get("name")
+        if not isinstance(name, str) or name not in expected or name in seen:
+            raise Error("Existing release has unexpected or duplicate assets")
+        local = expected[name]
+        if asset.get("size") != local.stat().st_size or asset.get("digest") != "sha256:" + digest(local):
+            raise Error("Existing release asset differs from the verified candidate")
+        seen.add(name)
+    refs = gh_json(["api", f"repos/{repo}/git/matching-refs/tags/{tag}"])
+    if not isinstance(refs, list):
+        raise Error("Existing release tag lookup is malformed")
+    exact = [ref for ref in refs if isinstance(ref, dict) and ref.get("ref") == f"refs/tags/{tag}"]
+    if exact:
+        target = exact[0].get("object")
+        if (len(exact) != 1 or not isinstance(target, dict)
+                or target.get("type") != "commit" or target.get("sha") != commit):
+            raise Error("Existing release tag differs from the verified pipeline commit")
+    elif not release["draft"] or release.get("target_commitish") != commit:
+        raise Error("Existing release has no matching tag or draft target")
+    missing = [p for p in assets if p.name not in seen]
+    if missing:
+        run(["gh", "release", "upload", tag, "--repo", repo, *map(str, missing)], capture=False)
+    if release["draft"]:
+        # gh creates a temporary draft while uploading. Publish only once all
+        # original candidate assets have been checked or uploaded successfully.
+        run(["gh", "release", "edit", tag, "--repo", repo, "--draft=false"], capture=False)
+
 
 
 def publish(candidate: Path, root: str, *, source_run: str | None = None) -> None:
@@ -62,9 +109,23 @@ def publish(candidate: Path, root: str, *, source_run: str | None = None) -> Non
              "identify the publishing workflow; they are not a reproducibility or security certificate. "
              "Package licenses remain independent from the tap's BSD-2-Clause license.\n\n"
              "These bottles become discoverable after the registry PR passes manifest validation and required checks, then merges.")
-    run(["gh", "release", "create", tag, "--repo", repo, "--target", commit,
-         "--title", f"Intel bottles: {root} ({run_id}/{attempt})", "--notes", notes,
-         *[str(p) for p in assets]], capture=False)
+    previous = gh_json(["pr", "list", "--repo", repo, "--head", branch, "--base", "main",
+                        "--state", "closed", "--json", "number,state,headRepository,headRefName,isCrossRepository", "--limit", "100"])
+    if not isinstance(previous, list):
+        raise Error("Invalid previous publication PR response")
+    if any(isinstance(pr, dict) and pr.get("headRefName") == branch
+           and not pr.get("isCrossRepository", True)
+           and (pr.get("headRepository") or {}).get("nameWithOwner") == repo for pr in previous):
+        print("Publication PR was already merged or closed; not recreating it.")
+        return
+    ensure_release(repo, tag, commit, f"Intel bottles: {root} ({run_id}/{attempt})", notes, assets)
+    if git(["ls-remote", "--heads", "origin", f"refs/heads/{branch}"]).strip():
+        # A previous attempt may have pushed successfully before PR creation
+        # failed. Reuse it only through the existing manifest/ownership/check
+        # validation, without force-pushing over registry reconciliation.
+        ensure_pr(repo, branch, tag, title=f"Publish Intel bottles: {root} ({run_id}/{attempt})",
+                  body=notes)
+        return
     git(["switch", "--create", branch])
     changed = []
     for item in manifest["packages"]:

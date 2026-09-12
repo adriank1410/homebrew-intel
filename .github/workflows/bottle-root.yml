@@ -1,0 +1,144 @@
+name: Sequoia Intel bottle root
+on:
+  workflow_call:
+    inputs:
+      root:
+        description: Formula root
+        required: true
+        type: string
+      core_commit:
+        description: Pinned Homebrew/core commit
+        required: true
+        type: string
+    secrets:
+      app_private_key:
+        required: true
+permissions:
+  contents: read
+jobs:
+  build:
+    name: build (${{ inputs.root }})
+    runs-on: macos-15-intel
+    timeout-minutes: 360
+    permissions:
+      contents: read
+    env:
+      INTELBREW_CORE_COMMIT: ${{ inputs.core_commit }}
+      ROOT_FORMULA: ${{ inputs.root }}
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_INSTALL_FROM_API: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Isolate preseeded kegs and pin official Homebrew/core
+        run: bash scripts/prepare-runner.sh
+      - name: Exercise the native bridge before building
+        run: INTELBREW_NATIVE_TESTS=1 /usr/bin/python3 -m unittest discover -s tests -p test_native.py -v
+      - name: Build only missing bottles, with bounded licensing policy
+        run: /usr/bin/python3 -m intelbrew.ci build --root "$ROOT_FORMULA" --output "$RUNNER_TEMP/candidate"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: candidate-${{ inputs.root }}
+          path: ${{ runner.temp }}/candidate/*
+          if-no-files-found: error
+          retention-days: 35
+          compression-level: 0
+  verify:
+    name: verify (${{ inputs.root }})
+    needs: build
+    runs-on: macos-15-intel
+    timeout-minutes: 180
+    permissions:
+      contents: read
+      actions: read
+    env:
+      INTELBREW_CORE_COMMIT: ${{ inputs.core_commit }}
+      ROOT_FORMULA: ${{ inputs.root }}
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_INSTALL_FROM_API: '1'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: candidate-${{ inputs.root }}
+          path: ${{ runner.temp }}/candidate
+      - name: Fresh independent Intel macOS installation
+        run: bash scripts/prepare-runner.sh
+      - name: Bottle-only pour, receipts, linkage, formula tests and idempotence
+        run: /usr/bin/python3 -m intelbrew.ci verify --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/candidate" --output "$RUNNER_TEMP/verified"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: verified-${{ inputs.root }}
+          path: ${{ runner.temp }}/verified/*
+          if-no-files-found: error
+          retention-days: 35
+          compression-level: 0
+  publish:
+    name: publish (${{ inputs.root }})
+    if: >-
+      ${{ !cancelled() && needs.verify.result == 'success' &&
+          github.repository == 'adriank1410/homebrew-intel' &&
+          github.ref == 'refs/heads/main' }}
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+      id-token: write
+      attestations: write
+    env:
+      INTELBREW_CORE_COMMIT: ${{ inputs.core_commit }}
+      ROOT_FORMULA: ${{ inputs.root }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: verified-${{ inputs.root }}
+          path: ${{ runner.temp }}/verified
+      - name: Validate bounded data only; never source downloaded files
+        id: validate
+        run: python3 -m intelbrew.ci validate --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/verified"
+      - name: Attest verified bottle and accompanying source bundle
+        if: steps.validate.outputs.has_bottles == 'true'
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4
+        with:
+          subject-path: |
+            ${{ runner.temp }}/verified/*.tar.gz
+            ${{ runner.temp }}/verified/manifest.json
+      - name: Issue a short-lived token for this repository only
+        id: app-token
+        if: steps.validate.outputs.has_bottles == 'true'
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        with:
+          client-id: ${{ vars.INTELBREW_APP_CLIENT_ID }}
+          private-key: ${{ secrets.app_private_key }}
+          owner: ${{ github.repository_owner }}
+          repositories: homebrew-intel
+          permission-contents: write
+          permission-pull-requests: write
+          permission-actions: write
+          # Release tags retain the verified SHA after main's workflows advance.
+          permission-workflows: write
+      - name: Publish immutable release and attested registry PR
+        if: steps.validate.outputs.has_bottles == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          INTELBREW_BOT_LOGIN: app/${{ steps.app-token.outputs.app-slug }}
+          INTELBREW_ATTESTATION_TOKEN: ${{ github.token }}
+        run: python3 -m intelbrew.publish --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/verified"
+      - name: Trigger registry reconciliation immediately after publishing
+        if: steps.validate.outputs.has_bottles == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: gh workflow run registry.yml --repo "$GITHUB_REPOSITORY"

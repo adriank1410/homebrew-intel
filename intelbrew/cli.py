@@ -32,11 +32,20 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
     if token is not None:
         env = os.environ.copy()
         env["GH_TOKEN"] = token
-    run(["gh", "attestation", "verify", str(path), "--repo", repository,
-         "--signer-workflow", f"{repository}/.github/workflows/bottles.yml",
-         "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
-         "--signer-digest", workflow_commit, "--deny-self-hosted-runners"],
-        capture=not verbose, env=env)
+    # Reusable workflows are the signer, while old releases retain the
+    # original top-level signer. Both must match the exact source commit.
+    for workflow in ("bottle-root.yml", "bottles.yml"):
+        try:
+            run(["gh", "attestation", "verify", str(path), "--repo", repository,
+                 "--signer-workflow", f"{repository}/.github/workflows/{workflow}",
+                 "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
+                 "--signer-digest", workflow_commit, "--deny-self-hosted-runners"],
+                capture=not verbose, env=env)
+            return
+        except Error:
+            if workflow == "bottles.yml":
+                raise
+
 
 
 def render(plan: dict, stream: Any = None) -> None:

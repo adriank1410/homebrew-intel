@@ -10,39 +10,75 @@ on:
         description: JSON array of formula roots to recover (maximum 24)
         required: true
         type: string
+  workflow_run:
+    workflows: [Sequoia Intel bottles]
+    types: [completed]
 permissions:
   contents: read
+  actions: read
 concurrency:
-  group: intelbrew-publication-recovery
+  group: intelbrew-publication-recovery-${{ inputs.source_run || github.event.workflow_run.id }}
   cancel-in-progress: false
 jobs:
   plan:
-    if: github.repository == 'adriank1410/homebrew-intel' && github.ref == 'refs/heads/main'
+    if: >-
+      github.repository == 'adriank1410/homebrew-intel' &&
+      ((github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+       (github.event_name == 'workflow_run' && github.ref == 'refs/heads/main' &&
+        github.event.workflow_run.head_repository.full_name == github.repository &&
+        github.event.workflow_run.head_branch == 'main' &&
+        github.event.workflow_run.conclusion == 'failure'))
     runs-on: ubuntu-24.04
     outputs:
+      source_run: ${{ steps.plan.outputs.source_run }}
       roots: ${{ steps.plan.outputs.roots }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+    permissions:
+      contents: read
+      actions: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - id: plan
         env:
-          SOURCE_RUN: ${{ inputs.source_run }}
+          EVENT_NAME: ${{ github.event_name }}
+          SOURCE_RUN: ${{ inputs.source_run || github.event.workflow_run.id }}
           ROOTS: ${{ inputs.roots }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           python3 - <<'PY'
           import json, os
           from intelbrew.core import canonical_name
-          roots = json.loads(os.environ['ROOTS'])
-          assert os.environ['SOURCE_RUN'].isascii() and os.environ['SOURCE_RUN'].isdigit()
-          assert isinstance(roots, list) and 1 <= len(roots) <= 24
-          roots = [canonical_name(root) for root in roots]
-          assert len(roots) == len(set(roots))
+          from intelbrew.recovery import (MAX_AUTOMATIC_RECOVERY_ROOTS,
+                                          MAX_RECOVERY_ROOTS,
+                                          discover_recovery_roots)
+
+          source_run = os.environ['SOURCE_RUN']
+          if not source_run.isascii() or not source_run.isdigit() or int(source_run) <= 0:
+              raise SystemExit('invalid source run')
+          if os.environ['EVENT_NAME'] == 'workflow_run':
+              roots = discover_recovery_roots(os.environ['GITHUB_REPOSITORY'], source_run)
+              if len(roots) > MAX_AUTOMATIC_RECOVERY_ROOTS:
+                  raise SystemExit('too many recovery roots')
+          else:
+              roots = json.loads(os.environ['ROOTS'])
+              if not isinstance(roots, list) or not 1 <= len(roots) <= MAX_RECOVERY_ROOTS:
+                  raise SystemExit('invalid recovery roots')
+              roots = [canonical_name(root) for root in roots]
+              if len(roots) != len(set(roots)):
+                  raise SystemExit('duplicate recovery roots')
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
-              output.write('roots=' + json.dumps(roots) + '\n')
+              output.write('source_run=' + source_run + '\n')
+              output.write('roots=' + json.dumps(roots, separators=(',', ':')) + '\n')
+              output.write('has_work=' + ('true' if roots else 'false') + '\n')
           PY
   recover:
-    if: github.repository == 'adriank1410/homebrew-intel' && github.ref == 'refs/heads/main'
+    if: >-
+      github.repository == 'adriank1410/homebrew-intel' &&
+      github.ref == 'refs/heads/main' &&
+      needs.plan.result == 'success' &&
+      needs.plan.outputs.has_work == 'true'
     needs: plan
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -63,7 +99,7 @@ jobs:
         with:
           name: verified-${{ matrix.root }}
           path: ${{ runner.temp }}/verified
-          run-id: ${{ inputs.source_run }}
+          run-id: ${{ needs.plan.outputs.source_run }}
           github-token: ${{ github.token }}
       - name: Issue a short-lived token for this repository only
         id: app-token
@@ -82,7 +118,7 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           INTELBREW_BOT_LOGIN: app/${{ steps.app-token.outputs.app-slug }}
           INTELBREW_ATTESTATION_TOKEN: ${{ github.token }}
-          SOURCE_RUN: ${{ inputs.source_run }}
+          SOURCE_RUN: ${{ needs.plan.outputs.source_run }}
           ROOT_FORMULA: ${{ matrix.root }}
         run: python3 -m intelbrew.publish --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/verified" --source-run "$SOURCE_RUN"
       - name: Reconcile recovered publication even when schedules are disabled
