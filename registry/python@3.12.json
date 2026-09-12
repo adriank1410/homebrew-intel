@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "core_commit": "d6c18e919a425e9d53a5ff3af22b0b0375591ccc",
   "filename": "python@3.12--3.12.14.sequoia.bottle.tar.gz",
-  "formula_sha256": "1833a37a709989f133b3d4c38e8748a380c295247f18fb7cd54e5e1c3577637a",
+  "formula_sha256": "cc553f0621c74c0ab9ae5908bfb43e8441bf53485b54a9b0fb0d4846508ee67a",
   "license": "Python-2.0",
   "name": "python@3.12",
   "pkg_version": "3.12.14",
   "recipe_sha256": "798b28f0006ecd4fddacd130187177541b2217922b67041fc99a18f4a2cc034b",
-  "release": "intel-34338885775-1-python-at-3.12",
+  "release": "intel-34698270787-1-python-at-3.12",
   "revision": 0,
-  "run_id": "34338885775",
+  "run_id": "34698270787",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -19,41 +19,41 @@
       "pkg_version": "2026-08-13"
     },
     {
-      "formula_sha256": "cddb32a786744a117cb04a973d91e76bc872ce770c83bb54ce35943124951bf7",
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
       "name": "openssl@3",
       "pkg_version": "3.6.4"
     },
     {
-      "formula_sha256": "660d4099f7dcd652c78f530672ffaf01103a00b3ee72aca4059f10c1038b1228",
+      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
       "name": "readline",
       "pkg_version": "8.3.3"
     },
     {
-      "formula_sha256": "065af05579adeae47ac51a3bc4de6dceb618051e78cf2f1010f9d1004fe2ce06",
+      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
       "name": "sqlite",
       "pkg_version": "3.53.4"
     },
     {
-      "formula_sha256": "4695e50a53c739d3dc09d219d290cf19dbd04f15a14d38410f49564996feab26",
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
       "name": "xz",
       "pkg_version": "5.8.3"
     }
   ],
   "schema": 1,
-  "sha256": "9734dd04457db3c9d8eefff0af1a51ff0046684c00da218e44abe3c19bbd960a",
-  "size": 18058147,
+  "sha256": "8aefa61aeaf8f66bb6a96a6d45455a1ee134735dd8621324627fabc20f4a8197",
+  "size": 18057729,
   "source": {
     "filename": "python@3.12--3.12.14.sources.tar.gz",
-    "sha256": "ba64fb4b5c478ddde3c52ed520e741ea1cbcfdfb8dc11d042802f9c370dad4b3",
-    "size": 29466049
+    "sha256": "4ac29f96af924b8221bf7f5d5119d56b5288e5a720e58fb438d9725b873f09be",
+    "size": 29510326
   },
   "tag": "sequoia",
   "version": "3.12.14",
   "version_scheme": 0,
-  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+  "workflow_commit": "9ef5d68061805c8e81cf7a9d91affc19d8c2eaa9"
 }
