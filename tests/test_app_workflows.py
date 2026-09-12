@@ -66,9 +66,14 @@ class AppWorkflowTests(unittest.TestCase):
                 self.assertEqual(inputs["repositories"], "homebrew-intel")
                 self.assertNotEqual(inputs.get("skip-token-revoke"), True)
                 granted = {k: v for k, v in inputs.items() if k.startswith("permission-")}
-                self.assertEqual(granted, {"permission-contents": "write",
-                                          "permission-pull-requests": "write",
-                                          "permission-actions": "write"})
+                expected = {"permission-contents": "write",
+                            "permission-pull-requests": "write",
+                            "permission-actions": "write"}
+                if filename == "bottles.yml":
+                    # Releases retain the verified SHA even if main's workflows
+                    # have changed while a long-running build was in progress.
+                    expected["permission-workflows"] = "write"
+                self.assertEqual(granted, expected)
 
     def test_registry_operations_use_the_issued_token_and_its_bot_identity(self):
         for filename, job_name, module in (("bottles.yml", "publish", "intelbrew.publish"),
