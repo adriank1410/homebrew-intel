@@ -14,6 +14,16 @@ def workflow(name):
 
 
 class AppWorkflowTests(unittest.TestCase):
+    def test_registry_resumes_after_checks_without_recursive_dispatch(self):
+        document = workflow("registry.yml")
+        trigger = document.get("on", document.get("true"))
+        self.assertEqual(trigger["workflow_run"]["workflows"], ["Checks"])
+        self.assertEqual(trigger["workflow_run"]["types"], ["completed"])
+        job = document["jobs"]["reconcile"]
+        self.assertIn("github.event.workflow_run.conclusion == 'success'", job["if"])
+        self.assertIn("github.event.workflow_run.head_repository.full_name == github.repository", job["if"])
+        self.assertNotIn("gh workflow run registry.yml", str(job["steps"]))
+
     def test_candidate_artifacts_outlive_the_maximum_workflow_duration(self):
         document = workflow("bottles.yml")
         for stage in ("build", "verify"):

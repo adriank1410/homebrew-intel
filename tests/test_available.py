@@ -74,7 +74,6 @@ class AvailablePlanTests(unittest.TestCase):
         self.assertEqual(stderr.getvalue(), "")
         self.assertEqual(stdout.getvalue(),
                          "Skipped unavailable upgrade roots (1): bad\n"
-                         "Missing providers (1): bad\n"
                          "No fully available upgrade roots; nothing installed.\n")
 
     def test_all_missing_json_keeps_machine_readable_skip_output(self):
@@ -224,7 +223,19 @@ class AvailablePlanTests(unittest.TestCase):
         apply.assert_called_once()
         self.assertEqual(apply.call_args.args[0]["roots"], ["clean"])
         self.assertIn("Skipped unavailable upgrade roots (1): drifted", stdout.getvalue())
-        self.assertIn("Missing providers (1): drifted", stdout.getvalue())
+        self.assertNotIn("Missing providers", stdout.getvalue())
+
+    def test_skipped_render_keeps_distinct_missing_provider_details(self):
+        output = StringIO()
+        cli.render_skipped(
+            [{"root": "app", "missing_dependencies": ["lib"]}],
+            stream=output,
+        )
+        self.assertEqual(
+            output.getvalue(),
+            "Skipped unavailable upgrade roots (1): app\n"
+            "Missing providers (1): lib\n",
+        )
 
     def test_upgrade_without_available_still_raises_on_dependency_drift(self):
         records = {

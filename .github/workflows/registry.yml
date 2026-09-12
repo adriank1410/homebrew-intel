@@ -1,6 +1,9 @@
 name: Registry maintenance
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: [Checks]
+    types: [completed]
   schedule:
     # Reconcile branch refreshes and merges promptly; concurrency below keeps
     # scheduled runs from overlapping while a previous pass is still active.
@@ -15,7 +18,10 @@ jobs:
     if: >-
       github.repository == 'adriank1410/homebrew-intel' &&
       github.ref == 'refs/heads/main' &&
-      (github.event_name == 'workflow_dispatch' || vars.INTELBREW_ENABLE_SCHEDULE == 'true')
+      (github.event_name == 'workflow_dispatch' || vars.INTELBREW_ENABLE_SCHEDULE == 'true') &&
+      (github.event_name != 'workflow_run' ||
+       (github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_repository.full_name == github.repository))
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
@@ -48,14 +54,3 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           INTELBREW_COVERAGE_LOGIN: ${{ github.repository_owner }}
         run: python3 scripts/sync-coverage.py --reconcile
-      - name: Trigger follow-up reconciliation if open PRs remain
-        if: ${{ !cancelled() && success() && steps.app-token.outcome == 'success' }}
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: |
-          open_count=$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --state open --json number --jq 'length')
-          if [ "$open_count" -gt 0 ]; then
-            echo "Remaining open PRs: $open_count. Triggering follow-up reconciliation."
-            gh workflow run registry.yml --repo "$GITHUB_REPOSITORY"
-          fi
-

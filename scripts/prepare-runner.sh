@@ -9,12 +9,12 @@ project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)";brew_com
 [[ "$brew_commit" =~ ^[0-9a-f]{40}$ && "$(brew --prefix)" == /usr/local && "$(brew --cellar)" == /usr/local/Cellar ]] || exit 1
 brew_dir="$(brew --repository)";[[ "$brew_dir" == /usr/local/Homebrew ]] || exit 1
 brew_origin="$(/usr/bin/git -C "$brew_dir" remote get-url origin)";[[ "$brew_origin" == https://github.com/Homebrew/brew || "$brew_origin" == https://github.com/Homebrew/brew.git ]] || exit 1
-/usr/bin/git -C "$brew_dir" fetch --depth=1 origin "$brew_commit";/usr/bin/git -C "$brew_dir" checkout --detach "$brew_commit"
+bash "$project_dir/scripts/retry-fetch.sh" /usr/bin/git -C "$brew_dir" fetch --depth=1 origin "$brew_commit";/usr/bin/git -C "$brew_dir" checkout --detach "$brew_commit"
 core_dir="$brew_dir/Library/Taps/homebrew/homebrew-core";core_origin="$(/usr/bin/git -C "$core_dir" remote get-url origin)";[[ "$core_origin" == https://github.com/Homebrew/homebrew-core || "$core_origin" == https://github.com/Homebrew/homebrew-core.git ]] || exit 1
 backup_dir="$(/usr/bin/mktemp -d "${RUNNER_TEMP:?}/intelbrew-runner-backup.XXXXXXXX")";/bin/mv "$core_dir" "$backup_dir/homebrew-core-preseeded"
 /usr/bin/python3 "$project_dir/scripts/quarantine-runner-links.py" "$backup_dir"
-/usr/bin/git clone --filter=blob:none --no-checkout https://github.com/Homebrew/homebrew-core.git "$core_dir";[[ "$(/usr/bin/git -C "$core_dir" remote get-url origin)" == https://github.com/Homebrew/homebrew-core.git ]] || exit 1
-/usr/bin/git -C "$core_dir" fetch --depth=1 origin "$INTELBREW_CORE_COMMIT";/usr/bin/git -C "$core_dir" checkout --detach "$INTELBREW_CORE_COMMIT"
+/usr/bin/git init "$core_dir"; /usr/bin/git -C "$core_dir" remote add origin https://github.com/Homebrew/homebrew-core.git;[[ "$(/usr/bin/git -C "$core_dir" remote get-url origin)" == https://github.com/Homebrew/homebrew-core.git ]] || exit 1
+bash "$project_dir/scripts/retry-fetch.sh" /usr/bin/git -C "$core_dir" fetch --depth=1 origin "$INTELBREW_CORE_COMMIT";/usr/bin/git -C "$core_dir" checkout --detach "$INTELBREW_CORE_COMMIT"
 [[ "$(/usr/bin/git -C "$brew_dir" rev-parse HEAD)" == "$brew_commit" && "$(/usr/bin/git -C "$core_dir" rev-parse HEAD)" == "$INTELBREW_CORE_COMMIT" ]] || exit 1
 if command -v gh >/dev/null 2>&1;then /bin/cp -p "$(command -v gh)" "$backup_dir/gh";printf '%s\n' "$backup_dir" >> "${GITHUB_PATH:?}";fi
 brew list --formula > "$backup_dir/formulae.txt";brew ruby -e 'require "keg"; HOMEBREW_CELLAR.children.select(&:directory?).each { |rack| rack.children.select(&:directory?).each { |prefix| Keg.new(prefix).unlink if (prefix/"INSTALL_RECEIPT.json").file? } }'

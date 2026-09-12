@@ -224,10 +224,12 @@ def render_skipped(skipped: list[dict], stream: Any = None) -> None:
     missing = sorted({name for item in skipped for name in item["missing_dependencies"]})
     if is_color_enabled(stream):
         opoo(f"Skipped unavailable upgrade roots ({style(str(len(roots)), BOLD, stream)}): {style(', '.join(roots), BOLD, stream)}", stream=stream)
-        opoo(f"Missing providers ({style(str(len(missing)), BOLD, stream)}): {', '.join(missing) if missing else 'none'}", stream=stream)
+        if set(roots) != set(missing):
+            opoo(f"Missing providers ({style(str(len(missing)), BOLD, stream)}): {', '.join(missing) if missing else 'none'}", stream=stream)
     else:
         print(f"Skipped unavailable upgrade roots ({len(roots)}): {', '.join(roots)}", file=stream)
-        print(f"Missing providers ({len(missing)}): {', '.join(missing) if missing else 'none'}", file=stream)
+        if set(roots) != set(missing):
+            print(f"Missing providers ({len(missing)}): {', '.join(missing) if missing else 'none'}", file=stream)
 
 
 def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:

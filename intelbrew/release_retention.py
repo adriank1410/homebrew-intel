@@ -7,6 +7,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+from .core import Error, read_json, validate_record
+
 
 RELEASE_RE = re.compile(r"intel-[0-9]+-[0-9]+-(?P<formula>.+)\Z")
 
@@ -21,24 +23,28 @@ def release_formula(tag: str) -> str | None:
 
 
 def referenced_releases(registry_dir: Path) -> set[str]:
-    import json
-
+    if registry_dir.is_symlink() or not registry_dir.is_dir():
+        raise Error(f"Registry directory invalid: {registry_dir}")
     result: set[str] = set()
-    for path in registry_dir.glob("*.json"):
-        try:
-            value = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            continue
-        release = value.get("release") if isinstance(value, dict) else None
-        if isinstance(release, str):
-            result.add(release)
+    names: set[str] = set()
+    for path in sorted(registry_dir.glob("*.json")):
+        value = validate_record(read_json(path))
+        if path.stem != value["name"] or value["name"] in names:
+            raise Error(f"Invalid registry record: {path}")
+        names.add(value["name"])
+        result.add(value["release"])
     return result
 
 
 def active_release_tags(prs: Iterable[dict[str, Any]]) -> set[str]:
     result: set[str] = set()
     for pr in prs:
-        branch = pr.get("headRefName") if isinstance(pr, dict) else None
+        if not isinstance(pr, dict):
+            continue
+        branch = pr.get("headRefName")
+        if branch is None:
+            head = pr.get("head")
+            branch = head.get("ref") if isinstance(head, dict) else None
         if isinstance(branch, str) and branch.startswith("bottles/"):
             result.add(branch.removeprefix("bottles/"))
     return result
