@@ -2,19 +2,19 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "core_commit": "42f17d98bb46c274008be95ab68cf359fed9610b",
   "filename": "curl--8.22.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "3210527e91f1a9c2ef45125368981b7c4c0ce351428cceabbca7e94f80573d72",
+  "formula_sha256": "00725cf8da1f9d7aa6ed0064b631ad350025a266530dea0d3ab64e9c436204f2",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.22.0",
   "recipe_sha256": "518c363f0092cc18c09a385768edea00ccdb8ffc76796eb403a76b146f624932",
-  "release": "intel-34388221074-1-curl",
+  "release": "intel-34663743378-1-curl",
   "revision": 0,
-  "run_id": "34388221074",
+  "run_id": "34663743378",
   "runtime_dependencies": [
     {
-      "formula_sha256": "93505d7431bb04deab0ebf7a7cb44e05a936df1c4af84f92df68fdcae1db5473",
+      "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
       "name": "brotli",
       "pkg_version": "1.2.0"
     },
@@ -24,61 +24,61 @@
       "pkg_version": "2026-08-13"
     },
     {
-      "formula_sha256": "f5c4f37e3100750979a7c022acd9a4912987402dfbfa2c957803315ad7b38a6f",
+      "formula_sha256": "6cc44379530da749cc430d9bc9dcff7c716c633819d2a24707a28f839863b92d",
       "name": "libnghttp2",
       "pkg_version": "1.70.0"
     },
     {
-      "formula_sha256": "1a1ad3dcb395427220bc04e5e4c08e4972ffe382475965c991a23049dfb14f4d",
+      "formula_sha256": "a779a1453b518ca0d6354695b23c4dd53ed5e2ddef12990bd23181144e3a326e",
       "name": "libnghttp3",
       "pkg_version": "1.18.0"
     },
     {
-      "formula_sha256": "97adc2220050013e6264b9c2eb517dd383150818ff45936b9d1d919ce4ac358a",
+      "formula_sha256": "914ef64c1d73f26e21b49573e2b0702d0cad1b8e23d63222bed1de8dc592f2fd",
       "name": "libngtcp2",
       "pkg_version": "1.25.0"
     },
     {
-      "formula_sha256": "9d06b88ce39c4b95e8d901fd464f97093208ab74d9fdac3cbdc1321a4eeb565c",
+      "formula_sha256": "e9433a67ed9e920170308f8f67d3d28d87a8d067a952cd947cb61bf3653d84fc",
       "name": "libpsl",
       "pkg_version": "0.23.3"
     },
     {
-      "formula_sha256": "5b1f095396a3d847f317414b1b7f2c9e9c9902c30613b2577209888decdec355",
+      "formula_sha256": "52092cb3da822c72251180ba46148c7a940fe1576afa421ca5310c47d97770de",
       "name": "libssh2",
       "pkg_version": "1.11.1_4"
     },
     {
-      "formula_sha256": "fd3222d24e20ec501ac116622330cf4c650e0c7926c337c8e864328851c438ca",
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
       "name": "openssl@3",
       "pkg_version": "3.6.4"
     },
     {
-      "formula_sha256": "4695e50a53c739d3dc09d219d290cf19dbd04f15a14d38410f49564996feab26",
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
       "name": "xz",
       "pkg_version": "5.8.3"
     },
     {
-      "formula_sha256": "b6e64c37fadab73bcf41322cd34dd6b56e8e1fbcad44daa7d634934b9f6852a5",
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
       "name": "zstd",
       "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "9c441b421097725f2e0694f2a08b31c7b2dda7e9f25ea2b9dfe59d3baa2d9c80",
-  "size": 1695560,
+  "sha256": "2a671f52d9be04474de2d0e804574da7066cda450e6c47c82dfeedc9bad13572",
+  "size": 1695381,
   "source": {
     "filename": "curl--8.22.0.sources.tar.gz",
-    "sha256": "b7005f9b8f7bea68098d2673990cd1d6de6b1f9ec4e9cdb9081f595d963e2d82",
-    "size": 3402517
+    "sha256": "ba6b80f96b8bf50fc51d60614ed37be869b7e95cefe04effb18aa66e54e08e07",
+    "size": 3402680
   },
   "tag": "sequoia",
   "version": "8.22.0",
   "version_scheme": 0,
-  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+  "workflow_commit": "c308d9653a8a934819df3209f79bdaf07b4233ef"
 }
