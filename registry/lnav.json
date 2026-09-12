@@ -1,0 +1,74 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
+  "filename": "lnav--0.14.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "c041f16f4149e2cb1bbfbe752be2d8f3cfd143971d212b28e75dad87f6e3da49",
+  "license": "BSD-2-Clause",
+  "name": "lnav",
+  "pkg_version": "0.14.1",
+  "recipe_sha256": "2436f5ae3849a3645ca8d70878cb1ce3e328cbf9cbf5886cf82c74ff96de04c9",
+  "release": "intel-34707292687-1-lnav",
+  "revision": 0,
+  "run_id": "34707292687",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f70c717f702afc86174a032f225770d1f9726ed2ab0b1520722cbea02561cbfb",
+      "name": "libarchive",
+      "pkg_version": "3.8.9"
+    },
+    {
+      "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
+      "name": "libb2",
+      "pkg_version": "0.98.1"
+    },
+    {
+      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "name": "pcre2",
+      "pkg_version": "10.48"
+    },
+    {
+      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    },
+    {
+      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "5c338c6fb5792343ee0d04627406060104aa8067cecf64867373f04ecfb1fed1",
+  "size": 14025942,
+  "source": {
+    "filename": "lnav--0.14.1.sources.tar.gz",
+    "sha256": "0803ced60c7540601c6314168ef4a5a8e4be867d68113149d027c098b44023f3",
+    "size": 27863789
+  },
+  "tag": "sequoia",
+  "version": "0.14.1",
+  "version_scheme": 0,
+  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
+}
