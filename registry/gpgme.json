@@ -1,0 +1,124 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "c2f4c17d59611cb0d53cfcf9924dc20abb5f0d43",
+  "filename": "gpgme--2.2.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "91bbde19b895edfe0e4e413ed77e4cf0cf3aea6631fb5d93e75290cc3eed58af",
+  "license": "LGPL-2.1-or-later",
+  "name": "gpgme",
+  "pkg_version": "2.2.0",
+  "recipe_sha256": "52a601311da12ef2587462a4b95237f98d987da442d9ee26d71e52bbf500a0fb",
+  "release": "intel-34713813577-1-gpgme",
+  "revision": 0,
+  "run_id": "34713813577",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "name": "gmp",
+      "pkg_version": "6.3.0"
+    },
+    {
+      "formula_sha256": "579aff561562499d55096242b6f168d0176a4a9719826252846d03df7c03cc43",
+      "name": "gnupg",
+      "pkg_version": "2.5.22"
+    },
+    {
+      "formula_sha256": "b67a754af35d495742cc72ad4ee7c25decd90e0586658a40028b77a6c99c359f",
+      "name": "gnutls",
+      "pkg_version": "3.8.13_2"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "d958780a5f7e6e4b570bf854d31f7600e7e0bd98c5a207360bd8bd0295a79a44",
+      "name": "libassuan",
+      "pkg_version": "3.0.2"
+    },
+    {
+      "formula_sha256": "1c5900b00dfb4f1e5603b847f30c12a839caa5113a3a06d16607fabf908f1cb2",
+      "name": "libgcrypt",
+      "pkg_version": "1.12.4"
+    },
+    {
+      "formula_sha256": "fd2f8088c05e477207e4ecd08bbc9cd3c16138976042028c80d06d9825696e87",
+      "name": "libgpg-error",
+      "pkg_version": "1.61"
+    },
+    {
+      "formula_sha256": "032d48cd71a4c81e9c6a7847b1dc2d3b0a1d1f21a8fa6fead4a7ff1b60df2160",
+      "name": "libidn2",
+      "pkg_version": "2.3.8"
+    },
+    {
+      "formula_sha256": "6bc5cb2abd89a705bf496b149d45e967bab82f110d0c1e96b2c764d13408bb22",
+      "name": "libksba",
+      "pkg_version": "1.8.1"
+    },
+    {
+      "formula_sha256": "8c0814380e9449c0b9b5cfcbf12e7e44e25e581c8f3909f2467c63bb482bcd2d",
+      "name": "libtasn1",
+      "pkg_version": "4.21.0"
+    },
+    {
+      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "7d30d0241b09b4efe210fe50673b9896cbe1c9d8c0ae90ba156a69c2ed84f56e",
+      "name": "libusb",
+      "pkg_version": "1.0.30"
+    },
+    {
+      "formula_sha256": "8135edd1ccf828e5a9550a965bd5f11a862ad028335f451838998f3e5215e4f2",
+      "name": "nettle",
+      "pkg_version": "4.0"
+    },
+    {
+      "formula_sha256": "ae8498177a9545b8d80b00fa45709ea0b26597b63d9c01f316f6946bd9c1a975",
+      "name": "npth",
+      "pkg_version": "1.8"
+    },
+    {
+      "formula_sha256": "f152829282b7158308897a73d7f459a5e7adadd4a993fee248f2139d460dee06",
+      "name": "p11-kit",
+      "pkg_version": "0.26.5"
+    },
+    {
+      "formula_sha256": "41410dc9c3f29fef2aff5651afcb93520273737e89cfdd205ed07c832168cf52",
+      "name": "pinentry",
+      "pkg_version": "1.3.3"
+    },
+    {
+      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "8edd7696a134cc9db233580c14704af6b9fba06dda5fa0ca4f43c3cb6e1da765",
+  "size": 786280,
+  "source": {
+    "filename": "gpgme--2.2.0.sources.tar.gz",
+    "sha256": "0ba31d047f5ec79275cdee562a63feb09d7cb5b5b9eaae444cc0bdafc6f3b025",
+    "size": 1439545
+  },
+  "tag": "sequoia",
+  "version": "2.2.0",
+  "version_scheme": 0,
+  "workflow_commit": "62906eeea58b5d87a89991ef8854163c5f810542"
+}
