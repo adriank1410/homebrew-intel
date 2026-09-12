@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "f3d542f89ab8addc82a9cb11f32c3ee8ab9aca24",
+  "core_commit": "42f17d98bb46c274008be95ab68cf359fed9610b",
   "filename": "qpdf--12.4.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "8fbc746acf9ef9be107db808bb1153d3880cdae427ac0871d7ab1d5344971863",
+  "formula_sha256": "7c2306eace400f33195896822a06085b8ebd33fbfc4da8c1d9ed4d95d49bd991",
   "license": "Apache-2.0",
   "name": "qpdf",
   "pkg_version": "12.4.1",
   "recipe_sha256": "c59f5bcbc98c7f6dc07cd289b569dde593bce12bb1632e94bf616bf3b44744b7",
-  "release": "intel-34338885775-1-qpdf",
+  "release": "intel-34663743378-1-qpdf",
   "revision": 0,
-  "run_id": "34338885775",
+  "run_id": "34663743378",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -19,26 +19,26 @@
       "pkg_version": "2026-08-13"
     },
     {
-      "formula_sha256": "3d37ac54b50b2ad5ef71be976a03e9d8a83389311389f657396c0fd3a7cc7199",
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
       "name": "jpeg-turbo",
       "pkg_version": "3.2.0"
     },
     {
-      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
       "name": "openssl@3",
       "pkg_version": "3.6.4"
     }
   ],
   "schema": 1,
-  "sha256": "3787bb946cfaf2c8a6456ae13970d44b1ae6993790a11c9930230546b54f3527",
-  "size": 2827604,
+  "sha256": "4a49f0a3e88a45cf2d4d361fc0e9c96a344e1d51d74b7c6dd1e33894dc3233ff",
+  "size": 2827578,
   "source": {
     "filename": "qpdf--12.4.1.sources.tar.gz",
-    "sha256": "5e573593f8f4be55412bbfb8f12c035de54a6f01d6c0e0eb914b18878b8ea7fd",
-    "size": 19335845
+    "sha256": "8906950bf7f4e9facd381e44e12e8043e45f6114be6e961c6aba08d159bdadcb",
+    "size": 19342692
   },
   "tag": "sequoia",
   "version": "12.4.1",
   "version_scheme": 0,
-  "workflow_commit": "25f6c86d32955b0e1b7c5d99ff625dfd57182d42"
+  "workflow_commit": "c308d9653a8a934819df3209f79bdaf07b4233ef"
 }
