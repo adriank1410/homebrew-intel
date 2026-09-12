@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
+  "filename": "archi-steam-farm--6.3.9.6.sequoia.bottle.tar.gz",
+  "formula_sha256": "cba65e155bd10a0cbc86b59ae9525bed5238aa3e61cfe291f2b92e8531f1f0f9",
+  "license": "Apache-2.0",
+  "name": "archi-steam-farm",
+  "pkg_version": "6.3.9.6",
+  "recipe_sha256": "8a1130d5bc0599c45ed6b4fb9bfeb443a915d9b10151fa93f7860ad862adafe4",
+  "release": "intel-34707292687-1-archi-steam-farm",
+  "revision": 0,
+  "run_id": "34707292687",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "3477f4e2b18801884fe839dc559915ee54c28ec316c45e89f547c1da01f0f849",
+      "name": "dotnet",
+      "pkg_version": "10.0.400"
+    },
+    {
+      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "414f0b4602fc0219724d172000ed627c7b5a71490f6a927d38dd8cf491ca58fd",
+  "size": 7866412,
+  "source": {
+    "filename": "archi-steam-farm--6.3.9.6.sources.tar.gz",
+    "sha256": "c22e5bbb8ddeb22905f23142003b7e1c3209defd7bc0c60d8654d7024789d232",
+    "size": 10857788
+  },
+  "tag": "sequoia",
+  "version": "6.3.9.6",
+  "version_scheme": 0,
+  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
+}
