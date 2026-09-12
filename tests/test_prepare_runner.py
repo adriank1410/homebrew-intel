@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 import importlib.util
 import os
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -110,6 +111,17 @@ class FrameworkPythonLinkTests(unittest.TestCase):
             self.assertTrue((bin_dir / "dotnet").is_symlink())
             self.assertEqual((bin_dir / "dotnet-file").read_text(), "keep")
 
+
+class FetchRetryTests(unittest.TestCase):
+    def test_retries_then_succeeds_and_bounds_permanent_failure(self):
+        helper = ROOT / "scripts/retry-fetch.sh"
+        for succeeds, expected in ((True, 0), (False, 17)):
+            with self.subTest(succeeds=succeeds), tempfile.TemporaryDirectory() as folder:
+                counter = Path(folder) / "count"
+                command = "n=0; test ! -f \"$1\" || n=$(cat \"$1\"); n=$((n+1)); echo $n > \"$1\"; test \"$2\" = True && test $n -eq 3 && exit 0; exit 17"
+                result = subprocess.run(["bash", str(helper), "bash", "-c", command, "test", str(counter), str(succeeds)], env={**os.environ, "INTELBREW_RETRY_DELAY": "0"}, capture_output=True)
+                self.assertEqual(result.returncode, expected, result.stderr)
+                self.assertEqual(counter.read_text().strip(), "3")
 
 if __name__ == "__main__":
     unittest.main()

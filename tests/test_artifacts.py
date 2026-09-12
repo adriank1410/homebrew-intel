@@ -70,7 +70,8 @@ class ArchiveTests(unittest.TestCase):
             folder=Path(d);p,r=archive(folder);tree=folder/'tree';tree.mkdir()
             with tarfile.open(p) as source:source.extractall(tree)  # Only our own fixed fixture.
             original=tree/'tool/1.0/bin/tool';alias=tree/'tool/1.0/bin/tool-alias';os.link(original,alias)
-            subprocess.run(['tar','-czf',str(p),'-C',str(tree),'tool'],check=True)
+            subprocess.run(['tar','-czf',str(p),'-C',str(tree),'tool'],check=True,
+                           env={**os.environ, 'COPYFILE_DISABLE': '1'})
             r.update(sha256=digest(p),size=p.stat().st_size)
             with tarfile.open(p) as source:self.assertTrue(any(member.islnk() for member in source))
             check_bottle(p,r)

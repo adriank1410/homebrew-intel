@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from intelbrew.core import Error
 from intelbrew.release_retention import active_release_tags, referenced_releases, select_releases
 
 
@@ -25,6 +26,24 @@ def gh_json(arguments: list[str]):
     return json.loads(result.stdout)
 
 
+def open_pull_requests() -> list[dict]:
+    payload = gh_json([
+        "api", "--paginate", "--slurp",
+        f"repos/{REPOSITORY}/pulls?state=open&per_page=100",
+    ])
+    if not isinstance(payload, list):
+        raise Error("GitHub returned an invalid pull-request page list")
+    result = []
+    for page in payload:
+        if not isinstance(page, list):
+            raise Error("GitHub returned an invalid pull-request page")
+        for pull in page:
+            if not isinstance(pull, dict):
+                raise Error("GitHub returned an invalid pull request")
+            result.append(pull)
+    return result
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
@@ -33,8 +52,7 @@ def main() -> int:
     apply_mode = args.apply or os.environ.get("INTELBREW_RETENTION_APPLY", "").lower() == "true"
     releases = gh_json(["release", "list", "--repo", REPOSITORY, "--limit", "1000",
                         "--json", "tagName,createdAt,isDraft,isPrerelease"])
-    prs = gh_json(["pr", "list", "--repo", REPOSITORY, "--state", "open", "--limit", "100",
-                   "--json", "headRefName"])
+    prs = open_pull_requests()
     selected = select_releases(releases, referenced=referenced_releases(ROOT / "registry"),
                                active=active_release_tags(prs), now=datetime.now(timezone.utc))
     selected = selected[:max(0, args.max_delete)]

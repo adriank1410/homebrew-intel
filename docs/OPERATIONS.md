@@ -109,22 +109,22 @@ file to Trash manually after checking its path.
 ## Scheduling, costs and privacy
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` after native validation. The bottle workflow
-checks reviewed roots daily at 03:41 UTC. Linux preflight can omit fully covered
+checks reviewed roots hourly at minute 15 UTC. Linux preflight can omit fully covered
 roots only when its API metadata matches the resolved core revision. Uncertain
 roots are inspected together on a pinned Intel runner before allocating build
 jobs. This native preflight reuses metadata, checks source policy and reports
-blocked roots independently. Every eligible root needing a build enters the matrix,
-with at most five concurrent build jobs. Planning fails explicitly if more than
-GitHub's 256-job matrix limit need builds, rather than silently omitting roots.
+blocked roots independently. Up to 24 eligible roots enter each scheduled batch, ordered by the number of
+required source builds and then name, with at most five concurrent build jobs.
+Remaining roots are reconsidered by the next scheduled run.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight.
 Registry maintenance runs
-every five minutes, revalidates eligible PRs, updates outdated branches, and
+after successful Checks runs from this repository and every five minutes, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most
 three dispatch attempts per head commit. A test failure or exhausted retry budget
 requires attention. GitHub can delay scheduled runs.
 Disable the variable to pause both schedules; manual dispatch remains available.
-Inter-job artifacts expire after one day. No paid-runner selection is automatic.
+Inter-job artifacts expire after 35 days. No paid-runner selection is automatic.
 Conflicting registry changes or unreviewed licenses require attention; they do
 not relax the policy or permit source fallback on clients.
 
