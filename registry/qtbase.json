@@ -1,0 +1,206 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "d6c18e919a425e9d53a5ff3af22b0b0375591ccc",
+  "filename": "qtbase--6.11.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5",
+  "license": {
+    "all_of": [
+      {
+        "any_of": [
+          "LGPL-3.0-only",
+          "GPL-2.0-only",
+          "GPL-3.0-only"
+        ]
+      },
+      {
+        "GPL-3.0-only": {
+          "with": "Qt-GPL-exception-1.0"
+        }
+      },
+      "BSD-3-Clause",
+      "GFDL-1.3-no-invariants-only"
+    ]
+  },
+  "name": "qtbase",
+  "pkg_version": "6.11.2",
+  "recipe_sha256": "4495dddcc98a75181a12b80e40a830bc6b5e6d9d8d3d578115d8dffee2418c18",
+  "release": "intel-34698270787-1-qtbase",
+  "revision": 0,
+  "run_id": "34698270787",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "name": "cairo",
+      "pkg_version": "1.18.4"
+    },
+    {
+      "formula_sha256": "f32f2de29dc4a6f56d401f6227c6d66f5b3601958566fe0e90ab6bdd006bd3b9",
+      "name": "dbus",
+      "pkg_version": "1.16.2_1"
+    },
+    {
+      "formula_sha256": "498525607d05dd29c7c33121a99edd8e04c863e9aae75ba60d6516901642ac4b",
+      "name": "double-conversion",
+      "pkg_version": "3.4.0"
+    },
+    {
+      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "name": "fontconfig",
+      "pkg_version": "2.18.3"
+    },
+    {
+      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "name": "freetype",
+      "pkg_version": "2.14.3"
+    },
+    {
+      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "name": "glib",
+      "pkg_version": "2.88.3"
+    },
+    {
+      "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
+      "name": "graphite2",
+      "pkg_version": "1.3.15"
+    },
+    {
+      "formula_sha256": "6ebecbf2b199f6bcb8f1c585d1a6614f05cfafa8e31516acd31f8322577c2f01",
+      "name": "harfbuzz",
+      "pkg_version": "14.4.0"
+    },
+    {
+      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
+      "name": "libb2",
+      "pkg_version": "0.98.1"
+    },
+    {
+      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "name": "libpng",
+      "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
+      "name": "libx11",
+      "pkg_version": "1.8.13"
+    },
+    {
+      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "name": "libxau",
+      "pkg_version": "1.0.12"
+    },
+    {
+      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "name": "libxcb",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "name": "libxdmcp",
+      "pkg_version": "1.1.5"
+    },
+    {
+      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "name": "libxext",
+      "pkg_version": "1.3.7"
+    },
+    {
+      "formula_sha256": "96228e7db71fb1bfa9baaca00848653f4d807bfd98003f2a58094e981f3055c1",
+      "name": "libxrender",
+      "pkg_version": "0.9.12"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "name": "lzo",
+      "pkg_version": "2.10"
+    },
+    {
+      "formula_sha256": "a50e91b1ed02fea29f911c51d15d97c31d09b6d9ddb8bf8e970683010f770222",
+      "name": "md4c",
+      "pkg_version": "0.5.3"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "name": "pcre2",
+      "pkg_version": "10.48"
+    },
+    {
+      "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
+      "name": "pixman",
+      "pkg_version": "0.46.4"
+    },
+    {
+      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "name": "xorgproto",
+      "pkg_version": "2025.1"
+    },
+    {
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "7b1986ca99dc8ec51d6ecb5a263ea937071d12b7bd02166851e8eb6397d8404d",
+  "size": 17262609,
+  "source": {
+    "filename": "qtbase--6.11.2.sources.tar.gz",
+    "sha256": "296f1e7ee1a3f5161e21d06254efa1cf4db43253158e525b0da059ba4e7c7f09",
+    "size": 50662101
+  },
+  "tag": "sequoia",
+  "version": "6.11.2",
+  "version_scheme": 0,
+  "workflow_commit": "9ef5d68061805c8e81cf7a9d91affc19d8c2eaa9"
+}
