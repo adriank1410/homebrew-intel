@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "c2f4c17d59611cb0d53cfcf9924dc20abb5f0d43",
+  "filename": "xz--5.8.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+  "license": {
+    "all_of": [
+      "0BSD",
+      "GPL-2.0-or-later"
+    ]
+  },
+  "name": "xz",
+  "pkg_version": "5.8.4",
+  "recipe_sha256": "0a0ec0394575eadc853cdb509c8ababc01c8926b973bd76841a1f6f254e1ebdf",
+  "release": "intel-34713813577-1-bandit",
+  "revision": 0,
+  "run_id": "34713813577",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "4a335144adb49db48f32b86f9b426cd743137fa1d5989081a3aa441cd75f9e62",
+  "size": 776441,
+  "source": {
+    "filename": "xz--5.8.4.sources.tar.gz",
+    "sha256": "303be2730d2a83a4a71cfa0aa66cb03455c6e25814c6ee05be2cc35267cff2b5",
+    "size": 2833281
+  },
+  "tag": "sequoia",
+  "version": "5.8.4",
+  "version_scheme": 1,
+  "workflow_commit": "62906eeea58b5d87a89991ef8854163c5f810542"
+}
