@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "06272af86fc79b2a64b767109063c2b7bc00c66b",
+  "filename": "libgcrypt--1.12.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "1c5900b00dfb4f1e5603b847f30c12a839caa5113a3a06d16607fabf908f1cb2",
+  "license": {
+    "all_of": [
+      "LGPL-2.1-or-later",
+      "GPL-2.0-or-later"
+    ]
+  },
+  "name": "libgcrypt",
+  "pkg_version": "1.12.4",
+  "recipe_sha256": "3385548916b16224540d08673d6b24a52ab1ada87550ba8913867c93d5db6529",
+  "release": "intel-34640164552-1-libgcrypt",
+  "revision": 0,
+  "run_id": "34640164552",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "b18740cda708a9c1c40ee1f090a60b26cb99386d2eed25fda55464fc870c0f90",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "fd2f8088c05e477207e4ecd08bbc9cd3c16138976042028c80d06d9825696e87",
+      "name": "libgpg-error",
+      "pkg_version": "1.61"
+    },
+    {
+      "formula_sha256": "f0c04f99d8f70cfd3f1cbeeba0b84fd0028c9e776099d8a6cf3201d87475c3ce",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    }
+  ],
+  "schema": 1,
+  "sha256": "ea041ab5662303c1e2fd4fe268a42cb77512f520124323a851eb44ec20b3fa5f",
+  "size": 1537727,
+  "source": {
+    "filename": "libgcrypt--1.12.4.sources.tar.gz",
+    "sha256": "490949d842b2daf4a1db2020c5ea194707a006dbf5bd6431b8cb231cb5783041",
+    "size": 4489004
+  },
+  "tag": "sequoia",
+  "version": "1.12.4",
+  "version_scheme": 0,
+  "workflow_commit": "40f3e94dec54df7fefb784dfddb9981c61e4d17c"
+}
