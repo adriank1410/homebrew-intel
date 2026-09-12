@@ -1,0 +1,94 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "d6c18e919a425e9d53a5ff3af22b0b0375591ccc",
+  "filename": "rust--1.98.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "6aad5c0ef80c0ab792b3ad1014786844ba78f90d24093f68cee2b433fb8a83cf",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "MIT"
+    ]
+  },
+  "name": "rust",
+  "pkg_version": "1.98.1",
+  "recipe_sha256": "c28a89b9db0ee5d0d15d8a09fe38cc7a201c58a142cd375325c1d6d7042a5ad6",
+  "release": "intel-34698270787-1-rust",
+  "revision": 0,
+  "run_id": "34698270787",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "4e6813d7c462bc37f7456cebf7354da97041c075e8fcfdcf9902c32400daabee",
+      "name": "libgit2",
+      "pkg_version": "1.9.7"
+    },
+    {
+      "formula_sha256": "52092cb3da822c72251180ba46148c7a940fe1576afa421ca5310c47d97770de",
+      "name": "libssh2",
+      "pkg_version": "1.11.1_4"
+    },
+    {
+      "formula_sha256": "fb046c70a9ea6d7d0482c23904078dbcd6a6c56ea57b3c9907c16ac85ba83dc7",
+      "name": "llhttp",
+      "pkg_version": "9.4.3"
+    },
+    {
+      "formula_sha256": "126be27945706732dc4f234a73d4ac1ab49b19035b5c8f64b08dce6c6cee1b5f",
+      "name": "llvm@22",
+      "pkg_version": "22.1.8"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "aa4787b4c8af3925054fb55ae38c9ce16cea5325ce5788e2d1c6cec514f30f5c",
+      "name": "pkgconf",
+      "pkg_version": "3.0.7"
+    },
+    {
+      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    },
+    {
+      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "7af3776a04261634711fd62f407b67656b7e61017332327d5f74b78e2649102c",
+  "size": 109580299,
+  "source": {
+    "filename": "rust--1.98.1.sources.tar.gz",
+    "sha256": "a9d1bc27d4abd87750552bcc5aff338f67c95c1fd96886372ff909bffa7340a4",
+    "size": 640592393
+  },
+  "tag": "sequoia",
+  "version": "1.98.1",
+  "version_scheme": 0,
+  "workflow_commit": "9ef5d68061805c8e81cf7a9d91affc19d8c2eaa9"
+}
