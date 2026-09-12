@@ -1,0 +1,114 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
+  "filename": "imagemagick--7.1.2-31.sequoia.bottle.tar.gz",
+  "formula_sha256": "931f92fc83fb406e2f2f7568dfd304277e3e1fddbf0c34fe32b0f67f42230fc1",
+  "license": "ImageMagick",
+  "name": "imagemagick",
+  "pkg_version": "7.1.2-31",
+  "recipe_sha256": "43ce800f4e72586b411ce3b191a928ea5c06ce501339e5f03ae9d0a30493215a",
+  "release": "intel-34707292687-1-imagemagick",
+  "revision": 0,
+  "run_id": "34707292687",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
+      "name": "aom",
+      "pkg_version": "3.15.0"
+    },
+    {
+      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "name": "freetype",
+      "pkg_version": "2.14.3"
+    },
+    {
+      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "name": "giflib",
+      "pkg_version": "6.1.3"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "ea234237ffa941686634c069aa55bfa475ad65485503e3d7d643da45d63fa5fc",
+      "name": "libde265",
+      "pkg_version": "1.1.2"
+    },
+    {
+      "formula_sha256": "4b5cfd4b41252fd5ac8698bcb52d7142a8510ede0d965a3f82baefb7d268ae8f",
+      "name": "libheif",
+      "pkg_version": "1.23.4"
+    },
+    {
+      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "name": "libpng",
+      "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+      "name": "libtiff",
+      "pkg_version": "4.7.2"
+    },
+    {
+      "formula_sha256": "e37f4fa718b1d9d2b61e877f2ab8fc26eef8844052901b76382f0150eff9b521",
+      "name": "libtool",
+      "pkg_version": "2.6.2"
+    },
+    {
+      "formula_sha256": "13f5592d1541a7d5818eccede33b981754c6311117494fefccffa015aacd860d",
+      "name": "libvmaf",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+      "name": "little-cms2",
+      "pkg_version": "2.19.1"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "4f77735ee9b10e73b569387e86f8c456c3d50d253d70325543dba1d6aba24675",
+      "name": "m4",
+      "pkg_version": "1.4.21"
+    },
+    {
+      "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
+      "name": "webp",
+      "pkg_version": "1.6.0"
+    },
+    {
+      "formula_sha256": "f8e1388f1d5da86f715f2af36dc4cf3e37c79083ad3f67ec24f43545c401e4c4",
+      "name": "x265",
+      "pkg_version": "4.3"
+    },
+    {
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "ed33db6af34813cd206f3242c76a8d34458a065ebcc4534889cc473d46f4a8a7",
+  "size": 10984820,
+  "source": {
+    "filename": "imagemagick--7.1.2-31.sources.tar.gz",
+    "sha256": "884640f7e534ab09a53fb30b57e5c2c879277f0f6882c2b003439d77460355ab",
+    "size": 10253812
+  },
+  "tag": "sequoia",
+  "version": "7.1.2-31",
+  "version_scheme": 0,
+  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
+}
