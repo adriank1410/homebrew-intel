@@ -12,10 +12,17 @@ required `tests`, no force-push/deletion of `main`, and protected `v*`/`intel-*`
 tags. Workflow actions are pinned to reviewed full commit SHAs. Registry automation
 uses a private GitHub App installed only on this repository. Configure repository
 variable `INTELBREW_APP_CLIENT_ID` and secret `INTELBREW_APP_PRIVATE_KEY`. The App
-needs Contents, Pull requests and Actions read/write permissions; Metadata read
+needs Contents, Pull requests, Actions and Workflows read/write permissions; Metadata read
 is mandatory. It needs no webhook, OAuth user authorization or account permissions.
 Only the main-branch publication and registry jobs create an installation token,
-explicitly restricted to `homebrew-intel` and those three permissions. Tokens
+explicitly restricted to `homebrew-intel`. Only the publication token requests
+Workflows write: GitHub requires it to create a release at the verified build
+commit when workflow files have changed on the default branch in the meantime.
+The registry token retains only Contents, Pull requests and Actions write.
+After adding the App permission, approve the installation's permission update
+before deploying the workflow. Never retarget a release to a newer commit to
+avoid this requirement; its tag must identify the verified pipeline snapshot.
+Tokens
 expire after one hour and the pinned action revokes them at job completion.
 The controller accepts only the exact `app/<slug>` identity returned by that
 action. Missing identity or credentials do not fall back to a personal token.
