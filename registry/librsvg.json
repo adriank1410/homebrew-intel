@@ -1,0 +1,194 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
+  "filename": "librsvg--2.63.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "3fc062defe744275cdd01f6a30a060b60748243db65814f22dad6a54dbd61f04",
+  "license": "LGPL-2.1-or-later",
+  "name": "librsvg",
+  "pkg_version": "2.63.0",
+  "recipe_sha256": "dd2630aa9aa8c2dfe9a58344c28ad0c6b8da179b159c2d017c39d51a358b1ff0",
+  "release": "intel-34707292687-1-librsvg",
+  "revision": 0,
+  "run_id": "34707292687",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "name": "cairo",
+      "pkg_version": "1.18.4"
+    },
+    {
+      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "name": "fontconfig",
+      "pkg_version": "2.18.3"
+    },
+    {
+      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "name": "freetype",
+      "pkg_version": "2.14.3"
+    },
+    {
+      "formula_sha256": "be8dfebc1492e1c8af3ae1b4d4ba37a76d93501dc03ce342419d397c865abc26",
+      "name": "fribidi",
+      "pkg_version": "1.0.16"
+    },
+    {
+      "formula_sha256": "44127f0caa57f729d1fbc3b0cce4dd2eb531136f16350f644fbb5f3f5d5a70a7",
+      "name": "gdk-pixbuf",
+      "pkg_version": "2.44.8"
+    },
+    {
+      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "name": "giflib",
+      "pkg_version": "6.1.3"
+    },
+    {
+      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "name": "glib",
+      "pkg_version": "2.88.3"
+    },
+    {
+      "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
+      "name": "graphite2",
+      "pkg_version": "1.3.15"
+    },
+    {
+      "formula_sha256": "6ebecbf2b199f6bcb8f1c585d1a6614f05cfafa8e31516acd31f8322577c2f01",
+      "name": "harfbuzz",
+      "pkg_version": "14.4.0"
+    },
+    {
+      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
+      "name": "libdatrie",
+      "pkg_version": "0.2.14"
+    },
+    {
+      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "name": "libpng",
+      "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "name": "libthai",
+      "pkg_version": "0.1.30"
+    },
+    {
+      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+      "name": "libtiff",
+      "pkg_version": "4.7.2"
+    },
+    {
+      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
+      "name": "libx11",
+      "pkg_version": "1.8.13"
+    },
+    {
+      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "name": "libxau",
+      "pkg_version": "1.0.12"
+    },
+    {
+      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "name": "libxcb",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "name": "libxdmcp",
+      "pkg_version": "1.1.5"
+    },
+    {
+      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "name": "libxext",
+      "pkg_version": "1.3.7"
+    },
+    {
+      "formula_sha256": "96228e7db71fb1bfa9baaca00848653f4d807bfd98003f2a58094e981f3055c1",
+      "name": "libxrender",
+      "pkg_version": "0.9.12"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "name": "lzo",
+      "pkg_version": "2.10"
+    },
+    {
+      "formula_sha256": "1ada8fc68572490e56b08ff09b257b2a7f6f9025c766321e77debeb1be4d917e",
+      "name": "pango",
+      "pkg_version": "1.58.2"
+    },
+    {
+      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "name": "pcre2",
+      "pkg_version": "10.48"
+    },
+    {
+      "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
+      "name": "pixman",
+      "pkg_version": "0.46.4"
+    },
+    {
+      "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
+      "name": "webp",
+      "pkg_version": "1.6.0"
+    },
+    {
+      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "name": "xorgproto",
+      "pkg_version": "2025.1"
+    },
+    {
+      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "name": "xz",
+      "pkg_version": "5.8.3"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "3881746ada424cee52b962072e7c5e0695df7a87460f2e45dc25875ec36eaa63",
+  "size": 4980193,
+  "source": {
+    "filename": "librsvg--2.63.0.sources.tar.gz",
+    "sha256": "0a40d62295879d5c64efb56a10ebb3dd7c97691680f7e6d9f1ec827994dfcc94",
+    "size": 25457172
+  },
+  "tag": "sequoia",
+  "version": "2.63.0",
+  "version_scheme": 0,
+  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
+}
