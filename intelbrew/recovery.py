@@ -55,6 +55,19 @@ def _has_successful_root(jobs: list[dict[str, Any]], root: str) -> bool:
                job.get("conclusion") == "success" for job in jobs)
 
 
+def _publication_attempt(jobs: list[dict[str, Any]], root: str,
+                         source_attempt: int) -> str:
+    expected = f"publish ({root})"
+    matches = [job for job in jobs if job.get("name") == expected]
+    if (len(matches) != 1 or matches[0].get("status") != "completed"
+            or matches[0].get("conclusion") != "failure"):
+        raise Error("Expected exactly one failed publication job for root")
+    attempt = _number(matches[0].get("run_attempt"), "publication job attempt")
+    if int(attempt) > source_attempt:
+        raise Error("Publication job attempt exceeds source run attempt")
+    return attempt
+
+
 def validate_recovery(candidate: Path, root: str, source_run: str | int,
                      manifest: dict[str, Any], repository: str) -> tuple[str, str, str, str]:
     """Bind a verified artifact to its completed source run and root verification.
@@ -101,6 +114,7 @@ def validate_recovery(candidate: Path, root: str, source_run: str | int,
     attempt = int(attempt_text)
 
     jobs = _attempt_jobs(repository, run_id)
+    publication_attempt = _publication_attempt(jobs, root, attempt)
     if not _has_successful_root(jobs, root):
         for previous in range(attempt - 1, 0, -1):
             if _has_successful_root(_attempt_jobs(repository, run_id, previous), root):
@@ -110,4 +124,4 @@ def validate_recovery(candidate: Path, root: str, source_run: str | int,
 
     for path in sorted(candidate.iterdir(), key=lambda item: item.name):
         attest(path, repository, workflow_commit, token=token)
-    return workflow_commit, core_commit, run_id, attempt_text
+    return workflow_commit, core_commit, run_id, publication_attempt

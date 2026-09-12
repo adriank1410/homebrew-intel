@@ -27,6 +27,7 @@ class AppWorkflowTests(unittest.TestCase):
         publish = next(s for s in steps if "intelbrew.publish" in s.get("run", ""))
         self.assertIn('--source-run "$SOURCE_RUN"', publish["run"])
         self.assertNotIn("GITHUB_SHA", publish.get("env", {}))
+        self.assertTrue(any("gh workflow run registry.yml" in s.get("run", "") for s in steps))
 
     def test_registry_resumes_after_checks_without_recursive_dispatch(self):
         document = workflow("registry.yml")

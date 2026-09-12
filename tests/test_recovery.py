@@ -66,8 +66,13 @@ class RecoveryValidationTests(unittest.TestCase):
     def successful_job(root=ROOT):
         return {"name": f"verify ({root})", "status": "completed", "conclusion": "success"}
 
+    @staticmethod
+    def failed_publisher_job(root=ROOT, attempt=1, conclusion="failure"):
+        return {"name": f"publish ({root})", "status": "completed",
+                "conclusion": conclusion, "run_attempt": attempt}
+
     def gh_fixture(self, run, *, jobs=None, previous_jobs=None):
-        jobs = [self.successful_job()] if jobs is None else jobs
+        jobs = [self.successful_job(), self.failed_publisher_job()] if jobs is None else jobs
         previous_jobs = [] if previous_jobs is None else previous_jobs
 
         def fake(arguments):
@@ -149,13 +154,43 @@ class RecoveryValidationTests(unittest.TestCase):
     def test_rejects_failed_root_verification(self):
         failed = {"name": f"verify ({ROOT})", "status": "completed", "conclusion": "failure"}
         with self.assertRaisesRegex(Error, "verification job"):
-            self.validate(run=self.run_payload(conclusion="failure"), jobs=[failed])
+            self.validate(run=self.run_payload(conclusion="failure"),
+                          jobs=[failed, self.failed_publisher_job()])
 
     def test_reuses_prior_successful_root_when_latest_retry_omits_it(self):
-        latest = [{"name": "verify (other)", "status": "completed", "conclusion": "success"}]
+        latest = [{"name": "verify (other)", "status": "completed", "conclusion": "success"},
+                  self.failed_publisher_job(attempt=2)]
         result, _ = self.validate(run=self.run_payload(run_attempt=2), jobs=latest,
                                   previous_jobs=[self.successful_job()])
         self.assertEqual(result, (G, G, RUN_ID, "2"))
+
+    def test_binds_release_attempt_to_failed_publisher_job(self):
+        jobs = [self.successful_job(), self.failed_publisher_job(attempt=1)]
+        result, _ = self.validate(run=self.run_payload(run_attempt=2), jobs=jobs)
+        self.assertEqual(result, (G, G, RUN_ID, "1"))
+
+    def test_rejects_missing_publisher_job(self):
+        with self.assertRaisesRegex(Error, "publication job"):
+            self.validate(jobs=[self.successful_job()])
+
+    def test_rejects_successful_publisher_job(self):
+        with self.assertRaisesRegex(Error, "publication job"):
+            self.validate(jobs=[self.successful_job(), self.failed_publisher_job(conclusion="success")])
+
+    def test_rejects_duplicate_publisher_jobs(self):
+        with self.assertRaisesRegex(Error, "publication job"):
+            self.validate(jobs=[self.successful_job(), self.failed_publisher_job(),
+                                self.failed_publisher_job()])
+
+    def test_rejects_publisher_attempt_after_source_run_attempt(self):
+        with self.assertRaisesRegex(Error, "Publication job attempt"):
+            self.validate(run=self.run_payload(run_attempt=1),
+                          jobs=[self.successful_job(), self.failed_publisher_job(attempt=2)])
+
+    def test_rejects_non_positive_publisher_attempt(self):
+        publisher = self.failed_publisher_job(attempt=0)
+        with self.assertRaisesRegex(Error, "publication job attempt"):
+            self.validate(jobs=[self.successful_job(), publisher])
 
     def test_ignores_recovery_runner_identity(self):
         result, _ = self.validate(env={"GITHUB_SHA": "c" * 40,

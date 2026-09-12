@@ -85,3 +85,7 @@ jobs:
           SOURCE_RUN: ${{ inputs.source_run }}
           ROOT_FORMULA: ${{ matrix.root }}
         run: python3 -m intelbrew.publish --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/verified" --source-run "$SOURCE_RUN"
+      - name: Reconcile recovered publication even when schedules are disabled
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: gh workflow run registry.yml --repo "$GITHUB_REPOSITORY"
