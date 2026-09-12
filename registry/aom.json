@@ -2,33 +2,33 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "a8fd20ec1523291a81676de98f9d417fefa5d04c",
+  "core_commit": "42f17d98bb46c274008be95ab68cf359fed9610b",
   "filename": "aom--3.15.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "128d20801469faed070d32538bf3cdb24674899c5cb20968fc5adaa483d1d5bd",
+  "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
   "license": "BSD-2-Clause",
   "name": "aom",
   "pkg_version": "3.15.0",
   "recipe_sha256": "a411ce8a610539439fbc5f92e92dc4ff8d9f242f68bf7a736dd856d7fff464e6",
-  "release": "intel-34388221074-1-aom",
+  "release": "intel-34663743378-1-gd",
   "revision": 0,
-  "run_id": "34388221074",
+  "run_id": "34663743378",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b915fac393127f39f1270e3e66093e9e91ff91d1f210ecac0292dcb4922917a1",
+      "formula_sha256": "13f5592d1541a7d5818eccede33b981754c6311117494fefccffa015aacd860d",
       "name": "libvmaf",
       "pkg_version": "3.2.0"
     }
   ],
   "schema": 1,
-  "sha256": "94c0aee18435ecba49a82be4a34cadd882f3393a8352d0e755764152170284ac",
-  "size": 4724153,
+  "sha256": "69c9a991a768823c0235ce9fa5349f280a1da87ec74bfccd098fb38d86412a79",
+  "size": 4724224,
   "source": {
     "filename": "aom--3.15.0.sources.tar.gz",
-    "sha256": "3c5e22004a2f3cf469d9f12e3a42ac61b070cbf25225ef60cefd2e412237299c",
-    "size": 6519069
+    "sha256": "6f52e07f1a4b803804526c66674375da458a462a6f25716a4efeca101aa0e16c",
+    "size": 6519093
   },
   "tag": "sequoia",
   "version": "3.15.0",
   "version_scheme": 0,
-  "workflow_commit": "d110403e57308d67f69387a83778d440554cb106"
+  "workflow_commit": "c308d9653a8a934819df3209f79bdaf07b4233ef"
 }
