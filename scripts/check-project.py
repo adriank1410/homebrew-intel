@@ -14,7 +14,9 @@ try:
     workflows=sorted((ROOT/'.github/workflows').glob('*.yml'));subprocess.run(['ruby','-ryaml','-e','ARGV.each { |p| YAML.parse_file(p) }',*[str(p) for p in workflows]],check=True)
     for path in workflows:
         text=path.read_text();assert 'pull_request_target' not in text;assert 'persist-credentials: true' not in text
-        for action in re.findall(r'uses:\s*(\S+)',text):assert re.fullmatch(r'(?:actions|github)/[\w-]+@[0-9a-f]{40}',action),f'Unpinned action: {action}'
+        for action in re.findall(r'uses:\s*(\S+)',text):
+            # A local reusable workflow resolves at the caller's exact commit.
+            assert action == './.github/workflows/bottle-root.yml' or re.fullmatch(r'(?:actions|github)/[\w-]+@[0-9a-f]{40}',action),f'Unpinned action: {action}'
         assert not re.search(r'run:.*\$\{\{\s*(?:inputs|matrix)\.',text)
     for path in [ROOT/'SECURITY.md',ROOT/'THIRD_PARTY.md',ROOT/'LICENSE',ROOT/'.github/CODEOWNERS',ROOT/'README.md']:assert path.is_file()
     print(f'Project checks passed; {len(targets)} reviewed candidate roots, {len(registry())} published records.')

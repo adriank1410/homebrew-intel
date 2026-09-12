@@ -39,13 +39,20 @@ Verify GitHub settings separately before treating them as a security boundary.
 
 `recover.yml` can publish existing `verified-<root>` artifacts from a completed
 `bottles.yml` run on `main`, without rebuilding or issuing replacement attestations.
-Dispatch it on `main` with `source_run` and `roots` (a JSON array, at most 24 roots).
+A failed main bottle run triggers one automatic recovery pass for failed
+publication jobs with retained verified artifacts. Recovery does not trigger
+itself, and build or verification failures are not treated as publish failures.
+For an explicit retry after repairing a persistent failure, dispatch it on `main`
+with `source_run` and `roots` (a JSON array, at most 24 roots).
 It checks the source run, successful independent verification, original manifest
 and asset attestations before publishing with a fresh App token. The records and
 release targets retain the original build run and commit; the recovery job runs
 the current trusted code. Artifacts must still be available and the pinned Brew
-commit must still match. An existing release is not overwritten; investigate a
-partially completed publication before retrying that root.
+commit must still match. If a release already exists, retry verifies its tag,
+asset sizes and SHA-256 digests against the original candidate, and uploads only
+missing assets. It never replaces an existing asset. An already-pushed branch is
+reused through the normal registry validation; merged or closed PRs are not
+recreated.
 
 The recovery job also requests Workflows write, scoped to this repository.
 Use this after fixing publication credentials: rerunning an old workflow uses
@@ -137,10 +144,17 @@ roots only when its API metadata matches the resolved core revision. Uncertain
 roots are inspected together on a pinned Intel runner before allocating build
 jobs. This native preflight reuses metadata, checks source policy and reports
 blocked roots independently. Up to 24 eligible roots enter each scheduled batch, ordered by the number of
-required source builds and then name, with at most five concurrent build jobs.
+required source builds and then name, with at most five concurrent root pipelines.
+Each root builds, verifies on a separate fresh runner, and publishes independently;
+a slow or failed build does not hold ready bottles behind a whole-batch barrier.
+The reusable `bottle-root.yml` signs new artifacts; the CLI also accepts the legacy
+`bottles.yml` signer, with the same exact commit, main-ref and hosted-runner checks.
 Remaining roots are reconsidered by the next scheduled run.
 Explicit small manual selections still force native verification; `all` uses the
-same native preflight.
+same native preflight. A manual single-root request has its own concurrency group,
+so an urgent repair can run alongside a sweep. Repeated requests for the same root
+remain serialized; manual requests can temporarily add runners beyond the sweep's
+five-root limit.
 Registry maintenance runs
 after successful Checks runs from this repository and every five minutes, revalidates eligible PRs, updates outdated branches, and
 dispatches missing checks and retries cancelled or timed-out checks, with at most

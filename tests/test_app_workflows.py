@@ -16,18 +16,36 @@ def workflow(name):
 class AppWorkflowTests(unittest.TestCase):
     def test_recovery_never_builds_or_reattests_source_artifacts(self):
         doc = workflow("recover.yml")
+        trigger = doc.get("on", doc.get("true"))
+        self.assertIn("workflow_dispatch", trigger)
+        self.assertEqual(trigger["workflow_run"]["workflows"], ["Sequoia Intel bottles"])
+        self.assertEqual(trigger["workflow_run"]["types"], ["completed"])
+        self.assertIn("inputs.source_run || github.event.workflow_run.id",
+                      doc["concurrency"]["group"])
+        self.assertFalse(doc["concurrency"]["cancel-in-progress"])
         job = doc["jobs"]["recover"]
         self.assertIn("refs/heads/main", job["if"])
+        self.assertIn("needs.plan.outputs.has_work == 'true'", job["if"])
         self.assertEqual(job["permissions"]["attestations"], "read")
         self.assertEqual(job["strategy"]["max-parallel"], 1)
         steps = job["steps"]
         self.assertFalse(any(s.get("uses", "").startswith("actions/attest@") for s in steps))
         download = next(s for s in steps if s.get("uses", "").startswith("actions/download-artifact@"))
-        self.assertEqual(download["with"]["run-id"], "${{ inputs.source_run }}")
+        self.assertEqual(download["with"]["run-id"], "${{ needs.plan.outputs.source_run }}")
         publish = next(s for s in steps if "intelbrew.publish" in s.get("run", ""))
         self.assertIn('--source-run "$SOURCE_RUN"', publish["run"])
+        self.assertEqual(publish["env"]["SOURCE_RUN"], "${{ needs.plan.outputs.source_run }}")
         self.assertNotIn("GITHUB_SHA", publish.get("env", {}))
         self.assertTrue(any("gh workflow run registry.yml" in s.get("run", "") for s in steps))
+
+        plan = doc["jobs"]["plan"]
+        self.assertIn("github.event.workflow_run.head_branch == 'main'", plan["if"])
+        self.assertIn("github.event.workflow_run.conclusion == 'failure'", plan["if"])
+        plan_run = next(step for step in plan["steps"] if step.get("id") == "plan")
+        self.assertIn("discover_recovery_roots", plan_run["run"])
+        self.assertIn("MAX_AUTOMATIC_RECOVERY_ROOTS", plan_run["run"])
+        self.assertIn("MAX_RECOVERY_ROOTS", plan_run["run"])
+        self.assertNotIn("gh workflow run recover.yml", json.dumps(doc))
 
     def test_registry_resumes_after_checks_without_recursive_dispatch(self):
         document = workflow("registry.yml")
@@ -40,7 +58,7 @@ class AppWorkflowTests(unittest.TestCase):
         self.assertNotIn("gh workflow run registry.yml", str(job["steps"]))
 
     def test_candidate_artifacts_outlive_the_maximum_workflow_duration(self):
-        document = workflow("bottles.yml")
+        document = workflow("bottle-root.yml")
         for stage in ("build", "verify"):
             upload = next(step for step in document["jobs"][stage]["steps"]
                           if step.get("uses", "").startswith("actions/upload-artifact@"))
@@ -50,9 +68,8 @@ class AppWorkflowTests(unittest.TestCase):
         document = workflow("bottles.yml")
         self.assertIn("${{ github.ref }}", document["concurrency"]["group"])
         self.assertFalse(document["concurrency"]["cancel-in-progress"])
-        for stage in ("build", "verify"):
-            self.assertEqual(document["jobs"][stage]["strategy"]["max-parallel"], 5)
-        self.assertIn("refs/heads/main", document["jobs"]["publish"]["if"])
+        self.assertEqual(document["jobs"]["root-pipeline"]["strategy"]["max-parallel"], 5)
+        self.assertIn("refs/heads/main", workflow("bottle-root.yml")["jobs"]["publish"]["if"])
 
     def test_coverage_maintenance_is_independent_and_owner_scoped(self):
         steps = workflow("registry.yml")["jobs"]["reconcile"]["steps"]
@@ -63,7 +80,7 @@ class AppWorkflowTests(unittest.TestCase):
         self.assertIn("steps.app-token.outcome == 'success'", operation["if"])
 
     def test_private_key_is_only_used_by_main_publication_jobs(self):
-        for filename, privileged_job in (("bottles.yml", "publish"), ("registry.yml", "reconcile"), ("recover.yml", "recover")):
+        for filename, privileged_job in (("bottle-root.yml", "publish"), ("registry.yml", "reconcile"), ("recover.yml", "recover")):
             jobs = workflow(filename)["jobs"]
             for name, job in jobs.items():
                 tokens = [step for step in job["steps"]
@@ -77,21 +94,21 @@ class AppWorkflowTests(unittest.TestCase):
                 token = tokens[0]
                 self.assertEqual(token["id"], "app-token")
                 inputs = token["with"]
-                self.assertEqual(inputs["private-key"], "${{ secrets.INTELBREW_APP_PRIVATE_KEY }}")
+                self.assertEqual(inputs["private-key"], "${{ secrets.app_private_key }}" if filename == "bottle-root.yml" else "${{ secrets.INTELBREW_APP_PRIVATE_KEY }}")
                 self.assertEqual(inputs["repositories"], "homebrew-intel")
                 self.assertNotEqual(inputs.get("skip-token-revoke"), True)
                 granted = {k: v for k, v in inputs.items() if k.startswith("permission-")}
                 expected = {"permission-contents": "write",
                             "permission-pull-requests": "write",
                             "permission-actions": "write"}
-                if filename in ("bottles.yml", "recover.yml"):
+                if filename in ("bottle-root.yml", "recover.yml"):
                     # Releases retain the verified SHA even if main's workflows
                     # have changed while a long-running build was in progress.
                     expected["permission-workflows"] = "write"
                 self.assertEqual(granted, expected)
 
     def test_registry_operations_use_the_issued_token_and_its_bot_identity(self):
-        for filename, job_name, module in (("bottles.yml", "publish", "intelbrew.publish"),
+        for filename, job_name, module in (("bottle-root.yml", "publish", "intelbrew.publish"),
                                            ("registry.yml", "reconcile", "intelbrew.registry_pr")):
             steps = workflow(filename)["jobs"][job_name]["steps"]
             operation = next(step for step in steps if module in step.get("run", ""))
