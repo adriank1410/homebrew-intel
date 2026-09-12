@@ -23,7 +23,8 @@ from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
                          BOLD_YELLOW, DIM, is_color_enabled, ohai, onoe, opoo, style)
 
 
-def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None) -> None:
+def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None,
+           verbose: bool = False) -> None:
     require_sha(workflow_commit, git=True)
     if not shutil.which("gh"):
         raise Error("GitHub CLI (gh) is required to verify personal bottles; no verification bypass exists")
@@ -35,7 +36,7 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
          "--signer-workflow", f"{repository}/.github/workflows/bottles.yml",
          "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
          "--signer-digest", workflow_commit, "--deny-self-hosted-runners"],
-        capture=False, env=env)
+        capture=not verbose, env=env)
 
 
 def render(plan: dict, stream: Any = None) -> None:
@@ -77,6 +78,50 @@ def render(plan: dict, stream: Any = None) -> None:
             item = plan["nodes"][name]
             print(f'{name:27} {item["pkg_version"]:19} {item["provider"]}', file=stream)
         print("\nNo core remote, formula definitions or dependency names are changed.", file=stream)
+
+
+def render_upgrade(plan: dict, stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
+    roots = [r for r in plan["roots"] if plan["nodes"][r].get("provider") != "installed"]
+    count = len(roots)
+    if count > 0:
+        plural = "s" if count != 1 else ""
+        ohai(f"Upgrading {count} outdated package{plural}:", stream=stream)
+        for name in roots:
+            item = plan["nodes"][name]
+            installed = item.get("installed_versions") or []
+            old_ver = installed[-1] if installed else None
+            new_ver = item["pkg_version"]
+            name_disp = style(name, BOLD, stream)
+            if old_ver:
+                print(f"{name_disp} {old_ver} -> {new_ver}", file=stream)
+            else:
+                print(f"{name_disp} {new_ver}", file=stream)
+    deps = [n for n in plan["order"] if n not in plan["roots"] and plan["nodes"][n].get("provider") != "installed"]
+    if deps:
+        plural = "ies" if len(deps) != 1 else "y"
+        ohai(f"Installing {len(deps)} dependenc{plural}:", stream=stream)
+        for name in deps:
+            name_disp = style(name, BOLD, stream)
+            print(f"{name_disp} {plan['nodes'][name]['pkg_version']}", file=stream)
+
+
+def render_install(plan: dict, stream: Any = None) -> None:
+    if stream is None:
+        stream = sys.stdout
+    deps = [n for n in plan["order"] if n not in plan["roots"] and plan["nodes"][n].get("provider") != "installed"]
+    if deps:
+        roots_str = ", ".join(plan["roots"])
+        dep_str = ", ".join(deps)
+        ohai(f"Installing dependencies for {roots_str}: {dep_str}", stream=stream)
+    roots = [r for r in plan["roots"] if plan["nodes"][r].get("provider") != "installed"]
+    if roots:
+        plural = "s" if len(roots) != 1 else ""
+        ohai(f"Installing {len(roots)} package{plural}:", stream=stream)
+        for name in roots:
+            name_disp = style(name, BOLD, stream)
+            print(f"{name_disp} {plan['nodes'][name]['pkg_version']}", file=stream)
 
 
 def filter_available_plan(plan: dict) -> tuple[dict, list[dict]]:
@@ -220,7 +265,7 @@ def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:
             print("No new coverage PR needed.", file=stream)
 
 
-def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
+def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose: bool = False) -> None:
     ensure_complete(plan)
     cache.mkdir(parents=True, exist_ok=True, mode=0o700)
     if cache.is_symlink():
@@ -246,10 +291,14 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
             download(artifact_url(config["repository"], record), path,
                      record["sha256"], record["size"])
             ohai(f"Verifying bottle attestation for {name}")
-            attest(path, config["repository"], record["workflow_commit"])
+            attest(path, config["repository"], record["workflow_commit"], verbose=verbose)
+            if not verbose:
+                checkmark = style("✔", BOLD_GREEN) if is_color_enabled() else "✔"
+                print(f"{checkmark} Attestation verified (SLSA Provenance v1)")
             check_bottle(path, record)
-            source_url = artifact_url(config["repository"], record, record["source"]["filename"])
-            print(f"Source and license notices for {name}: {source_url}")
+            if verbose:
+                source_url = artifact_url(config["repository"], record, record["source"]["filename"])
+                print(f"Source and license notices for {name}: {source_url}")
             downloaded[name] = path
         for name in plan["order"]:
             if plan["nodes"][name]["provider"] == "official":
@@ -264,15 +313,14 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
                     raise Error(f"Homebrew state changed for {name}; re-run the plan")
         journal_dir = Path(tempfile.mkdtemp(prefix="transaction-", dir=cache))
         write_json_new(journal_dir / "plan.json", plan)
-        print(f"Installation journal: {journal_dir}")
+        if verbose:
+            print(f"Installation journal: {journal_dir}")
         completed = 0
         try:
             for name in plan["order"]:
                 item = plan["nodes"][name]
                 if item["provider"] == "installed":
                     continue
-                filename = records[name]["filename"] if name in records else name
-                ohai(f"Pouring {filename}")
                 request = {
                     "mode": "install", "name": name,
                     "target": str(downloaded[name]) if name in downloaded else f"homebrew/core/{name}",
@@ -284,7 +332,6 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path) -> None:
                 native(request, capture=False)
                 receipt = native({"mode": "receipt", "name": name})
                 write_json_new(journal_dir / f"{completed:04d}-{name}.json", receipt)
-                print(f"🍺  /usr/local/Cellar/{name}/{item['pkg_version']}")
                 completed += 1
         except Error as exc:
             raise Error(f"Stopped after {completed} package(s); this is not a transaction rollback. "
@@ -303,6 +350,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--json", action="store_true", help="Print plan JSON")
     parser.add_argument("--available", action="store_true",
                         help="For upgrade, omit roots with missing runtime providers")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Print verbose output")
     args = parser.parse_args(argv)
     try:
         if platform.system() != "Darwin" or platform.machine() != "x86_64":
@@ -389,13 +437,18 @@ def main(argv: list[str] | None = None) -> int:
                 return 0
         if args.json:
             print(json.dumps(plan, indent=2))
+        elif args.command == "upgrade":
+            render_upgrade(plan)
+        elif args.command == "install":
+            render_install(plan)
         else:
             render(plan)
         if args.apply:
             if args.command == "plan":
                 raise Error("plan is read-only; use install/upgrade --apply")
             apply_plan(plan, records, config,
-                       cache=Path.home() / "Library/Caches/homebrew-intel")
+                       cache=Path.home() / "Library/Caches/homebrew-intel",
+                       verbose=args.verbose)
         elif not args.json:
             print("\nDry run only. Add --apply to install. Missing bottles cause an error, not compilation.")
         return 0

@@ -105,6 +105,96 @@ class FormattingTests(unittest.TestCase):
         self.assertIn("official", plain_out)
         self.assertIn("missing", plain_out)
 
+    def test_render_upgrade_formats_outdated_packages_and_skips_installed(self):
+        plan = {
+            "roots": ["simdutf", "nss"],
+            "order": ["ca-certificates", "simdutf", "nss"],
+            "nodes": {
+                "ca-certificates": meta("ca-certificates", provider="installed", installed=True),
+                "simdutf": {
+                    "provider": "personal", "pkg_version": "9.1.2",
+                    "installed_versions": ["9.1.1"],
+                },
+                "nss": {
+                    "provider": "personal", "pkg_version": "3.129",
+                    "installed_versions": ["3.128"],
+                },
+            },
+        }
+        plain = io.StringIO()
+        tty = TtyStream()
+        with patch.dict(os.environ, {}, clear=True):
+            cli.render_upgrade(plan, stream=plain)
+            cli.render_upgrade(plan, stream=tty)
+
+        plain_out = plain.getvalue()
+        self.assertIn("==> Upgrading 2 outdated packages:", plain_out)
+        self.assertIn("simdutf 9.1.1 -> 9.1.2", plain_out)
+        self.assertIn("nss 3.128 -> 3.129", plain_out)
+        self.assertNotIn("ca-certificates", plain_out)
+        self.assertNotIn("installed", plain_out)
+
+        tty_out = tty.getvalue()
+        self.assertIn("\033[1;34m==>\033[0m \033[1mUpgrading 2 outdated packages:\033[0m", tty_out)
+        self.assertIn("\033[1msimdutf\033[0m 9.1.1 -> 9.1.2", tty_out)
+        self.assertIn("\033[1mnss\033[0m 3.128 -> 3.129", tty_out)
+
+    def test_render_upgrade_with_new_dependency(self):
+        plan = {
+            "roots": ["tool"],
+            "order": ["new-dep", "tool"],
+            "nodes": {
+                "new-dep": {"provider": "official", "pkg_version": "1.5", "installed_versions": []},
+                "tool": {"provider": "personal", "pkg_version": "2.0", "installed_versions": ["1.0"]},
+            },
+        }
+        plain = io.StringIO()
+        with patch.dict(os.environ, {}, clear=True):
+            cli.render_upgrade(plan, stream=plain)
+
+        plain_out = plain.getvalue()
+        self.assertIn("==> Upgrading 1 outdated package:", plain_out)
+        self.assertIn("tool 1.0 -> 2.0", plain_out)
+        self.assertIn("==> Installing 1 dependency:", plain_out)
+        self.assertIn("new-dep 1.5", plain_out)
+
+    def test_render_install_formats_packages_and_dependencies(self):
+        plan = {
+            "roots": ["app"],
+            "order": ["lib", "app"],
+            "nodes": {
+                "lib": {"provider": "official", "pkg_version": "1.0", "installed_versions": []},
+                "app": {"provider": "personal", "pkg_version": "2.0", "installed_versions": []},
+            },
+        }
+        plain = io.StringIO()
+        with patch.dict(os.environ, {}, clear=True):
+            cli.render_install(plan, stream=plain)
+
+        plain_out = plain.getvalue()
+        self.assertIn("==> Installing dependencies for app: lib", plain_out)
+        self.assertIn("==> Installing 1 package:", plain_out)
+        self.assertIn("app 2.0", plain_out)
+
+    def test_main_upgrade_calls_render_upgrade(self):
+        plan = {
+            "roots": ["simdutf"],
+            "order": ["simdutf"],
+            "nodes": {"simdutf": {"provider": "personal", "pkg_version": "9.1.2", "installed_versions": ["9.1.1"]}},
+            "schema": 1,
+        }
+        with patch.object(cli.platform, "system", return_value="Darwin"), \
+             patch.object(cli.platform, "machine", return_value="x86_64"), \
+             patch.object(cli, "load_config", return_value={"max_graph_nodes": 400, "repository": "adriank1410/homebrew-intel"}), \
+             patch.object(cli, "registry", return_value={}), \
+             patch.object(cli, "native", side_effect=[["simdutf"], {"core": [], "external_taps": []}, {}]), \
+             patch.object(cli, "coverage_report", return_value={"unmonitored_core": []}), \
+             patch.object(cli, "Planner") as mock_planner, \
+             patch.object(cli, "render_upgrade") as mock_render_upgrade:
+            mock_planner.return_value.make.return_value = plan
+            self.assertEqual(cli.main(["upgrade"]), 0)
+            mock_render_upgrade.assert_called_once_with(plan)
+
 
 if __name__ == "__main__":
     unittest.main()
