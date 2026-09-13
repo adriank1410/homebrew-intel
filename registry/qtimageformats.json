@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
+  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
   "filename": "qtimageformats--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "05762f41faf680013bd20c32380a3fd2cc25b61d3df28a3da73d6832238b44c1",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtimageformats",
   "pkg_version": "6.11.2",
   "recipe_sha256": "36b111f6256b1b9c52d54c4be66edabb6693a15c5a4c6248111e3646c554c6fe",
-  "release": "intel-34707292687-1-qtimageformats",
+  "release": "intel-34729347503-1-qtimageformats",
   "revision": 0,
-  "run_id": "34707292687",
+  "run_id": "34729347503",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -210,9 +210,9 @@
       "pkg_version": "2025.1"
     },
     {
-      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
       "name": "xz",
-      "pkg_version": "5.8.3"
+      "pkg_version": "5.8.4"
     },
     {
       "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
@@ -221,15 +221,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5a6edc5e64cb121a6effcb94d56eb434dfddca6b085bab02ae067c5eb0d55822",
-  "size": 106468,
+  "sha256": "e6049e9e23251628fcc6d59a9f5da8dfbdfb2b57ec4b99d68b7211d586da56c2",
+  "size": 106514,
   "source": {
     "filename": "qtimageformats--6.11.2.sources.tar.gz",
-    "sha256": "a42b1da43ea37b69c8585a0ddf2758dfbce3afe77ba27ee2cd2b3e66bbadfec0",
-    "size": 2057144
+    "sha256": "9774220810ff4b8b4120e01ea99264e6768cf66124c5491265434c2bb480b593",
+    "size": 2057161
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
+  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
 }
