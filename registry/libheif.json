@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "8904b17142b7c23f7b7759eb7a4cff3455b081c7",
+  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
   "filename": "libheif--1.23.4.sequoia.bottle.tar.gz",
   "formula_sha256": "4b5cfd4b41252fd5ac8698bcb52d7142a8510ede0d965a3f82baefb7d268ae8f",
   "license": "LGPL-3.0-or-later",
   "name": "libheif",
   "pkg_version": "1.23.4",
   "recipe_sha256": "cc5cb028efcc31990325977932752a9579fa1ba097ae0acb0b3f76faad096482",
-  "release": "intel-34689178258-1-libheif",
+  "release": "intel-34729347503-1-libheif",
   "revision": 0,
-  "run_id": "34689178258",
+  "run_id": "34729347503",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -64,9 +64,9 @@
       "pkg_version": "4.3"
     },
     {
-      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
       "name": "xz",
-      "pkg_version": "5.8.3"
+      "pkg_version": "5.8.4"
     },
     {
       "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7d3cb66e03dc183a97395679ee480359b6b840e9f82110f4dbcd87056e9f28fb",
-  "size": 3084689,
+  "sha256": "7114aa8a1960208823a8e1b61e9f4cff1105d39ce96b0d935a6e4bb56b90dc64",
+  "size": 3084704,
   "source": {
     "filename": "libheif--1.23.4.sources.tar.gz",
-    "sha256": "928df05f9f12f911f9eb9138fff37ef799a733f355fb9fb9ece4a865efba1215",
-    "size": 2234900
+    "sha256": "3e970c23dd9902ef891204b8df42d3c12eff0326de730a4f07ed1b386f6f7743",
+    "size": 2234908
   },
   "tag": "sequoia",
   "version": "1.23.4",
   "version_scheme": 0,
-  "workflow_commit": "2317691b6b2a50a21da267cfb44f6c47dbb3fdfa"
+  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
 }
