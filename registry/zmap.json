@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "43848b5a734ebcd3692987facb900cef24658223",
+  "filename": "zmap--4.4.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "a72d4ac4cd39eb56399cce8294284aaa18e75fddf03f9e38fc77888b9a529379",
+  "license": "Apache-2.0",
+  "name": "zmap",
+  "pkg_version": "4.4.0",
+  "recipe_sha256": "452c459c6e7f5f2fef903c84204e1d9bc2a2172ad466b2095ff41a5e1fe82c25",
+  "release": "intel-34722247673-1-zmap",
+  "revision": 0,
+  "run_id": "34722247673",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "name": "gmp",
+      "pkg_version": "6.3.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "6de7b40b26796cf5d4458cb76aae7d6a57f3c24175f6e9059fd3aa624f30e0d4",
+      "name": "judy",
+      "pkg_version": "1.0.5"
+    },
+    {
+      "formula_sha256": "b29c140e35e5e5a0b284184555eb5a2d3978cf44ae08d234229656f3b8becd82",
+      "name": "libdnet",
+      "pkg_version": "1.18.2"
+    },
+    {
+      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    }
+  ],
+  "schema": 1,
+  "sha256": "2111c449131167a2bd660d06a97aa94f96386f72d2ea4c47d7234d43fb55c290",
+  "size": 179476,
+  "source": {
+    "filename": "zmap--4.4.0.sources.tar.gz",
+    "sha256": "a68b48c3dcd51a642298501e07f338b1221739700ffc9f82cdf2cde4af26f714",
+    "size": 225569
+  },
+  "tag": "sequoia",
+  "version": "4.4.0",
+  "version_scheme": 0,
+  "workflow_commit": "3a82d08e0841856e4d6558113eb2907aa7684ed0"
+}
