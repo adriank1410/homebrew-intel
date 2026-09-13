@@ -1,0 +1,119 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
+  "filename": "sherlock--0.16.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "009f6a3640584bbb218ffbbdfc11225f4eed5c6b0d7408d9d62f22e06b8fb7f7",
+  "license": "MIT",
+  "name": "sherlock",
+  "pkg_version": "0.16.2",
+  "recipe_sha256": "9d82c232535b9bdd461b7a31bf0ab0ab5cd1eba3c052a748fbecde781c329e37",
+  "release": "intel-34729347503-1-sherlock",
+  "revision": 0,
+  "run_id": "34729347503",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "a1a90e99f607d9fc8de3133211ceed9bc1b0ca93cc8b432f13ac7bee0ce4a6b9",
+      "name": "certifi",
+      "pkg_version": "2026.7.22"
+    },
+    {
+      "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
+      "name": "gcc",
+      "pkg_version": "16.2.0"
+    },
+    {
+      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "name": "gmp",
+      "pkg_version": "6.3.0"
+    },
+    {
+      "formula_sha256": "7c26187c57f112fea09a04ea6d7c7a34a8a3037e35394733c5f4df6c9e60c1a3",
+      "name": "isl",
+      "pkg_version": "0.28"
+    },
+    {
+      "formula_sha256": "ec5aa4cc6dc378bab0d004706d32da1415fdbda086648e12945b5233c7faac3e",
+      "name": "libmpc",
+      "pkg_version": "1.4.1"
+    },
+    {
+      "formula_sha256": "f2b5604a72169caaf728dc3d65b02b21cbeb1448435271100ee2412526f3c232",
+      "name": "libomp",
+      "pkg_version": "23.1.1"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "1593024dfeecac26b44bf22f9d40f56f4339fcc100dac9d364e5dfb4be473f56",
+      "name": "mpfr",
+      "pkg_version": "4.2.2"
+    },
+    {
+      "formula_sha256": "b2871fb8a4ebb95d0bc4a10a849d0f1b370ca33e87fff1799a7c8c3ff08dd38d",
+      "name": "numpy",
+      "pkg_version": "2.5.3"
+    },
+    {
+      "formula_sha256": "a9df5fa47015b4814c0ea8616127e248e48cc5a1136c1f33b13f5cdbe2da454e",
+      "name": "openblas",
+      "pkg_version": "0.3.34"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
+      "name": "python@3.14",
+      "pkg_version": "3.14.7"
+    },
+    {
+      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    },
+    {
+      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "34ccfb3b4925a9a0838615e50562c1a9ab04fbdfd105130b3ab8ddc9eff6f317",
+  "size": 11936369,
+  "source": {
+    "filename": "sherlock--0.16.2.sources.tar.gz",
+    "sha256": "4a8e749f6b9f15adcd01ffa75d237a125f89db7e90517b2db171a89ecc46f02d",
+    "size": 9813574
+  },
+  "tag": "sequoia",
+  "version": "0.16.2",
+  "version_scheme": 0,
+  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
+}
