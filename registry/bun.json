@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "35ba697a79d8c80e0464924076514dc6ce13de4e",
+  "filename": "bun--1.4.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "03e4015d49ca840a76217a620ff91c16d41f72268f473df26da7bfb81031bfb1",
+  "license": {
+    "all_of": [
+      "MIT",
+      "LGPL-2.0-or-later",
+      "Apache-2.0",
+      "BSD-2-Clause",
+      "BSD-3-Clause",
+      "IJG",
+      "LGPL-2.1-or-later",
+      "Zlib",
+      {
+        "Apache-2.0": {
+          "with": "LLVM-exception"
+        }
+      }
+    ]
+  },
+  "name": "bun",
+  "pkg_version": "1.4.2",
+  "recipe_sha256": "eafe88316cf98bebc4ce147000a2013b1b8377746b882a8587211132a7712fb3",
+  "release": "intel-34741950889-1-bun",
+  "revision": 0,
+  "run_id": "34741950889",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "0b92bedd3e3bf35c74175e57c2ba4254fcc6bbc443b396a3e92b61d34f5602e0",
+  "size": 25822998,
+  "source": {
+    "filename": "bun--1.4.2.sources.tar.gz",
+    "sha256": "5ea2f0091e376067f21d78aec05cd37fabe8679ee791ac47865174577c1d2ccf",
+    "size": 98498090
+  },
+  "tag": "sequoia",
+  "version": "1.4.2",
+  "version_scheme": 0,
+  "workflow_commit": "ac29a206d343ec1964880a84c90d2b813cb46c1f"
+}

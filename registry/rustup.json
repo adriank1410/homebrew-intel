@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "35ba697a79d8c80e0464924076514dc6ce13de4e",
+  "filename": "rustup--1.29.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "de960ef54ba336049ac15222928c17b8ac77b3908fdb56e0bba9d8078ba3859d",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "MIT"
+    ]
+  },
+  "name": "rustup",
+  "pkg_version": "1.29.1",
+  "recipe_sha256": "1b2c40a9ca22c41b8af1ff33f5669dec957cef4a7e1c7ef4a038850a1ba65c1e",
+  "release": "intel-34741950889-1-bun",
+  "revision": 0,
+  "run_id": "34741950889",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "0b86acc4ff18dc1e35fe2f98eb3db1323d741ada8fbe38eb7d43e986a932f184",
+  "size": 5207596,
+  "source": {
+    "filename": "rustup--1.29.1.sources.tar.gz",
+    "sha256": "d2ea03d21a2a5adcabbf87fb888622a49cc84ba7f5cdb6e3c84f73768223f3c5",
+    "size": 35291586
+  },
+  "tag": "sequoia",
+  "version": "1.29.1",
+  "version_scheme": 0,
+  "workflow_commit": "ac29a206d343ec1964880a84c90d2b813cb46c1f"
+}
