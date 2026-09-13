@@ -125,6 +125,10 @@ Publication creates a registry PR. Automation checks its records against the
 attested release manifest, dispatches tests, and merges the exact validated head
 once the protected branch checks pass. It never queues GitHub auto-merge. The client sees the records after that merge.
 
+An isolated build-only LLVM dependency is built from source as a temporary
+compiler and omitted from the candidate package set. LLVM remains a published
+bottle when any runtime or test dependency needs it.
+
 To request one reviewed target, edit `policy/build-request.json` on `main` and
 increment `sequence`. See [Operations](docs/OPERATIONS.md) for the review and
 failure-recovery procedure. Local checks are:

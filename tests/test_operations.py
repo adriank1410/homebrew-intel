@@ -12,8 +12,9 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 from intelbrew.cli import apply_plan, attest
-from intelbrew.ci import (_build_env, _prepare_source_sets, _validate_source_bundle, allowed_redistribution, permissive_license,
-                         require_ci_mac, runtime_closure, source_bundle)
+from intelbrew.ci import (_brew_install_args, _build_env, _prepare_source_sets, _validate_source_bundle,
+                         allowed_redistribution, build, permissive_license, require_ci_mac, runtime_closure,
+                         source_bundle, transient_builds, verify)
 from intelbrew.core import ROOT, Error, Planner, load_config
 from intelbrew.publish import release_tag
 from helpers import G, H, meta, record
@@ -149,6 +150,24 @@ class OperationTests(unittest.TestCase):
     def test_runtime_closure_excludes_build_and_test(self):
         nodes={'tool':meta(runtime=['dep'],build=['cmake'],test=['check']),'dep':meta('dep',runtime=['lib']),'lib':meta('lib')}
         self.assertEqual(runtime_closure('tool',nodes),['dep','lib'])
+
+    def test_transient_llvm_is_only_allowed_for_an_isolated_build_edge(self):
+        plan = {'roots': ['fastfetch'], 'nodes': {
+            'fastfetch': meta('fastfetch', build=['llvm']),
+            'llvm': meta('llvm', provider='build'),
+        }}
+        self.assertEqual(transient_builds(plan), {'llvm'})
+        self.assertEqual(_brew_install_args('llvm', {'llvm'}),
+                         ['brew', 'install', '--build-from-source', '--no-ask', 'homebrew/core/llvm'])
+        self.assertEqual(_brew_install_args('fastfetch', {'llvm'}),
+                         ['brew', 'install', '--build-bottle', '--no-ask', 'homebrew/core/fastfetch'])
+        for edge in ('runtime', 'test'):
+            dependent = meta('fastfetch', **{edge: ['llvm']})
+            plan['nodes']['fastfetch'] = dependent
+            self.assertEqual(transient_builds(plan), set(), edge)
+            plan['nodes']['fastfetch'] = meta('fastfetch', build=['llvm'])
+        plan['roots'] = ['llvm']
+        self.assertEqual(transient_builds(plan), set())
     def test_source_collection_uses_a_fresh_cache_per_package(self):
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.ci.native',side_effect=lambda request,**kwargs:{'name':request['name']}) as native:
             caches,sources=_prepare_source_sets(['dep','tool'],Path(d))
@@ -157,6 +176,7 @@ class OperationTests(unittest.TestCase):
             for call,name in zip(native.call_args_list,['dep','tool']):
                 self.assertEqual(call.kwargs,{'ci':True,'cache':caches[name]});self.assertTrue(caches[name].is_dir())
                 self.assertEqual(_build_env(caches[name])['HOMEBREW_CACHE'],str(caches[name]))
+
     def test_release_name_no_mutable_latest(self):
         self.assertEqual(release_tag('python@3.14','123','2'),'intel-123-2-python-at-3.14')
         for root,run_id,attempt in [('foo','bad','2'),('../foo','123','1'),('foo','123','')]:
@@ -392,6 +412,82 @@ class SourceBundleTests(unittest.TestCase):
             self.assertEqual(manifest["registry_commit"], "c" * 40)
             self.assertFalse(manifest["verified"])
             mock_run.assert_not_called()
+
+    def test_build_keeps_isolated_llvm_transient(self):
+        with tempfile.NamedTemporaryFile(suffix=".rb", delete=False) as temporary_recipe:
+            recipe = Path(temporary_recipe.name)
+        self.addCleanup(recipe.unlink, missing_ok=True)
+        recipe.write_text("class Fastfetch < Formula\nend\n")
+        recipe_sha = hashlib.sha256(recipe.read_bytes()).hexdigest()
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+            "GITHUB_RUN_ID": "123", "RUNNER_TEMP": "",
+        }
+        metadata = {
+            "llvm": meta("llvm"),
+            "fastfetch": meta("fastfetch", formula_sha256=recipe_sha, build=["llvm"]),
+        }
+        def fake_read_json(path):
+            if Path(path) == ROOT / "policy/targets.json": return {"formulae": ["fastfetch"]}
+            return json.loads(Path(path).read_text())
+        def fake_run(args, **kwargs):
+            if args[1:2] == ["bottle"]:
+                cwd=Path(kwargs["cwd"]);bottle=cwd / "fastfetch--1.0.sequoia.bottle.tar.gz"
+                with tarfile.open(bottle, "w:gz") as archive:
+                    for name, data in (
+                        ("fastfetch/1.0/.brew/fastfetch.rb", recipe.read_bytes()),
+                        ("fastfetch/1.0/INSTALL_RECEIPT.json", json.dumps({"source": {"tap": "homebrew/core"}, "built_as_bottle": True}).encode()),
+                    ):
+                        member=tarfile.TarInfo(name);member.size=len(data);archive.addfile(member,io.BytesIO(data))
+                sha=hashlib.sha256(bottle.read_bytes()).hexdigest()
+                (cwd / "fastfetch.bottle.json").write_text(json.dumps({"formula": {"bottle": {"cellar": ":any_skip_relocation", "tags": {"sequoia": {"sha256": sha}}}}}))
+        def fake_native(request, **kwargs):
+            if request["mode"] == "inspect":return {name:metadata[name] for name in request["names"]}
+            return {}
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {**env, "RUNNER_TEMP": d}, clear=True), \
+             patch("intelbrew.ci.sync_registry", return_value="c" * 40), \
+             patch("intelbrew.ci.registry", return_value={}), \
+             patch("intelbrew.ci.read_json", side_effect=fake_read_json), patch("intelbrew.ci.run", side_effect=fake_run) as run, \
+             patch("intelbrew.ci._prepare_source_sets", return_value=({"llvm": Path(d), "fastfetch": Path(d)}, {"llvm": {}, "fastfetch": {"formula_sha256": recipe_sha, "recipe_sha256": recipe_sha, "formula_path": str(recipe), "resources": []}})), \
+             patch("intelbrew.ci._build_env", return_value={}), patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.collect_build_sources", return_value={"files": []}):
+            out = Path(d) / "candidate"
+            build("fastfetch", out)
+            manifest=json.loads((out / "manifest.json").read_text())
+            self.assertEqual([item["name"] for item in manifest["packages"]], ["fastfetch"])
+            installs = [call.args[0] for call in run.call_args_list if call.args[0][1:2] == ["install"]]
+            self.assertEqual(installs, [
+                ["brew", "install", "--build-from-source", "--no-ask", "homebrew/core/llvm"],
+                ["brew", "install", "--build-bottle", "--no-ask", "homebrew/core/fastfetch"],
+            ])
+            self.assertEqual(sum(call.args[0][1:2] == ["bottle"] for call in run.call_args_list), 1)
+
+    def test_verify_does_not_install_transient_llvm(self):
+        metadata = {'llvm': meta('llvm'), 'fastfetch': meta('fastfetch', build=['llvm'])}
+        plan = Planner(lambda names: {name: metadata[name] for name in names}, {}, build=True).make(['fastfetch'])
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+        }
+        manifest = {"root": "fastfetch", "core_commit": env["INTELBREW_CORE_COMMIT"],
+                    "workflow_commit": env["GITHUB_SHA"], "packages": [record(name="fastfetch")],
+                    "plan": plan, "verified": False}
+        def fake_native(request, **kwargs):
+            if request["mode"] == "inspect": return {name: metadata[name] for name in request["names"]}
+            if request["mode"] == "receipt": return {"tap": "homebrew/core", "poured_from_bottle": True}
+            return {}
+        def fake_install(name, *args, **kwargs):
+            if name == "llvm": raise AssertionError("transient LLVM must not be installed during verification")
+        # Candidate archive validation has dedicated coverage; this isolates the native install boundary.
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, env, clear=True), \
+             patch("intelbrew.ci.validate_candidate", return_value=manifest), \
+             patch("intelbrew.ci.registry", return_value={}), patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.install_binary", side_effect=fake_install) as install, \
+             patch("intelbrew.ci.run") as run, patch("intelbrew.ci.shutil.copyfile"), patch("intelbrew.ci.write_json_new"):
+            verify("fastfetch", Path(d) / "candidate", Path(d) / "verified")
+            self.assertEqual([call.args[0] for call in install.call_args_list], ["fastfetch"])
+            self.assertEqual([call.args[0][1] for call in run.call_args_list], ["linkage", "test"])
 
     def test_version_matches_changelog(self):
         from intelbrew import __version__
