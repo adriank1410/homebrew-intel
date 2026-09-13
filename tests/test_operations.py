@@ -80,6 +80,25 @@ class OperationTests(unittest.TestCase):
             attest(Path('/file'), 'adriank1410/homebrew-intel', G, verbose=True)
             self.assertFalse(run.call_args.kwargs.get('capture'))
 
+    def test_attestation_retries_transient_public_good_verifier_initialization(self):
+        transient = Error('gh failed (1): Error: failed to choose verifier based on provided bundle issuer: public good verifier is not available (initialization may have failed)')
+        with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), \
+             patch('intelbrew.cli.run', side_effect=[transient, None]) as run, \
+             patch('intelbrew.cli.time.sleep') as sleep:
+            attest(Path('/file'), 'adriank1410/homebrew-intel', G)
+            self.assertEqual(run.call_count, 2)
+            self.assertEqual(sleep.call_args_list[0].args, (1,))
+
+    def test_attestation_does_not_retry_other_verification_failures(self):
+        failure = Error('gh failed (1): signature verification failed')
+        with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), \
+             patch('intelbrew.cli.run', side_effect=[failure, failure]) as run, \
+             patch('intelbrew.cli.time.sleep') as sleep:
+            with self.assertRaisesRegex(Error, 'signature verification failed'):
+                attest(Path('/file'), 'adriank1410/homebrew-intel', G)
+            self.assertEqual(run.call_count, 2)
+            sleep.assert_not_called()
+
     def test_no_attestation_bypass_without_gh(self):
         with patch('intelbrew.cli.shutil.which',return_value=None),self.assertRaises(Error):attest(Path('/file'),'adriank1410/homebrew-intel',G)
     def test_ci_refuses_normal_machine(self):
