@@ -4,6 +4,7 @@ import hashlib
 import io
 import json
 import os
+import re
 import subprocess
 import tarfile
 import tempfile
@@ -12,7 +13,7 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 from intelbrew.cli import apply_plan, attest
-from intelbrew.ci import (_brew_install_args, _build_env, _prepare_source_sets, _validate_source_bundle,
+from intelbrew.ci import (_brew_install_args, _build_env, _generated_basename, _prepare_source_sets, _validate_source_bundle,
                          allowed_redistribution, build, permissive_license, require_ci_mac, runtime_closure,
                          source_bundle, transient_builds, verify)
 from intelbrew.core import ROOT, Error, Planner, load_config
@@ -20,6 +21,13 @@ from intelbrew.publish import release_tag
 from helpers import G, H, meta, record
 
 class OperationTests(unittest.TestCase):
+    def test_generated_names_remain_bounded_and_non_special(self):
+        for original in ("", ".", "..", "é" * 250, "LICENSE_" + "a" * 250):
+            name = _generated_basename(original)
+            self.assertRegex(name, r"\A[A-Za-z0-9@+_.-]{1,200}\Z")
+            self.assertNotIn(name, {".", ".."})
+        self.assertEqual(_generated_basename("LICENSE.txt"), "LICENSE.txt")
+
     def plan(self,m,records=None):
         return Planner(lambda names:{n:copy.deepcopy(m[n]) for n in names}, records or {}).make(['tool'])
     def test_missing_package_prevents_every_install(self):
@@ -249,6 +257,28 @@ class SourceBundleTests(unittest.TestCase):
             with tarfile.open(bundle) as archive:
                 index=json.load(archive.extractfile('sources.json'))
             self.assertEqual(index['notices'][0]['source'],'tool/LICENSES/GPL-3.0-only.txt')
+
+    def test_source_notice_artifacts_sanitize_and_preserve_colliding_paths(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder)
+            source=Path(sources['resources'][0]['path'])
+            notice_paths=('tool/LICENSE_a,js', 'tool/LICENSE_a js', 'tool/LICENSE_aéjs')
+            with tarfile.open(source, 'w:gz') as archive:
+                for index, name in enumerate(notice_paths):
+                    data=f'license text {index}'.encode()
+                    member=tarfile.TarInfo(name);member.size=len(data)
+                    archive.addfile(member, io.BytesIO(data))
+            sources['resources'][0]['sha256']=hashlib.sha256(source.read_bytes()).hexdigest()
+            bundle=source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
+            rec=record(formula_sha256=item['formula_sha256'],core_commit=item['formula_sha256'][:40],license='GPL-3.0-only')
+            _validate_source_bundle(bundle,rec,load_config())
+            with tarfile.open(bundle) as archive:
+                index=json.load(archive.extractfile('sources.json'))
+            self.assertEqual([item['source'] for item in index['notices']],list(notice_paths))
+            filenames=[item['filename'] for item in index['notices']]
+            self.assertEqual(len(set(filenames)),len(filenames))
+            for filename in filenames:
+                self.assertRegex(filename,re.compile(r'upstream-notices/[A-Za-z0-9@+_.-]+\Z'))
     def test_candidate_validation_hashes_indexed_source_archives(self):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);item,sources=self._fixture(folder)
@@ -462,6 +492,12 @@ class SourceBundleTests(unittest.TestCase):
                 ["brew", "install", "--build-bottle", "--no-ask", "homebrew/core/fastfetch"],
             ])
             self.assertEqual(sum(call.args[0][1:2] == ["bottle"] for call in run.call_args_list), 1)
+            setup = next(call for call in run.call_args_list if "install-bundler-gems" in call.args[0])
+            first_install = next(call for call in run.call_args_list if call.args[0][1:2] == ["install"])
+            self.assertLess(run.call_args_list.index(setup), run.call_args_list.index(first_install))
+            self.assertEqual(setup.args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install-bundler-gems", "--add-groups=bottle"])
+            self.assertEqual(setup.kwargs["env"]["BUNDLE_RETRY"], "3")
+            self.assertEqual(setup.kwargs["env"]["BUNDLE_TIMEOUT"], "30")
 
     def test_verify_does_not_install_transient_llvm(self):
         metadata = {'llvm': meta('llvm'), 'fastfetch': meta('fastfetch', build=['llvm'])}

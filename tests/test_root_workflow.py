@@ -15,6 +15,10 @@ def workflow(name):
 
 
 class RootWorkflowTests(unittest.TestCase):
+    def test_bottle_gems_are_not_unconditionally_bootstrapped_for_noop_runs(self):
+        steps = workflow("bottle-root.yml")["jobs"]["build"]["steps"]
+        self.assertFalse(any("install-bundler-gems" in step.get("run", "") for step in steps))
+
     def test_caller_fans_out_complete_root_pipelines_with_bounded_concurrency(self):
         document = workflow("bottles.yml")
         job = document["jobs"]["root-pipeline"]
