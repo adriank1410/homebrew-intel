@@ -1,53 +1,22 @@
 {
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
-  "cellar": "any",
+  "cellar": "/usr/local/Cellar",
   "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
-  "filename": "qtimageformats--6.11.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "05762f41faf680013bd20c32380a3fd2cc25b61d3df28a3da73d6832238b44c1",
-  "license": {
-    "all_of": [
-      {
-        "any_of": [
-          "LGPL-3.0-only",
-          "GPL-2.0-only",
-          "GPL-3.0-only"
-        ]
-      },
-      "BSD-3-Clause"
-    ]
-  },
-  "name": "qtimageformats",
-  "pkg_version": "6.11.2",
-  "recipe_sha256": "36b111f6256b1b9c52d54c4be66edabb6693a15c5a4c6248111e3646c554c6fe",
-  "release": "intel-34729347503-1-qtimageformats",
+  "filename": "ghostscript--10.08.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "5e1127c22e22c8a1732609f4cb7445593dfdc927dab89d7bb46bc78643a3154d",
+  "license": "AGPL-3.0-or-later",
+  "name": "ghostscript",
+  "pkg_version": "10.08.0",
+  "recipe_sha256": "ea188b4003cad4dca3ac7b46dd56391d04cfe506da0a7c074dbf0a7b9ed86277",
+  "release": "intel-34729347503-1-ghostscript",
   "revision": 0,
   "run_id": "34729347503",
   "runtime_dependencies": [
     {
-      "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
-      "name": "brotli",
-      "pkg_version": "1.2.0"
-    },
-    {
-      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
-      "name": "ca-certificates",
-      "pkg_version": "2026-08-13"
-    },
-    {
       "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
       "name": "cairo",
       "pkg_version": "1.18.4"
-    },
-    {
-      "formula_sha256": "f32f2de29dc4a6f56d401f6227c6d66f5b3601958566fe0e90ab6bdd006bd3b9",
-      "name": "dbus",
-      "pkg_version": "1.16.2_1"
-    },
-    {
-      "formula_sha256": "498525607d05dd29c7c33121a99edd8e04c863e9aae75ba60d6516901642ac4b",
-      "name": "double-conversion",
-      "pkg_version": "3.4.0"
     },
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -58,6 +27,11 @@
       "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
       "name": "freetype",
       "pkg_version": "2.14.3"
+    },
+    {
+      "formula_sha256": "be8dfebc1492e1c8af3ae1b4d4ba37a76d93501dc03ce342419d397c865abc26",
+      "name": "fribidi",
+      "pkg_version": "1.0.16"
     },
     {
       "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
@@ -90,9 +64,9 @@
       "pkg_version": "78.3"
     },
     {
-      "formula_sha256": "820f24b91bfe445426e39da65f50100a95dfa56e4a59e4805127931573152b1e",
-      "name": "jasper",
-      "pkg_version": "4.2.9"
+      "formula_sha256": "5b4f1f0b5f0870a5dff3a9440eb3f3678b03507670114621c367703206fcd4a0",
+      "name": "jbig2dec",
+      "pkg_version": "0.20"
     },
     {
       "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
@@ -105,19 +79,39 @@
       "pkg_version": "0.19"
     },
     {
+      "formula_sha256": "0785c1d81e62af0ffc1edae8b8d5808dc6049a8439398cd498919b9d6d8124df",
+      "name": "leptonica",
+      "pkg_version": "1.87.0"
+    },
+    {
+      "formula_sha256": "f70c717f702afc86174a032f225770d1f9726ed2ab0b1520722cbea02561cbfb",
+      "name": "libarchive",
+      "pkg_version": "3.8.9"
+    },
+    {
       "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
       "name": "libb2",
       "pkg_version": "0.98.1"
     },
     {
-      "formula_sha256": "8872e2cbc52a0789952e144639d75af38487e18b02933b63cdfebf02afda65fd",
-      "name": "libmng",
-      "pkg_version": "2.0.3_1"
+      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
+      "name": "libdatrie",
+      "pkg_version": "0.2.14"
+    },
+    {
+      "formula_sha256": "c44216de1af0316c3b9731ae375b77ad41f47502a8a16a9aed4ce0762a2b30fa",
+      "name": "libidn",
+      "pkg_version": "1.44"
     },
     {
       "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
       "name": "libpng",
       "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "name": "libthai",
+      "pkg_version": "0.1.30"
     },
     {
       "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
@@ -175,14 +169,14 @@
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "a50e91b1ed02fea29f911c51d15d97c31d09b6d9ddb8bf8e970683010f770222",
-      "name": "md4c",
-      "pkg_version": "0.5.3"
+      "formula_sha256": "6a48673ebc726759892a79ecb9f6d710fdb25dcdc322d055ecf27c4bc9db8e0e",
+      "name": "openjpeg",
+      "pkg_version": "2.5.4"
     },
     {
-      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
-      "name": "openssl@3",
-      "pkg_version": "3.6.4"
+      "formula_sha256": "1ada8fc68572490e56b08ff09b257b2a7f6f9025c766321e77debeb1be4d917e",
+      "name": "pango",
+      "pkg_version": "1.58.2"
     },
     {
       "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
@@ -195,9 +189,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5",
-      "name": "qtbase",
-      "pkg_version": "6.11.2"
+      "formula_sha256": "6caa9802cab7fdbf2da25e15e3c1bf38e7f2da3123d94a47f4e816af9e2f970c",
+      "name": "tesseract",
+      "pkg_version": "5.5.3"
     },
     {
       "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
@@ -221,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e6049e9e23251628fcc6d59a9f5da8dfbdfb2b57ec4b99d68b7211d586da56c2",
-  "size": 106514,
+  "sha256": "f1fbdd915e34cc4042bb7772bd3ca2a7e67dec72dd20e60b2fd69a788a710659",
+  "size": 43801980,
   "source": {
-    "filename": "qtimageformats--6.11.2.sources.tar.gz",
-    "sha256": "9774220810ff4b8b4120e01ea99264e6768cf66124c5491265434c2bb480b593",
-    "size": 2057161
+    "filename": "ghostscript--10.08.0.sources.tar.gz",
+    "sha256": "538370d34779f5867b7d77a4dcae06ef0a39bcc38627d4135c914b2ac6a46838",
+    "size": 78495449
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "10.08.0",
   "version_scheme": 0,
   "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
 }
