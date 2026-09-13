@@ -36,6 +36,31 @@ class ArchiveNoticeTests(unittest.TestCase):
             self.assertEqual(archive_notices(zip_path, 1024, 4),
                              [("pkg/NOTICE", b"zip notice"), ("pkg/LICENSE.txt", b"regular notice")])
 
+    def test_reads_spdx_license_texts_from_license_directory(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "qt-source.tar"
+            with tarfile.open(path, "w") as archive:
+                for name, data in (
+                        ("qt-source/LICENSES/BSD-3-Clause.txt", b"bsd license"),
+                        ("qt-source/LICENSES/LicenseRef-Qt-Commercial.txt", b"commercial terms"),
+                        ("qt-source/third-party/BSD-3-Clause.txt", b"outside license directory"),
+                        ("../LICENSES/GPL-3.0-only.txt", b"unsafe SPDX path")):
+                    member = tarfile.TarInfo(name); member.size = len(data)
+                    archive.addfile(member, io.BytesIO(data))
+            self.assertEqual(archive_notices(path, 1024, 4), [
+                ("qt-source/LICENSES/BSD-3-Clause.txt", b"bsd license"),
+                ("qt-source/LICENSES/LicenseRef-Qt-Commercial.txt", b"commercial terms"),
+            ])
+
+            zip_path = Path(folder) / "qt-source.zip"
+            with zipfile.ZipFile(zip_path, "w") as archive:
+                archive.writestr("qt-source/LICENSES/BSD-3-Clause.txt", b"zip bsd license")
+                archive.writestr("qt-source/LICENSES/README.md", b"not an SPDX text")
+                archive.writestr("qt-source/third-party/GPL-3.0-only.txt", b"outside license directory")
+            self.assertEqual(archive_notices(zip_path, 1024, 4), [
+                ("qt-source/LICENSES/BSD-3-Clause.txt", b"zip bsd license"),
+            ])
+
     def test_enforces_size_count_and_argument_bounds(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "source.tar"

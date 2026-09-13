@@ -15,6 +15,10 @@ from pathlib import Path, PurePosixPath
 from .core import Error
 
 NOTICE_NAME = re.compile(r"(?:LICENSE|LICENCE|COPYING|NOTICE|COPYRIGHT)(?:[._-].*)?\Z", re.I)
+# Qt and other REUSE-style source trees keep SPDX license texts in the
+# canonical LICENSES/<SPDX identifier>.txt layout rather than using a
+# basename such as LICENSE or COPYING.
+SPDX_LICENSE_NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9.+-]*\.txt\Z", re.I)
 PYTHON_TAR_SUFFIXES = (".tar", ".tar.gz", ".tgz", ".tar.bz2", ".tbz", ".tbz2", ".tar.xz", ".txz")
 LIBARCHIVE_SUFFIXES = (".tar.lz", ".tlz", ".tar.zst", ".tzst", ".7z")
 MAX_ARCHIVE_STREAM = 2_000_000_000
@@ -24,6 +28,14 @@ ARCHIVE_TIMEOUT = 60
 def _safe_name(value: str) -> bool:
     name = PurePosixPath(value)
     return bool(value) and not name.is_absolute() and ".." not in name.parts
+
+
+def _is_notice(value: str) -> bool:
+    path = PurePosixPath(value)
+    return bool(NOTICE_NAME.fullmatch(path.name) or (
+        len(path.parts) >= 2 and path.parts[-2] == "LICENSES"
+        and SPDX_LICENSE_NAME.fullmatch(path.name)
+    ))
 
 
 def _append_notice(found, seen, name, data, max_count, deduplicate):
@@ -42,7 +54,7 @@ def _read_tar(archive: tarfile.TarFile, max_size: int, max_count: int, deduplica
     seen = set()
     for member in archive:
         if (member.isfile() and _safe_name(member.name)
-                and NOTICE_NAME.fullmatch(PurePosixPath(member.name).name)
+                and _is_notice(member.name)
                 and 0 < member.size <= max_size):
             handle = archive.extractfile(member)
             data = handle.read(max_size + 1) if handle else b""
@@ -115,7 +127,7 @@ def archive_notices(path: Path, max_notice_size: int, max_notices: int, *, dedup
                 for member in archive.infolist():
                     mode = (member.external_attr >> 16) & 0o170000
                     if (not member.is_dir() and mode in (0, 0o100000) and _safe_name(member.filename)
-                            and NOTICE_NAME.fullmatch(PurePosixPath(member.filename).name)
+                            and _is_notice(member.filename)
                             and 0 < member.file_size <= max_notice_size):
                         data = archive.read(member)
                         if len(data) != member.file_size:
