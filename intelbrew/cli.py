@@ -10,6 +10,7 @@ import platform
 import shutil
 import sys
 import tempfile
+import time
 from collections import Counter
 from pathlib import Path
 
@@ -35,16 +36,24 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
     # Reusable workflows are the signer, while old releases retain the
     # original top-level signer. Both must match the exact source commit.
     for workflow in ("bottle-root.yml", "bottles.yml"):
-        try:
-            run(["gh", "attestation", "verify", str(path), "--repo", repository,
-                 "--signer-workflow", f"{repository}/.github/workflows/{workflow}",
-                 "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
-                 "--signer-digest", workflow_commit, "--deny-self-hosted-runners"],
-                capture=not verbose, env=env)
-            return
-        except Error:
-            if workflow == "bottles.yml":
-                raise
+        args = ["gh", "attestation", "verify", str(path), "--repo", repository,
+                "--signer-workflow", f"{repository}/.github/workflows/{workflow}",
+                "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
+                "--signer-digest", workflow_commit, "--deny-self-hosted-runners"]
+        for attempt in range(3):
+            try:
+                run(args, capture=not verbose, env=env)
+                return
+            except Error as exc:
+                # gh initializes Sigstore's public-good verifier in each
+                # process. A transient trust-root/network initialization
+                # failure is safe to retry; signature and identity failures
+                # remain fail-closed and are never retried.
+                if "public good verifier is not available" not in str(exc) or attempt == 2:
+                    if workflow == "bottles.yml":
+                        raise
+                    break
+                time.sleep(2 ** attempt)
 
 
 
