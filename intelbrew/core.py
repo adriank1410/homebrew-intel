@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 """Pure planning, validation and transport. No Homebrew mutations happen here."""
 from __future__ import annotations
-import hashlib,json,os,re,subprocess,tarfile,urllib.parse,urllib.request
+import hashlib,json,os,re,socket,subprocess,tarfile,time,urllib.error,urllib.parse,urllib.request
 from pathlib import Path,PurePosixPath
 ROOT=Path(__file__).resolve().parents[1];NAME=re.compile(r"[a-z0-9][a-z0-9+_.-]*(?:@[0-9][a-z0-9+_.-]*)?\Z");SHA256=re.compile(r"[0-9a-f]{64}\Z");SHA1=re.compile(r"[0-9a-f]{40}\Z");TAG=re.compile(r"intel-[0-9]+-[0-9]+-[a-z0-9_.+-]+\Z");MAX_JSON=8*1024*1024;MAX_ARTIFACT=2_000_000_000
 RECORD_KEYS={"schema","name","version","revision","version_scheme","pkg_version","formula_sha256","recipe_sha256","core_commit","brew_commit","tag","arch","cellar","filename","sha256","size","license","runtime_dependencies","source","release","workflow_commit","run_id"}
@@ -168,16 +168,26 @@ def download(url,target,expected_sha,expected_size):
         if target.is_symlink() or not target.is_file():raise Error('Unsafe cache entry')
         if target.stat().st_size==expected_size and digest(target)==expected_sha:return target
         raise Error(f'Existing cache file invalid; retained: {target}')
-    target.parent.mkdir(parents=True,exist_ok=True);part=target.with_name(target.name+f'.partial-{os.getpid()}');opener=urllib.request.build_opener(SafeRedirect());h=hashlib.sha256();total=0
-    try:
-        with opener.open(url,timeout=60) as response,part.open('xb') as out:
-            while True:
-                chunk=response.read(1024*1024)
-                if not chunk:break
-                total+=len(chunk)
-                if total>expected_size:raise Error('Artifact exceeds expected length')
-                out.write(chunk);h.update(chunk)
-    except (OSError,ValueError) as exc:raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
+    target.parent.mkdir(parents=True,exist_ok=True);part=target.with_name(target.name+f'.partial-{os.getpid()}');opener=urllib.request.build_opener(SafeRedirect())
+    for attempt in range(3):
+        h=hashlib.sha256();total=0
+        try:
+            part.unlink(missing_ok=True)
+            with opener.open(url,timeout=60) as response,part.open('xb') as out:
+                while True:
+                    chunk=response.read(1024*1024)
+                    if not chunk:break
+                    total+=len(chunk)
+                    if total>expected_size:raise Error('Artifact exceeds expected length')
+                    out.write(chunk);h.update(chunk)
+            break
+        except (OSError,ValueError) as exc:
+            retryable = isinstance(exc, (TimeoutError, socket.timeout)) or (
+                isinstance(exc, urllib.error.URLError) and
+                isinstance(exc.reason, (TimeoutError, socket.timeout)))
+            if not retryable or attempt == 2:
+                raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
+            time.sleep(2 ** attempt)
     if total!=expected_size or h.hexdigest()!=expected_sha:raise Error(f'Checksum/size mismatch; retained at {part}')
     os.link(part,target);return target
 
