@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
+  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
   "filename": "imagemagick--7.1.2-31.sequoia.bottle.tar.gz",
   "formula_sha256": "931f92fc83fb406e2f2f7568dfd304277e3e1fddbf0c34fe32b0f67f42230fc1",
   "license": "ImageMagick",
   "name": "imagemagick",
   "pkg_version": "7.1.2-31",
   "recipe_sha256": "43ce800f4e72586b411ce3b191a928ea5c06ce501339e5f03ae9d0a30493215a",
-  "release": "intel-34707292687-1-imagemagick",
+  "release": "intel-34729347503-1-imagemagick",
   "revision": 0,
-  "run_id": "34707292687",
+  "run_id": "34729347503",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -89,9 +89,9 @@
       "pkg_version": "4.3"
     },
     {
-      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
       "name": "xz",
-      "pkg_version": "5.8.3"
+      "pkg_version": "5.8.4"
     },
     {
       "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
@@ -100,15 +100,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ed33db6af34813cd206f3242c76a8d34458a065ebcc4534889cc473d46f4a8a7",
-  "size": 10984820,
+  "sha256": "6d8caa30ad503c3489675d7e3b387e0a342a2d8bafe38c29cb535e82b2cc48ea",
+  "size": 10984877,
   "source": {
     "filename": "imagemagick--7.1.2-31.sources.tar.gz",
-    "sha256": "884640f7e534ab09a53fb30b57e5c2c879277f0f6882c2b003439d77460355ab",
-    "size": 10253812
+    "sha256": "a2b827c79bc89279aa3935de478d6f14023f1c96708b1da77ca7ada2e482828b",
+    "size": 10253816
   },
   "tag": "sequoia",
   "version": "7.1.2-31",
   "version_scheme": 0,
-  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
+  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
 }
