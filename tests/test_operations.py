@@ -190,15 +190,16 @@ class SourceBundleTests(unittest.TestCase):
             for member,data in entries:
                 if member.name==name:data=replacement;member.size=len(data)
                 target.addfile(member,io.BytesIO(data) if data is not None else None)
-    def _fixture(self,folder,*,zip_source=False,notice=True):
+    def _fixture(self,folder,*,zip_source=False,notice=True,notice_name=None):
         recipe=folder/'tool.rb';recipe.write_text('class Tool < Formula\nend\n')
         source=folder/('source.zip' if zip_source else 'source.tar.gz')
+        notice_name=notice_name or 'tool/COPYING'
         if zip_source:
             with zipfile.ZipFile(source,'w') as archive:
-                archive.writestr('tool/COPYING' if notice else 'tool/main.c',b'license text')
+                archive.writestr(notice_name if notice else 'tool/main.c',b'license text')
         else:
             with tarfile.open(source,'w:gz') as archive:
-                data=b'license text';member=tarfile.TarInfo('tool/COPYING' if notice else 'tool/main.c');member.size=len(data);archive.addfile(member,io.BytesIO(data))
+                data=b'license text';member=tarfile.TarInfo(notice_name if notice else 'tool/main.c');member.size=len(data);archive.addfile(member,io.BytesIO(data))
         item=meta(license='GPL-3.0-only',formula_sha256=hashlib.sha256(recipe.read_bytes()).hexdigest())
         sources={'formula_sha256':item['formula_sha256'],'formula_path':str(recipe),'resources':[{'label':'main','url':'https://example.test/source','path':str(source),'sha256':hashlib.sha256(source.read_bytes()).hexdigest()}]}
         return item,sources
@@ -218,6 +219,16 @@ class SourceBundleTests(unittest.TestCase):
                 _validate_source_bundle(bundle,{**rec,'core_commit':'b'*40},load_config())
             self._replace_member(bundle,'recipe/tool.rb',b'changed recipe')
             with self.assertRaisesRegex(Error,'recipe checksum'):_validate_source_bundle(bundle,rec,load_config())
+
+    def test_source_required_bundle_copies_spdx_license_directory_notice(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder,notice_name='tool/LICENSES/GPL-3.0-only.txt')
+            bundle=source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
+            rec=record(formula_sha256=item['formula_sha256'],core_commit=item['formula_sha256'][:40],license='GPL-3.0-only')
+            _validate_source_bundle(bundle,rec,load_config())
+            with tarfile.open(bundle) as archive:
+                index=json.load(archive.extractfile('sources.json'))
+            self.assertEqual(index['notices'][0]['source'],'tool/LICENSES/GPL-3.0-only.txt')
     def test_candidate_validation_hashes_indexed_source_archives(self):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);item,sources=self._fixture(folder)
