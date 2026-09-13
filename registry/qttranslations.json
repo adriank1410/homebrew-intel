@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "9fa5bea54beb3a1cc9d1a5221a8840d27e576dc8",
+  "filename": "qttranslations--6.11.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "67e6b800dce81eff2a3861fdb811e479441005652664fcd890c5dcab85d50b6d",
+  "license": "BSD-3-Clause",
+  "name": "qttranslations",
+  "pkg_version": "6.11.2",
+  "recipe_sha256": "79768d52aa0786e340355c05d3ff6c7b0ebe1f46544027ea1ea71886384e94c6",
+  "release": "intel-34775782099-1-qttranslations",
+  "revision": 0,
+  "run_id": "34775782099",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "2ee85122d4a6a1c5dadf4bf463cc4bff2712a196dc6a281c8fbc320c1cbabf01",
+  "size": 4417347,
+  "source": {
+    "filename": "qttranslations--6.11.2.sources.tar.gz",
+    "sha256": "90a580024acfba82075224788219623227b3764b7a6dd30ff71219353b48781c",
+    "size": 1710621
+  },
+  "tag": "sequoia",
+  "version": "6.11.2",
+  "version_scheme": 0,
+  "workflow_commit": "f854ccf1190d991c4408fdb6c0d4f8bed5136fb6"
+}
