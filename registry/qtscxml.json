@@ -1,22 +1,38 @@
 {
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
-  "cellar": "any_skip_relocation",
-  "core_commit": "5a9f743681ece1e8328418ac857a37800f1acfc2",
-  "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "f05bfef0e76fddab5b9fa9d4a6aeb1b050b0e1acb4b3de7cd79bc84709a552b0",
-  "license": "BSD-3-Clause",
-  "name": "weasyprint",
-  "pkg_version": "70.0",
-  "recipe_sha256": "9b020ade6c3e3802260f2cb7fc3e21ef35ee7f68e8db55cf2bfbc9a2da5956f8",
-  "release": "intel-34771716566-1-weasyprint",
+  "cellar": "any",
+  "core_commit": "9fa5bea54beb3a1cc9d1a5221a8840d27e576dc8",
+  "filename": "qtscxml--6.11.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "f157a265ca428f7cc76eb15a765550508fb467dc7376e3adb0d7dea1f261b3c8",
+  "license": {
+    "all_of": [
+      {
+        "any_of": [
+          "LGPL-3.0-only",
+          "GPL-2.0-only",
+          "GPL-3.0-only"
+        ]
+      },
+      {
+        "GPL-3.0-only": {
+          "with": "Qt-GPL-exception-1.0"
+        }
+      },
+      "BSD-3-Clause"
+    ]
+  },
+  "name": "qtscxml",
+  "pkg_version": "6.11.2",
+  "recipe_sha256": "2e7ec7ebef32342cbb38974aa69b78751de9997095ae05410661e416702693fb",
+  "release": "intel-34775782099-1-qtscxml",
   "revision": 0,
-  "run_id": "34771716566",
+  "run_id": "34775782099",
   "runtime_dependencies": [
     {
-      "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
-      "name": "aom",
-      "pkg_version": "3.15.0"
+      "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
     },
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -29,14 +45,14 @@
       "pkg_version": "1.18.4"
     },
     {
-      "formula_sha256": "5fe26cd8c39842f2648b95c4138472e6c904350e5e146b46e60058065d089607",
-      "name": "cffi",
-      "pkg_version": "2.1.1"
+      "formula_sha256": "f32f2de29dc4a6f56d401f6227c6d66f5b3601958566fe0e90ab6bdd006bd3b9",
+      "name": "dbus",
+      "pkg_version": "1.16.2_1"
     },
     {
-      "formula_sha256": "6c96636f03986330f28ae4760357515cf27503b310e57d387d24c96ed2eee3c0",
-      "name": "dav1d",
-      "pkg_version": "1.5.4"
+      "formula_sha256": "498525607d05dd29c7c33121a99edd8e04c863e9aae75ba60d6516901642ac4b",
+      "name": "double-conversion",
+      "pkg_version": "3.4.0"
     },
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -49,19 +65,9 @@
       "pkg_version": "2.14.3"
     },
     {
-      "formula_sha256": "be8dfebc1492e1c8af3ae1b4d4ba37a76d93501dc03ce342419d397c865abc26",
-      "name": "fribidi",
-      "pkg_version": "1.0.16"
-    },
-    {
       "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
       "name": "gettext",
       "pkg_version": "1.0"
-    },
-    {
-      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
-      "name": "giflib",
-      "pkg_version": "6.1.3"
     },
     {
       "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
@@ -94,19 +100,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "2248b595b83c4c7154828fe2fde7029006340eae943f672acf66c18ddac6942e",
-      "name": "libavif",
-      "pkg_version": "1.4.2"
-    },
-    {
-      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
-      "name": "libdatrie",
-      "pkg_version": "0.2.14"
-    },
-    {
-      "formula_sha256": "7d049dd0bacbfeee7f19b57982b14e3d1ec34ec363db5eb9fdb8235c79cc9803",
-      "name": "libimagequant",
-      "pkg_version": "4.4.1"
+      "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
+      "name": "libb2",
+      "pkg_version": "0.98.1"
     },
     {
       "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
@@ -114,29 +110,9 @@
       "pkg_version": "1.6.58"
     },
     {
-      "formula_sha256": "2a42e317e081aa41d6f9fa06999711bd30a2d52c2ca2379e4046caeb2e446e7f",
-      "name": "libraqm",
-      "pkg_version": "0.11.0"
-    },
-    {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
-      "name": "libthai",
-      "pkg_version": "0.1.30"
-    },
-    {
-      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
-      "name": "libtiff",
-      "pkg_version": "4.7.2"
-    },
-    {
       "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
       "name": "libunistring",
       "pkg_version": "1.4.2"
-    },
-    {
-      "formula_sha256": "13f5592d1541a7d5818eccede33b981754c6311117494fefccffa015aacd860d",
-      "name": "libvmaf",
-      "pkg_version": "3.2.0"
     },
     {
       "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
@@ -169,11 +145,6 @@
       "pkg_version": "0.9.12"
     },
     {
-      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
-      "name": "little-cms2",
-      "pkg_version": "2.19.1"
-    },
-    {
       "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
       "name": "lz4",
       "pkg_version": "1.10.0"
@@ -184,14 +155,9 @@
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
-      "name": "mpdecimal",
-      "pkg_version": "4.0.1"
-    },
-    {
-      "formula_sha256": "6a48673ebc726759892a79ecb9f6d710fdb25dcdc322d055ecf27c4bc9db8e0e",
-      "name": "openjpeg",
-      "pkg_version": "2.5.4"
+      "formula_sha256": "a50e91b1ed02fea29f911c51d15d97c31d09b6d9ddb8bf8e970683010f770222",
+      "name": "md4c",
+      "pkg_version": "0.5.3"
     },
     {
       "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
@@ -199,19 +165,9 @@
       "pkg_version": "3.6.4"
     },
     {
-      "formula_sha256": "1ada8fc68572490e56b08ff09b257b2a7f6f9025c766321e77debeb1be4d917e",
-      "name": "pango",
-      "pkg_version": "1.58.2"
-    },
-    {
       "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
       "name": "pcre2",
       "pkg_version": "10.48"
-    },
-    {
-      "formula_sha256": "4a7cf784896ad48a7773dba4ddb6df5e6539be301b22e05a2dce6e0fc8a330ca",
-      "name": "pillow",
-      "pkg_version": "12.3.0"
     },
     {
       "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
@@ -219,29 +175,19 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "75ed36fe143658d6df206ce89736375eca0d0e3e1d643372118e021982a5e40e",
-      "name": "pycparser",
-      "pkg_version": "3.0"
+      "formula_sha256": "77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5",
+      "name": "qtbase",
+      "pkg_version": "6.11.2"
     },
     {
-      "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
-      "name": "python@3.14",
-      "pkg_version": "3.14.7"
+      "formula_sha256": "2f9fe816e3395954bfee008a2264febf22f19f06f66da69d8c00420140a8949b",
+      "name": "qtdeclarative",
+      "pkg_version": "6.11.2"
     },
     {
-      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
-      "name": "readline",
-      "pkg_version": "8.3.3"
-    },
-    {
-      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
-      "name": "sqlite",
-      "pkg_version": "3.53.4"
-    },
-    {
-      "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
-      "name": "webp",
-      "pkg_version": "1.6.0"
+      "formula_sha256": "fe293ee50461aa75cde69e469530d85bd05b1e723f69a1a3dd58097d7d9de8a2",
+      "name": "qtsvg",
+      "pkg_version": "6.11.2"
     },
     {
       "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
@@ -260,15 +206,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9d9abb7470a9829345656621cdae1c94469509e3ed48f7b7d1101d45165a392b",
-  "size": 4054658,
+  "sha256": "79c7b025384158a0fe513022cb14b52ae428f5d0fb6492c7517ae3406acc1b16",
+  "size": 656288,
   "source": {
-    "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "57fcc45dd2b8ab20a79d51870e85e887e56a510fc66ab85ea847d7387bdca567",
-    "size": 15193722
+    "filename": "qtscxml--6.11.2.sources.tar.gz",
+    "sha256": "258830789b9fa7d80c4a490307f7912dd5557c38e5f170e41c852af8831f31d4",
+    "size": 591670
   },
   "tag": "sequoia",
-  "version": "70.0",
+  "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "c1df2729075803bd4a5583bb919c29f5bded384e"
+  "workflow_commit": "f854ccf1190d991c4408fdb6c0d4f8bed5136fb6"
 }
