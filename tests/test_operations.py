@@ -492,6 +492,12 @@ class SourceBundleTests(unittest.TestCase):
                 ["brew", "install", "--build-bottle", "--no-ask", "homebrew/core/fastfetch"],
             ])
             self.assertEqual(sum(call.args[0][1:2] == ["bottle"] for call in run.call_args_list), 1)
+            setup = next(call for call in run.call_args_list if "install-bundler-gems" in call.args[0])
+            first_install = next(call for call in run.call_args_list if call.args[0][1:2] == ["install"])
+            self.assertLess(run.call_args_list.index(setup), run.call_args_list.index(first_install))
+            self.assertEqual(setup.args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install-bundler-gems", "--add-groups=bottle"])
+            self.assertEqual(setup.kwargs["env"]["BUNDLE_RETRY"], "3")
+            self.assertEqual(setup.kwargs["env"]["BUNDLE_TIMEOUT"], "30")
 
     def test_verify_does_not_install_transient_llvm(self):
         metadata = {'llvm': meta('llvm'), 'fastfetch': meta('fastfetch', build=['llvm'])}
