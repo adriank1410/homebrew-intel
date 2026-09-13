@@ -1,6 +1,7 @@
 #!/bin/bash
 # SPDX-License-Identifier: BSD-2-Clause
-# Only wrap repeatable network fetches, never runner preparation or installs.
+# Only wrap repeatable network fetches or idempotent tool bootstrapping,
+# never runner preparation, formula installs or builds.
 set -u
 for attempt in 1 2 3; do
   "$@" && exit 0

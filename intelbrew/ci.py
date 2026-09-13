@@ -203,6 +203,17 @@ def _safe_archive_name(value:str)->bool:
     return bool(value) and not path.is_absolute() and ".." not in path.parts
 
 
+_UNSAFE_GENERATED_FILENAME = re.compile(r"[^A-Za-z0-9@+_.-]")
+
+
+def _generated_basename(value:str)->str:
+    """Map an untrusted source basename to a safe bounded artifact name."""
+    raw=PurePosixPath(value).name
+    safe=_UNSAFE_GENERATED_FILENAME.sub("_",raw)[:200]
+    if not safe or safe in {".",".."}:safe="_"
+    return safe
+
+
 def _building_text(name:str,core_commit:str,brew_commit:str,requirements=())->bytes:
     altered=("\nThis is a Homebrew-packaged and patched build, not an unmodified upstream "
              "Info-ZIP release. The recipe and indexed patch archive identify every applied change.\n"
@@ -236,7 +247,7 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
         for i,res in enumerate(sources["resources"]):
             path=Path(res["path"])
             if path.is_symlink() or not path.is_file() or digest(path)!=res["sha256"]:raise Error("Source archive changed")
-            filename=f'{i:03d}-{basename(path.name)}';bundle.add(path,arcname=f"inputs/{filename}",recursive=False)
+            filename=f'{i:03d}-{_generated_basename(path.name)}';bundle.add(path,arcname=f"inputs/{filename}",recursive=False)
             index["resources"].append({"filename":f"inputs/{filename}","label":res["label"],"url":res["url"],"sha256":res["sha256"]})
             try:
                 notices = archive_notices(path, MAX_JSON, MAX_SOURCE_NOTICES, deduplicate=True)
@@ -246,7 +257,7 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
                 raise
             for source_name,data in notices:
                 if len(index["notices"])>=MAX_SOURCE_NOTICES:raise Error("Too many upstream license notices")
-                notice_name=f"upstream-notices/{i:03d}-{len(index['notices']):03d}-{basename(PurePosixPath(source_name).name)}"
+                notice_name=f"upstream-notices/{i:03d}-{len(index['notices']):03d}-{_generated_basename(source_name)}"
                 info=tarfile.TarInfo(notice_name);info.size=len(data);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(data))
                 index["notices"].append({"filename":notice_name,"resource":f"inputs/{filename}","source":source_name,"sha256":hashlib.sha256(data).hexdigest()})
         if requirements:
@@ -258,7 +269,7 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
             if path.is_symlink() or not path.is_file() or path.stat().st_size!=item["size"] or digest(path)!=sha:raise Error("Build source changed")
             mode=item["mode"]
             if type(mode) is not int or mode not in (0o644,0o755) or path.stat().st_mode&0o7777!=mode:raise Error("Build source mode changed")
-            filename=f"build-inputs/{i:03d}-{basename(path.name)}";bundle.add(path,arcname=filename,recursive=False)
+            filename=f"build-inputs/{i:03d}-{_generated_basename(path.name)}";bundle.add(path,arcname=filename,recursive=False)
             index["build_sources"].append({"filename":filename,"label":item["label"],"sha256":sha,"size":item["size"],"mode":mode})
         data=(json.dumps(index,indent=2)+"\n").encode()
         if len(data)>MAX_JSON:raise Error("Source index exceeds budget")
@@ -369,6 +380,10 @@ def build(root:str,output:Path)->None:
         write_json_new(output/"manifest.json",manifest)
         validate_candidate(output,expected_root=root,verified=False)
         return
+    # Bootstrap only for nonempty builds, before expensive compilation. A no-op
+    # must not depend on RubyGems being reachable.
+    tooling_env=brew_env(ci=True);tooling_env.update(BUNDLE_RETRY="3",BUNDLE_TIMEOUT="30")
+    run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install-bundler-gems","--add-groups=bottle"],capture=False,env=tooling_env)
     work=Path(tempfile.mkdtemp(prefix="intelbrew-build-",dir=os.environ["RUNNER_TEMP"]))
     package_caches,source_sets=_prepare_source_sets(to_build,work)
     for name in plan["order"]:
