@@ -3,6 +3,7 @@
 # which older bottle tags and uses_from_macos dependencies are compatible.
 require "json";require "digest";require "open3";require "formula";require "formulary";require "tab";require "utils/bottles";require "download_strategy";require "package_manager_cache";require "tmpdir";require_relative "git_sources"
 require_relative "source_mirrors"
+require_relative "native_sources"
 module IntelbrewNative
   module_function
   def check_platform!
@@ -34,7 +35,7 @@ module IntelbrewNative
         GitSources.export(r,directory).merge("label"=>label)
       else
         SourceMirrors.add_gnu_fallback(r)
-        r.fetch(verify_download_integrity:true);c=r.cached_download
+        IntelbrewNativeSources.fetch(r,verify_download_integrity:true);c=r.cached_download
         raise "Non-archive/VCS resource needs review" unless c.file?
         raise "Resource lacks checksum" unless r.checksum
         {"label"=>label,"path"=>c.realpath.to_s,"url"=>r.url,"sha256"=>Digest::SHA256.file(c).hexdigest}
