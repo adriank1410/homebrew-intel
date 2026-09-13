@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "8904b17142b7c23f7b7759eb7a4cff3455b081c7",
+  "core_commit": "43848b5a734ebcd3692987facb900cef24658223",
   "filename": "pygobject3--3.58.0.sequoia.bottle.tar.gz",
   "formula_sha256": "e1cf16758e4ae0ff27791c3e49d8e6462d0b80dd05e57852afb98227231711f5",
   "license": "LGPL-2.1-or-later",
   "name": "pygobject3",
   "pkg_version": "3.58.0",
   "recipe_sha256": "18b8338f49f68a2baad6ca02ca574abb6b19843972aa7333c0cac291fcaabd0a",
-  "release": "intel-34689178258-1-pygobject3",
+  "release": "intel-34722247673-1-pygobject3",
   "revision": 0,
-  "run_id": "34689178258",
+  "run_id": "34722247673",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -154,9 +154,9 @@
       "pkg_version": "2025.1"
     },
     {
-      "formula_sha256": "b949b450ac781b6e497faad605f785b784e8af130b73fc60497e1d45f60c241d",
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
       "name": "xz",
-      "pkg_version": "5.8.3"
+      "pkg_version": "5.8.4"
     },
     {
       "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
@@ -165,15 +165,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "629edc5715a7859f68378235f08542b6ed783fc3262fe37e6bed3134cf9f1453",
-  "size": 469492,
+  "sha256": "a6e1cde67e070fef4b5223aa68a3761165a91b605f88a6ecd0079c4021223031",
+  "size": 469490,
   "source": {
     "filename": "pygobject3--3.58.0.sources.tar.gz",
-    "sha256": "d91db4816cba80ee8e1ddf535a2a5a17fa97f55ab9c1ae98afb2183f18dcdb19",
-    "size": 1423144
+    "sha256": "4ed6711a6ef4b7e76425efead18f86905b2b2bb0d697698e5de575533dce0052",
+    "size": 1423137
   },
   "tag": "sequoia",
   "version": "3.58.0",
   "version_scheme": 0,
-  "workflow_commit": "2317691b6b2a50a21da267cfb44f6c47dbb3fdfa"
+  "workflow_commit": "3a82d08e0841856e4d6558113eb2907aa7684ed0"
 }
