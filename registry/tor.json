@@ -2,9 +2,9 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "77f4bb7e8aa136e72360b5ad90c2b51968689d4e",
+  "core_commit": "43848b5a734ebcd3692987facb900cef24658223",
   "filename": "tor--0.4.9.12.sequoia.bottle.tar.gz",
-  "formula_sha256": "c6aad7b39ba2fbf230cd7d05d013f4e5dc7b78fa687a5f2b4002557b2bbcf6f6",
+  "formula_sha256": "5d5d2a1ec331137b5cc5cd78cdd8692f089efa633b30aa1335628d27594003e1",
   "license": {
     "all_of": [
       "BSD-2-Clause",
@@ -16,9 +16,9 @@
   "name": "tor",
   "pkg_version": "0.4.9.12",
   "recipe_sha256": "d7588e3bd6d6589a0633b80508468b57767ba1406201c28593235697b901efcd",
-  "release": "intel-34280013654-1-tor",
+  "release": "intel-34722247673-1-tor",
   "revision": 0,
-  "run_id": "34280013654",
+  "run_id": "34722247673",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -26,31 +26,31 @@
       "pkg_version": "2026-08-13"
     },
     {
-      "formula_sha256": "49944a48c7f91615296cdca9005612cc0d50647a683d08dce4d9b18776125e40",
+      "formula_sha256": "f565875361ae7603b136ca463390a93648b8352b881c3fabc6bf5c05d5223d2f",
       "name": "libevent",
       "pkg_version": "2.1.13"
     },
     {
-      "formula_sha256": "b1b7f9d9ca4fc1af90b1e1a901bd0e8c1f8ae5db131c46bff96a29ef470747e3",
+      "formula_sha256": "25d6c76c003b8f2e1b62b212eaa62c05ff1d549281d83fde01b42addc7b1a6ff",
       "name": "libscrypt",
       "pkg_version": "1.22"
     },
     {
-      "formula_sha256": "73888fb52f29a58de40f98a52c7bca601dcd5ef478f9b83a845e79b5e9b3aff2",
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
       "name": "openssl@3",
       "pkg_version": "3.6.4"
     }
   ],
   "schema": 1,
-  "sha256": "f0f5ea8e938cf9773b50a85ea8124504e86401e101a31ca8e17c469be87a48fc",
-  "size": 6878280,
+  "sha256": "58c6783612d19f404497b783ad971116100ccb0dcb686abec3f46848471ebfb8",
+  "size": 6878283,
   "source": {
     "filename": "tor--0.4.9.12.sources.tar.gz",
-    "sha256": "c655559747b603c3a91695830c4188d36df677a2f8be583c38a6b7dc1d128448",
-    "size": 10583595
+    "sha256": "628dca8209c1e00c36554b3238602f704920703cbe4bdffe720ae72cfe532dc1",
+    "size": 10589152
   },
   "tag": "sequoia",
   "version": "0.4.9.12",
   "version_scheme": 0,
-  "workflow_commit": "933f40f7f5013294d0ec8d71e1e0a07d2297fe25"
+  "workflow_commit": "3a82d08e0841856e4d6558113eb2907aa7684ed0"
 }
