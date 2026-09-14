@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "fd3453e2fd404cd16ade58344c9563c2f0ad5356",
+  "filename": "automake--1.19.sequoia.bottle.tar.gz",
+  "formula_sha256": "8ce3ce8f0cf478c1b731d69de8be0e98df57262254ad724d6ae1cca5413c2e75",
+  "license": "GPL-2.0-or-later",
+  "name": "automake",
+  "pkg_version": "1.19",
+  "recipe_sha256": "a80194366505c4627f0323205331dc791b98f9863207ccef150665d95af54f8c",
+  "release": "intel-34791788297-1-automake",
+  "revision": 0,
+  "run_id": "34791788297",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "6582f4faa6945b67be923d9221c743e2ab20e6b228538e67a59caaf66fd435a4",
+      "name": "autoconf",
+      "pkg_version": "2.73"
+    },
+    {
+      "formula_sha256": "4f77735ee9b10e73b569387e86f8c456c3d50d253d70325543dba1d6aba24675",
+      "name": "m4",
+      "pkg_version": "1.4.21"
+    }
+  ],
+  "schema": 1,
+  "sha256": "5793fafb624bc45db9cd35d2255a0d9c503db708e9aa76c841dc46ff61b7117d",
+  "size": 1082961,
+  "source": {
+    "filename": "automake--1.19.sources.tar.gz",
+    "sha256": "89d63abde2c5d93140083d5d847bed65869ed6795d81997acf5e1fa02dae6302",
+    "size": 1706593
+  },
+  "tag": "sequoia",
+  "version": "1.19",
+  "version_scheme": 0,
+  "workflow_commit": "67fe4d43a2b7975c00004a03c5f4e30afcb5e5d0"
+}
