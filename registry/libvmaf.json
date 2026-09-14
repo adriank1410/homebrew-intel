@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "abed9dced1d12849e83d1c01457ad1fbc9d50c8a",
+  "filename": "libvmaf--3.2.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "e26bc5341ea496e86d7f2be1f48a711235139d5ccd10556188d3c52b24a30f76",
+  "license": "BSD-2-Clause-Patent",
+  "name": "libvmaf",
+  "pkg_version": "3.2.1",
+  "recipe_sha256": "42eb77b2768bf4f4ff1d64170f54e3c368264cf0d4c555bf3f7d9863f32fa68e",
+  "release": "intel-34871728068-1-mat2",
+  "revision": 0,
+  "run_id": "34871728068",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "791685e295425abd44037321d7113b30c778ce2ee78004e08c1d9815808c2363",
+  "size": 1616096,
+  "source": {
+    "filename": "libvmaf--3.2.1.sources.tar.gz",
+    "sha256": "a435f884b43be436dd008481b7f57fb9d0c4085970bec1b03a4b1201d5d49838",
+    "size": 18587875
+  },
+  "tag": "sequoia",
+  "version": "3.2.1",
+  "version_scheme": 0,
+  "workflow_commit": "ae57cb21e11b8801d6370b27e80d9adc12e79d03"
+}
