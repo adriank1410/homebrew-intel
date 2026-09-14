@@ -65,7 +65,7 @@ def matrix_roots(candidates, *, max_roots=None):
 
 def roots_needing_build(roots, inspector, records, config):
     inspector.prime(roots)
-    needed = []
+    candidates = {}
     blocked = {}
     for root in roots:
         try:
@@ -83,9 +83,20 @@ def roots_needing_build(roots, inspector, records, config):
                 raise Error(f'{root}: source build budget exceeded')
             for name in builds:
                 allowed_redistribution(plan['nodes'][name], config)
-            needed.append((len(builds), root))
+            candidates[root] = builds
         except (Error, KeyError, OSError, TypeError, ValueError) as exc:
             blocked[root] = str(exc)
+    candidate_roots = set(candidates)
+    needed = []
+    for root, builds in candidates.items():
+        # Build shared source dependencies as their own roots first.  A root
+        # such as qtwebengine can otherwise compile the same Qt modules that
+        # are already queued as independent roots, consuming its entire
+        # six-hour GitHub-hosted runner budget before the root itself starts.
+        dependencies = set(builds).intersection(candidate_roots) - {root}
+        if dependencies:
+            continue
+        needed.append((len(builds), root))
     needed.sort(key=lambda item: (item[0], item[1]))
     return [root for _, root in needed], blocked
 
