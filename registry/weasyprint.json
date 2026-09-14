@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "5a9f743681ece1e8328418ac857a37800f1acfc2",
+  "core_commit": "9bc22e1e62d54e443b2518b6f121f867320ba7ae",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "f05bfef0e76fddab5b9fa9d4a6aeb1b050b0e1acb4b3de7cd79bc84709a552b0",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "9b020ade6c3e3802260f2cb7fc3e21ef35ee7f68e8db55cf2bfbc9a2da5956f8",
-  "release": "intel-34771716566-1-weasyprint",
+  "release": "intel-34807627311-1-weasyprint",
   "revision": 0,
-  "run_id": "34771716566",
+  "run_id": "34807627311",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -234,7 +234,7 @@
       "pkg_version": "8.3.3"
     },
     {
-      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
       "name": "sqlite",
       "pkg_version": "3.53.4"
     },
@@ -260,15 +260,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9d9abb7470a9829345656621cdae1c94469509e3ed48f7b7d1101d45165a392b",
-  "size": 4054658,
+  "sha256": "c10c5bc4ad47ecea4b9e8364dfa4c13777f63a59c9d3f088835c1db9d434e5e7",
+  "size": 4054659,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "57fcc45dd2b8ab20a79d51870e85e887e56a510fc66ab85ea847d7387bdca567",
-    "size": 15193722
+    "sha256": "747ff04aef12e097740657709ef973db19f23ea0c97b1f7d05b52df54ca73f50",
+    "size": 15193726
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "c1df2729075803bd4a5583bb919c29f5bded384e"
+  "workflow_commit": "651a93ac214fba63eb6f8c720b37dbcf79d6adad"
 }
