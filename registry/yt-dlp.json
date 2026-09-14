@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
+  "core_commit": "9bc22e1e62d54e443b2518b6f121f867320ba7ae",
   "filename": "yt-dlp--2026.8.19_1.sequoia.bottle.tar.gz",
   "formula_sha256": "470ecebe7f38ff38842cc964eaff61a7148a44617228b02ccfff34bd8a8c20ae",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.8.19_1",
   "recipe_sha256": "c13511f68b94eb5abb88171dd98e767190c66d119d317e2b8430c9c5a40c00d0",
-  "release": "intel-34729347503-1-yt-dlp",
+  "release": "intel-34807627311-1-yt-dlp",
   "revision": 1,
-  "run_id": "34729347503",
+  "run_id": "34807627311",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -89,7 +89,7 @@
       "pkg_version": "8.3.3"
     },
     {
-      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
       "name": "sqlite",
       "pkg_version": "3.53.4"
     },
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ca823fc7ddb5e0c1b45fe492a4c86a9450cf154bc5ced8559fc4a2c89baa1a56",
-  "size": 8421666,
+  "sha256": "d1dc340675045680fe98552e5ea8568870bfeed2a79dad40272a8cb74c996a83",
+  "size": 8421755,
   "source": {
     "filename": "yt-dlp--2026.8.19_1.sources.tar.gz",
-    "sha256": "04ad6a48e19aa342793298e67e42d93f7f2c1c9865a8529d4853a51b53aa316e",
-    "size": 18095775
+    "sha256": "b3ecb580cfe7ed10817e83461283adcd1b01e17def281d3ce9658e15a99c6d43",
+    "size": 18095753
   },
   "tag": "sequoia",
   "version": "2026.8.19",
   "version_scheme": 0,
-  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
+  "workflow_commit": "651a93ac214fba63eb6f8c720b37dbcf79d6adad"
 }
