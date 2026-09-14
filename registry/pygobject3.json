@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "43848b5a734ebcd3692987facb900cef24658223",
+  "core_commit": "9bc22e1e62d54e443b2518b6f121f867320ba7ae",
   "filename": "pygobject3--3.58.0.sequoia.bottle.tar.gz",
   "formula_sha256": "e1cf16758e4ae0ff27791c3e49d8e6462d0b80dd05e57852afb98227231711f5",
   "license": "LGPL-2.1-or-later",
   "name": "pygobject3",
   "pkg_version": "3.58.0",
   "recipe_sha256": "18b8338f49f68a2baad6ca02ca574abb6b19843972aa7333c0cac291fcaabd0a",
-  "release": "intel-34722247673-1-pygobject3",
+  "release": "intel-34807627311-1-pygobject3",
   "revision": 0,
-  "run_id": "34722247673",
+  "run_id": "34807627311",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -144,7 +144,7 @@
       "pkg_version": "8.3.3"
     },
     {
-      "formula_sha256": "f3f4f41081e67253fd8fdb38da3ccb88e855731884b3dc0a160bf0ba42effae8",
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
       "name": "sqlite",
       "pkg_version": "3.53.4"
     },
@@ -165,15 +165,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a6e1cde67e070fef4b5223aa68a3761165a91b605f88a6ecd0079c4021223031",
-  "size": 469490,
+  "sha256": "0f4e0a04eced70c87e30bd81b4259a9c71afe62794de561c5d9875692d3b4b45",
+  "size": 469499,
   "source": {
     "filename": "pygobject3--3.58.0.sources.tar.gz",
-    "sha256": "4ed6711a6ef4b7e76425efead18f86905b2b2bb0d697698e5de575533dce0052",
-    "size": 1423137
+    "sha256": "193e2e37e4786640497eb3bf2e664f9241f7f1a91ec2e32d2fc87c76fdf076be",
+    "size": 1434337
   },
   "tag": "sequoia",
   "version": "3.58.0",
   "version_scheme": 0,
-  "workflow_commit": "3a82d08e0841856e4d6558113eb2907aa7684ed0"
+  "workflow_commit": "651a93ac214fba63eb6f8c720b37dbcf79d6adad"
 }
