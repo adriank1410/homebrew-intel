@@ -309,7 +309,7 @@ class PlanWorkflowTests(unittest.TestCase):
         self.assertEqual(needed, ["valid"])
         self.assertEqual(blocked, {"vcs": "VCS source needs review: vcs"})
 
-    def test_roots_needing_build_prioritizes_fewer_builds(self):
+    def test_roots_needing_build_prioritizes_fewer_builds_and_defers_dependents(self):
         class Inspector:
             def prime(self, names):
                 pass
@@ -344,7 +344,33 @@ class PlanWorkflowTests(unittest.TestCase):
                   "blocked_source_builds": [], "permissive_license_tokens": ["MIT"],
                   "redistribution_exceptions": {}}
         needed, blocked = native_plan.roots_needing_build(["app", "other-base", "base"], Inspector(), {}, config)
-        self.assertEqual(needed, ["base", "other-base", "app"])
+        self.assertEqual(needed, ["base", "other-base"])
+        self.assertEqual(blocked, {})
+
+    def test_roots_needing_build_defers_root_until_build_dependencies_publish(self):
+        def meta(name, *, runtime=()):
+            return {
+                "name": name, "tap": "homebrew/core", "version": "1.0",
+                "revision": 0, "version_scheme": 0, "pkg_version": "1.0",
+                "formula_sha256": ("a" if name == "base" else "b") * 64,
+                "runtime": list(runtime), "build": [], "test": [],
+                "official_bottle": False, "vcs_source": False, "license": "MIT",
+            }
+
+        class Inspector:
+            def prime(self, names):
+                pass
+
+            def __call__(self, names):
+                return {name: meta(name, runtime=("base",) if name == "app" else ())
+                        for name in names}
+
+        config = {"max_graph_nodes": 20, "max_source_builds": 5,
+                  "blocked_source_builds": [], "permissive_license_tokens": ["MIT"],
+                  "redistribution_exceptions": {}}
+        needed, blocked = native_plan.roots_needing_build(
+            ["app", "base"], Inspector(), {}, config)
+        self.assertEqual(needed, ["base"])
         self.assertEqual(blocked, {})
 
 
