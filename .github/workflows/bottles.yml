@@ -95,5 +95,8 @@ jobs:
     with:
       root: ${{ matrix.root }}
       core_commit: ${{ needs.plan.outputs.core_commit }}
+      # Qt WebEngine can legitimately exceed the normal six-hour source-build
+      # bound; keep the longer ceiling limited to the three Qt roots.
+      build_timeout_minutes: ${{ (matrix.root == 'qt' || matrix.root == 'qtwebengine' || matrix.root == 'qtwebview') && 720 || 360 }}
     secrets:
       app_private_key: ${{ secrets.INTELBREW_APP_PRIVATE_KEY }}

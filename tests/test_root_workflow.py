@@ -28,6 +28,7 @@ class RootWorkflowTests(unittest.TestCase):
         self.assertEqual(job["with"], {
             "root": "${{ matrix.root }}",
             "core_commit": "${{ needs.plan.outputs.core_commit }}",
+            "build_timeout_minutes": "${{ (matrix.root == 'qt' || matrix.root == 'qtwebengine' || matrix.root == 'qtwebview') && 720 || 360 }}",
         })
         self.assertEqual(job["secrets"], {
             "app_private_key": "${{ secrets.INTELBREW_APP_PRIVATE_KEY }}",
@@ -70,6 +71,12 @@ class RootWorkflowTests(unittest.TestCase):
         self.assertEqual(call["inputs"], {
             "root": {"description": "Formula root", "required": True, "type": "string"},
             "core_commit": {"description": "Pinned Homebrew/core commit", "required": True, "type": "string"},
+            "build_timeout_minutes": {
+                "description": "Maximum build time for this root on the Intel runner",
+                "required": False,
+                "default": 360,
+                "type": "number",
+            },
         })
         self.assertEqual(call["secrets"], {"app_private_key": {"required": True}})
 

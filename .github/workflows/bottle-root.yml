@@ -10,6 +10,11 @@ on:
         description: Pinned Homebrew/core commit
         required: true
         type: string
+      build_timeout_minutes:
+        description: Maximum build time for this root on the Intel runner
+        required: false
+        default: 360
+        type: number
     secrets:
       app_private_key:
         required: true
@@ -19,7 +24,7 @@ jobs:
   build:
     name: build (${{ inputs.root }})
     runs-on: macos-15-intel
-    timeout-minutes: 360
+    timeout-minutes: ${{ inputs.build_timeout_minutes }}
     permissions:
       contents: read
     env:
