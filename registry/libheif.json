@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
+  "core_commit": "abed9dced1d12849e83d1c01457ad1fbc9d50c8a",
   "filename": "libheif--1.23.4.sequoia.bottle.tar.gz",
   "formula_sha256": "4b5cfd4b41252fd5ac8698bcb52d7142a8510ede0d965a3f82baefb7d268ae8f",
   "license": "LGPL-3.0-or-later",
   "name": "libheif",
   "pkg_version": "1.23.4",
   "recipe_sha256": "cc5cb028efcc31990325977932752a9579fa1ba097ae0acb0b3f76faad096482",
-  "release": "intel-34729347503-1-libheif",
+  "release": "intel-34871728068-1-imagemagick",
   "revision": 0,
-  "run_id": "34729347503",
+  "run_id": "34871728068",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -29,9 +29,9 @@
       "pkg_version": "3.2.0"
     },
     {
-      "formula_sha256": "ea234237ffa941686634c069aa55bfa475ad65485503e3d7d643da45d63fa5fc",
+      "formula_sha256": "3670d989419937d4b6b6a80c301db543fb6f2ef746d9261444fb103b50bd607e",
       "name": "libde265",
-      "pkg_version": "1.1.2"
+      "pkg_version": "1.1.3"
     },
     {
       "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
@@ -44,9 +44,9 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "13f5592d1541a7d5818eccede33b981754c6311117494fefccffa015aacd860d",
+      "formula_sha256": "e26bc5341ea496e86d7f2be1f48a711235139d5ccd10556188d3c52b24a30f76",
       "name": "libvmaf",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7114aa8a1960208823a8e1b61e9f4cff1105d39ce96b0d935a6e4bb56b90dc64",
+  "sha256": "2378fee94892aa4cb34bbe4d627cbbc93a04da0cd3d985725c536d5f49f523c9",
   "size": 3084704,
   "source": {
     "filename": "libheif--1.23.4.sources.tar.gz",
-    "sha256": "3e970c23dd9902ef891204b8df42d3c12eff0326de730a4f07ed1b386f6f7743",
-    "size": 2234908
+    "sha256": "790f1ac0ce4db61a8e68301e935589d3bc5eb14a8e603cc5493c69617d70b90b",
+    "size": 2234901
   },
   "tag": "sequoia",
   "version": "1.23.4",
   "version_scheme": 0,
-  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
+  "workflow_commit": "ae57cb21e11b8801d6370b27e80d9adc12e79d03"
 }

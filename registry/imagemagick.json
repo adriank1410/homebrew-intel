@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
+  "core_commit": "abed9dced1d12849e83d1c01457ad1fbc9d50c8a",
   "filename": "imagemagick--7.1.2-31.sequoia.bottle.tar.gz",
   "formula_sha256": "931f92fc83fb406e2f2f7568dfd304277e3e1fddbf0c34fe32b0f67f42230fc1",
   "license": "ImageMagick",
   "name": "imagemagick",
   "pkg_version": "7.1.2-31",
   "recipe_sha256": "43ce800f4e72586b411ce3b191a928ea5c06ce501339e5f03ae9d0a30493215a",
-  "release": "intel-34729347503-1-imagemagick",
+  "release": "intel-34871728068-1-imagemagick",
   "revision": 0,
-  "run_id": "34729347503",
+  "run_id": "34871728068",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -34,9 +34,9 @@
       "pkg_version": "3.2.0"
     },
     {
-      "formula_sha256": "ea234237ffa941686634c069aa55bfa475ad65485503e3d7d643da45d63fa5fc",
+      "formula_sha256": "3670d989419937d4b6b6a80c301db543fb6f2ef746d9261444fb103b50bd607e",
       "name": "libde265",
-      "pkg_version": "1.1.2"
+      "pkg_version": "1.1.3"
     },
     {
       "formula_sha256": "4b5cfd4b41252fd5ac8698bcb52d7142a8510ede0d965a3f82baefb7d268ae8f",
@@ -59,9 +59,9 @@
       "pkg_version": "2.6.2"
     },
     {
-      "formula_sha256": "13f5592d1541a7d5818eccede33b981754c6311117494fefccffa015aacd860d",
+      "formula_sha256": "e26bc5341ea496e86d7f2be1f48a711235139d5ccd10556188d3c52b24a30f76",
       "name": "libvmaf",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
@@ -100,15 +100,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6d8caa30ad503c3489675d7e3b387e0a342a2d8bafe38c29cb535e82b2cc48ea",
-  "size": 10984877,
+  "sha256": "693617dbe85241f5352393682c261c27bc4243683948a27838a9c65644de44db",
+  "size": 10984791,
   "source": {
     "filename": "imagemagick--7.1.2-31.sources.tar.gz",
-    "sha256": "a2b827c79bc89279aa3935de478d6f14023f1c96708b1da77ca7ada2e482828b",
-    "size": 10253816
+    "sha256": "f28d6c3de64b2dd6fedf0deb547c2290eb22853109ab382d86a16ca5da8f976a",
+    "size": 10253806
   },
   "tag": "sequoia",
   "version": "7.1.2-31",
   "version_scheme": 0,
-  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
+  "workflow_commit": "ae57cb21e11b8801d6370b27e80d9adc12e79d03"
 }
