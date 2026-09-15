@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "abed9dced1d12849e83d1c01457ad1fbc9d50c8a",
+  "core_commit": "1f26b9392a2f36906e08f76a44e6a2c1e9f1fa22",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "f05bfef0e76fddab5b9fa9d4a6aeb1b050b0e1acb4b3de7cd79bc84709a552b0",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "9b020ade6c3e3802260f2cb7fc3e21ef35ee7f68e8db55cf2bfbc9a2da5956f8",
-  "release": "intel-34871728068-1-weasyprint",
+  "release": "intel-35010811496-1-weasyprint",
   "revision": 0,
-  "run_id": "34871728068",
+  "run_id": "35010811496",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -229,9 +229,9 @@
       "pkg_version": "3.14.7"
     },
     {
-      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
       "name": "readline",
-      "pkg_version": "8.3.3"
+      "pkg_version": "8.3.6"
     },
     {
       "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
@@ -260,15 +260,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "36a984bff32910c30afe3daf995fff397f965e43f956e52263c4cf6156af171c",
-  "size": 4054618,
+  "sha256": "d197d3c76093656b5b23196e2d74bbf32ae95b90fbe91601e1d1db0bf8335ded",
+  "size": 4054562,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "25ac5ca1add46bc0ae7c109f159f77f6a8bc37b745afe665000f6cc50ecd3273",
-    "size": 15193720
+    "sha256": "033c4c8debb11e3102c76726f216135c1f1f49b8b316433399032e1dd38f3889",
+    "size": 15193707
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "ae57cb21e11b8801d6370b27e80d9adc12e79d03"
+  "workflow_commit": "e207841fa2f3764512d316c64b6782310f4dfa53"
 }
