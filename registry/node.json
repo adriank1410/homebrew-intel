@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "9bc22e1e62d54e443b2518b6f121f867320ba7ae",
+  "core_commit": "2c70d8df74f9f227fefd7e197961d4cde9481fd2",
   "filename": "node--26.8.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "a0b4d9522f09acad2195c474b3ca7b6431060adedc421b461d5a5237a53bf850",
+  "formula_sha256": "20c800684cf83902ecb1f83256a63c88e15ebeab6afce43a18f2c83faef1320d",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.8.2",
-  "recipe_sha256": "2d0421deb3f8d4b5a411a4de6b767047bfa79a47d0c0c979c8f5c39b49076134",
-  "release": "intel-34807627311-1-gemini-cli",
+  "recipe_sha256": "8439cda9f4cf56132517535f149e049a84602183d433b3c28a5b22cddf9d01f5",
+  "release": "intel-34930447590-1-node",
   "revision": 0,
-  "run_id": "34807627311",
+  "run_id": "34930447590",
   "runtime_dependencies": [
     {
       "formula_sha256": "346dfdd991553ad7416ae368bca1a67bd1adcef3483b96eec83116436689e747",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c5a7932a096537e2283dc41569a5645866daa48bd0016aae076aef07cfc4b0d4",
-  "size": 20415423,
+  "sha256": "a4139ea7d37ce9804a2c4d4a2e75d5b108cc39d0b54103d12cd9578becd80813",
+  "size": 20414778,
   "source": {
     "filename": "node--26.8.2.sources.tar.gz",
-    "sha256": "f3de7695649c2955686bf97c2335084d2f21467517981234aed80d5f72e80504",
-    "size": 64518688
+    "sha256": "229b333e301974007026ec8d90f75abe73842d05739259dc7ada796a2534523c",
+    "size": 64518701
   },
   "tag": "sequoia",
   "version": "26.8.2",
   "version_scheme": 0,
-  "workflow_commit": "651a93ac214fba63eb6f8c720b37dbcf79d6adad"
+  "workflow_commit": "f16a8b4716f61a791d51b16f5962c9f06dd1eb3c"
 }
