@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "9bc22e1e62d54e443b2518b6f121f867320ba7ae",
+  "core_commit": "6fe2a099797958d01c0b9d548f49cd1007ceadcb",
   "filename": "pygobject3--3.58.0.sequoia.bottle.tar.gz",
   "formula_sha256": "e1cf16758e4ae0ff27791c3e49d8e6462d0b80dd05e57852afb98227231711f5",
   "license": "LGPL-2.1-or-later",
   "name": "pygobject3",
   "pkg_version": "3.58.0",
   "recipe_sha256": "18b8338f49f68a2baad6ca02ca574abb6b19843972aa7333c0cac291fcaabd0a",
-  "release": "intel-34807627311-1-pygobject3",
+  "release": "intel-35029759215-1-pygobject3",
   "revision": 0,
-  "run_id": "34807627311",
+  "run_id": "35029759215",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -139,9 +139,9 @@
       "pkg_version": "3.14.7"
     },
     {
-      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
       "name": "readline",
-      "pkg_version": "8.3.3"
+      "pkg_version": "8.3.6"
     },
     {
       "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
@@ -165,15 +165,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0f4e0a04eced70c87e30bd81b4259a9c71afe62794de561c5d9875692d3b4b45",
-  "size": 469499,
+  "sha256": "c01472f27632ca84f5af43bb627dab882936a8dd6d094ed28f8a21a1e636e00e",
+  "size": 469490,
   "source": {
     "filename": "pygobject3--3.58.0.sources.tar.gz",
-    "sha256": "193e2e37e4786640497eb3bf2e664f9241f7f1a91ec2e32d2fc87c76fdf076be",
-    "size": 1434337
+    "sha256": "13b28144728b378b58f2b3a8d5233000a93bbf051bf5e1b6eecf65336146b106",
+    "size": 1434336
   },
   "tag": "sequoia",
   "version": "3.58.0",
   "version_scheme": 0,
-  "workflow_commit": "651a93ac214fba63eb6f8c720b37dbcf79d6adad"
+  "workflow_commit": "2095396dc9a83c57eaf95b8047bd572da0cbdb3b"
 }
