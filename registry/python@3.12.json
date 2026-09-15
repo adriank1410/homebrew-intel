@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "9bc22e1e62d54e443b2518b6f121f867320ba7ae",
+  "core_commit": "1f26b9392a2f36906e08f76a44e6a2c1e9f1fa22",
   "filename": "python@3.12--3.12.14.sequoia.bottle.tar.gz",
   "formula_sha256": "cc553f0621c74c0ab9ae5908bfb43e8441bf53485b54a9b0fb0d4846508ee67a",
   "license": "Python-2.0",
   "name": "python@3.12",
   "pkg_version": "3.12.14",
   "recipe_sha256": "798b28f0006ecd4fddacd130187177541b2217922b67041fc99a18f4a2cc034b",
-  "release": "intel-34807627311-1-python-at-3.12",
+  "release": "intel-35010811496-1-python-at-3.12",
   "revision": 0,
-  "run_id": "34807627311",
+  "run_id": "35010811496",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -29,9 +29,9 @@
       "pkg_version": "3.6.4"
     },
     {
-      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
       "name": "readline",
-      "pkg_version": "8.3.3"
+      "pkg_version": "8.3.6"
     },
     {
       "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "97a3f50b7d5dd7ca193227e8473d92581b3d525fa8ce31a8cb8d9399419008eb",
-  "size": 18058256,
+  "sha256": "1d8f7434389359269d4eb59bd0cc2c0ccf790f4a162a94174023e8ed0376270b",
+  "size": 18058191,
   "source": {
     "filename": "python@3.12--3.12.14.sources.tar.gz",
-    "sha256": "026ea0fce9effc30d53e6fdf53ebe18c02e1ae5bf6d0f80622bafca12bc2bb30",
-    "size": 29510331
+    "sha256": "14f8c6b3876a09c6ea9084911a56c54428c48a7d3505c1c82fa5eef0cd8b1c71",
+    "size": 29510351
   },
   "tag": "sequoia",
   "version": "3.12.14",
   "version_scheme": 0,
-  "workflow_commit": "651a93ac214fba63eb6f8c720b37dbcf79d6adad"
+  "workflow_commit": "e207841fa2f3764512d316c64b6782310f4dfa53"
 }
