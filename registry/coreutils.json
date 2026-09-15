@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "60c96449fbeac9a1ba6df78cecc8eb2a3267e2b1",
+  "filename": "coreutils--9.12.sequoia.bottle.tar.gz",
+  "formula_sha256": "ba47c2bcbc054f39688c7b8a758c69351432c67b054667a92f822ea7f520676b",
+  "license": "GPL-3.0-or-later",
+  "name": "coreutils",
+  "pkg_version": "9.12",
+  "recipe_sha256": "f848718bf51057fdab142563e402ff91654863a83eb7202b695b324eeeacb12f",
+  "release": "intel-34985326995-1-coreutils",
+  "revision": 0,
+  "run_id": "34985326995",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "name": "gmp",
+      "pkg_version": "6.3.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "df15421d462401c1a258279fa24db1b1beb866ea4ee2d8d827d3817e2ca5e72a",
+  "size": 5456940,
+  "source": {
+    "filename": "coreutils--9.12.sources.tar.gz",
+    "sha256": "60d1317486fff3171abf4d457f8d00424bcecb4d762ae0d4283aa63e5b2db1cd",
+    "size": 6724944
+  },
+  "tag": "sequoia",
+  "version": "9.12",
+  "version_scheme": 0,
+  "workflow_commit": "78b969de603f48115d3a457d40f3e72b7169b2dc"
+}
