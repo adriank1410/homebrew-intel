@@ -1,0 +1,74 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "2c70d8df74f9f227fefd7e197961d4cde9481fd2",
+  "filename": "python-tk@3.13--3.13.15.sequoia.bottle.tar.gz",
+  "formula_sha256": "3775a73cccc181be98b153c54dd4eeb363a0b7ef14da7ac06b0aaac027ed3b06",
+  "license": "Python-2.0",
+  "name": "python-tk@3.13",
+  "pkg_version": "3.13.15",
+  "recipe_sha256": "cf71852e5f756795d3a382a93dd1a3e023510ea53eea606e49a9e8bebcd1a539",
+  "release": "intel-34930447590-1-python-tk-at-3.13",
+  "revision": 0,
+  "run_id": "34930447590",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "ea5ef4831fc4eb12b10271e3995794e214a632e51f4cb06e3d601baed77023b5",
+      "name": "libtommath",
+      "pkg_version": "1.3.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "70f4085c9bb1d18c9ca493130dbf6cffbf46a3c7e0d9079b8adcd81f146653d9",
+      "name": "python@3.13",
+      "pkg_version": "3.13.15"
+    },
+    {
+      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "name": "readline",
+      "pkg_version": "8.3.3"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "3570cf25d9b792582eac42f7df8b6a90db5df6c2dd5aa3ee50a5d97c362f1229",
+      "name": "tcl-tk",
+      "pkg_version": "9.0.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "8ef776b28ebbef7d0b241a309784410d43c183a7f4823e86d10d536569d66330",
+  "size": 35740,
+  "source": {
+    "filename": "python-tk@3.13--3.13.15.sources.tar.gz",
+    "sha256": "8927159dd9e185d4deb85b107ee8a4630b8550155ec6c8c1bd31b57998728ae9",
+    "size": 29971663
+  },
+  "tag": "sequoia",
+  "version": "3.13.15",
+  "version_scheme": 0,
+  "workflow_commit": "f16a8b4716f61a791d51b16f5962c9f06dd1eb3c"
+}
