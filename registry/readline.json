@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "60c96449fbeac9a1ba6df78cecc8eb2a3267e2b1",
+  "filename": "readline--8.3.6.sequoia.bottle.tar.gz",
+  "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+  "license": "GPL-3.0-or-later",
+  "name": "readline",
+  "pkg_version": "8.3.6",
+  "recipe_sha256": "a65ebe6faf79ab5f39e02d263cac7ec93d9813c4617658453f0ca341922555a0",
+  "release": "intel-34985326995-1-readline",
+  "revision": 0,
+  "run_id": "34985326995",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "6086372794560aebd7dd198c235c60149845a36fbb5ef903d7bf0cc94bd8ac05",
+  "size": 740045,
+  "source": {
+    "filename": "readline--8.3.6.sources.tar.gz",
+    "sha256": "6e11c9d90b52bcaadf9affddcc23fb87fe47a7b8d5dd6788a10c3f5b1484b795",
+    "size": 3442985
+  },
+  "tag": "sequoia",
+  "version": "8.3.6",
+  "version_scheme": 0,
+  "workflow_commit": "78b969de603f48115d3a457d40f3e72b7169b2dc"
+}
