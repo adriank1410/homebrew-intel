@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "f97f4023a87167579bea6ede49e87209af2fd75e",
+  "filename": "ruby--4.0.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "7810905b040f22d73350923f15b5db22f9963fb54f605617cb4f47829f74a5fe",
+  "license": "Ruby",
+  "name": "ruby",
+  "pkg_version": "4.0.7",
+  "recipe_sha256": "456a0b41f88145ddc7550a354342c173744d0dc633d6a63231cb1233d7d6d394",
+  "release": "intel-34955851099-1-ruby",
+  "revision": 0,
+  "run_id": "34955851099",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "dfad02f7f8f65dff0f00fee6ca2d99b59309ad8c7bc6f2148ae60788f2bf8a79",
+      "name": "libyaml",
+      "pkg_version": "0.2.5"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "03bb20062cb14fb11fec7261dece21bf561a77302e79677e3d2d5c6be3e6b7d0",
+  "size": 17079808,
+  "source": {
+    "filename": "ruby--4.0.7.sources.tar.gz",
+    "sha256": "8d1d06ba8c7eaea129a92ad79aa3f21eff4735e96bf9aa1ede26a86be2584d18",
+    "size": 24408112
+  },
+  "tag": "sequoia",
+  "version": "4.0.7",
+  "version_scheme": 0,
+  "workflow_commit": "0816822d8bc0cea4420456c0396ed02cfab8545d"
+}
