@@ -67,11 +67,12 @@ class NativeTests(unittest.TestCase):
         result = native({"mode": "inspect", "names": ["aom", "archi-steam-farm", "simdutf"]})
         self.assertTrue(all(type(result[name]["vcs_source"]) is bool for name in result))
         self.assertTrue(all(type(result[name]["pinned_git_source"]) is bool for name in result))
+        self.assertTrue(all(type(result[name]["pinned_svn_source"]) is bool for name in result))
 
     def test_real_vcs_roots_are_rejected_before_dependency_inspection(self):
         inspected = native({"mode": "inspect", "names": ["aom", "archi-steam-farm"]})
         for root in ("aom", "archi-steam-farm"):
-            if not inspected[root]["vcs_source"] or inspected[root]["official_bottle"] or inspected[root]["pinned_git_source"]:
+            if not inspected[root]["vcs_source"] or inspected[root]["official_bottle"] or inspected[root]["pinned_git_source"] or inspected[root]["pinned_svn_source"]:
                 continue
             calls = []
             def inspect(names):
@@ -92,6 +93,7 @@ end
 curl = resource("https://example.invalid/source.tar.gz")
 git = resource("https://example.invalid/source.git", :git)
 pinned = Resource.new("pinned"); pinned.url("https://example.invalid/source.git", using: :git, revision: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+pinned_svn = Resource.new("pinned_svn"); pinned_svn.url("https://example.invalid/source.svn", using: :svn, revision: "1234")
 stable = Struct.new(:resource); patch = Struct.new(:resource)
 formula = Struct.new(:stable, :resources, :patchlist)
 cases = [
@@ -104,11 +106,20 @@ pins = [formula.new(stable.new(pinned), [], []),
         formula.new(stable.new(curl), [pinned], []),
         formula.new(stable.new(curl), [], [patch.new(pinned)]),
         formula.new(stable.new(pinned), [git], [])]
+svn_pins = [formula.new(stable.new(pinned_svn), [], []),
+            formula.new(stable.new(curl), [pinned_svn], []),
+            formula.new(stable.new(curl), [], [patch.new(pinned_svn)]),
+            formula.new(stable.new(pinned_svn), [git], [])]
 puts JSON.generate([cases.map {{ |item| IntelbrewNative.vcs_source?(item) }},
-                    pins.map {{ |item| IntelbrewNative.pinned_git_source?(item) }}])
+                    pins.map {{ |item| IntelbrewNative.pinned_git_source?(item) }},
+                    svn_pins.map {{ |item| IntelbrewNative.pinned_svn_source?(item) }}])
 '''
         output = run(["brew", "ruby", "-e", script], env=brew_env())
-        self.assertEqual(json.loads(output.splitlines()[-1]), [[False, True, True, True], [True, True, True, False]])
+        self.assertEqual(json.loads(output.splitlines()[-1]), [
+            [False, True, True, True],
+            [True, True, True, False],
+            [True, True, True, False]
+        ])
 
     def test_planner_rejects_missing_or_non_boolean_source_strategy_metadata(self):
         current = native({"mode": "inspect", "names": ["simdutf"]})["simdutf"]
