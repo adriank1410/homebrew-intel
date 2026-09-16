@@ -3,7 +3,7 @@ import copy, hashlib, os, random, socket, tempfile, unittest
 from pathlib import Path
 from unittest.mock import patch
 from intelbrew.core import (Error, Planner, artifact_url, basename, brew_env, canonical_name,
-                            download, ensure_complete, matching_record, read_json, require_sha,
+                            download, ensure_complete, load_config, matching_record, read_json, require_sha,
                             validate_record, write_json_new, native)
 from helpers import G,H,meta,record
 
@@ -117,6 +117,14 @@ class PlannerTests(unittest.TestCase):
         with self.assertRaisesRegex(Error,'exceeds'):self.plan({'tool':meta(runtime=['dep'],official=True),'dep':meta('dep',official=True)},max_nodes=1)
     def test_blocked_heavy(self):
         with self.assertRaisesRegex(Error,'excluded'):self.plan({'tool':meta()},build=True,blocked=['tool'])
+    def test_blocked_source_builds_policy_blocks_qtwebengine_stack(self):
+        cfg = load_config()
+        self.assertIn('qtwebengine', cfg['blocked_source_builds'])
+        self.assertIn('qt', cfg['blocked_source_builds'])
+        self.assertIn('qtwebview', cfg['blocked_source_builds'])
+        for name in ('qtwebengine', 'qt', 'qtwebview'):
+            with self.subTest(name=name), self.assertRaisesRegex(Error, f'Source build excluded by policy: {name}'):
+                self.plan({name: meta(name)}, roots=[name], build=True, blocked=cfg['blocked_source_builds'])
     def test_vcs_source_build_is_rejected_before_dependencies_are_inspected(self):
         calls=[]
         def inspect(names):
