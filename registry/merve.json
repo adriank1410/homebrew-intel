@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "ccc339b5202b8a063773f9a8f567c7666ba7ea36",
+  "filename": "merve--1.2.2_3.sequoia.bottle.tar.gz",
+  "formula_sha256": "b8612f3ac89bf22a2cca8526bcfa060549ca5e0fd90f2d25d50e0603334f5f7b",
+  "license": "Apache-2.0",
+  "name": "merve",
+  "pkg_version": "1.2.2_3",
+  "recipe_sha256": "eea94c1d5ed515be2cf841e966be38cbfa8b023c61f5cbfee99fddc583d96176",
+  "release": "intel-35061704150-1-merve",
+  "revision": 3,
+  "run_id": "35061704150",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "c51dd7ee69215c1e985146c93a88b1202c4daf75f2ee229b17b37718d5ceaa1e",
+      "name": "simdutf",
+      "pkg_version": "9.2.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "0054e25f3b51b312fe72c852efc3cc5098fcbf7d64cbea9751a5d6edf3361759",
+  "size": 34134,
+  "source": {
+    "filename": "merve--1.2.2_3.sources.tar.gz",
+    "sha256": "6f37f25649be835014dd6c0cbae2d75f94d2b6d4c885e603c5616c0bc84ac1fc",
+    "size": 77307
+  },
+  "tag": "sequoia",
+  "version": "1.2.2",
+  "version_scheme": 0,
+  "workflow_commit": "11d1c8c39403bdd4f7a8a5029575810ea8403c5a"
+}
