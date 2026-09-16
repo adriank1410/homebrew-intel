@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
+  "core_commit": "ccc339b5202b8a063773f9a8f567c7666ba7ea36",
   "filename": "poppler--26.09.0.sequoia.bottle.tar.gz",
   "formula_sha256": "825c6e7f1e97a142af94bdf53b954dff9340bb576a483cf5eca34e557aa26ddc",
   "license": {
@@ -14,9 +14,9 @@
   "name": "poppler",
   "pkg_version": "26.09.0",
   "recipe_sha256": "4b90c4c91c512b10835e95c75ae6bf392a295e5e9d107fc0b8109d34a845a507",
-  "release": "intel-34729347503-1-poppler",
+  "release": "intel-35061704150-1-poppler",
   "revision": 0,
-  "run_id": "34729347503",
+  "run_id": "35061704150",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -244,9 +244,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "54cf550a65b7ac208e1ded7bff7d8e26b14849aae9aaccdc57de53085b342e4b",
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
       "name": "readline",
-      "pkg_version": "8.3.3"
+      "pkg_version": "8.3.6"
     },
     {
       "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
@@ -270,15 +270,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3e1f62224de2fee6a28a93af5ca051b2987340cb499964a95eb5c790032ee4ff",
-  "size": 9992931,
+  "sha256": "3c75ef87a871bae646e3e48f7dd3e80a89cb94baff76e038162b5bd7d456b48d",
+  "size": 9992938,
   "source": {
     "filename": "poppler--26.09.0.sources.tar.gz",
-    "sha256": "dc9790dbd7d5dad15d802212fc3f0c09513ab21a24c18902e633f3f41b4d5e6a",
-    "size": 6489325
+    "sha256": "1fae1c99474139027e70e5d5ecb430d155ff2a249f1f2fd0addd2df16f480157",
+    "size": 6489316
   },
   "tag": "sequoia",
   "version": "26.09.0",
   "version_scheme": 0,
-  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
+  "workflow_commit": "11d1c8c39403bdd4f7a8a5029575810ea8403c5a"
 }
