@@ -384,6 +384,9 @@ def build(root:str,output:Path)->None:
     # must not depend on RubyGems being reachable.
     tooling_env=brew_env(ci=True);tooling_env.update(BUNDLE_RETRY="3",BUNDLE_TIMEOUT="30")
     run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install-bundler-gems","--add-groups=bottle"],capture=False,env=tooling_env)
+    if any(plan["nodes"][name].get("pinned_svn_source") for name in to_build):
+        if not shutil.which("svn"):
+            run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install","--force-bottle","--no-ask","homebrew/core/subversion"],capture=False,env=tooling_env)
     work=Path(tempfile.mkdtemp(prefix="intelbrew-build-",dir=os.environ["RUNNER_TEMP"]))
     package_caches,source_sets=_prepare_source_sets(to_build,work)
     for name in plan["order"]:
