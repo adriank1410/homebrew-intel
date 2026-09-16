@@ -109,7 +109,7 @@
   ],
   "source_required_formula_exceptions": {
     "nmap": {
-      "formula_sha256": "d308fc0ef788a969c120462d850cd2f5928ef65cbfd9aba16ac85785f62f66dc",
+      "formula_sha256": "54b920f77770308a11532d12645bd95151dc3e5bf873a52f47a89c137422890f",
       "license": "cannot_represent",
       "requirement": "Nmap-Public-Source-License",
       "review": "Standalone Nmap 7.991 bottle; publish the exact upstream source, recipe, build inputs, license notices, and modification provenance together."
