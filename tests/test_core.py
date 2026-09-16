@@ -137,6 +137,12 @@ class PlannerTests(unittest.TestCase):
     def test_string_pinned_git_flag_cannot_enable_source_build(self):
         with self.assertRaisesRegex(Error,'VCS source needs review'):
             self.plan({'tool':meta(vcs_source=True,pinned_git_source='true')},build=True)
+    def test_pinned_svn_source_can_be_built(self):
+        result=self.plan({'tool':meta(vcs_source=True,pinned_svn_source=True)},build=True)
+        self.assertEqual(result['nodes']['tool']['provider'],'build')
+    def test_string_pinned_svn_flag_cannot_enable_source_build(self):
+        with self.assertRaisesRegex(Error,'VCS source needs review'):
+            self.plan({'tool':meta(vcs_source=True,pinned_svn_source='true')},build=True)
     def test_alias_not_accepted(self):
         with self.assertRaises(Error):self.plan({'tool':meta('canonical')})
     def test_root_dedup(self):self.assertEqual(self.plan({'tool':meta(official=True)},roots=['tool','homebrew/core/tool'])['roots'],['tool'])
