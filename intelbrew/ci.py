@@ -384,17 +384,16 @@ def build(root:str,output:Path)->None:
     # must not depend on RubyGems being reachable.
     tooling_env=brew_env(ci=True);tooling_env.update(BUNDLE_RETRY="3",BUNDLE_TIMEOUT="30")
     run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install-bundler-gems","--add-groups=bottle"],capture=False,env=tooling_env)
-    if any(plan["nodes"][name].get("pinned_svn_source") for name in to_build):
-        if not shutil.which("svn"):
-            run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install","--force-bottle","--no-ask","homebrew/core/subversion"],capture=False,env=tooling_env)
     work=Path(tempfile.mkdtemp(prefix="intelbrew-build-",dir=os.environ["RUNNER_TEMP"]))
-    package_caches,source_sets=_prepare_source_sets(to_build,work)
+    package_caches={};source_sets={}
     for name in plan["order"]:
         meta=plan["nodes"][name]
         if meta["provider"]=="official":install_binary(name,meta,as_dependency=name!=root);continue
         if meta["provider"]=="personal":
             rec=records[name];path=work/rec["sha256"]/rec["filename"];download(artifact_url(config["repository"],rec),path,rec["sha256"],rec["size"]);attest(path,config["repository"],rec["workflow_commit"]);check_bottle(path,rec);install_binary(name,meta,local=path,sha=rec["sha256"],as_dependency=name!=root);continue
         if meta["provider"]!="build":raise Error("Unexpected CI package provider")
+        caches,sources=_prepare_source_sets([name],work)
+        package_caches.update(caches);source_sets.update(sources)
         sources=source_sets[name];cache=package_caches[name];env=_build_env(cache)
         if name in transient:print(f"intelbrew CI: {name} is an isolated build-only compiler; building from source without publishing a bottle",flush=True)
         run(_brew_install_args(name,transient),capture=False,env=env)

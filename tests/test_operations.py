@@ -544,34 +544,44 @@ class SourceBundleTests(unittest.TestCase):
             self.assertEqual([call.args[0] for call in install.call_args_list], ["fastfetch"])
             self.assertEqual([call.args[0][1] for call in run.call_args_list], ["linkage", "test"])
 
-    def test_build_installs_subversion_when_formula_has_pinned_svn_source(self):
+    def test_build_prepares_sources_in_order_after_dependencies_are_installed(self):
+        events = []
         env = {
             "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
             "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
             "GITHUB_RUN_ID": "123", "RUNNER_TEMP": "",
         }
         metadata = {
-            "netpbm": meta("netpbm", vcs_source=True, pinned_svn_source=True, license="GPL-3.0-or-later"),
+            "subversion": meta("subversion", official=True),
+            "netpbm": meta("netpbm", build=["subversion"], vcs_source=True, pinned_svn_source=True, license="GPL-3.0-or-later"),
         }
+        def fake_native(request, **kwargs):
+            if request.get("mode") == "inspect":
+                return {name: metadata[name] for name in request["names"]}
+            return {}
         def fake_read_json(path):
             if Path(path) == ROOT / "policy/targets.json": return {"formulae": ["netpbm"]}
             return json.loads(Path(path).read_text())
+        def fake_install(name, meta, **kwargs):
+            events.append(("install", name))
+        def fake_prepare(names, work):
+            for name in names:
+                events.append(("prepare_sources", name))
+            return ({name: Path(work) / f"{name}-cache" for name in names}, {name: {} for name in names})
         with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {**env, "RUNNER_TEMP": d}, clear=True), \
              patch("intelbrew.ci.sync_registry", return_value="c" * 40), \
              patch("intelbrew.ci.registry", return_value={}), \
              patch("intelbrew.ci.read_json", side_effect=fake_read_json), \
-             patch("intelbrew.ci.shutil.which", return_value=None), \
-             patch("intelbrew.ci._prepare_source_sets", return_value=({"netpbm": Path(d)}, {"netpbm": {}})), \
-             patch("intelbrew.ci.native", return_value=metadata), \
-             patch("intelbrew.ci.run") as run:
+             patch("intelbrew.ci.install_binary", side_effect=fake_install), \
+             patch("intelbrew.ci._prepare_source_sets", side_effect=fake_prepare), \
+             patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.run"):
             from intelbrew.ci import build
             try:
                 build("netpbm", Path(d) / "candidate")
             except Exception:
                 pass
-            svn_install = [call for call in run.call_args_list if "homebrew/core/subversion" in call.args[0]]
-            self.assertEqual(len(svn_install), 1)
-            self.assertEqual(svn_install[0].args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install", "--force-bottle", "--no-ask", "homebrew/core/subversion"])
+            self.assertEqual(events, [("install", "subversion"), ("prepare_sources", "netpbm")])
 
     def test_version_matches_changelog(self):
         from intelbrew import __version__
