@@ -1,0 +1,74 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "50b4a3dc1996c2e32c03fdc0bdc9091a5aa84504",
+  "filename": "netpbm--11.02.29.sequoia.bottle.tar.gz",
+  "formula_sha256": "76dc443e473c2f3a22dd84c691564b153fa8ceed707e02e7d1f4f31339c83331",
+  "license": "GPL-3.0-or-later",
+  "name": "netpbm",
+  "pkg_version": "11.02.29",
+  "recipe_sha256": "15112b6e06926995f05a87458c42f6f9396f3ece771fb12686827085229dea87",
+  "release": "intel-35082083062-1-netpbm",
+  "revision": 0,
+  "run_id": "35082083062",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "name": "giflib",
+      "pkg_version": "6.1.3"
+    },
+    {
+      "formula_sha256": "820f24b91bfe445426e39da65f50100a95dfa56e4a59e4805127931573152b1e",
+      "name": "jasper",
+      "pkg_version": "4.2.9"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "name": "libpng",
+      "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+      "name": "libtiff",
+      "pkg_version": "4.7.2"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
+      "name": "webp",
+      "pkg_version": "1.6.0"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "5a9d4619e9bf7aa6981f181ae4bed5e1c46b93c9df4ab67f9e908d3692ba437b",
+  "size": 2283594,
+  "source": {
+    "filename": "netpbm--11.02.29.sources.tar.gz",
+    "sha256": "13d00ae1ff4c34c092de690692e716614da1bcd800dc1c27b770b175fab426ef",
+    "size": 4838259
+  },
+  "tag": "sequoia",
+  "version": "11.02.29",
+  "version_scheme": 1,
+  "workflow_commit": "28a5d10db05c8fb2bc8b41c9eb7f579246172452"
+}
