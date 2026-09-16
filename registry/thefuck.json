@@ -1,0 +1,74 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "85dbdc21a0b2ba6d9c09c4bdfdd5d5b2161d4fee",
+  "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
+  "formula_sha256": "8b67b01fbed9f88367b6b737c40b78e3d5cdd9cdf2de8c1ba73a456d52ddb8c6",
+  "license": "MIT",
+  "name": "thefuck",
+  "pkg_version": "3.32",
+  "recipe_sha256": "91e3bb3a642dc57db8afddf02202d44b44ce4500091b2f810c6d7936b43779f5",
+  "release": "intel-35124614429-1-thefuck",
+  "revision": 0,
+  "run_id": "35124614429",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    },
+    {
+      "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
+      "name": "python@3.14",
+      "pkg_version": "3.14.7"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "b07823fe562f2d35bc7937d360a3cfcca0ab3162ced7906e4339c611d01f09f3",
+  "size": 384781,
+  "source": {
+    "filename": "thefuck--3.32.sources.tar.gz",
+    "sha256": "47a47b94ce4eb9b86c1f681dc8a006cf643ceea8e670aa9f85edb23e9cc8f1df",
+    "size": 894259
+  },
+  "tag": "sequoia",
+  "version": "3.32",
+  "version_scheme": 0,
+  "workflow_commit": "c77cae63ee4179bd42f79f06dc82ce6fa0babb98"
+}
