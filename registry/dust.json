@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "4f456f9aac032eac0492bfa0117320e004ac41d5",
+  "filename": "dust--1.2.6.sequoia.bottle.tar.gz",
+  "formula_sha256": "a7286944dcd3d915b615c335d6f418a181de7dfafeaa386dc15d9bf908e1726d",
+  "license": "Apache-2.0",
+  "name": "dust",
+  "pkg_version": "1.2.6",
+  "recipe_sha256": "2c62355ed9a6f5b5070b5759a6a88ead6bac0d63289085acbc4762f4b3f4c27e",
+  "release": "intel-35170371986-1-dust",
+  "revision": 0,
+  "run_id": "35170371986",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "4ce50c5e923e63983ad6e560aaaea9d9a8e9a40e0a553eb71d83f68b77613058",
+  "size": 1125731,
+  "source": {
+    "filename": "dust--1.2.6.sources.tar.gz",
+    "sha256": "4cf867458c038b1cb5b67f216fb44cfe43b0446928aba9f3c423021012da67dd",
+    "size": 9099379
+  },
+  "tag": "sequoia",
+  "version": "1.2.6",
+  "version_scheme": 0,
+  "workflow_commit": "e717fd969847933e1cff34bd8077ebd8fb9b70ea"
+}
