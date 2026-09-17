@@ -123,5 +123,35 @@ class FetchRetryTests(unittest.TestCase):
                 self.assertEqual(result.returncode, expected, result.stderr)
                 self.assertEqual(counter.read_text().strip(), "3")
 
+    def test_exponential_backoff_delays(self):
+        helper = ROOT / "scripts/retry-fetch.sh"
+        with tempfile.TemporaryDirectory() as folder:
+            f = Path(folder)
+            bin_dir = f / "bin"
+            bin_dir.mkdir()
+            mock_sleep = bin_dir / "sleep"
+            mock_sleep.write_text("#!/bin/bash\necho \"$1\" >> \"$SLEEP_LOG\"\nexit 0\n")
+            mock_sleep.chmod(0o755)
+            log = f / "delays.log"
+            counter = f / "count"
+            command = "n=0; test ! -f \"$1\" || n=$(cat \"$1\"); n=$((n+1)); echo $n > \"$1\"; test $n -eq 3 && exit 0; exit 1"
+            env = {
+                **os.environ,
+                "PATH": f"{bin_dir}:{os.environ['PATH']}",
+                "SLEEP_LOG": str(log),
+                "INTELBREW_RETRY_DELAY": "5",
+            }
+            result = subprocess.run(["bash", str(helper), "bash", "-c", command, "test", str(counter)], env=env, capture_output=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(counter.read_text().strip(), "3")
+            self.assertEqual(log.read_text().splitlines(), ["5", "10"])
+
+    def test_prepare_runner_bootstraps_portable_ruby_with_retry(self):
+        script = (ROOT / "scripts/prepare-runner.sh").read_text()
+        self.assertIn('bash "$project_dir/scripts/retry-fetch.sh" brew vendor-install ruby', script)
+        self.assertIn("HOMEBREW_CURL_RETRIES=", script)
+
+
 if __name__ == "__main__":
     unittest.main()
+

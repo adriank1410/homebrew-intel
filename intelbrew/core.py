@@ -182,9 +182,9 @@ def download(url,target,expected_sha,expected_size):
                     out.write(chunk);h.update(chunk)
             break
         except (OSError,ValueError) as exc:
-            retryable = isinstance(exc, (TimeoutError, socket.timeout)) or (
+            retryable = isinstance(exc, (TimeoutError, socket.timeout, ConnectionError)) or (
                 isinstance(exc, urllib.error.URLError) and
-                isinstance(exc.reason, (TimeoutError, socket.timeout)))
+                isinstance(exc.reason, (TimeoutError, socket.timeout, socket.gaierror, ConnectionError)))
             if not retryable or attempt == 2:
                 raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
             time.sleep(2 ** attempt)
