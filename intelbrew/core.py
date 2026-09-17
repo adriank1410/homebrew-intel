@@ -183,6 +183,8 @@ def download(url,target,expected_sha,expected_size):
             break
         except (OSError,ValueError) as exc:
             retryable = isinstance(exc, (TimeoutError, socket.timeout, ConnectionError)) or (
+                isinstance(exc, urllib.error.HTTPError) and exc.code in {408, 429, 500, 502, 503, 504}
+            ) or (
                 isinstance(exc, urllib.error.URLError) and
                 isinstance(exc.reason, (TimeoutError, socket.timeout, socket.gaierror, ConnectionError)))
             if not retryable or attempt == 2:
