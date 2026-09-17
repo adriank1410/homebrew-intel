@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "498652fe05be62fcdc35c5984e41fd27b802eb4c",
+  "core_commit": "ed5418889d2ff136e341556ee430b839c560603b",
   "filename": "graphviz--16.1.0.sequoia.bottle.tar.gz",
   "formula_sha256": "18316034c391a492037672713b747af5ee29eddf9eb68e9e5def1ffa89874ee5",
   "license": "EPL-1.0",
   "name": "graphviz",
   "pkg_version": "16.1.0",
   "recipe_sha256": "4912e90d09e6a728affd0da86c43f47ddfcac829b5b99cdf0be9b91130485318",
-  "release": "intel-35084910205-1-graphviz",
+  "release": "intel-35226958201-1-graphviz",
   "revision": 0,
-  "run_id": "35084910205",
+  "run_id": "35226958201",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -64,9 +64,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -235,15 +235,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "334e01bab57bd26f15b9fb73d2bcb5d28a9f2f0dd9090deee095735b98a22f89",
-  "size": 3250645,
+  "sha256": "ffcf4201b91bb0a22be3a94f3c6aa3065cf7ebc2769d29d2306f97ec1263b3a0",
+  "size": 3250603,
   "source": {
     "filename": "graphviz--16.1.0.sources.tar.gz",
-    "sha256": "33c70ac018e946b3859e229d1e605b5aae7cc852e4d00dec309d7896da7c440c",
-    "size": 21018910
+    "sha256": "879321ca063d4831ada23a3c2f0e514bebc3fc2744baa79ff0d51ea497e6178c",
+    "size": 21018915
   },
   "tag": "sequoia",
   "version": "16.1.0",
   "version_scheme": 1,
-  "workflow_commit": "ebd442716ca0ee3f471f87fe2ae9d5e0a45c9da9"
+  "workflow_commit": "75117f63290ac8a1beaa871091d2afe31dd84e6e"
 }
