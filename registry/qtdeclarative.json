@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "552f828b4dfebf9c46075af53be103fbf72b4d8d",
+  "core_commit": "d76e2c11f01d3ce7afa61bab16222333a87bfa1a",
   "filename": "qtdeclarative--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "2f9fe816e3395954bfee008a2264febf22f19f06f66da69d8c00420140a8949b",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtdeclarative",
   "pkg_version": "6.11.2",
   "recipe_sha256": "a63aa1458185766481e15a33a25d9777c502c41cd187ffc461c09c347ef24bfa",
-  "release": "intel-34770020510-1-qtdeclarative",
+  "release": "intel-35257313344-1-qtdeclarative",
   "revision": 0,
-  "run_id": "34770020510",
+  "run_id": "35257313344",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -71,9 +71,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -202,15 +202,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "00d398f92ad55d5130ae9c35d9e90061681ca5e41154a95fd96a2367d8aee3e9",
-  "size": 29590136,
+  "sha256": "b3a167438c61fc99c9e7c339f9f1040a1af4d90d64735510c5776dce96a797ec",
+  "size": 29590096,
   "source": {
     "filename": "qtdeclarative--6.11.2.sources.tar.gz",
-    "sha256": "8d319016645d112ae01f249dab6248854f507e7c3245d9eafd393003323b82cb",
-    "size": 38837804
+    "sha256": "d62a82b8e686ef900029f6495fc292c610d42f3488c9bde1b561a97d308a31ca",
+    "size": 38837807
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "6d6348024b210391dfbcc6c75d47755e69671b4c"
+  "workflow_commit": "a6e2a0b106253e809c240b13d16e063ab25da71e"
 }
