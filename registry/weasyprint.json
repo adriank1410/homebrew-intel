@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "1f26b9392a2f36906e08f76a44e6a2c1e9f1fa22",
+  "core_commit": "ed5418889d2ff136e341556ee430b839c560603b",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "f05bfef0e76fddab5b9fa9d4a6aeb1b050b0e1acb4b3de7cd79bc84709a552b0",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "9b020ade6c3e3802260f2cb7fc3e21ef35ee7f68e8db55cf2bfbc9a2da5956f8",
-  "release": "intel-35010811496-1-weasyprint",
+  "release": "intel-35226958201-1-weasyprint",
   "revision": 0,
-  "run_id": "35010811496",
+  "run_id": "35226958201",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -64,9 +64,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -260,15 +260,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d197d3c76093656b5b23196e2d74bbf32ae95b90fbe91601e1d1db0bf8335ded",
-  "size": 4054562,
+  "sha256": "66de3cd4d24194a804c5c96eeb82280e44672016c791322acd7b758f626cb8bd",
+  "size": 4054590,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "033c4c8debb11e3102c76726f216135c1f1f49b8b316433399032e1dd38f3889",
-    "size": 15193707
+    "sha256": "f196b7594ea83d760807bda9de390935432fab6b8345c95f353264290ec18772",
+    "size": 15193715
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "e207841fa2f3764512d316c64b6782310f4dfa53"
+  "workflow_commit": "75117f63290ac8a1beaa871091d2afe31dd84e6e"
 }
