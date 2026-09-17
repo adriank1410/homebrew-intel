@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "1cdbb994d0ad3a13c04d16f1b233499fac74fef0",
+  "core_commit": "ed5418889d2ff136e341556ee430b839c560603b",
   "filename": "qtnetworkauth--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "69c47cc0094e52b5401ad54e85ee1ccea1ca2189f44a015a969c402d8f65d2ef",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtnetworkauth",
   "pkg_version": "6.11.2",
   "recipe_sha256": "c78833f8cb8cdc3a82b18cc30906a1b0e8eb6bb694e3d94d7a35184500701ad4",
-  "release": "intel-34760133754-1-qtnetworkauth",
+  "release": "intel-35226958201-1-qtnetworkauth",
   "revision": 0,
-  "run_id": "34760133754",
+  "run_id": "35226958201",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -59,9 +59,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "80f9923b9e5cf5cdf2466db378e5f456042b67a191b2a7061cdf10e7d8c7984a",
-  "size": 137061,
+  "sha256": "58a4c361553df09f646687a743ac4814569dcec1b40daecb82721aac3bb25e57",
+  "size": 137057,
   "source": {
     "filename": "qtnetworkauth--6.11.2.sources.tar.gz",
-    "sha256": "177a27a8457ddbbdc6f29c80357e72b0070efaec5f30bb87abe19ced290f366e",
-    "size": 461949
+    "sha256": "a76cc69886038ee5cdd081f8386cc26527adc4a637065bedb572dcc9acb6cf87",
+    "size": 461950
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "2cdb27127b16c4c096ac348cf9887fe7e067cb94"
+  "workflow_commit": "75117f63290ac8a1beaa871091d2afe31dd84e6e"
 }
