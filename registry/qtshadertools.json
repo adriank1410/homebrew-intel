@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
+  "core_commit": "ed5418889d2ff136e341556ee430b839c560603b",
   "filename": "qtshadertools--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "cd7ef245de18cd6d506dbaadf541f6f8320771968f3f49d16bd742a815b3bee8",
   "license": {
@@ -44,9 +44,9 @@
   "name": "qtshadertools",
   "pkg_version": "6.11.2",
   "recipe_sha256": "d36fa95685c27cb8a5690d70a98a2c4dd865335960e614030df8c00085698ae8",
-  "release": "intel-34729347503-1-qtshadertools",
+  "release": "intel-35226958201-1-qtshadertools",
   "revision": 0,
-  "run_id": "34729347503",
+  "run_id": "35226958201",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -89,9 +89,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "50d14fb61b7aa033bb7c8071584d33ff31701d9a18e895b80e54977ef3558a80",
-  "size": 1768562,
+  "sha256": "21694e0ae41c3fb239959f7ca9129523ea5285c296bbe5e8aacc4a57a7fbaf04",
+  "size": 1768543,
   "source": {
     "filename": "qtshadertools--6.11.2.sources.tar.gz",
-    "sha256": "789d1a9592517886a18c117e4366e6f534c09443ba3d1c397f80c2bcae253571",
-    "size": 1241649
+    "sha256": "6073631900a4480a0d11cf47112737440d4bddd3a47bf0fe8d236ff331ae7f3c",
+    "size": 1283192
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
+  "workflow_commit": "75117f63290ac8a1beaa871091d2afe31dd84e6e"
 }
