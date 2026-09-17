@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "13895ae7aa972b68416e5d05f5e97c6eeb34d68c",
+  "core_commit": "ed5418889d2ff136e341556ee430b839c560603b",
   "filename": "qtconnectivity--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "392b1c368c59d54978f74e0dec0a6a27323c3b8f484c5551228bc23d95781df2",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtconnectivity",
   "pkg_version": "6.11.2",
   "recipe_sha256": "08d98e302bf1031042d97efab04ce9bfedf772028b00a0dc978c5097de4a8574",
-  "release": "intel-34760898006-1-qtconnectivity",
+  "release": "intel-35226958201-1-qtconnectivity",
   "revision": 0,
-  "run_id": "34760898006",
+  "run_id": "35226958201",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -65,9 +65,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6f5a9d4e0902e31ee8f4aed1ce6ebbcc1fbf8a4a34226ed55787bb821b0e2025",
-  "size": 431567,
+  "sha256": "67a9956549aa3bec325eb0a4ef85b802525ce3e046f1119be3dcf0989876f1bd",
+  "size": 431556,
   "source": {
     "filename": "qtconnectivity--6.11.2.sources.tar.gz",
-    "sha256": "708d4b75fd794bfc0dbaa9f3bdc5c12bf0de6ce8271a4de03e47e960e8354f06",
-    "size": 1101255
+    "sha256": "b2ad6b80a052ca9fe39687061b2438ed38138c47b73bff1080a7a057094b0230",
+    "size": 1101262
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "2cdb27127b16c4c096ac348cf9887fe7e067cb94"
+  "workflow_commit": "75117f63290ac8a1beaa871091d2afe31dd84e6e"
 }

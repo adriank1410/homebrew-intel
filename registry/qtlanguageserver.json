@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "2cbf87b21fb147555ad2d7272aaade05b9571643",
+  "core_commit": "ed5418889d2ff136e341556ee430b839c560603b",
   "filename": "qtlanguageserver--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "8216beb228797b86a62804f5e2fb9f375b9628e4a6cfa5ec621ba1eca06542e2",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtlanguageserver",
   "pkg_version": "6.11.2",
   "recipe_sha256": "697c3d92025bd9666fb949026b12d943f9619e9eca095bd88cda8178838e742d",
-  "release": "intel-34757045688-1-qtlanguageserver",
+  "release": "intel-35226958201-1-qtlanguageserver",
   "revision": 0,
-  "run_id": "34757045688",
+  "run_id": "35226958201",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -65,9 +65,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1c1e56aebeb65f73c280ab25969e6650a7033c47f3c15c62f6c989d7d4bf1e04",
-  "size": 676829,
+  "sha256": "a0dcfe2656cb9a4483f084ee2658643f249e39e703e090b9fb197fc661c50ec6",
+  "size": 676827,
   "source": {
     "filename": "qtlanguageserver--6.11.2.sources.tar.gz",
-    "sha256": "7c90a224f3e1bd808d2a00219d13778ab25a11313a59b6bd53fcc3351d6397d1",
-    "size": 176527
+    "sha256": "0a14bfb0178fce54733f21f4a83111f99c2f9018fe52f3208e71b06a64d69e05",
+    "size": 176528
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "e38e933fb2c612124af9a478c3b73d7ebb2d38ef"
+  "workflow_commit": "75117f63290ac8a1beaa871091d2afe31dd84e6e"
 }
