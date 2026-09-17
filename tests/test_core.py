@@ -119,6 +119,36 @@ class ValidationTests(unittest.TestCase):
             self.assertEqual(target.read_bytes(), payload)
             self.assertEqual(opener.calls, 2)
             sleep.assert_called_once_with(1)
+
+    def test_download_retries_transient_http_server_error_and_rechecks_digest(self):
+        payload = b'retryable http 500 payload'
+        expected = hashlib.sha256(payload).hexdigest()
+
+        class Response:
+            def __init__(self): self.reads = 0
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def read(self, size):
+                self.reads += 1
+                return payload if self.reads == 1 else b''
+
+        class Opener:
+            def __init__(self): self.calls = 0
+            def open(self, url, timeout):
+                self.calls += 1
+                if self.calls == 1:
+                    raise urllib.error.HTTPError(url, 500, 'Internal Server Error', {}, None)
+                return Response()
+
+        opener = Opener()
+        with tempfile.TemporaryDirectory() as d, \
+             patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch('intelbrew.core.time.sleep') as sleep:
+            target = Path(d) / 'artifact'
+            download('https://github.com/a/b', target, expected, len(payload))
+            self.assertEqual(target.read_bytes(), payload)
+            self.assertEqual(opener.calls, 2)
+            sleep.assert_called_once_with(1)
     def test_env_strips_tokens(self):
         with patch.dict(os.environ,{'GH_TOKEN':'x','GITHUB_TOKEN':'x','RUBYOPT':'bad','HOMEBREW_CORE_GIT_REMOTE':'unchanged'}):
             e=brew_env();self.assertNotIn('GH_TOKEN',e);self.assertNotIn('RUBYOPT',e);self.assertEqual(e['HOMEBREW_CORE_GIT_REMOTE'],'unchanged')
