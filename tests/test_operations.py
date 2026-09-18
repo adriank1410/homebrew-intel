@@ -16,7 +16,7 @@ from intelbrew.cli import apply_plan, attest
 from intelbrew.ci import (_brew_install_args, _build_env, _generated_basename, _prepare_source_sets, _validate_source_bundle,
                          allowed_redistribution, build, permissive_license, require_ci_mac, runtime_closure,
                          source_bundle, transient_builds, verify)
-from intelbrew.core import ROOT, Error, Planner, load_config
+from intelbrew.core import ROOT, Error, Planner, canonical_name, load_config, read_json
 from intelbrew.publish import release_tag
 from helpers import G, H, meta, record
 
@@ -695,3 +695,13 @@ class SourceBundleTests(unittest.TestCase):
         polish = re.sub(r"\s+", " ", (ROOT / "README.pl.md").read_text())
         self.assertRegex(english, r"`simdutf` is only an example")
         self.assertRegex(polish, r"`simdutf` poniżej to tylko przykład")
+
+    def test_target_list_includes_popular_intel_gap_formulae(self):
+        targets = read_json(ROOT / "policy/targets.json")["formulae"]
+        self.assertEqual(targets, sorted(set(targets)))
+        self.assertTrue(all(canonical_name(name) == name for name in targets))
+        expected = [
+            "cloudflared", "docker", "docker-compose", "git-lfs", "glab", "helm",
+            "just", "lazygit", "neovim", "pnpm", "rclone", "uv",
+        ]
+        self.assertEqual([name for name in expected if name not in targets], [])
