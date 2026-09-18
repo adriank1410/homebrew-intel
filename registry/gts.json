@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "997c5ff421c66e6509d00d0cd10b844900c84003",
+  "core_commit": "40e9a307552776a139f80801b4e5c0e573ae38a9",
   "filename": "gts--0.7.6_3.sequoia.bottle.tar.gz",
   "formula_sha256": "e3d6b09c676761a60774e90cd96015d36257b54cd1b0d0395ea707a87be18ae2",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_3",
   "recipe_sha256": "fa36c048669fb895d41ef201607f9c8745b85b5d4868c69be5613cf719599e21",
-  "release": "intel-35195413248-1-gts",
+  "release": "intel-35359555125-1-gts",
   "revision": 3,
-  "run_id": "35195413248",
+  "run_id": "35359555125",
   "runtime_dependencies": [
     {
       "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
@@ -59,7 +59,7 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "999420bb88aceb36892e520295b2336f8821815dc19d2280535cf288b15c737c",
-  "size": 431575,
+  "sha256": "f14530bcd5388fae4535c49a6d6eabba31a129f1763ddd16926bd323cb5954a9",
+  "size": 431579,
   "source": {
     "filename": "gts--0.7.6_3.sources.tar.gz",
-    "sha256": "f794ad79193ee6c5c4aec135f64a639798b4622f8e65206907f980ed15e06f8b",
-    "size": 959584
+    "sha256": "63a50ae7a540740485dd18e594c10a27127071f4fff9223360d94b924dbe4bfe",
+    "size": 959580
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "29c1f269ee2767ede1ecb3b8d3cd184390f38a90"
+  "workflow_commit": "82acb9682c7a718f3568813126e684b55cd7958e"
 }
