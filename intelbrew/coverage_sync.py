@@ -6,15 +6,13 @@ import argparse
 import json
 import os
 import re
-import sys
 import tempfile
-import time
 import urllib.request
 from pathlib import Path
 from typing import Any, Callable
 
-from .core import (MAX_JSON, ROOT, Error, canonical_name, is_transient_error,
-                   load_config, native, read_json, run)
+from .core import (MAX_JSON, MAX_OFFICIAL_METADATA, ROOT, Error, canonical_name,
+                   load_config, native, read_json, retry_transient, run)
 from .registry_pr import (_disable_existing_auto_merge, _dispatch_checks,
                           _find_pr, _merge_if_ready, gh, gh_json)
 
@@ -230,22 +228,14 @@ def _require_regular_target(repository: str, head: str) -> None:
 
 def _official_metadata() -> dict[str, dict[str, Any]]:
     url = "https://formulae.brew.sh/api/formula.json"
-    limit = 64 * 1024 * 1024
-    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
-    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
-    for attempt in range(attempts):
-        if attempt > 0 and delay > 0:
-            time.sleep(delay * (2 ** (attempt - 1)))
-        try:
-            with urllib.request.urlopen(url, timeout=15) as response:
-                raw = response.read(limit + 1)
-            break
-        except (OSError, ValueError) as exc:
-            if hasattr(exc, "close"):
-                exc.close()
-            if not is_transient_error(exc) or attempt == attempts - 1:
-                raise Error("Cannot load official formula metadata") from exc
-    if len(raw) > limit: raise Error("Official formula metadata exceeds size limit")
+    def fetch():
+        with urllib.request.urlopen(url, timeout=15) as response:
+            return response.read(MAX_OFFICIAL_METADATA + 1)
+    try:
+        raw = retry_transient(fetch)
+    except (OSError, ValueError) as exc:
+        raise Error("Cannot load official formula metadata") from exc
+    if len(raw) > MAX_OFFICIAL_METADATA: raise Error("Official formula metadata exceeds size limit")
     values = json.loads(raw)
     if not isinstance(values, list) or len(values) > 10000: raise Error("Invalid official formula metadata")
     result = {}

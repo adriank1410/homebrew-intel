@@ -10,14 +10,13 @@ import os
 import re
 import sys
 import tempfile
-import time
 from pathlib import Path
 from typing import Any
 
 from .cli import attest
 from .core import (MAX_JSON, ROOT, Error,
-                   download, load_config, read_json, require_sha, run,
-                   canonical_name, validate_record, is_transient_error)
+                   download, load_config, read_json, require_sha, retry_transient, run,
+                   canonical_name, validate_record)
 
 BOT_LOGIN_ENV = "INTELBREW_BOT_LOGIN"
 APP_LOGIN_RE = re.compile(r"app/[a-z0-9][a-z0-9-]*\Z")
@@ -27,16 +26,7 @@ MAIN = "main"
 
 def gh(arguments: list[str], *, capture: bool = True) -> str:
     """Run gh with no credential helper or shell interpolation."""
-    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
-    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
-    for attempt in range(attempts):
-        if attempt > 0 and delay > 0:
-            time.sleep(delay * (2 ** (attempt - 1)))
-        try:
-            return run(["gh", *arguments], capture=capture, cwd=ROOT)
-        except Error as exc:
-            if not is_transient_error(exc) or attempt == attempts - 1:
-                raise
+    return retry_transient(lambda: run(["gh", *arguments], capture=capture, cwd=ROOT))
 
 
 def gh_json(arguments: list[str]) -> Any:

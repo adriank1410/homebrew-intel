@@ -84,7 +84,8 @@ class OperationTests(unittest.TestCase):
         transient = Error('gh failed (1): Error: failed to choose verifier based on provided bundle issuer: public good verifier is not available (initialization may have failed)')
         with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), \
              patch('intelbrew.cli.run', side_effect=[transient, None]) as run, \
-             patch('intelbrew.cli.time.sleep') as sleep:
+             patch.dict(os.environ, {"INTELBREW_RETRY_DELAY": "1"}), \
+             patch('intelbrew.core.time.sleep') as sleep:
             attest(Path('/file'), 'adriank1410/homebrew-intel', G)
             self.assertEqual(run.call_count, 2)
             self.assertEqual(sleep.call_args_list[0].args, (1,))
@@ -93,7 +94,8 @@ class OperationTests(unittest.TestCase):
         transient = Error('gh failed (1): HTTP 503: Service Unavailable')
         with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), \
              patch('intelbrew.cli.run', side_effect=[transient, None]) as run, \
-             patch('intelbrew.cli.time.sleep') as sleep:
+             patch.dict(os.environ, {"INTELBREW_RETRY_DELAY": "1"}), \
+             patch('intelbrew.core.time.sleep') as sleep:
             attest(Path('/file'), 'adriank1410/homebrew-intel', G)
             self.assertEqual(run.call_count, 2)
             self.assertEqual(sleep.call_args_list[0].args, (1,))
@@ -102,7 +104,7 @@ class OperationTests(unittest.TestCase):
         failure = Error('gh failed (1): signature verification failed')
         with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), \
              patch('intelbrew.cli.run', side_effect=[failure, failure]) as run, \
-             patch('intelbrew.cli.time.sleep') as sleep:
+             patch('intelbrew.core.time.sleep') as sleep:
             with self.assertRaisesRegex(Error, 'signature verification failed'):
                 attest(Path('/file'), 'adriank1410/homebrew-intel', G)
             self.assertEqual(run.call_count, 2)
@@ -591,6 +593,69 @@ class SourceBundleTests(unittest.TestCase):
             except Exception:
                 pass
             self.assertEqual(events, [("install", "subversion"), ("prepare_sources", "netpbm")])
+
+    def test_build_installs_subversion_when_formula_has_pinned_svn_source(self):
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+            "GITHUB_RUN_ID": "123", "RUNNER_TEMP": "",
+        }
+        metadata = {
+            "netpbm": meta("netpbm", vcs_source=True, pinned_svn_source=True, license="GPL-3.0-or-later"),
+        }
+        def fake_read_json(path):
+            if Path(path) == ROOT / "policy/targets.json": return {"formulae": ["netpbm"]}
+            return json.loads(Path(path).read_text())
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {**env, "RUNNER_TEMP": d}, clear=True), \
+             patch("intelbrew.ci.sync_registry", return_value="c" * 40), \
+             patch("intelbrew.ci.registry", return_value={}), \
+             patch("intelbrew.ci.read_json", side_effect=fake_read_json), \
+             patch("intelbrew.ci.shutil.which", return_value=None), \
+             patch("intelbrew.ci._prepare_source_sets", return_value=({"netpbm": Path(d)}, {"netpbm": {}})), \
+             patch("intelbrew.ci.native", return_value=metadata), \
+             patch("intelbrew.ci.run") as run:
+            from intelbrew.ci import build
+            try:
+                build("netpbm", Path(d) / "candidate")
+            except Exception:
+                pass
+            svn_install = [call for call in run.call_args_list if "homebrew/core/subversion" in call.args[0]]
+            self.assertEqual(len(svn_install), 1)
+            self.assertEqual(svn_install[0].args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install", "--force-bottle", "--no-ask", "homebrew/core/subversion"])
+
+    def test_build_skips_subversion_bootstrap_when_plan_installs_it(self):
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+            "GITHUB_RUN_ID": "123", "RUNNER_TEMP": "",
+        }
+        metadata = {
+            "subversion": meta("subversion", official=True),
+            "netpbm": meta("netpbm", build=["subversion"], vcs_source=True, pinned_svn_source=True, license="GPL-3.0-or-later"),
+        }
+        def fake_native(request, **kwargs):
+            if request.get("mode") == "inspect":
+                return {name: metadata[name] for name in request["names"]}
+            return {}
+        def fake_read_json(path):
+            if Path(path) == ROOT / "policy/targets.json": return {"formulae": ["netpbm"]}
+            return json.loads(Path(path).read_text())
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {**env, "RUNNER_TEMP": d}, clear=True), \
+             patch("intelbrew.ci.sync_registry", return_value="c" * 40), \
+             patch("intelbrew.ci.registry", return_value={}), \
+             patch("intelbrew.ci.read_json", side_effect=fake_read_json), \
+             patch("intelbrew.ci.shutil.which", return_value=None), \
+             patch("intelbrew.ci._prepare_source_sets", return_value=({"netpbm": Path(d)}, {"netpbm": {}})), \
+             patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.install_binary"), \
+             patch("intelbrew.ci.run") as run:
+            from intelbrew.ci import build
+            try:
+                build("netpbm", Path(d) / "candidate")
+            except Exception:
+                pass
+            svn_bootstrap = [call for call in run.call_args_list if "homebrew/core/subversion" in call.args[0]]
+            self.assertEqual(svn_bootstrap, [])
 
     def test_version_matches_changelog(self):
         from intelbrew import __version__

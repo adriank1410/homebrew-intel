@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 from intelbrew.core import Error, digest
-from intelbrew.publish import ensure_release
+from intelbrew.publish import _find_release, ensure_release
 
 class PublicationRetryTests(unittest.TestCase):
     def test_existing_identical_release_is_reused(self):
@@ -23,6 +23,19 @@ class PublicationRetryTests(unittest.TestCase):
             with patch("intelbrew.publish.run", side_effect=Error("already exists")), patch("intelbrew.publish.gh_json", return_value=release):
                 with self.assertRaises(Error):
                     ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
+
+    def test_find_release_treats_http_404_as_missing(self):
+        missing = Error("gh failed (1): gh: Not Found (HTTP 404)")
+        with patch("intelbrew.publish.gh_json", side_effect=[missing, []]):
+            self.assertIsNone(_find_release("owner/repo", "tag"))
+
+    def test_find_release_does_not_treat_sha_404_timeout_as_missing(self):
+        timeout = Error(
+            "gh failed (1): GET https://api.github.com/repos/x/y/commits/abc404def timed out")
+        with patch("intelbrew.publish.gh_json", side_effect=timeout):
+            with self.assertRaises(Error) as exc:
+                _find_release("owner/repo", "tag")
+        self.assertIn("timed out", str(exc.exception))
 
     def test_new_release_succeeds_without_recovery_lookup(self):
         with patch("intelbrew.publish.run") as run, patch("intelbrew.publish.gh_json") as api:

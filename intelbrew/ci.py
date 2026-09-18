@@ -1,14 +1,14 @@
 # SPDX-License-Identifier: BSD-2-Clause
 """Build and verification stages. This module refuses to mutate non-CI hosts."""
 from __future__ import annotations
-import argparse, copy, hashlib, io, json, os, re, shutil, subprocess, sys, tarfile, tempfile, time
+import argparse, copy, hashlib, io, json, os, re, shutil, subprocess, sys, tarfile, tempfile
 from pathlib import Path, PurePosixPath
 from .archive_notices import archive_notices
 from .build_sources import MAX_FILES as MAX_BUILD_SOURCE_FILES, collect_build_sources
 from .cli import attest
 from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, brew_env, canonical_name,
-                   check_bottle, digest, download, is_transient_error, load_config, native, read_json,
-                   registry, require_sha, run, validate_record, write_json_new)
+                   check_bottle, digest, download, load_config, native, read_json,
+                   registry, require_sha, retry_transient, run, validate_record, write_json_new)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
@@ -35,17 +35,7 @@ def sync_registry(commit: str | None = None, *, force: bool = False) -> str:
             shutil.rmtree(ROOT / "registry", ignore_errors=True)
             run(["git", "checkout", commit, "--", "registry"], cwd=ROOT)
             return commit
-    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
-    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
-    for attempt in range(attempts):
-        if attempt > 0 and delay > 0:
-            time.sleep(delay * (2 ** (attempt - 1)))
-        try:
-            run(["git", "fetch", "--depth=1", "origin", target], cwd=ROOT)
-            break
-        except Error as exc:
-            if not is_transient_error(exc) or attempt == attempts - 1:
-                raise
+    retry_transient(lambda: run(["git", "fetch", "--depth=1", "origin", target], cwd=ROOT))
     resolved = run(["git", "rev-parse", "FETCH_HEAD"], cwd=ROOT).strip()
     require_sha(resolved, git=True)
     shutil.rmtree(ROOT / "registry", ignore_errors=True)
@@ -388,6 +378,14 @@ def build(root:str,output:Path)->None:
     # must not depend on RubyGems being reachable.
     tooling_env=brew_env(ci=True);tooling_env.update(BUNDLE_RETRY="3",BUNDLE_TIMEOUT="30")
     run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install-bundler-gems","--add-groups=bottle"],capture=False,env=tooling_env)
+    # Pinned Subversion exports shell out to `svn`. If the formula does not
+    # declare subversion as a planned bottle install, bootstrap the official
+    # bottle now. Skip when the plan will install it first (avoids a later
+    # same-version reinstall refusal).
+    if any(plan["nodes"][name].get("pinned_svn_source") is True for name in to_build):
+        svn_provider=plan["nodes"].get("subversion",{}).get("provider")
+        if not shutil.which("svn") and svn_provider not in {"official","personal","installed","build"}:
+            run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install","--force-bottle","--no-ask","homebrew/core/subversion"],capture=False,env=tooling_env)
     work=Path(tempfile.mkdtemp(prefix="intelbrew-build-",dir=os.environ["RUNNER_TEMP"]))
     package_caches={};source_sets={}
     for name in plan["order"]:

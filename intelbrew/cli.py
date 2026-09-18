@@ -10,7 +10,6 @@ import platform
 import shutil
 import sys
 import tempfile
-import time
 from collections import Counter
 from pathlib import Path
 
@@ -18,8 +17,8 @@ from typing import Any
 
 from . import __version__
 from .core import (Error, Planner, artifact_url, brew_env, check_bottle,
-                   download, ensure_complete, is_transient_error, load_config, matching_record,
-                   native, read_json, registry, require_sha, run, write_json_new)
+                   download, ensure_complete, load_config, matching_record,
+                   native, read_json, registry, require_sha, retry_transient, run, write_json_new)
 from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
                          BOLD_YELLOW, DIM, is_color_enabled, ohai, onoe, opoo, style)
 
@@ -40,20 +39,16 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
                 "--signer-workflow", f"{repository}/.github/workflows/{workflow}",
                 "--source-ref", "refs/heads/main", "--source-digest", workflow_commit,
                 "--signer-digest", workflow_commit, "--deny-self-hosted-runners"]
-        for attempt in range(3):
-            try:
-                run(args, capture=not verbose, env=env)
-                return
-            except Error as exc:
-                # gh initializes Sigstore's public-good verifier in each
-                # process. A transient trust-root/network initialization
-                # failure is safe to retry; signature and identity failures
-                # remain fail-closed and are never retried.
-                if not is_transient_error(exc) or attempt == 2:
-                    if workflow == "bottles.yml":
-                        raise
-                    break
-                time.sleep(2 ** attempt)
+        try:
+            # gh initializes Sigstore's public-good verifier in each
+            # process. A transient trust-root/network initialization
+            # failure is safe to retry; signature and identity failures
+            # remain fail-closed and are never retried.
+            retry_transient(lambda: run(args, capture=not verbose, env=env))
+            return
+        except Error:
+            if workflow == "bottles.yml":
+                raise
 
 
 
