@@ -670,3 +670,22 @@ class SourceBundleTests(unittest.TestCase):
                 if quote.match(line):
                     offenders.append(f"{name}:{number}")
         self.assertEqual(offenders, [])
+
+    def test_readme_documents_pinned_git_and_subversion_sources(self):
+        english = (ROOT / "README.md").read_text()
+        polish = (ROOT / "README.pl.md").read_text()
+        self.assertRegex(english, r"Git sources pinned to a\s+full commit")
+        self.assertRegex(english, r"Subversion sources pinned to an exact revision")
+        self.assertRegex(polish, r"Źródła Git przypięte do pełnego commita")
+        self.assertRegex(polish, r"źródła Subversion przypięte do dokładnej rewizji")
+
+    def test_readme_qt6_module_count_matches_registry(self):
+        blocked = set(load_config()["blocked_source_builds"])
+        modules = sorted(path.stem for path in (ROOT / "registry").glob("qt*.json")
+                         if path.stem not in blocked)
+        self.assertGreater(len(modules), 0)
+        count = str(len(modules))
+        self.assertRegex((ROOT / "README.md").read_text(),
+                         rf"All {count} modular Qt6 module formulas")
+        self.assertRegex((ROOT / "README.pl.md").read_text(),
+                         rf"Wszystkie {count} modułowych")
