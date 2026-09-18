@@ -20,12 +20,18 @@ ze zweryfikowanych buildów tego repozytorium. Pakiety zachowują tożsamość
 brew tap adriank1410/intel
 brew trust --command adriank1410/intel/intel
 brew intel doctor
-brew intel plan simdutf
-brew intel upgrade simdutf --apply
 ```
 
 Dwie pierwsze komendy dodają tap i nadają zaufanie jego komendzie `intel`.
 Do weryfikacji poświadczeń pochodzenia GitHub potrzebny jest wcześniej zainstalowany `gh`.
+
+Żeby sprawdzić albo zainstalować jeden pakiet, podaj jego nazwę. `simdutf`
+poniżej to tylko przykład; każda nazwa z [rejestru](registry/) działa tak samo:
+
+```sh
+brew intel plan simdutf
+brew intel upgrade simdutf --apply
+```
 
 `plan`, `doctor` i `upgrade` bez `--apply` nie instalują pakietów. Zmiany
 pakietów wymagają `--apply`. Flaga `-v` / `--verbose` włącza szczegółową
