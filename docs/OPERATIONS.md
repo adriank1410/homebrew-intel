@@ -8,8 +8,13 @@ path against this repository. Future source changes belong in reviewed PRs.
 
 Recommended server-side settings are squash-only merge, update-branch support,
 automatic deletion of merged topic branches, read-by-default Actions permissions,
-required `tests`, no force-push/deletion of `main`, and protected `v*`/`intel-*`
-tags. Workflow actions are pinned to reviewed full commit SHAs. Registry automation
+required `tests`, no force-push/deletion of `main`, protected `v*`/`intel-*`
+tags, and a separate ruleset on `coverage/intel-installed`. That standing branch
+restricts creation, updates and deletion to repository admins; it must not copy
+`main`'s pull-request or non-fast-forward rules, because `brew intel sync --apply`
+pushes with `--force-with-lease`. Restricting deletion also stops GitHub from
+removing the reused head when merged topic branches are deleted automatically.
+Workflow actions are pinned to reviewed full commit SHAs. Registry automation
 uses a private GitHub App installed only on this repository. Configure repository
 variable `INTELBREW_APP_CLIENT_ID` and secret `INTELBREW_APP_PRIVATE_KEY`. The App
 needs Contents, Pull requests, Actions and Workflows read/write permissions; Metadata read
@@ -203,6 +208,13 @@ Run `brew intel sync --json` for the detailed local eligibility report. Add
 GitHub CLI login. The client operates in a temporary checkout; it does not edit
 the installed tap, change core remotes, remove existing targets, or install
 packages. The fixed `coverage/intel-installed` branch avoids duplicate PRs.
+
+Hourly coverage maintenance merges that PR into `main`; it does not push the
+coverage head. The owner CLI clones, optionally rebases, commits unsigned, and
+`git push --force-with-lease` to `coverage/intel-installed`. Protect that ref
+with ruleset `creation`, `update` (`update_allows_fetch_and_merge: false`) and
+`deletion`, plus an admin bypass (`always`). Do not add `pull_request`,
+`non_fast_forward` or `required_signatures`.
 
 Hourly coverage maintenance runs on trusted `main` with the same short-lived App
 token. It accepts only the expected owner, branch, repository and base; exactly

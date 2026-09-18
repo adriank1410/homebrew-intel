@@ -44,6 +44,7 @@ def configure(report):
     report['settings']='manual-verification-required'
     print('Recommended settings: squash-only; update branch; delete merged branches; read-only default Actions;')
     print('Configure the private publishing App (see docs/OPERATIONS.md); protect main and require tests; protect v*/intel-* tags.')
+    print('Restrict coverage/intel-installed create/push/delete to admins; do not require PRs or block force-push (CLI --force-with-lease).')
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--apply',action='store_true');p.add_argument('--resume-settings',action='store_true');p.add_argument('--bootstrap',action='store_true');args=p.parse_args()
