@@ -1,5 +1,13 @@
 # Changelog
- 
+
+## 0.2.1 – CI reliability
+
+- Unified transient network and GitHub CLI retries behind `retry_transient()`.
+- Retry truncated bottle downloads (`IncompleteRead`) instead of failing the fetch.
+- Classify only `HTTP 404` / `401` / `403` as permanent; a SHA or URL containing those digits no longer blocks retry.
+- Restore Subversion bootstrap for pinned SVN sources when `subversion` is not already a planned bottle install.
+- Bound Homebrew formula API payloads at 64 MiB.
+
 ## 0.2.0 – native experience & visual polish
 
 - Native Homebrew output format: `upgrade` shows `==> Upgrading N outdated package(s):` with `<formula> <old> -> <new>` and hides already-installed dependencies.

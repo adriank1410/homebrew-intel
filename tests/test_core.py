@@ -83,6 +83,7 @@ class ValidationTests(unittest.TestCase):
         opener = Opener()
         with tempfile.TemporaryDirectory() as d, \
              patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {"INTELBREW_RETRY_DELAY": "1"}), \
              patch('intelbrew.core.time.sleep') as sleep:
             target = Path(d) / 'artifact'
             download('https://github.com/a/b', target, expected, len(payload))
@@ -113,6 +114,7 @@ class ValidationTests(unittest.TestCase):
         opener = Opener()
         with tempfile.TemporaryDirectory() as d, \
              patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {"INTELBREW_RETRY_DELAY": "1"}), \
              patch('intelbrew.core.time.sleep') as sleep:
             target = Path(d) / 'artifact'
             download('https://github.com/a/b', target, expected, len(payload))
@@ -143,6 +145,41 @@ class ValidationTests(unittest.TestCase):
         opener = Opener()
         with tempfile.TemporaryDirectory() as d, \
              patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {"INTELBREW_RETRY_DELAY": "1"}), \
+             patch('intelbrew.core.time.sleep') as sleep:
+            target = Path(d) / 'artifact'
+            download('https://github.com/a/b', target, expected, len(payload))
+            self.assertEqual(target.read_bytes(), payload)
+            self.assertEqual(opener.calls, 2)
+            sleep.assert_called_once_with(1)
+
+    def test_download_retries_incomplete_read_and_rechecks_digest(self):
+        import http.client
+        payload = b'retryable incomplete payload'
+        expected = hashlib.sha256(payload).hexdigest()
+
+        class Response:
+            def __init__(self, fail=False):
+                self.fail = fail
+                self.reads = 0
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def read(self, size):
+                if self.fail:
+                    raise http.client.IncompleteRead(b'partial')
+                self.reads += 1
+                return payload if self.reads == 1 else b''
+
+        class Opener:
+            def __init__(self): self.calls = 0
+            def open(self, url, timeout):
+                self.calls += 1
+                return Response(fail=self.calls == 1)
+
+        opener = Opener()
+        with tempfile.TemporaryDirectory() as d, \
+             patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {"INTELBREW_RETRY_DELAY": "1"}), \
              patch('intelbrew.core.time.sleep') as sleep:
             target = Path(d) / 'artifact'
             download('https://github.com/a/b', target, expected, len(payload))
@@ -167,6 +204,19 @@ class ValidationTests(unittest.TestCase):
         self.assertTrue(is_transient_error(Error("fatal: the remote end hung up unexpectedly")))
         self.assertTrue(is_transient_error(Error("error: RPC failed; HTTP 500 curl 22")))
         self.assertTrue(is_transient_error(Error("gh failed (1): public good verifier is not available")))
+
+    def test_is_transient_error_treats_incomplete_read_as_transient(self):
+        import http.client
+        from intelbrew.core import is_transient_error
+        self.assertTrue(is_transient_error(http.client.IncompleteRead(b"partial")))
+        self.assertTrue(is_transient_error(Error("IncompleteRead(123 bytes read)")))
+
+    def test_is_transient_error_does_not_treat_sha_digits_as_http_status(self):
+        from intelbrew.core import is_transient_error
+        self.assertTrue(is_transient_error(Error(
+            "gh failed (1): GET https://api.github.com/repos/x/y/commits/abc404def timed out")))
+        self.assertTrue(is_transient_error(Error("RPC failed; HTTP 500 after object 401aaa")))
+        self.assertFalse(is_transient_error(Error("gh failed (1): gh: Not Found (HTTP 404)")))
 
     def test_is_transient_error_rejects_permanent_and_integrity_errors(self):
         from intelbrew.core import is_transient_error

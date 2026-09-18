@@ -1,26 +1,49 @@
 # SPDX-License-Identifier: BSD-2-Clause
 """Pure planning, validation and transport. No Homebrew mutations happen here."""
 from __future__ import annotations
-import hashlib,json,os,re,socket,subprocess,sys,tarfile,time,urllib.error,urllib.parse,urllib.request
+import hashlib,http.client,json,os,re,socket,subprocess,sys,tarfile,time,urllib.error,urllib.parse,urllib.request
 from pathlib import Path,PurePosixPath
-ROOT=Path(__file__).resolve().parents[1];NAME=re.compile(r"[a-z0-9][a-z0-9+_.-]*(?:@[0-9][a-z0-9+_.-]*)?\Z");SHA256=re.compile(r"[0-9a-f]{64}\Z");SHA1=re.compile(r"[0-9a-f]{40}\Z");TAG=re.compile(r"intel-[0-9]+-[0-9]+-[a-z0-9_.+-]+\Z");MAX_JSON=8*1024*1024;MAX_ARTIFACT=2_000_000_000
+ROOT=Path(__file__).resolve().parents[1];NAME=re.compile(r"[a-z0-9][a-z0-9+_.-]*(?:@[0-9][a-z0-9+_.-]*)?\Z");SHA256=re.compile(r"[0-9a-f]{64}\Z");SHA1=re.compile(r"[0-9a-f]{40}\Z");TAG=re.compile(r"intel-[0-9]+-[0-9]+-[a-z0-9_.+-]+\Z");MAX_JSON=8*1024*1024;MAX_ARTIFACT=2_000_000_000;MAX_OFFICIAL_METADATA=64*1024*1024
 RECORD_KEYS={"schema","name","version","revision","version_scheme","pkg_version","formula_sha256","recipe_sha256","core_commit","brew_commit","tag","arch","cellar","filename","sha256","size","license","runtime_dependencies","source","release","workflow_commit","run_id"}
-RETRY_ATTEMPTS=int(os.environ.get("INTELBREW_RETRY_ATTEMPTS","3"))
-RETRY_DELAY=float(os.environ.get("INTELBREW_RETRY_DELAY","0" if "unittest" in sys.modules else "5"))
+_TRANSIENT_NETWORK=(TimeoutError, socket.timeout, ConnectionError, socket.gaierror, http.client.IncompleteRead)
 class Error(RuntimeError):pass
+
+def retry_settings():
+    try:
+        attempts=int(os.environ.get("INTELBREW_RETRY_ATTEMPTS","3"))
+        delay=float(os.environ.get("INTELBREW_RETRY_DELAY","0" if "unittest" in sys.modules else "5"))
+    except (TypeError,ValueError) as exc:
+        raise Error("Invalid INTELBREW_RETRY_ATTEMPTS or INTELBREW_RETRY_DELAY") from exc
+    if attempts<1 or delay<0:raise Error("Invalid INTELBREW_RETRY_ATTEMPTS or INTELBREW_RETRY_DELAY")
+    return attempts,delay
+
+def retry_transient(operation):
+    """Retry a network/CLI operation on classified transient failures."""
+    attempts,delay=retry_settings()
+    for attempt in range(attempts):
+        if attempt>0 and delay>0:time.sleep(delay*(2**(attempt-1)))
+        try:return operation()
+        except Exception as exc:
+            if hasattr(exc,"close"):
+                try:exc.close()
+                except Exception:pass
+            if not is_transient_error(exc) or attempt==attempts-1:raise
+    raise Error("retry_transient exhausted without a result")
 
 def is_transient_error(exc: Exception | str) -> bool:
     if isinstance(exc, urllib.error.HTTPError):
         return exc.code in {408, 429, 500, 502, 503, 504}
-    if isinstance(exc, (TimeoutError, socket.timeout, ConnectionError, socket.gaierror)):
+    if isinstance(exc, _TRANSIENT_NETWORK):
         return True
     if isinstance(exc, urllib.error.URLError):
-        if isinstance(exc.reason, (TimeoutError, socket.timeout, socket.gaierror, ConnectionError)):
+        if isinstance(exc.reason, _TRANSIENT_NETWORK):
             return True
         return is_transient_error(str(exc.reason))
     msg = str(exc).lower()
+    # Status codes must not be bare digit substrings: a SHA or URL path can
+    # contain "404"/"401"/"403" inside an otherwise retryable timeout.
     non_transient = (
-        "404", "not found", "401", "unauthorized", "403", "forbidden",
+        "http 404", "not found", "http 401", "unauthorized", "http 403", "forbidden",
         "signature verification failed", "checksum/size mismatch",
         "sha-256 mismatch", "digest/size mismatch", "invalid json",
         "unknown flag", "refusing downgrade", "dependency cycle",
@@ -36,6 +59,7 @@ def is_transient_error(exc: Exception | str) -> bool:
         "rate limit exceeded", "secondary rate limit",
         "public good verifier is not available", "network is unreachable",
         "network failure", "server offline", "error creating asset temp dir",
+        "incomplete read", "incompleteread", "retrieval incomplete",
         "http 408", "http 429", "http 500", "http 502", "http 503", "http 504",
         "502 bad gateway", "503 service unavailable", "504 gateway time-out", "504 gateway timeout",
         "bad gateway", "service unavailable", "gateway time-out", "gateway timeout",
@@ -206,24 +230,22 @@ def download(url,target,expected_sha,expected_size):
         if target.stat().st_size==expected_size and digest(target)==expected_sha:return target
         raise Error(f'Existing cache file invalid; retained: {target}')
     target.parent.mkdir(parents=True,exist_ok=True);part=target.with_name(target.name+f'.partial-{os.getpid()}');opener=urllib.request.build_opener(SafeRedirect())
-    for attempt in range(3):
+    h=hashlib.sha256();total=0
+    def pull():
+        nonlocal h,total
         h=hashlib.sha256();total=0
-        try:
-            part.unlink(missing_ok=True)
-            with opener.open(url,timeout=60) as response,part.open('xb') as out:
-                while True:
-                    chunk=response.read(1024*1024)
-                    if not chunk:break
-                    total+=len(chunk)
-                    if total>expected_size:raise Error('Artifact exceeds expected length')
-                    out.write(chunk);h.update(chunk)
-            break
-        except (OSError,ValueError) as exc:
-            if hasattr(exc, "close"):
-                exc.close()
-            if not is_transient_error(exc) or attempt == 2:
-                raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
-            time.sleep(2 ** attempt)
+        part.unlink(missing_ok=True)
+        with opener.open(url,timeout=60) as response,part.open('xb') as out:
+            while True:
+                chunk=response.read(1024*1024)
+                if not chunk:break
+                total+=len(chunk)
+                if total>expected_size:raise Error('Artifact exceeds expected length')
+                out.write(chunk);h.update(chunk)
+    try:retry_transient(pull)
+    except Error:raise
+    except (OSError,ValueError,http.client.IncompleteRead) as exc:
+        raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
     if total!=expected_size or h.hexdigest()!=expected_sha:raise Error(f'Checksum/size mismatch; retained at {part}')
     os.link(part,target);return target
 

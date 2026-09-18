@@ -377,11 +377,19 @@ class PlanWorkflowTests(unittest.TestCase):
         import io
         import urllib.error
         payload = b'[{"name": "test", "versions": {"stable": "1.0"}, "revision": 0, "version_scheme": 0, "ruby_source_checksum": {"sha256": "' + b'a' * 64 + b'"}, "dependencies": []}]'
-        transient = urllib.error.HTTPError("https://formulae.brew.sh/api/formula.json", 503, "Service Unavailable", {}, None)
+        transient = urllib.error.HTTPError("https://formulae.brew.sh/api/formula.json", 503, "Service Unavailable", {}, io.BytesIO(b""))
         with patch("urllib.request.urlopen", side_effect=[transient, io.BytesIO(payload)]) as url_mock:
             index = plan.load_formula_index()
             self.assertIn("test", index)
             self.assertEqual(url_mock.call_count, 2)
+
+    def test_load_formula_index_rejects_oversized_payload(self):
+        import io
+        from intelbrew.core import MAX_OFFICIAL_METADATA
+        too_big = b"x" * (MAX_OFFICIAL_METADATA + 1)
+        with patch("urllib.request.urlopen", return_value=io.BytesIO(too_big)):
+            with self.assertRaisesRegex(plan.Error, "exceeds size limit"):
+                plan.load_formula_index()
 
     def test_plan_workflow_retries_git_ls_remote(self):
         transient = plan.Error("fatal: error: RPC failed; HTTP 500 curl 22")
