@@ -87,4 +87,45 @@ class PublicationRetryTests(unittest.TestCase):
             with patch("intelbrew.publish.run", side_effect=Error("offline")) as run, patch("intelbrew.publish.gh_json", side_effect=[release, []]):
                 with self.assertRaises(Error):
                     ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
+                self.assertNotIn("edit", [c.args[0][2] for c in run.call_args_list])
+
+    def test_release_create_500_retries_and_succeeds(self):
+        with tempfile.TemporaryDirectory() as directory:
+            asset = Path(directory) / "manifest.json"
+            asset.write_text("verified")
+            with patch("intelbrew.publish.run", side_effect=[Error("HTTP 500: Error creating asset temp dir"), ""]) as run, \
+                 patch("intelbrew.publish.gh_json", side_effect=[Error("gh failed (1): gh: Not Found (HTTP 404)"), []]):
+                ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
                 self.assertEqual(run.call_count, 2)
+                self.assertEqual([c.args[0][2] for c in run.call_args_list], ["create", "create"])
+
+    def test_release_create_leaves_draft_and_retry_completes_it(self):
+        with tempfile.TemporaryDirectory() as directory:
+            asset = Path(directory) / "manifest.json"
+            asset.write_text("verified")
+            draft = {"tag_name": "tag", "draft": True, "target_commitish": "a" * 40, "assets": []}
+            with patch("intelbrew.publish.run", side_effect=[Error("HTTP 500: Error creating asset temp dir"), "", ""]) as run, \
+                 patch("intelbrew.publish.gh_json", side_effect=[Error("gh failed (1): gh: Not Found (HTTP 404)"), [draft], []]):
+                ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
+                self.assertEqual([c.args[0][2] for c in run.call_args_list], ["create", "upload", "edit"])
+
+    def test_upload_transient_failure_retries_and_publishes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            asset = Path(directory) / "manifest.json"
+            asset.write_text("verified")
+            draft = {"tag_name": "tag", "draft": True, "target_commitish": "a" * 40, "assets": []}
+            with patch("intelbrew.publish.run", side_effect=[Error("already exists"), Error("HTTP 500: Error creating asset temp dir"), "", ""]) as run, \
+                 patch("intelbrew.publish.gh_json", side_effect=[draft, []]):
+                ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
+                self.assertEqual([c.args[0][2] for c in run.call_args_list], ["create", "upload", "upload", "edit"])
+
+    def test_release_create_exhausts_retries_and_fails(self):
+        with tempfile.TemporaryDirectory() as directory:
+            asset = Path(directory) / "manifest.json"
+            asset.write_text("verified")
+            with patch("intelbrew.publish.run", side_effect=Error("server offline")) as run, \
+                 patch("intelbrew.publish.gh_json", side_effect=Error("gh failed (1): gh: Not Found (HTTP 404)")):
+                with self.assertRaises(Error) as exc:
+                    ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
+                self.assertIn("server offline", str(exc.exception))
+                self.assertEqual(run.call_count, 3)

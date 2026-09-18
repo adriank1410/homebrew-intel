@@ -6,7 +6,9 @@ import copy
 import json
 import os
 import sys
+import time
 from pathlib import Path
+from typing import Any
 from .ci import validate_candidate
 from .core import ROOT, Error, canonical_name, load_config, require_sha, run, validate_record, digest
 from .registry_pr import ensure_pr, gh_json
@@ -24,17 +26,30 @@ def git(arguments: list[str]) -> str:
                 "credential.https://github.com.helper=!gh auth git-credential", *arguments], cwd=ROOT)
 
 
-def ensure_release(repo: str, tag: str, commit: str, title: str, notes: str,
-                   assets: list[Path]) -> None:
-    """Resume an interrupted upload without replacing any published bytes."""
+def _find_release(repo: str, tag: str) -> dict[str, Any] | None:
     try:
-        run(["gh", "release", "create", tag, "--repo", repo, "--target", commit,
-             "--title", title, "--notes", notes, *map(str, assets)], capture=False)
-        return
+        data = gh_json(["api", f"repos/{repo}/releases/tags/{tag}"])
+        if isinstance(data, dict) and data.get("tag_name") == tag:
+            return data
+    except Error as exc:
+        msg = str(exc)
+        if "404" not in msg and "Not Found" not in msg:
+            raise
+    # A draft release created by gh may not have a published tag;
+    # check repository releases for any matching draft.
+    try:
+        releases = gh_json(["api", f"repos/{repo}/releases"])
+        if isinstance(releases, list):
+            for item in releases:
+                if isinstance(item, dict) and item.get("tag_name") == tag:
+                    return item
     except Error:
-        # A failed request can have created the release before losing its
-        # response. Read its actual state; a missing release still fails here.
-        release = gh_json(["api", f"repos/{repo}/releases/tags/{tag}"])
+        pass
+    return None
+
+
+def _validate_release(release: dict[str, Any], tag: str, commit: str, repo: str,
+                      assets: list[Path]) -> list[Path]:
     if (not isinstance(release, dict) or release.get("tag_name") != tag
             or type(release.get("draft")) is not bool or not isinstance(release.get("assets"), list)):
         raise Error("Existing release has an unexpected identity or state")
@@ -61,13 +76,58 @@ def ensure_release(repo: str, tag: str, commit: str, title: str, notes: str,
             raise Error("Existing release tag differs from the verified pipeline commit")
     elif not release["draft"] or release.get("target_commitish") != commit:
         raise Error("Existing release has no matching tag or draft target")
-    missing = [p for p in assets if p.name not in seen]
+    return [p for p in assets if p.name not in seen]
+
+
+def ensure_release(repo: str, tag: str, commit: str, title: str, notes: str,
+                   assets: list[Path]) -> None:
+    """Resume an interrupted upload without replacing any published bytes."""
+    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
+    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
+    release: dict[str, Any] | None = None
+
+    for attempt in range(attempts):
+        if attempt > 0 and delay > 0:
+            time.sleep(delay * (2 ** (attempt - 1)))
+        try:
+            run(["gh", "release", "create", tag, "--repo", repo, "--target", commit,
+                 "--title", title, "--notes", notes, *map(str, assets)], capture=False)
+            return
+        except Error:
+            # A failed request can have created the release before losing its
+            # response. Read its actual state.
+            release = _find_release(repo, tag)
+            if release is not None:
+                break
+            if attempt == attempts - 1:
+                raise
+
+    if release is None:
+        return
+
+    missing = _validate_release(release, tag, commit, repo, assets)
     if missing:
-        run(["gh", "release", "upload", tag, "--repo", repo, *map(str, missing)], capture=False)
+        for upload_attempt in range(attempts):
+            if upload_attempt > 0 and delay > 0:
+                time.sleep(delay * (2 ** (upload_attempt - 1)))
+            try:
+                run(["gh", "release", "upload", tag, "--repo", repo, *map(str, missing)], capture=False)
+                break
+            except Error:
+                if upload_attempt == attempts - 1:
+                    raise
     if release["draft"]:
         # gh creates a temporary draft while uploading. Publish only once all
         # original candidate assets have been checked or uploaded successfully.
-        run(["gh", "release", "edit", tag, "--repo", repo, "--draft=false"], capture=False)
+        for edit_attempt in range(attempts):
+            if edit_attempt > 0 and delay > 0:
+                time.sleep(delay * (2 ** (edit_attempt - 1)))
+            try:
+                run(["gh", "release", "edit", tag, "--repo", repo, "--draft=false"], capture=False)
+                break
+            except Error:
+                if edit_attempt == attempts - 1:
+                    raise
 
 
 
