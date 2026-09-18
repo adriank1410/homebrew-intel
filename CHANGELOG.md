@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Document a dedicated ruleset for the standing `coverage/intel-installed` branch: admin-only create/push/delete, no required PR or force-push block.
+- Monitor popular Homebrew formulae that currently lack Sequoia Intel bottles: `uv`, `pnpm`, `docker`, `docker-compose`, `just`, `neovim`, `glab`, `helm`, `lazygit`, `rclone`, `git-lfs`, and `cloudflared`.
+
 ## 0.2.1 – CI reliability
 
 - Unified transient network and GitHub CLI retries behind `retry_transient()`.

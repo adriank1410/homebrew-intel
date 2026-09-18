@@ -20,12 +20,18 @@ ze zweryfikowanych buildów tego repozytorium. Pakiety zachowują tożsamość
 brew tap adriank1410/intel
 brew trust --command adriank1410/intel/intel
 brew intel doctor
-brew intel plan simdutf
-brew intel upgrade simdutf --apply
 ```
 
 Dwie pierwsze komendy dodają tap i nadają zaufanie jego komendzie `intel`.
 Do weryfikacji poświadczeń pochodzenia GitHub potrzebny jest wcześniej zainstalowany `gh`.
+
+Żeby sprawdzić albo zainstalować jeden pakiet, podaj jego nazwę. `simdutf`
+poniżej to tylko przykład; każda nazwa z [rejestru](registry/) działa tak samo:
+
+```sh
+brew intel plan simdutf
+brew intel upgrade simdutf --apply
+```
 
 `plan`, `doctor` i `upgrade` bez `--apply` nie instalują pakietów. Zmiany
 pakietów wymagają `--apply`. Flaga `-v` / `--verbose` włącza szczegółową
@@ -89,9 +95,10 @@ nie blokują użycia dostępnej oficjalnej lub własnej butelki.
 Publikacja pakietów GPL, LGPL, AGPL i MPL wymaga dołączenia źródeł. Wydanie zawiera
 recepturę, zadeklarowane źródła i patche, informacje licencyjne oraz pobrane źródła
 zależności Go/Cargo wraz ze sprawdzanym indeksem. Klient udostępnia link do właściwej
-paczki źródeł (wyświetlany przy użyciu flagi `-v` / `--verbose`). Źródła Git przypięte do pełnego commita można archiwizować
-wraz z przypiętymi submodułami. Nieprzypięte źródła i pozostałe systemy VCS
-nadal wymagają dodatkowej obsługi.
+paczki źródeł (wyświetlany przy użyciu flagi `-v` / `--verbose`).
+Źródła Git przypięte do pełnego commita, w tym submoduły przypięte tym commitem,
+oraz źródła Subversion przypięte do dokładnej rewizji można archiwizować.
+Nieprzypięte źródła i pozostałe systemy VCS nadal wymagają dodatkowej obsługi.
 Szczegóły opisuje [dokumentacja publikacji źródeł](docs/LICENSE-REVIEW.md).
 
 `brew intel coverage` porównuje lokalnie zainstalowane formuły z listą celów.
@@ -134,7 +141,7 @@ Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłat
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca
 na dysku SSD, 4 vCPU) są jawnie wykluczone przez regułę `blocked_source_builds` w `policy/config.json`.
 W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek kompilacji,
-wymagający >35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
+wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
 (`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach. Wszystkie 36 modułowych
 pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`, `qttools`, `qtsvg` itp.) posiadają
 zweryfikowane gotowe butelki w rejestrze.

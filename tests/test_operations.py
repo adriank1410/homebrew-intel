@@ -16,7 +16,7 @@ from intelbrew.cli import apply_plan, attest
 from intelbrew.ci import (_brew_install_args, _build_env, _generated_basename, _prepare_source_sets, _validate_source_bundle,
                          allowed_redistribution, build, permissive_license, require_ci_mac, runtime_closure,
                          source_bundle, transient_builds, verify)
-from intelbrew.core import ROOT, Error, Planner, load_config
+from intelbrew.core import ROOT, Error, Planner, canonical_name, load_config, read_json
 from intelbrew.publish import release_tag
 from helpers import G, H, meta, record
 
@@ -661,3 +661,47 @@ class SourceBundleTests(unittest.TestCase):
         from intelbrew import __version__
         changelog = (ROOT / "CHANGELOG.md").read_text()
         self.assertRegex(changelog, rf"(?m)^## {re.escape(__version__)} ")
+
+    def test_readme_greater_than_does_not_become_blockquote(self):
+        quote = re.compile(r"^ {0,3}>")
+        offenders = []
+        for name in ("README.md", "README.pl.md"):
+            for number, line in enumerate((ROOT / name).read_text().splitlines(), 1):
+                if quote.match(line):
+                    offenders.append(f"{name}:{number}")
+        self.assertEqual(offenders, [])
+
+    def test_readme_documents_pinned_git_and_subversion_sources(self):
+        english = (ROOT / "README.md").read_text()
+        polish = (ROOT / "README.pl.md").read_text()
+        self.assertRegex(english, r"Git sources pinned to a\s+full commit")
+        self.assertRegex(english, r"Subversion sources pinned to an exact revision")
+        self.assertRegex(polish, r"Źródła Git przypięte do pełnego commita")
+        self.assertRegex(polish, r"źródła Subversion przypięte do dokładnej rewizji")
+
+    def test_readme_qt6_module_count_matches_registry(self):
+        blocked = set(load_config()["blocked_source_builds"])
+        modules = sorted(path.stem for path in (ROOT / "registry").glob("qt*.json")
+                         if path.stem not in blocked)
+        self.assertGreater(len(modules), 0)
+        count = str(len(modules))
+        self.assertRegex((ROOT / "README.md").read_text(),
+                         rf"All {count} modular Qt6 module formulas")
+        self.assertRegex((ROOT / "README.pl.md").read_text(),
+                         rf"Wszystkie {count} modułowych")
+
+    def test_readme_marks_simdutf_as_an_example_formula(self):
+        english = re.sub(r"\s+", " ", (ROOT / "README.md").read_text())
+        polish = re.sub(r"\s+", " ", (ROOT / "README.pl.md").read_text())
+        self.assertRegex(english, r"`simdutf` is only an example")
+        self.assertRegex(polish, r"`simdutf` poniżej to tylko przykład")
+
+    def test_target_list_includes_popular_intel_gap_formulae(self):
+        targets = read_json(ROOT / "policy/targets.json")["formulae"]
+        self.assertEqual(targets, sorted(set(targets)))
+        self.assertTrue(all(canonical_name(name) == name for name in targets))
+        expected = [
+            "cloudflared", "docker", "docker-compose", "git-lfs", "glab", "helm",
+            "just", "lazygit", "neovim", "pnpm", "rclone", "uv",
+        ]
+        self.assertEqual([name for name in expected if name not in targets], [])
