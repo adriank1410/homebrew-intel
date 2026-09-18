@@ -661,3 +661,12 @@ class SourceBundleTests(unittest.TestCase):
         from intelbrew import __version__
         changelog = (ROOT / "CHANGELOG.md").read_text()
         self.assertRegex(changelog, rf"(?m)^## {re.escape(__version__)} ")
+
+    def test_readme_greater_than_does_not_become_blockquote(self):
+        quote = re.compile(r"^ {0,3}>")
+        offenders = []
+        for name in ("README.md", "README.pl.md"):
+            for number, line in enumerate((ROOT / name).read_text().splitlines(), 1):
+                if quote.match(line):
+                    offenders.append(f"{name}:{number}")
+        self.assertEqual(offenders, [])

@@ -134,7 +134,7 @@ Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłat
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca
 na dysku SSD, 4 vCPU) są jawnie wykluczone przez regułę `blocked_source_builds` w `policy/config.json`.
 W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek kompilacji,
-wymagający >35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
+wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
 (`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach. Wszystkie 36 modułowych
 pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`, `qttools`, `qtsvg` itp.) posiadają
 zweryfikowane gotowe butelki w rejestrze.
