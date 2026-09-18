@@ -689,3 +689,9 @@ class SourceBundleTests(unittest.TestCase):
                          rf"All {count} modular Qt6 module formulas")
         self.assertRegex((ROOT / "README.pl.md").read_text(),
                          rf"Wszystkie {count} modułowych")
+
+    def test_readme_marks_simdutf_as_an_example_formula(self):
+        english = re.sub(r"\s+", " ", (ROOT / "README.md").read_text())
+        polish = re.sub(r"\s+", " ", (ROOT / "README.pl.md").read_text())
+        self.assertRegex(english, r"`simdutf` is only an example")
+        self.assertRegex(polish, r"`simdutf` poniżej to tylko przykład")

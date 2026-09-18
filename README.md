@@ -20,12 +20,18 @@ Homebrew stays in `/usr/local`.
 brew tap adriank1410/intel
 brew trust --command adriank1410/intel/intel
 brew intel doctor
-brew intel plan simdutf
-brew intel upgrade simdutf --apply
 ```
 
 The first two commands add the tap and trust its `intel` command.
 An existing `gh` installation is required to verify GitHub attestations.
+
+To inspect or install one formula, pass its name. `simdutf` is only an example;
+any name from the [registry](registry/) works the same way:
+
+```sh
+brew intel plan simdutf
+brew intel upgrade simdutf --apply
+```
 
 `plan`, `doctor`, and `upgrade` without `--apply` are non-installing client
 operations. Package changes require `--apply`. Add `-v` / `--verbose` for
