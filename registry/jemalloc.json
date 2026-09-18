@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "3acd3141dc1ce679d1f06565131aebeb0f6f4057",
+  "filename": "jemalloc--5.4.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "9673f4add30a4c4db0fed1934b8c6c60e1df50a61ad24e6490296bb6e26a3863",
+  "license": "BSD-2-Clause",
+  "name": "jemalloc",
+  "pkg_version": "5.4.0",
+  "recipe_sha256": "40b08c4b9c7e253bee97d4da1d22fa9b51a9d7ccf5221cd1305e42057e72d234",
+  "release": "intel-35290420415-1-jemalloc",
+  "revision": 0,
+  "run_id": "35290420415",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "d4a191a994989e362aa5bf2cbd6ef4d7def430f4b3abe4b237c85542cfa07f0c",
+  "size": 884701,
+  "source": {
+    "filename": "jemalloc--5.4.0.sources.tar.gz",
+    "sha256": "09e1a3841aa0dfd664e08e3c2d195a0063310f20dc899269af8055a5a726cd0c",
+    "size": 918599
+  },
+  "tag": "sequoia",
+  "version": "5.4.0",
+  "version_scheme": 0,
+  "workflow_commit": "d8a835d9c5e14790f490774815823a291a3f50e6"
+}
