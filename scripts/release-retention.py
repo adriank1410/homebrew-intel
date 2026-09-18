@@ -13,17 +13,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from intelbrew.core import Error
+from intelbrew.registry_pr import gh, gh_json
 from intelbrew.release_retention import active_release_tags, referenced_releases, select_releases
 
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "adriank1410/homebrew-intel")
-
-
-def gh_json(arguments: list[str]):
-    result = subprocess.run(["gh", *arguments], cwd=ROOT, check=True, text=True,
-                            capture_output=True)
-    return json.loads(result.stdout)
 
 
 def open_pull_requests() -> list[dict]:
@@ -62,8 +57,8 @@ def main() -> int:
         tag = release["tagName"]
         print(tag)
         if apply_mode:
-            subprocess.run(["gh", "release", "delete", tag, "--repo", REPOSITORY,
-                            "--yes", "--cleanup-tag"], cwd=ROOT, check=True)
+            gh(["release", "delete", tag, "--repo", REPOSITORY,
+                "--yes", "--cleanup-tag"], capture=False)
     return 0
 
 

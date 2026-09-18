@@ -1,13 +1,13 @@
 # SPDX-License-Identifier: BSD-2-Clause
 """Build and verification stages. This module refuses to mutate non-CI hosts."""
 from __future__ import annotations
-import argparse, copy, hashlib, io, json, os, re, shutil, subprocess, sys, tarfile, tempfile
+import argparse, copy, hashlib, io, json, os, re, shutil, subprocess, sys, tarfile, tempfile, time
 from pathlib import Path, PurePosixPath
 from .archive_notices import archive_notices
 from .build_sources import MAX_FILES as MAX_BUILD_SOURCE_FILES, collect_build_sources
 from .cli import attest
 from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, brew_env, canonical_name,
-                   check_bottle, digest, download, load_config, native, read_json,
+                   check_bottle, digest, download, is_transient_error, load_config, native, read_json,
                    registry, require_sha, run, validate_record, write_json_new)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
@@ -35,12 +35,16 @@ def sync_registry(commit: str | None = None, *, force: bool = False) -> str:
             shutil.rmtree(ROOT / "registry", ignore_errors=True)
             run(["git", "checkout", commit, "--", "registry"], cwd=ROOT)
             return commit
-    for attempt in range(3):
+    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
+    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
+    for attempt in range(attempts):
+        if attempt > 0 and delay > 0:
+            time.sleep(delay * (2 ** (attempt - 1)))
         try:
             run(["git", "fetch", "--depth=1", "origin", target], cwd=ROOT)
             break
-        except Error:
-            if attempt == 2:
+        except Error as exc:
+            if not is_transient_error(exc) or attempt == attempts - 1:
                 raise
     resolved = run(["git", "rev-parse", "FETCH_HEAD"], cwd=ROOT).strip()
     require_sha(resolved, git=True)

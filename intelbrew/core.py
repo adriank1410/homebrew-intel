@@ -1,11 +1,47 @@
 # SPDX-License-Identifier: BSD-2-Clause
 """Pure planning, validation and transport. No Homebrew mutations happen here."""
 from __future__ import annotations
-import hashlib,json,os,re,socket,subprocess,tarfile,time,urllib.error,urllib.parse,urllib.request
+import hashlib,json,os,re,socket,subprocess,sys,tarfile,time,urllib.error,urllib.parse,urllib.request
 from pathlib import Path,PurePosixPath
 ROOT=Path(__file__).resolve().parents[1];NAME=re.compile(r"[a-z0-9][a-z0-9+_.-]*(?:@[0-9][a-z0-9+_.-]*)?\Z");SHA256=re.compile(r"[0-9a-f]{64}\Z");SHA1=re.compile(r"[0-9a-f]{40}\Z");TAG=re.compile(r"intel-[0-9]+-[0-9]+-[a-z0-9_.+-]+\Z");MAX_JSON=8*1024*1024;MAX_ARTIFACT=2_000_000_000
 RECORD_KEYS={"schema","name","version","revision","version_scheme","pkg_version","formula_sha256","recipe_sha256","core_commit","brew_commit","tag","arch","cellar","filename","sha256","size","license","runtime_dependencies","source","release","workflow_commit","run_id"}
+RETRY_ATTEMPTS=int(os.environ.get("INTELBREW_RETRY_ATTEMPTS","3"))
+RETRY_DELAY=float(os.environ.get("INTELBREW_RETRY_DELAY","0" if "unittest" in sys.modules else "5"))
 class Error(RuntimeError):pass
+
+def is_transient_error(exc: Exception | str) -> bool:
+    if isinstance(exc, urllib.error.HTTPError):
+        return exc.code in {408, 429, 500, 502, 503, 504}
+    if isinstance(exc, (TimeoutError, socket.timeout, ConnectionError, socket.gaierror)):
+        return True
+    if isinstance(exc, urllib.error.URLError):
+        if isinstance(exc.reason, (TimeoutError, socket.timeout, socket.gaierror, ConnectionError)):
+            return True
+        return is_transient_error(str(exc.reason))
+    msg = str(exc).lower()
+    non_transient = (
+        "404", "not found", "401", "unauthorized", "403", "forbidden",
+        "signature verification failed", "checksum/size mismatch",
+        "sha-256 mismatch", "digest/size mismatch", "invalid json",
+        "unknown flag", "refusing downgrade", "dependency cycle",
+        "unsafe cache entry", "existing cache file invalid"
+    )
+    if any(pattern in msg for pattern in non_transient):
+        return False
+    transient_patterns = (
+        "timed out", "timeout", "connection reset", "connection refused",
+        "connection closed", "broken pipe", "temporary failure in name resolution",
+        "could not resolve host", "name or service not known",
+        "the remote end hung up unexpectedly", "rpc failed",
+        "rate limit exceeded", "secondary rate limit",
+        "public good verifier is not available", "network is unreachable",
+        "network failure", "server offline", "error creating asset temp dir",
+        "http 408", "http 429", "http 500", "http 502", "http 503", "http 504",
+        "502 bad gateway", "503 service unavailable", "504 gateway time-out", "504 gateway timeout",
+        "bad gateway", "service unavailable", "gateway time-out", "gateway timeout",
+        "internal server error"
+    )
+    return any(pattern in msg for pattern in transient_patterns)
 
 def canonical_name(value):
     if isinstance(value,str) and value.startswith('homebrew/core/'):value=value.removeprefix('homebrew/core/')
@@ -182,12 +218,7 @@ def download(url,target,expected_sha,expected_size):
                     out.write(chunk);h.update(chunk)
             break
         except (OSError,ValueError) as exc:
-            retryable = isinstance(exc, (TimeoutError, socket.timeout, ConnectionError)) or (
-                isinstance(exc, urllib.error.HTTPError) and exc.code in {408, 429, 500, 502, 503, 504}
-            ) or (
-                isinstance(exc, urllib.error.URLError) and
-                isinstance(exc.reason, (TimeoutError, socket.timeout, socket.gaierror, ConnectionError)))
-            if not retryable or attempt == 2:
+            if not is_transient_error(exc) or attempt == 2:
                 raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
             time.sleep(2 ** attempt)
     if total!=expected_size or h.hexdigest()!=expected_sha:raise Error(f'Checksum/size mismatch; retained at {part}')

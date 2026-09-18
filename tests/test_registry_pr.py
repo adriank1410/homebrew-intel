@@ -14,7 +14,7 @@ from intelbrew.core import Error
 from intelbrew.registry_pr import (allowed_pr, changed_registry_files,
                                    ensure_pr, validate_manifest_records, _record_from_content,
                                    _rebuild_conflicted_pr, _release_order, _workflow_state,
-                                   reconcile, validate_pr)
+                                   reconcile, validate_pr, gh, gh_json)
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
@@ -478,6 +478,22 @@ class RegistryPullRequestTests(unittest.TestCase):
         self.assertIn("--squash", merge)
         self.assertIn(HEAD, merge)
 
+    def test_gh_retries_transient_error_and_succeeds(self):
+        transient = Error("gh failed (1): HTTP 502: Bad Gateway")
+        with patch("intelbrew.registry_pr.run", side_effect=[transient, '{"success": true}']) as run_mock:
+            result = gh(["api", "test"])
+            self.assertEqual(result, '{"success": true}')
+            self.assertEqual(run_mock.call_count, 2)
+
+    def test_gh_does_not_retry_non_transient_error(self):
+        permanent = Error("gh failed (1): unknown flag: --invalid")
+        with patch("intelbrew.registry_pr.run", side_effect=permanent) as run_mock:
+            with self.assertRaises(Error) as exc:
+                gh(["api", "test"])
+            self.assertIn("unknown flag", str(exc.exception))
+            self.assertEqual(run_mock.call_count, 1)
+
 
 if __name__ == "__main__":
     unittest.main()
+

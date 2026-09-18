@@ -373,6 +373,27 @@ class PlanWorkflowTests(unittest.TestCase):
         self.assertEqual(needed, ["base"])
         self.assertEqual(blocked, {})
 
+    def test_load_formula_index_retries_transient_error(self):
+        import io
+        import urllib.error
+        payload = b'[{"name": "test", "versions": {"stable": "1.0"}, "revision": 0, "version_scheme": 0, "ruby_source_checksum": {"sha256": "' + b'a' * 64 + b'"}, "dependencies": []}]'
+        transient = urllib.error.HTTPError("https://formulae.brew.sh/api/formula.json", 503, "Service Unavailable", {}, None)
+        with patch("urllib.request.urlopen", side_effect=[transient, io.BytesIO(payload)]) as url_mock:
+            index = plan.load_formula_index()
+            self.assertIn("test", index)
+            self.assertEqual(url_mock.call_count, 2)
+
+    def test_plan_workflow_retries_git_ls_remote(self):
+        transient = plan.Error("fatal: error: RPC failed; HTTP 500 curl 22")
+        good = f"{'a' * 40}\trefs/heads/main"
+        with tempfile.TemporaryDirectory() as d, \
+             patch.dict(os.environ, {"GITHUB_OUTPUT": str(Path(d) / "output"), "REQUEST_SOURCE": "workflow_dispatch", "REQUESTED_FORMULA": "simdjson"}), \
+             patch.object(plan, "run", side_effect=[transient, good]) as run_mock:
+            ret = plan.main()
+            self.assertEqual(ret, 0)
+            self.assertEqual(run_mock.call_count, 2)
+
 
 if __name__ == "__main__":
     unittest.main()
+
