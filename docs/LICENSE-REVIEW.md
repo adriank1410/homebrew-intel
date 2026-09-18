@@ -43,7 +43,9 @@ pinned Homebrew source collector, captured Go/Cargo build inputs, and an index
 binding those files to their hashes and provenance. License and notice files
 found inside supported tar, ZIP, lzip, zstd, and 7z archives are copied into the
 bundle without extracting into the filesystem. Exact-revision Git sources and
-their submodules are exported with pinned immutable commit identities. Candidate validation rejects missing notices, changed
+their submodules are exported with pinned immutable commit identities.
+Exact-revision Subversion sources are exported at the pinned revision.
+Candidate validation rejects missing notices, changed
 notice bytes, links, special files, traversal names, unindexed files, or an
 index that does not match the bottle record. Raw patch resources remain in the
 bundle but are not treated as archives.
@@ -51,7 +53,7 @@ bundle but are not treated as archives.
 This profile covers standalone bottles whose complete build inputs are captured.
 It does not decide the separate obligations of a later application that embeds
 or links these packages. Collection covers recipe-declared archives, pinned Git
-exports, and Go/Cargo caches. A recipe using another undeclared downloader needs
+and Subversion exports, and Go/Cargo caches. A recipe using another undeclared downloader needs
 specific collection support before its bundle can be described as complete.
 
 Primary license texts and guidance:

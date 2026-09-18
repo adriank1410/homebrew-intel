@@ -41,6 +41,25 @@ class DeploymentTests(unittest.TestCase):
         report={}
         with patch.object(deploy,'api') as api:deploy.configure(report);api.assert_not_called()
         self.assertEqual(report['settings'],'manual-verification-required')
+    def test_configuration_helper_mentions_coverage_branch_protection(self):
+        report={}
+        with patch('builtins.print') as printer:
+            deploy.configure(report)
+        text=' '.join(call.args[0] for call in printer.call_args_list)
+        self.assertIn('coverage/intel-installed', text)
+        self.assertIn('do not require PRs or block force-push', text)
+        self.assertIn('--force-with-lease', text)
+        self.assertNotIn('protect coverage/intel-installed and require tests', text)
+    def test_operations_docs_protect_coverage_branch_without_copying_main(self):
+        text=(ROOT/'docs/OPERATIONS.md').read_text()
+        self.assertRegex(text, r'(?s)Recommended server-side settings.{0,800}coverage/intel-installed')
+        coverage=text.split('## Updating installed-package coverage', 1)[1]
+        self.assertIn('--force-with-lease', coverage)
+        self.assertIn('Do not add `pull_request`', coverage)
+        self.assertIn('`non_fast_forward`', coverage)
+        self.assertIn('`required_signatures`', coverage)
+        self.assertIn('`deletion`', coverage)
+        self.assertIn('admin bypass', coverage)
     def test_git_does_not_persist_credentials(self):
         with patch.object(deploy,'command',return_value='') as command:
             deploy.git(['push','origin','main'],Path('/work'));args=command.call_args.args[0]
