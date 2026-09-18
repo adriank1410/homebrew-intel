@@ -659,4 +659,5 @@ class SourceBundleTests(unittest.TestCase):
 
     def test_version_matches_changelog(self):
         from intelbrew import __version__
-        self.assertEqual(__version__, "0.2.0")
+        changelog = (ROOT / "CHANGELOG.md").read_text()
+        self.assertRegex(changelog, rf"(?m)^## {re.escape(__version__)} ")
