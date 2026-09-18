@@ -47,6 +47,8 @@ def load_formula_index():
                 payload = json.load(response)
             break
         except (OSError, ValueError) as exc:
+            if hasattr(exc, "close"):
+                exc.close()
             if not is_transient_error(exc) or attempt == attempts - 1:
                 raise Error(f'Cannot resolve Homebrew formula metadata: {exc}') from exc
     if not isinstance(payload, list):

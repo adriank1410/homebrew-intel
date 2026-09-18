@@ -119,9 +119,10 @@ def brew_env(*,ci=False):
     if ci:env['HOMEBREW_NO_INSTALL_FROM_API']='1'
     return env
 
-def run(args,*,capture=True,input_text=None,env=None,cwd=None):
-    try:p=subprocess.run(args,input=input_text,text=True,stdout=subprocess.PIPE if capture else None,stderr=subprocess.PIPE if capture else None,env=env,cwd=cwd)
+def run(args,*,capture=True,input_text=None,env=None,cwd=None,timeout=None):
+    try:p=subprocess.run(args,input=input_text,text=True,stdout=subprocess.PIPE if capture else None,stderr=subprocess.PIPE if capture else None,env=env,cwd=cwd,timeout=timeout)
     except OSError as exc:raise Error(f'Cannot execute {args[0]}: {exc}') from exc
+    except subprocess.TimeoutExpired as exc:raise Error(f'{args[0]} timed out after {timeout}s') from exc
     if p.returncode:raise Error(f'{args[0]} failed ({p.returncode}): {(p.stderr or "").strip() if capture else "see output"}')
     return p.stdout or ''
 
@@ -218,6 +219,8 @@ def download(url,target,expected_sha,expected_size):
                     out.write(chunk);h.update(chunk)
             break
         except (OSError,ValueError) as exc:
+            if hasattr(exc, "close"):
+                exc.close()
             if not is_transient_error(exc) or attempt == 2:
                 raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
             time.sleep(2 ** attempt)
