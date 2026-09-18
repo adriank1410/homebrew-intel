@@ -88,9 +88,11 @@ available official or personal bottle.
 GPL, LGPL, AGPL and MPL packages use a source-required publication profile.
 Their releases include the recipe, declared sources and patches, upstream license
 notices and downloaded Go/Cargo source inputs, with a checked source index.
-The client provides a link to the matching source bundle (displayed with `-v` / `--verbose`). Git sources pinned to a
-full commit, including submodules pinned by that commit, can be archived; unpinned VCS and other VCS strategies still require further
-support. See [source publication requirements](docs/LICENSE-REVIEW.md).
+The client provides a link to the matching source bundle (displayed with `-v` / `--verbose`).
+Git sources pinned to a full commit, including submodules pinned by that commit,
+and Subversion sources pinned to an exact revision can be archived; unpinned VCS
+and other VCS strategies still require further support.
+See [source publication requirements](docs/LICENSE-REVIEW.md).
 
 `brew intel coverage` compares installed formulae with the target list locally.
 `brew intel sync` additionally checks current metadata and installation state. It
@@ -132,11 +134,11 @@ bottle when any runtime or test dependency needs it.
 Heavy source builds exceeding the physical limits of ephemeral GitHub-hosted runners
 (`macos-15-intel`: 6-hour execution timeout, ~14 GB available SSD storage, 4 vCPUs)
 are explicitly excluded via `blocked_source_builds` in `policy/config.json`.
-Specifically, `qtwebengine` (Chromium engine with ~40,000 translation units, requiring
->35 GB disk space and 8–10 hours of CPU compilation) and formulas requiring it
-(`qt`, `qtwebview`) cannot be built on standard runners. All 36 modular Qt6
-module formulas (such as `qtbase`, `qtdeclarative`, `qttools`, `qtsvg`, etc.)
-have verified bottles in the registry.
+Specifically, `qtwebengine` (Chromium engine with ~40,000 translation units,
+requiring more than 35 GB disk space and 8–10 hours of CPU compilation) and
+formulas requiring it (`qt`, `qtwebview`) cannot be built on standard runners.
+All 36 modular Qt6 module formulas (such as `qtbase`, `qtdeclarative`, `qttools`,
+`qtsvg`, etc.) have verified bottles in the registry.
 
 To request one reviewed target, edit `policy/build-request.json` on `main` and
 increment `sequence`. See [Operations](docs/OPERATIONS.md) for the review and

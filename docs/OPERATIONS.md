@@ -107,8 +107,9 @@ CI green.
 
 The source-required profile supports standard copyleft archives with retained
 license notices and verified source contents. Full-commit Git exports are also
-supported, including submodules at their recorded Git commit. Unpinned Git and
-other VCS strategies fail explicitly before compiling dependencies. Source sets are fetched before building, then Go/Cargo source caches
+supported, including submodules at their recorded Git commit, as are
+exact-revision Subversion exports. Unpinned Git and other VCS strategies fail
+explicitly before compiling dependencies. Source sets are fetched before building, then Go/Cargo source caches
 are captured after compilation. GNU ftpmirror resources gain the canonical
 ftp.gnu.org mirror; the original recipe and required checksum stay unchanged.
 See [License review](LICENSE-REVIEW.md) for the

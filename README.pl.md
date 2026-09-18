@@ -89,9 +89,10 @@ nie blokują użycia dostępnej oficjalnej lub własnej butelki.
 Publikacja pakietów GPL, LGPL, AGPL i MPL wymaga dołączenia źródeł. Wydanie zawiera
 recepturę, zadeklarowane źródła i patche, informacje licencyjne oraz pobrane źródła
 zależności Go/Cargo wraz ze sprawdzanym indeksem. Klient udostępnia link do właściwej
-paczki źródeł (wyświetlany przy użyciu flagi `-v` / `--verbose`). Źródła Git przypięte do pełnego commita można archiwizować
-wraz z przypiętymi submodułami. Nieprzypięte źródła i pozostałe systemy VCS
-nadal wymagają dodatkowej obsługi.
+paczki źródeł (wyświetlany przy użyciu flagi `-v` / `--verbose`).
+Źródła Git przypięte do pełnego commita, w tym submoduły przypięte tym commitem,
+oraz źródła Subversion przypięte do dokładnej rewizji można archiwizować.
+Nieprzypięte źródła i pozostałe systemy VCS nadal wymagają dodatkowej obsługi.
 Szczegóły opisuje [dokumentacja publikacji źródeł](docs/LICENSE-REVIEW.md).
 
 `brew intel coverage` porównuje lokalnie zainstalowane formuły z listą celów.
@@ -134,7 +135,7 @@ Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłat
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca
 na dysku SSD, 4 vCPU) są jawnie wykluczone przez regułę `blocked_source_builds` w `policy/config.json`.
 W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek kompilacji,
-wymagający >35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
+wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
 (`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach. Wszystkie 36 modułowych
 pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`, `qttools`, `qtsvg` itp.) posiadają
 zweryfikowane gotowe butelki w rejestrze.
