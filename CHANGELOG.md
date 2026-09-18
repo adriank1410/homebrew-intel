@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased – CI reliability
+## 0.2.1 – CI reliability
 
 - Unified transient network and GitHub CLI retries behind `retry_transient()`.
 - Retry truncated bottle downloads (`IncompleteRead`) instead of failing the fetch.
