@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "43848b5a734ebcd3692987facb900cef24658223",
+  "core_commit": "76e076f5db41a5e7dc721c7c3c28525bd1dda95f",
   "filename": "tmux--3.7c.sequoia.bottle.tar.gz",
   "formula_sha256": "7cd2b2078e7cb493f34ca90407d9a1d239c09295af50e4f143dc53c25883751e",
   "license": "ISC",
   "name": "tmux",
   "pkg_version": "3.7c",
   "recipe_sha256": "cebf4888f69ce7e74a458aade251f78ba0403575c1331dbc715fb400617ec29d",
-  "release": "intel-34722247673-1-tmux",
+  "release": "intel-35312637070-1-tmux",
   "revision": 0,
-  "run_id": "34722247673",
+  "run_id": "35312637070",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-08-13"
     },
     {
-      "formula_sha256": "826643632f63efb8f332e8d6919eef5178fdadf78994246fd6af368aec4bbaad",
+      "formula_sha256": "9673f4add30a4c4db0fed1934b8c6c60e1df50a61ad24e6490296bb6e26a3863",
       "name": "jemalloc",
-      "pkg_version": "5.3.1"
+      "pkg_version": "5.4.0"
     },
     {
       "formula_sha256": "f565875361ae7603b136ca463390a93648b8352b881c3fabc6bf5c05d5223d2f",
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6447b32ea5f9bd5ad9be0d83e5eb5030e6aeb4ae8e1a64f3afde0111c184b9e0",
-  "size": 558112,
+  "sha256": "9ade88ef8006d65253cce6c666ff33628fa98b0ba0bdeefb875f223d7e926b49",
+  "size": 558107,
   "source": {
     "filename": "tmux--3.7c.sources.tar.gz",
-    "sha256": "217d79ba487d0d7593dc484248619df1625da3a56641676b651edf5187452ed8",
-    "size": 794095
+    "sha256": "293a1b4fd95343071e9834c769f9078971509747df705a1587a5deaabe7248b9",
+    "size": 794084
   },
   "tag": "sequoia",
   "version": "3.7c",
   "version_scheme": 0,
-  "workflow_commit": "3a82d08e0841856e4d6558113eb2907aa7684ed0"
+  "workflow_commit": "90f4c08aea6256a1e1050fa2544f2bc26cdbb6f9"
 }
