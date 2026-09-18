@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Document a dedicated ruleset for the standing `coverage/intel-installed` branch: admin-only create/push/delete, no required PR or force-push block.
+
 ## 0.2.1 – CI reliability
 
 - Unified transient network and GitHub CLI retries behind `retry_transient()`.
