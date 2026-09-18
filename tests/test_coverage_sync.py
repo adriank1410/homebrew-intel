@@ -241,5 +241,16 @@ class CoverageSyncTests(unittest.TestCase):
         self.assertFalse(any(call[:3] == ["pr", "merge", "9"] or "update-branch" in " ".join(call)
                              for call in calls))
 
+    def test_official_metadata_retries_transient_error(self):
+        import io
+        import urllib.error
+        from intelbrew.coverage_sync import _official_metadata
+        catalog = b'[{"name": "test", "versions": {"stable": "1.0"}, "disabled": false, "license": "MIT"}]'
+        transient = urllib.error.HTTPError("https://formulae.brew.sh/api/formula.json", 503, "Service Unavailable", {}, io.BytesIO(b""))
+        with patch("intelbrew.coverage_sync.urllib.request.urlopen", side_effect=[transient, io.BytesIO(catalog)]) as url_mock:
+            data = _official_metadata()
+            self.assertIn("test", data)
+            self.assertEqual(url_mock.call_count, 2)
+
 
 if __name__ == "__main__": unittest.main()

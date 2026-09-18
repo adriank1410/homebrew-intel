@@ -10,7 +10,7 @@ import time
 from pathlib import Path
 from typing import Any
 from .ci import validate_candidate
-from .core import ROOT, Error, canonical_name, load_config, require_sha, run, validate_record, digest
+from .core import ROOT, Error, canonical_name, is_transient_error, load_config, require_sha, run, validate_record, digest
 from .registry_pr import ensure_pr, gh_json
 
 
@@ -22,8 +22,17 @@ def release_tag(root: str, run_id: str, attempt: str) -> str:
 
 
 def git(arguments: list[str]) -> str:
-    return run(["git", "-c", "credential.helper=", "-c",
-                "credential.https://github.com.helper=!gh auth git-credential", *arguments], cwd=ROOT)
+    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
+    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
+    for attempt in range(attempts):
+        if attempt > 0 and delay > 0:
+            time.sleep(delay * (2 ** (attempt - 1)))
+        try:
+            return run(["git", "-c", "credential.helper=", "-c",
+                        "credential.https://github.com.helper=!gh auth git-credential", *arguments], cwd=ROOT)
+        except Error as exc:
+            if not is_transient_error(exc) or attempt == attempts - 1:
+                raise
 
 
 def _find_release(repo: str, tag: str) -> dict[str, Any] | None:

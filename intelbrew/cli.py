@@ -18,7 +18,7 @@ from typing import Any
 
 from . import __version__
 from .core import (Error, Planner, artifact_url, brew_env, check_bottle,
-                   download, ensure_complete, load_config, matching_record,
+                   download, ensure_complete, is_transient_error, load_config, matching_record,
                    native, read_json, registry, require_sha, run, write_json_new)
 from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
                          BOLD_YELLOW, DIM, is_color_enabled, ohai, onoe, opoo, style)
@@ -49,7 +49,7 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
                 # process. A transient trust-root/network initialization
                 # failure is safe to retry; signature and identity failures
                 # remain fail-closed and are never retried.
-                if "public good verifier is not available" not in str(exc) or attempt == 2:
+                if not is_transient_error(exc) or attempt == 2:
                     if workflow == "bottles.yml":
                         raise
                     break

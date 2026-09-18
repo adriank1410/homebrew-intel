@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-2-Clause
-import copy, hashlib, os, random, socket, tempfile, unittest, urllib.error
+import copy, hashlib, io, os, random, socket, tempfile, unittest, urllib.error
 from pathlib import Path
 from unittest.mock import patch
 from intelbrew.core import (Error, Planner, artifact_url, basename, brew_env, canonical_name,
@@ -137,7 +137,7 @@ class ValidationTests(unittest.TestCase):
             def open(self, url, timeout):
                 self.calls += 1
                 if self.calls == 1:
-                    raise urllib.error.HTTPError(url, 500, 'Internal Server Error', {}, None)
+                    raise urllib.error.HTTPError(url, 500, 'Internal Server Error', {}, io.BytesIO(b''))
                 return Response()
 
         opener = Opener()
@@ -149,6 +149,45 @@ class ValidationTests(unittest.TestCase):
             self.assertEqual(target.read_bytes(), payload)
             self.assertEqual(opener.calls, 2)
             sleep.assert_called_once_with(1)
+
+    def test_is_transient_error_identifies_network_and_server_errors(self):
+        from intelbrew.core import is_transient_error
+        import io
+        import socket
+        import urllib.error
+        self.assertTrue(is_transient_error(TimeoutError("timed out")))
+        self.assertTrue(is_transient_error(socket.timeout("timed out")))
+        self.assertTrue(is_transient_error(ConnectionResetError("connection reset")))
+        with urllib.error.HTTPError("url", 502, "Bad Gateway", {}, io.BytesIO(b"")) as err:
+            self.assertTrue(is_transient_error(err))
+        with urllib.error.HTTPError("url", 429, "Too Many Requests", {}, io.BytesIO(b"")) as err:
+            self.assertTrue(is_transient_error(err))
+        self.assertTrue(is_transient_error(Error("gh failed (1): HTTP 500: Error creating asset temp dir")))
+        self.assertTrue(is_transient_error(Error("gh failed (1): HTTP 503: Service Unavailable")))
+        self.assertTrue(is_transient_error(Error("fatal: the remote end hung up unexpectedly")))
+        self.assertTrue(is_transient_error(Error("error: RPC failed; HTTP 500 curl 22")))
+        self.assertTrue(is_transient_error(Error("gh failed (1): public good verifier is not available")))
+
+    def test_is_transient_error_rejects_permanent_and_integrity_errors(self):
+        from intelbrew.core import is_transient_error
+        import io
+        import urllib.error
+        with urllib.error.HTTPError("url", 404, "Not Found", {}, io.BytesIO(b"")) as err:
+            self.assertFalse(is_transient_error(err))
+        with urllib.error.HTTPError("url", 401, "Unauthorized", {}, io.BytesIO(b"")) as err:
+            self.assertFalse(is_transient_error(err))
+        self.assertFalse(is_transient_error(Error("gh failed (1): gh: Not Found (HTTP 404)")))
+        self.assertFalse(is_transient_error(Error("gh failed (1): signature verification failed")))
+        self.assertFalse(is_transient_error(Error("Checksum/size mismatch; retained at ...")))
+        self.assertFalse(is_transient_error(ValueError("Invalid JSON")))
+
+    def test_run_with_timeout_raises_transient_error(self):
+        from intelbrew.core import is_transient_error, run
+        with self.assertRaises(Error) as exc:
+            run(["sleep", "1"], timeout=0.01)
+        self.assertIn("timed out after 0.01s", str(exc.exception))
+        self.assertTrue(is_transient_error(exc.exception))
+
     def test_env_strips_tokens(self):
         with patch.dict(os.environ,{'GH_TOKEN':'x','GITHUB_TOKEN':'x','RUBYOPT':'bad','HOMEBREW_CORE_GIT_REMOTE':'unchanged'}):
             e=brew_env();self.assertNotIn('GH_TOKEN',e);self.assertNotIn('RUBYOPT',e);self.assertEqual(e['HOMEBREW_CORE_GIT_REMOTE'],'unchanged')
