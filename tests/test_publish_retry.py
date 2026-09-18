@@ -129,3 +129,12 @@ class PublicationRetryTests(unittest.TestCase):
                     ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
                 self.assertIn("server offline", str(exc.exception))
                 self.assertEqual(run.call_count, 3)
+
+    def test_publish_git_retries_transient_error(self):
+        from intelbrew.publish import git
+        transient = Error("fatal: the remote end hung up unexpectedly")
+        with patch("intelbrew.publish.run", side_effect=[transient, "abc refs/heads/main"]) as run_mock:
+            result = git(["ls-remote", "--heads", "origin", "refs/heads/main"])
+            self.assertEqual(result, "abc refs/heads/main")
+            self.assertEqual(run_mock.call_count, 2)
+

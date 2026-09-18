@@ -89,6 +89,15 @@ class OperationTests(unittest.TestCase):
             self.assertEqual(run.call_count, 2)
             self.assertEqual(sleep.call_args_list[0].args, (1,))
 
+    def test_attestation_retries_transient_network_failure(self):
+        transient = Error('gh failed (1): HTTP 503: Service Unavailable')
+        with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), \
+             patch('intelbrew.cli.run', side_effect=[transient, None]) as run, \
+             patch('intelbrew.cli.time.sleep') as sleep:
+            attest(Path('/file'), 'adriank1410/homebrew-intel', G)
+            self.assertEqual(run.call_count, 2)
+            self.assertEqual(sleep.call_args_list[0].args, (1,))
+
     def test_attestation_does_not_retry_other_verification_failures(self):
         failure = Error('gh failed (1): signature verification failed')
         with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), \

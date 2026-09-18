@@ -141,4 +141,4 @@ jobs:
         if: steps.validate.outputs.has_bottles == 'true'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: gh workflow run registry.yml --repo "$GITHUB_REPOSITORY"
+        run: bash scripts/retry-fetch.sh gh workflow run registry.yml --repo "$GITHUB_REPOSITORY"

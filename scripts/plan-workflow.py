@@ -4,11 +4,12 @@
 import json
 import os
 import sys
+import time
 import urllib.request
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from intelbrew.ci import sync_registry
-from intelbrew.core import ROOT, Error, canonical_name, read_json, registry, require_sha, run
+from intelbrew.core import ROOT, Error, canonical_name, is_transient_error, read_json, registry, require_sha, run
 
 def requested_roots(requested, targets, *, allow_csv, max_roots=50):
     if not isinstance(requested, str):
@@ -36,11 +37,18 @@ def load_formula_index():
         'https://formulae.brew.sh/api/formula.json',
         headers={'Accept': 'application/json', 'User-Agent': 'homebrew-intel-scheduler'},
     )
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            payload = json.load(response)
-    except (OSError, ValueError) as exc:
-        raise Error(f'Cannot resolve Homebrew formula metadata: {exc}') from exc
+    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
+    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
+    for attempt in range(attempts):
+        if attempt > 0 and delay > 0:
+            time.sleep(delay * (2 ** (attempt - 1)))
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                payload = json.load(response)
+            break
+        except (OSError, ValueError) as exc:
+            if not is_transient_error(exc) or attempt == attempts - 1:
+                raise Error(f'Cannot resolve Homebrew formula metadata: {exc}') from exc
     if not isinstance(payload, list):
         raise Error('Homebrew formula metadata is not a list')
     index = {}
@@ -202,8 +210,18 @@ def main():
         # push-triggered requests stay capped before native planning.
         max_roots=None if requested == 'all' and source in {'schedule', 'workflow_dispatch'} else 50,
     )
-    upstream = run(['git', 'ls-remote', 'https://github.com/Homebrew/homebrew-core.git',
-                    'refs/heads/main']).split()
+    attempts = int(os.environ.get("INTELBREW_RETRY_ATTEMPTS", "3"))
+    delay = float(os.environ.get("INTELBREW_RETRY_DELAY", "0" if "unittest" in sys.modules else "5"))
+    for attempt in range(attempts):
+        if attempt > 0 and delay > 0:
+            time.sleep(delay * (2 ** (attempt - 1)))
+        try:
+            upstream = run(['git', 'ls-remote', 'https://github.com/Homebrew/homebrew-core.git',
+                            'refs/heads/main']).split()
+            break
+        except Error as exc:
+            if not is_transient_error(exc) or attempt == attempts - 1:
+                raise
     if len(upstream) != 2 or upstream[1] != 'refs/heads/main':
         raise Error('Cannot resolve the official main branch')
     commit = require_sha(upstream[0], git=True)
