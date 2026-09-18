@@ -1,0 +1,84 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "40e9a307552776a139f80801b4e5c0e573ae38a9",
+  "filename": "openexr--3.4.15_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "de7ac8648c103ebf25b2616287fac7e1d1461cdfc91f9c7c664cb8f622110476",
+  "license": "BSD-3-Clause",
+  "name": "openexr",
+  "pkg_version": "3.4.15_1",
+  "recipe_sha256": "cae40343c957df9e422e9cf09c304e7d0d26e52fb10070512a0e84722cc5c6a0",
+  "release": "intel-35359555125-1-openexr",
+  "revision": 1,
+  "run_id": "35359555125",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "name": "giflib",
+      "pkg_version": "6.1.3"
+    },
+    {
+      "formula_sha256": "fdd3aa0f955466d8038a2bc2b9ba56902c68fa9e3ed57d7e3748c75d8693affc",
+      "name": "imath",
+      "pkg_version": "3.2.3"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "8e2eeee90af231a0e935aebe2b8a17f83fdb23180214822ae69fcdfb547e2e72",
+      "name": "libdeflate",
+      "pkg_version": "1.26"
+    },
+    {
+      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "name": "libpng",
+      "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+      "name": "libtiff",
+      "pkg_version": "4.7.2"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "38cecf6bb70bedf27425f441321c169310c96c9902293ebfc6d04449a0580bd2",
+      "name": "openjph",
+      "pkg_version": "0.32.0"
+    },
+    {
+      "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
+      "name": "webp",
+      "pkg_version": "1.6.0"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "0b02040187c8c54915a2635415fe27e5e8366f5043f801dba6cc42fa46a75103",
+  "size": 1122383,
+  "source": {
+    "filename": "openexr--3.4.15_1.sources.tar.gz",
+    "sha256": "bc0e142efd1594d7f8256cfdee43401d597c120bcbf2ba588bc1e5cf38f8b59a",
+    "size": 25815969
+  },
+  "tag": "sequoia",
+  "version": "3.4.15",
+  "version_scheme": 0,
+  "workflow_commit": "82acb9682c7a718f3568813126e684b55cd7958e"
+}
