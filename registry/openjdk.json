@@ -3,13 +3,17 @@
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
   "core_commit": "40e9a307552776a139f80801b4e5c0e573ae38a9",
-  "filename": "librsvg--2.63.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "3fc062defe744275cdd01f6a30a060b60748243db65814f22dad6a54dbd61f04",
-  "license": "LGPL-2.1-or-later",
-  "name": "librsvg",
-  "pkg_version": "2.63.0",
-  "recipe_sha256": "dd2630aa9aa8c2dfe9a58344c28ad0c6b8da179b159c2d017c39d51a358b1ff0",
-  "release": "intel-35359555125-1-librsvg",
+  "filename": "openjdk--27.sequoia.bottle.tar.gz",
+  "formula_sha256": "baf9b825742bdb00d32b2278abf2e3e2c4994cb8f931c266cc88e299a8d557b1",
+  "license": {
+    "GPL-2.0-only": {
+      "with": "Classpath-exception-2.0"
+    }
+  },
+  "name": "openjdk",
+  "pkg_version": "27",
+  "recipe_sha256": "f255e6f0c3e4717a6170186dca53d367058edcbfe409ce17619b06c937092634",
+  "release": "intel-35359555125-1-openjdk",
   "revision": 0,
   "run_id": "35359555125",
   "runtime_dependencies": [
@@ -27,16 +31,6 @@
       "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
       "name": "freetype",
       "pkg_version": "2.14.3"
-    },
-    {
-      "formula_sha256": "be8dfebc1492e1c8af3ae1b4d4ba37a76d93501dc03ce342419d397c865abc26",
-      "name": "fribidi",
-      "pkg_version": "1.0.16"
-    },
-    {
-      "formula_sha256": "44127f0caa57f729d1fbc3b0cce4dd2eb531136f16350f644fbb5f3f5d5a70a7",
-      "name": "gdk-pixbuf",
-      "pkg_version": "2.44.8"
     },
     {
       "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
@@ -79,19 +73,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
-      "name": "libdatrie",
-      "pkg_version": "0.2.14"
-    },
-    {
       "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
       "name": "libpng",
       "pkg_version": "1.6.58"
-    },
-    {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
-      "name": "libthai",
-      "pkg_version": "0.1.30"
     },
     {
       "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
@@ -134,6 +118,11 @@
       "pkg_version": "0.9.12"
     },
     {
+      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+      "name": "little-cms2",
+      "pkg_version": "2.19.1"
+    },
+    {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
       "name": "lz4",
       "pkg_version": "1.10.0"
@@ -142,11 +131,6 @@
       "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
       "name": "lzo",
       "pkg_version": "2.10"
-    },
-    {
-      "formula_sha256": "1ada8fc68572490e56b08ff09b257b2a7f6f9025c766321e77debeb1be4d917e",
-      "name": "pango",
-      "pkg_version": "1.58.2"
     },
     {
       "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
@@ -180,15 +164,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b2257a24acc16e26558e945a1ef13f05230802a1d832b8e5761f7c9435723325",
-  "size": 4980156,
+  "sha256": "b3da4903cfc1713c25d414c631e6522ea0f649de29e3c9b37baba3ddfce8788f",
+  "size": 222796266,
   "source": {
-    "filename": "librsvg--2.63.0.sources.tar.gz",
-    "sha256": "c818627691d8a87a4f8bd42bf1a854475f51b755315aa7961002dbe3af2bceab",
-    "size": 25458192
+    "filename": "openjdk--27.sources.tar.gz",
+    "sha256": "b2cd515c57056e78d181e6c73a53a72ccff762f8937b6309abc8e810f2b1faca",
+    "size": 340075273
   },
   "tag": "sequoia",
-  "version": "2.63.0",
+  "version": "27",
   "version_scheme": 0,
   "workflow_commit": "82acb9682c7a718f3568813126e684b55cd7958e"
 }
