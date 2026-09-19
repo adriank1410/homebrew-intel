@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "cloudflared--2026.9.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "ccbd07ca9ff143d75d04a1656efa653dacf00f52bd689eff2fd37d195d3e3631",
+  "license": "Apache-2.0",
+  "name": "cloudflared",
+  "pkg_version": "2026.9.1",
+  "recipe_sha256": "56d2d118db354b63c54ea6143f5c60028d68d27cf871050acc1dbecdab22904a",
+  "release": "intel-35408935324-1-cloudflared",
+  "revision": 0,
+  "run_id": "35408935324",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "476e1cac4a67d59e520d07318ffdd0db4e54136a3bcbc4021248f5d4d9998f0d",
+  "size": 10053164,
+  "source": {
+    "filename": "cloudflared--2026.9.1.sources.tar.gz",
+    "sha256": "c2ae866f9bbb8c3f4dd2387a637f16a2a6a4d714c2c6df0b5f55a8ca06cd2b0f",
+    "size": 78147531
+  },
+  "tag": "sequoia",
+  "version": "2026.9.1",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}
