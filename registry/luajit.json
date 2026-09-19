@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "luajit--2.1.1788856981.sequoia.bottle.tar.gz",
+  "formula_sha256": "981b996822b12cfad7ff9fc7b62c0450fff29090446af6ef94ff6b6de7ebc9a7",
+  "license": "MIT",
+  "name": "luajit",
+  "pkg_version": "2.1.1788856981",
+  "recipe_sha256": "0588c4dceb7fafde7e7b74a3b9cbb9ed56130dc07ccd20a05f2862e12a1b5711",
+  "release": "intel-35408935324-1-neovim",
+  "revision": 0,
+  "run_id": "35408935324",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "f325471fcf0a96fbc0c6f454a8c6bd3fc583a8eee67931adcd23c7d3fbd8eedb",
+  "size": 909204,
+  "source": {
+    "filename": "luajit--2.1.1788856981.sources.tar.gz",
+    "sha256": "2c44c3231110f00b432d6f445f35dc258f42c349182e503656294e5771687e62",
+    "size": 1109149
+  },
+  "tag": "sequoia",
+  "version": "2.1.1788856981",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}
