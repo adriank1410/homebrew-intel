@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "rclone--1.75.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "8360371041b05b5de2b205a84785dcef1495dde598a5c741e56eee6345ac8ef4",
+  "license": "MIT",
+  "name": "rclone",
+  "pkg_version": "1.75.1",
+  "recipe_sha256": "f7e62f21fc4b7438317e7bd94837177ac886eda327c72f3c68e60e68ab19541f",
+  "release": "intel-35408935324-1-rclone",
+  "revision": 0,
+  "run_id": "35408935324",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "0d5e4d562a60df9ff1690f14ed6aff73cc9f9cdb88345e5a0c7490d97989ac2c",
+  "size": 33141172,
+  "source": {
+    "filename": "rclone--1.75.1.sources.tar.gz",
+    "sha256": "50054b470a7960975f86a31d23f3d2aa926c8adedc8a66237a98b40af3136236",
+    "size": 379382421
+  },
+  "tag": "sequoia",
+  "version": "1.75.1",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}

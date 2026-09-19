@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "git-lfs--3.8.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "55361effe3ab105aaf91022d458dc77f50ddad2e05826b680009df6a404b9adc",
+  "license": "MIT",
+  "name": "git-lfs",
+  "pkg_version": "3.8.0",
+  "recipe_sha256": "41d37d909282834b318e1e5355e9d35b1ba8b511060bd6d1ccf8e1ba2d557200",
+  "release": "intel-35408935324-1-git-lfs",
+  "revision": 0,
+  "run_id": "35408935324",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "57d0ad523dd09ce8794709fe81df3eda624970e92815ba0235cc457e324fed57",
+  "size": 5949832,
+  "source": {
+    "filename": "git-lfs--3.8.0.sources.tar.gz",
+    "sha256": "5493e9a39e489b3de8ef4a49dc3287cf6cfb4fd20bac937d69bb55f81b3294e5",
+    "size": 53581708
+  },
+  "tag": "sequoia",
+  "version": "3.8.0",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}
