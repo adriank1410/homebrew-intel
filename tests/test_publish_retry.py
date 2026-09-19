@@ -97,8 +97,10 @@ class PublicationRetryTests(unittest.TestCase):
             asset = Path(directory) / "manifest.json"
             asset.write_text("verified")
             release = {"tag_name": "tag", "draft": True, "target_commitish": "a" * 40, "assets": []}
-            with patch("intelbrew.publish.run", side_effect=Error("offline")) as run, patch("intelbrew.publish.gh_json", side_effect=[release, []]):
-                with self.assertRaises(Error):
+            with patch("intelbrew.publish.run", side_effect=Error("offline")) as run, patch(
+                    "intelbrew.publish.gh_json",
+                    side_effect=[release, [], Error("refresh forbidden")]):
+                with self.assertRaisesRegex(Error, "refresh forbidden"):
                     ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
                 self.assertNotIn("edit", [c.args[0][2] for c in run.call_args_list])
 
@@ -128,9 +130,70 @@ class PublicationRetryTests(unittest.TestCase):
             asset.write_text("verified")
             draft = {"tag_name": "tag", "draft": True, "target_commitish": "a" * 40, "assets": []}
             with patch("intelbrew.publish.run", side_effect=[Error("already exists"), Error("HTTP 500: Error creating asset temp dir"), "", ""]) as run, \
-                 patch("intelbrew.publish.gh_json", side_effect=[draft, []]):
+                 patch("intelbrew.publish.gh_json", side_effect=[draft, [], draft, []]):
                 ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
                 self.assertEqual([c.args[0][2] for c in run.call_args_list], ["create", "upload", "upload", "edit"])
+
+    def test_upload_retry_refreshes_after_ambiguous_acceptance(self):
+        with tempfile.TemporaryDirectory() as directory:
+            asset = Path(directory) / "manifest.json"
+            asset.write_text("verified")
+            before = {"tag_name": "tag", "draft": False, "assets": []}
+            after = {"tag_name": "tag", "draft": False,
+                     "assets": [{"name": asset.name, "size": asset.stat().st_size,
+                                 "digest": "sha256:" + digest(asset)}]}
+            refs = [{"ref": "refs/tags/tag",
+                     "object": {"type": "commit", "sha": "a" * 40}}]
+            with patch("intelbrew.publish.run",
+                       side_effect=[Error("already exists"), Error("upload connection reset"),
+                                    Error("duplicate asset")]) as run, \
+                 patch("intelbrew.publish.gh_json",
+                       side_effect=[before, refs, after, refs]):
+                ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
+            self.assertEqual([call.args[0][2] for call in run.call_args_list],
+                             ["create", "upload"])
+
+    def test_partial_upload_retries_only_unconfirmed_assets(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first = Path(directory) / "first.json"
+            second = Path(directory) / "second.json"
+            first.write_text("first")
+            second.write_text("second")
+            before = {"tag_name": "tag", "draft": False, "assets": []}
+            partial = {"tag_name": "tag", "draft": False,
+                       "assets": [{"name": first.name, "size": first.stat().st_size,
+                                   "digest": "sha256:" + digest(first)}]}
+            refs = [{"ref": "refs/tags/tag",
+                     "object": {"type": "commit", "sha": "a" * 40}}]
+            with patch("intelbrew.publish.run",
+                       side_effect=[Error("already exists"), Error("upload connection reset"), ""]) as run, \
+                 patch("intelbrew.publish.gh_json",
+                       side_effect=[before, refs, partial, refs]):
+                ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [first, second])
+            uploads = [call.args[0] for call in run.call_args_list if call.args[0][2] == "upload"]
+            self.assertEqual(uploads, [
+                ["gh", "release", "upload", "tag", "--repo", "owner/repo", str(first), str(second)],
+                ["gh", "release", "upload", "tag", "--repo", "owner/repo", str(second)],
+            ])
+
+    def test_changed_digest_after_failed_upload_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            asset = Path(directory) / "manifest.json"
+            asset.write_text("verified")
+            before = {"tag_name": "tag", "draft": False, "assets": []}
+            changed = {"tag_name": "tag", "draft": False,
+                       "assets": [{"name": asset.name, "size": asset.stat().st_size,
+                                   "digest": "sha256:" + "b" * 64}]}
+            refs = [{"ref": "refs/tags/tag",
+                     "object": {"type": "commit", "sha": "a" * 40}}]
+            with patch("intelbrew.publish.run",
+                       side_effect=[Error("already exists"), Error("upload connection reset"),
+                                    Error("must not retry")]) as run, \
+                 patch("intelbrew.publish.gh_json",
+                       side_effect=[before, refs, changed]):
+                with self.assertRaisesRegex(Error, "differs from the verified candidate"):
+                    ensure_release("owner/repo", "tag", "a" * 40, "title", "notes", [asset])
+            self.assertEqual(run.call_count, 2)
 
     def test_release_create_exhausts_retries_and_fails(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -150,4 +213,3 @@ class PublicationRetryTests(unittest.TestCase):
             result = git(["ls-remote", "--heads", "origin", "refs/heads/main"])
             self.assertEqual(result, "abc refs/heads/main")
             self.assertEqual(run_mock.call_count, 2)
-

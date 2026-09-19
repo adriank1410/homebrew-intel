@@ -76,7 +76,10 @@ def _api_snapshot(item):
         raise Error(f'Invalid Homebrew formula metadata: {item["name"]}')
     require_sha(formula_sha)
     stable_bottle = item.get('bottle', {}).get('stable', {})
-    bottle_file = stable_bottle.get('files', {}).get('x86_64_sequoia')
+    # Homebrew's Intel macOS bottle tag is ``sequoia``.  The
+    # ``arm64_sequoia`` key is Apple Silicon only and must not satisfy this
+    # Intel preflight.
+    bottle_file = stable_bottle.get('files', {}).get('sequoia')
     official_bottle = False
     if isinstance(bottle_file, dict) and bottle_file.get('cellar') in {
             ':any', ':any_skip_relocation', 'any', 'any_skip_relocation', '/usr/local/Cellar'}:

@@ -121,12 +121,14 @@ inwentarza nie są wysyłane. Instalacja pakietów pozostaje osobną komendą.
 
 Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza cogodzinne sprawdzanie
 kandydatów i obsługę PR-ów co pięć minut. Niepewni kandydaci są sprawdzani wspólnie
-na jednym runnerze Intel; do macierzy trafiają wszystkie kwalifikujące cele
-wymagające budowania. Pakiety z dostępnymi butelkami nie zajmują osobnych runnerów
-budowania i weryfikacji. Blokady są raportowane niezależnie od pozostałych
-pakietów. Każdy etap dopuszcza do pięciu równoległych zadań. Jeśli
-budowania wymaga więcej niż dopuszczalne przez GitHub 256 zadań macierzy,
-planowanie kończy się jawnym błędem zamiast pominięcia części pakietów.
+na jednym runnerze Intel. Najpierw budowane są wspólne brakujące zależności;
+pakiety, które ich potrzebują, czekają na kolejny przebieg. Jeden przebieg wybiera
+do `scheduled_batch_size` celów (obecnie 24), a pozostali kandydaci są ponownie
+rozpatrywani w następnych przebiegach. Pakiety z dostępnymi butelkami nie zajmują
+osobnych runnerów budowania i weryfikacji. Blokady są raportowane niezależnie od
+pozostałych pakietów. Jeden przebieg dopuszcza do pięciu równoległych zadań na
+runnerach Intel. Wybrana partia musi mieścić się w limicie GitHub wynoszącym
+256 zadań macierzy.
 
 Workflow buduje i weryfikuje pakiety na `macos-15-intel`, a następnie je publikuje.
 Korzysta z oficjalnych formuł, przypiętej wersji Homebrew, instalacji gotowego
