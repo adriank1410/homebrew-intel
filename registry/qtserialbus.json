@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "40e9a307552776a139f80801b4e5c0e573ae38a9",
+  "core_commit": "569b37f3c23d05642878d49d58b251a2f77f00df",
   "filename": "qtserialbus--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "27b32c5e031a62366cdb0082b65da32bd1769bfdb66fbb464c61fb59dbc25393",
   "license": {
@@ -25,9 +25,9 @@
   "name": "qtserialbus",
   "pkg_version": "6.11.2",
   "recipe_sha256": "8950ceff60422f6314e755bf8c87ee55db1f3e64aefa02bb7286948a68c77c8c",
-  "release": "intel-35359555125-1-qtserialbus",
+  "release": "intel-35459764949-1-qtserialbus",
   "revision": 0,
-  "run_id": "35359555125",
+  "run_id": "35459764949",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -70,7 +70,7 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
+      "formula_sha256": "7e41107faf209528d2e993afec53ad1006bbe8945772bde43c2295e8a2ef7659",
       "name": "glib",
       "pkg_version": "2.90.0"
     },
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4f4a124fd6afeff18769d04797299324c967db970ffc41d57ce8c697f46788eb",
-  "size": 312967,
+  "sha256": "6df29499314ad89138b36ff9f940f2a6977287777fccc52125b201c427e16929",
+  "size": 312989,
   "source": {
     "filename": "qtserialbus--6.11.2.sources.tar.gz",
-    "sha256": "e2c277cf8fd280c69752f2b6c2e0af0aceb59ab7685fab78742658dbfbfbcb38",
-    "size": 569442
+    "sha256": "efb6b6271027d96e0a31e2ab793642d28a12151ed47b1a867173a96e05ee265a",
+    "size": 569448
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "82acb9682c7a718f3568813126e684b55cd7958e"
+  "workflow_commit": "874f6ac6f9e741facea66d1ad8c8f411ed5dd7a8"
 }
