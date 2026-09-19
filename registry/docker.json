@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "docker--29.8.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "278b8979a64d4ce6a93ef043776121868c7eb3c4a524cef09e95a0dc527af23f",
+  "license": "Apache-2.0",
+  "name": "docker",
+  "pkg_version": "29.8.1",
+  "recipe_sha256": "5bdc5d4b309568ccd7da6b40a2a65318584c2a5cd810789b405cb2096f1966db",
+  "release": "intel-35408935324-1-docker",
+  "revision": 0,
+  "run_id": "35408935324",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "3c5900e08ddd0c35d6e4c9abe5dca79539d0b6482ab8ece9ef35497ba88c6b28",
+  "size": 10729852,
+  "source": {
+    "filename": "docker--29.8.1.sources.tar.gz",
+    "sha256": "ef5e2dbe8cfc3300edefcfc1c669a8d42cd987f7925d8027fcb22a0aeef070b8",
+    "size": 7048711
+  },
+  "tag": "sequoia",
+  "version": "29.8.1",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}
