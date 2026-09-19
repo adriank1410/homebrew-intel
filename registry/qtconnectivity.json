@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "d971456fa30607b6de22930f86f89783c395efaa",
+  "core_commit": "e29aab2ddeecec2acd46e0cdc73791de284a580e",
   "filename": "qtconnectivity--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "392b1c368c59d54978f74e0dec0a6a27323c3b8f484c5551228bc23d95781df2",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtconnectivity",
   "pkg_version": "6.11.2",
   "recipe_sha256": "08d98e302bf1031042d97efab04ce9bfedf772028b00a0dc978c5097de4a8574",
-  "release": "intel-35338355014-1-qtconnectivity",
+  "release": "intel-35438707346-1-qtconnectivity",
   "revision": 0,
-  "run_id": "35338355014",
+  "run_id": "35438707346",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -65,7 +65,7 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "b1e77191c8a81816e4451be8159f571d744b0380318fc57c32f675e14796578f",
+      "formula_sha256": "7e41107faf209528d2e993afec53ad1006bbe8945772bde43c2295e8a2ef7659",
       "name": "glib",
       "pkg_version": "2.90.0"
     },
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1de096bc0d3cbf68ca454629aab44bf4508c123a536d97341ceb74d584d345cd",
-  "size": 431546,
+  "sha256": "3d97c4428ac40fe210fb481eb96f69b094fe53a365e1ea5303da9e2a3da1a054",
+  "size": 431538,
   "source": {
     "filename": "qtconnectivity--6.11.2.sources.tar.gz",
-    "sha256": "b0cf2b9f595fc455a43a8462686c304872ea5a04c21bf2452dd20afb1d7b43b7",
-    "size": 1101250
+    "sha256": "eb679985471fb752d673cb3a282c98b82aea6935d6b5d5cefd5919c4655883d8",
+    "size": 1101261
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "3a6f19c62c1f3b2b0c0c6f512db8fc17d50d20d7"
+  "workflow_commit": "ff008e3027eacccccc0c9d0477ae9a6ed805ce3e"
 }
