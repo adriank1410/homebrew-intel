@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "uv--0.12.17.sequoia.bottle.tar.gz",
+  "formula_sha256": "c6d406d34126bc01fa5d17c6c8a2f79cd1fb52e803c6470f6cc2be94baa2c6ba",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "MIT"
+    ]
+  },
+  "name": "uv",
+  "pkg_version": "0.12.17",
+  "recipe_sha256": "b394243e02a2d29038f605a541bea54f063ec06338c5d6a479b216fe1af86bec",
+  "release": "intel-35408935324-1-uv",
+  "revision": 0,
+  "run_id": "35408935324",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "b629d84add69f7cc49d2181a226e558564886409fa226cfe70123725fabec54a",
+  "size": 20565382,
+  "source": {
+    "filename": "uv--0.12.17.sources.tar.gz",
+    "sha256": "ccaf0e20b470b0b2990c0c70eb9d2455c0061fff7c0e4d4a817afd56ac8c9c33",
+    "size": 63361656
+  },
+  "tag": "sequoia",
+  "version": "0.12.17",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}
