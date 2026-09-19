@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "e29aab2ddeecec2acd46e0cdc73791de284a580e",
+  "filename": "helm--4.3.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "5df2efe4887048c097a19632038019d9b60b664c29767794d21a24b6eda8f404",
+  "license": "Apache-2.0",
+  "name": "helm",
+  "pkg_version": "4.3.0",
+  "recipe_sha256": "c83d8dfb96aa3ef3bfc4a62cb4c3fa23b8ca48ec7356c2a18b5666aec3c95191",
+  "release": "intel-35438707346-1-helm",
+  "revision": 0,
+  "run_id": "35438707346",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "9276469b858ed0ec6e5c9c303e54cda99424bf122bb35c319ab789120de67f93",
+  "size": 20732536,
+  "source": {
+    "filename": "helm--4.3.0.sources.tar.gz",
+    "sha256": "f1d0c9f611cafc687999d1367a6793b208b6a7d7885e79cd241d6fc1a63c83f7",
+    "size": 289225768
+  },
+  "tag": "sequoia",
+  "version": "4.3.0",
+  "version_scheme": 0,
+  "workflow_commit": "ff008e3027eacccccc0c9d0477ae9a6ed805ce3e"
+}
