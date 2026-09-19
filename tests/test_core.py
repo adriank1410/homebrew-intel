@@ -211,6 +211,35 @@ class ValidationTests(unittest.TestCase):
         self.assertTrue(is_transient_error(http.client.IncompleteRead(b"partial")))
         self.assertTrue(is_transient_error(Error("IncompleteRead(123 bytes read)")))
 
+    def test_retry_recovers_git_connection_failure_from_real_subprocess(self):
+        from intelbrew.core import retry_transient, run
+        import sys
+        with tempfile.TemporaryDirectory() as directory:
+            count = Path(directory) / "attempts"
+            script = (
+                "import pathlib, sys; p=pathlib.Path(sys.argv[1]); "
+                "n=int(p.read_text())+1 if p.exists() else 1; p.write_text(str(n)); "
+                "sys.stderr.write(\"fatal: unable to access 'https://github.com/adriank1410/homebrew-intel/': "
+                "Failed to connect to github.com port 443 after 75005 ms: Couldn't connect to server\"); "
+                "sys.exit(128 if n == 1 else 0)"
+            )
+            with patch.dict(os.environ, {"INTELBREW_RETRY_DELAY": "0", "INTELBREW_RETRY_ATTEMPTS": "3"}):
+                retry_transient(lambda: run([sys.executable, "-c", script, str(count)]))
+            self.assertEqual(count.read_text(), "2")
+
+    def test_echoed_command_retains_stdout_diagnostics_for_retry(self):
+        from contextlib import redirect_stdout, redirect_stderr
+        from intelbrew.core import is_transient_error, run
+        import sys
+        output, errors = io.StringIO(), io.StringIO()
+        with redirect_stdout(output), redirect_stderr(errors), self.assertRaises(Error) as failure:
+            run([sys.executable, '-c',
+                 'import sys; print("go mod download: lookup proxy.golang.org: i/o timeout"); '
+                 'print("Unsupported platform", file=sys.stderr); sys.exit(1)'], echo=True)
+        self.assertTrue(is_transient_error(failure.exception))
+        self.assertIn('proxy.golang.org', output.getvalue())
+        self.assertIn('Unsupported platform', errors.getvalue())
+
     def test_is_transient_error_does_not_treat_sha_digits_as_http_status(self):
         from intelbrew.core import is_transient_error
         self.assertTrue(is_transient_error(Error(

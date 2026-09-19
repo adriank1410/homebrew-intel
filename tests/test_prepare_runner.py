@@ -146,6 +146,35 @@ class FetchRetryTests(unittest.TestCase):
             self.assertEqual(counter.read_text().strip(), "3")
             self.assertEqual(log.read_text().splitlines(), ["5", "10"])
 
+    def test_invalid_retry_settings_fail_before_running_command(self):
+        helper = ROOT / "scripts/retry-fetch.sh"
+        for variable, value in (("INTELBREW_RETRY_ATTEMPTS", "0"),
+                                ("INTELBREW_RETRY_ATTEMPTS", "-1"),
+                                ("INTELBREW_RETRY_DELAY", "-1"),
+                                ("INTELBREW_RETRY_DELAY", "9223372036854775808"),
+                                ("INTELBREW_RETRY_DELAY", "not-a-number")):
+            with self.subTest(variable=variable, value=value), tempfile.TemporaryDirectory() as folder:
+                marker = Path(folder) / "ran"
+                env = {key: value for key, value in os.environ.items()
+                       if key not in {"INTELBREW_RETRY_ATTEMPTS", "INTELBREW_RETRY_DELAY"}}
+                env[variable] = value
+                result = subprocess.run(
+                    ["bash", str(helper), "bash", "-c", "printf ran > \"$1\"", "test", str(marker)],
+                    env=env, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 2, result.stderr)
+                self.assertFalse(marker.exists())
+
+    def test_decimal_leading_zero_settings_are_supported(self):
+        helper = ROOT / "scripts/retry-fetch.sh"
+        with tempfile.TemporaryDirectory() as folder:
+            marker = Path(folder) / "ran"
+            env = {**os.environ, "INTELBREW_RETRY_ATTEMPTS": "03", "INTELBREW_RETRY_DELAY": "08"}
+            result = subprocess.run(
+                ["bash", str(helper), "bash", "-c", "printf ran > \"$1\"", "test", str(marker)],
+                env=env, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(marker.read_text(), "ran")
+
     def test_prepare_runner_bootstraps_portable_ruby_with_retry(self):
         script = (ROOT / "scripts/prepare-runner.sh").read_text()
         self.assertIn('bash "$project_dir/scripts/retry-fetch.sh" brew vendor-install ruby', script)
@@ -154,4 +183,3 @@ class FetchRetryTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

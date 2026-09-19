@@ -19,7 +19,7 @@ class SvnSourcesTests(unittest.TestCase):
         environment.update(extra_env or {})
         return run(["brew", "ruby", "-e", script], env=environment)
 
-    def _svn_repo(self, root):
+    def _svn_repo(self, root, *, option_named=False):
         repo = root / "repo"
         wc = root / "wc"
         conf = root / "svn-conf"
@@ -30,6 +30,11 @@ class SvnSourcesTests(unittest.TestCase):
         (wc / "README").write_text("fixture\n")
         subprocess.run(["svn", "add", str(wc / "README"),
                         "--config-dir", str(conf), "--non-interactive"], check=True)
+        if option_named:
+            option_named_file = wc / "--exclude=README"
+            option_named_file.write_text("option-named\n")
+            subprocess.run(["svn", "add", str(option_named_file),
+                            "--config-dir", str(conf), "--non-interactive"], check=True)
         subprocess.run(["svn", "commit", "-m", "fixture", str(wc),
                         "--config-dir", str(conf), "--non-interactive"], check=True)
         # In Subversion, working copy needs update to reflect commit revision
@@ -86,8 +91,22 @@ puts JSON.generate([
             self.assertEqual(result["sha256"], hashlib.sha256(archive.read_bytes()).hexdigest())
             with tarfile.open(archive) as tar:
                 names = tar.getnames()
-                self.assertIn("README", names)
+                self.assertIn("README", {Path(name).name for name in names})
                 self.assertFalse(any(".svn" in name for name in names))
+
+    def test_exports_option_named_child_without_treating_it_as_tar_flag(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            repo, wc = self._svn_repo(root, option_named=True)
+            out = root / "out"
+            out.mkdir()
+            result = json.loads(self._ruby(
+                self._cached_resource_script(f"file://{repo}", "1", wc, out)
+            ).splitlines()[-1])
+            with tarfile.open(Path(result["path"])) as tar:
+                names = {Path(name).name for name in tar.getnames()}
+            self.assertIn("README", names)
+            self.assertIn("--exclude=README", names)
 
     def test_rejects_cached_revision_mismatch(self):
         with tempfile.TemporaryDirectory() as raw:

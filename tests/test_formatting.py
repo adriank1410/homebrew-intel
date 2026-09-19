@@ -176,6 +176,31 @@ class FormattingTests(unittest.TestCase):
         self.assertIn("==> Installing 1 package:", plain_out)
         self.assertIn("app 2.0", plain_out)
 
+    def test_operation_preview_reports_missing_root_or_dependency(self):
+        for renderer in (cli.render_install, cli.render_upgrade):
+            for missing in ("app", "lib"):
+                with self.subTest(renderer=renderer.__name__, missing=missing):
+                    plan = {
+                        "roots": ["app"], "order": ["lib", "app"],
+                        "nodes": {name: {"provider": "missing" if name == missing else "personal",
+                                         "pkg_version": "2.0", "installed_versions": ["1.0"]}
+                                  for name in ("lib", "app")},
+                    }
+                    out = io.StringIO()
+                    renderer(plan, stream=out)
+                    self.assertIn(f"Missing bottles: {missing}", out.getvalue())
+                    self.assertNotIn("Installing", out.getvalue())
+                    self.assertNotIn("Upgrading", out.getvalue())
+
+    def test_operation_preview_reports_already_current_packages(self):
+        plan = {"roots": ["app"], "order": ["app"],
+                "nodes": {"app": {"provider": "installed", "pkg_version": "2.0"}}}
+        for renderer in (cli.render_install, cli.render_upgrade):
+            with self.subTest(renderer=renderer.__name__):
+                out = io.StringIO()
+                renderer(plan, stream=out)
+                self.assertIn("All requested packages are already up-to-date.", out.getvalue())
+
     def test_main_upgrade_calls_render_upgrade(self):
         plan = {
             "roots": ["simdutf"],

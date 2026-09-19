@@ -119,11 +119,13 @@ snapshots are not uploaded. Package installation remains a separate command.
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` to enable hourly candidate checks and five-minute
 PR maintenance. Scheduled checks inspect uncertain candidates together on one
-Intel runner and select every eligible root needing a build. Already covered roots
-do not receive separate build/verification runners. Blocked roots are reported
-without stopping eligible siblings. Build and verification jobs remain limited to
-five concurrent Intel runners. Planning fails explicitly if more than GitHub's
-256-job matrix limit need builds, rather than silently omitting roots.
+Intel runner. Shared missing dependencies are built first; dependent roots wait
+for a later sweep. Each sweep selects up to `scheduled_batch_size` roots
+(currently 24), with the remaining candidates reconsidered on subsequent runs.
+Already covered roots do not receive separate build/verification runners.
+Blocked roots are reported without stopping eligible siblings. Build and
+verification jobs remain limited to five concurrent Intel runners per run. The
+selected batch must fit GitHub's 256-job matrix limit.
 
 The workflow builds and verifies on `macos-15-intel`, then publishes through a
 separate validation step. It uses official core recipes, a pinned Homebrew
