@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "42f17d98bb46c274008be95ab68cf359fed9610b",
-  "filename": "protobuf--36.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "88fa9e9eb2354e3afc62147418ae7d371196930671e0850c83153eaf122c237f",
+  "core_commit": "569b37f3c23d05642878d49d58b251a2f77f00df",
+  "filename": "protobuf--36.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "7992732dfd8e12ea27faade9f2b6a2db76448e1ff8bf50c32f4000028f9f1374",
   "license": "BSD-3-Clause",
   "name": "protobuf",
-  "pkg_version": "36.1",
-  "recipe_sha256": "f9f4766073c22d8ec4a1031145e1476be1ef539a3da82de8038e5b8816088926",
-  "release": "intel-34663743378-1-protobuf",
+  "pkg_version": "36.2",
+  "recipe_sha256": "9cb50082026658097e2ec4d8391d3f73debb6417c92fa43d7b71ed2c9cd07048",
+  "release": "intel-35459764949-1-protobuf",
   "revision": 0,
-  "run_id": "34663743378",
+  "run_id": "35459764949",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "76fe3fcccc76e2ba4546c1be05afb992f58b880dc7f490b99c40761cbe29c53f",
-  "size": 3945065,
+  "sha256": "5238f5351b0b13ba80fc1b918b4af1f3a088ea3ef954bc741f676010de6465aa",
+  "size": 3945153,
   "source": {
-    "filename": "protobuf--36.1.sources.tar.gz",
-    "sha256": "7bfac3a71fac2fd7c58e38bcfb9e3333617cffac3d04bfa92976347810deacb6",
-    "size": 7293007
+    "filename": "protobuf--36.2.sources.tar.gz",
+    "sha256": "828ec76beecbfd71a4da6c7f0b3632b3fcffd47425df6abda34c9235356996be",
+    "size": 7315373
   },
   "tag": "sequoia",
-  "version": "36.1",
+  "version": "36.2",
   "version_scheme": 0,
-  "workflow_commit": "c308d9653a8a934819df3209f79bdaf07b4233ef"
+  "workflow_commit": "874f6ac6f9e741facea66d1ad8c8f411ed5dd7a8"
 }
