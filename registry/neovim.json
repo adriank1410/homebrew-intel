@@ -1,0 +1,79 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "neovim--0.12.5_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "f12b7abc7bfe46a3c39c5b8c2a6141f3f6f68224f6dbf692fe60677041313d12",
+  "license": "Apache-2.0",
+  "name": "neovim",
+  "pkg_version": "0.12.5_1",
+  "recipe_sha256": "ab7c52e9148f2518e6c93e998193077875d32698a02945701558f16e043aeca5",
+  "release": "intel-35408935324-1-neovim",
+  "revision": 1,
+  "run_id": "35408935324",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "dca56d2444d2f84f1320d4ee2c9c436a5a357e12b4ac1f8708f640894370f77f",
+      "name": "libuv",
+      "pkg_version": "1.52.1"
+    },
+    {
+      "formula_sha256": "0bd27d1c632675c48fce22dd201c98b13a72d60cbff0ce6504250f7b606b7b4a",
+      "name": "lpeg",
+      "pkg_version": "1.1.0_2"
+    },
+    {
+      "formula_sha256": "981b996822b12cfad7ff9fc7b62c0450fff29090446af6ef94ff6b6de7ebc9a7",
+      "name": "luajit",
+      "pkg_version": "2.1.1788856981"
+    },
+    {
+      "formula_sha256": "497e2cd27fb725038c10331f146f51bfd29a6609a42a3faafc37ebd79cb8b664",
+      "name": "luv",
+      "pkg_version": "1.52.1-0"
+    },
+    {
+      "formula_sha256": "6c15b21c28e8e6453030fb55dead1744f7a7e919eb87a370b7ef5aa25e7a5d63",
+      "name": "tree-sitter",
+      "pkg_version": "0.27.0"
+    },
+    {
+      "formula_sha256": "6cd2f1710abf79c3610f01f58c029a7c5b50f67916306b46f79aa53f88a1d25e",
+      "name": "unibilium",
+      "pkg_version": "2.1.4"
+    },
+    {
+      "formula_sha256": "8870f81cc2f660e88b56d453b24ffd024cff0ab52a5dbc0f5621f9f38290623f",
+      "name": "utf8proc",
+      "pkg_version": "2.11.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "261dbb8c5e0dad424c47aebc51c7315f3ce3ae9d41a9e6efc5e4f173f094a91b",
+  "size": 8362769,
+  "source": {
+    "filename": "neovim--0.12.5_1.sources.tar.gz",
+    "sha256": "cca1875527c9ee0c3934c5dd137e3ec813dd89eb5826dd41b06e5e0bb2b903ef",
+    "size": 14987075
+  },
+  "tag": "sequoia",
+  "version": "0.12.5",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}

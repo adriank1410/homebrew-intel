@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "filename": "unibilium--2.1.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "6cd2f1710abf79c3610f01f58c029a7c5b50f67916306b46f79aa53f88a1d25e",
+  "license": "LGPL-3.0-or-later",
+  "name": "unibilium",
+  "pkg_version": "2.1.4",
+  "recipe_sha256": "6f7f089d293c13202567b5478dde248b7873bbc03729b507a966f0070c9f9355",
+  "release": "intel-35408935324-1-neovim",
+  "revision": 0,
+  "run_id": "35408935324",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "a95c3b574e913d116bff8536297903aaa64f9d2d00deaa4f1dfa087c4ebcb1db",
+  "size": 150107,
+  "source": {
+    "filename": "unibilium--2.1.4.sources.tar.gz",
+    "sha256": "a703d21ae6bf2afa7ec67a696210123447767eb60126d654147198d3ba431158",
+    "size": 123100
+  },
+  "tag": "sequoia",
+  "version": "2.1.4",
+  "version_scheme": 0,
+  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+}
