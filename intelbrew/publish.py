@@ -112,7 +112,18 @@ def ensure_release(repo: str, tag: str, commit: str, title: str, notes: str,
             try:
                 run(["gh", "release", "upload", tag, "--repo", repo, *map(str, missing)], capture=False)
                 break
-            except Error:
+            except Error as upload_error:
+                # The server may have accepted one or more assets before the
+                # client lost its response. Refresh and validate the release
+                # before retrying so an already-uploaded asset is never sent
+                # again. An unknown release state is fail-closed.
+                refreshed = _find_release(repo, tag)
+                if refreshed is None:
+                    raise Error("Cannot verify release after failed asset upload") from upload_error
+                release = refreshed
+                missing = _validate_release(release, tag, commit, repo, assets)
+                if not missing:
+                    break
                 if upload_attempt == attempts - 1:
                     raise
     if release["draft"]:

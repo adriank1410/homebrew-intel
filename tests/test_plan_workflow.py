@@ -44,14 +44,36 @@ class PlanWorkflowTests(unittest.TestCase):
         item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
                 "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
                 "dependencies": [], "recommended_dependencies": ["missing"],
-                "bottle": {"stable": {"files": {"x86_64_sequoia": {
+                "bottle": {"stable": {"files": {"sequoia": {
                     "sha256": "f" * 64, "cellar": ":any"}}}}}
         self.assertEqual(plan.scheduled_roots(["root"], {"root": item}, {}), ["root"])
+
+    def test_api_snapshot_accepts_intel_sequoia_bottle(self):
+        item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
+                "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
+                "dependencies": [],
+                "bottle": {"stable": {"files": {"sequoia": {
+                    "sha256": "f" * 64, "cellar": "/usr/local/Cellar"}}}},
+                "variations": {"x86_64_linux": {"caveats": None}}}
+        snapshot = plan._api_snapshot(item)
+        self.assertTrue(snapshot["official_bottle"])
+        self.assertTrue(snapshot["conditional"])
+        self.assertEqual(plan.scheduled_roots(["root"], {"root": item}, {}), ["root"])
+
+    def test_api_snapshot_does_not_treat_arm64_or_sonoma_as_intel_sequoia(self):
+        base = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
+                "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
+                "dependencies": []}
+        for tag in ("arm64_sequoia", "sonoma"):
+            with self.subTest(tag=tag):
+                item = {**base, "bottle": {"stable": {"files": {tag: {
+                    "sha256": "f" * 64, "cellar": "/usr/local/Cellar"}}}}}
+                self.assertFalse(plan._api_snapshot(item)["official_bottle"])
 
     def test_incomplete_api_entry_does_not_abort_siblings(self):
         good = {"name": "good", "versions": {"stable": "1.0"}, "revision": 0,
                 "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
-                "dependencies": [], "bottle": {"stable": {"files": {"x86_64_sequoia": {
+                "dependencies": [], "bottle": {"stable": {"files": {"sequoia": {
                     "sha256": "f" * 64, "cellar": ":any"}}}}}
         for broken in ({"name": "bad"}, dict(good, name="bad", ruby_source_checksum=None),
                        dict(good, name="bad", bottle=None)):
@@ -63,7 +85,7 @@ class PlanWorkflowTests(unittest.TestCase):
         item = {"name": "root", "versions": {"stable": "1.0"}, "revision": 0,
                 "version_scheme": 0, "ruby_source_checksum": {"sha256": "a" * 64},
                 "dependencies": [], "pour_bottle_only_if": "clt_installed",
-                "bottle": {"stable": {"files": {"x86_64_sequoia": {
+                "bottle": {"stable": {"files": {"sequoia": {
                     "sha256": "f" * 64, "cellar": ":any"}}}}}
         self.assertEqual(plan.scheduled_roots(["root"], {"root": item}, {}), ["root"])
 
@@ -76,7 +98,7 @@ class PlanWorkflowTests(unittest.TestCase):
                 "version_scheme": 0,
                 "ruby_source_checksum": {"sha256": sha},
                 "dependencies": list(deps),
-                "bottle": {"stable": {"files": {"x86_64_sequoia": {
+                "bottle": {"stable": {"files": {"sequoia": {
                     "url": "https://example.test", "sha256": "f" * 64, "cellar": ":any"
                 }}}} if official else {},
             }
@@ -108,7 +130,7 @@ class PlanWorkflowTests(unittest.TestCase):
             return {"name": name, "versions": {"stable": "1.0"}, "revision": 0,
                     "version_scheme": 0, "ruby_source_checksum": {"sha256": sha},
                     "dependencies": list(deps),
-                    "bottle": {"stable": {"files": {"x86_64_sequoia": {
+                    "bottle": {"stable": {"files": {"sequoia": {
                         "url": "x", "sha256": "f" * 64, "cellar": ":any"
                     }}}}
                     if official else {}}

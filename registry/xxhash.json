@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "e29aab2ddeecec2acd46e0cdc73791de284a580e",
+  "filename": "xxhash--0.8.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "d38306e5313078548d9b0d2236e0785ea545fba204131c9f59e76263bfb54207",
+  "license": {
+    "all_of": [
+      "BSD-2-Clause",
+      "GPL-2.0-or-later"
+    ]
+  },
+  "name": "xxhash",
+  "pkg_version": "0.8.4",
+  "recipe_sha256": "17b419c6b33b508dc1d26019c697694c3f38aebd2f9c764770989b76474dd81e",
+  "release": "intel-35438707346-1-xxhash",
+  "revision": 0,
+  "run_id": "35438707346",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "eece89520dc066d3810d74b23cd73910585adfd3b4a778622def699c39467dc2",
+  "size": 174170,
+  "source": {
+    "filename": "xxhash--0.8.4.sources.tar.gz",
+    "sha256": "af54c11e2b8d8a069526f1281c8ba1bea686cacfb930ccf473dc3dfb0fde7562",
+    "size": 1101837
+  },
+  "tag": "sequoia",
+  "version": "0.8.4",
+  "version_scheme": 0,
+  "workflow_commit": "ff008e3027eacccccc0c9d0477ae9a6ed805ce3e"
+}

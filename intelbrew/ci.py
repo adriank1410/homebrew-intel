@@ -192,6 +192,14 @@ def _build_env(cache:Path):
     env=brew_env(ci=True);env["HOMEBREW_CACHE"]=str(cache);return env
 
 
+def _prefetch_build_inputs(name: str, env: dict[str, str]) -> None:
+    """Populate Homebrew's source cache before starting an expensive build."""
+    retry_transient(lambda: run(
+        ["brew", "fetch", "--build-bottle", "--retry", "--formula", f"homebrew/core/{name}"],
+        env=env, echo=True
+    ))
+
+
 def _safe_archive_name(value:str)->bool:
     path=PurePosixPath(value)
     return bool(value) and not path.is_absolute() and ".." not in path.parts
@@ -398,6 +406,7 @@ def build(root:str,output:Path)->None:
         package_caches.update(caches);source_sets.update(sources)
         sources=source_sets[name];cache=package_caches[name];env=_build_env(cache)
         if name in transient:print(f"intelbrew CI: {name} is an isolated build-only compiler; building from source without publishing a bottle",flush=True)
+        _prefetch_build_inputs(name, env)
         run(_brew_install_args(name,transient),capture=False,env=env)
         if name in transient:continue
         context=native({"mode":"build-context"},ci=True,cache=cache)

@@ -72,7 +72,9 @@ module SvnSources
     command = if files.empty?
       ["/usr/bin/tar", "-cf", output.to_s, "--files-from", "/dev/null"]
     else
-      ["/usr/bin/tar", "-cf", output.to_s, "-C", chdir.to_s, *files]
+      # Prefix each child so names beginning with '-' or '@' cannot be
+      # interpreted as tar options or archive-list directives.
+      ["/usr/bin/tar", "-cf", output.to_s, "-C", chdir.to_s, *files.map { |name| "./#{name}" }]
     end
     stdout, stderr, status = Open3.capture3(*command)
     raise "Tar command failed: #{stderr.strip}" unless status.success?

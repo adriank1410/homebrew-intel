@@ -209,14 +209,14 @@ GitHub CLI login. The client operates in a temporary checkout; it does not edit
 the installed tap, change core remotes, remove existing targets, or install
 packages. The fixed `coverage/intel-installed` branch avoids duplicate PRs.
 
-Hourly coverage maintenance merges that PR into `main`; it does not push the
+Five-minute coverage maintenance merges that PR into `main`; it does not push the
 coverage head. The owner CLI clones, optionally rebases, commits unsigned, and
 `git push --force-with-lease` to `coverage/intel-installed`. Protect that ref
 with ruleset `creation`, `update` (`update_allows_fetch_and_merge: false`) and
 `deletion`, plus an admin bypass (`always`). Do not add `pull_request`,
 `non_fast_forward` or `required_signatures`.
 
-Hourly coverage maintenance runs on trusted `main` with the same short-lived App
+Five-minute coverage maintenance runs on trusted `main` with the same short-lived App
 token. It accepts only the expected owner, branch, repository and base; exactly
 `policy/targets.json` may change, strictly by adding canonical names. Current
 official metadata must identify a stable, enabled core formula. Licensing and

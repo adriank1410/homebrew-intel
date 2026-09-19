@@ -63,6 +63,21 @@ class NativeTests(unittest.TestCase):
         self.assertEqual(Path(result["go_mod_cache"]), cache / "go_mod_cache")
         self.assertEqual(Path(result["cargo_cache"]), cache / "cargo_cache")
 
+    def test_installed_versions_use_homebrew_pkg_version_order(self):
+        script = f'''
+require "json"; require "stringio"
+$stdin = StringIO.new('{{"mode":"inspect","names":[]}}')
+load {json.dumps(str(ROOT / "libexec/native.rb"))}
+KegFixture = Struct.new(:version)
+formula = Struct.new(:installed_kegs).new([
+  KegFixture.new(PkgVersion.parse("1.10")),
+  KegFixture.new(PkgVersion.parse("1.9"))
+])
+puts JSON.generate(IntelbrewNative.installed_versions(formula))
+'''
+        output = run(["brew", "ruby", "-e", script], env=brew_env())
+        self.assertEqual(json.loads(output.splitlines()[-1]), ["1.9", "1.10"])
+
     def test_real_inspect_classifies_vcs_stable_sources_without_fetching(self):
         result = native({"mode": "inspect", "names": ["aom", "archi-steam-farm", "simdutf"]})
         self.assertTrue(all(type(result[name]["vcs_source"]) is bool for name in result))

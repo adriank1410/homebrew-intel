@@ -6,11 +6,13 @@ import json
 import os
 import re
 import subprocess
+import sys
 import tarfile
 import tempfile
 import unittest
 import zipfile
 from pathlib import Path
+from contextlib import redirect_stdout, redirect_stderr
 from unittest.mock import patch
 from intelbrew.cli import apply_plan, attest
 from intelbrew.ci import (_brew_install_args, _build_env, _generated_basename, _prepare_source_sets, _validate_source_bundle,
@@ -73,12 +75,40 @@ class OperationTests(unittest.TestCase):
     def test_attestation_output_captured_by_default(self):
         with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), patch('intelbrew.cli.run') as run:
             attest(Path('/file'), 'adriank1410/homebrew-intel', G)
-            self.assertTrue(run.call_args.kwargs.get('capture'))
+            self.assertTrue(run.call_args.kwargs.get('capture', True))
 
-    def test_attestation_output_streamed_when_verbose(self):
+    def test_attestation_output_echoed_when_verbose(self):
         with patch('intelbrew.cli.shutil.which', return_value='/bin/gh'), patch('intelbrew.cli.run') as run:
             attest(Path('/file'), 'adriank1410/homebrew-intel', G, verbose=True)
-            self.assertFalse(run.call_args.kwargs.get('capture'))
+            self.assertTrue(run.call_args.kwargs.get('capture', True))
+            self.assertTrue(run.call_args.kwargs.get('echo'))
+
+    def test_verbose_attestation_retries_actual_cli_network_error(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            calls = folder / 'calls'
+            gh = folder / 'gh'
+            gh.write_text(
+                f'#!{sys.executable}\n'
+                'import pathlib, sys\n'
+                f'calls = pathlib.Path({str(calls)!r})\n'
+                'workflow = sys.argv[sys.argv.index("--signer-workflow") + 1]\n'
+                'first = not calls.exists()\n'
+                'with calls.open("a") as handle: handle.write(workflow + "\\n")\n'
+                'if first or workflow.endswith("/bottles.yml"):\n'
+                '    print("public good verifier is not available", file=sys.stderr)\n'
+                '    sys.exit(1)\n'
+                'print("Verified attestation")\n'
+            )
+            gh.chmod(0o755)
+            output = io.StringIO()
+            with patch.dict(os.environ, {'PATH': str(folder) + os.pathsep + os.environ['PATH'],
+                                         'INTELBREW_RETRY_DELAY': '0', 'INTELBREW_RETRY_ATTEMPTS': '3'}), \
+                 redirect_stdout(output), redirect_stderr(output):
+                attest(Path('/file'), 'adriank1410/homebrew-intel', G, verbose=True)
+            self.assertEqual(len(calls.read_text().splitlines()), 2)
+            self.assertTrue(all(line.endswith('/bottle-root.yml') for line in calls.read_text().splitlines()))
+            self.assertIn('Verified attestation', output.getvalue())
 
     def test_attestation_retries_transient_public_good_verifier_initialization(self):
         transient = Error('gh failed (1): Error: failed to choose verifier based on provided bundle issuer: public good verifier is not available (initialization may have failed)')
