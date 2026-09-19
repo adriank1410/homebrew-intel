@@ -53,6 +53,7 @@ def is_transient_error(exc: Exception | str) -> bool:
         return False
     transient_patterns = (
         "timed out", "timeout", "connection reset", "connection refused",
+        "failed to connect to", "couldn't connect to server",
         "connection closed", "broken pipe", "temporary failure in name resolution",
         "could not resolve host", "name or service not known",
         "the remote end hung up unexpectedly", "rpc failed",
@@ -143,11 +144,18 @@ def brew_env(*,ci=False):
     if ci:env['HOMEBREW_NO_INSTALL_FROM_API']='1'
     return env
 
-def run(args,*,capture=True,input_text=None,env=None,cwd=None,timeout=None):
+def run(args,*,capture=True,input_text=None,env=None,cwd=None,timeout=None,echo=False):
+    """Run once; echo captured diagnostics after completion without losing retry evidence."""
     try:p=subprocess.run(args,input=input_text,text=True,stdout=subprocess.PIPE if capture else None,stderr=subprocess.PIPE if capture else None,env=env,cwd=cwd,timeout=timeout)
     except OSError as exc:raise Error(f'Cannot execute {args[0]}: {exc}') from exc
     except subprocess.TimeoutExpired as exc:raise Error(f'{args[0]} timed out after {timeout}s') from exc
-    if p.returncode:raise Error(f'{args[0]} failed ({p.returncode}): {(p.stderr or "").strip() if capture else "see output"}')
+    if capture and echo:
+        if p.stdout:print(p.stdout,end='')
+        if p.stderr:print(p.stderr,end='',file=sys.stderr)
+    if p.returncode:
+        # Homebrew prints package-manager fetch failures on stdout.
+        details=((p.stderr or '')+('\n'+p.stdout if echo and p.stdout else '')).strip() if capture else 'see output'
+        raise Error(f'{args[0]} failed ({p.returncode}): {details}')
     return p.stdout or ''
 
 def native(request,*,capture=True,ci=False,cache=None):

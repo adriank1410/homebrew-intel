@@ -44,7 +44,7 @@ def attest(path: Path, repository: str, workflow_commit: str, *, token: str | No
             # process. A transient trust-root/network initialization
             # failure is safe to retry; signature and identity failures
             # remain fail-closed and are never retried.
-            retry_transient(lambda: run(args, capture=not verbose, env=env))
+            retry_transient(lambda: run(args, env=env, echo=verbose))
             return
         except Error:
             if workflow == "bottles.yml":
@@ -93,9 +93,23 @@ def render(plan: dict, stream: Any = None) -> None:
         print("\nNo core remote, formula definitions or dependency names are changed.", file=stream)
 
 
+def render_inactive_plan(plan: dict, stream: Any) -> bool:
+    """Explain blocked or already-current plans before printing operation headings."""
+    missing = [name for name in plan["order"] if plan["nodes"][name]["provider"] == "missing"]
+    if missing:
+        onoe("Missing bottles: " + ", ".join(missing), stream=stream)
+        return True
+    if all(plan["nodes"][name]["provider"] == "installed" for name in plan["order"]):
+        ohai("All requested packages are already up-to-date.", stream=stream)
+        return True
+    return False
+
+
 def render_upgrade(plan: dict, stream: Any = None) -> None:
     if stream is None:
         stream = sys.stdout
+    if render_inactive_plan(plan, stream):
+        return
     roots = [r for r in plan["roots"] if plan["nodes"][r].get("provider") != "installed"]
     count = len(roots)
     if count > 0:
@@ -123,6 +137,8 @@ def render_upgrade(plan: dict, stream: Any = None) -> None:
 def render_install(plan: dict, stream: Any = None) -> None:
     if stream is None:
         stream = sys.stdout
+    if render_inactive_plan(plan, stream):
+        return
     deps = [n for n in plan["order"] if n not in plan["roots"] and plan["nodes"][n].get("provider") != "installed"]
     if deps:
         roots_str = ", ".join(plan["roots"])

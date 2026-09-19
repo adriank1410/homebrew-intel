@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+- Recognize the official `sequoia` Intel bottle tag during scheduled preflight, while retaining native checks for conditional recipes.
+- Order installed kegs using Homebrew's package versions so upgrade output does not show `1.9` as newer than `1.10`.
+- Report missing bottles and already-current packages explicitly in install and upgrade previews.
+- Retry Git connection failures and preserve attestation diagnostics in verbose mode so transient failures remain retryable.
+- Retry Homebrew fetch hooks before compilation, keeping source builds outside the retry loop.
+- Reconcile partially accepted release uploads against their verified hashes before sending only the remaining assets.
+- Preserve option-like filenames in SVN source archives and reject invalid shell retry settings before running a command.
+- Correct scheduling documentation to describe dependency waves, bounded batches, and five-minute coverage maintenance.
 - Document a dedicated ruleset for the standing `coverage/intel-installed` branch: admin-only create/push/delete, no required PR or force-push block.
 - Monitor popular Homebrew formulae that currently lack Sequoia Intel bottles: `uv`, `pnpm`, `docker`, `docker-compose`, `just`, `neovim`, `glab`, `helm`, `lazygit`, `rclone`, `git-lfs`, and `cloudflared`.
 
