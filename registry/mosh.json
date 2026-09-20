@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "1fde023f15af71b2a1168d40c5d6c19422485177",
-  "filename": "mosh--1.4.0_42.sequoia.bottle.tar.gz",
-  "formula_sha256": "168d83f1ab186b8abdf91bba9249609affc7fd472cc1cd071364356140f109a2",
+  "core_commit": "b220c316b5998c58cd06a7b9584fa8322a053703",
+  "filename": "mosh--1.4.0_43.sequoia.bottle.tar.gz",
+  "formula_sha256": "676ff1687ea0ee2b82d89bbec0017be9ec3c4aa457d070a67db62e24460d7640",
   "license": "GPL-3.0-or-later",
   "name": "mosh",
-  "pkg_version": "1.4.0_42",
-  "recipe_sha256": "ed73347c64839cae10b6566d6bfd0937f9fe1cd1ba1cd41de6fc1760adf72b91",
-  "release": "intel-34729347503-1-mosh",
-  "revision": 42,
-  "run_id": "34729347503",
+  "pkg_version": "1.4.0_43",
+  "recipe_sha256": "953bdbb6d3d2e0f1d9e430159ea55d13f6308ecd6bb591edfb90e486f3c970bb",
+  "release": "intel-35480523510-1-mosh",
+  "revision": 43,
+  "run_id": "35480523510",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -19,21 +19,21 @@
       "pkg_version": "20260817.0"
     },
     {
-      "formula_sha256": "88fa9e9eb2354e3afc62147418ae7d371196930671e0850c83153eaf122c237f",
+      "formula_sha256": "7992732dfd8e12ea27faade9f2b6a2db76448e1ff8bf50c32f4000028f9f1374",
       "name": "protobuf",
-      "pkg_version": "36.1"
+      "pkg_version": "36.2"
     }
   ],
   "schema": 1,
-  "sha256": "7de1c228191a89acb032d0578bf469d4c7c7acc8b8eebc2cfee1464814975fec",
-  "size": 287429,
+  "sha256": "b4c0a9154d39c35ba43568a583ec034a6f232ad563e2fa83a7d9e0313fb4450a",
+  "size": 287420,
   "source": {
-    "filename": "mosh--1.4.0_42.sources.tar.gz",
-    "sha256": "fc058a9fe2fb6013117f961c211723d4f218e8e678d87c94a4f612d7934472be",
-    "size": 409170
+    "filename": "mosh--1.4.0_43.sources.tar.gz",
+    "sha256": "ef38f6f2a5cb1043efb32ff56d31f30cf78d759e7df7090862c0c07be68fa988",
+    "size": 409128
   },
   "tag": "sequoia",
   "version": "1.4.0",
   "version_scheme": 0,
-  "workflow_commit": "34b7f5c8e6c97fe3092eafe8eabbbbf3a0a78250"
+  "workflow_commit": "686cf774d293c6bcbf0de591b5c6ee454a9729f2"
 }
