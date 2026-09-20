@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "d971456fa30607b6de22930f86f89783c395efaa",
+  "core_commit": "eb6b34e6a00bbe4b76b7cca574aea087edded5e2",
   "filename": "little-cms2--2.19.1.sequoia.bottle.tar.gz",
   "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
   "license": "MIT",
   "name": "little-cms2",
   "pkg_version": "2.19.1",
   "recipe_sha256": "7af482e897b7d6703f41e8595684e59eb2d7799f55055101add65d7301bc569b",
-  "release": "intel-35338355014-1-little-cms2",
+  "release": "intel-35530109983-1-little-cms2",
   "revision": 0,
-  "run_id": "35338355014",
+  "run_id": "35530109983",
   "runtime_dependencies": [
     {
       "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
@@ -24,7 +24,7 @@
       "pkg_version": "3.2.0"
     },
     {
-      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
       "name": "libpng",
       "pkg_version": "1.6.58"
     },
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "91b54c66433b6e830c2c4f4cd4ac29e0a5cdb56e2d36c9c76dcc09f67529e341",
-  "size": 430494,
+  "sha256": "bc6ec1a9008373a912f4af4818e7ad4b7df163933f35b05ab93385fcbbaea4d3",
+  "size": 430483,
   "source": {
     "filename": "little-cms2--2.19.1.sources.tar.gz",
-    "sha256": "002f3dfe13e11eac89b2a46041e7068f5aecd071e43b5fb9bf7f8f9806886ecd",
-    "size": 5733397
+    "sha256": "cdc0e9f78c0acdbd1b71b393d1792fff9f8fd106b6f046647a04bf5726038e3c",
+    "size": 5733387
   },
   "tag": "sequoia",
   "version": "2.19.1",
   "version_scheme": 1,
-  "workflow_commit": "3a6f19c62c1f3b2b0c0c6f512db8fc17d50d20d7"
+  "workflow_commit": "37d78c2ca29670133f5b570731bd79410f6921f8"
 }
