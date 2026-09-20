@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "core_commit": "852d436b5a6e99bb200cf879b4abaecaeb1f85b6",
   "filename": "poppler--26.09.0.sequoia.bottle.tar.gz",
   "formula_sha256": "825c6e7f1e97a142af94bdf53b954dff9340bb576a483cf5eca34e557aa26ddc",
   "license": {
@@ -14,9 +14,9 @@
   "name": "poppler",
   "pkg_version": "26.09.0",
   "recipe_sha256": "4b90c4c91c512b10835e95c75ae6bf392a295e5e9d107fc0b8109d34a845a507",
-  "release": "intel-35408935324-1-poppler",
+  "release": "intel-35538964287-1-poppler",
   "revision": 0,
-  "run_id": "35408935324",
+  "run_id": "35538964287",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -129,7 +129,7 @@
       "pkg_version": "1.8.1"
     },
     {
-      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
       "name": "libpng",
       "pkg_version": "1.6.58"
     },
@@ -154,7 +154,7 @@
       "pkg_version": "1.0.30"
     },
     {
-      "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
+      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
       "name": "libx11",
       "pkg_version": "1.8.13"
     },
@@ -270,15 +270,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1875e51ec8ae7164781a9757491eb8b78c808f1c99c470cde8b05b1c9995aa41",
-  "size": 9992883,
+  "sha256": "966ca113405e3363c2c9a53a02cd671ea0d5ba206fd5c06498054daba1a31095",
+  "size": 9992912,
   "source": {
     "filename": "poppler--26.09.0.sources.tar.gz",
-    "sha256": "bed15fb3f9049006141c759e08494ff5e969ec9f36be61fe79e2b5363ac0b369",
-    "size": 6489327
+    "sha256": "7895e5989023c6962a2d903d9cb64daac1043598b6d2975b925f909389c9b896",
+    "size": 6489326
   },
   "tag": "sequoia",
   "version": "26.09.0",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "87305e4bfddda223934372ad0271ce188b6e8b97"
 }

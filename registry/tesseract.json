@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "core_commit": "852d436b5a6e99bb200cf879b4abaecaeb1f85b6",
   "filename": "tesseract--5.5.3.sequoia.bottle.tar.gz",
   "formula_sha256": "6caa9802cab7fdbf2da25e15e3c1bf38e7f2da3123d94a47f4e816af9e2f970c",
   "license": "Apache-2.0",
   "name": "tesseract",
   "pkg_version": "5.5.3",
   "recipe_sha256": "1520d7bf7fce9cdd822faf62dd83034457b4c89af555ee35218578a6dc06a128",
-  "release": "intel-35408935324-1-tesseract",
+  "release": "intel-35538964287-1-tesseract",
   "revision": 0,
-  "run_id": "35408935324",
+  "run_id": "35538964287",
   "runtime_dependencies": [
     {
       "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
@@ -94,7 +94,7 @@
       "pkg_version": "0.2.14"
     },
     {
-      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
       "name": "libpng",
       "pkg_version": "1.6.58"
     },
@@ -114,7 +114,7 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
+      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
       "name": "libx11",
       "pkg_version": "1.8.13"
     },
@@ -200,15 +200,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "467769224c6ee73942d914cdb2d5c3f487286ea68525dffe7a59b6f5507a9725",
-  "size": 10356800,
+  "sha256": "599b55354fa3174a0f0c2ad699a33e8016593ea1aa886d74cb922dd139954c98",
+  "size": 10356798,
   "source": {
     "filename": "tesseract--5.5.3.sources.tar.gz",
-    "sha256": "19cdb468059aebd15f7efa148eb33711a4bde9814cd7f28e4ab300f4993e8091",
-    "size": 8168103
+    "sha256": "b35013c7b88a7f12dd4e21e8a5f410542ab4f48f4d8dc75813e2fcda6f8902ef",
+    "size": 8168096
   },
   "tag": "sequoia",
   "version": "5.5.3",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "87305e4bfddda223934372ad0271ce188b6e8b97"
 }
