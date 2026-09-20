@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "569b37f3c23d05642878d49d58b251a2f77f00df",
+  "core_commit": "f02d6957f6552a8435c72f175b07b80bf95a15dc",
   "filename": "graphviz--16.1.0.sequoia.bottle.tar.gz",
   "formula_sha256": "18316034c391a492037672713b747af5ee29eddf9eb68e9e5def1ffa89874ee5",
   "license": "EPL-1.0",
   "name": "graphviz",
   "pkg_version": "16.1.0",
   "recipe_sha256": "4912e90d09e6a728affd0da86c43f47ddfcac829b5b99cdf0be9b91130485318",
-  "release": "intel-35459764949-1-graphviz",
+  "release": "intel-35493669309-1-graphviz",
   "revision": 0,
-  "run_id": "35459764949",
+  "run_id": "35493669309",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -119,9 +119,9 @@
       "pkg_version": "1.6.58"
     },
     {
-      "formula_sha256": "3fc062defe744275cdd01f6a30a060b60748243db65814f22dad6a54dbd61f04",
+      "formula_sha256": "6faa5a10d3091739aeaa2f0dfa96013b3f4fc9169e65c52f382a71960a84d431",
       "name": "librsvg",
-      "pkg_version": "2.63.0"
+      "pkg_version": "2.63.2"
     },
     {
       "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
@@ -235,15 +235,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "49c7e1cfefd876a845023dafa3fe305305706c6878eb11f00a47662a3071bce9",
-  "size": 3250557,
+  "sha256": "27eec6a86d26975d732d45af50fddac1a93ed7c95a45fa8e46d082306f55eaed",
+  "size": 3250704,
   "source": {
     "filename": "graphviz--16.1.0.sources.tar.gz",
-    "sha256": "aca5e4da1517d2532934439dcfd9089e7775270dce699d9c7a03e970291e29da",
-    "size": 21018917
+    "sha256": "a88ab2ea1fa48308b1a834dc5bc5d6385b2c41a8f2b2e995324e73be8eaf4f16",
+    "size": 21018910
   },
   "tag": "sequoia",
   "version": "16.1.0",
   "version_scheme": 1,
-  "workflow_commit": "874f6ac6f9e741facea66d1ad8c8f411ed5dd7a8"
+  "workflow_commit": "96586bf70f13dfe68ac130cb2e5a2d66e933e4f8"
 }
