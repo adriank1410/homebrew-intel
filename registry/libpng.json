@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "b3b5031ac8612527890d9e5e57dd382f133316f9",
+  "filename": "libpng--1.6.58.sequoia.bottle.tar.gz",
+  "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+  "license": "libpng-2.0",
+  "name": "libpng",
+  "pkg_version": "1.6.58",
+  "recipe_sha256": "89fd1883941fadd654b00ff71eaebbff6a64d30c9b1a178113d382f188550dd3",
+  "release": "intel-35507872938-1-libpng",
+  "revision": 0,
+  "run_id": "35507872938",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "4a84f4402112c3024190dac71cdcebe005788ac09a431915b28a94ae4823d50a",
+  "size": 457390,
+  "source": {
+    "filename": "libpng--1.6.58.sources.tar.gz",
+    "sha256": "71c51deee25976f8f7cd9a192de28b8e48464256915176302007bde564f7b62f",
+    "size": 1085695
+  },
+  "tag": "sequoia",
+  "version": "1.6.58",
+  "version_scheme": 0,
+  "workflow_commit": "ad48ccf9b8ca94e8384c7930b492999adc4c2117"
+}
