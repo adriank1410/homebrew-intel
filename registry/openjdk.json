@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "core_commit": "852d436b5a6e99bb200cf879b4abaecaeb1f85b6",
   "filename": "openjdk--27.sequoia.bottle.tar.gz",
   "formula_sha256": "baf9b825742bdb00d32b2278abf2e3e2c4994cb8f931c266cc88e299a8d557b1",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk",
   "pkg_version": "27",
   "recipe_sha256": "f255e6f0c3e4717a6170186dca53d367058edcbfe409ce17619b06c937092634",
-  "release": "intel-35408935324-1-openjdk",
+  "release": "intel-35538964287-1-openjdk",
   "revision": 0,
-  "run_id": "35408935324",
+  "run_id": "35538964287",
   "runtime_dependencies": [
     {
       "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
@@ -73,7 +73,7 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
       "name": "libpng",
       "pkg_version": "1.6.58"
     },
@@ -88,7 +88,7 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
+      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
       "name": "libx11",
       "pkg_version": "1.8.13"
     },
@@ -164,15 +164,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "23a8ef2727b802b8956801e0ee900f9718243eb0c9d76833fa65d453ebd0397e",
-  "size": 222796131,
+  "sha256": "8543f332a807ebce961b658d1e228f94fa283889f54432f7eb76de821e40df23",
+  "size": 222796105,
   "source": {
     "filename": "openjdk--27.sources.tar.gz",
-    "sha256": "e28b57210361e36afa1ee89ba569bf54ee743f4971c7d3a50d54b57487ad435a",
-    "size": 340075214
+    "sha256": "f4f245160fda2570ae560cb1abfd1d5aeb2d008727def9084f618d0ee33bd88b",
+    "size": 340075223
   },
   "tag": "sequoia",
   "version": "27",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "87305e4bfddda223934372ad0271ce188b6e8b97"
 }
