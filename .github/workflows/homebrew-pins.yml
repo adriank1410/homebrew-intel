@@ -47,6 +47,11 @@ jobs:
           set -e
           if [[ "$branch_status" == 0 ]]; then
             git fetch origin "$branch"
+            changed_files="$(git diff --name-only "origin/main...origin/$branch")"
+            if [[ -n "$changed_files" && "$changed_files" != policy/config.json ]]; then
+              echo 'Maintenance branch contains changes outside the paired pin policy; refusing to execute it.' >&2
+              exit 1
+            fi
             git checkout -B "$branch" "origin/$branch"
             git merge --no-edit origin/main
           elif [[ "$branch_status" == 2 ]]; then
@@ -61,6 +66,9 @@ jobs:
             git commit -m 'chore: update Homebrew pins'
           fi
           if git diff --quiet origin/main HEAD -- policy/config.json; then
+            if [[ "$branch_status" == 0 ]]; then
+              git push origin "$branch"
+            fi
             echo 'Main already contains the current Homebrew pair.'
             exit 0
           fi
@@ -72,9 +80,9 @@ jobs:
           This automated PR updates the reviewed Homebrew/brew and Homebrew/core
           commits together. The native `tests` gate prepares this exact pair,
           loads all reviewed formulae, and exercises a real Cargo fetch hook before
-          merge. No build or merge is performed by this workflow.
+          merge. This workflow does not build bottles or merge the PR.
           EOF
-          pr_url="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branch" --state open --json url --jq '.[0].url')"
+          pr_url="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branch" --state open --json url --jq '.[0].url // empty')"
           if [[ -n "$pr_url" ]]; then
             gh pr edit "$pr_url" --title 'chore: update Homebrew pins' --body-file "$body_file"
           else

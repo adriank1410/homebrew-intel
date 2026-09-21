@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,6 +48,19 @@ class HomebrewPinUpdateTests(unittest.TestCase):
     def test_resolve_pins_rejects_malformed_remote_without_writing(self):
         with self.assertRaisesRegex(pins.Error, "Cannot resolve"):
             pins.resolve_pins(Mock(return_value="not-a-sha refs/heads/main\n"))
+
+    def test_second_remote_failure_leaves_policy_unchanged(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config = Path(directory) / "config.json"
+            original = '{"schema": 1, "repository": "adriank1410/homebrew-intel"}\n'
+            config.write_text(original)
+            with patch.object(pins, "CONFIG_PATH", config), patch.object(
+                    pins.subprocess, "check_output", side_effect=[
+                        "a" * 40 + " refs/heads/main\n",
+                        subprocess.CalledProcessError(128, ["git", "ls-remote"])]):
+                with self.assertRaisesRegex(pins.Error, "Cannot resolve core_commit"):
+                    pins.main(["--write"])
+            self.assertEqual(config.read_text(), original)
 
     def test_update_config_changes_only_the_two_pin_fields(self):
         with tempfile.TemporaryDirectory() as directory:
