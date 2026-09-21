@@ -88,8 +88,12 @@ rustc --version
 HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_FROM_API=1 brew ruby -e '
   require "formula"
   require "formulary"
+  require "extend/ENV"
   formula = Formulary.factory("homebrew/core/#{ARGV.fetch(0)}")
   abort "Formula has no Cargo fetch hook" unless formula.fetch_defined?
+  ENV.activate_extensions!(env: "std")
+  ENV.setup_build_environment(formula: formula)
+  ENV.prepend_path "PATH", ENV.fetch("INTELBREW_CARGO_BIN")
   formula.stable.resource.fetch(verify_download_integrity: true)
   formula.brew do
     formula.fetch
