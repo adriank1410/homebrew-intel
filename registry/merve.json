@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "ccc339b5202b8a063773f9a8f567c7666ba7ea36",
+  "core_commit": "4123669b6faf94cd421d8e1bb6fb29f4dbd68ba7",
   "filename": "merve--1.2.2_3.sequoia.bottle.tar.gz",
-  "formula_sha256": "b8612f3ac89bf22a2cca8526bcfa060549ca5e0fd90f2d25d50e0603334f5f7b",
+  "formula_sha256": "e88882ea72440fe862a108169c167976e0e315858391b5143e2e99e98eac0bb9",
   "license": "Apache-2.0",
   "name": "merve",
   "pkg_version": "1.2.2_3",
-  "recipe_sha256": "eea94c1d5ed515be2cf841e966be38cbfa8b023c61f5cbfee99fddc583d96176",
-  "release": "intel-35061704150-1-merve",
+  "recipe_sha256": "a690e13e7a226cdbe881ccf4d6f7f006348aabbda7aba6def2a9003b59f934d6",
+  "release": "intel-35654824556-1-merve",
   "revision": 3,
-  "run_id": "35061704150",
+  "run_id": "35654824556",
   "runtime_dependencies": [
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0054e25f3b51b312fe72c852efc3cc5098fcbf7d64cbea9751a5d6edf3361759",
-  "size": 34134,
+  "sha256": "af1b7d501aa43a9764961a9823671d138c3fa77e815d87c0bcc55d151fb72437",
+  "size": 34131,
   "source": {
     "filename": "merve--1.2.2_3.sources.tar.gz",
-    "sha256": "6f37f25649be835014dd6c0cbae2d75f94d2b6d4c885e603c5616c0bc84ac1fc",
-    "size": 77307
+    "sha256": "e1f47adebfef4932c4374cedebed115b3166c54afdcf5d38ecd8b0b9e4775088",
+    "size": 77313
   },
   "tag": "sequoia",
   "version": "1.2.2",
   "version_scheme": 0,
-  "workflow_commit": "11d1c8c39403bdd4f7a8a5029575810ea8403c5a"
+  "workflow_commit": "e457789f0282254af7923136d610442a2a6946cd"
 }

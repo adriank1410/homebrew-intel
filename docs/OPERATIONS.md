@@ -19,11 +19,13 @@ uses a private GitHub App installed only on this repository. Configure repositor
 variable `INTELBREW_APP_CLIENT_ID` and secret `INTELBREW_APP_PRIVATE_KEY`. The App
 needs Contents, Pull requests, Actions and Workflows read/write permissions; Metadata read
 is mandatory. It needs no webhook, OAuth user authorization or account permissions.
-Only the main-branch publication and registry jobs create an installation token,
-explicitly restricted to `homebrew-intel`. Only the publication token requests
-Workflows write: GitHub requires it to create a release at the verified build
+The main-branch publication, recovery, registry and pin-maintenance jobs create
+installation tokens explicitly restricted to `homebrew-intel`. Publication and
+recovery request Workflows write: GitHub requires it to create a release at the verified build
 commit when workflow files have changed on the default branch in the meantime.
 The registry token retains only Contents, Pull requests and Actions write.
+Pin maintenance requests Contents, Pull requests and Workflows write so its
+maintenance branch can incorporate newer main commits containing workflow changes.
 After adding the App permission, approve the installation's permission update
 before deploying the workflow. Never retarget a release to a newer commit to
 avoid this requirement; its tag must identify the verified pipeline snapshot.
@@ -39,6 +41,38 @@ gate. The controller never approves reviews. Attestation verification uses the
 separate built-in token (`INTELBREW_ATTESTATION_TOKEN`); the App needs no extra
 attestation permission. Its private key is not passed to builds or package tests.
 Verify GitHub settings separately before treating them as a security boundary.
+
+### Update the Homebrew pair
+
+`policy/config.json` records both `brew_commit` and `core_commit`. Production
+planning and runner preparation use exactly that pair; an explicit mismatched
+`INTELBREW_CORE_COMMIT` is rejected. Published records retain their original pins.
+
+`homebrew-pins.yml` runs daily at 03:25 UTC and supports manual dispatch on `main`.
+It proposes current upstream main commits together on `automation/homebrew-pins`,
+refreshes an existing proposal from repository main, and opens or updates a PR
+using the scoped App token. It never merges the proposal. New formula versions
+become build candidates after the pair update is reviewed and merged.
+
+The Linux schedule prefilter uses live Homebrew API metadata only when its
+`tap_git_head` matches the reviewed core pin. While upstream has advanced, it
+conservatively delegates planning to the Intel runner. This may allocate an
+hourly native planning job even when no bottles need building; the native
+planner still suppresses covered builds. Comparing recipe bytes alone cannot
+prove that a newer API engine evaluated them like the pinned engine.
+
+For a manual proposal, run `python3.11 scripts/update-homebrew-pins.py` to inspect
+the upstream pair, or add `--write` to update both fields locally before opening
+a PR. The native check loads all reviewed targets through the production bridge
+and invokes an actual Cargo formula fetch hook in staged source, using the
+GitHub Intel runner's Rust toolchain. It deliberately calls the hook directly:
+`brew fetch` can otherwise skip it when build dependencies are absent. This is a
+compatibility smoke check, not a substitute for full bottle build/pour validation.
+
+The required `tests` status combines unit/policy checks and the applicable native
+result. A failed, cancelled or skipped required native run cannot report success.
+Registry-only PRs and their dispatched checks skip the Intel job. To force it on
+a reviewed branch, run `gh workflow run checks.yml --ref BRANCH -f native=true`.
 
 ### Recover a failed publication
 

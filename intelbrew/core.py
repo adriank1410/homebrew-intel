@@ -99,7 +99,7 @@ def digest(path):
 def load_config():
     c=read_json(ROOT/'policy/config.json')
     if c.get('schema')!=1 or c.get('repository')!='adriank1410/homebrew-intel':raise Error('Unexpected configuration')
-    require_sha(c['brew_commit'],git=True);return c
+    require_sha(c['brew_commit'],git=True);require_sha(c['core_commit'],git=True);return c
 
 def validate_record(d,*,published=True):
     if not isinstance(d,dict) or set(d)!=RECORD_KEYS or d.get('schema')!=1:raise Error('Unknown/incomplete record schema')
