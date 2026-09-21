@@ -1,0 +1,91 @@
+name: Homebrew pin maintenance
+on:
+  schedule:
+    - cron: '25 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: homebrew-pin-maintenance
+  cancel-in-progress: false
+jobs:
+  refresh:
+    if: github.repository == 'adriank1410/homebrew-intel' && github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        with:
+          client-id: ${{ vars.INTELBREW_APP_CLIENT_ID }}
+          private-key: ${{ secrets.INTELBREW_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: homebrew-intel
+          permission-contents: write
+          permission-pull-requests: write
+          permission-workflows: write
+      - name: Open or update the reviewed pin PR
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          branch='automation/homebrew-pins'
+          gh auth setup-git
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin main
+          set +e
+          git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1
+          branch_status=$?
+          set -e
+          if [[ "$branch_status" == 0 ]]; then
+            git fetch origin "$branch"
+            changed_files="$(git diff --name-only "origin/main...origin/$branch")"
+            if [[ -n "$changed_files" && "$changed_files" != policy/config.json ]]; then
+              echo 'Maintenance branch contains changes outside the paired pin policy; refusing to execute it.' >&2
+              exit 1
+            fi
+            git checkout -B "$branch" "origin/$branch"
+            git merge --no-edit origin/main
+          elif [[ "$branch_status" == 2 ]]; then
+            git checkout -b "$branch" origin/main
+          else
+            echo "Cannot inspect existing maintenance branch" >&2
+            exit "$branch_status"
+          fi
+          python3 scripts/update-homebrew-pins.py --write
+          if ! git diff --quiet -- policy/config.json; then
+            git add policy/config.json
+            git commit -m 'chore: update Homebrew pins'
+          fi
+          if git diff --quiet origin/main HEAD -- policy/config.json; then
+            if [[ "$branch_status" == 0 ]]; then
+              git push origin "$branch"
+            fi
+            echo 'Main already contains the current Homebrew pair.'
+            exit 0
+          fi
+          # Push main refreshes even when the proposed pins did not change.
+          # Retry PR creation too if an earlier run pushed but then failed.
+          git push --set-upstream origin "$branch"
+          body_file="$RUNNER_TEMP/homebrew-pin-pr.md"
+          cat > "$body_file" <<'EOF'
+          This automated PR updates the reviewed Homebrew/brew and Homebrew/core
+          commits together. The native `tests` gate prepares this exact pair,
+          loads all reviewed formulae, and exercises a real Cargo fetch hook before
+          merge. This workflow does not build bottles or merge the PR.
+          EOF
+          pr_url="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branch" --state open --json url --jq '.[0].url // empty')"
+          if [[ -n "$pr_url" ]]; then
+            gh pr edit "$pr_url" --title 'chore: update Homebrew pins' --body-file "$body_file"
+          else
+            gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" \
+              --title 'chore: update Homebrew pins' --body-file "$body_file"
+          fi

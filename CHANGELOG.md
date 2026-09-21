@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Pin Homebrew/brew and homebrew-core together, with daily update PRs and a required native formula/Cargo compatibility check, so core updates cannot silently outpace the reviewed engine.
+- Advance Homebrew/brew to `a83186e02a6c4b98cd44a290cdb56e136feaa596`, which defines `std_cargo_fetch_args` used by current Cargo formulae.
 - Recognize the official `sequoia` Intel bottle tag during scheduled preflight, while retaining native checks for conditional recipes.
 - Order installed kegs using Homebrew's package versions so upgrade output does not show `1.9` as newer than `1.10`.
 - Report missing bottles and already-current packages explicitly in install and upgrade previews.
