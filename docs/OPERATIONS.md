@@ -54,6 +54,13 @@ refreshes an existing proposal from repository main, and opens or updates a PR
 using the scoped App token. It never merges the proposal. New formula versions
 become build candidates after the pair update is reviewed and merged.
 
+The Linux schedule prefilter uses live Homebrew API metadata only when its
+`tap_git_head` matches the reviewed core pin. While upstream has advanced, it
+conservatively delegates planning to the Intel runner. This may allocate an
+hourly native planning job even when no bottles need building; the native
+planner still suppresses covered builds. Comparing recipe bytes alone cannot
+prove that a newer API engine evaluated them like the pinned engine.
+
 For a manual proposal, run `python3.11 scripts/update-homebrew-pins.py` to inspect
 the upstream pair, or add `--write` to update both fields locally before opening
 a PR. The native check loads all reviewed targets through the production bridge
