@@ -2,19 +2,19 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "fd3453e2fd404cd16ade58344c9563c2f0ad5356",
+  "core_commit": "4123669b6faf94cd421d8e1bb6fb29f4dbd68ba7",
   "filename": "automake--1.19.sequoia.bottle.tar.gz",
   "formula_sha256": "8ce3ce8f0cf478c1b731d69de8be0e98df57262254ad724d6ae1cca5413c2e75",
   "license": "GPL-2.0-or-later",
   "name": "automake",
   "pkg_version": "1.19",
   "recipe_sha256": "a80194366505c4627f0323205331dc791b98f9863207ccef150665d95af54f8c",
-  "release": "intel-34791788297-1-automake",
+  "release": "intel-35654824556-1-automake",
   "revision": 0,
-  "run_id": "34791788297",
+  "run_id": "35654824556",
   "runtime_dependencies": [
     {
-      "formula_sha256": "6582f4faa6945b67be923d9221c743e2ab20e6b228538e67a59caaf66fd435a4",
+      "formula_sha256": "cab75402095f9a65be6a5d3fc11a2f7a6a7fdf04189abee37bfc1c6e5adff499",
       "name": "autoconf",
       "pkg_version": "2.73"
     },
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5793fafb624bc45db9cd35d2255a0d9c503db708e9aa76c841dc46ff61b7117d",
-  "size": 1082961,
+  "sha256": "ba8e4b00d1936bc2e4741a409ed944cf67fce951b2f354c55c652f9b81b73b01",
+  "size": 1082985,
   "source": {
     "filename": "automake--1.19.sources.tar.gz",
-    "sha256": "89d63abde2c5d93140083d5d847bed65869ed6795d81997acf5e1fa02dae6302",
-    "size": 1706593
+    "sha256": "d12da6574a4799daea173cfc33f4133e914da279bf5ad462fe918667a9c7960c",
+    "size": 1706598
   },
   "tag": "sequoia",
   "version": "1.19",
   "version_scheme": 0,
-  "workflow_commit": "67fe4d43a2b7975c00004a03c5f4e30afcb5e5d0"
+  "workflow_commit": "e457789f0282254af7923136d610442a2a6946cd"
 }

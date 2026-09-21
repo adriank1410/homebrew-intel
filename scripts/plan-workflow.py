@@ -9,7 +9,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from intelbrew.ci import sync_registry
 from intelbrew.core import (MAX_OFFICIAL_METADATA, ROOT, Error, canonical_name,
-                            read_json, registry, require_sha, retry_transient, run)
+                            load_config, read_json, registry, require_sha,
+                            retry_transient)
 
 def requested_roots(requested, targets, *, allow_csv, max_roots=50):
     if not isinstance(requested, str):
@@ -196,6 +197,7 @@ def scheduled_roots(roots, index, records, *, core_commit=None):
 
 def main():
   try:
+    config = load_config()
     targets = read_json(ROOT / 'policy/targets.json')['formulae']
     requested = os.environ.get('REQUESTED_FORMULA', 'simdutf')
     source = os.environ.get('REQUEST_SOURCE')
@@ -213,12 +215,10 @@ def main():
         # push-triggered requests stay capped before native planning.
         max_roots=None if requested == 'all' and source in {'schedule', 'workflow_dispatch'} else 50,
     )
-    upstream = retry_transient(lambda: run(
-        ['git', 'ls-remote', 'https://github.com/Homebrew/homebrew-core.git',
-         'refs/heads/main'])).split()
-    if len(upstream) != 2 or upstream[1] != 'refs/heads/main':
-        raise Error('Cannot resolve the official main branch')
-    commit = require_sha(upstream[0], git=True)
+    # The reviewed policy records the Homebrew engine and core as one pair.
+    # Resolving core live here would silently combine a newer catalog with the
+    # older engine pin and can fail while loading otherwise valid formulae.
+    commit = require_sha(config['core_commit'], git=True)
     if source == 'schedule':
         sync_registry()
         roots = scheduled_roots(roots, load_formula_index(), registry(), core_commit=commit)
