@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: BSD-2-Clause
 import importlib.util
+import json
 import os
 import subprocess
 import tempfile
@@ -179,6 +180,17 @@ class FetchRetryTests(unittest.TestCase):
         script = (ROOT / "scripts/prepare-runner.sh").read_text()
         self.assertIn('bash "$project_dir/scripts/retry-fetch.sh" brew vendor-install ruby', script)
         self.assertIn("HOMEBREW_CURL_RETRIES=", script)
+
+    def test_brew_pin_includes_std_cargo_fetch_args(self):
+        # homebrew-core Cargo formulae call this method from `fetch`.
+        # 71f6877d19f2179cf47caea84565083cdc950cc2 predates it and raises NameError.
+        config = json.loads((ROOT / "policy/config.json").read_text())
+        self.assertEqual(
+            config["brew_commit"],
+            "a83186e02a6c4b98cd44a290cdb56e136feaa596",
+        )
+        script = (ROOT / "scripts/prepare-runner.sh").read_text()
+        self.assertIn('["brew_commit"]', script)
 
 
 if __name__ == "__main__":
