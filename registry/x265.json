@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a5a3dff1dcd5766accd3aba78e3eeb871300f3a8",
+  "filename": "x265--4.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "9df26445b47e71e2a69ea15dedf1f06bff396e9a57f75560b8d7c32df74cedc8",
+  "license": "GPL-2.0-or-later",
+  "name": "x265",
+  "pkg_version": "4.3",
+  "recipe_sha256": "e7bb844d3fb9a1ac402a41d21a507cdc0f532455479b3467a58335541c27ea98",
+  "release": "intel-35629367624-1-x265",
+  "revision": 0,
+  "run_id": "35629367624",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "d143db8267588926b40f46ad25669ade7d22cc8ce0075c37e16ee011743dfb0b",
+  "size": 5729165,
+  "source": {
+    "filename": "x265--4.3.sources.tar.gz",
+    "sha256": "e1d042a29a73703621ef214a8702eef244d4912b3137e628499fc7f3df21b272",
+    "size": 2050529
+  },
+  "tag": "sequoia",
+  "version": "4.3",
+  "version_scheme": 0,
+  "workflow_commit": "70677a7de6ba5d9553840445c6d4092b73613582"
+}

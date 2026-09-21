@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "abed9dced1d12849e83d1c01457ad1fbc9d50c8a",
+  "core_commit": "569b37f3c23d05642878d49d58b251a2f77f00df",
   "filename": "archi-steam-farm--6.3.9.6.sequoia.bottle.tar.gz",
   "formula_sha256": "cba65e155bd10a0cbc86b59ae9525bed5238aa3e61cfe291f2b92e8531f1f0f9",
   "license": "Apache-2.0",
   "name": "archi-steam-farm",
   "pkg_version": "6.3.9.6",
   "recipe_sha256": "8a1130d5bc0599c45ed6b4fb9bfeb443a915d9b10151fa93f7860ad862adafe4",
-  "release": "intel-34871728068-1-archi-steam-farm",
+  "release": "intel-35459764949-1-archi-steam-farm",
   "revision": 0,
-  "run_id": "34871728068",
+  "run_id": "35459764949",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -24,9 +24,9 @@
       "pkg_version": "2026-08-13"
     },
     {
-      "formula_sha256": "3162745cd1c249c834a2f021d357da745f6ed81ca624aa74ce8b558f2ef2527e",
+      "formula_sha256": "9c3ad0affa67312b3ef3e5493589033e38cd2f8ff7c7de22dd4301af1c75e608",
       "name": "dotnet",
-      "pkg_version": "10.0.400"
+      "pkg_version": "10.0.401"
     },
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cfd5cd5f337eac3bc9794324ec334e4fa688f9a1f86d5eff04bd2e9a40fe71c0",
-  "size": 7866415,
+  "sha256": "f7f75d3c7a82b1d2f86b6a7aef9e75e3c24b3dd7044ab5dcd4ff67c93e99c188",
+  "size": 7865326,
   "source": {
     "filename": "archi-steam-farm--6.3.9.6.sources.tar.gz",
-    "sha256": "e90dc11a2ea6ca8d0592f8bed1353d06311f74267c8e2247340395d4380216ea",
+    "sha256": "31c83c36112a10b1c8da8e16b630214e1708b0a7999e78e5ea9b6bae495c70c5",
     "size": 10857777
   },
   "tag": "sequoia",
   "version": "6.3.9.6",
   "version_scheme": 0,
-  "workflow_commit": "ae57cb21e11b8801d6370b27e80d9adc12e79d03"
+  "workflow_commit": "874f6ac6f9e741facea66d1ad8c8f411ed5dd7a8"
 }

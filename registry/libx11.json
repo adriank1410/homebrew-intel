@@ -1,0 +1,49 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "b3b5031ac8612527890d9e5e57dd382f133316f9",
+  "filename": "libx11--1.8.13.sequoia.bottle.tar.gz",
+  "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
+  "license": "MIT",
+  "name": "libx11",
+  "pkg_version": "1.8.13",
+  "recipe_sha256": "4d39e1dc2ab9ea39d7a95a74b199e7c88dcd6330a5be1b849a3b83b707ec0bec",
+  "release": "intel-35507872938-1-libx11",
+  "revision": 0,
+  "run_id": "35507872938",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "name": "libxau",
+      "pkg_version": "1.0.12"
+    },
+    {
+      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "name": "libxcb",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "name": "libxdmcp",
+      "pkg_version": "1.1.5"
+    },
+    {
+      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "name": "xorgproto",
+      "pkg_version": "2025.1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "747c48f4bb97d71f28b75381137ff672199286a85e5a0f6db3f1409bc0de9fd1",
+  "size": 2354789,
+  "source": {
+    "filename": "libx11--1.8.13.sources.tar.gz",
+    "sha256": "482b9d350a6d137e870d99f95245c938bc0d5da76ec02d6e05784f45e92c9b71",
+    "size": 3193283
+  },
+  "tag": "sequoia",
+  "version": "1.8.13",
+  "version_scheme": 0,
+  "workflow_commit": "ad48ccf9b8ca94e8384c7930b492999adc4c2117"
+}

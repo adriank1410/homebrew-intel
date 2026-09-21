@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "e29aab2ddeecec2acd46e0cdc73791de284a580e",
+  "filename": "bash--5.3.20.sequoia.bottle.tar.gz",
+  "formula_sha256": "93070d9d6d116ab23653adfd72ef6ab4d2b8bde0beac258cbc7f335876d807c4",
+  "license": "GPL-3.0-or-later",
+  "name": "bash",
+  "pkg_version": "5.3.20",
+  "recipe_sha256": "ee3734da1fb02d9f9a8902b3c43126165ca575994d78f54be4e68cefce4a2323",
+  "release": "intel-35438707346-1-dotnet",
+  "revision": 0,
+  "run_id": "35438707346",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "2e35152ac8c0b209f90373090ad3d3a64d7818fc965d6f58142ab1d9fa95f824",
+      "name": "ncurses",
+      "pkg_version": "6.6"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    }
+  ],
+  "schema": 1,
+  "sha256": "a84c6efd1c29fa8908727da0b2db49b2573532f7ed60d347759f42917cdcfd33",
+  "size": 3421010,
+  "source": {
+    "filename": "bash--5.3.20.sources.tar.gz",
+    "sha256": "f861c0a474827b5523ab211817c4982a1e3aebdb73648a9dc0e47d79e7746cc1",
+    "size": 11397347
+  },
+  "tag": "sequoia",
+  "version": "5.3.20",
+  "version_scheme": 0,
+  "workflow_commit": "ff008e3027eacccccc0c9d0477ae9a6ed805ce3e"
+}

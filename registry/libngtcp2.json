@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a5a3dff1dcd5766accd3aba78e3eeb871300f3a8",
+  "filename": "libngtcp2--1.25.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "2b0c1d6e66f9c6954f9868be8cb379cf7d7ae7161b44d832dff11efcfc49fd65",
+  "license": "MIT",
+  "name": "libngtcp2",
+  "pkg_version": "1.25.0",
+  "recipe_sha256": "4c142aebd3ce45733a8abcb5b8a4b173a838bf83a8c9394eca18210f3fb7118a",
+  "release": "intel-35629367624-1-libngtcp2",
+  "revision": 0,
+  "run_id": "35629367624",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "name": "ca-certificates",
+      "pkg_version": "2026-08-13"
+    },
+    {
+      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "name": "openssl@3",
+      "pkg_version": "3.6.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "504a1d3226d60bbc92d33bd737104e2673e064f8872997162fe1fa0c90651bf4",
+  "size": 425921,
+  "source": {
+    "filename": "libngtcp2--1.25.0.sources.tar.gz",
+    "sha256": "2d1a1457233a5a4c980647be2ac3e207fb6b157d4ed5047398513cd455a6204a",
+    "size": 716043
+  },
+  "tag": "sequoia",
+  "version": "1.25.0",
+  "version_scheme": 0,
+  "workflow_commit": "70677a7de6ba5d9553840445c6d4092b73613582"
+}

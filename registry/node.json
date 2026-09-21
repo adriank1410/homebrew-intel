@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "40e9a307552776a139f80801b4e5c0e573ae38a9",
+  "core_commit": "0aa1f32bf2165eaddda7c165bc0cfdde307740dd",
   "filename": "node--26.9.0.sequoia.bottle.tar.gz",
   "formula_sha256": "8706905611daa516548406ed0c49a072d85ce73e114e7e02bc53707ea50fc264",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.9.0",
   "recipe_sha256": "6f89af998e1d4e26e07119ce0f0e630085050314442b2518294af8e2f1bb8bb3",
-  "release": "intel-35359555125-1-node",
+  "release": "intel-35521473633-1-node",
   "revision": 0,
-  "run_id": "35359555125",
+  "run_id": "35521473633",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -64,7 +64,7 @@
       "pkg_version": "3.8.0"
     },
     {
-      "formula_sha256": "6cc44379530da749cc430d9bc9dcff7c716c633819d2a24707a28f839863b92d",
+      "formula_sha256": "3bfb2679bd1e7467374e1b40ea9c50206c95fb074fe7ad83706242f2c14a3205",
       "name": "libnghttp2",
       "pkg_version": "1.70.0"
     },
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "89e9b5ded74cd18276197058261926f8a69f42ee6b118aa009b363d7711eb7e3",
-  "size": 20449690,
+  "sha256": "56dee1222f0551fcd3a5fd1ba41037d4c965e33a917bdb17cabfaf212b7f1a6b",
+  "size": 20448948,
   "source": {
     "filename": "node--26.9.0.sources.tar.gz",
-    "sha256": "ce7f230efece52f7e8fbae84ebf82c3a6d068e00002ec84a4782365c298d1553",
-    "size": 65919617
+    "sha256": "f4e11c46d169f3907e4bac159dab138a8fb681b79ce3f6263020573e43175fa8",
+    "size": 65919612
   },
   "tag": "sequoia",
   "version": "26.9.0",
   "version_scheme": 0,
-  "workflow_commit": "82acb9682c7a718f3568813126e684b55cd7958e"
+  "workflow_commit": "a7f0b40ad682769fcf0955b16c8524ee87d14a2e"
 }

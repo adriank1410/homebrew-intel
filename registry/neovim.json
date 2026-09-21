@@ -2,19 +2,19 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "core_commit": "a780bdc386eb26ed3a70bcc0f25f2ad8116fc608",
   "filename": "neovim--0.12.5_1.sequoia.bottle.tar.gz",
   "formula_sha256": "f12b7abc7bfe46a3c39c5b8c2a6141f3f6f68224f6dbf692fe60677041313d12",
   "license": "Apache-2.0",
   "name": "neovim",
   "pkg_version": "0.12.5_1",
   "recipe_sha256": "ab7c52e9148f2518e6c93e998193077875d32698a02945701558f16e043aeca5",
-  "release": "intel-35408935324-1-neovim",
+  "release": "intel-35563025798-1-neovim",
   "revision": 1,
-  "run_id": "35408935324",
+  "run_id": "35563025798",
   "runtime_dependencies": [
     {
-      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
       "name": "gettext",
       "pkg_version": "1.0"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "261dbb8c5e0dad424c47aebc51c7315f3ce3ae9d41a9e6efc5e4f173f094a91b",
-  "size": 8362769,
+  "sha256": "4d5c725ff648d2503a8f27676b927478aa329dfe430b01a981c0816eac08d9e3",
+  "size": 8362800,
   "source": {
     "filename": "neovim--0.12.5_1.sources.tar.gz",
-    "sha256": "cca1875527c9ee0c3934c5dd137e3ec813dd89eb5826dd41b06e5e0bb2b903ef",
-    "size": 14987075
+    "sha256": "e0c4fc0921ee18229c343b720206bb17bc96f5bf406b0400918f8cfe3f673982",
+    "size": 14987073
   },
   "tag": "sequoia",
   "version": "0.12.5",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "24a1aaa0f88dcbb9a7922e99ae9433656dcd29c9"
 }

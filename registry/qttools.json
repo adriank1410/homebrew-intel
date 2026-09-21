@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "9fa5bea54beb3a1cc9d1a5221a8840d27e576dc8",
+  "core_commit": "b220c316b5998c58cd06a7b9584fa8322a053703",
   "filename": "qttools--6.11.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "02fb470fc82d4322f6fb2b791e3fbe7c41db91abf036f3fa45233ab5b476a821",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qttools",
   "pkg_version": "6.11.2_1",
   "recipe_sha256": "f55da836469f37814985537883653968e039805b16b4be17f0cd7b37b807ba81",
-  "release": "intel-34775782099-1-qttools",
+  "release": "intel-35480523510-1-qttools",
   "revision": 1,
-  "run_id": "34775782099",
+  "run_id": "35480523510",
   "runtime_dependencies": [
     {
       "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
@@ -71,9 +71,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "7e41107faf209528d2e993afec53ad1006bbe8945772bde43c2295e8a2ef7659",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.0"
     },
     {
       "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
@@ -156,7 +156,7 @@
       "pkg_version": "0.10_1"
     },
     {
-      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f7541c9892ad997671e55adc1e643b1752cc5c411fc0d9cd49f6c2ae0acf1820",
-  "size": 8118844,
+  "sha256": "d33f80cd828decc3d79a29054428d1b3b0e15adf4ce4554017ca53b9d70bd6e2",
+  "size": 8118877,
   "source": {
     "filename": "qttools--6.11.2_1.sources.tar.gz",
-    "sha256": "d8a2b16614ca0fcefabb165fe3a81c6bbdb1532d53973a75b22889a65b675d5f",
-    "size": 10287940
+    "sha256": "4ecabc45606daad41a7faf3b06379b05e236250af9951663cb778ebf8fec0f11",
+    "size": 10287942
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "f854ccf1190d991c4408fdb6c0d4f8bed5136fb6"
+  "workflow_commit": "686cf774d293c6bcbf0de591b5c6ee454a9729f2"
 }

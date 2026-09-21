@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any_skip_relocation",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "core_commit": "852d436b5a6e99bb200cf879b4abaecaeb1f85b6",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "f05bfef0e76fddab5b9fa9d4a6aeb1b050b0e1acb4b3de7cd79bc84709a552b0",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "9b020ade6c3e3802260f2cb7fc3e21ef35ee7f68e8db55cf2bfbc9a2da5956f8",
-  "release": "intel-35408935324-1-weasyprint",
+  "release": "intel-35538964287-1-weasyprint",
   "revision": 0,
-  "run_id": "35408935324",
+  "run_id": "35538964287",
   "runtime_dependencies": [
     {
       "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
@@ -109,7 +109,7 @@
       "pkg_version": "4.4.1"
     },
     {
-      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
       "name": "libpng",
       "pkg_version": "1.6.58"
     },
@@ -139,7 +139,7 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
+      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
       "name": "libx11",
       "pkg_version": "1.8.13"
     },
@@ -260,15 +260,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5d47b3d5e40c4736c5400858620c6f714e7c827be1f54a85a4f184d7e7721358",
-  "size": 4054598,
+  "sha256": "581bbf81aec7929b4040e7806ff64361875436905416c4d302ffb65e4a61bbb9",
+  "size": 4054675,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "bde59a901f94703ad41916c3902b2194952ed557a27cf51f4b6bfe07c9011b09",
-    "size": 15193720
+    "sha256": "f44bfaab4bf500c46a7e54c67905f7814cf556d7338312def0ca128954c72aa6",
+    "size": 15193706
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "87305e4bfddda223934372ad0271ce188b6e8b97"
 }
