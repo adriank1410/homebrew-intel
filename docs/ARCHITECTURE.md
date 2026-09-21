@@ -30,8 +30,11 @@ them. This is intentionally conservative, not an ABI solver.
 
 `plan -> build on Intel Sequoia -> fresh Intel Sequoia pour/tests -> Linux publish`
 
-The core snapshot is resolved once per workflow. The Homebrew engine is pinned
-in policy. Build jobs have read-only repository permissions. Preseeded kegs and
+The Homebrew engine and core snapshot are pinned together in `policy/config.json`.
+Planning never resolves a newer core behind the reviewed engine's back. Pair
+updates arrive as maintenance PRs; the required `tests` check includes native
+formula loading and a real Cargo fetch hook whenever compatibility inputs change.
+Build jobs have read-only repository permissions. Preseeded kegs and
 links are moved into a fresh runner-only backup so they cannot silently satisfy
 undeclared build dependencies. Every source-built dependency receives its own
 `--build-bottle` invocation.

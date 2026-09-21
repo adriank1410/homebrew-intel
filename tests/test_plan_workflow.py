@@ -175,7 +175,7 @@ class PlanWorkflowTests(unittest.TestCase):
         with self.assertRaises(plan.Error):
             plan.requested_roots("simdjson,gnupg", TARGETS, allow_csv=False)
 
-    def test_main_writes_matrix_and_uses_pinned_core_lookup(self):
+    def test_main_writes_matrix_and_uses_configured_core_pin(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "output"
             env = {
@@ -183,16 +183,16 @@ class PlanWorkflowTests(unittest.TestCase):
                 "REQUEST_SOURCE": "workflow_dispatch",
                 "GITHUB_OUTPUT": str(output),
             }
+            config = {"schema": 1, "repository": "adriank1410/homebrew-intel",
+                      "brew_commit": "a" * 40, "core_commit": "b" * 40}
             with patch.dict(os.environ, env, clear=True), patch.object(
-                plan, "run", return_value="b" * 40 + " refs/heads/main\n"
-            ) as run:
+                plan, "load_config", return_value=config
+            ) as load_config:
                 self.assertEqual(plan.main(), 0)
-            run.assert_called_once_with([
-                "git", "ls-remote", "https://github.com/Homebrew/homebrew-core.git",
-                "refs/heads/main",
-            ])
+            load_config.assert_called_once_with()
             lines = output.read_text().splitlines()
             self.assertEqual(json.loads(lines[0].split("=", 1)[1]), {"root": TARGETS[:2]})
+            self.assertIn("core_commit=" + "b" * 40, lines)
 
     def test_schedule_filters_covered_roots_and_reports_empty_work(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -206,7 +206,9 @@ class PlanWorkflowTests(unittest.TestCase):
                     patch.object(plan, "load_formula_index", return_value={}), \
                     patch.object(plan, "registry", return_value={}), \
                     patch.object(plan, "scheduled_roots", return_value=[]), \
-                    patch.object(plan, "run", return_value="b" * 40 + " refs/heads/main\n"):
+                    patch.object(plan, "load_config", return_value={"schema": 1,
+                                "repository": "adriank1410/homebrew-intel", "brew_commit": "a" * 40,
+                                "core_commit": "b" * 40}):
                 self.assertEqual(plan.main(), 0)
             self.assertIn("matrix={\"root\":[]}", output.read_text())
             self.assertIn("has_work=false", output.read_text())
@@ -225,7 +227,9 @@ class PlanWorkflowTests(unittest.TestCase):
                     patch.object(plan, "load_formula_index", return_value={}), \
                     patch.object(plan, "registry", return_value={}), \
                     patch.object(plan, "scheduled_roots", return_value=candidates), \
-                    patch.object(plan, "run", return_value="b" * 40 + " refs/heads/main\n"):
+                    patch.object(plan, "load_config", return_value={"schema": 1,
+                                "repository": "adriank1410/homebrew-intel", "brew_commit": "a" * 40,
+                                "core_commit": "b" * 40}):
                 self.assertEqual(plan.main(), 0)
             matrix = json.loads(output.read_text().splitlines()[0].split("=", 1)[1])
             self.assertEqual(matrix, {"root": candidates})
@@ -413,17 +417,15 @@ class PlanWorkflowTests(unittest.TestCase):
             with self.assertRaisesRegex(plan.Error, "exceeds size limit"):
                 plan.load_formula_index()
 
-    def test_plan_workflow_retries_git_ls_remote(self):
-        transient = plan.Error("fatal: error: RPC failed; HTTP 500 curl 22")
-        good = f"{'a' * 40}\trefs/heads/main"
+    def test_plan_workflow_does_not_resolve_live_core(self):
         with tempfile.TemporaryDirectory() as d, \
              patch.dict(os.environ, {"GITHUB_OUTPUT": str(Path(d) / "output"), "REQUEST_SOURCE": "workflow_dispatch", "REQUESTED_FORMULA": "simdjson"}), \
-             patch.object(plan, "run", side_effect=[transient, good]) as run_mock:
+             patch.object(plan, "load_config", return_value={"schema": 1,
+                         "repository": "adriank1410/homebrew-intel", "brew_commit": "a" * 40,
+                         "core_commit": "b" * 40}):
             ret = plan.main()
             self.assertEqual(ret, 0)
-            self.assertEqual(run_mock.call_count, 2)
 
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -4,11 +4,16 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      native:
+        description: Force the native Homebrew compatibility check
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
-  tests:
-    name: tests
+  unit:
+    name: Unit and policy checks
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -19,3 +24,99 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Syntax and repository policy
         run: python3 scripts/check-project.py
+  changes:
+    name: Detect Homebrew compatibility changes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      native: ${{ steps.changes.outputs.native }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - id: changes
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          FORCE_NATIVE: ${{ github.event_name == 'workflow_dispatch' && inputs.native }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$FORCE_NATIVE" == true ]]; then
+            echo 'native=true' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Registry maintenance dispatches this workflow too. Compare its
+          # branch with main instead of paying for a native run on every bottle.
+          if [[ "$EVENT" == workflow_dispatch ]]; then
+            BASE_SHA="$(git merge-base HEAD origin/main)"
+          fi
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]]; then
+            echo 'native=true' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if git diff --quiet "$BASE_SHA" HEAD -- \
+              policy/config.json policy/targets.json intelbrew libexec \
+              scripts/prepare-runner.sh scripts/verify-homebrew-pins.sh \
+              scripts/quarantine-runner-links.py scripts/retry-fetch.sh \
+              scripts/plan-workflow.py scripts/native-plan.py \
+              .github/workflows/checks.yml .github/workflows/bottle-root.yml \
+              .github/workflows/bottles.yml 'tests/test_native*.py'; then
+            echo 'native=false' >> "$GITHUB_OUTPUT"
+          else
+            code=$?
+            [[ "$code" == 1 ]] || exit "$code"
+            echo 'native=true' >> "$GITHUB_OUTPUT"
+          fi
+  homebrew:
+    name: Native Homebrew compatibility
+    needs: [unit, changes]
+    if: needs.changes.outputs.native == 'true'
+    runs-on: macos-15-intel
+    timeout-minutes: 30
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_INSTALL_FROM_API: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Select the reviewed core pin
+        run: python3 -c 'import json,os; c=json.load(open("policy/config.json")); open(os.environ["GITHUB_ENV"],"a").write("INTELBREW_CORE_COMMIT="+c["core_commit"]+"\n")'
+      - name: Preserve the runner Rust toolchain path before quarantining kegs
+        shell: bash
+        run: |
+          set -euo pipefail
+          toolchain_bin="$(dirname "$(rustup which cargo)")"
+          [[ -x "$toolchain_bin/cargo" && -x "$toolchain_bin/rustc" ]] || exit 1
+          echo "INTELBREW_CARGO_BIN=$toolchain_bin" >> "$GITHUB_ENV"
+      - name: Prepare the exact Homebrew pair on a disposable runner
+        run: bash scripts/prepare-runner.sh
+      - name: Load real formulae and exercise Cargo fetch
+        run: bash scripts/verify-homebrew-pins.sh
+  tests:
+    # Keep the existing required check name. Unit success must never mask a
+    # failed or skipped native check when the Homebrew pair changed.
+    name: tests
+    needs: [unit, changes, homebrew]
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Require every applicable check
+        env:
+          UNIT_RESULT: ${{ needs.unit.result }}
+          CHANGES_RESULT: ${{ needs.changes.result }}
+          NATIVE_REQUIRED: ${{ needs.changes.outputs.native }}
+          NATIVE_RESULT: ${{ needs.homebrew.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$UNIT_RESULT" == success && "$CHANGES_RESULT" == success ]] || exit 1
+          if [[ "$NATIVE_REQUIRED" == true ]]; then
+            [[ "$NATIVE_RESULT" == success ]] || exit 1
+          else
+            [[ "$NATIVE_REQUIRED" == false && "$NATIVE_RESULT" == skipped ]] || exit 1
+          fi
