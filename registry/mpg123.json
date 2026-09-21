@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "a780bdc386eb26ed3a70bcc0f25f2ad8116fc608",
+  "filename": "mpg123--1.33.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "3698eb1f9ba852c034a659b627386f0113671b77ea828535343b9c058fe0f9fb",
+  "license": "LGPL-2.1-only",
+  "name": "mpg123",
+  "pkg_version": "1.33.7",
+  "recipe_sha256": "309cb93b622f9eaedb587e3e2f2263a21f59177c18c49349936f3bf4d1aa9e88",
+  "release": "intel-35547076668-1-mpg123",
+  "revision": 0,
+  "run_id": "35547076668",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "3e0d466e670996d88379ec61b392ed5996aeabdfadb2a889f49ccba4428dec20",
+  "size": 639095,
+  "source": {
+    "filename": "mpg123--1.33.7.sources.tar.gz",
+    "sha256": "68e9c3e26ead5b1dd498c73fecb24ea4ece2a14ac7fb39e2b8b1c1e5030e74d5",
+    "size": 1139666
+  },
+  "tag": "sequoia",
+  "version": "1.33.7",
+  "version_scheme": 0,
+  "workflow_commit": "971174811c10b44946c0512a96a18e50c4b0263b"
+}
