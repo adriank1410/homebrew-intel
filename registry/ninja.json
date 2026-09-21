@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "a780bdc386eb26ed3a70bcc0f25f2ad8116fc608",
+  "filename": "ninja--1.13.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "19a71f92bab02b8e827338fe891a3b80da8df244942554a524a6b18b2c9152d9",
+  "license": "Apache-2.0",
+  "name": "ninja",
+  "pkg_version": "1.13.2",
+  "recipe_sha256": "6e5309e103ab11da01bd45b1886813e4beb60ad068260e9c7c8a42acfb8aa720",
+  "release": "intel-35547076668-1-ninja",
+  "revision": 0,
+  "run_id": "35547076668",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "ed07b485571809326ad52427a7cff4463d87a024ce19e8114c20124e649b2f9a",
+  "size": 170745,
+  "source": {
+    "filename": "ninja--1.13.2.sources.tar.gz",
+    "sha256": "82b8014345c70eeefd1905e0bb8391fc30c5eae3a46f0c2d80ae451bac1ee878",
+    "size": 300719
+  },
+  "tag": "sequoia",
+  "version": "1.13.2",
+  "version_scheme": 0,
+  "workflow_commit": "971174811c10b44946c0512a96a18e50c4b0263b"
+}
