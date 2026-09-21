@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a5a3dff1dcd5766accd3aba78e3eeb871300f3a8",
+  "filename": "md4c--0.6.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd",
+  "license": "MIT",
+  "name": "md4c",
+  "pkg_version": "0.6.0",
+  "recipe_sha256": "74346a540eeacdd467de96bb48067d5d5ce00b635b82ad26d85c03d6ad019a0a",
+  "release": "intel-35629367624-1-md4c",
+  "revision": 0,
+  "run_id": "35629367624",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "dff0c2766b970d0373ea8e62e2dac4932902e0be02327ba5f877b4910d781c69",
+  "size": 92092,
+  "source": {
+    "filename": "md4c--0.6.0.sources.tar.gz",
+    "sha256": "a713196063edd21dd6723a502ce50ea24f8ee7326a18abc9ffe6119f31ec6d7e",
+    "size": 274518
+  },
+  "tag": "sequoia",
+  "version": "0.6.0",
+  "version_scheme": 0,
+  "workflow_commit": "70677a7de6ba5d9553840445c6d4092b73613582"
+}
