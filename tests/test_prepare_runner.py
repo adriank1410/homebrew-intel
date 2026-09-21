@@ -181,16 +181,32 @@ class FetchRetryTests(unittest.TestCase):
         self.assertIn('bash "$project_dir/scripts/retry-fetch.sh" brew vendor-install ruby', script)
         self.assertIn("HOMEBREW_CURL_RETRIES=", script)
 
-    def test_brew_pin_includes_std_cargo_fetch_args(self):
-        # homebrew-core Cargo formulae call this method from `fetch`.
-        # 71f6877d19f2179cf47caea84565083cdc950cc2 predates it and raises NameError.
+    def test_runner_uses_the_configured_homebrew_pair(self):
         config = json.loads((ROOT / "policy/config.json").read_text())
-        self.assertEqual(
-            config["brew_commit"],
-            "a83186e02a6c4b98cd44a290cdb56e136feaa596",
-        )
+        self.assertRegex(config["brew_commit"], r"^[0-9a-f]{40}$")
+        self.assertRegex(config["core_commit"], r"^[0-9a-f]{40}$")
         script = (ROOT / "scripts/prepare-runner.sh").read_text()
         self.assertIn('["brew_commit"]', script)
+        self.assertIn('["core_commit"]', script)
+        self.assertIn('INTELBREW_CORE_COMMIT:-$configured_core_commit', script)
+
+    def test_native_pin_gate_refuses_user_machines_before_calling_brew(self):
+        with tempfile.TemporaryDirectory() as raw:
+            folder = Path(raw)
+            marker = folder / "brew-ran"
+            brew = folder / "brew"
+            brew.write_text('#!/bin/sh\nprintf ran > "' + str(marker) + '"\n')
+            brew.chmod(0o755)
+            for runner in ("", "self-hosted"):
+                with self.subTest(runner=runner):
+                    env = {**os.environ, "GITHUB_ACTIONS": "true",
+                           "RUNNER_ENVIRONMENT": runner, "RUNNER_OS": "macOS",
+                           "RUNNER_ARCH": "X64", "PATH": str(folder) + ":" + os.environ["PATH"]}
+                    result = subprocess.run(["bash", str(ROOT / "scripts/verify-homebrew-pins.sh")],
+                                            env=env, text=True, capture_output=True)
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertIn("Refusing", result.stderr)
+                    self.assertFalse(marker.exists())
 
 
 if __name__ == "__main__":
