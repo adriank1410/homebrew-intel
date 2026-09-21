@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a5a3dff1dcd5766accd3aba78e3eeb871300f3a8",
+  "filename": "giflib--6.1.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
+  "license": "MIT",
+  "name": "giflib",
+  "pkg_version": "6.1.3",
+  "recipe_sha256": "cb3ff94693bff78c52478c9496aea435e10b757f36c89ec01fd8edcbc00e8303",
+  "release": "intel-35629367624-1-giflib",
+  "revision": 0,
+  "run_id": "35629367624",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "5e23c5c98d0106d8bb584c0ffd00001e9b70e12e5fe9fec05e2ed020e8d72ad4",
+  "size": 130900,
+  "source": {
+    "filename": "giflib--6.1.3.sources.tar.gz",
+    "sha256": "2d5997af0252941aa060590ec1d722971eb16dba1f3603f111b2ee3fafd7dfa4",
+    "size": 473272
+  },
+  "tag": "sequoia",
+  "version": "6.1.3",
+  "version_scheme": 0,
+  "workflow_commit": "70677a7de6ba5d9553840445c6d4092b73613582"
+}
