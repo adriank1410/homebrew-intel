@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "any",
-  "core_commit": "b220c316b5998c58cd06a7b9584fa8322a053703",
+  "core_commit": "4123669b6faf94cd421d8e1bb6fb29f4dbd68ba7",
   "filename": "mosh--1.4.0_43.sequoia.bottle.tar.gz",
-  "formula_sha256": "676ff1687ea0ee2b82d89bbec0017be9ec3c4aa457d070a67db62e24460d7640",
+  "formula_sha256": "af10dbcbafa00c2515ed115f1cc12702bc5f415234e1e5165476e54344b3bcf6",
   "license": "GPL-3.0-or-later",
   "name": "mosh",
   "pkg_version": "1.4.0_43",
-  "recipe_sha256": "953bdbb6d3d2e0f1d9e430159ea55d13f6308ecd6bb591edfb90e486f3c970bb",
-  "release": "intel-35480523510-1-mosh",
+  "recipe_sha256": "343937b38390cfef9b2d4d56aec668dd0e5a4854fc9c2156b9c9b7586bd33b43",
+  "release": "intel-35654824556-1-mosh",
   "revision": 43,
-  "run_id": "35480523510",
+  "run_id": "35654824556",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b4c0a9154d39c35ba43568a583ec034a6f232ad563e2fa83a7d9e0313fb4450a",
-  "size": 287420,
+  "sha256": "658a8a62c593eb5b6e5a24042d810bddd13935cb04d49796fb15314aeda836aa",
+  "size": 287437,
   "source": {
     "filename": "mosh--1.4.0_43.sources.tar.gz",
-    "sha256": "ef38f6f2a5cb1043efb32ff56d31f30cf78d759e7df7090862c0c07be68fa988",
-    "size": 409128
+    "sha256": "1add2916d0b6159cd714ca4ac29f62dc4c339038e827966acb98b16007a0e7f6",
+    "size": 409135
   },
   "tag": "sequoia",
   "version": "1.4.0",
   "version_scheme": 0,
-  "workflow_commit": "686cf774d293c6bcbf0de591b5c6ee454a9729f2"
+  "workflow_commit": "e457789f0282254af7923136d610442a2a6946cd"
 }
