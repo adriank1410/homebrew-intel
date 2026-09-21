@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "a780bdc386eb26ed3a70bcc0f25f2ad8116fc608",
+  "core_commit": "4123669b6faf94cd421d8e1bb6fb29f4dbd68ba7",
   "filename": "gettext--1.0.sequoia.bottle.tar.gz",
   "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
   "license": {
@@ -14,9 +14,9 @@
   "name": "gettext",
   "pkg_version": "1.0",
   "recipe_sha256": "74dbc9cbf1c427c148b5d5247adfb43957b5d02be20a4e1d162aa903f0dd614e",
-  "release": "intel-35547076668-1-gettext",
+  "release": "intel-35654824556-1-gettext",
   "revision": 0,
-  "run_id": "35547076668",
+  "run_id": "35654824556",
   "runtime_dependencies": [
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -24,21 +24,21 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
       "name": "libunistring",
       "pkg_version": "1.4.2"
     }
   ],
   "schema": 1,
-  "sha256": "9c9e8d96df0000b3dd4e8115f25bf0aa52b7914f2c53970f903214f512d5ce60",
-  "size": 10274469,
+  "sha256": "0377d92d80443281f99565e059fb996cf4d37b490bc255958598a963b2b6b0aa",
+  "size": 10274610,
   "source": {
     "filename": "gettext--1.0.sources.tar.gz",
-    "sha256": "811f5a0f0bcf19e3fb8d5434573bf528d26064dd5d92af95e839ce4da76cb507",
-    "size": 30865740
+    "sha256": "04bfa422ab02017104b1ec370847c4f942eb564a354465b04d6b5e8916e58715",
+    "size": 30865737
   },
   "tag": "sequoia",
   "version": "1.0",
   "version_scheme": 0,
-  "workflow_commit": "971174811c10b44946c0512a96a18e50c4b0263b"
+  "workflow_commit": "e457789f0282254af7923136d610442a2a6946cd"
 }
