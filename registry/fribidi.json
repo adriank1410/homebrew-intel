@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "cellar": "any",
+  "core_commit": "a780bdc386eb26ed3a70bcc0f25f2ad8116fc608",
+  "filename": "fribidi--1.0.17.sequoia.bottle.tar.gz",
+  "formula_sha256": "a7a0f98a348293651e9dcd90b7a8ab80ef2ae93aae6fa8853b07d5e5002a8350",
+  "license": {
+    "all_of": [
+      "GPL-2.0-or-later",
+      "LGPL-2.1-or-later"
+    ]
+  },
+  "name": "fribidi",
+  "pkg_version": "1.0.17",
+  "recipe_sha256": "976b350d114172fbd686a575fdb2bcd8410b98ec67f11fb70e5102bcbb84bf3f",
+  "release": "intel-35563025798-1-fribidi",
+  "revision": 0,
+  "run_id": "35563025798",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "04e593347488762f65c40591affe83e212ae868e4852aed27cb0bd84f2f8b620",
+  "size": 153449,
+  "source": {
+    "filename": "fribidi--1.0.17.sources.tar.gz",
+    "sha256": "c52238b242cb8fe3a39e97a6d1c4c36f7851c40b22861ea9959faceb79dfe3fc",
+    "size": 1217968
+  },
+  "tag": "sequoia",
+  "version": "1.0.17",
+  "version_scheme": 0,
+  "workflow_commit": "24a1aaa0f88dcbb9a7922e99ae9433656dcd29c9"
+}
