@@ -81,6 +81,12 @@ class CompatibilityGateTests(unittest.TestCase):
         self.assertIn("bash scripts/prepare-runner.sh", scripts)
         self.assertIn("bash scripts/verify-homebrew-pins.sh", scripts)
         self.assertNotIn("secrets.", json.dumps(job))
+        steps = job["steps"]
+        capture = next(i for i,s in enumerate(steps) if "rustup which cargo" in s.get("run", ""))
+        prepare = next(i for i,s in enumerate(steps) if "bash scripts/prepare-runner.sh" in s.get("run", ""))
+        self.assertLess(capture, prepare)
+        self.assertIn("GITHUB_ENV", steps[capture]["run"])
+
 
 
 if __name__ == "__main__":

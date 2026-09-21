@@ -85,6 +85,13 @@ jobs:
           persist-credentials: false
       - name: Select the reviewed core pin
         run: python3 -c 'import json,os; c=json.load(open("policy/config.json")); open(os.environ["GITHUB_ENV"],"a").write("INTELBREW_CORE_COMMIT="+c["core_commit"]+"\n")'
+      - name: Preserve the runner Rust toolchain path before quarantining kegs
+        shell: bash
+        run: |
+          set -euo pipefail
+          toolchain_bin="$(dirname "$(rustup which cargo)")"
+          [[ -x "$toolchain_bin/cargo" && -x "$toolchain_bin/rustc" ]] || exit 1
+          echo "INTELBREW_CARGO_BIN=$toolchain_bin" >> "$GITHUB_ENV"
       - name: Prepare the exact Homebrew pair on a disposable runner
         run: bash scripts/prepare-runner.sh
       - name: Load real formulae and exercise Cargo fetch

@@ -73,11 +73,10 @@ HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_FROM_API=1 brew ruby -e '
 # image already cached a source archive or Cargo dependencies.
 export HOMEBREW_CACHE="$(mktemp -d "${RUNNER_TEMP:?}/intelbrew-compatibility.XXXXXXXX")"
 
-# GitHub's Intel image supplies rustup outside the Homebrew kegs that runner
-# preparation quarantines. Resolve real binaries before Formula#brew changes
-# HOME/CARGO_HOME, so the rustup shim cannot lose its installed toolchain.
-command -v rustup >/dev/null
-toolchain_bin="$(dirname "$(rustup which cargo)")"
+# The workflow resolves the real toolchain before preparation quarantines the
+# Homebrew-installed rustup shim. The toolchain itself lives outside the kegs.
+# Real binaries also survive Formula#brew changing HOME/CARGO_HOME.
+toolchain_bin="${INTELBREW_CARGO_BIN:?Missing runner Cargo toolchain path}"
 [[ -x "$toolchain_bin/cargo" && -x "$toolchain_bin/rustc" ]] || exit 1
 export PATH="$toolchain_bin:$PATH"
 cargo --version
