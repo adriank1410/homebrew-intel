@@ -1,0 +1,129 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
+  "cellar": "any",
+  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
+  "filename": "harfbuzz--14.5.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "745607d3d7ba91d5fe503e6ff43ac5caa1d35bbf1e7f3d9d2602039e928ba0dc",
+  "license": "MIT",
+  "name": "harfbuzz",
+  "pkg_version": "14.5.0",
+  "recipe_sha256": "4a01ef42e17002fbe8c4ae20690b972bbf2a346512ba91e076411b2e7ddf65ec",
+  "release": "intel-35713170458-1-harfbuzz",
+  "revision": 0,
+  "run_id": "35713170458",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "name": "cairo",
+      "pkg_version": "1.18.4"
+    },
+    {
+      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "name": "fontconfig",
+      "pkg_version": "2.18.3"
+    },
+    {
+      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "name": "freetype",
+      "pkg_version": "2.14.3"
+    },
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "7e41107faf209528d2e993afec53ad1006bbe8945772bde43c2295e8a2ef7659",
+      "name": "glib",
+      "pkg_version": "2.90.0"
+    },
+    {
+      "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
+      "name": "graphite2",
+      "pkg_version": "1.3.15"
+    },
+    {
+      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+      "name": "libpng",
+      "pkg_version": "1.6.58"
+    },
+    {
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
+      "name": "libx11",
+      "pkg_version": "1.8.13"
+    },
+    {
+      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "name": "libxau",
+      "pkg_version": "1.0.12"
+    },
+    {
+      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "name": "libxcb",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "name": "libxdmcp",
+      "pkg_version": "1.1.5"
+    },
+    {
+      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "name": "libxext",
+      "pkg_version": "1.3.7"
+    },
+    {
+      "formula_sha256": "96228e7db71fb1bfa9baaca00848653f4d807bfd98003f2a58094e981f3055c1",
+      "name": "libxrender",
+      "pkg_version": "0.9.12"
+    },
+    {
+      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "name": "lzo",
+      "pkg_version": "2.10"
+    },
+    {
+      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "name": "pcre2",
+      "pkg_version": "10.48"
+    },
+    {
+      "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
+      "name": "pixman",
+      "pkg_version": "0.46.4"
+    },
+    {
+      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "name": "xorgproto",
+      "pkg_version": "2025.1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "075dd5ee2f1c7e4a528d6d031a8286692a7e96b693f125a7864f86f60c306893",
+  "size": 4243059,
+  "source": {
+    "filename": "harfbuzz--14.5.0.sources.tar.gz",
+    "sha256": "eb5074d189944435ed0169b607eb8dc403a904acd35b5eea4a37397014740802",
+    "size": 20278372
+  },
+  "tag": "sequoia",
+  "version": "14.5.0",
+  "version_scheme": 0,
+  "workflow_commit": "32e099a775ff1ad052482ecac7e6f32b3898b726"
+}
