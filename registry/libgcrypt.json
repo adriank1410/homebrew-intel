@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
   "cellar": "any",
-  "core_commit": "a780bdc386eb26ed3a70bcc0f25f2ad8116fc608",
+  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
   "filename": "libgcrypt--1.12.4.sequoia.bottle.tar.gz",
   "formula_sha256": "1c5900b00dfb4f1e5603b847f30c12a839caa5113a3a06d16607fabf908f1cb2",
   "license": {
@@ -14,9 +14,9 @@
   "name": "libgcrypt",
   "pkg_version": "1.12.4",
   "recipe_sha256": "3385548916b16224540d08673d6b24a52ab1ada87550ba8913867c93d5db6529",
-  "release": "intel-35563025798-1-libgcrypt",
+  "release": "intel-35670423186-1-libgcrypt",
   "revision": 0,
-  "run_id": "35563025798",
+  "run_id": "35670423186",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -34,21 +34,21 @@
       "pkg_version": "1.61"
     },
     {
-      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
       "name": "libunistring",
       "pkg_version": "1.4.2"
     }
   ],
   "schema": 1,
-  "sha256": "69e3216508b7153bde5134ad5ca651f9651c4a9e9917c09e7dbff2dbcdda8817",
-  "size": 1537752,
+  "sha256": "89b95d207633cbab3b0baf574ecc5cc5992b8bd4288c6531a0bdaf42548ff653",
+  "size": 1537735,
   "source": {
     "filename": "libgcrypt--1.12.4.sources.tar.gz",
-    "sha256": "68c80f4bccc316c26e328fb34408b6a3b1ee9d291bec0b6e05a8632ac595eb85",
-    "size": 4489006
+    "sha256": "36bc46eacc231145d55d4132a39f4f412ce7cc79fd218c8fbf53393d87f5b355",
+    "size": 4489011
   },
   "tag": "sequoia",
   "version": "1.12.4",
   "version_scheme": 0,
-  "workflow_commit": "24a1aaa0f88dcbb9a7922e99ae9433656dcd29c9"
+  "workflow_commit": "4c3038c20bbfdee8eb13789dc415a8490b4b839f"
 }
