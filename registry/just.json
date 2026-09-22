@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
   "cellar": "any_skip_relocation",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
+  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
   "filename": "just--1.58.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "769f35790646587f5e5f746428526313937c237a0bff9fa2bfbad65f185c0558",
+  "formula_sha256": "283f7035be490f1d2babc99ecb2390445ae5ec6f9876bd5f9ad993e2307bb88e",
   "license": "CC0-1.0",
   "name": "just",
   "pkg_version": "1.58.0",
-  "recipe_sha256": "e32e7553ceebe02ef932456fa71a8dd5e926e222155d261ea3c90e0459e70d59",
-  "release": "intel-35408935324-1-just",
+  "recipe_sha256": "dc13fc2c00c065c1100008290c9d1bbf996695bcf34f737a8e9521c0eec57e5d",
+  "release": "intel-35670423186-1-just",
   "revision": 0,
-  "run_id": "35408935324",
+  "run_id": "35670423186",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "92d1bb81f393cb6e6383d00a7c89aa93afda6fb1cfbbf53ea6cb910f644b0613",
-  "size": 2356459,
+  "sha256": "467c0580a7975978aeb66fc3da894bde908b33b13644715e8687ede0e800ea93",
+  "size": 2356440,
   "source": {
     "filename": "just--1.58.0.sources.tar.gz",
-    "sha256": "dc33997e9517783deb1fdf86d7fd05102dc9235a73b34790059c6e83c66f4daf",
-    "size": 10512064
+    "sha256": "aa9d093c62b738a4ee9866dcec7d1b03608fa13e3534c2a18cc72b84699245c0",
+    "size": 10512212
   },
   "tag": "sequoia",
   "version": "1.58.0",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "4c3038c20bbfdee8eb13789dc415a8490b4b839f"
 }
