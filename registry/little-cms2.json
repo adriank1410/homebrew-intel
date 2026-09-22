@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
   "cellar": "any",
-  "core_commit": "4133bb627161548e75ac387df1822cf6a36212e5",
+  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
   "filename": "little-cms2--2.19.1.sequoia.bottle.tar.gz",
   "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
   "license": "MIT",
   "name": "little-cms2",
   "pkg_version": "2.19.1",
   "recipe_sha256": "7af482e897b7d6703f41e8595684e59eb2d7799f55055101add65d7301bc569b",
-  "release": "intel-35590055479-1-little-cms2",
+  "release": "intel-35713170458-1-little-cms2",
   "revision": 0,
-  "run_id": "35590055479",
+  "run_id": "35713170458",
   "runtime_dependencies": [
     {
-      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
       "name": "giflib",
       "pkg_version": "6.1.3"
     },
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e363ac3b39215e934d88377baf8d1887ee714b3f1963db3f511fe1f56d651ef7",
-  "size": 430477,
+  "sha256": "dbf7f5872953d230d422ff9b8dcc56c6c9172cece253d646a3d8cc7dd9209ac4",
+  "size": 430476,
   "source": {
     "filename": "little-cms2--2.19.1.sources.tar.gz",
-    "sha256": "c80bd95426ba50003ee407a0969bdfbe572bd0459b87ee8afb059d892afa0085",
-    "size": 5733388
+    "sha256": "59797ad9577c85b0344310f2dbc797d5b76eccf78a6ad01408e07ab310c6beec",
+    "size": 5733392
   },
   "tag": "sequoia",
   "version": "2.19.1",
   "version_scheme": 1,
-  "workflow_commit": "34023d7fb42307f7c688a14fa8b073ca51babb9c"
+  "workflow_commit": "32e099a775ff1ad052482ecac7e6f32b3898b726"
 }
