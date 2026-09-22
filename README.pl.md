@@ -33,7 +33,7 @@ brew intel plan simdutf
 brew intel upgrade simdutf --apply
 ```
 
-`plan`, `doctor`, i `upgrade` bez `--apply` nie instalują pakietów. Zmiany
+`plan`, `doctor` i `upgrade` bez `--apply` nie instalują pakietów. Zmiany
 pakietów wymagają `--apply`. Flaga `-v` / `--verbose` włącza szczegółową
 diagnostykę atestacji, linki do paczek ze źródłami oraz ścieżkę dziennika transakcji.
 
