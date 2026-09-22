@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
   "cellar": "any",
-  "core_commit": "a780bdc386eb26ed3a70bcc0f25f2ad8116fc608",
+  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
   "filename": "webp--1.6.0.sequoia.bottle.tar.gz",
   "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
   "license": "BSD-3-Clause",
   "name": "webp",
   "pkg_version": "1.6.0",
   "recipe_sha256": "34110fc2ee69a3769f4a25b1fcb4836f3cefc88b0e16a615236223facfb1697d",
-  "release": "intel-35547076668-1-webp",
+  "release": "intel-35670423186-1-webp",
   "revision": 0,
-  "run_id": "35547076668",
+  "run_id": "35670423186",
   "runtime_dependencies": [
     {
-      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
       "name": "giflib",
       "pkg_version": "6.1.3"
     },
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ed2fb11b00ec059b343ed0668a5ce6852286d89a048d1c8243918a6e315031fa",
-  "size": 1058100,
+  "sha256": "99a7dae2530f7ba75b00c1be0d4432269cc93dd78df7a980ffeec018e742d830",
+  "size": 1058062,
   "source": {
     "filename": "webp--1.6.0.sources.tar.gz",
-    "sha256": "90c9c301932320d5845ad210376f8655a8df9cd19fcbae8f810b165011799eed",
-    "size": 4300975
+    "sha256": "73637bacc66681a193e820946700bf7b7b616d9b443b9c646ad325a3040f7b90",
+    "size": 4300968
   },
   "tag": "sequoia",
   "version": "1.6.0",
   "version_scheme": 0,
-  "workflow_commit": "971174811c10b44946c0512a96a18e50c4b0263b"
+  "workflow_commit": "4c3038c20bbfdee8eb13789dc415a8490b4b839f"
 }
