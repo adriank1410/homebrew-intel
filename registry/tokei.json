@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
   "cellar": "any_skip_relocation",
-  "core_commit": "569b37f3c23d05642878d49d58b251a2f77f00df",
+  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
   "filename": "tokei--15.0.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "b4f951cef0e79966a46d4b5b9b5940bc28145839239c7508460de492edf49b6f",
+  "formula_sha256": "eca1cf15e0271bfe5e0c97d5b7f526e31c3c0d1de7a404afb81bd978702f759a",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -13,21 +13,21 @@
   },
   "name": "tokei",
   "pkg_version": "15.0.0",
-  "recipe_sha256": "e41ac07fdc4c16bbd2f6f5f612e3db871e5d042e053ff797ab40a3aadd363837",
-  "release": "intel-35459764949-1-tokei",
+  "recipe_sha256": "863f1a01e38dd6279e046d8d4a2017898e231726322b757c22f054f098dcfbc4",
+  "release": "intel-35670423186-1-tokei",
   "revision": 0,
-  "run_id": "35459764949",
+  "run_id": "35670423186",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "71d0fa9415c763971ab60472cf491bce8f47334ff75ae1d5a99b8c8d19a37087",
-  "size": 1906668,
+  "sha256": "d653e0bde4125a48028e02cf94d98fc2cecedb3711920c7c4e7bee744b239aab",
+  "size": 1906663,
   "source": {
     "filename": "tokei--15.0.0.sources.tar.gz",
-    "sha256": "66b1f323cb7a957d57b5bdc3667335f4737c82b8bfddcc5c8f125fc8752ecbe3",
-    "size": 15521803
+    "sha256": "0b22d1e8742a90c28ac684520307fa2e74730a113d0edf3c4249996740bc225b",
+    "size": 15522066
   },
   "tag": "sequoia",
   "version": "15.0.0",
   "version_scheme": 0,
-  "workflow_commit": "874f6ac6f9e741facea66d1ad8c8f411ed5dd7a8"
+  "workflow_commit": "4c3038c20bbfdee8eb13789dc415a8490b4b839f"
 }
