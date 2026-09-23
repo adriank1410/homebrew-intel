@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
   "cellar": "any",
-  "core_commit": "e29aab2ddeecec2acd46e0cdc73791de284a580e",
+  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
   "filename": "fastfetch--2.68.1.sequoia.bottle.tar.gz",
   "formula_sha256": "9718e9c22280e669bbc41968275d6a22a78aec4b460bde9b9293c3e200b4804f",
   "license": "MIT",
   "name": "fastfetch",
   "pkg_version": "2.68.1",
   "recipe_sha256": "5e895b311d57e3fec8398dac9af0df534c032e30416b826cb23621145ae79975",
-  "release": "intel-35438707346-1-fastfetch",
+  "release": "intel-35802355799-1-fastfetch",
   "revision": 0,
-  "run_id": "35438707346",
+  "run_id": "35802355799",
   "runtime_dependencies": [
     {
-      "formula_sha256": "5ba42da736ef7018fb9f204556e912f7436f073563e38beeb90ae62a3de0b743",
+      "formula_sha256": "6ee015de665c24320066398829a1b562759fb94a89645f07e54e6ebc867753be",
       "name": "yyjson",
       "pkg_version": "0.13.0"
     }
   ],
   "schema": 1,
-  "sha256": "360225152fbbb4af660e80267f0ae8371b5df6cfa96d26fc90a6a50761d82891",
-  "size": 610357,
+  "sha256": "51fefd439d4b78522232bebafdc8291193f3b586b3c06d16df3adc0a0b16b12a",
+  "size": 610358,
   "source": {
     "filename": "fastfetch--2.68.1.sources.tar.gz",
-    "sha256": "9af609b92928c183f3e02fb6feb08985a6563f155653597e5c1a5b224dbaeb77",
-    "size": 1640556
+    "sha256": "8fc71c99272c01c1f43b71cc1436fed1507eb73dffa34201619e47cde48d92f2",
+    "size": 1640549
   },
   "tag": "sequoia",
   "version": "2.68.1",
   "version_scheme": 0,
-  "workflow_commit": "ff008e3027eacccccc0c9d0477ae9a6ed805ce3e"
+  "workflow_commit": "c05302d1264674acce9e837a21371eeb6f097d67"
 }
