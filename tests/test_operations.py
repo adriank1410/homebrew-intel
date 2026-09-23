@@ -236,6 +236,26 @@ class OperationTests(unittest.TestCase):
             plan['nodes']['fastfetch'] = meta('fastfetch', build=['llvm'])
         plan['roots'] = ['llvm']
         self.assertEqual(transient_builds(plan), set())
+
+    def test_runtime_edge_inside_the_build_toolchain_does_not_bottle_llvm(self):
+        plan = {'roots': ['deno'], 'nodes': {
+            'deno': meta('deno', build=['lld', 'llvm'], provider='build'),
+            'lld': meta('lld', runtime=['llvm'], provider='build'),
+            'llvm': meta('llvm', provider='build'),
+        }}
+        transient = transient_builds(plan)
+        self.assertEqual(transient, {'lld', 'llvm'})
+        self.assertEqual(_brew_install_args('llvm', transient),
+                         ['brew', 'install', '--build-from-source', '--no-ask', 'homebrew/core/llvm'])
+        self.assertEqual(_brew_install_args('lld', transient),
+                         ['brew', 'install', '--build-from-source', '--no-ask', 'homebrew/core/lld'])
+        self.assertEqual(_brew_install_args('deno', transient),
+                         ['brew', 'install', '--build-bottle', '--no-ask', 'homebrew/core/deno'])
+        published = {'roots': ['deno'], 'nodes': {
+            'deno': meta('deno', runtime=['llvm'], provider='build'),
+            'llvm': meta('llvm', provider='build'),
+        }}
+        self.assertEqual(transient_builds(published), set())
     def test_source_collection_uses_a_fresh_cache_per_package(self):
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.ci.native',side_effect=lambda request,**kwargs:{'name':request['name']}) as native:
             caches,sources=_prepare_source_sets(['dep','tool'],Path(d))

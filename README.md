@@ -135,9 +135,12 @@ Publication creates a registry PR. Automation checks its records against the
 attested release manifest, dispatches tests, and merges the exact validated head
 once the protected branch checks pass. It never queues GitHub auto-merge. The client sees the records after that merge.
 
-An isolated build-only LLVM dependency is built from source as a temporary
-compiler and omitted from the candidate package set. LLVM remains a published
-bottle when any runtime or test dependency needs it.
+An LLVM install that no published package needs at runtime or during its formula
+test is built from source and omitted from the candidate set. Homebrew's `llvm`
+formula then skips the profile-guided bootstrap and its `check-clang` /
+`check-llvm` suite. Publishing `llvm` itself stays source-held: that bottle
+build does not finish inside the six-hour runner limit. Compatible official
+bottles and the published `llvm@22` bottle remain usable.
 
 Heavy source builds exceeding the physical limits of ephemeral GitHub-hosted runners
 (`macos-15-intel`: 6-hour execution timeout, ~14 GB available SSD storage, 4 vCPUs)
@@ -145,8 +148,17 @@ are explicitly excluded via `blocked_source_builds` in `policy/config.json`.
 Specifically, `qtwebengine` (Chromium engine with ~40,000 translation units,
 requiring more than 35 GB disk space and 8–10 hours of CPU compilation) and
 formulas requiring it (`qt`, `qtwebview`) cannot be built on standard runners.
-All 36 modular Qt6 module formulas (such as `qtbase`, `qtdeclarative`, `qttools`,
-`qtsvg`, etc.) have verified bottles in the registry.
+
+`qtbase` is temporarily source-held because Qt 6.11.2 fails to compile with
+md4c 0.6.0. This also holds dependents that would need to rebuild `qtbase`, not
+those with a complete, matching bottle graph. See [build holds and removal
+criteria](docs/BUILD-HOLDS.md). These are build-availability limits, not successful
+builds or permission to use stale dependencies.
+
+All 35 modular Qt6 module formulas outside the direct source holds (such as
+`qtdeclarative`, `qttools`, and `qtsvg`) have previously verified bottle records
+in the registry; the historical `qtbase` record is retained too. A historical
+record does not guarantee usability with today's recipes and dependencies.
 
 To request one reviewed target, edit `policy/build-request.json` on `main` and
 increment `sequence`. See [Operations](docs/OPERATIONS.md) for the review and
