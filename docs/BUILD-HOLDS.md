@@ -42,26 +42,29 @@ expectations and documentation to match that reviewed recovery.
 Do not delete the assertion, patch the recipe silently, relabel an old bottle's
 dependency hashes, or disable dependency drift detection to obtain a green run.
 
-### LLVM: the hosted-runner source-build budget is insufficient
+### LLVM: bottle builds run the profile-guided suite; compiler-only installs do not
 
 [`deno` job 106819757455](https://github.com/adriank1410/homebrew-intel/actions/runs/35743217955/job/106819757455)
-was cancelled after approximately six hours while compiling LLVM 23.1.1 and
-running `check-clang check-llvm`. It had not reached Deno compilation. The
-pinned LLVM formula has no Intel macOS bottle, so a source dependency was being
-built even though the root was named `deno`.
+was cancelled at the six-hour runner limit. Compilation of the early LLVM 23.1.1
+stages had finished. At 19:35 UTC the formula started
+`cmake --build . --target check-clang check-llvm`, and that command was still
+running at 21:46 UTC. Deno itself had not started.
 
-The `llvm` hold covers direct roots and transitive dependencies, including the
-isolated build-only compiler path. A matching verified LLVM bottle or a
-compatible official bottle can still satisfy the graph without lifting it.
-This does not assert that every LLVM version is inherently impossible to build;
-it bounds the current supported service based on the observed failure.
+Homebrew enables that profile-guided path only for a stable macOS bottle build
+of the unversioned formula. `llvm@22` 22.1.8 is already published because a
+versioned formula skips the path. `--build-from-source` skips it as well.
 
-Removal criteria: demonstrate a reviewed source build that fits the supported
-runner's time, disk and publication limits, followed by independent verification;
-or obtain a compatible bottle through the existing verified provider paths.
-Do not raise `timeout-minutes` beyond the hosted-job limit, skip upstream tests,
-substitute a different-version compiler as the declared dependency, or switch
-to paid/self-hosted runners without a separately reviewed scope change.
+`deno` needs `llvm` only while compiling, but `lld` needs `llvm` at runtime.
+The planner therefore installs both from source and leaves them out of the
+candidate set whenever no published package needs them at runtime or in its
+formula test. A request whose published packages need a new `llvm` bottle,
+including a direct `llvm` root, stays source-held.
+
+Removal criteria for the direct hold: publish a reviewed Intel bottle through
+the normal attested path, including independent pour, formula test and linkage
+checks. Do not raise `timeout-minutes` beyond the hosted-job limit, patch the
+formula to delete `check-clang`/`check-llvm` while still passing
+`--build-bottle`, or substitute `llvm@22` for the dependency the recipe names.
 
 ## Existing resource exclusions
 

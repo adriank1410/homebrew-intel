@@ -139,11 +139,12 @@ uruchamia testy i scala dokładnie sprawdzony commit, gdy przejdzie on wymagane
 kontrole ochrony gałęzi. Nie pozostawia włączonego oczekującego auto-merge. Klient widzi nowe
 wpisy po scaleniu.
 
-Budowanie LLVM ze źródeł, także jako tymczasowego kompilatora potrzebnego tylko
-podczas budowania, jest obecnie wykluczone. Bootstrap i testy LLVM 23.1.1 zużyły
-sześciogodzinny limit runnera jeszcze przed rozpoczęciem budowania Deno.
-Zgodne oficjalne lub pasujące zweryfikowane butelki LLVM nadal mogą być używane.
-Mechanizm tymczasowego kompilatora nie omija tej polityki.
+LLVM, którego żaden publikowany pakiet nie potrzebuje przy uruchomieniu ani
+w teście formuły, powstaje ze źródeł i nie wchodzi do zestawu kandydatów.
+Przepis Homebrew pomija wtedy bootstrap profilowany oraz zestaw `check-clang` /
+`check-llvm`. Publikacja samego `llvm` pozostaje wstrzymana: ta butelka nie
+mieści się w sześciogodzinnym limicie runnera. Zgodne butelki oficjalne
+i opublikowane `llvm@22` nadal można instalować.
 
 Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłatnych runnerów
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca

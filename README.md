@@ -135,11 +135,12 @@ Publication creates a registry PR. Automation checks its records against the
 attested release manifest, dispatches tests, and merges the exact validated head
 once the protected branch checks pass. It never queues GitHub auto-merge. The client sees the records after that merge.
 
-LLVM source builds, including isolated build-only compilers, are currently
-excluded: the observed LLVM 23.1.1 bootstrap and tests exhausted the six-hour
-runner budget before the Deno build started. Compatible official or matching
-verified LLVM bottles remain usable. The existing transient-compiler mechanism
-does not override this source-build policy.
+An LLVM install that no published package needs at runtime or during its formula
+test is built from source and omitted from the candidate set. Homebrew's `llvm`
+formula then skips the profile-guided bootstrap and its `check-clang` /
+`check-llvm` suite. Publishing `llvm` itself stays source-held: that bottle
+build does not finish inside the six-hour runner limit. Compatible official
+bottles and the published `llvm@22` bottle remain usable.
 
 Heavy source builds exceeding the physical limits of ephemeral GitHub-hosted runners
 (`macos-15-intel`: 6-hour execution timeout, ~14 GB available SSD storage, 4 vCPUs)

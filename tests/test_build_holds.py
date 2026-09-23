@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 
 from helpers import meta, record
+from intelbrew.ci import transient_builds
 from intelbrew.core import Error, Planner, ensure_complete, load_config
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,14 +56,17 @@ class SourceBuildHoldTests(unittest.TestCase):
                     Planner(inspector, {}, build=True, blocked=self.blocked).make([name])
                 self.assertEqual(inspector.calls, [[name]])
 
-    def test_deno_cannot_start_an_unbounded_transitive_llvm_source_build(self):
+    def test_deno_builds_its_compiler_toolchain_without_bottling_llvm(self):
         nodes = {
-            "deno": meta("deno", build=["rust"]),
-            "rust": meta("rust", build=["llvm"]),
+            "deno": meta("deno", build=["lld", "llvm", "rust"]),
+            "lld": meta("lld", runtime=["llvm"]),
             "llvm": meta("llvm"),
+            "rust": meta("rust", official=True),
         }
-        with self.assertRaisesRegex(Error, "Source build excluded by policy: llvm"):
-            self.plan(nodes, ["deno"])
+        plan = self.plan(nodes, ["deno"])
+        self.assertEqual(transient_builds(plan), {"lld", "llvm"})
+        self.assertEqual(plan["nodes"]["deno"]["provider"], "build")
+        self.assertEqual(plan["nodes"]["rust"]["provider"], "official")
 
     def test_qt_dependents_cannot_reintroduce_the_held_source_build(self):
         nodes = {
@@ -83,9 +87,8 @@ class SourceBuildHoldTests(unittest.TestCase):
         }
         selected, blocked = native_plan.roots_needing_build(
             ["deno", "qtbase", "qtsvg", "simdutf"], Inspector(nodes), {}, self.config)
-        self.assertEqual(selected, ["simdutf"])
-        self.assertEqual(set(blocked), {"deno", "qtbase", "qtsvg"})
-        self.assertIn("llvm", blocked["deno"])
+        self.assertEqual(selected, ["simdutf", "deno"])
+        self.assertEqual(set(blocked), {"qtbase", "qtsvg"})
         self.assertIn("qtbase", blocked["qtsvg"])
 
     def test_compatible_official_bottles_are_not_source_blocked(self):

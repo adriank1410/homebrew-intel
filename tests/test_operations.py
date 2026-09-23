@@ -236,6 +236,26 @@ class OperationTests(unittest.TestCase):
             plan['nodes']['fastfetch'] = meta('fastfetch', build=['llvm'])
         plan['roots'] = ['llvm']
         self.assertEqual(transient_builds(plan), set())
+
+    def test_runtime_edge_inside_the_build_toolchain_does_not_bottle_llvm(self):
+        plan = {'roots': ['deno'], 'nodes': {
+            'deno': meta('deno', build=['lld', 'llvm'], provider='build'),
+            'lld': meta('lld', runtime=['llvm'], provider='build'),
+            'llvm': meta('llvm', provider='build'),
+        }}
+        transient = transient_builds(plan)
+        self.assertEqual(transient, {'lld', 'llvm'})
+        self.assertEqual(_brew_install_args('llvm', transient),
+                         ['brew', 'install', '--build-from-source', '--no-ask', 'homebrew/core/llvm'])
+        self.assertEqual(_brew_install_args('lld', transient),
+                         ['brew', 'install', '--build-from-source', '--no-ask', 'homebrew/core/lld'])
+        self.assertEqual(_brew_install_args('deno', transient),
+                         ['brew', 'install', '--build-bottle', '--no-ask', 'homebrew/core/deno'])
+        published = {'roots': ['deno'], 'nodes': {
+            'deno': meta('deno', runtime=['llvm'], provider='build'),
+            'llvm': meta('llvm', provider='build'),
+        }}
+        self.assertEqual(transient_builds(published), set())
     def test_source_collection_uses_a_fresh_cache_per_package(self):
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.ci.native',side_effect=lambda request,**kwargs:{'name':request['name']}) as native:
             caches,sources=_prepare_source_sets(['dep','tool'],Path(d))
@@ -535,10 +555,6 @@ class SourceBundleTests(unittest.TestCase):
         def fake_native(request, **kwargs):
             if request["mode"] == "inspect":return {name:metadata[name] for name in request["names"]}
             return {}
-        unheld_config = load_config()
-        unheld_config["blocked_source_builds"] = [
-            name for name in unheld_config["blocked_source_builds"] if name != "llvm"
-        ]
         with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, {**env, "RUNNER_TEMP": d}, clear=True), \
              patch("intelbrew.ci.sync_registry", return_value="c" * 40), \
              patch("intelbrew.ci.registry", return_value={}), \
@@ -546,14 +562,8 @@ class SourceBundleTests(unittest.TestCase):
              patch("intelbrew.ci._prepare_source_sets", return_value=({"llvm": Path(d), "fastfetch": Path(d)}, {"llvm": {}, "fastfetch": {"formula_sha256": recipe_sha, "recipe_sha256": recipe_sha, "formula_path": str(recipe), "resources": []}})), \
              patch("intelbrew.ci._build_env", return_value={}), patch("intelbrew.ci.native", side_effect=fake_native), \
              patch("intelbrew.ci.collect_build_sources", return_value={"files": []}):
-            # Production policy must stop even a transient compiler before any build command.
-            with self.assertRaisesRegex(Error, "Source build excluded by policy: llvm"):
-                build("fastfetch", Path(d) / "blocked-candidate")
-            run.assert_not_called()
-            # Keep the mechanism covered under an explicit test-only lifted LLVM hold.
             out = Path(d) / "candidate"
-            with patch("intelbrew.ci.load_config", return_value=unheld_config):
-                build("fastfetch", out)
+            build("fastfetch", out)
             manifest=json.loads((out / "manifest.json").read_text())
             self.assertEqual([item["name"] for item in manifest["packages"]], ["fastfetch"])
             installs = [call.args[0] for call in run.call_args_list if call.args[0][1:2] == ["install"]]
@@ -585,23 +595,13 @@ class SourceBundleTests(unittest.TestCase):
             return {}
         def fake_install(name, *args, **kwargs):
             if name == "llvm": raise AssertionError("transient LLVM must not be installed during verification")
-        unheld_config = load_config()
-        unheld_config["blocked_source_builds"] = [
-            name for name in unheld_config["blocked_source_builds"] if name != "llvm"
-        ]
         # Candidate archive validation has dedicated coverage; this isolates the native install boundary.
         with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, env, clear=True), \
              patch("intelbrew.ci.validate_candidate", return_value=manifest), \
              patch("intelbrew.ci.registry", return_value={}), patch("intelbrew.ci.native", side_effect=fake_native), \
              patch("intelbrew.ci.install_binary", side_effect=fake_install) as install, \
              patch("intelbrew.ci.run") as run, patch("intelbrew.ci.shutil.copyfile"), patch("intelbrew.ci.write_json_new"):
-            # Independent replanning must also enforce the production LLVM hold.
-            with self.assertRaisesRegex(Error, "Source build excluded by policy: llvm"):
-                verify("fastfetch", Path(d) / "candidate", Path(d) / "blocked-verified")
-            install.assert_not_called()
-            run.assert_not_called()
-            with patch("intelbrew.ci.load_config", return_value=unheld_config):
-                verify("fastfetch", Path(d) / "candidate", Path(d) / "verified")
+            verify("fastfetch", Path(d) / "candidate", Path(d) / "verified")
             self.assertEqual([call.args[0] for call in install.call_args_list], ["fastfetch"])
             self.assertEqual([call.args[0][1] for call in run.call_args_list], ["linkage", "test"])
 
