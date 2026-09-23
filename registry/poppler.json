@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "852d436b5a6e99bb200cf879b4abaecaeb1f85b6",
+  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
   "filename": "poppler--26.09.0.sequoia.bottle.tar.gz",
   "formula_sha256": "825c6e7f1e97a142af94bdf53b954dff9340bb576a483cf5eca34e557aa26ddc",
   "license": {
@@ -14,9 +14,9 @@
   "name": "poppler",
   "pkg_version": "26.09.0",
   "recipe_sha256": "4b90c4c91c512b10835e95c75ae6bf392a295e5e9d107fc0b8109d34a845a507",
-  "release": "intel-35538964287-1-poppler",
+  "release": "intel-35824532597-1-poppler",
   "revision": 0,
-  "run_id": "35538964287",
+  "run_id": "35824532597",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -39,12 +39,12 @@
       "pkg_version": "2.14.3"
     },
     {
-      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "880250de443ce49d0908163d9035f28d2016905da0d3d175d212b0de921b31ae",
+      "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
       "name": "giflib",
       "pkg_version": "6.1.3"
     },
@@ -59,12 +59,12 @@
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "579aff561562499d55096242b6f168d0176a4a9719826252846d03df7c03cc43",
+      "formula_sha256": "16dfb3bf8ffdcef296f97d57eb93b0e619caaf1b01e92ebc61dcd7427bbd7208",
       "name": "gnupg",
       "pkg_version": "2.5.22"
     },
     {
-      "formula_sha256": "b67a754af35d495742cc72ad4ee7c25decd90e0586658a40028b77a6c99c359f",
+      "formula_sha256": "720a0b82acbc9f97fe2950c6b919ea5e9383b491c8ef7b7f06a7f3e16c9b8c07",
       "name": "gnutls",
       "pkg_version": "3.8.13_2"
     },
@@ -84,9 +84,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "6ebecbf2b199f6bcb8f1c585d1a6614f05cfafa8e31516acd31f8322577c2f01",
+      "formula_sha256": "745607d3d7ba91d5fe503e6ff43ac5caa1d35bbf1e7f3d9d2602039e928ba0dc",
       "name": "harfbuzz",
-      "pkg_version": "14.4.0"
+      "pkg_version": "14.5.0"
     },
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -144,12 +144,12 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
       "name": "libunistring",
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "7d30d0241b09b4efe210fe50673b9896cbe1c9d8c0ae90ba156a69c2ed84f56e",
+      "formula_sha256": "513c20f992711ced872639a391fbb0b3194e397ffddc4968b9f9b1e4f03b48ee",
       "name": "libusb",
       "pkg_version": "1.0.30"
     },
@@ -224,7 +224,7 @@
       "pkg_version": "2.5.4"
     },
     {
-      "formula_sha256": "f152829282b7158308897a73d7f459a5e7adadd4a993fee248f2139d460dee06",
+      "formula_sha256": "f417ea91e494ec02cc2c79284c80dd4f1b214ba6678a0669af531243aacdaded",
       "name": "p11-kit",
       "pkg_version": "0.26.5"
     },
@@ -249,7 +249,7 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "796753a0922012506d78b575f97b1214a60f6ceff1004629568962b70c6f4a4a",
+      "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
       "name": "webp",
       "pkg_version": "1.6.0"
     },
@@ -270,15 +270,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "966ca113405e3363c2c9a53a02cd671ea0d5ba206fd5c06498054daba1a31095",
-  "size": 9992912,
+  "sha256": "455481af209a9101be970abcd281a809679fc36b54d91613ae3e1ea520016be4",
+  "size": 9993039,
   "source": {
     "filename": "poppler--26.09.0.sources.tar.gz",
-    "sha256": "7895e5989023c6962a2d903d9cb64daac1043598b6d2975b925f909389c9b896",
-    "size": 6489326
+    "sha256": "4a59940670c238b58800a6264343ea2360d754d2ddecc945e1950749f669babe",
+    "size": 6489307
   },
   "tag": "sequoia",
   "version": "26.09.0",
   "version_scheme": 0,
-  "workflow_commit": "87305e4bfddda223934372ad0271ce188b6e8b97"
+  "workflow_commit": "7e279d4d7d8836f78961d6c16616e17d1a4d2e5c"
 }
