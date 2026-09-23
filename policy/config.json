@@ -10,7 +10,9 @@
   "target_os": "sequoia",
   "arch": "x86_64",
   "blocked_source_builds": [
+    "llvm",
     "qt",
+    "qtbase",
     "qtwebengine",
     "qtwebview"
   ],
