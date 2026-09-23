@@ -153,16 +153,16 @@ W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek komp
 wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
 (`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach.
 
-Budowanie `qtbase` jest tymczasowo wstrzymane: Qt 6.11.2 nie kompiluje się z
-md4c 0.6.0. Dotyczy to także pakietów wymagających ponownego zbudowania `qtbase`,
-lecz nie tych z kompletem pasujących butelek. Zobacz [przyczyny blokad i warunki
-ich usunięcia](docs/BUILD-HOLDS.md). Blokada nie oznacza udanej kompilacji ani
-zgody na użycie nieaktualnych zależności.
+Budowa `qtbase` jest wstrzymana tylko dla przepisu Qt 6.11.2
+`77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5` razem z
+przepisem md4c 0.6.0 `de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd`.
+To samo dotyczy pakietów, które musiałyby przebudować tę parę. Komplet
+pasujących butelek nadal się instaluje. Gdy Homebrew zmieni którykolwiek
+z tych plików, następny cron buduje `qtbase` bez edycji polityki. Szczegóły:
+[wstrzymania budowania](docs/BUILD-HOLDS.md).
 
-Wszystkie 35 modułowych pakietów Qt6 poza bezpośrednimi blokadami budowania
-(takich jak `qtdeclarative`, `qttools` i `qtsvg`) mają w rejestrze wcześniej
-zweryfikowane butelki. Historyczny wpis `qtbase` również pozostaje zachowany.
-Obecność starego wpisu nie gwarantuje zgodności z bieżącymi recepturami i zależnościami.
+Wszystkie 36 modułowych pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`,
+`qttools` i `qtsvg`) mają w rejestrze zweryfikowane butelki.
 
 Aby zlecić build jednego pakietu z listy celów, zmień `policy/build-request.json` na
 `main` i zwiększ `sequence`. Procedurę przeglądu i odzyskiwania po błędach

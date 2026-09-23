@@ -362,7 +362,7 @@ def build(root:str,output:Path)->None:
     if root not in allowed:raise Error("Root is not in reviewed target list")
     if output.exists():raise Error("Build output must be fresh")
     output.mkdir(parents=True);registry_commit=sync_registry();records=registry();inspector=lambda batch:native({"mode":"inspect","names":batch},ci=True)
-    plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"]).make([root])
+    plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"],holds=config["source_build_holds"]).make([root])
     transient=transient_builds(plan)
     to_build=[n for n in plan["order"] if plan["nodes"][n]["provider"]=="build"]
     if len(to_build)>config["max_source_builds"]:raise Error("Source build budget exceeded")
@@ -450,7 +450,7 @@ def verify(root:str,candidate:Path,output:Path)->None:
     if manifest.get("registry_commit"):sync_registry(manifest["registry_commit"])
     if manifest["packages"]:
         native({"mode":"guard-test"},ci=True);plan=manifest["plan"]
-        independent=Planner(lambda batch:native({"mode":"inspect","names":batch},ci=True),registry(),build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"]).make([root])
+        independent=Planner(lambda batch:native({"mode":"inspect","names":batch},ci=True),registry(),build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"],holds=config["source_build_holds"]).make([root])
         if plan!=independent:raise Error("Independent plan differs")
         transient=transient_builds(plan)
         local={r["name"]:r for r in manifest["packages"]};expected={n for n in plan["order"] if plan["nodes"][n]["provider"]=="build" and n not in transient}

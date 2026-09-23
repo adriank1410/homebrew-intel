@@ -40,21 +40,39 @@ class SourceBuildHoldTests(unittest.TestCase):
 
     def plan(self, nodes, roots, records=None, *, build=True):
         return Planner(Inspector(nodes), records or {}, build=build,
-                       blocked=self.blocked).make(roots)
+                       blocked=self.blocked, holds=self.config["source_build_holds"]).make(roots)
+
+    def held_qt_pair(self):
+        hold = self.config["source_build_holds"][0]
+        md4c = hold["dependencies"][0]
+        return {
+            "qtbase": meta("qtbase", formula_sha256=hold["formula_sha256"], runtime=["md4c"]),
+            "md4c": meta("md4c", formula_sha256=md4c["formula_sha256"], official=True),
+        }
 
     def test_incident_holds_are_explicit_and_do_not_block_all_qt_or_rust(self):
-        for name in ("llvm", "qtbase"):
-            self.assertIn(name, self.blocked)
+        self.assertIn("llvm", self.blocked)
+        self.assertNotIn("qtbase", self.blocked)
+        hold = self.config["source_build_holds"][0]
+        self.assertEqual(hold["name"], "qtbase")
+        self.assertEqual([item["name"] for item in hold["dependencies"]], ["md4c"])
         for name in ("deno", "rust", "qtsvg", "qtdeclarative", "qttools"):
             self.assertNotIn(name, self.blocked)
 
     def test_direct_source_holds_stop_before_fetching_dependency_metadata(self):
-        for name in ("llvm", "qtbase"):
-            with self.subTest(name=name):
-                inspector = Inspector({name: meta(name, build=["must-not-inspect"])})
-                with self.assertRaisesRegex(Error, f"Source build excluded by policy: {name}"):
-                    Planner(inspector, {}, build=True, blocked=self.blocked).make([name])
-                self.assertEqual(inspector.calls, [[name]])
+        inspector = Inspector({"llvm": meta("llvm", build=["must-not-inspect"])})
+        with self.assertRaisesRegex(Error, "Source build excluded by policy: llvm"):
+            Planner(inspector, {}, build=True, blocked=self.blocked,
+                    holds=self.config["source_build_holds"]).make(["llvm"])
+        self.assertEqual(inspector.calls, [["llvm"]])
+
+    def test_qtbase_recipe_hold_fetches_md4c_before_stopping(self):
+        nodes = self.held_qt_pair()
+        inspector = Inspector(nodes)
+        with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):
+            Planner(inspector, {}, build=True, blocked=self.blocked,
+                    holds=self.config["source_build_holds"]).make(["qtbase"])
+        self.assertEqual(inspector.calls, [["qtbase"], ["md4c"]])
 
     def test_deno_builds_its_compiler_toolchain_without_bottling_llvm(self):
         nodes = {
@@ -69,11 +87,8 @@ class SourceBuildHoldTests(unittest.TestCase):
         self.assertEqual(plan["nodes"]["rust"]["provider"], "official")
 
     def test_qt_dependents_cannot_reintroduce_the_held_source_build(self):
-        nodes = {
-            "qtsvg": meta("qtsvg", runtime=["qtbase"]),
-            "qtbase": meta("qtbase", runtime=["md4c"]),
-            "md4c": meta("md4c", official=True),
-        }
+        nodes = self.held_qt_pair()
+        nodes["qtsvg"] = meta("qtsvg", runtime=["qtbase"])
         with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):
             self.plan(nodes, ["qtsvg"])
 
@@ -81,7 +96,8 @@ class SourceBuildHoldTests(unittest.TestCase):
         nodes = {
             "deno": meta("deno", build=["llvm"]),
             "llvm": meta("llvm"),
-            "qtbase": meta("qtbase"),
+            "qtbase": meta("qtbase", formula_sha256=self.config["source_build_holds"][0]["formula_sha256"], runtime=["md4c"]),
+            "md4c": meta("md4c", formula_sha256=self.config["source_build_holds"][0]["dependencies"][0]["formula_sha256"], official=True),
             "qtsvg": meta("qtsvg", runtime=["qtbase"]),
             "simdutf": meta("simdutf"),
         }
@@ -111,12 +127,22 @@ class SourceBuildHoldTests(unittest.TestCase):
         self.assertEqual(result["nodes"]["llvm"]["provider"], "personal")
         self.assertEqual(result["nodes"]["deno"]["provider"], "build")
 
+    def test_qtbase_hold_expires_when_either_recipe_changes(self):
+        hold = self.config["source_build_holds"][0]
+        md4c_sha = hold["dependencies"][0]["formula_sha256"]
+        for changed in (
+            {"qtbase": meta("qtbase", formula_sha256="b" * 64, runtime=["md4c"]),
+             "md4c": meta("md4c", formula_sha256=md4c_sha, official=True)},
+            {"qtbase": meta("qtbase", formula_sha256=hold["formula_sha256"], runtime=["md4c"]),
+             "md4c": meta("md4c", formula_sha256="b" * 64, official=True)},
+        ):
+            with self.subTest(changed=sorted(changed)):
+                result = self.plan(changed, ["qtbase"])
+                self.assertEqual(result["nodes"]["qtbase"]["provider"], "build")
+
     def test_dependency_drift_cannot_bypass_the_hold_on_recursive_replanning(self):
-        nodes = {
-            "qtbase": meta("qtbase", runtime=["md4c"]),
-            "md4c": meta("md4c", official=True),
-        }
-        old = record("qtbase", runtime_dependencies=[{
+        nodes = self.held_qt_pair()
+        old = record("qtbase", formula_sha256=nodes["qtbase"]["formula_sha256"], runtime_dependencies=[{
             "name": "md4c", "pkg_version": "0.5.2", "formula_sha256": "a" * 64,
         }])
         with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):

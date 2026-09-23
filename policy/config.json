@@ -12,9 +12,20 @@
   "blocked_source_builds": [
     "llvm",
     "qt",
-    "qtbase",
     "qtwebengine",
     "qtwebview"
+  ],
+  "source_build_holds": [
+    {
+      "name": "qtbase",
+      "formula_sha256": "77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5",
+      "dependencies": [
+        {
+          "name": "md4c",
+          "formula_sha256": "de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd"
+        }
+      ]
+    }
   ],
   "scheduled_batch_size": 24,
   "permissive_license_tokens": [

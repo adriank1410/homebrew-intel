@@ -27,17 +27,19 @@ built Qt 6.11.2 after installing md4c 0.6.0. Compilation of
 assertion with `1068812 == 1593100` (false). Repeating the same pinned recipe and
 dependency graph does not resolve this source incompatibility.
 
-`qtbase` is therefore temporarily listed in `blocked_source_builds`. This is a
-name-based hold requiring review to remove, **not** an automatically expiring
-version range. Other Qt modules are not individually excluded, but cannot
-rebuild a held Qt dependency. Existing matching bottle graphs are unaffected.
+The hold is the pair of recipe-file hashes in `source_build_holds`: Qt 6.11.2
+`77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5` together with
+md4c 0.6.0 `de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd`.
+It applies only when a published package would be built from that exact pair.
+Other Qt modules are not individually excluded. A complete, matching bottle
+graph is still installed.
 
-Removal criteria: identify the official core/Qt/md4c change that resolves the
-incompatibility; update the reviewed engine/core pair as needed; remove only
-the `qtbase` hold in a PR; and demonstrate a real Intel source build, independent
-pour, formula test, linkage check and normal attested publication. A green
-planner/unit check alone does not prove this. Update the incident regression
-expectations and documentation to match that reviewed recovery.
+Daily pin maintenance moves `core_commit` when Homebrew's main branch moves.
+The next bottle run then sees the new recipe files. If either hash differs,
+the hold does not match and `qtbase` is built with the normal scheduler. No
+policy edit is required for that retry. After a successful publication, delete
+the stale hash entry so the policy file does not keep a pair that can no
+longer occur.
 
 Do not delete the assertion, patch the recipe silently, relabel an old bottle's
 dependency hashes, or disable dependency drift detection to obtain a green run.
