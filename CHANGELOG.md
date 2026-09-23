@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Hold `qtbase` source builds only for the Qt 6.11.2 and md4c 0.6.0 recipe hashes, so the next scheduled run rebuilds it when Homebrew changes either file.
 - Build LLVM from source without a bottle when published packages need it only as a compiler, so Homebrew skips the profile-guided `check-clang`/`check-llvm` suite. A request to publish `llvm` itself stays source-held.
 - Pin Homebrew/brew and homebrew-core together, with daily update PRs and a required native formula/Cargo compatibility check, so core updates cannot silently outpace the reviewed engine.
 - Advance Homebrew/brew to `a83186e02a6c4b98cd44a290cdb56e136feaa596`, which defines `std_cargo_fetch_args` used by current Cargo formulae.

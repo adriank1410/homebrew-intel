@@ -96,10 +96,39 @@ def digest(path):
         for chunk in iter(lambda:f.read(1024*1024),b''):h.update(chunk)
     return h.hexdigest()
 
+def validate_source_build_holds(holds):
+    if not holds:return []
+    if isinstance(holds,tuple):holds=list(holds)
+    if not isinstance(holds,list) or len(holds)>50:raise Error('Invalid source-build holds')
+    seen=set()
+    for hold in holds:
+        if not isinstance(hold,dict) or set(hold)!={'name','formula_sha256','dependencies'}:raise Error('Invalid source-build hold')
+        name=canonical_name(hold['name'])
+        if name in seen:raise Error('Duplicate source-build hold')
+        seen.add(name);require_sha(hold['formula_sha256'])
+        deps=hold['dependencies']
+        if not isinstance(deps,list) or not deps or len(deps)>20:raise Error('Invalid source-build hold')
+        dep_names=set()
+        for dep in deps:
+            if not isinstance(dep,dict) or set(dep)!={'name','formula_sha256'}:raise Error('Invalid source-build hold')
+            dep_name=canonical_name(dep['name'])
+            if dep_name==name or dep_name in dep_names:raise Error('Invalid source-build hold')
+            dep_names.add(dep_name);require_sha(dep['formula_sha256'])
+    return holds
+
+def source_build_held(holds,name,nodes):
+    meta=nodes.get(name)
+    if not isinstance(meta,dict):return False
+    for hold in holds:
+        if hold['name']!=name or hold['formula_sha256']!=meta.get('formula_sha256'):continue
+        if all(isinstance(nodes.get(dep['name']),dict) and nodes[dep['name']].get('formula_sha256')==dep['formula_sha256'] for dep in hold['dependencies']):return True
+    return False
+
 def load_config():
     c=read_json(ROOT/'policy/config.json')
     if c.get('schema')!=1 or c.get('repository')!='adriank1410/homebrew-intel':raise Error('Unexpected configuration')
-    require_sha(c['brew_commit'],git=True);require_sha(c['core_commit'],git=True);return c
+    require_sha(c['brew_commit'],git=True);require_sha(c['core_commit'],git=True)
+    c['source_build_holds']=validate_source_build_holds(c.get('source_build_holds',[]));return c
 
 def validate_record(d,*,published=True):
     if not isinstance(d,dict) or set(d)!=RECORD_KEYS or d.get('schema')!=1:raise Error('Unknown/incomplete record schema')
@@ -202,7 +231,7 @@ def transient_source_builds(plan):
     return transient
 
 class Planner:
-    def __init__(self,inspect,records,*,build=False,max_nodes=400,blocked=(),allow_drift_as_missing=False):self.inspect=inspect;self.records=records;self.build=build;self.max_nodes=max_nodes;self.blocked=set(blocked);self.allow_drift_as_missing=allow_drift_as_missing;self.nodes={}
+    def __init__(self,inspect,records,*,build=False,max_nodes=400,blocked=(),holds=(),allow_drift_as_missing=False):self.inspect=inspect;self.records=records;self.build=build;self.max_nodes=max_nodes;self.blocked=set(blocked);self.holds=validate_source_build_holds(holds);self.allow_drift_as_missing=allow_drift_as_missing;self.nodes={}
     def make(self,roots):
         requested=list(dict.fromkeys(canonical_name(n) for n in roots))
         if not requested:raise Error('At least one formula required')
@@ -237,7 +266,7 @@ class Planner:
                 if actual is None or actual['pkg_version']!=dep['pkg_version'] or actual['formula_sha256']!=dep['formula_sha256']:
                     if not self.build and not self.allow_drift_as_missing:raise Error(f'Personal bottle dependency drift: {name} -> {dep["name"]}; rebuild needed')
                     stale.add(name)
-        if stale:return Planner(self.inspect,{n:r for n,r in self.records.items() if n not in stale},build=self.build,max_nodes=self.max_nodes,blocked=self.blocked,allow_drift_as_missing=self.allow_drift_as_missing).make(requested)
+        if stale:return Planner(self.inspect,{n:r for n,r in self.records.items() if n not in stale},build=self.build,max_nodes=self.max_nodes,blocked=self.blocked,holds=self.holds,allow_drift_as_missing=self.allow_drift_as_missing).make(requested)
         ordered=[];visiting=[];done=set()
         def visit(name):
             if name in done:return
@@ -247,7 +276,8 @@ class Planner:
             visiting.pop();done.add(name);ordered.append(name)
         for n in requested:visit(n)
         plan={'schema':1,'roots':requested,'order':ordered,'nodes':self.nodes}
-        held=sorted(name for name,meta in self.nodes.items() if meta.get('provider')=='build' and name in self.blocked and name not in transient_source_builds(plan))
+        transient=transient_source_builds(plan)
+        held=sorted(name for name,meta in self.nodes.items() if meta.get('provider')=='build' and name not in transient and (name in self.blocked or source_build_held(self.holds,name,self.nodes)))
         if held:raise Error(f'Source build excluded by policy: {held[0]}')
         return plan
 

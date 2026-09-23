@@ -149,16 +149,15 @@ Specifically, `qtwebengine` (Chromium engine with ~40,000 translation units,
 requiring more than 35 GB disk space and 8–10 hours of CPU compilation) and
 formulas requiring it (`qt`, `qtwebview`) cannot be built on standard runners.
 
-`qtbase` is temporarily source-held because Qt 6.11.2 fails to compile with
-md4c 0.6.0. This also holds dependents that would need to rebuild `qtbase`, not
-those with a complete, matching bottle graph. See [build holds and removal
-criteria](docs/BUILD-HOLDS.md). These are build-availability limits, not successful
-builds or permission to use stale dependencies.
+`qtbase` source builds are held only while the recipe file is still Qt 6.11.2
+`77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5` and `md4c`
+is still 0.6.0 `de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd`.
+Dependents that would rebuild that pair are held too. A complete, matching
+bottle graph is still installed. When Homebrew changes either recipe file, the
+next scheduled run builds `qtbase` without a policy edit. See [build holds](docs/BUILD-HOLDS.md).
 
-All 35 modular Qt6 module formulas outside the direct source holds (such as
-`qtdeclarative`, `qttools`, and `qtsvg`) have previously verified bottle records
-in the registry; the historical `qtbase` record is retained too. A historical
-record does not guarantee usability with today's recipes and dependencies.
+All 36 modular Qt6 module formulas (such as `qtbase`, `qtdeclarative`,
+`qttools`, and `qtsvg`) have verified bottle records in the registry.
 
 To request one reviewed target, edit `policy/build-request.json` on `main` and
 increment `sequence`. See [Operations](docs/OPERATIONS.md) for the review and
