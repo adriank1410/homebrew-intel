@@ -139,14 +139,30 @@ uruchamia testy i scala dokładnie sprawdzony commit, gdy przejdzie on wymagane
 kontrole ochrony gałęzi. Nie pozostawia włączonego oczekującego auto-merge. Klient widzi nowe
 wpisy po scaleniu.
 
+LLVM, którego żaden publikowany pakiet nie potrzebuje przy uruchomieniu ani
+w teście formuły, powstaje ze źródeł i nie wchodzi do zestawu kandydatów.
+Przepis Homebrew pomija wtedy bootstrap profilowany oraz zestaw `check-clang` /
+`check-llvm`. Publikacja samego `llvm` pozostaje wstrzymana: ta butelka nie
+mieści się w sześciogodzinnym limicie runnera. Zgodne butelki oficjalne
+i opublikowane `llvm@22` nadal można instalować.
+
 Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłatnych runnerów
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca
 na dysku SSD, 4 vCPU) są jawnie wykluczone przez regułę `blocked_source_builds` w `policy/config.json`.
 W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek kompilacji,
 wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
-(`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach. Wszystkie 36 modułowych
-pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`, `qttools`, `qtsvg` itp.) posiadają
-zweryfikowane gotowe butelki w rejestrze.
+(`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach.
+
+Budowanie `qtbase` jest tymczasowo wstrzymane: Qt 6.11.2 nie kompiluje się z
+md4c 0.6.0. Dotyczy to także pakietów wymagających ponownego zbudowania `qtbase`,
+lecz nie tych z kompletem pasujących butelek. Zobacz [przyczyny blokad i warunki
+ich usunięcia](docs/BUILD-HOLDS.md). Blokada nie oznacza udanej kompilacji ani
+zgody na użycie nieaktualnych zależności.
+
+Wszystkie 35 modułowych pakietów Qt6 poza bezpośrednimi blokadami budowania
+(takich jak `qtdeclarative`, `qttools` i `qtsvg`) mają w rejestrze wcześniej
+zweryfikowane butelki. Historyczny wpis `qtbase` również pozostaje zachowany.
+Obecność starego wpisu nie gwarantuje zgodności z bieżącymi recepturami i zależnościami.
 
 Aby zlecić build jednego pakietu z listy celów, zmień `policy/build-request.json` na
 `main` i zwiększ `sequence`. Procedurę przeglądu i odzyskiwania po błędach

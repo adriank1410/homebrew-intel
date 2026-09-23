@@ -166,6 +166,41 @@ def native(request,*,capture=True,ci=False,cache=None):
     try:return json.loads(out)
     except ValueError as exc:raise Error('Native bridge returned non-JSON') from exc
 
+def _runtime_test_deps(meta):
+    deps=[]
+    if not isinstance(meta,dict):return deps
+    for edge in ('runtime','test'):
+        values=meta.get(edge)
+        if isinstance(values,list):deps.extend(values)
+    return deps
+
+def transient_source_builds(plan):
+    """Unbottled source builds of LLVM and packages that only exist to link to it.
+
+    Homebrew's unversioned llvm formula runs check-clang and check-llvm only
+    while building a bottle. A compiler install uses --build-from-source and
+    skips that suite. Other build tools keep their normal bottles.
+    """
+    nodes=plan.get('nodes') if isinstance(plan,dict) else None
+    roots=plan.get('roots') if isinstance(plan,dict) else None
+    if not isinstance(nodes,dict) or not isinstance(roots,list):return set()
+    publish=set();pending=[root for root in roots if root in nodes]
+    while pending:
+        name=pending.pop()
+        if name in publish:continue
+        publish.add(name)
+        pending.extend(dep for dep in _runtime_test_deps(nodes.get(name)) if dep in nodes and dep not in publish)
+    llvm=nodes.get('llvm')
+    if not isinstance(llvm,dict) or llvm.get('provider')!='build' or 'llvm' in publish:return set()
+    transient={'llvm'};growing=True
+    while growing:
+        growing=False
+        for name,meta in nodes.items():
+            if name in transient or name in publish or not isinstance(meta,dict) or meta.get('provider')!='build':continue
+            if any(dep in transient for dep in _runtime_test_deps(meta)):
+                transient.add(name);growing=True
+    return transient
+
 class Planner:
     def __init__(self,inspect,records,*,build=False,max_nodes=400,blocked=(),allow_drift_as_missing=False):self.inspect=inspect;self.records=records;self.build=build;self.max_nodes=max_nodes;self.blocked=set(blocked);self.allow_drift_as_missing=allow_drift_as_missing;self.nodes={}
     def make(self,roots):
@@ -188,7 +223,7 @@ class Planner:
                 if type(m.get('vcs_source')) is not bool:raise Error(f'Invalid source strategy metadata: {name}')
                 rec=matching_record(m,self.records)
                 provider='installed' if m.get('installed_current') and not self.build else 'official' if m.get('official_bottle') else 'personal' if rec else 'build' if self.build else 'missing'
-                if provider=='build' and name in self.blocked:raise Error(f'Source build excluded by policy: {name}')
+                if provider=='build' and name in self.blocked and name in requested:raise Error(f'Source build excluded by policy: {name}')
                 if provider=='build' and m['vcs_source'] and m.get('pinned_git_source') is not True and m.get('pinned_svn_source') is not True:raise Error(f'VCS source needs review: {name}')
                 deps=set(m.get('runtime',[]))
                 if provider=='build':deps.update(m.get('build',[]));deps.update(m.get('test',[]))
@@ -211,7 +246,10 @@ class Planner:
             for dep in self.nodes[name]['dependencies']:visit(dep)
             visiting.pop();done.add(name);ordered.append(name)
         for n in requested:visit(n)
-        return {'schema':1,'roots':requested,'order':ordered,'nodes':self.nodes}
+        plan={'schema':1,'roots':requested,'order':ordered,'nodes':self.nodes}
+        held=sorted(name for name,meta in self.nodes.items() if meta.get('provider')=='build' and name in self.blocked and name not in transient_source_builds(plan))
+        if held:raise Error(f'Source build excluded by policy: {held[0]}')
+        return plan
 
 def ensure_complete(plan):
     missing=[n for n in plan['order'] if plan['nodes'][n]['provider']=='missing']
