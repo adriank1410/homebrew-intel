@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "any",
-  "core_commit": "d971456fa30607b6de22930f86f89783c395efaa",
+  "core_commit": "4fccca4b6cd9e200b5bbfd55f5c165bff7ae835d",
   "filename": "rust--1.98.1.sequoia.bottle.tar.gz",
   "formula_sha256": "6aad5c0ef80c0ab792b3ad1014786844ba78f90d24093f68cee2b433fb8a83cf",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.98.1",
   "recipe_sha256": "c28a89b9db0ee5d0d15d8a09fe38cc7a201c58a142cd375325c1d6d7042a5ad6",
-  "release": "intel-35338355014-1-rust",
+  "release": "intel-36017351683-1-rust",
   "revision": 0,
-  "run_id": "35338355014",
+  "run_id": "36017351683",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -24,7 +24,7 @@
       "pkg_version": "2026-08-13"
     },
     {
-      "formula_sha256": "4e6813d7c462bc37f7456cebf7354da97041c075e8fcfdcf9902c32400daabee",
+      "formula_sha256": "3807eb37348b511c073e0f66fc0b75318aee6a4346f7762fb6f4b6c0bcc855fc",
       "name": "libgit2",
       "pkg_version": "1.9.7"
     },
@@ -80,15 +80,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "446c8b2916aad30477ef60a867e53ebd4784ed463146a15368bbc72328cb8797",
-  "size": 109581672,
+  "sha256": "f2188b5f92a60aee52ee33e7cdf115b53056bcd120d8d7b090a04581c34d5105",
+  "size": 109580285,
   "source": {
     "filename": "rust--1.98.1.sources.tar.gz",
-    "sha256": "b6da0a586e181f4637fa8b2fcf724d06b64a63de5944d4e2da256ccd345e97cb",
-    "size": 640628873
+    "sha256": "e9d74d92693c8f469bd62b6d9cc7c5f61f911256d6752ecc52b1f8dcd21dc4e4",
+    "size": 640628893
   },
   "tag": "sequoia",
   "version": "1.98.1",
   "version_scheme": 0,
-  "workflow_commit": "3a6f19c62c1f3b2b0c0c6f512db8fc17d50d20d7"
+  "workflow_commit": "1f5dc3b746865d9789e8d626f9f2729258794fe2"
 }
