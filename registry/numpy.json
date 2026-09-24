@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
   "filename": "numpy--2.5.3.sequoia.bottle.tar.gz",
   "formula_sha256": "b2871fb8a4ebb95d0bc4a10a849d0f1b370ca33e87fff1799a7c8c3ff08dd38d",
   "license": "BSD-3-Clause",
   "name": "numpy",
   "pkg_version": "2.5.3",
   "recipe_sha256": "0c4eb46294a80e20d2ab13de54580d9968da358d46d27c979b06568d867340aa",
-  "release": "intel-35770115144-1-numpy",
+  "release": "intel-36046023945-1-numpy",
   "revision": 0,
-  "run_id": "35770115144",
+  "run_id": "36046023945",
   "runtime_dependencies": [
     {
       "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
@@ -34,9 +34,9 @@
       "pkg_version": "1.4.1"
     },
     {
-      "formula_sha256": "58309f786d3aa53dd5850ee4e553fd01c0dfa683c5dab4e26c8c294d17a684b0",
+      "formula_sha256": "a363a3b4075b6126dd0a35b170ba30f2784871a3ea5ec66a8add80daf7f03ba0",
       "name": "libomp",
-      "pkg_version": "23.1.1"
+      "pkg_version": "23.1.2"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a41799641c9fa2fe63df9eb30b141527b9d498c6629f3b9d5ca960f9d989ffa2",
-  "size": 11163693,
+  "sha256": "a10564cc2491d19a80c430dddcb579223fc996d4e20536c7c60b60b218253ecc",
+  "size": 11163739,
   "source": {
     "filename": "numpy--2.5.3.sources.tar.gz",
-    "sha256": "a7e80fc7a3985b75e76519f8baff6e5898d698ff001a9a60eda30b7726196db4",
-    "size": 20769307
+    "sha256": "ea1f160ba543931508a410b621deb50650baf5664c4a5470241c96746a640b28",
+    "size": 20769298
   },
   "tag": "sequoia",
   "version": "2.5.3",
   "version_scheme": 0,
-  "workflow_commit": "4750bdafa79783d8683a2b21a601242bf9a565bd"
+  "workflow_commit": "36690b1785ff55681dd68e86d695a63c25fb50b8"
 }
