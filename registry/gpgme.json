@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
   "filename": "gpgme--2.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "91bbde19b895edfe0e4e413ed77e4cf0cf3aea6631fb5d93e75290cc3eed58af",
   "license": "LGPL-2.1-or-later",
   "name": "gpgme",
   "pkg_version": "2.2.0",
   "recipe_sha256": "52a601311da12ef2587462a4b95237f98d987da442d9ee26d71e52bbf500a0fb",
-  "release": "intel-35770115144-1-gpgme",
+  "release": "intel-36046023945-1-gpgme",
   "revision": 0,
-  "run_id": "35770115144",
+  "run_id": "36046023945",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -29,9 +29,9 @@
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "16dfb3bf8ffdcef296f97d57eb93b0e619caaf1b01e92ebc61dcd7427bbd7208",
+      "formula_sha256": "63dafd5451767fc2df1b0be02138ca415c685de0196f43f9277c468104a7f402",
       "name": "gnupg",
-      "pkg_version": "2.5.22"
+      "pkg_version": "2.5.24"
     },
     {
       "formula_sha256": "720a0b82acbc9f97fe2950c6b919ea5e9383b491c8ef7b7f06a7f3e16c9b8c07",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6425f6ebf1ef81b50575124fcaf9e8725af502fc84f36eb51d998e6f5b77a86d",
-  "size": 786278,
+  "sha256": "d96612608d88cd515d02715539c4eaceb88b0576dfab56bfd0c0ddde3d9155fa",
+  "size": 786272,
   "source": {
     "filename": "gpgme--2.2.0.sources.tar.gz",
-    "sha256": "d4c3b21194ca672531bceeb0168f0288312a1bc6cef6edb6060c8c29956fd2e2",
-    "size": 1439546
+    "sha256": "c0ccd1fd6ee0f36f3542831264b306a84944b157c6afeb9df99336eb28798506",
+    "size": 1439547
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "4750bdafa79783d8683a2b21a601242bf9a565bd"
+  "workflow_commit": "36690b1785ff55681dd68e86d695a63c25fb50b8"
 }
