@@ -51,8 +51,10 @@ planning and runner preparation use exactly that pair; an explicit mismatched
 `homebrew-pins.yml` runs daily at 03:25 UTC and supports manual dispatch on `main`.
 It proposes current upstream main commits together on `automation/homebrew-pins`,
 refreshes an existing proposal from repository main, and opens or updates a PR
-using the scoped App token. It never merges the proposal. New formula versions
-become build candidates after the pair update is reviewed and merged.
+using the scoped App token. Registry maintenance squash-merges that pull request after the required `tests` check
+succeeds for that exact head. It does not queue GitHub auto-merge. A failed
+native check leaves the proposal open.
+New formula versions become build candidates after that merge.
 
 The Linux schedule prefilter uses live Homebrew API metadata only when its
 `tap_git_head` matches the reviewed core pin. While upstream has advanced, it
@@ -129,7 +131,8 @@ a conflicted registry branch from main after checking both attested manifests.
 It preserves the already-published dependency only when its recipe, version and
 provenance match; incompatible records or a changed main snapshot stop the repair.
 
-Source and workflow PRs still need explicit owner approval to merge. The narrowly
+Source and workflow PRs still need explicit owner approval to merge. The
+App-authored Homebrew pin update is the maintenance exception above, and the narrowly
 scoped owner-authored `coverage/intel-installed` PR is the exception described below. On a client run
 `brew update`, then `brew intel doctor` and `brew intel plan NAME`. Apply a small
 subset first. Build dispatch or release creation is not permission to change the

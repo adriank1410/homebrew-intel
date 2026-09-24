@@ -72,6 +72,25 @@ class AppWorkflowTests(unittest.TestCase):
         self.assertEqual(document["jobs"]["root-pipeline"]["strategy"]["max-parallel"], 5)
         self.assertIn("refs/heads/main", workflow("bottle-root.yml")["jobs"]["publish"]["if"])
 
+    def test_pin_merge_follows_registry_maintenance_and_uses_the_app_token(self):
+        steps = workflow("registry.yml")["jobs"]["reconcile"]["steps"]
+        registry_index = next(i for i, step in enumerate(steps)
+                               if "intelbrew.registry_pr" in step.get("run", ""))
+        coverage_index = next(i for i, step in enumerate(steps)
+                               if "sync-coverage.py --reconcile" in step.get("run", ""))
+        pin_index = next(i for i, step in enumerate(steps)
+                          if "intelbrew.pin_pr" in step.get("run", ""))
+        pin = steps[pin_index]
+        self.assertLess(registry_index, coverage_index)
+        self.assertLess(coverage_index, pin_index)
+        self.assertIn("!cancelled()", pin["if"])
+        self.assertIn("steps.app-token.outcome == 'success'", pin["if"])
+        self.assertEqual(pin["env"]["GH_TOKEN"], "${{ steps.app-token.outputs.token }}")
+        self.assertEqual(pin["env"]["INTELBREW_BOT_LOGIN"],
+                         "app/${{ steps.app-token.outputs.app-slug }}")
+        self.assertNotIn("INTELBREW_ATTESTATION_TOKEN", pin.get("env", {}))
+        self.assertNotIn("--auto", pin["run"])
+
     def test_coverage_maintenance_is_independent_and_owner_scoped(self):
         steps = workflow("registry.yml")["jobs"]["reconcile"]["steps"]
         operation = next(step for step in steps if "sync-coverage.py --reconcile" in step.get("run", ""))

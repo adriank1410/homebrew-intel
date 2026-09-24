@@ -31,6 +31,12 @@ class HomebrewPinUpdateTests(unittest.TestCase):
         self.assertNotIn("|| true", script)
         self.assertNotIn("pr merge", script)
         self.assertTrue(any(step.get("id") == "app-token" for step in job["steps"]))
+        operations = (ROOT / "docs/OPERATIONS.md").read_text()
+        self.assertIn(
+            "squash-merges that pull request after the required `tests` check",
+            operations,
+        )
+        self.assertNotIn("It never merges the proposal", operations)
 
     def test_resolve_pins_reads_both_heads_before_returning(self):
         responses = iter(("a" * 40 + "\trefs/heads/main\n",

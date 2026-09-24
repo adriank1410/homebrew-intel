@@ -48,7 +48,9 @@ Downloaded artifacts are validated as bounded data. The publishing stage never
 sources a downloaded shell/Python/Ruby script. The writer creates a unique
 release and registry branch. Registry automation opens PRs and performs immediate head-pinned merges
 only for same-repository PRs from the configured App whose complete registry diff matches an attested
-release manifest. Required tests and branch protection remain effective. GitHub
+release manifest. The same maintenance job also squash-merges the App-authored
+`automation/homebrew-pins` pull request when its only change is `policy/config.json`
+and the required `tests` check succeeded for that head. Required tests and branch protection remain effective. GitHub
 auto-merge is not queued: each merge revalidates the current head and supplies
 `--match-head-commit`, so later branch changes cannot inherit approval. It does
 not approve reviews, replace release assets, move tags, or force-push. GitHub
