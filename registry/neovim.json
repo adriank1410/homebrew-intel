@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "4fccca4b6cd9e200b5bbfd55f5c165bff7ae835d",
   "filename": "neovim--0.12.5_1.sequoia.bottle.tar.gz",
   "formula_sha256": "49d7fecab9028d9f1f2c7f95098e09a932a6d8e59b2e17e64ffce2fe1c597d14",
   "license": "Apache-2.0",
   "name": "neovim",
   "pkg_version": "0.12.5_1",
   "recipe_sha256": "c9e861c5da1633aa443311c7bb92af3c77b9c32b04e046b47180e174ac3c69e9",
-  "release": "intel-35743217955-1-neovim",
+  "release": "intel-36017351683-1-neovim",
   "revision": 1,
-  "run_id": "35743217955",
+  "run_id": "36017351683",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -29,7 +29,7 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "dca56d2444d2f84f1320d4ee2c9c436a5a357e12b4ac1f8708f640894370f77f",
+      "formula_sha256": "506e25b427f0a609775f97c8c5aa31cb6302d0f4e8e6fe5d8f12f996681e70ef",
       "name": "libuv",
       "pkg_version": "1.52.1"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9e5280672042e40f6dcdd3efc618e34dca6ba9510a3498da6cd0faa9a3e0bbbb",
-  "size": 8362649,
+  "sha256": "caef56f0f3bbb8bcb183b2940da70230d32f9f453aa81449c6092139f403e910",
+  "size": 8362821,
   "source": {
     "filename": "neovim--0.12.5_1.sources.tar.gz",
-    "sha256": "5c26a3707e46d04d0c1a789d615f0c8ae848e3040cfe3bf3151488f276e5f2a5",
-    "size": 14987115
+    "sha256": "8580c268cb0bbcdfaa6d8955a716ee8ab2a8acf01c828550a5f7e9afac98cde0",
+    "size": 14987122
   },
   "tag": "sequoia",
   "version": "0.12.5",
   "version_scheme": 0,
-  "workflow_commit": "3f8c9752dfd20a10bded0f5237922348f8ba2f05"
+  "workflow_commit": "1f5dc3b746865d9789e8d626f9f2729258794fe2"
 }
