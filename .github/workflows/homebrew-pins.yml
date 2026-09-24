@@ -80,7 +80,8 @@ jobs:
           This automated PR updates the reviewed Homebrew/brew and Homebrew/core
           commits together. The native `tests` gate prepares this exact pair,
           loads all reviewed formulae, and exercises a real Cargo fetch hook before
-          merge. This workflow does not build bottles or merge the PR.
+          merge. Registry maintenance squash-merges this pull request after that
+          check succeeds for this exact head. It does not queue GitHub auto-merge.
           EOF
           pr_url="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branch" --state open --json url --jq '.[0].url // empty')"
           if [[ -n "$pr_url" ]]; then
