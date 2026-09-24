@@ -75,6 +75,7 @@ def roots_needing_build(roots, inspector, records, config):
                 build=True,
                 max_nodes=config['max_graph_nodes'],
                 blocked=config.get('blocked_source_builds', []),
+                holds=config.get('source_build_holds', []),
             ).make([root])
             builds = [name for name in plan['order'] if plan['nodes'][name]['provider'] == 'build']
             if not builds:

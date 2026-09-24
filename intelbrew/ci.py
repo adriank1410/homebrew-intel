@@ -8,7 +8,8 @@ from .build_sources import MAX_FILES as MAX_BUILD_SOURCE_FILES, collect_build_so
 from .cli import attest
 from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, brew_env, canonical_name,
                    check_bottle, digest, download, load_config, native, read_json,
-                   registry, require_sha, retry_transient, run, validate_record, write_json_new)
+                   registry, require_sha, retry_transient, run, transient_source_builds,
+                   validate_record, write_json_new)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
@@ -161,18 +162,8 @@ def runtime_closure(name:str,nodes:dict)->list[str]:
 
 
 def transient_builds(plan:dict)->set[str]:
-    """Return the isolated LLVM build edge that needs no published bottle."""
-    roots=plan.get("roots") if isinstance(plan,dict) else None
-    nodes=plan.get("nodes") if isinstance(plan,dict) else None
-    llvm=nodes.get("llvm") if isinstance(nodes,dict) else None
-    if not isinstance(roots,list) or not isinstance(nodes,dict) or not isinstance(llvm,dict):return set()
-    if llvm.get("provider")!="build" or "llvm" in roots:return set()
-    for name,meta in nodes.items():
-        if name=="llvm" or not isinstance(meta,dict):continue
-        for edge in ("runtime","test"):
-            dependencies=meta.get(edge)
-            if not isinstance(dependencies,list) or "llvm" in dependencies:return set()
-    return {"llvm"}
+    """Return source builds installed only to compile published packages."""
+    return transient_source_builds(plan)
 
 
 def _brew_install_args(name:str,transient:set[str])->list[str]:
@@ -371,7 +362,7 @@ def build(root:str,output:Path)->None:
     if root not in allowed:raise Error("Root is not in reviewed target list")
     if output.exists():raise Error("Build output must be fresh")
     output.mkdir(parents=True);registry_commit=sync_registry();records=registry();inspector=lambda batch:native({"mode":"inspect","names":batch},ci=True)
-    plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"]).make([root])
+    plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"],holds=config["source_build_holds"]).make([root])
     transient=transient_builds(plan)
     to_build=[n for n in plan["order"] if plan["nodes"][n]["provider"]=="build"]
     if len(to_build)>config["max_source_builds"]:raise Error("Source build budget exceeded")
@@ -405,7 +396,7 @@ def build(root:str,output:Path)->None:
         caches,sources=_prepare_source_sets([name],work)
         package_caches.update(caches);source_sets.update(sources)
         sources=source_sets[name];cache=package_caches[name];env=_build_env(cache)
-        if name in transient:print(f"intelbrew CI: {name} is an isolated build-only compiler; building from source without publishing a bottle",flush=True)
+        if name in transient:print(f"intelbrew CI: {name} is only needed to compile published packages; building from source without a bottle",flush=True)
         _prefetch_build_inputs(name, env)
         run(_brew_install_args(name,transient),capture=False,env=env)
         if name in transient:continue
@@ -459,7 +450,7 @@ def verify(root:str,candidate:Path,output:Path)->None:
     if manifest.get("registry_commit"):sync_registry(manifest["registry_commit"])
     if manifest["packages"]:
         native({"mode":"guard-test"},ci=True);plan=manifest["plan"]
-        independent=Planner(lambda batch:native({"mode":"inspect","names":batch},ci=True),registry(),build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"]).make([root])
+        independent=Planner(lambda batch:native({"mode":"inspect","names":batch},ci=True),registry(),build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"],holds=config["source_build_holds"]).make([root])
         if plan!=independent:raise Error("Independent plan differs")
         transient=transient_builds(plan)
         local={r["name"]:r for r in manifest["packages"]};expected={n for n in plan["order"] if plan["nodes"][n]["provider"]=="build" and n not in transient}

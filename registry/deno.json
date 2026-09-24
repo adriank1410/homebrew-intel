@@ -1,38 +1,18 @@
 {
   "arch": "x86_64",
   "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
-  "cellar": "any_skip_relocation",
+  "cellar": "any",
   "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
-  "filename": "yt-dlp--2026.8.19_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "470ecebe7f38ff38842cc964eaff61a7148a44617228b02ccfff34bd8a8c20ae",
-  "license": "Unlicense",
-  "name": "yt-dlp",
-  "pkg_version": "2026.8.19_1",
-  "recipe_sha256": "c13511f68b94eb5abb88171dd98e767190c66d119d317e2b8430c9c5a40c00d0",
-  "release": "intel-35915221810-1-yt-dlp",
-  "revision": 1,
-  "run_id": "35915221810",
+  "filename": "deno--2.9.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "619c24eb0a1402a7dd24babed4d6d25ee0e07a19d11c1345b1ce11660eb2de95",
+  "license": "MIT",
+  "name": "deno",
+  "pkg_version": "2.9.7",
+  "recipe_sha256": "72f365c840fce49bebc74e39d8f6b46db55a1f9ceb34484b43d652ee5f313fdc",
+  "release": "intel-35892068608-1-deno",
+  "revision": 0,
+  "run_id": "35892068608",
   "runtime_dependencies": [
-    {
-      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
-      "name": "ca-certificates",
-      "pkg_version": "2026-08-13"
-    },
-    {
-      "formula_sha256": "a1a90e99f607d9fc8de3133211ceed9bc1b0ca93cc8b432f13ac7bee0ce4a6b9",
-      "name": "certifi",
-      "pkg_version": "2026.7.22"
-    },
-    {
-      "formula_sha256": "5fe26cd8c39842f2648b95c4138472e6c904350e5e146b46e60058065d089607",
-      "name": "cffi",
-      "pkg_version": "2.1.1"
-    },
-    {
-      "formula_sha256": "619c24eb0a1402a7dd24babed4d6d25ee0e07a19d11c1345b1ce11660eb2de95",
-      "name": "deno",
-      "pkg_version": "2.9.7"
-    },
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
       "name": "giflib",
@@ -64,26 +44,6 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
-      "name": "mpdecimal",
-      "pkg_version": "4.0.1"
-    },
-    {
-      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
-      "name": "openssl@3",
-      "pkg_version": "3.6.4"
-    },
-    {
-      "formula_sha256": "75ed36fe143658d6df206ce89736375eca0d0e3e1d643372118e021982a5e40e",
-      "name": "pycparser",
-      "pkg_version": "3.0"
-    },
-    {
-      "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
-      "name": "python@3.14",
-      "pkg_version": "3.14.7"
-    },
-    {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
       "name": "readline",
       "pkg_version": "8.3.6"
@@ -110,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "51e054f6f6c140654e0be4526daf745c168d05cb91c1999c76ea1c2d2d8f85ef",
-  "size": 8421814,
+  "sha256": "dcf612cd02c70916f5ac31b7668b16313f1393537826d58cbecd3079a1a62a80",
+  "size": 46804039,
   "source": {
-    "filename": "yt-dlp--2026.8.19_1.sources.tar.gz",
-    "sha256": "195b6b41fd86bd3a3dac7cb136d269057e8aec0eeb9da1b70ea6217b0b142a8c",
-    "size": 18095766
+    "filename": "deno--2.9.7.sources.tar.gz",
+    "sha256": "827eefa31e05851412003f5cd8f753c0302c9fdb645e0024c6a737a611e4d6c0",
+    "size": 175723114
   },
   "tag": "sequoia",
-  "version": "2026.8.19",
+  "version": "2.9.7",
   "version_scheme": 0,
   "workflow_commit": "6d7ffc41996778b6883ab3f22e8fe165f0358727"
 }

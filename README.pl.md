@@ -139,14 +139,30 @@ uruchamia testy i scala dokładnie sprawdzony commit, gdy przejdzie on wymagane
 kontrole ochrony gałęzi. Nie pozostawia włączonego oczekującego auto-merge. Klient widzi nowe
 wpisy po scaleniu.
 
+LLVM, którego żaden publikowany pakiet nie potrzebuje przy uruchomieniu ani
+w teście formuły, powstaje ze źródeł i nie wchodzi do zestawu kandydatów.
+Przepis Homebrew pomija wtedy bootstrap profilowany oraz zestaw `check-clang` /
+`check-llvm`. Publikacja samego `llvm` pozostaje wstrzymana: ta butelka nie
+mieści się w sześciogodzinnym limicie runnera. Zgodne butelki oficjalne
+i opublikowane `llvm@22` nadal można instalować.
+
 Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłatnych runnerów
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca
 na dysku SSD, 4 vCPU) są jawnie wykluczone przez regułę `blocked_source_builds` w `policy/config.json`.
 W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek kompilacji,
 wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
-(`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach. Wszystkie 36 modułowych
-pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`, `qttools`, `qtsvg` itp.) posiadają
-zweryfikowane gotowe butelki w rejestrze.
+(`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach.
+
+Budowa `qtbase` jest wstrzymana tylko dla przepisu Qt 6.11.2
+`77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5` razem z
+przepisem md4c 0.6.0 `de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd`.
+To samo dotyczy pakietów, które musiałyby przebudować tę parę. Komplet
+pasujących butelek nadal się instaluje. Gdy Homebrew zmieni którykolwiek
+z tych plików, następny cron buduje `qtbase` bez edycji polityki. Szczegóły:
+[wstrzymania budowania](docs/BUILD-HOLDS.md).
+
+Wszystkie 36 modułowych pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`,
+`qttools` i `qtsvg`) mają w rejestrze zweryfikowane butelki.
 
 Aby zlecić build jednego pakietu z listy celów, zmień `policy/build-request.json` na
 `main` i zwiększ `sequence`. Procedurę przeglądu i odzyskiwania po błędach
