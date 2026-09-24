@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "43848b5a734ebcd3692987facb900cef24658223",
-  "filename": "tor--0.4.9.12.sequoia.bottle.tar.gz",
-  "formula_sha256": "5d5d2a1ec331137b5cc5cd78cdd8692f089efa633b30aa1335628d27594003e1",
+  "core_commit": "4fccca4b6cd9e200b5bbfd55f5c165bff7ae835d",
+  "filename": "tor--0.4.9.13.sequoia.bottle.tar.gz",
+  "formula_sha256": "b0c9b4f8d0580cb0ad922a56bc0ecc5c7141985614471089666c9be94485ee0d",
   "license": {
     "all_of": [
       "BSD-2-Clause",
@@ -14,11 +14,11 @@
     ]
   },
   "name": "tor",
-  "pkg_version": "0.4.9.12",
-  "recipe_sha256": "d7588e3bd6d6589a0633b80508468b57767ba1406201c28593235697b901efcd",
-  "release": "intel-34722247673-1-tor",
+  "pkg_version": "0.4.9.13",
+  "recipe_sha256": "ddfd3b9c327c4fc2e0fd2b5631852b6f75d20102d86b5023656ebf950de44c2b",
+  "release": "intel-36017351683-1-tor",
   "revision": 0,
-  "run_id": "34722247673",
+  "run_id": "36017351683",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -42,15 +42,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "58c6783612d19f404497b783ad971116100ccb0dcb686abec3f46848471ebfb8",
-  "size": 6878283,
+  "sha256": "6440f43b6207a86bdb4a4ff82ef5e2fc3079d341dc0a4446eef6caa4fbced2c7",
+  "size": 6894483,
   "source": {
-    "filename": "tor--0.4.9.12.sources.tar.gz",
-    "sha256": "628dca8209c1e00c36554b3238602f704920703cbe4bdffe720ae72cfe532dc1",
-    "size": 10589152
+    "filename": "tor--0.4.9.13.sources.tar.gz",
+    "sha256": "7eda3b1fe8a7a31ee7e3e8e500597a8feb7916276750da40a444a7ead8d80e08",
+    "size": 10619246
   },
   "tag": "sequoia",
-  "version": "0.4.9.12",
+  "version": "0.4.9.13",
   "version_scheme": 0,
-  "workflow_commit": "3a82d08e0841856e4d6558113eb2907aa7684ed0"
+  "workflow_commit": "1f5dc3b746865d9789e8d626f9f2729258794fe2"
 }
