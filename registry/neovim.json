@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
+  "brew_commit": "ddc6726c17186ec5c48041817f29e11454d22220",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4fccca4b6cd9e200b5bbfd55f5c165bff7ae835d",
+  "core_commit": "3ebddf0aedd662b65e6ee98a8e18577ae2f44c4d",
   "filename": "neovim--0.12.5_1.sequoia.bottle.tar.gz",
   "formula_sha256": "49d7fecab9028d9f1f2c7f95098e09a932a6d8e59b2e17e64ffce2fe1c597d14",
   "license": "Apache-2.0",
   "name": "neovim",
   "pkg_version": "0.12.5_1",
   "recipe_sha256": "c9e861c5da1633aa443311c7bb92af3c77b9c32b04e046b47180e174ac3c69e9",
-  "release": "intel-36017351683-1-neovim",
+  "release": "intel-36196026487-1-neovim",
   "revision": 1,
-  "run_id": "36017351683",
+  "run_id": "36196026487",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -29,9 +29,9 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "506e25b427f0a609775f97c8c5aa31cb6302d0f4e8e6fe5d8f12f996681e70ef",
+      "formula_sha256": "ce98fd5a27fe5e0d9114f0d31507c6735a5784974b4aa0f5a6fa59bece96bf84",
       "name": "libuv",
-      "pkg_version": "1.52.1"
+      "pkg_version": "1.53.0"
     },
     {
       "formula_sha256": "0bd27d1c632675c48fce22dd201c98b13a72d60cbff0ce6504250f7b606b7b4a",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "caef56f0f3bbb8bcb183b2940da70230d32f9f453aa81449c6092139f403e910",
-  "size": 8362821,
+  "sha256": "e4c9e16b706945ef7b5cd99bdb746f89155d44620c18a9217ce4027a83ddd167",
+  "size": 8362584,
   "source": {
     "filename": "neovim--0.12.5_1.sources.tar.gz",
-    "sha256": "8580c268cb0bbcdfaa6d8955a716ee8ab2a8acf01c828550a5f7e9afac98cde0",
-    "size": 14987122
+    "sha256": "fcbec8847002aa120d51ee8632b535f94d6c28ab3c0ceed9f0ead3c773700924",
+    "size": 14987118
   },
   "tag": "sequoia",
   "version": "0.12.5",
   "version_scheme": 0,
-  "workflow_commit": "1f5dc3b746865d9789e8d626f9f2729258794fe2"
+  "workflow_commit": "789cbc30a5605b8cbc6ef864dde4d8accf8b4884"
 }
