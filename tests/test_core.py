@@ -271,6 +271,15 @@ class ValidationTests(unittest.TestCase):
         with patch.dict(os.environ,{'GH_TOKEN':'x','GITHUB_TOKEN':'x','RUBYOPT':'bad','HOMEBREW_CORE_GIT_REMOTE':'unchanged'}):
             e=brew_env();self.assertNotIn('GH_TOKEN',e);self.assertNotIn('RUBYOPT',e);self.assertEqual(e['HOMEBREW_CORE_GIT_REMOTE'],'unchanged')
 
+    def test_brew_env_ci_sets_bundler_retry(self):
+        e = brew_env(ci=True)
+        self.assertEqual(e['BUNDLE_RETRY'], '3')
+        self.assertEqual(e['BUNDLE_TIMEOUT'], '30')
+        self.assertEqual(e['HOMEBREW_NO_INSTALL_FROM_API'], '1')
+        local_e = brew_env(ci=False)
+        self.assertNotIn('BUNDLE_RETRY', local_e)
+        self.assertNotIn('BUNDLE_TIMEOUT', local_e)
+
 class PlannerTests(unittest.TestCase):
     def plan(self,nodes,roots=('tool',),records=None,**kwargs):return Planner(lambda names:{n:copy.deepcopy(nodes[n]) for n in names},records or {},**kwargs).make(roots)
     def test_official_older_bottle(self):self.assertEqual(self.plan({'tool':meta(official=True)})['nodes']['tool']['provider'],'official')

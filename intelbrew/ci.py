@@ -465,6 +465,8 @@ def verify(root:str,candidate:Path,output:Path)->None:
             elif meta["provider"]=="personal":
                 rec=records[name];cache=output.parent/("verify-cache-"+root)/rec["sha256"]/rec["filename"];download(artifact_url(config["repository"],rec),cache,rec["sha256"],rec["size"]);attest(cache,config["repository"],rec["workflow_commit"]);check_bottle(cache,rec);install_binary(name,meta,local=cache,sha=rec["sha256"],as_dependency=name!=root)
             else:install_binary(name,meta,as_dependency=name!=root)
+        tooling_env=brew_env(ci=True);tooling_env.update(BUNDLE_RETRY="3",BUNDLE_TIMEOUT="30")
+        run(["bash",str(ROOT/"scripts/retry-fetch.sh"),"brew","install-bundler-gems","--add-groups=formula_test"],capture=False,env=tooling_env)
         for name in local:
             receipt=native({"mode":"receipt","name":name},ci=True)
             if receipt["tap"]!="homebrew/core" or not receipt["poured_from_bottle"]:raise Error("Core bottle verification failed")
