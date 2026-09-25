@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
   "filename": "openjdk--27.sequoia.bottle.tar.gz",
   "formula_sha256": "275e623d1a3fa218d3d6cc2ebdc27c591ec67a19b62511018ea93e057a3feaba",
   "license": {
@@ -13,14 +13,14 @@
   "name": "openjdk",
   "pkg_version": "27",
   "recipe_sha256": "b8f389539e303280b6d817c7d8fd82e8f0247d64770b223325a42458dc5e5e16",
-  "release": "intel-35743217955-1-openjdk",
+  "release": "intel-36082159234-1-openjdk",
   "revision": 0,
-  "run_id": "35743217955",
+  "run_id": "36082159234",
   "runtime_dependencies": [
     {
-      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
       "name": "cairo",
-      "pkg_version": "1.18.4"
+      "pkg_version": "1.18.6"
     },
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -164,15 +164,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a6e3dd5eb2a1da1ae62efd71dcfa79a70606b0cfd8eec4c5ddfcd7ebfec0a230",
-  "size": 222796375,
+  "sha256": "5ed02b5d9995548dffccc69440f6e06a369c163c2d7a15769691845db806294c",
+  "size": 222796203,
   "source": {
     "filename": "openjdk--27.sources.tar.gz",
-    "sha256": "f26b407ccc297c7f58c1b45029a9fc11b870003da8b52158957547a2d64383c5",
-    "size": 340075263
+    "sha256": "730b5d7bba6e026caf34a83a467e83657dd1886d9ab4c36c8b722511e86883ce",
+    "size": 340075285
   },
   "tag": "sequoia",
   "version": "27",
   "version_scheme": 0,
-  "workflow_commit": "3f8c9752dfd20a10bded0f5237922348f8ba2f05"
+  "workflow_commit": "0c030b93fd78f2acf1e440778cc50c84562c1240"
 }
