@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "ddc6726c17186ec5c48041817f29e11454d22220",
   "cellar": "any_skip_relocation",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
-  "filename": "cloudflared--2026.9.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "ccbd07ca9ff143d75d04a1656efa653dacf00f52bd689eff2fd37d195d3e3631",
+  "core_commit": "3ebddf0aedd662b65e6ee98a8e18577ae2f44c4d",
+  "filename": "cloudflared--2026.9.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "68e5806f917d4a5483862bb81c7b923d0fbac94bb0bc0429a4549b7b6ba203d5",
   "license": "Apache-2.0",
   "name": "cloudflared",
-  "pkg_version": "2026.9.1",
-  "recipe_sha256": "56d2d118db354b63c54ea6143f5c60028d68d27cf871050acc1dbecdab22904a",
-  "release": "intel-35408935324-1-cloudflared",
+  "pkg_version": "2026.9.3",
+  "recipe_sha256": "38e8e5f305cee21417a9787e9007b0c64ae0cb85ff43cc50193fab7e19c9a119",
+  "release": "intel-36142899548-1-cloudflared",
   "revision": 0,
-  "run_id": "35408935324",
+  "run_id": "36142899548",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "476e1cac4a67d59e520d07318ffdd0db4e54136a3bcbc4021248f5d4d9998f0d",
-  "size": 10053164,
+  "sha256": "0079364533a750cf5228e1530560c30cebc05b547e198356ff0ae0deb6cfc1d3",
+  "size": 10131637,
   "source": {
-    "filename": "cloudflared--2026.9.1.sources.tar.gz",
-    "sha256": "c2ae866f9bbb8c3f4dd2387a637f16a2a6a4d714c2c6df0b5f55a8ca06cd2b0f",
-    "size": 78147531
+    "filename": "cloudflared--2026.9.3.sources.tar.gz",
+    "sha256": "6ca04eb4a9db745d55f2b20f43875b4b3476a1cc97e0738ad7f02fd6b0337db8",
+    "size": 79274286
   },
   "tag": "sequoia",
-  "version": "2026.9.1",
+  "version": "2026.9.3",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "0e893bc5cce0a859d18501efb399813b16dd81e3"
 }
