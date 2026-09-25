@@ -103,3 +103,20 @@ class RetentionSafetyTests(unittest.TestCase):
             "api", "--paginate", "--slurp",
             "repos/adriank1410/homebrew-intel/pulls?state=open&per_page=100",
         ])
+
+    def test_main_summary_pluralization(self):
+        import io, sys
+        for count, expected in [(1, "DRY-RUN: 1 release selected for deletion"),
+                                (2, "DRY-RUN: 2 releases selected for deletion"),
+                                (0, "DRY-RUN: 0 releases selected for deletion")]:
+            with self.subTest(count=count), \
+                    patch.object(sys, "argv", ["release-retention.py"]), \
+                    patch.object(retention_script, "gh_json", return_value=[]), \
+                    patch.object(retention_script, "open_pull_requests", return_value=[]), \
+                    patch.object(retention_script, "referenced_releases", return_value=set()), \
+                    patch.object(retention_script, "select_releases", return_value=[{"tagName": f"t{i}"} for i in range(count)]), \
+                    patch("sys.stdout", new_callable=io.StringIO) as out:
+                retention_script.main()
+                self.assertIn(expected, out.getvalue())
+                self.assertNotIn("release(s)", out.getvalue())
+

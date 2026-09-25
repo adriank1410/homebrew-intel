@@ -58,7 +58,7 @@ class OperationTests(unittest.TestCase):
             if request['mode']=='receipt':return {'tap':'homebrew/core','poured_from_bottle':True}
             if request['mode']=='install' and request['name']=='tool':raise Error('network failure')
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action):
-            with self.assertRaisesRegex(Error,'Stopped after 1 package'):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+            with self.assertRaisesRegex(Error,'Stopped after 1 package;'):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
     def test_attestation_identity_pinned(self):
         with patch('intelbrew.cli.shutil.which',return_value='/bin/gh'),patch('intelbrew.cli.run') as run:
             attest(Path('/file'), 'adriank1410/homebrew-intel',G);args=run.call_args.args[0]
