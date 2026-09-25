@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
+  "brew_commit": "ddc6726c17186ec5c48041817f29e11454d22220",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
+  "core_commit": "3ebddf0aedd662b65e6ee98a8e18577ae2f44c4d",
   "filename": "ffmpeg--9.0.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d276ecab3d5e109fadcb93a671a7175569ca7ac942be46008a41f4fa678509f0",
   "license": "GPL-3.0-or-later",
   "name": "ffmpeg",
   "pkg_version": "9.0.2",
   "recipe_sha256": "a85f0ee9b028aa142ede346661cd8d85371cbc8f1ddc4044948c21d14c17e6ab",
-  "release": "intel-36067045634-1-ffmpeg",
+  "release": "intel-36174289244-1-ffmpeg",
   "revision": 0,
-  "run_id": "36067045634",
+  "run_id": "36174289244",
   "runtime_dependencies": [
     {
-      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
       "name": "ca-certificates",
-      "pkg_version": "2026-08-13"
+      "pkg_version": "2026-09-25"
     },
     {
       "formula_sha256": "6c96636f03986330f28ae4760357515cf27503b310e57d387d24c96ed2eee3c0",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c38734260207de1d5b046ce52d27534d0f87ca3296f13a66bee7dcd2e52fd259",
-  "size": 22173506,
+  "sha256": "f8922a81ef026855ac0cfbbe398578f972e2a27b239c4af199b7a90a5da0be47",
+  "size": 21691826,
   "source": {
     "filename": "ffmpeg--9.0.2.sources.tar.gz",
-    "sha256": "c08ef4f58afa91cd3b24428d343a9d1b1c3c05bafdc86bb86174d51fbade8f87",
-    "size": 12077474
+    "sha256": "db2a75fb1f4ebb05271132c7b2cb22b6391907e4e90f7277f9e7802459b140e4",
+    "size": 12077464
   },
   "tag": "sequoia",
   "version": "9.0.2",
   "version_scheme": 0,
-  "workflow_commit": "d2a91c1c10e12f2f9e7b0645b999a11262ca2670"
+  "workflow_commit": "5f993268430124c2bff072dd011978d5e322d643"
 }
