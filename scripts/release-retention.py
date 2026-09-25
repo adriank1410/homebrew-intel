@@ -52,7 +52,8 @@ def main() -> int:
                                active=active_release_tags(prs), now=datetime.now(timezone.utc))
     selected = selected[:max(0, args.max_delete)]
     mode = "APPLY" if apply_mode else "DRY-RUN"
-    print(f"{mode}: {len(selected)} release(s) selected for deletion")
+    releases = "release" if len(selected) == 1 else "releases"
+    print(f"{mode}: {len(selected)} {releases} selected for deletion")
     for release in selected:
         tag = release["tagName"]
         print(tag)

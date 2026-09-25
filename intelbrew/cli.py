@@ -365,10 +365,12 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                 write_json_new(journal_dir / f"{completed:04d}-{name}.json", receipt)
                 completed += 1
         except Error as exc:
-            raise Error(f"Stopped after {completed} package(s); this is not a transaction rollback. "
+            packages = "package" if completed == 1 else "packages"
+            raise Error(f"Stopped after {completed} {packages}; this is not a transaction rollback. "
                         f"Old versioned kegs are retained. Journal: {journal_dir}. {exc}") from exc
         ohai("Summary")
-        print(f"🍺  Installed {completed} bottle(s). No Homebrew source build was permitted.")
+        bottles = "bottle" if completed == 1 else "bottles"
+        print(f"🍺  Installed {completed} {bottles}. No Homebrew source build was permitted.")
         print("==> No cleanup was run. Existing reverse dependencies may still need a linkage review.")
 
 
