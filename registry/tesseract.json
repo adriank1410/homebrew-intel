@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
   "filename": "tesseract--5.5.3.sequoia.bottle.tar.gz",
   "formula_sha256": "612e427e233a1625cd73d9eae0be6cc323b9c61df8366466109813effdbef770",
   "license": "Apache-2.0",
   "name": "tesseract",
   "pkg_version": "5.5.3",
   "recipe_sha256": "566df1fbd5c686666183e2b73851ddbff50e574f199e7f48b38fe3054dcf32d2",
-  "release": "intel-35770115144-1-tesseract",
+  "release": "intel-36109285281-1-tesseract",
   "revision": 0,
-  "run_id": "35770115144",
+  "run_id": "36109285281",
   "runtime_dependencies": [
     {
-      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
       "name": "cairo",
-      "pkg_version": "1.18.4"
+      "pkg_version": "1.18.6"
     },
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -159,7 +159,7 @@
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "6a48673ebc726759892a79ecb9f6d710fdb25dcdc322d055ecf27c4bc9db8e0e",
+      "formula_sha256": "f68872fde9db4985c381260d46ddc70771ee0ff7e25817ec03abd563123b672b",
       "name": "openjpeg",
       "pkg_version": "2.5.4"
     },
@@ -200,15 +200,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2e52d26c9ae7a4b1f1c77d97d52aa7d272e78a7823f509a6b5e2dd6e74918de0",
-  "size": 10356859,
+  "sha256": "7821f2fe8699a636b00f39a42509c899bf85d7947752d8caa0954ca33039ed30",
+  "size": 10356847,
   "source": {
     "filename": "tesseract--5.5.3.sources.tar.gz",
-    "sha256": "bf58354fc7cdb50f42da02e474c6e93d7d47289292f8ce88b8258cbf411e484f",
-    "size": 8168093
+    "sha256": "a37600f651b71c05b08d539e3278bf4e9b77438ee868bed61ed13f42d44e6153",
+    "size": 8168116
   },
   "tag": "sequoia",
   "version": "5.5.3",
   "version_scheme": 0,
-  "workflow_commit": "4750bdafa79783d8683a2b21a601242bf9a565bd"
+  "workflow_commit": "6d4aa1c9612628de5dfa2890e274d5b207640ea3"
 }
