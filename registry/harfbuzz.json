@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "any",
-  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
+  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
   "filename": "harfbuzz--14.5.0.sequoia.bottle.tar.gz",
   "formula_sha256": "745607d3d7ba91d5fe503e6ff43ac5caa1d35bbf1e7f3d9d2602039e928ba0dc",
   "license": "MIT",
   "name": "harfbuzz",
   "pkg_version": "14.5.0",
   "recipe_sha256": "4a01ef42e17002fbe8c4ae20690b972bbf2a346512ba91e076411b2e7ddf65ec",
-  "release": "intel-35713170458-1-harfbuzz",
+  "release": "intel-36067045634-1-harfbuzz",
   "revision": 0,
-  "run_id": "35713170458",
+  "run_id": "36067045634",
   "runtime_dependencies": [
     {
-      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
       "name": "cairo",
-      "pkg_version": "1.18.4"
+      "pkg_version": "1.18.6"
     },
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "075dd5ee2f1c7e4a528d6d031a8286692a7e96b693f125a7864f86f60c306893",
-  "size": 4243059,
+  "sha256": "d4cc3ee486bf77b1b50bf61641c1d5efd1d886ff8dfe9e7abf9971fdc32b39bd",
+  "size": 4243083,
   "source": {
     "filename": "harfbuzz--14.5.0.sources.tar.gz",
-    "sha256": "eb5074d189944435ed0169b607eb8dc403a904acd35b5eea4a37397014740802",
+    "sha256": "5d1c0f5278ff69f68d9783859008a455e14ad98dfc54d248c2aa50305d4a4054",
     "size": 20278372
   },
   "tag": "sequoia",
   "version": "14.5.0",
   "version_scheme": 0,
-  "workflow_commit": "32e099a775ff1ad052482ecac7e6f32b3898b726"
+  "workflow_commit": "d2a91c1c10e12f2f9e7b0645b999a11262ca2670"
 }
