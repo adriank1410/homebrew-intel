@@ -4,6 +4,26 @@
 require "json";require "digest";require "open3";require "formula";require "formulary";require "tab";require "utils/bottles";require "download_strategy";require "package_manager_cache";require "tmpdir";require_relative "git_sources";require_relative "svn_sources"
 require_relative "source_mirrors"
 require_relative "native_sources"
+# A poured bottle stays installed when prefix files already belong to something
+# else, such as /usr/local/bin/gpg from MacGPG2. Linking would overwrite them.
+module IntelbrewPreservePrefix
+  def link(keg)
+    conflicts = IntelbrewNative.blocking_prefix_conflicts(IntelbrewNative.prefix_link_conflicts(keg), formula)
+    if conflicts.any?
+      begin
+        keg.optlink(verbose: verbose?, overwrite: overwrite?)
+      rescue Keg::LinkError => e
+        ofail "Failed to create #{formula.opt_prefix}"
+        puts "Things that depend on #{formula.full_name} will probably not build."
+        puts e
+      end
+      opoo "#{keg.name} was poured without linking so existing prefix files stay unchanged:"
+      puts conflicts
+      return
+    end
+    super
+  end
+end
 module IntelbrewNative
   module_function
   def check_platform!
@@ -29,6 +49,50 @@ module IntelbrewNative
     {"name"=>f.name,"tap"=>f.tap.name,"version"=>f.version.to_s,"revision"=>f.revision,"version_scheme"=>f.version_scheme,"pkg_version"=>f.pkg_version.to_s,"formula_sha256"=>formula_sha(f),"license"=>f.license,"official_bottle"=>official,"vcs_source"=>vcs_source?(f),"pinned_git_source"=>pinned_git_source?(f),"pinned_svn_source"=>pinned_svn_source?(f),"disabled"=>f.disabled?,"installed_current"=>f.latest_version_installed?&&!foreign,"installed_newer"=>!!(k&&k.version>f.pkg_version),"installed_options"=>t ? t.used_options.to_a.map(&:to_s):[],"installed_head"=>!!(t&&t.spec==:head),"foreign_install"=>foreign,"pinned"=>f.pinned?,"installed_versions"=>installed_versions(f),"runtime"=>deps["runtime"].uniq.sort,"build"=>deps["build"].uniq.sort,"test"=>deps["test"].uniq.sort}
   end
   def receipt(name);f=core_formula(name);raise "Expected installed current version" unless f.latest_version_installed?;t=Tab.for_formula(f);{"name"=>f.name,"pkg_version"=>f.pkg_version.to_s,"tap"=>t.source["tap"],"poured_from_bottle"=>t.poured_from_bottle,"built_as_bottle"=>t.built_as_bottle,"installed_versions"=>installed_versions(f)};end
+  def same_keg_link?(dst, src)
+    return false unless dst.symlink?
+    Utils::Path.resolved_path(dst).cleanpath == src.cleanpath
+  rescue SystemCallError
+    false
+  end
+  # Files Homebrew would refuse to replace. Directory symlinks that already
+  # point at this keg are not conflicts; Homebrew removes those before linking.
+  def prefix_link_conflicts(keg)
+    require "find"
+    conflicts = []
+    root_path = Pathname(keg.to_path)
+    Keg.keg_link_directories.each do |dir|
+      root = keg/dir
+      next unless root.exist?
+      root.find do |src|
+        next if src == root
+        relative = src.relative_path_from(root_path)
+        dst = HOMEBREW_PREFIX/relative
+        if src.directory? && !src.symlink?
+          if dst.symlink?
+            conflicts << dst.to_s unless same_keg_link?(dst, src)
+            Find.prune
+          elsif dst.exist? && !dst.directory?
+            conflicts << dst.to_s
+            Find.prune
+          end
+          next
+        end
+        next unless src.file? || src.symlink?
+        next if src.basename.to_s == ".DS_Store"
+        next if %w[.pyc .pyo].include?(src.extname) && src.to_s.include?("/site-packages/")
+        next if src.basename.to_s == "dir" && relative.to_s.start_with?("share/info/")
+        next if relative.to_s == "lib/charset.alias"
+        next unless dst.exist? || dst.symlink?
+        conflicts << dst.to_s unless same_keg_link?(dst, src)
+      end
+    end
+    conflicts
+  end
+  def blocking_prefix_conflicts(conflicts, formula)
+    return conflicts unless formula
+    conflicts.reject { |path| formula.link_overwrite?(Pathname(path)) }
+  end
   def sources(name)
     f=core_formula(name);raise "Source collection requires local recipe" unless f.path.file?
     result=source_entries(f).map do |label,r|
@@ -67,7 +131,7 @@ module IntelbrewNative
      "cargo_cache"=>Homebrew::PackageManagerCache.path("cargo_cache").expand_path.to_s}
   end
   def bottle_only_install(request)
-    require "formula_installer";require "cmd/install";require_relative "bottle_only";methods=FormulaInstaller.instance_methods+FormulaInstaller.private_instance_methods;raise "Homebrew changed installer API" unless methods.include?(:build)&&FormulaInstaller.instance_method(:build).arity==0;raise "Homebrew changed install command API" unless defined?(Homebrew::Cmd::InstallCmd);FormulaInstaller.prepend(IntelbrewBottleOnly)
+    require "formula_installer";require "cmd/install";require_relative "bottle_only";methods=FormulaInstaller.instance_methods+FormulaInstaller.private_instance_methods;raise "Homebrew changed installer API" unless methods.include?(:build)&&FormulaInstaller.instance_method(:build).arity==0;raise "Homebrew changed install command API" unless defined?(Homebrew::Cmd::InstallCmd);FormulaInstaller.prepend(IntelbrewBottleOnly);FormulaInstaller.prepend(IntelbrewPreservePrefix) unless FormulaInstaller.ancestors.include?(IntelbrewPreservePrefix)
     target=request.fetch("target");name=request.fetch("name");before=metadata(name);raise "Refusing same-version reinstall/downgrade" if before["installed_current"]||before["installed_newer"];raise "Refusing foreign/options/HEAD/pinned" if before["foreign_install"]||before["installed_options"].any?||before["installed_head"]||before["pinned"];raise "Recipe changed" unless before["formula_sha256"]==request.fetch("formula_sha256")&&before["pkg_version"]==request.fetch("pkg_version")
     local_bottle=!target.start_with?("homebrew/core/")
     if local_bottle
