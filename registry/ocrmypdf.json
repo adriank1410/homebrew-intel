@@ -1,32 +1,32 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "ddc6726c17186ec5c48041817f29e11454d22220",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "3ebddf0aedd662b65e6ee98a8e18577ae2f44c4d",
   "filename": "ocrmypdf--17.12.1.sequoia.bottle.tar.gz",
   "formula_sha256": "5ef5dba2756f58a4c9fe167a5b4f52e0fe90f4b380a315f39a2a428a6d681ab7",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.12.1",
   "recipe_sha256": "0b5596fba13da9e6fab5aca2b031b7da43036919d50c5bf46b5d7e9dd22e7263",
-  "release": "intel-35824532597-1-ocrmypdf",
+  "release": "intel-36196026487-1-ocrmypdf",
   "revision": 0,
-  "run_id": "35824532597",
+  "run_id": "36196026487",
   "runtime_dependencies": [
     {
-      "formula_sha256": "54273857b9965ffe86aae8463c15a6fcfb53b3c7f12b5306d5c2a7fcb96c824a",
+      "formula_sha256": "7d315c303e7e42571200c5b948c5872c9668a835b337df38ec8582b373ea34c7",
       "name": "aom",
-      "pkg_version": "3.15.0"
+      "pkg_version": "3.15.1"
     },
     {
-      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
       "name": "ca-certificates",
-      "pkg_version": "2026-08-13"
+      "pkg_version": "2026-09-25"
     },
     {
-      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
       "name": "cairo",
-      "pkg_version": "1.18.4"
+      "pkg_version": "1.18.6"
     },
     {
       "formula_sha256": "5fe26cd8c39842f2648b95c4138472e6c904350e5e146b46e60058065d089607",
@@ -139,7 +139,7 @@
       "pkg_version": "3.8.9"
     },
     {
-      "formula_sha256": "2248b595b83c4c7154828fe2fde7029006340eae943f672acf66c18ddac6942e",
+      "formula_sha256": "8e7cf385a33b68479b281592a434216f17a2d37f60831efa312af2bfa1c04b1e",
       "name": "libavif",
       "pkg_version": "1.4.2"
     },
@@ -264,7 +264,7 @@
       "pkg_version": "1.33.7"
     },
     {
-      "formula_sha256": "6a48673ebc726759892a79ecb9f6d710fdb25dcdc322d055ecf27c4bc9db8e0e",
+      "formula_sha256": "f68872fde9db4985c381260d46ddc70771ee0ff7e25817ec03abd563123b672b",
       "name": "openjpeg",
       "pkg_version": "2.5.4"
     },
@@ -339,7 +339,7 @@
       "pkg_version": "2.32.72"
     },
     {
-      "formula_sha256": "493485c5dde61df7bf3cdfccaabb978dc14a792a474efbbf1c9ab0b2486105d5",
+      "formula_sha256": "6e2be1d971dbea0803529780f7b149df340d1fbc47b688d56fda84d28e4392d0",
       "name": "sdl3",
       "pkg_version": "3.4.16"
     },
@@ -395,15 +395,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "30a1859d21d47f6c3960a5accb08794600e6c095a116c5953ea4395c06e376eb",
-  "size": 17224019,
+  "sha256": "bf35191a5157fb2aaae7a407fb7457e801c710db78c84c3379f9dc2595529cc8",
+  "size": 17223891,
   "source": {
     "filename": "ocrmypdf--17.12.1.sources.tar.gz",
-    "sha256": "628222291d3abf973bb99d1dfef4413f48dc4faaabc3ba91467239c60f0d6402",
-    "size": 73968078
+    "sha256": "68407a4b1cf26ff111dccf18befc60bace40d06aa6154da2a384933f9a1bf7a7",
+    "size": 73968080
   },
   "tag": "sequoia",
   "version": "17.12.1",
   "version_scheme": 0,
-  "workflow_commit": "7e279d4d7d8836f78961d6c16616e17d1a4d2e5c"
+  "workflow_commit": "789cbc30a5605b8cbc6ef864dde4d8accf8b4884"
 }
