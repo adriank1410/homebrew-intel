@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
   "filename": "gpgmepp--2.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "8a196352284b410628217e46d8745cadee2974948df5408a80a125a974220445",
+  "formula_sha256": "eda4f9d9ec0ec54b2a8ab0575b7e049f1a818aa22aea44944f461a89eb1f8a0c",
   "license": "LGPL-2.1-or-later",
   "name": "gpgmepp",
   "pkg_version": "2.2.0",
-  "recipe_sha256": "e5d7f4aa009e5ad5616e1729984d33e11148a29f150880b2f99f02503018b91c",
-  "release": "intel-35802355799-1-gpgmepp",
+  "recipe_sha256": "b7a441aff9864d1efb0365edec2934e3f8a1b6b2bb8fe9a202aeaffa8de52ae7",
+  "release": "intel-36067045634-1-gpgmepp",
   "revision": 0,
-  "run_id": "35802355799",
+  "run_id": "36067045634",
   "runtime_dependencies": [
     {
       "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
@@ -29,9 +29,9 @@
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "16dfb3bf8ffdcef296f97d57eb93b0e619caaf1b01e92ebc61dcd7427bbd7208",
+      "formula_sha256": "63dafd5451767fc2df1b0be02138ca415c685de0196f43f9277c468104a7f402",
       "name": "gnupg",
-      "pkg_version": "2.5.22"
+      "pkg_version": "2.5.24"
     },
     {
       "formula_sha256": "720a0b82acbc9f97fe2950c6b919ea5e9383b491c8ef7b7f06a7f3e16c9b8c07",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d378f04443ff1cca3b09b9d4c781899f4a7d6adfd2623ef43e5819f5bf6655e2",
-  "size": 206296,
+  "sha256": "548ebe08de7e50726e4bff357a46b6085cef7c14a878c5de22f028e982432cce",
+  "size": 206325,
   "source": {
     "filename": "gpgmepp--2.2.0.sources.tar.gz",
-    "sha256": "eb482006be6537cd5d2cfd28767047dd3d5a63e128c31a1aef64def02f04cd0e",
-    "size": 142488
+    "sha256": "4f5da884499d7e409be09cf8f62fa04d9591ca5c784a918ba17c1730429e29ff",
+    "size": 142513
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "c05302d1264674acce9e837a21371eeb6f097d67"
+  "workflow_commit": "d2a91c1c10e12f2f9e7b0645b999a11262ca2670"
 }
