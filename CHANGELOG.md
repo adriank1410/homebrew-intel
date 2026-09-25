@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 0.2.5 – prefix conflict resilience & core synchronization
+
+- Pour a bottle even when an existing prefix file, such as a GPG Suite `gpg` symlink, would be overwritten. The keg stays unlinked, those files stay in place, and the rest of the transaction continues.
 - Bootstrap Homebrew formula-testing Bundler gems (`formula_test`) with backoff retries before bottle verification, and set Bundler network retries in CI environments so transient RubyGems outages do not fail package verification.
 - Squash-merge the App-authored Homebrew pin PR from registry maintenance after the required `tests` check on that exact head, without queuing GitHub auto-merge. A failed native check leaves the proposal open.
 - Hold `qtbase` source builds only for the Qt 6.11.2 and md4c 0.6.0 recipe hashes, so the next scheduled run rebuilds it when Homebrew changes either file.

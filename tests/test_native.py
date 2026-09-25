@@ -146,3 +146,62 @@ puts JSON.generate([cases.map {{ |item| IntelbrewNative.vcs_source?(item) }},
                 item["vcs_source"] = value
             with self.subTest(value=value), self.assertRaisesRegex(Error, "Invalid source strategy metadata"):
                 Planner(lambda names: {"simdutf": item}, {}, build=True).make(["simdutf"])
+
+    def test_foreign_prefix_conflict_stays_unlinked(self):
+        # A poured bottle must not replace an unmanaged prefix file. gnupg's
+        # only conflict is the GPG Suite symlink; linked formulae have none.
+        script = f'''
+require "json"; require "stringio"; require "formula_installer"
+$stdin = StringIO.new('{{"mode":"inspect","names":[]}}')
+load {json.dumps(str(ROOT / "libexec/native.rb"))}
+def conflicts(name)
+  f = Formulary.factory(name)
+  return [] unless f.installed_kegs.any?
+  keg = Keg.new(f.latest_installed_prefix.realpath)
+  IntelbrewNative.prefix_link_conflicts(keg)
+end
+gpg = "/usr/local/bin/gpg"
+has_gpg_symlink = File.symlink?(gpg)
+before = has_gpg_symlink ? File.readlink(gpg) : nil
+FormulaInstaller.prepend(IntelbrewPreservePrefix)
+if has_gpg_symlink && Formulary.factory("gnupg").installed_kegs.any?
+  keg = Keg.new(Formulary.factory("gnupg").latest_installed_prefix.realpath)
+  optlinked = false
+  keg.define_singleton_method(:optlink) {{ |**_| optlinked = true }}
+  keg.define_singleton_method(:link) {{ |**_| abort "prefix link invoked" }}
+  installer = FormulaInstaller.allocate
+  installer.define_singleton_method(:verbose?) {{ false }}
+  installer.define_singleton_method(:overwrite?) {{ false }}
+  installer.link(keg)
+  abort "link replaced #{{gpg}}" unless File.readlink(gpg) == before
+  abort "optlink skipped" unless optlinked
+end
+owned = Object.new
+def owned.link_overwrite?(path) = Pathname(path).to_s == "/usr/local/bin/gpg"
+puts JSON.generate({{
+  "has_gpg_symlink" => has_gpg_symlink,
+  "gnupg" => conflicts("gnupg"),
+  "pinentry" => conflicts("pinentry"),
+  "xz" => conflicts("xz"),
+  "gpg" => before,
+  "filtered" => IntelbrewNative.blocking_prefix_conflicts(["/usr/local/bin/gpg", "/usr/local/bin/other"], owned),
+  "unfiltered" => IntelbrewNative.blocking_prefix_conflicts(["/usr/local/bin/gpg"], nil)
+}})
+'''
+        result = json.loads(run(["brew", "ruby", "-e", script], env=brew_env()).splitlines()[-1])
+        if result["has_gpg_symlink"]:
+            self.assertEqual(result["gnupg"], ["/usr/local/bin/gpg"])
+            self.assertEqual(result["gpg"], "/usr/local/MacGPG2/bin/gpg2")
+        self.assertEqual(result["pinentry"], [])
+        self.assertEqual(result["xz"], [])
+        self.assertEqual(result["filtered"], ["/usr/local/bin/other"])
+        self.assertEqual(result["unfiltered"], ["/usr/local/bin/gpg"])
+
+
+class InstallConflictSourceTests(unittest.TestCase):
+    def test_bottle_install_preserves_foreign_prefix_files(self):
+        source = (ROOT / "libexec/native.rb").read_text()
+        install = source.split("def bottle_only_install", 1)[1].split("\n  def ", 1)[0]
+        self.assertIn("IntelbrewPreservePrefix", install)
+        self.assertIn("prefix_link_conflicts", source)
+        self.assertNotIn("--overwrite", install)
