@@ -603,7 +603,48 @@ class SourceBundleTests(unittest.TestCase):
              patch("intelbrew.ci.run") as run, patch("intelbrew.ci.shutil.copyfile"), patch("intelbrew.ci.write_json_new"):
             verify("fastfetch", Path(d) / "candidate", Path(d) / "verified")
             self.assertEqual([call.args[0] for call in install.call_args_list], ["fastfetch"])
-            self.assertEqual([call.args[0][1] for call in run.call_args_list], ["linkage", "test"])
+            self.assertEqual([call.args[0][1] for call in run.call_args_list if call.args[0][0] == "brew"], ["linkage", "test"])
+
+    def test_verify_bootstraps_formula_test_gems_before_formula_tests(self):
+        metadata = {'fastfetch': meta('fastfetch')}
+        plan = Planner(lambda names: {name: metadata[name] for name in names}, {}, build=True).make(['fastfetch'])
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+        }
+        manifest = {"root": "fastfetch", "core_commit": env["INTELBREW_CORE_COMMIT"],
+                    "workflow_commit": env["GITHUB_SHA"], "packages": [record(name="fastfetch")],
+                    "plan": plan, "verified": False}
+        def fake_native(request, **kwargs):
+            if request["mode"] == "inspect": return {name: metadata[name] for name in request["names"]}
+            if request["mode"] == "receipt": return {"tap": "homebrew/core", "poured_from_bottle": True}
+            return {}
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, env, clear=True), \
+             patch("intelbrew.ci.validate_candidate", return_value=manifest), \
+             patch("intelbrew.ci.registry", return_value={}), patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.install_binary"), \
+             patch("intelbrew.ci.run") as run, patch("intelbrew.ci.shutil.copyfile"), patch("intelbrew.ci.write_json_new"):
+            verify("fastfetch", Path(d) / "candidate", Path(d) / "verified")
+            setup = next(call for call in run.call_args_list if "install-bundler-gems" in call.args[0])
+            first_test = next(call for call in run.call_args_list if call.args[0][1:2] == ["test"])
+            self.assertLess(run.call_args_list.index(setup), run.call_args_list.index(first_test))
+            self.assertEqual(setup.args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install-bundler-gems", "--add-groups=formula_test"])
+            self.assertEqual(setup.kwargs["env"]["BUNDLE_RETRY"], "3")
+            self.assertEqual(setup.kwargs["env"]["BUNDLE_TIMEOUT"], "30")
+
+    def test_verify_skips_tooling_bootstrap_for_empty_packages(self):
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+        }
+        manifest = {"root": "fastfetch", "core_commit": env["INTELBREW_CORE_COMMIT"],
+                    "workflow_commit": env["GITHUB_SHA"], "packages": [],
+                    "plan": {"order": [], "nodes": {}}, "verified": False}
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, env, clear=True), \
+             patch("intelbrew.ci.validate_candidate", return_value=manifest), \
+             patch("intelbrew.ci.run") as run, patch("intelbrew.ci.write_json_new"):
+            verify("fastfetch", Path(d) / "candidate", Path(d) / "verified")
+            self.assertFalse(any("install-bundler-gems" in call.args[0] for call in run.call_args_list))
 
     def test_build_prepares_sources_in_order_after_dependencies_are_installed(self):
         events = []

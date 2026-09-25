@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Bootstrap Homebrew formula-testing Bundler gems (`formula_test`) with backoff retries before bottle verification, and set Bundler network retries in CI environments so transient RubyGems outages do not fail package verification.
 - Squash-merge the App-authored Homebrew pin PR from registry maintenance after the required `tests` check on that exact head, without queuing GitHub auto-merge. A failed native check leaves the proposal open.
 - Hold `qtbase` source builds only for the Qt 6.11.2 and md4c 0.6.0 recipe hashes, so the next scheduled run rebuilds it when Homebrew changes either file.
 - Build LLVM from source without a bottle when published packages need it only as a compiler, so Homebrew skips the profile-guided `check-clang`/`check-llvm` suite. A request to publish `llvm` itself stays source-held.
