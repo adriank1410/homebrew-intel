@@ -10,25 +10,19 @@ require_relative "native_sources"
 # so libraries and tools remain reachable by dependents.
 module IntelbrewPreservePrefix
   def link(keg)
+    return super if !link_keg || skip_link?
+
     conflicts = IntelbrewNative.blocking_prefix_conflicts(IntelbrewNative.prefix_link_conflicts(keg), formula)
     preserved = conflicts.select { |path| IntelbrewNative.preserve_prefix_path?(path) }
-    if preserved.empty?
-      super
-      return
-    end
-    begin
-      keg.optlink(verbose: verbose?, overwrite: overwrite?)
-    rescue Keg::LinkError => e
-      ofail "Failed to create #{formula.opt_prefix}" if formula
-      puts "Things that depend on #{formula.full_name} will probably not build." if formula
-      puts e
-    end
+    return super if preserved.empty?
+
     held = []
     begin
       held = IntelbrewNative.hold_prefix_conflicts(keg, preserved)
-      IntelbrewNative.link_preserved_keg(keg, formula, verbose: verbose?, overwrite: overwrite?)
+      # Keep Homebrew's cache, relinking, overwrite-backup and error handling.
+      super
     ensure
-      IntelbrewNative.restore_held_entries(held)
+      Utils::Interrupts.ignore { IntelbrewNative.restore_held_entries(held) }
     end
     opoo "#{keg.name} kept existing prefix paths unchanged:"
     puts preserved
@@ -55,7 +49,16 @@ module IntelbrewNative
   def pinned_git_source?(f);entries=source_entries(f).select{|_,r|(r.download_strategy<=VCSDownloadStrategy)==true};!entries.empty?&&entries.all?{|_,r|GitSources.supported?(r)};end
   def pinned_svn_source?(f);entries=source_entries(f).select{|_,r|(r.download_strategy<=VCSDownloadStrategy)==true};!entries.empty?&&entries.all?{|_,r|SvnSources.supported?(r)};end
   def metadata(name)
-    f=core_formula(name);deps={"runtime"=>[],"build"=>[],"test"=>[]};active_dependencies(f).each{|d|df=d.to_formula;raise "Foreign dependency" unless df.tap&.name=="homebrew/core";deps[d.build? ? "build" : (d.test? ? "test" : "runtime")]<<df.name};b=f.bottle_for_tag(Utils::Bottles.tag);official=b&&f.pour_bottle?&&b.compatible_locations? ? {"tag"=>b.tag.to_s,"sha256"=>b.resource.checksum.hexdigest,"url"=>b.url,"cellar"=>b.cellar.to_s}:nil;k=f.any_installed_keg;t=Tab.for_keg(k) if k;foreign=!!(t&&t.source["tap"]!="homebrew/core")
+    f=core_formula(name);deps={"runtime"=>[],"build"=>[],"test"=>[]}
+    active_dependencies(f).each do |d|
+      df=d.to_formula
+      raise "Foreign dependency" unless df.tap&.name=="homebrew/core"
+      # Local recipes retain both tags; API metadata can split them into edges.
+      deps["build"] << df.name if d.build?
+      deps["test"] << df.name if d.test?
+      deps["runtime"] << df.name unless d.build? || d.test?
+    end
+    b=f.bottle_for_tag(Utils::Bottles.tag);official=b&&f.pour_bottle?&&b.compatible_locations? ? {"tag"=>b.tag.to_s,"sha256"=>b.resource.checksum.hexdigest,"url"=>b.url,"cellar"=>b.cellar.to_s}:nil;k=f.any_installed_keg;t=Tab.for_keg(k) if k;foreign=!!(t&&t.source["tap"]!="homebrew/core")
     {"name"=>f.name,"tap"=>f.tap.name,"version"=>f.version.to_s,"revision"=>f.revision,"version_scheme"=>f.version_scheme,"pkg_version"=>f.pkg_version.to_s,"formula_sha256"=>formula_sha(f),"license"=>f.license,"official_bottle"=>official,"vcs_source"=>vcs_source?(f),"pinned_git_source"=>pinned_git_source?(f),"pinned_svn_source"=>pinned_svn_source?(f),"disabled"=>f.disabled?,"installed_current"=>f.latest_version_installed?&&!foreign,"installed_newer"=>!!(k&&k.version>f.pkg_version),"installed_options"=>t ? t.used_options.to_a.map(&:to_s):[],"installed_head"=>!!(t&&t.spec==:head),"foreign_install"=>foreign,"pinned"=>f.pinned?,"installed_versions"=>installed_versions(f),"runtime"=>deps["runtime"].uniq.sort,"build"=>deps["build"].uniq.sort,"test"=>deps["test"].uniq.sort}
   end
   def receipt(name);f=core_formula(name);raise "Expected installed current version" unless f.latest_version_installed?;t=Tab.for_formula(f);{"name"=>f.name,"pkg_version"=>f.pkg_version.to_s,"tap"=>t.source["tap"],"poured_from_bottle"=>t.poured_from_bottle,"built_as_bottle"=>t.built_as_bottle,"installed_versions"=>installed_versions(f)};end
@@ -138,11 +141,13 @@ module IntelbrewNative
         next unless src.exist? || src.symlink?
         dest = hold_root/relative
         dest.parent.mkpath
-        FileUtils.mv src, dest
-        held << [src, dest]
+        Utils::Interrupts.ignore do
+          FileUtils.mv src, dest
+          held << [src, dest]
+        end
       end
-    rescue
-      restore_held_entries(held)
+    rescue Exception # Restore already moved files on Interrupt/SystemExit too.
+      Utils::Interrupts.ignore { restore_held_entries(held) }
       raise
     end
     held
@@ -162,24 +167,6 @@ module IntelbrewNative
     leftover = false
     hold_root.find { |entry| leftover = true if entry.file? || entry.symlink? }
     FileUtils.rm_rf hold_root unless leftover
-  end
-  def link_preserved_keg(keg, formula, verbose:, overwrite:)
-    Homebrew::Unlink.unlink_link_overwrite_formulae(formula, verbose:) if formula
-    backup = {}
-    backup_dir = HOMEBREW_CACHE/"Backup"
-    begin
-      keg.link(verbose:, overwrite:)
-    rescue Keg::ConflictError => e
-      conflict_file = e.dst
-      if formula&.link_overwrite?(conflict_file) && !backup.key?(conflict_file)
-        backup_file = backup_dir/conflict_file.relative_path_from(HOMEBREW_PREFIX)
-        backup_file.parent.mkpath
-        FileUtils.mv conflict_file, backup_file
-        backup[conflict_file] = backup_file
-        retry
-      end
-      raise
-    end
   end
   def sources(name)
     f=core_formula(name);raise "Source collection requires local recipe" unless f.path.file?

@@ -94,6 +94,12 @@ jobs:
           echo "INTELBREW_CARGO_BIN=$toolchain_bin" >> "$GITHUB_ENV"
       - name: Prepare the exact Homebrew pair on a disposable runner
         run: bash scripts/prepare-runner.sh
+      - name: Exercise native linking and dependency roles
+        env:
+          INTELBREW_NATIVE_TESTS: '1'
+        run: |
+          python3 -m unittest discover -s tests -p test_native_linking.py -v
+          python3 -m unittest discover -s tests -p test_native.py -k test_ci_metadata_preserves -v
       - name: Load real formulae and exercise Cargo fetch
         run: bash scripts/verify-homebrew-pins.sh
   tests:
