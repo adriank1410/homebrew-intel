@@ -147,11 +147,11 @@ puts JSON.generate([cases.map {{ |item| IntelbrewNative.vcs_source?(item) }},
             with self.subTest(value=value), self.assertRaisesRegex(Error, "Invalid source strategy metadata"):
                 Planner(lambda names: {"simdutf": item}, {}, build=True).make(["simdutf"])
 
-    def test_foreign_prefix_conflict_stays_unlinked(self):
-        # A poured bottle must not replace an unmanaged prefix file. gnupg's
-        # only conflict is the GPG Suite symlink; linked formulae have none.
+    def test_foreign_prefix_conflict_links_everything_else(self):
+        # A poured bottle must not replace an unmanaged prefix file. The rest
+        # of that keg still has to be linked, or dependents cannot find it.
         script = f'''
-require "json"; require "stringio"; require "formula_installer"
+require "json"; require "stringio"; require "formula_installer"; require "digest"
 $stdin = StringIO.new('{{"mode":"inspect","names":[]}}')
 load {json.dumps(str(ROOT / "libexec/native.rb"))}
 def conflicts(name)
@@ -163,18 +163,30 @@ end
 gpg = "/usr/local/bin/gpg"
 has_gpg_symlink = File.symlink?(gpg)
 before = has_gpg_symlink ? File.readlink(gpg) : nil
+during = nil
+restored = nil
 FormulaInstaller.prepend(IntelbrewPreservePrefix)
 if has_gpg_symlink && Formulary.factory("gnupg").installed_kegs.any?
   keg = Keg.new(Formulary.factory("gnupg").latest_installed_prefix.realpath)
+  keg_gpg = Pathname(keg.to_path)/"bin/gpg"
+  keg_agent = Pathname(keg.to_path)/"bin/gpg-agent"
+  digest_before = Digest::SHA256.file(keg_gpg).hexdigest
   optlinked = false
   keg.define_singleton_method(:optlink) {{ |**_| optlinked = true }}
-  keg.define_singleton_method(:link) {{ |**_| abort "prefix link invoked" }}
+  keg.define_singleton_method(:link) do |**_|
+    during = {{
+      "gpg_visible" => keg_gpg.exist? || keg_gpg.symlink?,
+      "agent_visible" => keg_agent.exist? || keg_agent.symlink?
+    }}
+  end
   installer = FormulaInstaller.allocate
   installer.define_singleton_method(:verbose?) {{ false }}
   installer.define_singleton_method(:overwrite?) {{ false }}
   installer.link(keg)
+  restored = Digest::SHA256.file(keg_gpg).hexdigest == digest_before
   abort "link replaced #{{gpg}}" unless File.readlink(gpg) == before
   abort "optlink skipped" unless optlinked
+  abort "remaining keg files were not linked" unless during
 end
 owned = Object.new
 def owned.link_overwrite?(path) = Pathname(path).to_s == "/usr/local/bin/gpg"
@@ -184,6 +196,8 @@ puts JSON.generate({{
   "pinentry" => conflicts("pinentry"),
   "xz" => conflicts("xz"),
   "gpg" => before,
+  "during" => during,
+  "restored" => restored,
   "filtered" => IntelbrewNative.blocking_prefix_conflicts(["/usr/local/bin/gpg", "/usr/local/bin/other"], owned),
   "unfiltered" => IntelbrewNative.blocking_prefix_conflicts(["/usr/local/bin/gpg"], nil)
 }})
@@ -192,10 +206,166 @@ puts JSON.generate({{
         if result["has_gpg_symlink"]:
             self.assertEqual(result["gnupg"], ["/usr/local/bin/gpg"])
             self.assertEqual(result["gpg"], "/usr/local/MacGPG2/bin/gpg2")
+            self.assertEqual(result["during"], {"gpg_visible": False, "agent_visible": True})
+            self.assertTrue(result["restored"])
         self.assertEqual(result["pinentry"], [])
         self.assertEqual(result["xz"], [])
         self.assertEqual(result["filtered"], ["/usr/local/bin/other"])
         self.assertEqual(result["unfiltered"], ["/usr/local/bin/gpg"])
+
+    def test_prefix_conflict_links_libraries_around_foreign_directories(self):
+        # GitHub's Intel image keeps foreign directory symlinks such as
+        # share/gettext and include/X11. Those paths stay put; libraries and
+        # other keg files are still linked. A directory symlink into another
+        # keg is left for Homebrew's own linker to merge.
+        script = f'''
+require "json"; require "stringio"; require "formula_installer"; require "tmpdir"; require "fileutils"
+$stdin = StringIO.new('{{"mode":"inspect","names":[]}}')
+load {json.dumps(str(ROOT / "libexec/native.rb"))}
+FormulaInstaller.prepend(IntelbrewPreservePrefix)
+probe_bin = HOMEBREW_PREFIX/"bin/intelbrew-link-probe"
+probe_dir = HOMEBREW_PREFIX/"share/intelbrew-link-probe"
+cellar_probe = HOMEBREW_CELLAR/"intelbrew-link-probe"/"0"
+abort "probe already exists" if [probe_bin, probe_dir, cellar_probe.parent].any? {{ |path| path.exist? || path.symlink? }}
+work = Pathname(Dir.mktmpdir("intelbrew-link-probe"))
+foreign_dir = work/"image-gettext"
+foreign_dir.mkpath
+keg_root = work/"keg"
+(keg_root/"bin").mkpath
+(keg_root/"lib").mkpath
+(keg_root/"share/intelbrew-link-probe").mkpath
+File.write(keg_root/"bin/intelbrew-link-probe", "probe-bin")
+File.write(keg_root/"lib/libintelbrew-link-probe.dylib", "probe-lib")
+File.write(keg_root/"share/intelbrew-link-probe/msg", "probe-msg")
+File.symlink("/usr/bin/true", probe_bin)
+File.symlink(foreign_dir, probe_dir)
+cellar_probe.mkpath
+begin
+  preserved = {{
+    "foreign_dir" => IntelbrewNative.preserve_prefix_path?(probe_dir),
+    "broken" => begin
+      broken = work/"broken"
+      File.symlink(work/"missing", broken)
+      IntelbrewNative.preserve_prefix_path?(broken)
+    end,
+    "file" => IntelbrewNative.preserve_prefix_path?(probe_bin),
+    "keg_dir" => begin
+      keg_link = work/"keg-link"
+      File.symlink(cellar_probe, keg_link)
+      IntelbrewNative.preserve_prefix_path?(keg_link)
+    end
+  }}
+  fake = Object.new
+  optlinked = false
+  during = nil
+  fake.define_singleton_method(:to_path) {{ keg_root.to_s }}
+  fake.define_singleton_method(:/) {{ |other| keg_root/other }}
+  fake.define_singleton_method(:name) {{ "intelbrew-link-probe" }}
+  fake.define_singleton_method(:optlink) {{ |**_| optlinked = true }}
+  fake.define_singleton_method(:link) do |**_|
+    during = {{
+      "probe_visible" => (keg_root/"bin/intelbrew-link-probe").exist?,
+      "library_visible" => (keg_root/"lib/libintelbrew-link-probe.dylib").exist?,
+      "directory_visible" => (keg_root/"share/intelbrew-link-probe").exist?,
+      "directory_child_visible" => (keg_root/"share/intelbrew-link-probe/msg").exist?
+    }}
+  end
+  installer = FormulaInstaller.allocate
+  installer.define_singleton_method(:verbose?) {{ false }}
+  installer.define_singleton_method(:overwrite?) {{ false }}
+  installer.link(fake)
+  fake.define_singleton_method(:link) {{ |**_| raise "link failed" }}
+  raised = false
+  begin
+    installer.link(fake)
+  rescue RuntimeError => e
+    raised = e.message == "link failed"
+  end
+  (cellar_probe/"bin").mkpath
+  (cellar_probe/"lib").mkpath
+  (cellar_probe/"share/intelbrew-link-probe").mkpath
+  File.write(cellar_probe/"bin/intelbrew-link-kept", "kept")
+  File.write(cellar_probe/"bin/intelbrew-link-probe", "probe-bin")
+  File.write(cellar_probe/"lib/libintelbrew-link-probe.dylib", "probe-lib")
+  File.write(cellar_probe/"share/intelbrew-link-probe/msg", "probe-msg")
+  real = Keg.new(cellar_probe)
+  installer.link(real)
+  kept_link = HOMEBREW_PREFIX/"bin/intelbrew-link-kept"
+  lib_link = HOMEBREW_PREFIX/"lib/libintelbrew-link-probe.dylib"
+  real_result = {{
+    "kept" => kept_link.symlink? && Utils::Path.resolved_path(kept_link).cleanpath == (cellar_probe/"bin/intelbrew-link-kept").cleanpath,
+    "library" => lib_link.symlink? && Utils::Path.resolved_path(lib_link).cleanpath == (cellar_probe/"lib/libintelbrew-link-probe.dylib").cleanpath,
+    "bin_untouched" => File.readlink(probe_bin) == "/usr/bin/true",
+    "dir_untouched" => File.readlink(probe_dir) == foreign_dir.to_s,
+    "probe_restored" => File.read(cellar_probe/"bin/intelbrew-link-probe") == "probe-bin",
+    "msg_restored" => File.read(cellar_probe/"share/intelbrew-link-probe/msg") == "probe-msg"
+  }}
+  real.unlink
+  puts JSON.generate({{
+    "preserved" => preserved,
+    "during" => during,
+    "optlinked" => optlinked,
+    "prefix_bin" => File.readlink(probe_bin),
+    "prefix_dir" => File.readlink(probe_dir),
+    "restored_probe" => File.read(keg_root/"bin/intelbrew-link-probe"),
+    "restored_directory" => File.read(keg_root/"share/intelbrew-link-probe/msg"),
+    "hold_left" => (keg_root/".intelbrew-held-prefix").exist?,
+    "raised" => raised,
+    "restored_after_error" => File.read(keg_root/"bin/intelbrew-link-probe"),
+    "real" => real_result
+  }})
+ensure
+  if cellar_probe.directory?
+    begin
+      installed = Keg.new(cellar_probe)
+      installed.unlink
+      installed.opt_record.delete if installed.opt_record.symlink? || installed.opt_record.exist?
+      installed.linked_keg_record.delete if installed.linked_keg_record.symlink? || installed.linked_keg_record.directory?
+    rescue StandardError
+    end
+  end
+  [HOMEBREW_PREFIX/"bin/intelbrew-link-kept", HOMEBREW_PREFIX/"lib/libintelbrew-link-probe.dylib"].each do |link|
+    next unless link.symlink?
+    link.unlink if Utils::Path.resolved_path(link).to_s.include?("/intelbrew-link-probe/")
+  end
+  probe_bin.unlink if probe_bin.symlink? && File.readlink(probe_bin) == "/usr/bin/true"
+  probe_dir.unlink if probe_dir.symlink? && File.readlink(probe_dir) == foreign_dir.to_s
+  FileUtils.rm_rf cellar_probe.parent
+  FileUtils.rm_rf work
+end
+'''
+        result = json.loads(run(["brew", "ruby", "-e", script], env=brew_env()).splitlines()[-1])
+        self.assertEqual(result["preserved"], {
+            "foreign_dir": True,
+            "broken": False,
+            "file": True,
+            "keg_dir": False,
+        })
+        self.assertEqual(result["during"], {
+            "probe_visible": False,
+            "library_visible": True,
+            "directory_visible": False,
+            "directory_child_visible": False,
+        })
+        self.assertTrue(result["optlinked"])
+        self.assertEqual(result["prefix_bin"], "/usr/bin/true")
+        self.assertTrue(result["prefix_dir"].endswith("image-gettext"))
+        self.assertEqual(result["restored_probe"], "probe-bin")
+        self.assertEqual(result["restored_directory"], "probe-msg")
+        self.assertFalse(result["hold_left"])
+        self.assertTrue(result["raised"])
+        self.assertEqual(result["restored_after_error"], "probe-bin")
+        self.assertEqual(result["real"], {
+            "kept": True,
+            "library": True,
+            "bin_untouched": True,
+            "dir_untouched": True,
+            "probe_restored": True,
+            "msg_restored": True,
+        })
+        self.assertFalse((Path("/usr/local/bin/intelbrew-link-probe")).exists())
+        self.assertFalse((Path("/usr/local/share/intelbrew-link-probe")).exists())
+        self.assertFalse((Path("/usr/local/Cellar/intelbrew-link-probe")).exists())
 
 
 class InstallConflictSourceTests(unittest.TestCase):

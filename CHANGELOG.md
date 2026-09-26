@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Link the rest of a poured keg when an existing prefix path would be overwritten. A GPG Suite `gpg` symlink and Intel-runner directories such as `share/gettext` and `include/X11` stay in place, while that keg's libraries and tools are linked.
+
 ## 0.2.5 – prefix conflict resilience & core synchronization
 
 - Pour a bottle even when an existing prefix file, such as a GPG Suite `gpg` symlink, would be overwritten. The keg stays unlinked, those files stay in place, and the rest of the transaction continues.
