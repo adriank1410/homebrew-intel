@@ -100,7 +100,7 @@ def validate_source_build_holds(holds):
     if not holds:return []
     if isinstance(holds,tuple):holds=list(holds)
     if not isinstance(holds,list) or len(holds)>50:raise Error('Invalid source-build holds')
-    seen=set()
+    seen=set();normalized=[]
     for hold in holds:
         if not isinstance(hold,dict) or set(hold)!={'name','formula_sha256','dependencies'}:raise Error('Invalid source-build hold')
         name=canonical_name(hold['name'])
@@ -108,13 +108,15 @@ def validate_source_build_holds(holds):
         seen.add(name);require_sha(hold['formula_sha256'])
         deps=hold['dependencies']
         if not isinstance(deps,list) or not deps or len(deps)>20:raise Error('Invalid source-build hold')
-        dep_names=set()
+        dep_names=set();normalized_deps=[]
         for dep in deps:
             if not isinstance(dep,dict) or set(dep)!={'name','formula_sha256'}:raise Error('Invalid source-build hold')
             dep_name=canonical_name(dep['name'])
             if dep_name==name or dep_name in dep_names:raise Error('Invalid source-build hold')
             dep_names.add(dep_name);require_sha(dep['formula_sha256'])
-    return holds
+            normalized_deps.append({**dep,'name':dep_name})
+        normalized.append({**hold,'name':name,'dependencies':normalized_deps})
+    return normalized
 
 def source_build_held(holds,name,nodes):
     meta=nodes.get(name)

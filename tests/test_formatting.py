@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 import io
 import os
+import re
 import unittest
 from unittest.mock import patch
 
@@ -104,6 +105,15 @@ class FormattingTests(unittest.TestCase):
         self.assertIn("personal", plain_out)
         self.assertIn("official", plain_out)
         self.assertIn("missing", plain_out)
+
+    def test_colored_plan_headers_align_with_visible_data(self):
+        plan = {"order": ["tool"], "nodes": {"tool": meta("tool", provider="personal")}}
+        out = TtyStream()
+        with patch.dict(os.environ, {"HOMEBREW_COLOR": "1"}, clear=True):
+            cli.render(plan, stream=out)
+        lines = re.sub(r"\x1b\[[0-9;]*m", "", out.getvalue()).splitlines()
+        self.assertEqual(lines[0].index("Version"), lines[2].index(plan["nodes"]["tool"]["pkg_version"]))
+        self.assertEqual(lines[0].index("Source"), lines[2].index("personal"))
 
     def test_render_upgrade_formats_outdated_packages_and_skips_installed(self):
         plan = {

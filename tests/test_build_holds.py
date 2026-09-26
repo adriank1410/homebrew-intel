@@ -156,6 +156,20 @@ class SourceBuildHoldTests(unittest.TestCase):
                 with self.assertRaisesRegex(Error, "No compatible matching bottle"):
                     ensure_complete(result)
 
+    def test_qualified_hold_names_are_normalized_without_mutating_config(self):
+        nodes = self.held_qt_pair()
+        for qualify_root, qualify_dependency in ((True, False), (False, True), (True, True)):
+            with self.subTest(root=qualify_root, dependency=qualify_dependency):
+                holds = copy.deepcopy(self.config["source_build_holds"])
+                if qualify_root:
+                    holds[0]["name"] = "homebrew/core/qtbase"
+                if qualify_dependency:
+                    holds[0]["dependencies"][0]["name"] = "homebrew/core/md4c"
+                original = copy.deepcopy(holds)
+                with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):
+                    Planner(Inspector(nodes), {}, build=True, holds=holds).make(["qtbase"])
+                self.assertEqual(holds, original)
+
 
 if __name__ == "__main__":
     unittest.main()

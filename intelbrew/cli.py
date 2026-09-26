@@ -56,7 +56,8 @@ def render(plan: dict, stream: Any = None) -> None:
     if stream is None:
         stream = sys.stdout
     if is_color_enabled(stream):
-        header = f"{style('Formula', BOLD, stream):36} {style('Version', BOLD, stream):28} {style('Source', BOLD, stream)}"
+        header = (style("Formula".ljust(27), BOLD, stream) + " " +
+                  style("Version".ljust(19), BOLD, stream) + " " + style("Source", BOLD, stream))
         sep = style("─" * 70, DIM, stream)
         print(header, file=stream)
         print(sep, file=stream)
