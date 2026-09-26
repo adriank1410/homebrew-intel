@@ -1,27 +1,37 @@
 # SPDX-License-Identifier: BSD-2-Clause
 # Run only via `brew ruby`. Homebrew evaluates its own recipes and decides
 # which older bottle tags and uses_from_macos dependencies are compatible.
-require "json";require "digest";require "open3";require "formula";require "formulary";require "tab";require "utils/bottles";require "download_strategy";require "package_manager_cache";require "tmpdir";require_relative "git_sources";require_relative "svn_sources"
+require "json";require "digest";require "fileutils";require "open3";require "formula";require "formulary";require "tab";require "utils/bottles";require "download_strategy";require "package_manager_cache";require "tmpdir";require_relative "git_sources";require_relative "svn_sources"
 require_relative "source_mirrors"
 require_relative "native_sources"
-# A poured bottle stays installed when prefix files already belong to something
-# else, such as /usr/local/bin/gpg from MacGPG2. Linking would overwrite them.
+# A poured bottle must not replace an unmanaged prefix path, such as
+# /usr/local/bin/gpg from MacGPG2 or a GitHub runner directory like
+# share/gettext. Those paths stay put. The rest of the keg is still linked,
+# so libraries and tools remain reachable by dependents.
 module IntelbrewPreservePrefix
   def link(keg)
     conflicts = IntelbrewNative.blocking_prefix_conflicts(IntelbrewNative.prefix_link_conflicts(keg), formula)
-    if conflicts.any?
-      begin
-        keg.optlink(verbose: verbose?, overwrite: overwrite?)
-      rescue Keg::LinkError => e
-        ofail "Failed to create #{formula.opt_prefix}"
-        puts "Things that depend on #{formula.full_name} will probably not build."
-        puts e
-      end
-      opoo "#{keg.name} was poured without linking so existing prefix files stay unchanged:"
-      puts conflicts
+    preserved = conflicts.select { |path| IntelbrewNative.preserve_prefix_path?(path) }
+    if preserved.empty?
+      super
       return
     end
-    super
+    begin
+      keg.optlink(verbose: verbose?, overwrite: overwrite?)
+    rescue Keg::LinkError => e
+      ofail "Failed to create #{formula.opt_prefix}" if formula
+      puts "Things that depend on #{formula.full_name} will probably not build." if formula
+      puts e
+    end
+    held = []
+    begin
+      held = IntelbrewNative.hold_prefix_conflicts(keg, preserved)
+      IntelbrewNative.link_preserved_keg(keg, formula, verbose: verbose?, overwrite: overwrite?)
+    ensure
+      IntelbrewNative.restore_held_entries(held)
+    end
+    opoo "#{keg.name} kept existing prefix paths unchanged:"
+    puts preserved
   end
 end
 module IntelbrewNative
@@ -92,6 +102,84 @@ module IntelbrewNative
   def blocking_prefix_conflicts(conflicts, formula)
     return conflicts unless formula
     conflicts.reject { |path| formula.link_overwrite?(Pathname(path)) }
+  end
+  # Homebrew can delete a broken symlink and can merge a directory symlink
+  # that already points into another keg. Every other occupied path must stay.
+  def preserve_prefix_path?(path)
+    dst = Pathname(path)
+    return false unless dst.exist? || dst.symlink?
+    return true unless dst.symlink?
+    begin
+      target = Utils::Path.resolved_path(dst)
+      stat = target.lstat
+    rescue SystemCallError
+      return false
+    end
+    return true unless stat.directory?
+    begin
+      Keg.for(target)
+    rescue NotAKegError, Errno::ENOENT
+      return true
+    end
+    false
+  end
+  def hold_prefix_conflicts(keg, conflicts, prefix: HOMEBREW_PREFIX)
+    prefix = Pathname(prefix).cleanpath
+    keg_root = Pathname(keg.to_path)
+    hold_root = keg_root/".intelbrew-held-prefix"
+    raise "Held prefix files are already set aside" if hold_root.exist? || hold_root.symlink?
+    held = []
+    begin
+      paths = conflicts.map { |item| Pathname(item).cleanpath }.select { |item| preserve_prefix_path?(item) }
+      paths.sort_by { |item| item.each_filename.count }.each do |item|
+        relative = item.relative_path_from(prefix)
+        next if relative.absolute? || relative.each_filename.any? { |part| part == ".." }
+        src = keg_root/relative
+        next unless src.exist? || src.symlink?
+        dest = hold_root/relative
+        dest.parent.mkpath
+        FileUtils.mv src, dest
+        held << [src, dest]
+      end
+    rescue
+      restore_held_entries(held)
+      raise
+    end
+    held
+  end
+  def restore_held_entries(held)
+    return if held.nil? || held.empty?
+    held.reverse_each do |src, dest|
+      src = Pathname(src)
+      dest = Pathname(dest)
+      raise "Held keg path reappeared: #{src}" if src.exist? || src.symlink?
+      src.parent.mkpath
+      FileUtils.mv dest, src
+    end
+    hold_root = Pathname(held.first[1])
+    hold_root = hold_root.parent until hold_root.basename.to_s == ".intelbrew-held-prefix" || hold_root.root?
+    return unless hold_root.basename.to_s == ".intelbrew-held-prefix" && hold_root.directory?
+    leftover = false
+    hold_root.find { |entry| leftover = true if entry.file? || entry.symlink? }
+    FileUtils.rm_rf hold_root unless leftover
+  end
+  def link_preserved_keg(keg, formula, verbose:, overwrite:)
+    Homebrew::Unlink.unlink_link_overwrite_formulae(formula, verbose:) if formula
+    backup = {}
+    backup_dir = HOMEBREW_CACHE/"Backup"
+    begin
+      keg.link(verbose:, overwrite:)
+    rescue Keg::ConflictError => e
+      conflict_file = e.dst
+      if formula&.link_overwrite?(conflict_file) && !backup.key?(conflict_file)
+        backup_file = backup_dir/conflict_file.relative_path_from(HOMEBREW_PREFIX)
+        backup_file.parent.mkpath
+        FileUtils.mv conflict_file, backup_file
+        backup[conflict_file] = backup_file
+        retry
+      end
+      raise
+    end
   end
   def sources(name)
     f=core_formula(name);raise "Source collection requires local recipe" unless f.path.file?
