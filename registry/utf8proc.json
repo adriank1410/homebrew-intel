@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "ca6e46bf058925552d19a6530c1bd2e45864079d",
+  "cellar": "any",
+  "core_commit": "461ceeaa5208cb5dbb8c8653e4de59465b836d2f",
+  "filename": "utf8proc--2.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "f5d8327be5ad5b71700af9011c1b0066950d524acd49820a4c3f0d24e6f1d1c0",
+  "license": {
+    "all_of": [
+      "MIT",
+      "Unicode-DFS-2015"
+    ]
+  },
+  "name": "utf8proc",
+  "pkg_version": "2.12.0",
+  "recipe_sha256": "33c17e9ef22bd95ddde1d67adf792e63c24109f0bfd3160c1f1011b20e186f63",
+  "release": "intel-36243876419-1-utf8proc",
+  "revision": 0,
+  "run_id": "36243876419",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "603470514d0d4491fd669c149bb5e7e6f150a92efd804c682b0d628ae06e64a2",
+  "size": 109430,
+  "source": {
+    "filename": "utf8proc--2.12.0.sources.tar.gz",
+    "sha256": "8522b5f44768910971b7cfb8edf1629f77c3495ce26edb63205eab12b84abca0",
+    "size": 195924
+  },
+  "tag": "sequoia",
+  "version": "2.12.0",
+  "version_scheme": 0,
+  "workflow_commit": "239d8836533d13cc0f27e54780aa2bd5659d8254"
+}

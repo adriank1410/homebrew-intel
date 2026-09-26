@@ -13,6 +13,7 @@ from .core import ROOT, Error, retry_transient, run
 
 PIN_BRANCH = "automation/homebrew-pins"
 PIN_PATH = "policy/config.json"
+PIN_FIELDS = ("brew_commit", "core_commit")
 MAIN = "main"
 APP_LOGIN_RE = re.compile(r"app/[a-z0-9][a-z0-9-]*\Z")
 HEAD_RE = re.compile(r"[0-9a-f]{40}\Z")
@@ -39,7 +40,7 @@ def _one_pin_pr(repository: str) -> dict[str, Any] | None:
         "pr", "list", "--repo", repository, "--head", PIN_BRANCH, "--base", MAIN,
         "--state", "open", "--limit", "20", "--json",
         "number,state,author,headRefName,headRefOid,baseRefName,headRepository,"
-        "isCrossRepository,statusCheckRollup,autoMergeRequest,mergeStateStatus",
+        "baseRefOid,isCrossRepository,statusCheckRollup,autoMergeRequest,mergeStateStatus",
     ])
     if not isinstance(payload, list):
         raise Error("GitHub CLI returned an invalid PR list")
@@ -65,6 +66,8 @@ def _require_owned(pr: dict[str, Any], repository: str) -> None:
         raise Error("Refusing a Homebrew pin PR outside the App-owned branch")
     if not isinstance(pr.get("headRefOid"), str) or HEAD_RE.fullmatch(pr["headRefOid"]) is None:
         raise Error("Pin PR has no valid head commit")
+    if not isinstance(pr.get("baseRefOid"), str) or HEAD_RE.fullmatch(pr["baseRefOid"]) is None:
+        raise Error("Pin PR has no valid base commit")
     if not isinstance(pr.get("number"), int):
         raise Error("Pin PR has no number")
 
@@ -85,6 +88,45 @@ def _require_pin_files(repository: str, pr: dict[str, Any]) -> None:
     if (item is None or path != PIN_PATH or status != "modified" or
             item.get("previous_filename")):
         raise Error("Homebrew pin PR changes a file outside policy/config.json")
+
+
+def _strict_json_equal(left: Any, right: Any) -> bool:
+    if type(left) is not type(right):
+        return False
+    if isinstance(left, dict):
+        return (left.keys() == right.keys() and
+                all(_strict_json_equal(left[key], right[key]) for key in left))
+    if isinstance(left, list):
+        return (len(left) == len(right) and
+                all(_strict_json_equal(a, b) for a, b in zip(left, right)))
+    return left == right
+
+
+def _pin_policy(repository: str, ref: str) -> dict[str, Any]:
+    raw = gh([
+        "api", "-H", "Accept: application/vnd.github.raw+json",
+        f"repos/{repository}/contents/{PIN_PATH}?ref={ref}",
+    ])
+    try:
+        policy = json.loads(raw)
+    except (ValueError, TypeError) as exc:
+        raise Error("GitHub returned invalid policy JSON") from exc
+    if not isinstance(policy, dict):
+        raise Error("GitHub returned an invalid policy object")
+    for field in PIN_FIELDS:
+        commit = policy.get(field)
+        if not isinstance(commit, str) or HEAD_RE.fullmatch(commit) is None:
+            raise Error(f"invalid policy pin: {field}")
+    return policy
+
+
+def _require_only_pin_changes(repository: str, pr: dict[str, Any]) -> None:
+    base = _pin_policy(repository, pr["baseRefOid"])
+    head = _pin_policy(repository, pr["headRefOid"])
+    base_policy = {key: value for key, value in base.items() if key not in PIN_FIELDS}
+    head_policy = {key: value for key, value in head.items() if key not in PIN_FIELDS}
+    if not _strict_json_equal(base_policy, head_policy):
+        raise Error("Homebrew pin PR changes policy fields outside the pin commits")
 
 
 def _tests_conclusion(pr: dict[str, Any]) -> str | None:
@@ -126,6 +168,7 @@ def reconcile_pin(repository: str) -> str:
         return "waiting"
     conclusion = _tests_conclusion(pr)
     if conclusion == "SUCCESS":
+        _require_only_pin_changes(repository, pr)
         gh(["pr", "merge", str(number), "--repo", repository, "--squash",
             "--match-head-commit", head], capture=False)
         return "merged"
