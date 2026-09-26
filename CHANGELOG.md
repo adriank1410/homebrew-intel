@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.6 – safe linking and dependency planning
 
 - Preserve Homebrew's keg-only, skip-link and relinking behavior around foreign prefix paths; restore temporarily held keg files even when interrupted, including during a move.
 - Keep both build and test roles when inspecting local recipes, so verification does not omit a compiler needed by formula tests.
