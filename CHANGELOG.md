@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Preserve Homebrew's keg-only, skip-link and relinking behavior around foreign prefix paths; restore temporarily held keg files even when interrupted, including during a move.
+- Keep both build and test roles when inspecting local recipes, so verification does not omit a compiler needed by formula tests.
+- Restrict automated pin merges to the two commit fields, normalize qualified source-hold names, and align colored plan headers.
 - Link the rest of a poured keg when an existing prefix path would be overwritten. A GPG Suite `gpg` symlink and Intel-runner directories such as `share/gettext` and `include/X11` stay in place, while that keg's libraries and tools are linked.
 
 ## 0.2.5 – prefix conflict resilience & core synchronization

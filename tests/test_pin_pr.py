@@ -12,6 +12,22 @@ REPOSITORY = "adriank1410/homebrew-intel"
 BOT = "app/intel-bottle-publisher"
 HEAD = "a" * 40
 FRESH_HEAD = "b" * 40
+BASE_REF = "c" * 40
+FRESH_BASE_REF = "d" * 40
+
+BASE_POLICY = {
+    "schema": 1,
+    "brew_commit": "e" * 40,
+    "core_commit": "f" * 40,
+    "blocked_source_builds": ["llvm"],
+    "redistribution_exceptions": {},
+}
+ONE_PIN_POLICY = {**BASE_POLICY, "brew_commit": "1" * 40}
+BOTH_PIN_POLICY = {
+    **BASE_POLICY,
+    "brew_commit": "1" * 40,
+    "core_commit": "2" * 40,
+}
 
 
 def pin_pr(**changes):
@@ -22,6 +38,7 @@ def pin_pr(**changes):
         "headRefName": "automation/homebrew-pins",
         "headRefOid": HEAD,
         "baseRefName": "main",
+        "baseRefOid": BASE_REF,
         "headRepository": {"nameWithOwner": REPOSITORY},
         "isCrossRepository": False,
         "statusCheckRollup": [{
@@ -61,14 +78,54 @@ class PinPullRequestTests(unittest.TestCase):
         self.assertFalse(responses)
         return outcome, calls
 
+    def _run_policy(self, *, pr=None, pr_sequence=None, base_policy=None,
+                    head_policy=None, policy_by_ref=None, policy_error=None):
+        snapshots = list(pr_sequence or [pr or pin_pr()])
+        policies = policy_by_ref if policy_by_ref is not None else {
+            BASE_REF: BASE_POLICY if base_policy is None else base_policy,
+            HEAD: ONE_PIN_POLICY if head_policy is None else head_policy,
+        }
+        calls = []
+        self.last_policy_calls = calls
+
+        def fake(args, **kwargs):
+            calls.append(args)
+            if args[:2] == ["pr", "list"]:
+                if not snapshots:
+                    raise AssertionError("unexpected additional PR listing")
+                return json.dumps([snapshots.pop(0)])
+            if args[:2] == ["api", "--paginate"]:
+                return json.dumps([[{
+                    "filename": "policy/config.json", "status": "modified",
+                }]])
+            if args and args[0] == "api" and "-H" in args:
+                endpoint = args[args.index("-H") + 2]
+                prefix = f"repos/{REPOSITORY}/contents/policy/config.json?ref="
+                if not endpoint.startswith(prefix):
+                    raise AssertionError(f"unexpected raw API endpoint: {endpoint}")
+                ref = endpoint[len(prefix):]
+                if policy_error is not None:
+                    raise policy_error
+                if ref not in policies:
+                    raise AssertionError(f"unexpected policy ref: {ref}")
+                return json.dumps(policies[ref])
+            if args[:2] == ["pr", "merge"]:
+                return ""
+            raise AssertionError(args)
+
+        with patch("intelbrew.pin_pr.gh", side_effect=fake):
+            outcome = reconcile_pin(REPOSITORY)
+        return outcome, calls
+
     def _listed(self, pr, files=None):
         if files is None:
             files = [[{"filename": "policy/config.json", "status": "modified"}]]
-        return [
-            json.dumps([pr]),
-            json.dumps(files),
-            "",
-        ]
+        result = [json.dumps([pr]), json.dumps(files)]
+        if (pr.get("mergeStateStatus") == "CLEAN" and
+                pr.get("statusCheckRollup", [{}])[0].get("conclusion") == "SUCCESS"):
+            result.extend([json.dumps(BASE_POLICY), json.dumps(ONE_PIN_POLICY)])
+        result.append("")
+        return result
 
     def test_merges_the_exact_head_after_tests_succeed(self):
         outcome, calls = self._run(self._listed(pin_pr()))
@@ -81,6 +138,140 @@ class PinPullRequestTests(unittest.TestCase):
         self.assertNotIn("--auto", calls[-1])
         self.assertNotIn("--delete-branch", calls[-1])
 
+    def test_merges_when_one_or_both_pin_values_change(self):
+        for policy in (ONE_PIN_POLICY, BOTH_PIN_POLICY):
+            with self.subTest(changed_pins=[
+                    key for key in ("brew_commit", "core_commit")
+                    if policy[key] != BASE_POLICY[key]]):
+                outcome, calls = self._run_policy(head_policy=policy)
+                self.assertEqual(outcome, "merged")
+                self.assertEqual(calls[-1][-2:], ["--match-head-commit", HEAD])
+
+    def test_reads_policy_at_the_exact_base_and_head_commits(self):
+        outcome, calls = self._run_policy()
+
+        self.assertEqual(outcome, "merged")
+        self.assertEqual(
+            [call[-1] for call in calls if call[:2] == ["api", "-H"]],
+            [
+                f"repos/{REPOSITORY}/contents/policy/config.json?ref={BASE_REF}",
+                f"repos/{REPOSITORY}/contents/policy/config.json?ref={HEAD}",
+            ],
+        )
+        self.assertTrue(all(
+            call[call.index("-H") + 1] == "Accept: application/vnd.github.raw+json"
+            for call in calls if call[:2] == ["api", "-H"]
+        ))
+        list_call = next(call for call in calls if call[:2] == ["pr", "list"])
+        self.assertIn("baseRefOid", list_call[list_call.index("--json") + 1].split(","))
+
+    def test_refuses_a_pr_without_a_valid_base_commit(self):
+        with self.assertRaisesRegex(Error, "valid base commit"):
+            self._run_policy(pr=pin_pr(baseRefOid="main"))
+        self.assertFalse(any(
+            call[:2] == ["pr", "merge"] and "--squash" in call
+            for call in self.last_policy_calls
+        ))
+
+    def test_refuses_added_removed_changed_or_retyped_non_pin_fields(self):
+        removed = {key: value for key, value in BASE_POLICY.items()
+                   if key != "blocked_source_builds"}
+        changed = {**BASE_POLICY, "redistribution_exceptions": {"openssl": "reviewed"}}
+        retyped = {**BASE_POLICY, "schema": True}
+        cases = {
+            "added field": {**BASE_POLICY, "new_policy": "unexpected"},
+            "removed field": removed,
+            "changed field": changed,
+            "retyped field": retyped,
+        }
+        for case, head in cases.items():
+            with self.subTest(case=case):
+                with self.assertRaisesRegex(Error, "outside the pin commits"):
+                    self._run_policy(head_policy={
+                        **head,
+                        "brew_commit": ONE_PIN_POLICY["brew_commit"],
+                        "core_commit": ONE_PIN_POLICY["core_commit"],
+                    })
+                self.assertFalse(any(
+                    call[:2] == ["pr", "merge"] and "--squash" in call
+                    for call in self.last_policy_calls
+                ))
+
+    def test_refuses_malformed_policy_objects_or_pin_values(self):
+        bad_values = (
+            ("non-object head", BASE_POLICY, []),
+            ("non-object base", [], ONE_PIN_POLICY),
+            ("missing head pin", BASE_POLICY,
+             {key: value for key, value in ONE_PIN_POLICY.items()
+              if key != "brew_commit"}),
+            ("invalid head SHA", BASE_POLICY,
+             {**ONE_PIN_POLICY, "core_commit": "not-a-sha"}),
+            ("missing base pin", {key: value for key, value in BASE_POLICY.items()
+                                   if key != "core_commit"}, ONE_PIN_POLICY),
+            ("invalid base SHA", {**BASE_POLICY, "brew_commit": "0" * 39},
+             ONE_PIN_POLICY),
+        )
+        for label, base, head in bad_values:
+            with self.subTest(case=label):
+                with self.assertRaisesRegex(Error, "invalid policy"):
+                    self._run_policy(base_policy=base, head_policy=head)
+                self.assertFalse(any(
+                    call[:2] == ["pr", "merge"] and "--squash" in call
+                    for call in self.last_policy_calls
+                ))
+
+    def test_refuses_a_malformed_policy_response_and_failed_policy_reads(self):
+        malformed_calls = []
+
+        def malformed_transport(args, **kwargs):
+            malformed_calls.append(args)
+            if args[:2] == ["pr", "list"]:
+                return json.dumps([pin_pr()])
+            if args[:2] == ["api", "--paginate"]:
+                return json.dumps([[{
+                    "filename": "policy/config.json", "status": "modified",
+                }]])
+            if args and args[0] == "api" and "-H" in args:
+                return "{invalid JSON"
+            raise AssertionError(args)
+
+        with patch("intelbrew.pin_pr.gh", side_effect=malformed_transport):
+            with self.assertRaisesRegex(Error, "invalid policy"):
+                reconcile_pin(REPOSITORY)
+        self.assertFalse(any(
+            call[:2] == ["pr", "merge"] and "--squash" in call
+            for call in malformed_calls
+        ))
+
+        with self.assertRaises(OSError):
+            self._run_policy(policy_error=OSError("policy fetch failed"))
+        self.assertFalse(any(
+            call[:2] == ["pr", "merge"] and "--squash" in call
+            for call in self.last_policy_calls
+        ))
+
+    def test_validates_the_refreshed_head_after_disabling_auto_merge(self):
+        stale = pin_pr(autoMergeRequest={"commitHeadline": "old"})
+        fresh = pin_pr(headRefOid=FRESH_HEAD, baseRefOid=FRESH_BASE_REF)
+        outcome, calls = self._run_policy(
+            pr_sequence=[stale, fresh],
+            policy_by_ref={
+                FRESH_BASE_REF: BASE_POLICY,
+                FRESH_HEAD: ONE_PIN_POLICY,
+            },
+        )
+
+        self.assertEqual(outcome, "merged")
+        self.assertIn("--disable-auto", calls[1])
+        self.assertEqual(calls[-1][-2:], ["--match-head-commit", FRESH_HEAD])
+        self.assertEqual(
+            [call[-1] for call in calls if call[:2] == ["api", "-H"]],
+            [
+                f"repos/{REPOSITORY}/contents/policy/config.json?ref={FRESH_BASE_REF}",
+                f"repos/{REPOSITORY}/contents/policy/config.json?ref={FRESH_HEAD}",
+            ],
+        )
+
     def test_disables_queued_auto_merge_and_uses_the_refreshed_head(self):
         stale = pin_pr(autoMergeRequest={"commitHeadline": "old"})
         fresh = pin_pr(headRefOid=FRESH_HEAD)
@@ -89,6 +280,8 @@ class PinPullRequestTests(unittest.TestCase):
             "",
             json.dumps([fresh]),
             json.dumps([[{"filename": "policy/config.json", "status": "modified"}]]),
+            json.dumps(BASE_POLICY),
+            json.dumps(ONE_PIN_POLICY),
             "",
         ])
 
