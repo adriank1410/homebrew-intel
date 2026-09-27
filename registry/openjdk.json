@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
+  "brew_commit": "ce46735f348df8af3258e854c8a008d272f683b8",
   "cellar": "any",
-  "core_commit": "aa001d1f916296f637d151fe6d24c4b6ee904fbf",
+  "core_commit": "340eb74d5379526452b6b8da67cb9882af8e394f",
   "filename": "openjdk--27.sequoia.bottle.tar.gz",
   "formula_sha256": "275e623d1a3fa218d3d6cc2ebdc27c591ec67a19b62511018ea93e057a3feaba",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk",
   "pkg_version": "27",
   "recipe_sha256": "b8f389539e303280b6d817c7d8fd82e8f0247d64770b223325a42458dc5e5e16",
-  "release": "intel-36082159234-1-openjdk",
+  "release": "intel-36340354346-1-openjdk",
   "revision": 0,
-  "run_id": "36082159234",
+  "run_id": "36340354346",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -48,7 +48,7 @@
       "pkg_version": "2.90.0"
     },
     {
-      "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
+      "formula_sha256": "27b88654eaa68701681d02c19abcb800b54b9cfd14fa4d084df113c133b552d4",
       "name": "graphite2",
       "pkg_version": "1.3.15"
     },
@@ -164,15 +164,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5ed02b5d9995548dffccc69440f6e06a369c163c2d7a15769691845db806294c",
-  "size": 222796203,
+  "sha256": "62a4cf75a9a4cbf6511ea2b53d323b8425f4874bfba3bfb39ce0607aea1a2374",
+  "size": 222796152,
   "source": {
     "filename": "openjdk--27.sources.tar.gz",
-    "sha256": "730b5d7bba6e026caf34a83a467e83657dd1886d9ab4c36c8b722511e86883ce",
-    "size": 340075285
+    "sha256": "3a13aba088d0a6a4360a0581024dcb9836303eb0df3fd3a334907e43d99ada87",
+    "size": 340075296
   },
   "tag": "sequoia",
   "version": "27",
   "version_scheme": 0,
-  "workflow_commit": "0c030b93fd78f2acf1e440778cc50c84562c1240"
+  "workflow_commit": "93c1361e632960bd01d1ffc7ad4c8b347eb57705"
 }
