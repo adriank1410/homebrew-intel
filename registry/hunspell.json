@@ -1,0 +1,55 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "cc9ff034b1d98cdd4061f68cf715bb967c483a8f",
+  "cellar": "any",
+  "core_commit": "231ce993c0c2dd82f06a15aa05120c45d859bd65",
+  "filename": "hunspell--1.7.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "100edb593e91690a9a8e8532537bdadfc4d6b89d8928c4a83066733b9541f561",
+  "license": {
+    "any_of": [
+      "MPL-1.1",
+      "GPL-2.0-or-later",
+      "LGPL-2.1-or-later"
+    ]
+  },
+  "name": "hunspell",
+  "pkg_version": "1.7.4",
+  "recipe_sha256": "91bd93a134c015f431be8c4d0f81ffd5ec9cf0d4e2f305b24c23ccec79fbb798",
+  "release": "intel-36443401543-1-hunspell",
+  "revision": 0,
+  "run_id": "36443401543",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    }
+  ],
+  "schema": 1,
+  "sha256": "eb5bd7ab93f3f4d078952dfacd227c7ea9fd30e4be81aab69e25a97f35e425c3",
+  "size": 708037,
+  "source": {
+    "filename": "hunspell--1.7.4.sources.tar.gz",
+    "sha256": "9b234142e683635c462506cda9c3b913c588e6508a4c523055b1365ef1353ba4",
+    "size": 1173611
+  },
+  "tag": "sequoia",
+  "version": "1.7.4",
+  "version_scheme": 0,
+  "workflow_commit": "29591249e9dfffc2135fb4e6f9052573b816fc13"
+}
