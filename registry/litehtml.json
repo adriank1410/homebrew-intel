@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "cc9ff034b1d98cdd4061f68cf715bb967c483a8f",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "231ce993c0c2dd82f06a15aa05120c45d859bd65",
   "filename": "litehtml--0.10_1.sequoia.bottle.tar.gz",
   "formula_sha256": "7c8ab1c97d3d2d4afbbf1327f21001c41513d03d815fdcddd4a3d4b4459b66db",
   "license": "BSD-3-Clause",
   "name": "litehtml",
   "pkg_version": "0.10_1",
   "recipe_sha256": "fccd4569e57a98afaeb17226b3347928bfacdc996b3dc9977b79144808122c26",
-  "release": "intel-35743217955-1-litehtml",
+  "release": "intel-36489556792-1-litehtml",
   "revision": 1,
-  "run_id": "35743217955",
+  "run_id": "36489556792",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e7552501b38b94b9b32ce50da819d245b38fa88e750e575bdcbfa20b34c9621d",
+      "formula_sha256": "0629f7590ff8bbe40cc51a9a4b1347f367e8afa2d89cc2db409cb2a3cc3ee3ee",
       "name": "gumbo-parser",
-      "pkg_version": "0.14.0"
+      "pkg_version": "0.14.1"
     }
   ],
   "schema": 1,
-  "sha256": "b18d4fd4366cb9fbac1726f9cacf58a4e15becf9b44f35386892bddda1292b5b",
-  "size": 505805,
+  "sha256": "1e0c35750e4151092769f6b95e1e463a39512a7f58b99a93476a6329c03b65c8",
+  "size": 505807,
   "source": {
     "filename": "litehtml--0.10_1.sources.tar.gz",
-    "sha256": "c39f5fa95f5c387b63f6e7f4e309d96992917f20bec0ec13645dba93cf0ef854",
-    "size": 814546
+    "sha256": "d2b0e03b5d25f08ca5b1de0e96d1b618d06bd820484e1adced92c2006e793259",
+    "size": 814560
   },
   "tag": "sequoia",
   "version": "0.10",
   "version_scheme": 0,
-  "workflow_commit": "3f8c9752dfd20a10bded0f5237922348f8ba2f05"
+  "workflow_commit": "7598e88f817c918c007257e77da4ef7007c9959d"
 }
