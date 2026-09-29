@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ca6e46bf058925552d19a6530c1bd2e45864079d",
+  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
   "cellar": "any",
-  "core_commit": "461ceeaa5208cb5dbb8c8653e4de59465b836d2f",
+  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
   "filename": "curl--8.22.0.sequoia.bottle.tar.gz",
   "formula_sha256": "10ec287adb919bb9380983b5db9a069309331fbdc138a34b9384755eb2d737a2",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.22.0",
   "recipe_sha256": "d95239833919490b510e2a751637f96ffd7bf582fb13cd774872d2aab8610264",
-  "release": "intel-36243876419-1-curl",
+  "release": "intel-36593061706-1-curl",
   "revision": 0,
-  "run_id": "36243876419",
+  "run_id": "36593061706",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -54,9 +54,9 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "formula_sha256": "e5c03ebbc8f6dc2a48690c9a293b2dcf71857a63a9a33d0a5c405539634bc30d",
       "name": "openssl@3",
-      "pkg_version": "3.6.4"
+      "pkg_version": "3.6.4_1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3fc8d28fd03546fdcc9c320d8b623f34b295d116656dd4ee237e77a1db2d6da3",
-  "size": 1695649,
+  "sha256": "4cd98c9cd5f1b1ed37241da381d938b9ba8614f96ad54085eea1468eb9716c11",
+  "size": 1695597,
   "source": {
     "filename": "curl--8.22.0.sources.tar.gz",
-    "sha256": "7e3a0804dd4282b247fda95e251d174c79508f8a50c7adeebd3d4ec3e00aa643",
-    "size": 3402727
+    "sha256": "c9ef0408fe0344510f658786c800bd357c6e7ea918447438800b55f8c30ad091",
+    "size": 3402694
   },
   "tag": "sequoia",
   "version": "8.22.0",
   "version_scheme": 0,
-  "workflow_commit": "239d8836533d13cc0f27e54780aa2bd5659d8254"
+  "workflow_commit": "1c2348aa5be6e1b2ef11ba73efa4123055ecdb08"
 }
