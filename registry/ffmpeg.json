@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ce46735f348df8af3258e854c8a008d272f683b8",
+  "brew_commit": "cc9ff034b1d98cdd4061f68cf715bb967c483a8f",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "340eb74d5379526452b6b8da67cb9882af8e394f",
+  "core_commit": "2c1a56119709384b127520bfd5f1a46bc7f7cc80",
   "filename": "ffmpeg--9.0.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d276ecab3d5e109fadcb93a671a7175569ca7ac942be46008a41f4fa678509f0",
   "license": "GPL-3.0-or-later",
   "name": "ffmpeg",
   "pkg_version": "9.0.2",
   "recipe_sha256": "a85f0ee9b028aa142ede346661cd8d85371cbc8f1ddc4044948c21d14c17e6ab",
-  "release": "intel-36324125039-1-ffmpeg",
+  "release": "intel-36542755802-1-ffmpeg",
   "revision": 0,
-  "run_id": "36324125039",
+  "run_id": "36542755802",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -44,9 +44,9 @@
       "pkg_version": "1.33.7"
     },
     {
-      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
+      "formula_sha256": "e5c03ebbc8f6dc2a48690c9a293b2dcf71857a63a9a33d0a5c405539634bc30d",
       "name": "openssl@3",
-      "pkg_version": "3.6.4"
+      "pkg_version": "3.6.4_1"
     },
     {
       "formula_sha256": "39611712ad2de37708493f43569e9266c4be9dcc5e88e7276ee78a562bf03a33",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d855019317ad13ef7a2bc4f2a33c84169227db55441c0fc49443bd725eb7c17b",
-  "size": 22173462,
+  "sha256": "e3dedce6bd7f3535862183bc441923114765e24c0b09209872e5ab714b63b730",
+  "size": 22173450,
   "source": {
     "filename": "ffmpeg--9.0.2.sources.tar.gz",
-    "sha256": "1c4a9f2e88d0d19d0ed183cc06cd0bb013316478e0f933336413dcf22c325d5a",
-    "size": 12077474
+    "sha256": "0a31243bb450de7b1c1ba641e0c4f446eaaf5a82fb66d03c294e8ebec128fed8",
+    "size": 12077473
   },
   "tag": "sequoia",
   "version": "9.0.2",
   "version_scheme": 0,
-  "workflow_commit": "38a84a2636ceec2a09c91a2b270100a4b4ba217c"
+  "workflow_commit": "e6aa56f11e8e7e1e0ca5068f94be583bc7fb51e4"
 }
