@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
   "filename": "gts--0.7.6_3.sequoia.bottle.tar.gz",
   "formula_sha256": "e3d6b09c676761a60774e90cd96015d36257b54cd1b0d0395ea707a87be18ae2",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_3",
   "recipe_sha256": "fa36c048669fb895d41ef201607f9c8745b85b5d4868c69be5613cf719599e21",
-  "release": "intel-35770115144-1-gts",
+  "release": "intel-36650254637-1-gts",
   "revision": 3,
-  "run_id": "35770115144",
+  "run_id": "36650254637",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -69,9 +69,9 @@
       "pkg_version": "11.02.30"
     },
     {
-      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
       "name": "pcre2",
-      "pkg_version": "10.48"
+      "pkg_version": "10.49"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "36decef288e80c487844eb9dcddbcf6e48bc6194c73dc15fabef10681a76c099",
-  "size": 431563,
+  "sha256": "c5bbce815aaef3a387fec1d40caaf494d7e5ddaf2027f7a0afe83df5d4318418",
+  "size": 431565,
   "source": {
     "filename": "gts--0.7.6_3.sources.tar.gz",
-    "sha256": "b461344a14b9fc65efc1602b12634d3e6e592de901c713e9cf75761d17cd2604",
-    "size": 959592
+    "sha256": "99aae509a3c5a2a309a77bfa66aedbd531b4139d6aa9165c9376805083557b3c",
+    "size": 959579
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "4750bdafa79783d8683a2b21a601242bf9a565bd"
+  "workflow_commit": "1f3b9264ce92541cdbb58510b4c9218ee47142e0"
 }
