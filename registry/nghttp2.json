@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
+  "brew_commit": "7cce6eac8d897b0b8440e16f33dbcb21770da7cf",
   "cellar": "any",
-  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
+  "core_commit": "279c62b6d0e053968dd4c5948f6e0519c72092e0",
   "filename": "nghttp2--1.70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "236c7c66e30c7260243022169666d99f70a1ed9c2d017243f75c00b76acc9f70",
   "license": "MIT",
   "name": "nghttp2",
   "pkg_version": "1.70.0",
   "recipe_sha256": "a1ce1adca7bcb78b5c6c8fed708744393de1a22db133ff4fd080eeef1aa23f5d",
-  "release": "intel-36593061706-1-nghttp2",
+  "release": "intel-36764605640-1-nghttp2",
   "revision": 0,
-  "run_id": "36593061706",
+  "run_id": "36764605640",
   "runtime_dependencies": [
     {
       "formula_sha256": "fdcab3038af1e615e42157bcda8145db6581e4d24cde38e2de2c3901300bc4d4",
@@ -39,21 +39,21 @@
       "pkg_version": "1.70.0"
     },
     {
-      "formula_sha256": "84c61cd70759a309ae855a8d3dee3ad051cd90f4712f44cc7012ae05fa510cb6",
+      "formula_sha256": "950a3919022ed56c0f9f5363a3e0c83adef9ec5f591f25c39ccf9c7776abe62a",
       "name": "openssl@4",
-      "pkg_version": "4.0.2_1"
+      "pkg_version": "4.0.3"
     }
   ],
   "schema": 1,
-  "sha256": "66e4ffe7edaf46bfb82f609cb0b3a8b2c0dd7168f3036254455c0d1cbfd23673",
-  "size": 1017745,
+  "sha256": "13842bed027ab5d477979af3a203e69caa6b788ae96bf24e61677e104f5da692",
+  "size": 1017740,
   "source": {
     "filename": "nghttp2--1.70.0.sources.tar.gz",
-    "sha256": "fe7e3725d09e0f9eb677ebca0d5717b3f329ffcf0a9804ad283daaffda64f247",
-    "size": 3106335
+    "sha256": "14ebc9ddceb2695039a227e558bb3b9702ca52f834b817d2ab75f2680e451ef5",
+    "size": 3106331
   },
   "tag": "sequoia",
   "version": "1.70.0",
   "version_scheme": 0,
-  "workflow_commit": "1c2348aa5be6e1b2ef11ba73efa4123055ecdb08"
+  "workflow_commit": "212e2d7a764a5774ab9f432fe3e141783520663a"
 }
