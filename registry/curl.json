@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
+  "brew_commit": "7cce6eac8d897b0b8440e16f33dbcb21770da7cf",
   "cellar": "any",
-  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
+  "core_commit": "279c62b6d0e053968dd4c5948f6e0519c72092e0",
   "filename": "curl--8.22.0.sequoia.bottle.tar.gz",
   "formula_sha256": "10ec287adb919bb9380983b5db9a069309331fbdc138a34b9384755eb2d737a2",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.22.0",
   "recipe_sha256": "d95239833919490b510e2a751637f96ffd7bf582fb13cd774872d2aab8610264",
-  "release": "intel-36593061706-1-curl",
+  "release": "intel-36764605640-1-curl",
   "revision": 0,
-  "run_id": "36593061706",
+  "run_id": "36764605640",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -44,9 +44,9 @@
       "pkg_version": "0.23.3"
     },
     {
-      "formula_sha256": "fad5046505e124fea1e465ff817464f2084c8982184607edbc7366c1073bd55a",
+      "formula_sha256": "3180adae5daa9b1935c3b8d0cf57133bdc8168ce775de2db201ea5743bf81350",
       "name": "libssh2",
-      "pkg_version": "1.11.1_5"
+      "pkg_version": "1.11.1_6"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4cd98c9cd5f1b1ed37241da381d938b9ba8614f96ad54085eea1468eb9716c11",
-  "size": 1695597,
+  "sha256": "e1bde0e134cc7d474ffeb08d4ec497ec8c5ec25d451d034899b367077cec5e27",
+  "size": 1695657,
   "source": {
     "filename": "curl--8.22.0.sources.tar.gz",
-    "sha256": "c9ef0408fe0344510f658786c800bd357c6e7ea918447438800b55f8c30ad091",
-    "size": 3402694
+    "sha256": "9244461297d07f422f774c56fcb928f0a1498a3c7fb9af41685060b41ee80dcd",
+    "size": 3402701
   },
   "tag": "sequoia",
   "version": "8.22.0",
   "version_scheme": 0,
-  "workflow_commit": "1c2348aa5be6e1b2ef11ba73efa4123055ecdb08"
+  "workflow_commit": "212e2d7a764a5774ab9f432fe3e141783520663a"
 }
