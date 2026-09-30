@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ce46735f348df8af3258e854c8a008d272f683b8",
+  "brew_commit": "7cce6eac8d897b0b8440e16f33dbcb21770da7cf",
   "cellar": "any",
-  "core_commit": "340eb74d5379526452b6b8da67cb9882af8e394f",
+  "core_commit": "279c62b6d0e053968dd4c5948f6e0519c72092e0",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-36340354346-1-pango",
+  "release": "intel-36764605640-1-pango",
   "revision": 0,
-  "run_id": "36340354346",
+  "run_id": "36764605640",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -119,9 +119,9 @@
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
       "name": "pcre2",
-      "pkg_version": "10.48"
+      "pkg_version": "10.49"
     },
     {
       "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "76fc7d411fe7ca3d57498cff2b4c8fa31f2a200c104a8097c7e164f206b3f320",
-  "size": 882810,
+  "sha256": "3e25c3f6b4c1667792991263e16461567228e7ca23aeba685a6f458f0b6050ca",
+  "size": 882817,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "a85b55e293a31db39fe4ef83829f7a435be41a9720da58e9610c4b644463d454",
-    "size": 1932749
+    "sha256": "c8248139799fd7f2bfbd763536fe55b03f0b8d894d4a0160b1bdcce52a6612e6",
+    "size": 1932742
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "93c1361e632960bd01d1ffc7ad4c8b347eb57705"
+  "workflow_commit": "212e2d7a764a5774ab9f432fe3e141783520663a"
 }
