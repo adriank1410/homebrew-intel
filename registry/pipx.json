@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
+  "brew_commit": "012f02a0eed322efa019960768acc89bf46fd6cc",
   "cellar": "any_skip_relocation",
-  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
+  "core_commit": "c799c7ec3bc29124301389b207b3430368748fc0",
   "filename": "pipx--1.17.7.sequoia.bottle.tar.gz",
   "formula_sha256": "cfaf75be2cd0519e8af811d147daf279a5b4a983c92c53dc650c72ea18444a22",
   "license": "MIT",
   "name": "pipx",
   "pkg_version": "1.17.7",
   "recipe_sha256": "f7edcecb78bf4b30205d7723a53ae213a5d4da07e6c911e531eec25db0100d3d",
-  "release": "intel-36593061706-1-pipx",
+  "release": "intel-36792829744-1-pipx",
   "revision": 0,
-  "run_id": "36593061706",
+  "run_id": "36792829744",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -29,9 +29,9 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "e5c03ebbc8f6dc2a48690c9a293b2dcf71857a63a9a33d0a5c405539634bc30d",
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
       "name": "openssl@3",
-      "pkg_version": "3.6.4_1"
+      "pkg_version": "3.6.5"
     },
     {
       "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7bea65ff2f3785a4e1a916af359e8e511702f6aecad1b9bd02bdd43e0abc17ce",
-  "size": 521368,
+  "sha256": "fdae6340ceef50ca892932526c316de509439c388b74c64e669c050ac4ce472b",
+  "size": 521359,
   "source": {
     "filename": "pipx--1.17.7.sources.tar.gz",
-    "sha256": "b2f0a16f4ea913df9405216b7ea71d7e397e855d60fce27497959a75361a4cc6",
-    "size": 1465859
+    "sha256": "03ce5147a78fc5a2586a1daab26f55749606888cb454df8a3fc096a0a7b29496",
+    "size": 1465860
   },
   "tag": "sequoia",
   "version": "1.17.7",
   "version_scheme": 0,
-  "workflow_commit": "1c2348aa5be6e1b2ef11ba73efa4123055ecdb08"
+  "workflow_commit": "8c4559363ba7443d4399dfc0f22afecffa4e70bd"
 }
