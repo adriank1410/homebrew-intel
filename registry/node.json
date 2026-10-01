@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
+  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
+  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
   "filename": "node--26.10.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "3791b06aeb1f2bb9ce0ab9f82732469655c90c16b6234b3037f76d2304ae6373",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.10.0_1",
   "recipe_sha256": "cd0eeb8dedae41b2385bda49f0245b90978c3fcaa6b930567502e97f7cccc02c",
-  "release": "intel-36628553747-1-node",
+  "release": "intel-36906518505-1-node",
   "revision": 1,
-  "run_id": "36628553747",
+  "run_id": "36906518505",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -94,9 +94,9 @@
       "pkg_version": "0.1.4"
     },
     {
-      "formula_sha256": "e5c03ebbc8f6dc2a48690c9a293b2dcf71857a63a9a33d0a5c405539634bc30d",
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
       "name": "openssl@3",
-      "pkg_version": "3.6.4_1"
+      "pkg_version": "3.6.5"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9832c4346607faff824003b6e3b81a561ff4d47c91430aa8739821b7a8fff709",
-  "size": 21674167,
+  "sha256": "b8785f8a6572e14a5276c7bf497a27661eb7983988ef4fa8b1e09299d3b334d3",
+  "size": 21674044,
   "source": {
     "filename": "node--26.10.0_1.sources.tar.gz",
-    "sha256": "0d062103419f3f35556242abb076868c67958184d7c239782c5639d9f7a542fd",
-    "size": 65272090
+    "sha256": "8dcd8510565d5b129ea5a61e39bae347dc8bb84fd663a3c376909b7dcc32be5d",
+    "size": 65272086
   },
   "tag": "sequoia",
   "version": "26.10.0",
   "version_scheme": 0,
-  "workflow_commit": "be0d7d2f05e2aa65e3b6221126eb2ff9214ffd15"
+  "workflow_commit": "b70471679fd95f5939d7d61436b3880e388b7e07"
 }
