@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ce46735f348df8af3258e854c8a008d272f683b8",
+  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "340eb74d5379526452b6b8da67cb9882af8e394f",
+  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
   "filename": "ghostscript--10.08.0.sequoia.bottle.tar.gz",
   "formula_sha256": "2d6606514ac36c06fd4b00141ba01bfc2d4d83fc2318c0cdaa022c8187e9a62b",
   "license": "AGPL-3.0-or-later",
   "name": "ghostscript",
   "pkg_version": "10.08.0",
   "recipe_sha256": "f5f3954efa8a9a852b720514f095ad52d58f74173449442e2fe4231d5fe46d82",
-  "release": "intel-36363243827-1-ghostscript",
+  "release": "intel-36939367690-1-ghostscript",
   "revision": 0,
-  "run_id": "36363243827",
+  "run_id": "36939367690",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -54,9 +54,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "745607d3d7ba91d5fe503e6ff43ac5caa1d35bbf1e7f3d9d2602039e928ba0dc",
+      "formula_sha256": "9c67597f69970bdc1ca5e4f6d9d23c207dae365ac7ee40f62183372c28c32128",
       "name": "harfbuzz",
-      "pkg_version": "14.5.0"
+      "pkg_version": "14.5.1"
     },
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -179,9 +179,9 @@
       "pkg_version": "1.58.2"
     },
     {
-      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
       "name": "pcre2",
-      "pkg_version": "10.48"
+      "pkg_version": "10.49"
     },
     {
       "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "07edf2674d5e529438df36289c336a992a317501f032984aa57d90d991183c7c",
-  "size": 43801985,
+  "sha256": "3592391a7303836eb0d574ed2dbcf947431ccd93f93d13fa54aa260fdbbe57e0",
+  "size": 43802040,
   "source": {
     "filename": "ghostscript--10.08.0.sources.tar.gz",
-    "sha256": "8f8101bbf831994a4c76a668b4b2ff476da4e0e85144b93261aa2ddd1cae9637",
-    "size": 78495466
+    "sha256": "b2744bd86c2d4338861f2ec23a9e51643a08aea08c6971457f2d81f46a10f952",
+    "size": 78495457
   },
   "tag": "sequoia",
   "version": "10.08.0",
   "version_scheme": 0,
-  "workflow_commit": "ecbde7779fc4486daab4f55250bdc16f7ac8ab86"
+  "workflow_commit": "67228404c5c728de0c4f37913dea710a51309ff1"
 }
