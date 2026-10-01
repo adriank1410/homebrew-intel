@@ -32,7 +32,7 @@ def retry_transient(operation):
 
 def is_transient_error(exc: Exception | str) -> bool:
     if isinstance(exc, urllib.error.HTTPError):
-        return exc.code in {408, 429, 500, 502, 503, 504}
+        return exc.code in {408, 429, 500, 502, 503, 504, 522}
     if isinstance(exc, _TRANSIENT_NETWORK):
         return True
     if isinstance(exc, urllib.error.URLError):
@@ -62,6 +62,7 @@ def is_transient_error(exc: Exception | str) -> bool:
         "network failure", "server offline", "error creating asset temp dir",
         "incomplete read", "incompleteread", "retrieval incomplete",
         "http 408", "http 429", "http 500", "http 502", "http 503", "http 504",
+        "http 522", "returned error: 522",
         "502 bad gateway", "503 service unavailable", "504 gateway time-out", "504 gateway timeout",
         "bad gateway", "service unavailable", "gateway time-out", "gateway timeout",
         "internal server error"
@@ -107,7 +108,7 @@ def validate_source_build_holds(holds):
         if name in seen:raise Error('Duplicate source-build hold')
         seen.add(name);require_sha(hold['formula_sha256'])
         deps=hold['dependencies']
-        if not isinstance(deps,list) or not deps or len(deps)>20:raise Error('Invalid source-build hold')
+        if not isinstance(deps,list) or len(deps)>20:raise Error('Invalid source-build hold')
         dep_names=set();normalized_deps=[]
         for dep in deps:
             if not isinstance(dep,dict) or set(dep)!={'name','formula_sha256'}:raise Error('Invalid source-build hold')

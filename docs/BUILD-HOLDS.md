@@ -2,7 +2,10 @@
 
 These holds in `policy/config.json` apply only when the planner would select
 `provider=build`. They are not successful builds and do not supply missing
-bottles. Scheduled native preflight reports the blocked root and continues with
+bottles. A hold matches one formula file when `dependencies` is empty, or an
+exact set of dependency recipe files when that list is present. An empty list
+matches that formula file alone.
+Scheduled native preflight reports the blocked root and continues with
 eligible siblings. The CI build planner enforces the same policy for manually
 requested roots and for transitive build, runtime and test dependencies.
 
@@ -43,6 +46,24 @@ longer occur.
 
 Do not delete the assertion, patch the recipe silently, relabel an old bottle's
 dependency hashes, or disable dependency drift detection to obtain a green run.
+
+### ocrmypdf: pypdfium2 cannot fetch ctypesgen inside the sandbox
+
+Evidence: [Sequoia Intel bottles run 36781482650](https://github.com/adriank1410/homebrew-intel/actions/runs/36781482650).
+The pinned core was `c799c7ec3bc29124301389b207b3430368748fc0`.
+`ocrmypdf` 17.13.0 installs `pypdfium2` 5.13.0 from
+`pypdfium2-5.13.0.tar.gz`
+(`7ca2d8e31bd8d0d40c496416b7d8bea423388669ffd494929f50e8c3a82326b8`).
+That package's build requires `ctypesgen` from a git URL. Homebrew's isolated
+pip install uses `--no-binary=:all:`, so the fetch fails and repeating the same
+formula file does not succeed. The Qt hold stays a pair because both recipe
+files decide that failure. This one is the formula file alone:
+`39b84c91d0b8af18ffcd5bddbcae49cabbac0ea6ac26e8d872083ead3f9f2499`.
+
+The hold expires when `ocrmypdf.rb` changes. It does not publish a bottle.
+The client still reports the package missing. A manual dispatch stops in the
+planner with `Source build excluded by policy: ocrmypdf` instead of starting
+the source build. After a successful publication, delete the stale hash.
 
 ### LLVM: bottle builds run the profile-guided suite; compiler-only installs do not
 

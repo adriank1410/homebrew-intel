@@ -121,6 +121,53 @@ class RootWorkflowTests(unittest.TestCase):
                          if "intelbrew.publish" in step.get("run", ""))
         self.assertEqual(operation["env"]["GH_TOKEN"], "${{ steps.app-token.outputs.token }}")
 
+    def test_artifact_uploads_retry_twice_and_the_last_attempt_fails_the_job(self):
+        document = workflow("bottle-root.yml")
+        expected = {
+            "build": ("candidate-${{ inputs.root }}", "upload-candidate"),
+            "verify": ("verified-${{ inputs.root }}", "upload-verified"),
+        }
+        for stage, (artifact, prefix) in expected.items():
+            steps = document["jobs"][stage]["steps"]
+            uploads = [step for step in steps
+                       if step.get("uses", "").startswith("actions/upload-artifact@")]
+            self.assertEqual([step["id"] for step in uploads],
+                             [f"{prefix}-1", f"{prefix}-2", f"{prefix}-3"])
+            for step in uploads:
+                self.assertTrue(step["uses"].startswith(
+                    "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"))
+                self.assertEqual(step["with"]["name"], artifact)
+                self.assertEqual(step["with"]["if-no-files-found"], "error")
+                self.assertGreaterEqual(step["with"]["retention-days"], 35)
+                self.assertEqual(step["with"]["compression-level"], 0)
+            self.assertNotIn("if", uploads[0])
+            self.assertIs(uploads[0].get("continue-on-error"), True)
+            self.assertNotIn("overwrite", uploads[0]["with"])
+            self.assertEqual(uploads[1]["if"], f"steps.{prefix}-1.outcome == 'failure'")
+            self.assertIs(uploads[1].get("continue-on-error"), True)
+            self.assertIs(uploads[1]["with"].get("overwrite"), True)
+            self.assertEqual(
+                uploads[2]["if"],
+                f"steps.{prefix}-1.outcome == 'failure' && steps.{prefix}-2.outcome != 'success'",
+            )
+            self.assertNotIn("continue-on-error", uploads[2])
+            self.assertIs(uploads[2]["with"].get("overwrite"), True)
+            positions = [index for index, step in enumerate(steps) if step.get("id", "").startswith(prefix)]
+            for earlier, later, wait_for, pause in (
+                (positions[0], positions[1], f"steps.{prefix}-1.outcome == 'failure'", "sleep 20"),
+                (positions[1], positions[2], f"steps.{prefix}-2.outcome == 'failure'", "sleep 40"),
+            ):
+                waits = [step for step in steps[earlier + 1:later] if step.get("run") == pause]
+                self.assertEqual([(step.get("if"), step.get("run")) for step in waits], [(wait_for, pause)])
+            guard = steps[positions[2] + 1]
+            self.assertEqual(guard.get("if"), (
+                f"steps.{prefix}-1.outcome != 'success' && "
+                f"steps.{prefix}-2.outcome != 'success' && "
+                f"steps.{prefix}-3.outcome != 'success'"
+            ))
+            self.assertEqual(guard.get("run"), "exit 1")
+            self.assertNotIn("continue-on-error", guard)
+
 
 if __name__ == "__main__":
     unittest.main()

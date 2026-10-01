@@ -83,6 +83,11 @@ a reviewed branch, run `gh workflow run checks.yml --ref BRANCH -f native=true`.
 A failed main bottle run triggers one automatic recovery pass for failed
 publication jobs (including timeouts) with retained verified artifacts. Recovery does not trigger
 itself, and build or verification failures are not treated as publish failures.
+The build and verify jobs retry `actions/upload-artifact` twice after a failed
+attempt. Later attempts set `overwrite` because a failed create can leave the
+artifact name reserved. The job fails when none of the three attempts succeeds.
+Recovery still requires a `verified-<root>` artifact from a completed
+verification job.
 For an explicit retry after repairing a persistent failure, dispatch it on `main`
 with `source_run` and `roots` (a JSON array, at most 24 roots).
 It checks the source run, successful independent verification, original manifest
