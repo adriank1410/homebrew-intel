@@ -1,15 +1,15 @@
 {
   "arch": "x86_64",
   "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
-  "cellar": "any_skip_relocation",
+  "cellar": "/usr/local/Cellar",
   "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
-  "filename": "pipx--1.17.8.sequoia.bottle.tar.gz",
-  "formula_sha256": "435a05456db07c2f612a3107ca9b0f6987894f6d59297e042fa32a4e4543e1d1",
-  "license": "MIT",
-  "name": "pipx",
-  "pkg_version": "1.17.8",
-  "recipe_sha256": "963a8ba900861a278d97fe0999231ae9d21aacf5ebe416fdf6ebfdb70029f742",
-  "release": "intel-36866586399-1-pipx",
+  "filename": "python@3.10--3.10.22.sequoia.bottle.tar.gz",
+  "formula_sha256": "44869d7704800f1320354cd1268ab97f5270ca8696e08ddf2f66e5e0b57bf35e",
+  "license": "Python-2.0",
+  "name": "python@3.10",
+  "pkg_version": "3.10.22",
+  "recipe_sha256": "159128e5671a9fdabfd951d0322e642ed439bd09f4b838993cacc003ed2ed930",
+  "release": "intel-36866586399-1-python-at-3.10",
   "revision": 0,
   "run_id": "36866586399",
   "runtime_dependencies": [
@@ -19,9 +19,9 @@
       "pkg_version": "2026-09-25"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
-      "name": "lz4",
-      "pkg_version": "1.10.0"
+      "formula_sha256": "324047669bbdb9005425288d1ccafed5317f6c297098fab2f4ebc7bb0bbd96a3",
+      "name": "gdbm",
+      "pkg_version": "1.26"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -32,11 +32,6 @@
       "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
       "name": "openssl@3",
       "pkg_version": "3.6.5"
-    },
-    {
-      "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
-      "name": "python@3.14",
-      "pkg_version": "3.14.7"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -52,23 +47,18 @@
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
       "name": "xz",
       "pkg_version": "5.8.4"
-    },
-    {
-      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
-      "name": "zstd",
-      "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "8895bc6950b7144085d38fb7f29dc11f766ac0a0e36b7f5793806b5fba3bfa3c",
-  "size": 522531,
+  "sha256": "0b4d9f397a3f01b07186d5278b452837e3ce642cab779ba6c464ab898ca994df",
+  "size": 14613023,
   "source": {
-    "filename": "pipx--1.17.8.sources.tar.gz",
-    "sha256": "06a35ff707abc724a13ca5a1d4aa914e5e60f89a4b0e1d319c3ea5004a96469e",
-    "size": 1466333
+    "filename": "python@3.10--3.10.22.sources.tar.gz",
+    "sha256": "4e9540899f7cd418e986f3f55f3ba0d84e6162084bc79c8dc3ccc738842b2a77",
+    "size": 29380779
   },
   "tag": "sequoia",
-  "version": "1.17.8",
+  "version": "3.10.22",
   "version_scheme": 0,
   "workflow_commit": "fa80d46b029f8cbf20ecfc450d4ab2078b075702"
 }
