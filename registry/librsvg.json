@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ce46735f348df8af3258e854c8a008d272f683b8",
+  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
   "cellar": "any",
-  "core_commit": "340eb74d5379526452b6b8da67cb9882af8e394f",
+  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
   "filename": "librsvg--2.63.2.sequoia.bottle.tar.gz",
   "formula_sha256": "6faa5a10d3091739aeaa2f0dfa96013b3f4fc9169e65c52f382a71960a84d431",
   "license": "LGPL-2.1-or-later",
   "name": "librsvg",
   "pkg_version": "2.63.2",
   "recipe_sha256": "3b2a8ccad4e58a9a0ebea931509f304542149621bdd56e7e988de6f86572ebaf",
-  "release": "intel-36354239692-1-librsvg",
+  "release": "intel-36910005854-1-librsvg",
   "revision": 0,
-  "run_id": "36354239692",
+  "run_id": "36910005854",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -59,9 +59,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "745607d3d7ba91d5fe503e6ff43ac5caa1d35bbf1e7f3d9d2602039e928ba0dc",
+      "formula_sha256": "9c67597f69970bdc1ca5e4f6d9d23c207dae365ac7ee40f62183372c28c32128",
       "name": "harfbuzz",
-      "pkg_version": "14.5.0"
+      "pkg_version": "14.5.1"
     },
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -149,9 +149,9 @@
       "pkg_version": "1.58.2"
     },
     {
-      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
       "name": "pcre2",
-      "pkg_version": "10.48"
+      "pkg_version": "10.49"
     },
     {
       "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
@@ -180,15 +180,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "af639a3fb40143aca8a21ddc59e9a40bcdefe46407f58493373ac59c65466917",
-  "size": 4995328,
+  "sha256": "853e1c22af5d77cbbc339f8c6cadf21f6e440bad82cea850be9312cb7b407897",
+  "size": 4995331,
   "source": {
     "filename": "librsvg--2.63.2.sources.tar.gz",
-    "sha256": "6acb773d12560e389e4ea4e38398d2b000ffcc6cf9fc3b93eb3fbbf1b8386f6d",
-    "size": 25692625
+    "sha256": "2dfa0e2f8461c56b50726bc2fb320a3df145ce52d9f780064da8b329873854b6",
+    "size": 25693187
   },
   "tag": "sequoia",
   "version": "2.63.2",
   "version_scheme": 0,
-  "workflow_commit": "987ebcbc142a269769ade7bc08bb21804cc93a10"
+  "workflow_commit": "a02002e427cd4852dc7399b8d64634608feb8f2f"
 }
