@@ -25,6 +25,11 @@
           "formula_sha256": "de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd"
         }
       ]
+    },
+    {
+      "name": "ocrmypdf",
+      "formula_sha256": "39b84c91d0b8af18ffcd5bddbcae49cabbac0ea6ac26e8d872083ead3f9f2499",
+      "dependencies": []
     }
   ],
   "scheduled_batch_size": 24,

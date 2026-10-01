@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: BSD-2-Clause
 import os
+import re
 import sys
 import tempfile
 import unittest
@@ -68,6 +69,52 @@ class BuildSourceFetchTests(unittest.TestCase):
                 _prefetch_build_inputs("docker-compose", {"HOMEBREW_CACHE": "/tmp/cache"})
 
         self.assertEqual(len(calls), 1)
+
+    def test_prefetch_retries_cloudflare_522(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            calls = root / "calls"
+            brew = root / "brew"
+            brew.write_text(
+                f"#!{sys.executable}\n"
+                "from pathlib import Path\n"
+                "import sys\n"
+                f"calls = Path({str(calls)!r})\n"
+                "count = int(calls.read_text()) if calls.exists() else 0\n"
+                "calls.write_text(str(count + 1))\n"
+                "if count == 0:\n"
+                "    print('curl: (56) The requested URL returned error: 522')\n"
+                "    raise SystemExit(1)\n"
+                "print('fetch complete')\n"
+            )
+            brew.chmod(0o755)
+            env = {
+                "PATH": f"{root}{os.pathsep}{os.environ['PATH']}",
+                "HOMEBREW_CACHE": str(root / "cache"),
+            }
+            with patch.dict(os.environ, {"INTELBREW_RETRY_ATTEMPTS": "3", "INTELBREW_RETRY_DELAY": "0"}):
+                _prefetch_build_inputs("ghostscript", env)
+
+            self.assertEqual(calls.read_text(), "2")
+
+    def test_prefetch_does_not_retry_unrelated_522_or_curl_56(self):
+        for message in (
+            "resource sha256 522e7b4c9a1d0f6e8c3b7a5d4e2f1c0b9a8d7e6f5c4b3a2918071625344",
+            "curl: (56) Failure writing output to destination",
+        ):
+            with self.subTest(message=message):
+                calls = []
+
+                def fake_run(command, **kwargs):
+                    calls.append(command)
+                    raise Error(message)
+
+                with patch("intelbrew.ci.run", side_effect=fake_run), \
+                     patch.dict(os.environ, {"INTELBREW_RETRY_ATTEMPTS": "3", "INTELBREW_RETRY_DELAY": "0"}):
+                    with self.assertRaisesRegex(Error, re.escape(message)):
+                        _prefetch_build_inputs("ghostscript", {"HOMEBREW_CACHE": "/tmp/cache"})
+
+                self.assertEqual(len(calls), 1)
 
 
 if __name__ == "__main__":
