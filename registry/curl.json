@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7cce6eac8d897b0b8440e16f33dbcb21770da7cf",
+  "brew_commit": "012f02a0eed322efa019960768acc89bf46fd6cc",
   "cellar": "any",
-  "core_commit": "279c62b6d0e053968dd4c5948f6e0519c72092e0",
+  "core_commit": "c799c7ec3bc29124301389b207b3430368748fc0",
   "filename": "curl--8.22.0.sequoia.bottle.tar.gz",
   "formula_sha256": "10ec287adb919bb9380983b5db9a069309331fbdc138a34b9384755eb2d737a2",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.22.0",
   "recipe_sha256": "d95239833919490b510e2a751637f96ffd7bf582fb13cd774872d2aab8610264",
-  "release": "intel-36764605640-1-curl",
+  "release": "intel-36821551901-1-curl",
   "revision": 0,
-  "run_id": "36764605640",
+  "run_id": "36821551901",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -54,9 +54,9 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "e5c03ebbc8f6dc2a48690c9a293b2dcf71857a63a9a33d0a5c405539634bc30d",
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
       "name": "openssl@3",
-      "pkg_version": "3.6.4_1"
+      "pkg_version": "3.6.5"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e1bde0e134cc7d474ffeb08d4ec497ec8c5ec25d451d034899b367077cec5e27",
-  "size": 1695657,
+  "sha256": "7486addb62449e14bdaaefb4134df27bc8b9958131fb5b04ec4a1b1c39705a0c",
+  "size": 1695403,
   "source": {
     "filename": "curl--8.22.0.sources.tar.gz",
-    "sha256": "9244461297d07f422f774c56fcb928f0a1498a3c7fb9af41685060b41ee80dcd",
-    "size": 3402701
+    "sha256": "48266251f452d42b650a554e572999f02155fd13163d6e08543f298911da232f",
+    "size": 3402687
   },
   "tag": "sequoia",
   "version": "8.22.0",
   "version_scheme": 0,
-  "workflow_commit": "212e2d7a764a5774ab9f432fe3e141783520663a"
+  "workflow_commit": "2ef286086acc580294523333a9425edc29d66780"
 }
