@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7cce6eac8d897b0b8440e16f33dbcb21770da7cf",
+  "brew_commit": "012f02a0eed322efa019960768acc89bf46fd6cc",
   "cellar": "any",
-  "core_commit": "279c62b6d0e053968dd4c5948f6e0519c72092e0",
+  "core_commit": "c799c7ec3bc29124301389b207b3430368748fc0",
   "filename": "rust--1.98.1.sequoia.bottle.tar.gz",
   "formula_sha256": "2417a293b81079b46d77358e2fc180f8e25467f03960a0fea7a4c8f537704093",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.98.1",
   "recipe_sha256": "a9937c3773d036ea22173631be8523c827ac80ea17c843137d3bb3338c4756e2",
-  "release": "intel-36764605640-1-rust",
+  "release": "intel-36821551901-1-rust",
   "revision": 0,
-  "run_id": "36764605640",
+  "run_id": "36821551901",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -49,9 +49,9 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "e5c03ebbc8f6dc2a48690c9a293b2dcf71857a63a9a33d0a5c405539634bc30d",
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
       "name": "openssl@3",
-      "pkg_version": "3.6.4_1"
+      "pkg_version": "3.6.5"
     },
     {
       "formula_sha256": "aa4787b4c8af3925054fb55ae38c9ce16cea5325ce5788e2d1c6cec514f30f5c",
@@ -80,15 +80,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8081b110f14ae4e6a2adb514893768f9d993808ee2a5c10fb657af8df2af4a91",
-  "size": 109581804,
+  "sha256": "01fba86e93e885696e7e2ba2c9f5dc22e04b41c8ba03ff3e6b7cfadd0025185f",
+  "size": 109581538,
   "source": {
     "filename": "rust--1.98.1.sources.tar.gz",
-    "sha256": "7a42a5a71eb89f25a1ae56dc858947972446158f7243c844dbde3506ed70ce1d",
-    "size": 640629333
+    "sha256": "ebb061c779d92a740054f2a2be25ea2be9e91470f54aedaa90c24d97a1ee1333",
+    "size": 640629340
   },
   "tag": "sequoia",
   "version": "1.98.1",
   "version_scheme": 0,
-  "workflow_commit": "212e2d7a764a5774ab9f432fe3e141783520663a"
+  "workflow_commit": "2ef286086acc580294523333a9425edc29d66780"
 }
