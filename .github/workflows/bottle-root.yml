@@ -39,13 +39,50 @@ jobs:
         run: INTELBREW_NATIVE_TESTS=1 /usr/bin/python3 -m unittest discover -s tests -p 'test_native*.py' -v
       - name: Build only missing bottles, with bounded licensing policy
         run: /usr/bin/python3 -m intelbrew.ci build --root "$ROOT_FORMULA" --output "$RUNNER_TEMP/candidate"
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      # Check outcome, not conclusion. continue-on-error makes conclusion
+      # success, so a conclusion check would skip the remaining attempts.
+      - name: Upload the candidate bottle
+        id: upload-candidate-1
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: candidate-${{ inputs.root }}
           path: ${{ runner.temp }}/candidate/*
           if-no-files-found: error
           retention-days: 35
           compression-level: 0
+      - name: Wait before retrying the candidate upload
+        if: steps.upload-candidate-1.outcome == 'failure'
+        run: sleep 20
+      - name: Retry the candidate upload
+        id: upload-candidate-2
+        if: steps.upload-candidate-1.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: candidate-${{ inputs.root }}
+          path: ${{ runner.temp }}/candidate/*
+          if-no-files-found: error
+          retention-days: 35
+          compression-level: 0
+          overwrite: true
+      - name: Wait before the last candidate upload
+        if: steps.upload-candidate-2.outcome == 'failure'
+        run: sleep 40
+      - name: Upload the candidate bottle
+        id: upload-candidate-3
+        if: steps.upload-candidate-1.outcome == 'failure' && steps.upload-candidate-2.outcome != 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: candidate-${{ inputs.root }}
+          path: ${{ runner.temp }}/candidate/*
+          if-no-files-found: error
+          retention-days: 35
+          compression-level: 0
+          overwrite: true
+      - name: Fail the job when the candidate upload did not succeed
+        if: steps.upload-candidate-1.outcome != 'success' && steps.upload-candidate-2.outcome != 'success' && steps.upload-candidate-3.outcome != 'success'
+        run: exit 1
   verify:
     name: verify (${{ inputs.root }})
     needs: build
@@ -73,13 +110,48 @@ jobs:
         run: bash scripts/prepare-runner.sh
       - name: Bottle-only pour, receipts, linkage, formula tests and idempotence
         run: /usr/bin/python3 -m intelbrew.ci verify --root "$ROOT_FORMULA" --candidate "$RUNNER_TEMP/candidate" --output "$RUNNER_TEMP/verified"
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - name: Upload the verified bottle
+        id: upload-verified-1
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: verified-${{ inputs.root }}
           path: ${{ runner.temp }}/verified/*
           if-no-files-found: error
           retention-days: 35
           compression-level: 0
+      - name: Wait before retrying the verified upload
+        if: steps.upload-verified-1.outcome == 'failure'
+        run: sleep 20
+      - name: Retry the verified upload
+        id: upload-verified-2
+        if: steps.upload-verified-1.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: verified-${{ inputs.root }}
+          path: ${{ runner.temp }}/verified/*
+          if-no-files-found: error
+          retention-days: 35
+          compression-level: 0
+          overwrite: true
+      - name: Wait before the last verified upload
+        if: steps.upload-verified-2.outcome == 'failure'
+        run: sleep 40
+      - name: Upload the verified bottle
+        id: upload-verified-3
+        if: steps.upload-verified-1.outcome == 'failure' && steps.upload-verified-2.outcome != 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: verified-${{ inputs.root }}
+          path: ${{ runner.temp }}/verified/*
+          if-no-files-found: error
+          retention-days: 35
+          compression-level: 0
+          overwrite: true
+      - name: Fail the job when the verified upload did not succeed
+        if: steps.upload-verified-1.outcome != 'success' && steps.upload-verified-2.outcome != 'success' && steps.upload-verified-3.outcome != 'success'
+        run: exit 1
   publish:
     name: publish (${{ inputs.root }})
     if: >-

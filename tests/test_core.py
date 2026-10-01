@@ -247,6 +247,20 @@ class ValidationTests(unittest.TestCase):
         self.assertTrue(is_transient_error(Error("RPC failed; HTTP 500 after object 401aaa")))
         self.assertFalse(is_transient_error(Error("gh failed (1): gh: Not Found (HTTP 404)")))
 
+    def test_is_transient_error_retries_cloudflare_522_not_bare_digits_or_curl_56(self):
+        import io
+        import urllib.error
+        from intelbrew.core import is_transient_error
+        self.assertTrue(is_transient_error(Error(
+            "curl: (56) The requested URL returned error: 522")))
+        self.assertTrue(is_transient_error(Error("brew failed (1): HTTP 522")))
+        with urllib.error.HTTPError("url", 522, "", {}, io.BytesIO(b"")) as err:
+            self.assertTrue(is_transient_error(err))
+        self.assertFalse(is_transient_error(Error(
+            "resource sha256 522e7b4c9a1d0f6e8c3b7a5d4e2f1c0b9a8d7e6f5c4b3a2918071625344")))
+        self.assertFalse(is_transient_error(Error(
+            "curl: (56) Failure writing output to destination")))
+
     def test_is_transient_error_rejects_permanent_and_integrity_errors(self):
         from intelbrew.core import is_transient_error
         import io

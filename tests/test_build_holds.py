@@ -10,7 +10,10 @@ from pathlib import Path
 
 from helpers import meta, record
 from intelbrew.ci import transient_builds
-from intelbrew.core import Error, Planner, ensure_complete, load_config
+from intelbrew.core import (
+    Error, Planner, ensure_complete, load_config, source_build_held,
+    validate_source_build_holds,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location(
@@ -169,6 +172,44 @@ class SourceBuildHoldTests(unittest.TestCase):
                 with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):
                     Planner(Inspector(nodes), {}, build=True, holds=holds).make(["qtbase"])
                 self.assertEqual(holds, original)
+
+    def test_formula_only_hold_matches_that_recipe_file(self):
+        sha = "c" * 64
+        holds = validate_source_build_holds([{
+            "name": "ocrmypdf",
+            "formula_sha256": sha,
+            "dependencies": [],
+        }])
+        nodes = {"ocrmypdf": {"formula_sha256": sha}}
+        self.assertTrue(source_build_held(holds, "ocrmypdf", nodes))
+        self.assertFalse(source_build_held(
+            holds, "ocrmypdf", {"ocrmypdf": {"formula_sha256": "d" * 64}}))
+        with self.assertRaisesRegex(Error, "Source build excluded by policy: ocrmypdf"):
+            Planner(Inspector({"ocrmypdf": meta("ocrmypdf", formula_sha256=sha)}),
+                    {}, build=True, holds=holds).make(["ocrmypdf"])
+
+    def test_ocrmypdf_hold_is_the_current_formula_file_alone(self):
+        holds = [item for item in self.config["source_build_holds"] if item["name"] == "ocrmypdf"]
+        self.assertEqual(holds, [{
+            "name": "ocrmypdf",
+            "formula_sha256": "39b84c91d0b8af18ffcd5bddbcae49cabbac0ea6ac26e8d872083ead3f9f2499",
+            "dependencies": [],
+        }])
+        held = {"ocrmypdf": meta("ocrmypdf", formula_sha256=holds[0]["formula_sha256"])}
+        with self.assertRaisesRegex(Error, "Source build excluded by policy: ocrmypdf"):
+            self.plan(held, ["ocrmypdf"])
+        changed = self.plan(
+            {"ocrmypdf": meta("ocrmypdf", formula_sha256="b" * 64)}, ["ocrmypdf"])
+        self.assertEqual(changed["nodes"]["ocrmypdf"]["provider"], "build")
+        client = self.plan(held, ["ocrmypdf"], build=False)
+        self.assertEqual(client["nodes"]["ocrmypdf"]["provider"], "missing")
+        selected, blocked = native_plan.roots_needing_build(
+            ["ocrmypdf", "simdutf"], Inspector({
+                **held,
+                "simdutf": meta("simdutf"),
+            }), {}, self.config)
+        self.assertEqual(selected, ["simdutf"])
+        self.assertIn("ocrmypdf", blocked)
 
 
 if __name__ == "__main__":

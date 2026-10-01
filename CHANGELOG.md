@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.7 – transient prefetch and artifact upload recovery
+
+- Retry Cloudflare HTTP 522 during source prefetch, including curl's `returned error: 522`. A bare `522` inside another token and every `curl: (56)` stay non-transient. Formula installation stays outside the retry loop.
+- Retry candidate and verified artifact uploads twice after a failed attempt. Later attempts replace an artifact name left behind by a failed create. The job fails when none of the three attempts succeeds.
+- Hold source builds of the ocrmypdf 17.13.0 recipe `39b84c91d0b8af18ffcd5bddbcae49cabbac0ea6ac26e8d872083ead3f9f2499`. The hold matches that formula file alone and expires when the file changes. It does not publish a bottle.
+
 ## 0.2.6 – safe linking and dependency planning
 
 - Preserve Homebrew's keg-only, skip-link and relinking behavior around foreign prefix paths; restore temporarily held keg files even when interrupted, including during a move.
