@@ -1,0 +1,59 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
+  "filename": "python@3.11--3.11.17.sequoia.bottle.tar.gz",
+  "formula_sha256": "9243ecedbb7ff093dc152c496188a8f8d591b2b306fed88513a4f07562605dd1",
+  "license": "Python-2.0",
+  "name": "python@3.11",
+  "pkg_version": "3.11.17",
+  "recipe_sha256": "03051f5ba7b6414ee39c8366ae0f218989bd4f75642f46176d98dc33376bb1b7",
+  "release": "intel-36866586399-1-python-at-3.11",
+  "revision": 0,
+  "run_id": "36866586399",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
+      "name": "openssl@3",
+      "pkg_version": "3.6.5"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "a98f09b2ade5f9a5fc061b83d21ee3c33c04f82448701114305b2cd832b63d71",
+  "size": 15388262,
+  "source": {
+    "filename": "python@3.11--3.11.17.sources.tar.gz",
+    "sha256": "3016181e1f74df3f51a7682d242e6942fcebd6ef6bd11f8145afe09ab9b4e127",
+    "size": 30016538
+  },
+  "tag": "sequoia",
+  "version": "3.11.17",
+  "version_scheme": 0,
+  "workflow_commit": "fa80d46b029f8cbf20ecfc450d4ab2078b075702"
+}
