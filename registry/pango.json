@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7cce6eac8d897b0b8440e16f33dbcb21770da7cf",
+  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
   "cellar": "any",
-  "core_commit": "279c62b6d0e053968dd4c5948f6e0519c72092e0",
+  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-36764605640-1-pango",
+  "release": "intel-36906518505-1-pango",
   "revision": 0,
-  "run_id": "36764605640",
+  "run_id": "36906518505",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -49,9 +49,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "745607d3d7ba91d5fe503e6ff43ac5caa1d35bbf1e7f3d9d2602039e928ba0dc",
+      "formula_sha256": "9c67597f69970bdc1ca5e4f6d9d23c207dae365ac7ee40f62183372c28c32128",
       "name": "harfbuzz",
-      "pkg_version": "14.5.0"
+      "pkg_version": "14.5.1"
     },
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3e25c3f6b4c1667792991263e16461567228e7ca23aeba685a6f458f0b6050ca",
-  "size": 882817,
+  "sha256": "d4a33b19ff6c3c615d2ed5dec49ebea1b6d5f8278774ba2b2b88aee3fa2e8868",
+  "size": 882811,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "c8248139799fd7f2bfbd763536fe55b03f0b8d894d4a0160b1bdcce52a6612e6",
-    "size": 1932742
+    "sha256": "b996d49e7a7accc5232aa1b3a9a1c4588cc8c61694218f022856f3e9b6630bb7",
+    "size": 1932733
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "212e2d7a764a5774ab9f432fe3e141783520663a"
+  "workflow_commit": "b70471679fd95f5939d7d61436b3880e388b7e07"
 }
