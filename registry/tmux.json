@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc9ff034b1d98cdd4061f68cf715bb967c483a8f",
+  "brew_commit": "012f02a0eed322efa019960768acc89bf46fd6cc",
   "cellar": "any",
-  "core_commit": "2c1a56119709384b127520bfd5f1a46bc7f7cc80",
+  "core_commit": "c799c7ec3bc29124301389b207b3430368748fc0",
   "filename": "tmux--3.7c.sequoia.bottle.tar.gz",
   "formula_sha256": "7cd2b2078e7cb493f34ca90407d9a1d239c09295af50e4f143dc53c25883751e",
   "license": "ISC",
   "name": "tmux",
   "pkg_version": "3.7c",
   "recipe_sha256": "cebf4888f69ce7e74a458aade251f78ba0403575c1331dbc715fb400617ec29d",
-  "release": "intel-36542755802-1-tmux",
+  "release": "intel-36792829744-1-tmux",
   "revision": 0,
-  "run_id": "36542755802",
+  "run_id": "36792829744",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -34,9 +34,9 @@
       "pkg_version": "6.6"
     },
     {
-      "formula_sha256": "e5c03ebbc8f6dc2a48690c9a293b2dcf71857a63a9a33d0a5c405539634bc30d",
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
       "name": "openssl@3",
-      "pkg_version": "3.6.4_1"
+      "pkg_version": "3.6.5"
     },
     {
       "formula_sha256": "f5d8327be5ad5b71700af9011c1b0066950d524acd49820a4c3f0d24e6f1d1c0",
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8c869964f9bf9f55383c8b4a1a04239f56326fb2b5889a56a4261f3999dbb681",
-  "size": 558101,
+  "sha256": "3ac7201afcf56cb4b8cda9342dcf0eb9740408c906d0aec8f923e56848c5395b",
+  "size": 558095,
   "source": {
     "filename": "tmux--3.7c.sources.tar.gz",
-    "sha256": "586f51ed02869af72588451e7a52fbb9b9637cb1320c3a8e9fb40bfcf5fb58f1",
-    "size": 794090
+    "sha256": "9b8f2537869a7c0ef2ced2b3a9e24419985c31305ca0bddc329cd518a3432a62",
+    "size": 794089
   },
   "tag": "sequoia",
   "version": "3.7c",
   "version_scheme": 0,
-  "workflow_commit": "e6aa56f11e8e7e1e0ca5068f94be583bc7fb51e4"
+  "workflow_commit": "8c4559363ba7443d4399dfc0f22afecffa4e70bd"
 }
