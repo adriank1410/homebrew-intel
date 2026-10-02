@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "012f02a0eed322efa019960768acc89bf46fd6cc",
+  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
   "cellar": "any_skip_relocation",
-  "core_commit": "c799c7ec3bc29124301389b207b3430368748fc0",
+  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
   "formula_sha256": "8b67b01fbed9f88367b6b737c40b78e3d5cdd9cdf2de8c1ba73a456d52ddb8c6",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "91e3bb3a642dc57db8afddf02202d44b44ce4500091b2f810c6d7936b43779f5",
-  "release": "intel-36792829744-1-thefuck",
+  "release": "intel-37062329366-1-thefuck",
   "revision": 0,
-  "run_id": "36792829744",
+  "run_id": "37062329366",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -34,9 +34,9 @@
       "pkg_version": "3.6.5"
     },
     {
-      "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
+      "formula_sha256": "919dba9b0eaaed94bea1ac727f7d571ed10f4e796213be5795fb8c23783a67ab",
       "name": "python@3.14",
-      "pkg_version": "3.14.7"
+      "pkg_version": "3.14.8"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0a0e091f4b17a9fbbce55c66a95b8c0516a3885618dbe15c9071f6b9256efa26",
+  "sha256": "de84017f967b58bd71c55bd2d6ec5df517e5020ec052938f61ab1ff43f509b5c",
   "size": 384798,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "e4a0b5d0984c2bf8fc097bb35c553d6bc664cc4066fd6e477a0470b351c1b7c4",
-    "size": 894263
+    "sha256": "bde2b83885a233b8f7b5c33f343e4b36b3a314acb03b693bbc37c65327b854e7",
+    "size": 894264
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "8c4559363ba7443d4399dfc0f22afecffa4e70bd"
+  "workflow_commit": "a598c668bfd86eabf78954b87e7ba9c21cefa010"
 }
