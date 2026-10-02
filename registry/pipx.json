@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
+  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
   "cellar": "any_skip_relocation",
-  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
+  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
   "filename": "pipx--1.17.8.sequoia.bottle.tar.gz",
   "formula_sha256": "435a05456db07c2f612a3107ca9b0f6987894f6d59297e042fa32a4e4543e1d1",
   "license": "MIT",
   "name": "pipx",
   "pkg_version": "1.17.8",
   "recipe_sha256": "963a8ba900861a278d97fe0999231ae9d21aacf5ebe416fdf6ebfdb70029f742",
-  "release": "intel-36866586399-1-pipx",
+  "release": "intel-37006798976-1-pipx",
   "revision": 0,
-  "run_id": "36866586399",
+  "run_id": "37006798976",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -34,9 +34,9 @@
       "pkg_version": "3.6.5"
     },
     {
-      "formula_sha256": "0165e2f65d6b237155d0fb089a6b27259fd85e0fa7582c6ee293df587346cfee",
+      "formula_sha256": "0dfe37036121e9d22d0b3521e8ddd4a86cfa9ffe6727ea0c6ba921b78646f089",
       "name": "python@3.14",
-      "pkg_version": "3.14.7"
+      "pkg_version": "3.14.8"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8895bc6950b7144085d38fb7f29dc11f766ac0a0e36b7f5793806b5fba3bfa3c",
-  "size": 522531,
+  "sha256": "fe3a62827f9aaa84be16993c775351376c3946f3375739c6c5426762166893f9",
+  "size": 522539,
   "source": {
     "filename": "pipx--1.17.8.sources.tar.gz",
-    "sha256": "06a35ff707abc724a13ca5a1d4aa914e5e60f89a4b0e1d319c3ea5004a96469e",
-    "size": 1466333
+    "sha256": "954ffbac9f37181a6820a10f14fcac5f2c16643d4782782c256598ba96f130cb",
+    "size": 1466335
   },
   "tag": "sequoia",
   "version": "1.17.8",
   "version_scheme": 0,
-  "workflow_commit": "fa80d46b029f8cbf20ecfc450d4ab2078b075702"
+  "workflow_commit": "6de2733c4d66481e37aba0beb3bee0d8b99cce9a"
 }
