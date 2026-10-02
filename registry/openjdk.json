@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
+  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
   "cellar": "any",
-  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
+  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
   "filename": "openjdk--27.sequoia.bottle.tar.gz",
   "formula_sha256": "275e623d1a3fa218d3d6cc2ebdc27c591ec67a19b62511018ea93e057a3feaba",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk",
   "pkg_version": "27",
   "recipe_sha256": "b8f389539e303280b6d817c7d8fd82e8f0247d64770b223325a42458dc5e5e16",
-  "release": "intel-36906518505-1-openjdk",
+  "release": "intel-37029370058-1-openjdk",
   "revision": 0,
-  "run_id": "36906518505",
+  "run_id": "37029370058",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -73,9 +73,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
       "name": "libpng",
-      "pkg_version": "1.6.58"
+      "pkg_version": "1.6.59"
     },
     {
       "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
@@ -164,15 +164,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2136c4a0e43ec5b03b7213252f13b71916bd5673843b221fe4ade2c0bb80c1ed",
-  "size": 222796104,
+  "sha256": "b6b0d977c434133706e9f078d2912bae0540118e2230236797391df4b1bd3749",
+  "size": 222796316,
   "source": {
     "filename": "openjdk--27.sources.tar.gz",
-    "sha256": "dfd2c792853d6b549683933a43f322fbd008ea792305875fef1b282e384fe9f7",
-    "size": 340075299
+    "sha256": "d5d926bcd1a96baeb01716a7657a2bc4c03efab0aa971267da8a7ba8eb49e5dd",
+    "size": 340075331
   },
   "tag": "sequoia",
   "version": "27",
   "version_scheme": 0,
-  "workflow_commit": "b70471679fd95f5939d7d61436b3880e388b7e07"
+  "workflow_commit": "d23956352f8ed11d0ee0b80e9240c6d842863d10"
 }
