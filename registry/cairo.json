@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
+  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
   "cellar": "any",
-  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
+  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
   "filename": "cairo--1.18.6.sequoia.bottle.tar.gz",
   "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
   "license": {
@@ -14,9 +14,9 @@
   "name": "cairo",
   "pkg_version": "1.18.6",
   "recipe_sha256": "9f872499482a41849cf1a706b7b1287e3f30242fbd5f95c17da74aac595ac725",
-  "release": "intel-36650254637-1-cairo",
+  "release": "intel-37003588100-1-harfbuzz",
   "revision": 0,
-  "run_id": "36650254637",
+  "run_id": "37003588100",
   "runtime_dependencies": [
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -44,9 +44,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
       "name": "libpng",
-      "pkg_version": "1.6.58"
+      "pkg_version": "1.6.59"
     },
     {
       "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ab1196aafc25005d73e6dbbfad157fcac5e424e8d1c191608a1f709fe007c806",
-  "size": 1648581,
+  "sha256": "30e2093a3338b8bef44664eefde45dbcb7e1d2d94eaf9b5c4e40dc1785b9d7a7",
+  "size": 1648591,
   "source": {
     "filename": "cairo--1.18.6.sources.tar.gz",
-    "sha256": "162f6884f7cfda0e98c8fba4baf029f5e76aad5bdce326c02ae7a6ae050622fd",
-    "size": 32764000
+    "sha256": "e1cad130d1c39c9c0ecd2868d1f27ff84f3298d87aaceeb0fe8034ebf1df6737",
+    "size": 32763995
   },
   "tag": "sequoia",
   "version": "1.18.6",
   "version_scheme": 0,
-  "workflow_commit": "1f3b9264ce92541cdbb58510b4c9218ee47142e0"
+  "workflow_commit": "f388204cc0e32c5d7d3c8315511371649edc4400"
 }
