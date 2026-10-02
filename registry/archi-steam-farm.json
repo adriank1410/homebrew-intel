@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "56fd5b3bfb4b50611aebf3385c819cee38e0fdf3",
+  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
   "cellar": "any_skip_relocation",
-  "core_commit": "5c9226835efc16454f609bb6c66a573fd70cca05",
-  "filename": "archi-steam-farm--6.3.9.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "cba65e155bd10a0cbc86b59ae9525bed5238aa3e61cfe291f2b92e8531f1f0f9",
+  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
+  "filename": "archi-steam-farm--6.3.10.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "d14c3de35cbe849b5ac0564ebef5db687067f59704db513fc348f4c10c95da58",
   "license": "Apache-2.0",
   "name": "archi-steam-farm",
-  "pkg_version": "6.3.9.6",
-  "recipe_sha256": "8a1130d5bc0599c45ed6b4fb9bfeb443a915d9b10151fa93f7860ad862adafe4",
-  "release": "intel-36939367690-1-archi-steam-farm",
+  "pkg_version": "6.3.10.3",
+  "recipe_sha256": "3ffcbea2cb0d2a49e3ab260b454e1bcba9bf25db39470a0a3f50572881a457ef",
+  "release": "intel-37002842964-1-archi-steam-farm",
   "revision": 0,
-  "run_id": "36939367690",
+  "run_id": "37002842964",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9dfe925a54fd89ed270014bef9adcbce1a6f5e028a7d2d25bbea1977b8d5af38",
-  "size": 7865517,
+  "sha256": "1789aa09af2328679eef75a04ac3e5d9af36a53931acdf1af693c03d80ca3239",
+  "size": 8231398,
   "source": {
-    "filename": "archi-steam-farm--6.3.9.6.sources.tar.gz",
-    "sha256": "a2837cf6aed08a015a4795ad3a839a42fa4a8a496619d6cbbcce9515e1db9efa",
-    "size": 10857780
+    "filename": "archi-steam-farm--6.3.10.3.sources.tar.gz",
+    "sha256": "a8bc622bcb7e3b288373e03525bbe6c00ea0fd0b7c9c9386e62d719b2e65ddd0",
+    "size": 10859250
   },
   "tag": "sequoia",
-  "version": "6.3.9.6",
+  "version": "6.3.10.3",
   "version_scheme": 0,
-  "workflow_commit": "67228404c5c728de0c4f37913dea710a51309ff1"
+  "workflow_commit": "2fc01a98ee0502168a4ce265c3a5afc04b482a7a"
 }
