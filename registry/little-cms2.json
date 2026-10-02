@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
+  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
   "cellar": "any",
-  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
+  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
   "filename": "little-cms2--2.19.1.sequoia.bottle.tar.gz",
   "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
   "license": "MIT",
   "name": "little-cms2",
   "pkg_version": "2.19.1",
   "recipe_sha256": "7af482e897b7d6703f41e8595684e59eb2d7799f55055101add65d7301bc569b",
-  "release": "intel-35713170458-1-little-cms2",
+  "release": "intel-37003591479-1-openjpeg",
   "revision": 0,
-  "run_id": "35713170458",
+  "run_id": "37003591479",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -24,9 +24,9 @@
       "pkg_version": "3.2.0"
     },
     {
-      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
       "name": "libpng",
-      "pkg_version": "1.6.58"
+      "pkg_version": "1.6.59"
     },
     {
       "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dbf7f5872953d230d422ff9b8dcc56c6c9172cece253d646a3d8cc7dd9209ac4",
-  "size": 430476,
+  "sha256": "5460d337a39fce01dc15ff2aa74c206543ff905ea5b26370be8d1964feec1d71",
+  "size": 430480,
   "source": {
     "filename": "little-cms2--2.19.1.sources.tar.gz",
-    "sha256": "59797ad9577c85b0344310f2dbc797d5b76eccf78a6ad01408e07ab310c6beec",
-    "size": 5733392
+    "sha256": "23a2499f4c23c4d99e6bbb0bc96673b74a33198dfa73e468ba807cf56e3f3f66",
+    "size": 5733385
   },
   "tag": "sequoia",
   "version": "2.19.1",
   "version_scheme": 1,
-  "workflow_commit": "32e099a775ff1ad052482ecac7e6f32b3898b726"
+  "workflow_commit": "f388204cc0e32c5d7d3c8315511371649edc4400"
 }
