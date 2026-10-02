@@ -1,0 +1,69 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
+  "filename": "python@3.14--3.14.8.sequoia.bottle.tar.gz",
+  "formula_sha256": "0dfe37036121e9d22d0b3521e8ddd4a86cfa9ffe6727ea0c6ba921b78646f089",
+  "license": "Python-2.0",
+  "name": "python@3.14",
+  "pkg_version": "3.14.8",
+  "recipe_sha256": "9ef85656929a95acd7921674d1c0645e42b528c0ed669db6a62c5714c5475fa9",
+  "release": "intel-37002839915-1-python-at-3.14",
+  "revision": 0,
+  "run_id": "37002839915",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
+      "name": "openssl@3",
+      "pkg_version": "3.6.5"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "fe78b172b626552728fca7ce2f8eb00eba5b1b02b7fe781bef0f2d3fba0b2513",
+  "size": 19389804,
+  "source": {
+    "filename": "python@3.14--3.14.8.sources.tar.gz",
+    "sha256": "72c93e63a2397572882d9461074d90c1ee642adb2478d569d3825cbd652b903a",
+    "size": 33675484
+  },
+  "tag": "sequoia",
+  "version": "3.14.8",
+  "version_scheme": 0,
+  "workflow_commit": "2fc01a98ee0502168a4ce265c3a5afc04b482a7a"
+}
