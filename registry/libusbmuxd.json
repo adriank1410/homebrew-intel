@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
+  "cellar": "any",
+  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
+  "filename": "libusbmuxd--2.1.1_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "56a12a1ec7bf87a3ac122e166b6b436067948e81b342a170271e0b6d37916ae7",
+  "license": {
+    "all_of": [
+      "GPL-2.0-or-later",
+      "LGPL-2.1-or-later"
+    ]
+  },
+  "name": "libusbmuxd",
+  "pkg_version": "2.1.1_1",
+  "recipe_sha256": "2037e3e1f7a1628effdf85b29e294553e9b8d191de71df57f75871773c2f8dc7",
+  "release": "intel-37005691489-1-libusbmuxd",
+  "revision": 1,
+  "run_id": "37005691489",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "65cc4150d24659fee4e2fc3a4273139c7855b9eee3b0eea27492347d87ed1292",
+      "name": "libimobiledevice-glue",
+      "pkg_version": "1.3.2_1"
+    },
+    {
+      "formula_sha256": "68840871784ab58faf52c84d0a797a19d081d0bd4c0da8f1888256d17fd8a561",
+      "name": "libplist",
+      "pkg_version": "2.8.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "197cf005b86a4e956b11bd393ac27f73d1ed552dc933a2c83ebed7d5ffa268fc",
+  "size": 52654,
+  "source": {
+    "filename": "libusbmuxd--2.1.1_1.sources.tar.gz",
+    "sha256": "da03ef76ac262dc88e6204cb6b826b6053fa7633d27544f6cd2fee8d71601de2",
+    "size": 338636
+  },
+  "tag": "sequoia",
+  "version": "2.1.1",
+  "version_scheme": 0,
+  "workflow_commit": "484213ac65e0b0125072b1401ecc4e6e88e5c660"
+}
