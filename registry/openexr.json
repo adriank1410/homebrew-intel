@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ce46735f348df8af3258e854c8a008d272f683b8",
+  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
   "cellar": "any",
-  "core_commit": "340eb74d5379526452b6b8da67cb9882af8e394f",
+  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
   "filename": "openexr--3.5.1.sequoia.bottle.tar.gz",
   "formula_sha256": "e3165e1e159dc39f665b1ee03ba879fe51a44d85f7e0e57b9ccb15a5267532ff",
   "license": "BSD-3-Clause",
   "name": "openexr",
   "pkg_version": "3.5.1",
   "recipe_sha256": "129a2690b8f9674958909977f43bf4ca55aae354560d26f85b51902c0f1a71f6",
-  "release": "intel-36340354346-1-openexr",
+  "release": "intel-37062329366-1-openexr",
   "revision": 0,
-  "run_id": "36340354346",
+  "run_id": "37062329366",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -34,9 +34,9 @@
       "pkg_version": "1.26"
     },
     {
-      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
       "name": "libpng",
-      "pkg_version": "1.6.58"
+      "pkg_version": "1.6.59"
     },
     {
       "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ddec352249bbc1aced940909deb2445f04cc678e31ca42f793cc2ddab2a58512",
-  "size": 1163553,
+  "sha256": "69b9aaf173530a5708644564950b58d0da822641997b392934bac014d63b000c",
+  "size": 1163513,
   "source": {
     "filename": "openexr--3.5.1.sources.tar.gz",
-    "sha256": "54068b39541a500b555f421a3993b6a6893cc9610a22655d9bd7b9e6eefe281e",
-    "size": 26377146
+    "sha256": "c6654d62af0bc7e57d7ea8fbf3106b2c9d8f1315bfc94b335a9a7f620fb9ba33",
+    "size": 26377151
   },
   "tag": "sequoia",
   "version": "3.5.1",
   "version_scheme": 0,
-  "workflow_commit": "93c1361e632960bd01d1ffc7ad4c8b347eb57705"
+  "workflow_commit": "a598c668bfd86eabf78954b87e7ba9c21cefa010"
 }

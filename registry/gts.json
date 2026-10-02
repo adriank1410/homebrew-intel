@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
+  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
   "cellar": "any",
-  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
+  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
   "filename": "gts--0.7.6_3.sequoia.bottle.tar.gz",
   "formula_sha256": "e3d6b09c676761a60774e90cd96015d36257b54cd1b0d0395ea707a87be18ae2",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_3",
   "recipe_sha256": "fa36c048669fb895d41ef201607f9c8745b85b5d4868c69be5613cf719599e21",
-  "release": "intel-36650254637-1-gts",
+  "release": "intel-37062329366-1-gts",
   "revision": 3,
-  "run_id": "36650254637",
+  "run_id": "37062329366",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -44,9 +44,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
       "name": "libpng",
-      "pkg_version": "1.6.58"
+      "pkg_version": "1.6.59"
     },
     {
       "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c5bbce815aaef3a387fec1d40caaf494d7e5ddaf2027f7a0afe83df5d4318418",
-  "size": 431565,
+  "sha256": "4c16ce8c23c12a56ec13f4894050463fed10075b48b6f4c95e31368e378ffb9d",
+  "size": 431558,
   "source": {
     "filename": "gts--0.7.6_3.sources.tar.gz",
-    "sha256": "99aae509a3c5a2a309a77bfa66aedbd531b4139d6aa9165c9376805083557b3c",
-    "size": 959579
+    "sha256": "2b0a00e33851572eb154b69f7a46df1608de036a4743f6bc50b0ba5f2c92d7e2",
+    "size": 959591
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "1f3b9264ce92541cdbb58510b4c9218ee47142e0"
+  "workflow_commit": "a598c668bfd86eabf78954b87e7ba9c21cefa010"
 }
