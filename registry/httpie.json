@@ -1,0 +1,79 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
+  "cellar": "any_skip_relocation",
+  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
+  "filename": "httpie--3.2.4_12.sequoia.bottle.tar.gz",
+  "formula_sha256": "60fb7e5bf3aa60457fe1537c85667e2dd20f3235142191a5daeab0e849e32325",
+  "license": "BSD-3-Clause",
+  "name": "httpie",
+  "pkg_version": "3.2.4_12",
+  "recipe_sha256": "b8a20b149fa759e6fbf0b5892e10648ac9c0e5c5695c96e41952bd18f67e3e79",
+  "release": "intel-37033701259-1-httpie",
+  "revision": 12,
+  "run_id": "37033701259",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "3c6a78933d08b52034b8b226e3d1755cb9598205c8355582d3a598afa320fa21",
+      "name": "certifi",
+      "pkg_version": "2026.7.22"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
+      "name": "openssl@3",
+      "pkg_version": "3.6.5"
+    },
+    {
+      "formula_sha256": "919dba9b0eaaed94bea1ac727f7d571ed10f4e796213be5795fb8c23783a67ab",
+      "name": "python@3.14",
+      "pkg_version": "3.14.8"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "64a013cffafef4707e4c107723532b5a30041e9a76657bea4e52de6a2c22a619",
+  "size": 2619348,
+  "source": {
+    "filename": "httpie--3.2.4_12.sources.tar.gz",
+    "sha256": "05eb8668cfa8f1c8e53fad176658241a09e583c0b918feaf4ae1a469d4ea3238",
+    "size": 9636490
+  },
+  "tag": "sequoia",
+  "version": "3.2.4",
+  "version_scheme": 0,
+  "workflow_commit": "a7e3002ebff1eb7df9beae112688aafcc85033fc"
+}
