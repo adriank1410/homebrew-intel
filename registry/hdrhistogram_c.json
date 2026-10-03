@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "cellar": "any",
+  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "filename": "hdrhistogram_c--0.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "408389493ab505963c79390ade0a01555905d3eb87837a01e3e0089c7968c99b",
+  "license": {
+    "any_of": [
+      "CC0-1.0",
+      "BSD-2-Clause"
+    ]
+  },
+  "name": "hdrhistogram_c",
+  "pkg_version": "0.12.0",
+  "recipe_sha256": "c3071cc7272e0e64cee0a44080048a8c19047326faec033537a6b9d90f9c339e",
+  "release": "intel-37123136954-1-hdrhistogram_c",
+  "revision": 0,
+  "run_id": "37123136954",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "c275a52fb811c03071cc04e65a82b275b60a963c2f9446c4cb7c1ba91ceecf45",
+  "size": 63277,
+  "source": {
+    "filename": "hdrhistogram_c--0.12.0.sources.tar.gz",
+    "sha256": "4267d5a801b4ba688fe30ea64f0c4ee22be888bf1c238c0fce04be63c4dbf10b",
+    "size": 517350
+  },
+  "tag": "sequoia",
+  "version": "0.12.0",
+  "version_scheme": 0,
+  "workflow_commit": "09a735044a308d68731097e118a8574fa622132d"
+}
