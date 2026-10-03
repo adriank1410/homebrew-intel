@@ -139,12 +139,16 @@ uruchamia testy i scala dokładnie sprawdzony commit, gdy przejdzie on wymagane
 kontrole ochrony gałęzi. Nie pozostawia włączonego oczekującego auto-merge. Klient widzi nowe
 wpisy po scaleniu.
 
-LLVM, którego żaden publikowany pakiet nie potrzebuje przy uruchomieniu ani
-w teście formuły, powstaje ze źródeł i nie wchodzi do zestawu kandydatów.
+LLVM używane tylko jako kompilator, gdy żadna formuła budowana ze źródeł nie
+potrzebuje go przy uruchomieniu ani w teście formuły, powstaje ze źródeł i nie
+wchodzi do zestawu kandydatów.
 Przepis Homebrew pomija wtedy bootstrap profilowany oraz zestaw `check-clang` /
 `check-llvm`. Publikacja samego `llvm` pozostaje wstrzymana: ta butelka nie
-mieści się w sześciogodzinnym limicie runnera. Zgodne butelki oficjalne
-i opublikowane `llvm@22` nadal można instalować.
+mieści się w sześciogodzinnym limicie runnera. Harmonogram pomija pakiet, który
+buduje to LLVM ze źródeł i jednocześnie buduje ze źródeł formułę, która
+potrzebuje go w czasie działania, na przykład `rust` albo `lld`. Taki zestaw
+nie mieści się w limicie sześciu godzin. Pasująca butelka LLVM przywraca pakiet
+do wyboru. Zgodne butelki oficjalne i opublikowane `llvm@22` nadal można instalować.
 
 Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłatnych runnerów
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca

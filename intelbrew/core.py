@@ -233,6 +233,24 @@ def transient_source_builds(plan):
                 transient.add(name);growing=True
     return transient
 
+def blocked_toolchain_source(plan, blocked=()):
+    """Return a policy-blocked formula this plan would compile for another source build.
+
+    A build-only edge may still install that formula with --build-from-source.
+    A runtime or test edge, such as rust or lld on llvm, compiles a second
+    toolchain in the same job. That closure does not finish inside the
+    hosted six-hour limit, so CI must not start it.
+    """
+    nodes=plan.get('nodes') if isinstance(plan,dict) else None
+    if not isinstance(nodes,dict):return None
+    blocked_names=set(blocked)
+    if not blocked_names:return None
+    building=[name for name,meta in nodes.items() if isinstance(meta,dict) and meta.get('provider')=='build']
+    for name in sorted(set(building) & blocked_names):
+        for other in building:
+            if other!=name and name in _runtime_test_deps(nodes.get(other)):return name
+    return None
+
 class Planner:
     def __init__(self,inspect,records,*,build=False,max_nodes=400,blocked=(),holds=(),allow_drift_as_missing=False):self.inspect=inspect;self.records=records;self.build=build;self.max_nodes=max_nodes;self.blocked=set(blocked);self.holds=validate_source_build_holds(holds);self.allow_drift_as_missing=allow_drift_as_missing;self.nodes={}
     def make(self,roots):
