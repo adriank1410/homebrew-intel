@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
+  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
   "cellar": "any",
-  "core_commit": "4fccca4b6cd9e200b5bbfd55f5c165bff7ae835d",
-  "filename": "sdl3--3.4.16.sequoia.bottle.tar.gz",
-  "formula_sha256": "6e2be1d971dbea0803529780f7b149df340d1fbc47b688d56fda84d28e4392d0",
+  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "filename": "sdl3--3.4.18.sequoia.bottle.tar.gz",
+  "formula_sha256": "c3d6ea1becc0bb53773e82d3a7f885bf4cfeaec10b367d82530928859d41dc75",
   "license": "Zlib",
   "name": "sdl3",
-  "pkg_version": "3.4.16",
-  "recipe_sha256": "a589cb30f1cdf2358fe7b9b7ec6cc643d3ffe5f02ff7cca25d29fed0f857251e",
-  "release": "intel-36017351683-1-sdl3",
+  "pkg_version": "3.4.18",
+  "recipe_sha256": "884f857434a199f058a0f169eb344b7ed0258f5c51aee6edd0225197a50e03cc",
+  "release": "intel-37123136954-1-sdl3",
   "revision": 0,
-  "run_id": "36017351683",
+  "run_id": "37123136954",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "ffbf353f9721f9e41a60b4dad8a3a2a4c4fc40feb3b240107b801ceb5d491010",
-  "size": 1676301,
+  "sha256": "a098f8c6e5c1115578e804cf41bf5b4f7d4564652d15aa0f4a415d5a34ba7904",
+  "size": 1678055,
   "source": {
-    "filename": "sdl3--3.4.16.sources.tar.gz",
-    "sha256": "a46dbd0b87105ed972a10a3d975a80051cb4333af08eaa8189a9ac7359ba67ff",
-    "size": 15596313
+    "filename": "sdl3--3.4.18.sources.tar.gz",
+    "sha256": "cbf5d1a1b116aade66419646f982e53b4baaa1c176a1dd8476009e9e6ddbea28",
+    "size": 15603643
   },
   "tag": "sequoia",
-  "version": "3.4.16",
+  "version": "3.4.18",
   "version_scheme": 0,
-  "workflow_commit": "1f5dc3b746865d9789e8d626f9f2729258794fe2"
+  "workflow_commit": "09a735044a308d68731097e118a8574fa622132d"
 }
