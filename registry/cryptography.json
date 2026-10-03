@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
+  "cellar": "any",
+  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
+  "filename": "cryptography--50.0.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "43c1d4c317dbf7996b0e7d39869feaf76dd8428a9c7c916c9b09d45cbb0d1517",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "BSD-3-Clause"
+    ]
+  },
+  "name": "cryptography",
+  "pkg_version": "50.0.2",
+  "recipe_sha256": "8e561a7e09ee3dcfe1755d5db4d3204b02e6775aca4ef9385aafd1150948b53c",
+  "release": "intel-37062329366-1-cryptography",
+  "revision": 0,
+  "run_id": "37062329366",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "5fe26cd8c39842f2648b95c4138472e6c904350e5e146b46e60058065d089607",
+      "name": "cffi",
+      "pkg_version": "2.1.1"
+    },
+    {
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
+      "name": "openssl@3",
+      "pkg_version": "3.6.5"
+    },
+    {
+      "formula_sha256": "75ed36fe143658d6df206ce89736375eca0d0e3e1d643372118e021982a5e40e",
+      "name": "pycparser",
+      "pkg_version": "3.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "c73b6b2e5553b166bb6d4c273fae5b24a026c6fdca2ae9e08f37afd58b728ce7",
+  "size": 3741694,
+  "source": {
+    "filename": "cryptography--50.0.2.sources.tar.gz",
+    "sha256": "05c2205822cb4a068cb7176b88da8d9f33a59fcddec7792869f9c3d51348b162",
+    "size": 5209893
+  },
+  "tag": "sequoia",
+  "version": "50.0.2",
+  "version_scheme": 0,
+  "workflow_commit": "a598c668bfd86eabf78954b87e7ba9c21cefa010"
+}
