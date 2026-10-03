@@ -6,9 +6,9 @@ from pathlib import Path, PurePosixPath
 from .archive_notices import archive_notices
 from .build_sources import MAX_FILES as MAX_BUILD_SOURCE_FILES, collect_build_sources
 from .cli import attest
-from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, brew_env, canonical_name,
-                   check_bottle, digest, download, load_config, native, read_json,
-                   registry, require_sha, retry_transient, run, transient_source_builds,
+from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, blocked_toolchain_source,
+                   brew_env, canonical_name, check_bottle, digest, download, load_config, native,
+                   read_json, registry, require_sha, retry_transient, run, transient_source_builds,
                    validate_record, write_json_new)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
@@ -363,6 +363,8 @@ def build(root:str,output:Path)->None:
     if output.exists():raise Error("Build output must be fresh")
     output.mkdir(parents=True);registry_commit=sync_registry();records=registry();inspector=lambda batch:native({"mode":"inspect","names":batch},ci=True)
     plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"],holds=config["source_build_holds"]).make([root])
+    excluded=blocked_toolchain_source(plan, config["blocked_source_builds"])
+    if excluded:raise Error(f'Source build excluded by policy: {excluded}')
     transient=transient_builds(plan)
     to_build=[n for n in plan["order"] if plan["nodes"][n]["provider"]=="build"]
     if len(to_build)>config["max_source_builds"]:raise Error("Source build budget exceeded")
