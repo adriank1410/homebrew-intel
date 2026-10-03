@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.8 – skip blocked runtime toolchains
 
 - Do not start a CI root that source-builds a policy-blocked compiler and also source-builds a formula that needs it at runtime, such as `rust` or `lld` on `llvm`. The schedule reports the root as blocked and keeps going. A manual dispatch stops in the build planner before compilation. A matching compiler bottle makes the root eligible again. A build-only use of the compiler still installs it with `--build-from-source`.
 
