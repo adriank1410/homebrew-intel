@@ -1,0 +1,49 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "cellar": "any",
+  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "filename": "ada-url--4.0.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "21d6d06ce7428ba86f8ce1fb4d469d19e0aa1c8ab005a298ed6b68cd79c0cd99",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "MIT"
+    ]
+  },
+  "name": "ada-url",
+  "pkg_version": "4.0.0",
+  "recipe_sha256": "420d254550ec51937ca6c64bb037803bd4a5bfc0cfdde0f48b6127868bde4298",
+  "release": "intel-37123136954-1-ada-url",
+  "revision": 0,
+  "run_id": "37123136954",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "ebc7a265a6d41e1924dcf8251afcaad049030402567914b53da8270132a17a31",
+      "name": "fmt",
+      "pkg_version": "12.2.0"
+    },
+    {
+      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "eb439c9bfa698aefd284040dc2c4b6d7ebc167dd5bfd40fd28adcb321a602cf1",
+      "name": "simdutf",
+      "pkg_version": "9.2.1_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "185eeacaacb07506fa543b94170bf4791d45fe4301cd4935ecd757d033242af9",
+  "size": 350147,
+  "source": {
+    "filename": "ada-url--4.0.0.sources.tar.gz",
+    "sha256": "f89216e58fd682e4b7cbeb855c5106c941861f405d5dbd297fc69e1c67a1910b",
+    "size": 533344
+  },
+  "tag": "sequoia",
+  "version": "4.0.0",
+  "version_scheme": 0,
+  "workflow_commit": "09a735044a308d68731097e118a8574fa622132d"
+}
