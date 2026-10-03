@@ -135,12 +135,16 @@ Publication creates a registry PR. Automation checks its records against the
 attested release manifest, dispatches tests, and merges the exact validated head
 once the protected branch checks pass. It never queues GitHub auto-merge. The client sees the records after that merge.
 
-An LLVM install that no published package needs at runtime or during its formula
-test is built from source and omitted from the candidate set. Homebrew's `llvm`
+An LLVM install used only as a compiler, with no source-built formula that needs
+it at runtime or during its formula test, is built from source and omitted from
+the candidate set. Homebrew's `llvm`
 formula then skips the profile-guided bootstrap and its `check-clang` /
 `check-llvm` suite. Publishing `llvm` itself stays source-held: that bottle
-build does not finish inside the six-hour runner limit. Compatible official
-bottles and the published `llvm@22` bottle remain usable.
+build does not finish inside the six-hour runner limit. CI does not start a
+root that source-builds this LLVM and also source-builds a formula that needs
+it at runtime, such as `rust` or `lld`. That closure does not finish inside
+the six-hour job. A matching LLVM bottle lets the root be selected again.
+Compatible official bottles and the published `llvm@22` bottle remain usable.
 
 Heavy source builds exceeding the physical limits of ephemeral GitHub-hosted runners
 (`macos-15-intel`: 6-hour execution timeout, ~14 GB available SSD storage, 4 vCPUs)

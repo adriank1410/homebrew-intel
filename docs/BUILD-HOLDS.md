@@ -77,11 +77,27 @@ Homebrew enables that profile-guided path only for a stable macOS bottle build
 of the unversioned formula. `llvm@22` 22.1.8 is already published because a
 versioned formula skips the path. `--build-from-source` skips it as well.
 
-`deno` needs `llvm` only while compiling, but `lld` needs `llvm` at runtime.
-The planner therefore installs both from source and leaves them out of the
-candidate set whenever no published package needs them at runtime or in its
-formula test. A request whose published packages need a new `llvm` bottle,
-including a direct `llvm` root, stays source-held.
+`deno` needs `llvm` only while compiling. `lld` and `rust` need unversioned
+`llvm` at runtime. The planner still classifies that LLVM and those runtime
+dependents as transient when no published package needs them: the install mode
+would be `--build-from-source`, and they would stay out of the candidate set.
+CI does not start that root. A request whose published packages need a new
+`llvm` bottle, including a direct `llvm` root, stays source-held.
+
+Skipping the profile-guided suite is not enough when another source build needs
+that LLVM at runtime. On
+[run 37103277240](https://github.com/adriank1410/homebrew-intel/actions/runs/37103277240)
+`--build-from-source` compiled LLVM in about 3h49m (09:45–13:34 UTC) and then
+`rust` in about 1h12m. `deno` reached `cargo install` at 14:58 UTC and was
+cancelled at the six-hour limit. The same cancellation happened again on the
+following sweep. CI now refuses that closure before compilation: a plan that
+source-builds a `blocked_source_builds` formula and also source-builds a
+formula that needs it at runtime or test time stops with
+`Source build excluded by policy: llvm`. The schedule records the root as
+blocked and continues with eligible siblings. A manual dispatch hits the same
+error in the build planner. A matching LLVM bottle removes the source build,
+so the root can be selected again. A build-only LLVM edge, with no source-built
+runtime dependent, still uses `--build-from-source`.
 
 Removal criteria for the direct hold: publish a reviewed Intel bottle through
 the normal attested path, including independent pour, formula test and linkage

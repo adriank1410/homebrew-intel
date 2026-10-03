@@ -211,6 +211,64 @@ class SourceBuildHoldTests(unittest.TestCase):
         self.assertEqual(selected, ["simdutf"])
         self.assertIn("ocrmypdf", blocked)
 
+    def test_schedule_skips_a_root_that_compiles_blocked_llvm_for_a_runtime_dependent(self):
+        nodes = {
+            "deno": meta("deno", build=["lld", "llvm", "rust"]),
+            "lld": meta("lld", runtime=["llvm"]),
+            "llvm": meta("llvm"),
+            "rust": meta("rust", runtime=["llvm"]),
+            "simdutf": meta("simdutf"),
+        }
+        selected, blocked = native_plan.roots_needing_build(
+            ["deno", "simdutf"], Inspector(nodes), {}, self.config)
+        self.assertEqual(selected, ["simdutf"])
+        self.assertIn("Source build excluded by policy: llvm", blocked["deno"])
+
+    def test_a_bottled_llvm_still_lets_the_schedule_select_deno(self):
+        nodes = {
+            "deno": meta("deno", build=["llvm", "rust"]),
+            "llvm": meta("llvm"),
+            "rust": meta("rust", runtime=["llvm"]),
+        }
+        selected, blocked = native_plan.roots_needing_build(
+            ["deno"], Inspector(nodes), {"llvm": record("llvm")}, self.config)
+        self.assertEqual(selected, ["deno"])
+        self.assertEqual(blocked, {})
+
+    def test_ci_build_stops_before_compiling_a_blocked_runtime_toolchain(self):
+        import os
+        import tempfile
+        from unittest.mock import patch
+        from intelbrew.ci import build
+        nodes = {
+            "deno": meta("deno", build=["lld", "llvm", "rust"]),
+            "lld": meta("lld", runtime=["llvm"]),
+            "llvm": meta("llvm"),
+            "rust": meta("rust", runtime=["llvm"]),
+        }
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted",
+            "RUNNER_OS": "macOS", "RUNNER_ARCH": "X64",
+            "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+            "GITHUB_RUN_ID": "123",
+        }
+
+        def fake_native(request, **kwargs):
+            if request["mode"] == "inspect":
+                return {name: nodes[name] for name in request["names"]}
+            raise AssertionError(request["mode"])
+
+        with tempfile.TemporaryDirectory() as directory, \
+             patch.dict(os.environ, env, clear=True), \
+             patch("intelbrew.ci.sync_registry", return_value="c" * 40), \
+             patch("intelbrew.ci.registry", return_value={}), \
+             patch("intelbrew.ci.read_json", return_value={"formulae": ["deno"]}), \
+             patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.run") as run:
+            with self.assertRaisesRegex(Error, "Source build excluded by policy: llvm"):
+                build("deno", Path(directory) / "candidate")
+            run.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()
