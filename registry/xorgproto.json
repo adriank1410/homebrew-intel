@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "8b92a1a6b5716d1719d3a424e6955c725673cbe2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "619eaea00c91ee438f5fcc0009ca354affeb2730",
+  "filename": "xorgproto--2026.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+  "license": "MIT",
+  "name": "xorgproto",
+  "pkg_version": "2026.1",
+  "recipe_sha256": "eb7517220c220221c7c56110fede318ed182c40d0e9730c893f24c29bfa4ab77",
+  "release": "intel-37212652125-1-xorgproto",
+  "revision": 0,
+  "run_id": "37212652125",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "86684dfface458f4c33453ff70546de7467c2f1d900aa4d75c821b0743984418",
+  "size": 737984,
+  "source": {
+    "filename": "xorgproto--2026.1.sources.tar.gz",
+    "sha256": "cab08f33e270106a505e07faf076e08bf99171b0e65f1dbaf571745ee3a0df2e",
+    "size": 1175322
+  },
+  "tag": "sequoia",
+  "version": "2026.1",
+  "version_scheme": 0,
+  "workflow_commit": "ccf53e88c0f47b1d4fdd58a7d4b5ad34aad0e2fe"
+}
