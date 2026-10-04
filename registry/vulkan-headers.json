@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "8b92a1a6b5716d1719d3a424e6955c725673cbe2",
+  "cellar": "any_skip_relocation",
+  "core_commit": "619eaea00c91ee438f5fcc0009ca354affeb2730",
+  "filename": "vulkan-headers--1.4.363.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "2021cfd8658a3cc6b74547fd72a3d27a33114d85c940023da5b366a7d4c1c36c",
+  "license": "Apache-2.0",
+  "name": "vulkan-headers",
+  "pkg_version": "1.4.363.0",
+  "recipe_sha256": "5aa06532ba5f5933f1c79687bd438b2ac74978ac17d38027293a47e17a64a7e5",
+  "release": "intel-37228846682-1-vulkan-headers",
+  "revision": 0,
+  "run_id": "37228846682",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "d238bb6e7be75f42c7256e45692c0e6a746884c4ba530b1031e2914d5615530a",
+  "size": 3405804,
+  "source": {
+    "filename": "vulkan-headers--1.4.363.0.sources.tar.gz",
+    "sha256": "284a42e27d443e81a04ca4909bfe306312cb3ea3bcdaa034b571c6eadc918543",
+    "size": 3412760
+  },
+  "tag": "sequoia",
+  "version": "1.4.363.0",
+  "version_scheme": 0,
+  "workflow_commit": "b9aedc49dd33d8f3e3b1bec9a878f18b62b78bd1"
+}
