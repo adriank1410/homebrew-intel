@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1d86792829d8f5986edb6272fc5b36a38d055f5c",
+  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
   "cellar": "any",
-  "core_commit": "5447a4b46cb84f266998a4e5e25e3e26941c9447",
+  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
   "filename": "deno--2.9.7.sequoia.bottle.tar.gz",
-  "formula_sha256": "619c24eb0a1402a7dd24babed4d6d25ee0e07a19d11c1345b1ce11660eb2de95",
+  "formula_sha256": "5a154a1bcb4b2d16fac4d15bb31f4bc31d056461698bfc06a3a1244a8face9b1",
   "license": "MIT",
   "name": "deno",
   "pkg_version": "2.9.7",
-  "recipe_sha256": "72f365c840fce49bebc74e39d8f6b46db55a1f9ceb34484b43d652ee5f313fdc",
-  "release": "intel-35892068608-1-deno",
+  "recipe_sha256": "ec49bf1469c63bc2e104238d10ae879a7499ea1d64861ae7ae9d44f260a98255",
+  "release": "intel-37149763110-1-deno",
   "revision": 0,
-  "run_id": "35892068608",
+  "run_id": "37149763110",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -24,9 +24,9 @@
       "pkg_version": "3.2.0"
     },
     {
-      "formula_sha256": "36aa425fe741b14fb226159ebfadfc3b75ed0603d7b27675b6cd1ffdeba80d07",
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
       "name": "libpng",
-      "pkg_version": "1.6.58"
+      "pkg_version": "1.6.59"
     },
     {
       "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dcf612cd02c70916f5ac31b7668b16313f1393537826d58cbecd3079a1a62a80",
-  "size": 46804039,
+  "sha256": "a13fead338307d1513cf298d6af6d968b87fea5a5225a2fcf0d718e98ba0a4e7",
+  "size": 47408067,
   "source": {
     "filename": "deno--2.9.7.sources.tar.gz",
-    "sha256": "827eefa31e05851412003f5cd8f753c0302c9fdb645e0024c6a737a611e4d6c0",
-    "size": 175723114
+    "sha256": "c2b6e691643f14e623aab089af8523794e2f0f137de7a4d658872a4e35058a0a",
+    "size": 175744368
   },
   "tag": "sequoia",
   "version": "2.9.7",
   "version_scheme": 0,
-  "workflow_commit": "6d7ffc41996778b6883ab3f22e8fe165f0358727"
+  "workflow_commit": "720f0b440c2c8f61b34e337d1d27fc0193d2a73f"
 }
