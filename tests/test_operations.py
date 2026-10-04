@@ -781,6 +781,12 @@ class SourceBundleTests(unittest.TestCase):
         self.assertRegex((ROOT / "README.pl.md").read_text(),
                          rf"Wszystkie {count} modułowych")
 
+    def test_readme_skips_roots_that_rebuild_a_runtime_toolchain_on_blocked_llvm(self):
+        english = re.sub(r"\s+", " ", (ROOT / "README.md").read_text())
+        polish = re.sub(r"\s+", " ", (ROOT / "README.pl.md").read_text())
+        self.assertRegex(english, r"source-builds this LLVM and also source-builds a formula that needs it at runtime")
+        self.assertRegex(polish, r"buduje to LLVM ze źródeł i jednocześnie buduje ze źródeł formułę, która potrzebuje go w czasie działania")
+
     def test_readme_marks_simdutf_as_an_example_formula(self):
         english = re.sub(r"\s+", " ", (ROOT / "README.md").read_text())
         polish = re.sub(r"\s+", " ", (ROOT / "README.pl.md").read_text())

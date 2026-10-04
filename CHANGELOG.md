@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.8 – skip blocked runtime toolchains
+
+- Do not start a CI root that source-builds a policy-blocked compiler and also source-builds a formula that needs it at runtime, such as `rust` or `lld` on `llvm`. The schedule reports the root as blocked and keeps going. A manual dispatch stops in the build planner before compilation. A matching compiler bottle makes the root eligible again. A build-only use of the compiler still installs it with `--build-from-source`.
+
 ## 0.2.7 – transient prefetch and artifact upload recovery
 
 - Retry Cloudflare HTTP 522 during source prefetch, including curl's `returned error: 522`. A bare `522` inside another token and every `curl: (56)` stay non-transient. Formula installation stays outside the retry loop.
