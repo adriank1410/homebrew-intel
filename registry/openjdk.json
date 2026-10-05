@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
+  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
   "cellar": "any",
-  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
+  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
   "filename": "openjdk--27.sequoia.bottle.tar.gz",
   "formula_sha256": "275e623d1a3fa218d3d6cc2ebdc27c591ec67a19b62511018ea93e057a3feaba",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk",
   "pkg_version": "27",
   "recipe_sha256": "b8f389539e303280b6d817c7d8fd82e8f0247d64770b223325a42458dc5e5e16",
-  "release": "intel-37029370058-1-openjdk",
+  "release": "intel-37355759065-1-openjdk",
   "revision": 0,
-  "run_id": "37029370058",
+  "run_id": "37355759065",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -148,9 +148,9 @@
       "pkg_version": "1.6.0"
     },
     {
-      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
       "name": "xorgproto",
-      "pkg_version": "2025.1"
+      "pkg_version": "2026.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -164,15 +164,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b6b0d977c434133706e9f078d2912bae0540118e2230236797391df4b1bd3749",
-  "size": 222796316,
+  "sha256": "f6cfa4bac5d8f9a9d14f08299435cb6a4fc79fb68900cfa185a17df293960180",
+  "size": 222796115,
   "source": {
     "filename": "openjdk--27.sources.tar.gz",
-    "sha256": "d5d926bcd1a96baeb01716a7657a2bc4c03efab0aa971267da8a7ba8eb49e5dd",
-    "size": 340075331
+    "sha256": "fde1beb1bf8e2b37ab7526d287bd75bb2579a9c026c0a41bbcb592bfd8e83d41",
+    "size": 340075305
   },
   "tag": "sequoia",
   "version": "27",
   "version_scheme": 0,
-  "workflow_commit": "d23956352f8ed11d0ee0b80e9240c6d842863d10"
+  "workflow_commit": "50b54aa57fad9317e323d05de5902c3ae2642d0c"
 }
