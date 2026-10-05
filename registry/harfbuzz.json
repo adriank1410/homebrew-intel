@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
+  "brew_commit": "8b92a1a6b5716d1719d3a424e6955c725673cbe2",
   "cellar": "any",
-  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
+  "core_commit": "619eaea00c91ee438f5fcc0009ca354affeb2730",
   "filename": "harfbuzz--14.5.1.sequoia.bottle.tar.gz",
   "formula_sha256": "9c67597f69970bdc1ca5e4f6d9d23c207dae365ac7ee40f62183372c28c32128",
   "license": "MIT",
   "name": "harfbuzz",
   "pkg_version": "14.5.1",
   "recipe_sha256": "b2af16ad7bbe9910220ad41fd2fbb7ed7ed6274948dcbdf5784d5a4473329bd9",
-  "release": "intel-37008853045-1-harfbuzz",
+  "release": "intel-37287195493-1-harfbuzz",
   "revision": 0,
-  "run_id": "37008853045",
+  "run_id": "37287195493",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -109,21 +109,21 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
       "name": "xorgproto",
-      "pkg_version": "2025.1"
+      "pkg_version": "2026.1"
     }
   ],
   "schema": 1,
-  "sha256": "7658cfc628f5e78b1c0d73f07bff98234710be69438c4dcf9c42c1b4b1ae8b0f",
-  "size": 4246941,
+  "sha256": "df3594142958cdae3dc14cbec04f411e1b7c2c1dceea49dd7065db86994129f7",
+  "size": 4246934,
   "source": {
     "filename": "harfbuzz--14.5.1.sources.tar.gz",
-    "sha256": "f588758dbe7323e9941145bde806d2e39dc015b3296f9749616c566a106bac9a",
-    "size": 20274545
+    "sha256": "aafc88d69be8970445e4d87f4bc2b2e2c3974a181ee3bb3262cbda65a1eb6b47",
+    "size": 20274548
   },
   "tag": "sequoia",
   "version": "14.5.1",
   "version_scheme": 0,
-  "workflow_commit": "104214bc4e25783ef83ba9e6b412b015fa2165e5"
+  "workflow_commit": "c04fd014879daaee7f6d51b1ce785c63a67ce5ea"
 }
