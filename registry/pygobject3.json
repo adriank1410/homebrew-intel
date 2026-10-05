@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
+  "brew_commit": "8b92a1a6b5716d1719d3a424e6955c725673cbe2",
   "cellar": "any",
-  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
+  "core_commit": "619eaea00c91ee438f5fcc0009ca354affeb2730",
   "filename": "pygobject3--3.58.0.sequoia.bottle.tar.gz",
   "formula_sha256": "e1cf16758e4ae0ff27791c3e49d8e6462d0b80dd05e57852afb98227231711f5",
   "license": "LGPL-2.1-or-later",
   "name": "pygobject3",
   "pkg_version": "3.58.0",
   "recipe_sha256": "18b8338f49f68a2baad6ca02ca574abb6b19843972aa7333c0cac291fcaabd0a",
-  "release": "intel-37062329366-1-pygobject3",
+  "release": "intel-37253529252-1-pygobject3",
   "revision": 0,
-  "run_id": "37062329366",
+  "run_id": "37253529252",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -149,9 +149,9 @@
       "pkg_version": "3.53.4"
     },
     {
-      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
       "name": "xorgproto",
-      "pkg_version": "2025.1"
+      "pkg_version": "2026.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -165,15 +165,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5674be4a69856d96669aee381c94586166727e95598d37814f1efc9c55eebeb7",
-  "size": 469580,
+  "sha256": "c0306b49e462f45d327786010c0290309437ab0c4e7651f4ea41efee92de489b",
+  "size": 469569,
   "source": {
     "filename": "pygobject3--3.58.0.sources.tar.gz",
-    "sha256": "51f56960820656021642a7c463d59a6a8634ff61de28cd4e1ebc2ce87af3dce9",
-    "size": 1434348
+    "sha256": "34ae44546a957c8b49ca622c5b257917d2993e210018f2a442f5803f3f1b6c79",
+    "size": 1434338
   },
   "tag": "sequoia",
   "version": "3.58.0",
   "version_scheme": 0,
-  "workflow_commit": "a598c668bfd86eabf78954b87e7ba9c21cefa010"
+  "workflow_commit": "5e7e8df9ee23ad65b1e9eaf525435df3911916bc"
 }
