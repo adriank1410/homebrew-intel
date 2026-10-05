@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "8b92a1a6b5716d1719d3a424e6955c725673cbe2",
+  "cellar": "any",
+  "core_commit": "619eaea00c91ee438f5fcc0009ca354affeb2730",
+  "filename": "vulkan-loader--1.4.363.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "e17b99bb7e073a873e6c6548f524da74d419b737d0f4c944690da4b35088fad9",
+  "license": "Apache-2.0",
+  "name": "vulkan-loader",
+  "pkg_version": "1.4.363.0",
+  "recipe_sha256": "87ebe5451f96caa57e30dbd3b2f189ee01112fe5c99f093c465e37ccca5dcd44",
+  "release": "intel-37242591117-1-vulkan-loader",
+  "revision": 0,
+  "run_id": "37242591117",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "2021cfd8658a3cc6b74547fd72a3d27a33114d85c940023da5b366a7d4c1c36c",
+      "name": "vulkan-headers",
+      "pkg_version": "1.4.363.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "a78060a6773ade57ec90131673782e4e46e942af207af1abac5a0564fb806d70",
+  "size": 400433,
+  "source": {
+    "filename": "vulkan-loader--1.4.363.0.sources.tar.gz",
+    "sha256": "bd6e59d2b68ac5417017f6e8b576e90c677a0ef4ccd15c6d396faeb4b3614411",
+    "size": 1865174
+  },
+  "tag": "sequoia",
+  "version": "1.4.363.0",
+  "version_scheme": 0,
+  "workflow_commit": "aa153c11ac79a241e60c78dd33cc212b0fefa1c9"
+}
