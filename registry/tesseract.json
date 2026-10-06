@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
+  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
   "cellar": "any",
-  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
+  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
   "filename": "tesseract--5.5.3.sequoia.bottle.tar.gz",
   "formula_sha256": "612e427e233a1625cd73d9eae0be6cc323b9c61df8366466109813effdbef770",
   "license": "Apache-2.0",
   "name": "tesseract",
   "pkg_version": "5.5.3",
   "recipe_sha256": "566df1fbd5c686666183e2b73851ddbff50e574f199e7f48b38fe3054dcf32d2",
-  "release": "intel-37082206939-1-tesseract",
+  "release": "intel-37395823962-1-tesseract",
   "revision": 0,
-  "run_id": "37082206939",
+  "run_id": "37395823962",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -184,9 +184,9 @@
       "pkg_version": "1.6.0"
     },
     {
-      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
       "name": "xorgproto",
-      "pkg_version": "2025.1"
+      "pkg_version": "2026.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -200,15 +200,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "26e6aa2e0fd6ca036e334a5a0e8fa834981a2de3eceb90d53f432118a7afc5dd",
-  "size": 10356824,
+  "sha256": "a83e9f63e46ab6c888d912efbe514522b97ed2d04813e0230b5cb2538a0a64b6",
+  "size": 10356849,
   "source": {
     "filename": "tesseract--5.5.3.sources.tar.gz",
-    "sha256": "d9e680d655f33c20068d50ede5fdaea6982ef866c0c154aed1754bc3985b2f42",
-    "size": 8168101
+    "sha256": "c1c275c40ec5da4dc14339f58a7d68ef1a8c65847447c793267a9765fe60c57b",
+    "size": 8168110
   },
   "tag": "sequoia",
   "version": "5.5.3",
   "version_scheme": 0,
-  "workflow_commit": "587dfb35e8dc8bad2a310f9bf60b9cb409bf9040"
+  "workflow_commit": "035fe5d174af00a71e38a3ddaf6cf126eac41f81"
 }
