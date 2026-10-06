@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
+  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
-  "filename": "poppler--26.09.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "825c6e7f1e97a142af94bdf53b954dff9340bb576a483cf5eca34e557aa26ddc",
+  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
+  "filename": "poppler--26.10.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "d665f018ff60fa8bb9e308d77d7831a325f9221599d672c3008b4de369665711",
   "license": {
     "any_of": [
       "GPL-2.0-only",
@@ -12,12 +12,17 @@
     ]
   },
   "name": "poppler",
-  "pkg_version": "26.09.0",
-  "recipe_sha256": "4b90c4c91c512b10835e95c75ae6bf392a295e5e9d107fc0b8109d34a845a507",
-  "release": "intel-37062329366-1-poppler",
+  "pkg_version": "26.10.0",
+  "recipe_sha256": "0acc1b332a9cbc3fdda67863db7f917ddd070c408a194d33e9ba695d00326f9e",
+  "release": "intel-37395823962-1-poppler",
   "revision": 0,
-  "run_id": "37062329366",
+  "run_id": "37395823962",
   "runtime_dependencies": [
+    {
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
       "name": "ca-certificates",
@@ -254,9 +259,9 @@
       "pkg_version": "1.6.0"
     },
     {
-      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
       "name": "xorgproto",
-      "pkg_version": "2025.1"
+      "pkg_version": "2026.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -270,15 +275,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "bfa818a83576c1e97309597d1ad23e192eb3d91934d3906ffa74943fb4821804",
-  "size": 9993011,
+  "sha256": "10f3103cb06833213990a58d0168bd02ac475d68976adaaee03de265ca3b4f2f",
+  "size": 10017365,
   "source": {
-    "filename": "poppler--26.09.0.sources.tar.gz",
-    "sha256": "9a919adc85c4a8e95ade5d5960fc7f8ebe39396e69befd44957ee7cbcaff401c",
-    "size": 6489318
+    "filename": "poppler--26.10.0.sources.tar.gz",
+    "sha256": "ee438756e6d91141ae12993d7b88147fc35ece3461ff0ddc62feac57bf56847a",
+    "size": 6498425
   },
   "tag": "sequoia",
-  "version": "26.09.0",
+  "version": "26.10.0",
   "version_scheme": 0,
-  "workflow_commit": "a598c668bfd86eabf78954b87e7ba9c21cefa010"
+  "workflow_commit": "035fe5d174af00a71e38a3ddaf6cf126eac41f81"
 }
