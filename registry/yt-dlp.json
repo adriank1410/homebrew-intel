@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
+  "brew_commit": "685fcc6ae48f7dbf9c94dde9a3967b40b342070b",
   "cellar": "any_skip_relocation",
-  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
+  "core_commit": "bcc382a662c03f3642834197ac9a8258c549bde0",
   "filename": "yt-dlp--2026.8.19_2.sequoia.bottle.tar.gz",
   "formula_sha256": "46062fa56e8edb816fc4009509fb842e385a509fd2ded8c8e5d1be16e52f4fd3",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.8.19_2",
   "recipe_sha256": "7afbbf2eb8e110e10add1cbbc5a69e27f6775bd24987e0a0e90c740d4e95f4c1",
-  "release": "intel-37355759065-1-yt-dlp",
+  "release": "intel-37525302210-1-yt-dlp",
   "revision": 2,
-  "run_id": "37355759065",
+  "run_id": "37525302210",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -74,12 +74,12 @@
       "pkg_version": "3.6.5"
     },
     {
-      "formula_sha256": "75ed36fe143658d6df206ce89736375eca0d0e3e1d643372118e021982a5e40e",
+      "formula_sha256": "c33c218a7e2710ab2fcd1bd98a9a6a5a4ddc4b89d4d0d511335a37e4869ec6ee",
       "name": "pycparser",
       "pkg_version": "3.0"
     },
     {
-      "formula_sha256": "919dba9b0eaaed94bea1ac727f7d571ed10f4e796213be5795fb8c23783a67ab",
+      "formula_sha256": "d944176cf07fcf41638dea8bdf00e9af59f3cdf7df1ff90806fb64131b516ec2",
       "name": "python@3.14",
       "pkg_version": "3.14.8"
     },
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "82fe152bddd23679e8a6abcbb635fb134512fc9c12f7ec0ce8b30671000244dd",
-  "size": 8429218,
+  "sha256": "b5fd6f3bc4f31ee4e0134d6b4a5c8e9b54725f7a7e721ae56a1c29c5486e167e",
+  "size": 8429445,
   "source": {
     "filename": "yt-dlp--2026.8.19_2.sources.tar.gz",
-    "sha256": "91f45f7503a58a68195e607e6b3090557314ec9ffaaad8adf34b98ed9f2cb670",
-    "size": 18123955
+    "sha256": "786f12609391448dd16d14c981bd744eae9f1fb07c75bd4444aeada94c6b7147",
+    "size": 18123950
   },
   "tag": "sequoia",
   "version": "2026.8.19",
   "version_scheme": 0,
-  "workflow_commit": "50b54aa57fad9317e323d05de5902c3ae2642d0c"
+  "workflow_commit": "9ce00c7a4c5d4683e1609c973235e6a1086ef708"
 }
