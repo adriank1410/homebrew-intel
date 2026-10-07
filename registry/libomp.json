@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "27af95f6a334817dfc67703582a4dae87cc7f614",
+  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
   "cellar": "any",
-  "core_commit": "4fccca4b6cd9e200b5bbfd55f5c165bff7ae835d",
-  "filename": "libomp--23.1.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "a363a3b4075b6126dd0a35b170ba30f2784871a3ea5ec66a8add80daf7f03ba0",
+  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
+  "filename": "libomp--23.1.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "c9cfe198df9d2b9949c0d2371ae6cbf6155c7b620a38450907d4b99553afa791",
   "license": "MIT",
   "name": "libomp",
-  "pkg_version": "23.1.2",
-  "recipe_sha256": "ebc09b8a949aabd98ae15f788723c5a5710f9ce06ef745fe0975a64fd5feccb7",
-  "release": "intel-36017351683-1-libomp",
+  "pkg_version": "23.1.3",
+  "recipe_sha256": "043057aa0f0dabdb42c1be6e8800c5603b9d89b9ee8495b508773ae4ec20dd9d",
+  "release": "intel-37637289224-1-libomp",
   "revision": 0,
-  "run_id": "36017351683",
+  "run_id": "37637289224",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "65265c623f4cba2de8efbf016916b740cdec0d73633881853a67721e7635d11b",
+  "sha256": "3912461716e510c95607283391ed0cd2b7982c63a34528295318294966ac1177",
   "size": 603637,
   "source": {
-    "filename": "libomp--23.1.2.sources.tar.gz",
-    "sha256": "b4db747669f7bba5ee020260d496d4bb7919ff360444d7eb02c8ed7b3ea902b4",
-    "size": 179274012
+    "filename": "libomp--23.1.3.sources.tar.gz",
+    "sha256": "54969710bec7321fd48d5261e3d0398c52361a6511d4f10fa8e0ef3db4e92129",
+    "size": 179295361
   },
   "tag": "sequoia",
-  "version": "23.1.2",
+  "version": "23.1.3",
   "version_scheme": 0,
-  "workflow_commit": "1f5dc3b746865d9789e8d626f9f2729258794fe2"
+  "workflow_commit": "240d9bc69d01851a29caf2582b62da754d5b1336"
 }
