@@ -1,0 +1,89 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
+  "filename": "openssh--10.6p1.sequoia.bottle.tar.gz",
+  "formula_sha256": "8bfa20f0ab6cd084573c59111e208395bc507306bc397cba914347c9b146bb9d",
+  "license": "SSH-OpenSSH",
+  "name": "openssh",
+  "pkg_version": "10.6p1",
+  "recipe_sha256": "8dc58b69d1c6f033fb8bef087e6ceb018ac9be4b860038bf751f6b405d0682d3",
+  "release": "intel-37637289224-1-openssh",
+  "revision": 0,
+  "run_id": "37637289224",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "75913fb375ec221368582d957482765d62b4f8678e43aaff08a4129321ff5506",
+      "name": "ldns",
+      "pkg_version": "1.9.2"
+    },
+    {
+      "formula_sha256": "d54d3c9601ea3d00219616dd8a5123885851150a9ef9e461df7ce8fb1da8e8f5",
+      "name": "libcbor",
+      "pkg_version": "0.14.0"
+    },
+    {
+      "formula_sha256": "7bb39f29a712ec58e59eeca9c7e5e4b07989a32055f14a90cb22ff6416c895aa",
+      "name": "libfido2",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
+      "name": "openssl@3",
+      "pkg_version": "3.6.5"
+    },
+    {
+      "formula_sha256": "d944176cf07fcf41638dea8bdf00e9af59f3cdf7df1ff90806fb64131b516ec2",
+      "name": "python@3.14",
+      "pkg_version": "3.14.8"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "6354ee9bcbd1f8a60a5bdf7de7761253da244484abf287639097052e08d198fa",
+  "size": 3292065,
+  "source": {
+    "filename": "openssh--10.6p1.sources.tar.gz",
+    "sha256": "908e362a504320938f64d0afa8a62be771375d3c677c00aa9b42f61f023cf563",
+    "size": 2360963
+  },
+  "tag": "sequoia",
+  "version": "10.6p1",
+  "version_scheme": 0,
+  "workflow_commit": "240d9bc69d01851a29caf2582b62da754d5b1336"
+}
