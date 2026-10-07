@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2170a64c0ff9549d78a9b48b26217d9fd17f6a2d",
+  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
   "cellar": "any",
-  "core_commit": "b3c1dbd3192bdaebe5e251c335189287ab8f2679",
+  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
   "filename": "gts--0.7.6_3.sequoia.bottle.tar.gz",
   "formula_sha256": "e3d6b09c676761a60774e90cd96015d36257b54cd1b0d0395ea707a87be18ae2",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_3",
   "recipe_sha256": "fa36c048669fb895d41ef201607f9c8745b85b5d4868c69be5613cf719599e21",
-  "release": "intel-37062329366-1-gts",
+  "release": "intel-37683204052-1-gts",
   "revision": 3,
-  "run_id": "37062329366",
+  "run_id": "37683204052",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -24,9 +24,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "7e41107faf209528d2e993afec53ad1006bbe8945772bde43c2295e8a2ef7659",
+      "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
       "name": "glib",
-      "pkg_version": "2.90.0"
+      "pkg_version": "2.90.1"
     },
     {
       "formula_sha256": "820f24b91bfe445426e39da65f50100a95dfa56e4a59e4805127931573152b1e",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4c16ce8c23c12a56ec13f4894050463fed10075b48b6f4c95e31368e378ffb9d",
-  "size": 431558,
+  "sha256": "075e5319da7eb185f96e0cc8aebd2c729dbd349dfd8284083a24454c0b113299",
+  "size": 431577,
   "source": {
     "filename": "gts--0.7.6_3.sources.tar.gz",
-    "sha256": "2b0a00e33851572eb154b69f7a46df1608de036a4743f6bc50b0ba5f2c92d7e2",
-    "size": 959591
+    "sha256": "1076dbc8008b54c75dc80df12f0428fac453a6c6adefbeb2edea3749dfa08536",
+    "size": 959581
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "a598c668bfd86eabf78954b87e7ba9c21cefa010"
+  "workflow_commit": "23e12d43910bdf72ae9eb36f003ecb7c1c096e70"
 }
