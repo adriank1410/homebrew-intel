@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
+  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
   "cellar": "any",
-  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
+  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
   "filename": "py3cairo--1.29.2.sequoia.bottle.tar.gz",
   "formula_sha256": "606b15fcf988fb116199f59abb40776b01a55f99112b693b3d6f57726f35cd6b",
   "license": {
@@ -14,9 +14,9 @@
   "name": "py3cairo",
   "pkg_version": "1.29.2",
   "recipe_sha256": "7708b4d0b41da15c6f16e29e8f778ecd24c8141d2d8b175701cacabf340fc584",
-  "release": "intel-37355759065-1-py3cairo",
+  "release": "intel-37710521258-1-py3cairo",
   "revision": 0,
-  "run_id": "37355759065",
+  "run_id": "37710521258",
   "runtime_dependencies": [
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -39,9 +39,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "7e41107faf209528d2e993afec53ad1006bbe8945772bde43c2295e8a2ef7659",
+      "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
       "name": "glib",
-      "pkg_version": "2.90.0"
+      "pkg_version": "2.90.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "133416076170ed2af11075bc5210cf172596b1b4a806de9644fe785c5bad411f",
-  "size": 257868,
+  "sha256": "0f7645178eed6dd1b55ff980b4f6c2a9dc79f3d1a736d25141746360d9f1d6d0",
+  "size": 257871,
   "source": {
     "filename": "py3cairo--1.29.2.sources.tar.gz",
-    "sha256": "0bc5136f1deca69d2cdc57d92a22af11b6e23ddce946f041931c8bd3fe1d12c2",
-    "size": 688424
+    "sha256": "8bc27b43df3f5b1f6a992f731d5072e2111dedfb3218487a807c3b9a42d3525a",
+    "size": 688425
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "50b54aa57fad9317e323d05de5902c3ae2642d0c"
+  "workflow_commit": "ae6806e7d2449673653c3533cf8410923fdca4ac"
 }
