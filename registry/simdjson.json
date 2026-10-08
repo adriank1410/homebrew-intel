@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
+  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
   "cellar": "any",
-  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
-  "filename": "simdjson--5.0.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "6ca7e0e8e11e44d0dfde7c61a206673945a70dc5aa8566c2977c3ef58acb9a97",
+  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
+  "filename": "simdjson--5.0.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "25c0e2dabd91d8f46f7a6aa8eeeb60a9dea6545d266ecaf21dd55b3dc11a82de",
   "license": "Apache-2.0",
   "name": "simdjson",
-  "pkg_version": "5.0.2",
-  "recipe_sha256": "a3c43dd78ffcaf83e4570550edb8a250f12d75e7bf61b20de8d39dd483cdc14b",
-  "release": "intel-37395823962-1-simdjson",
+  "pkg_version": "5.0.3",
+  "recipe_sha256": "6d774b80634456e08cba702c9311600cb4a4d61692d9bc43169f0a85bd29c6f3",
+  "release": "intel-37801821611-1-simdjson",
   "revision": 0,
-  "run_id": "37395823962",
+  "run_id": "37801821611",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "81d8055d41eef700b1acb102a0eeeb83668acc2991cdb98833bdaf8b735e910f",
-  "size": 2185667,
+  "sha256": "5479cba5e56b69a1cf172dde4ebb8ecf26918fd1e09f1307ca707924b442e724",
+  "size": 2192252,
   "source": {
-    "filename": "simdjson--5.0.2.sources.tar.gz",
-    "sha256": "bec6134092a70f17d384c7ab5a36d6a2ada58cf4f6cefc49ce1e722536347b54",
-    "size": 8285914
+    "filename": "simdjson--5.0.3.sources.tar.gz",
+    "sha256": "e049293afe872bdc65d57749adf16a5bbe769ea08f78973215b6afde067922b5",
+    "size": 8750094
   },
   "tag": "sequoia",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "version_scheme": 0,
-  "workflow_commit": "035fe5d174af00a71e38a3ddaf6cf126eac41f81"
+  "workflow_commit": "b3a6562ca83bc097c51b7187c5a86f01f3fdcb40"
 }
