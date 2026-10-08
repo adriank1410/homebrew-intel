@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
+  "cellar": "any",
+  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
+  "filename": "freetype--2.14.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+  "license": "FTL",
+  "name": "freetype",
+  "pkg_version": "2.14.3",
+  "recipe_sha256": "1c447ca7ef33af193018928324dfc6d021644c03ad8966e2170d9187d4e3021c",
+  "release": "intel-37801821611-1-freetype",
+  "revision": 0,
+  "run_id": "37801821611",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
+      "name": "libpng",
+      "pkg_version": "1.6.59"
+    }
+  ],
+  "schema": 1,
+  "sha256": "7197bbd8da8eb332cfd6e07c6060a0bf8b94705f470dd0f212ab50384fbb167d",
+  "size": 1055301,
+  "source": {
+    "filename": "freetype--2.14.3.sources.tar.gz",
+    "sha256": "8bca89eb217d1c98eed93b75110e697cc18062b96875e4f9f01e92c8d38b3dc8",
+    "size": 2676131
+  },
+  "tag": "sequoia",
+  "version": "2.14.3",
+  "version_scheme": 0,
+  "workflow_commit": "b3a6562ca83bc097c51b7187c5a86f01f3fdcb40"
+}
