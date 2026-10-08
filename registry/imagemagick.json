@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "685fcc6ae48f7dbf9c94dde9a3967b40b342070b",
+  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "bcc382a662c03f3642834197ac9a8258c549bde0",
+  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
   "filename": "imagemagick--7.1.2-32.sequoia.bottle.tar.gz",
   "formula_sha256": "766eb9cf2bf0a1de485894fb5a2dcb96d5a32bbe6311ed4ec8da9d6a503ad952",
   "license": "ImageMagick",
   "name": "imagemagick",
   "pkg_version": "7.1.2-32",
   "recipe_sha256": "d9fe937547e2dab156a34006bce512b478e6cc4851b7134d2db413e8c23b7b23",
-  "release": "intel-37525302210-1-imagemagick",
+  "release": "intel-37845769754-1-imagemagick",
   "revision": 0,
-  "run_id": "37525302210",
+  "run_id": "37845769754",
   "runtime_dependencies": [
     {
       "formula_sha256": "7d315c303e7e42571200c5b948c5872c9668a835b337df38ec8582b373ea34c7",
@@ -19,7 +19,12 @@
       "pkg_version": "3.15.1"
     },
     {
-      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
       "name": "freetype",
       "pkg_version": "2.14.3"
     },
@@ -100,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "442354563b208eced57a05e9fbbe87eb94e5a82360dad9fd7ccb3dcc914b8c52",
-  "size": 11033491,
+  "sha256": "0fe7b99c6807cd9263243a7669209a0deb465938ac531e9b673b02f6cd515f38",
+  "size": 11033628,
   "source": {
     "filename": "imagemagick--7.1.2-32.sources.tar.gz",
-    "sha256": "b1708d62badc930e0db6269894d0a735874cd683757cfeff4dec18aad5d5782b",
-    "size": 10276550
+    "sha256": "cb767a454872bdf253fec35a0704cb58b16c0c7cee2ea3c25b961d2833235823",
+    "size": 10276541
   },
   "tag": "sequoia",
   "version": "7.1.2-32",
   "version_scheme": 0,
-  "workflow_commit": "9ce00c7a4c5d4683e1609c973235e6a1086ef708"
+  "workflow_commit": "16ec9b1fa1808d654659d8ca9da12ce5d043ec4f"
 }
