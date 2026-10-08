@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
+  "filename": "swig--4.5.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "26818773364fd45de8d84c5f919c78a7175ba6e079eb5efa7b69fd23570b75bf",
+  "license": "GPL-3.0-or-later",
+  "name": "swig",
+  "pkg_version": "4.5.1",
+  "recipe_sha256": "e4ac915d49faba9250e57b364c6c47bb599df51ebfc9d22232e9914018f24663",
+  "release": "intel-37801821611-1-subversion",
+  "revision": 0,
+  "run_id": "37801821611",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
+      "name": "pcre2",
+      "pkg_version": "10.49"
+    }
+  ],
+  "schema": 1,
+  "sha256": "58a7c3b8652fa0d93aed7ce25ee7ec74b61d543ba4eeb132050bad60a21088cd",
+  "size": 1780813,
+  "source": {
+    "filename": "swig--4.5.1.sources.tar.gz",
+    "sha256": "c892481c318c8ac568285d29b1c6e69f4e0165267a3426f9dd5f502f8c4528ed",
+    "size": 9214751
+  },
+  "tag": "sequoia",
+  "version": "4.5.1",
+  "version_scheme": 0,
+  "workflow_commit": "b3a6562ca83bc097c51b7187c5a86f01f3fdcb40"
+}

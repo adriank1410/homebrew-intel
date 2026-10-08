@@ -1,0 +1,53 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
+  "cellar": "any",
+  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
+  "filename": "libgit2--1.9.7_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "72b77584b68942880d98a8f0e0bd95b2db7fc995b609924a89dff7b6e9bb1492",
+  "license": {
+    "GPL-2.0-only": {
+      "with": "GCC-exception-2.0"
+    }
+  },
+  "name": "libgit2",
+  "pkg_version": "1.9.7_1",
+  "recipe_sha256": "1ede61b35eefd69de2b72e440afaca5a17408e3b34a80bfab69f2a8da1d86cfe",
+  "release": "intel-37801821611-1-libgit2",
+  "revision": 1,
+  "run_id": "37801821611",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "3180adae5daa9b1935c3b8d0cf57133bdc8168ce775de2db201ea5743bf81350",
+      "name": "libssh2",
+      "pkg_version": "1.11.1_6"
+    },
+    {
+      "formula_sha256": "fb046c70a9ea6d7d0482c23904078dbcd6a6c56ea57b3c9907c16ac85ba83dc7",
+      "name": "llhttp",
+      "pkg_version": "9.4.3"
+    },
+    {
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
+      "name": "openssl@3",
+      "pkg_version": "3.6.5"
+    }
+  ],
+  "schema": 1,
+  "sha256": "e85e2d69a76c884d86b93245a9ea74f9f5f7efa6dbf7d1654a346a6b0b0f9664",
+  "size": 2008365,
+  "source": {
+    "filename": "libgit2--1.9.7_1.sources.tar.gz",
+    "sha256": "56745418af13cf0cdd1c55a72f5adc9ef540169b7c1a208f457ee524b511c3b7",
+    "size": 7767683
+  },
+  "tag": "sequoia",
+  "version": "1.9.7",
+  "version_scheme": 0,
+  "workflow_commit": "b3a6562ca83bc097c51b7187c5a86f01f3fdcb40"
+}
