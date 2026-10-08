@@ -1,0 +1,79 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
+  "filename": "subversion--1.15.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "10941623fa72af713d47c57bc6defb28e665eb95d310847348389e75a8953e9b",
+  "license": "Apache-2.0",
+  "name": "subversion",
+  "pkg_version": "1.15.0",
+  "recipe_sha256": "ddbea1f008e76429841c42575d4957536a1f6c90994b9629b50ccc46e360c199",
+  "release": "intel-37801821611-1-subversion",
+  "revision": 0,
+  "run_id": "37801821611",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "86d5cc89906f275c3a1235da108c390da5cb2b3d98986fcfe51200f4582418f3",
+      "name": "apache-serf",
+      "pkg_version": "1.3.10"
+    },
+    {
+      "formula_sha256": "0356730427b6c9dcb81ad473807a21dc66bc7d02f053654d10f6459b870eadde",
+      "name": "apr",
+      "pkg_version": "1.7.6"
+    },
+    {
+      "formula_sha256": "c6596620c769096015e6f5eada9bbb364baf4c248087624a8e32c1ec9d51506b",
+      "name": "apr-util",
+      "pkg_version": "1.6.5"
+    },
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
+      "name": "openssl@3",
+      "pkg_version": "3.6.5"
+    },
+    {
+      "formula_sha256": "f5d8327be5ad5b71700af9011c1b0066950d524acd49820a4c3f0d24e6f1d1c0",
+      "name": "utf8proc",
+      "pkg_version": "2.12.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "77802479f54ae656ab14e094e178441b0466cc6f14ade21102e7046265beb302",
+  "size": 7824117,
+  "source": {
+    "filename": "subversion--1.15.0.sources.tar.gz",
+    "sha256": "254a2a2dea49d86b6c5cccafbaff81dbff57d6d53ad920697557b8f0f087e177",
+    "size": 8670275
+  },
+  "tag": "sequoia",
+  "version": "1.15.0",
+  "version_scheme": 0,
+  "workflow_commit": "b3a6562ca83bc097c51b7187c5a86f01f3fdcb40"
+}
