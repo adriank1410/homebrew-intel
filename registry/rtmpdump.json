@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "cellar": "any",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "rtmpdump--2.6_2.sequoia.bottle.tar.gz",
+  "formula_sha256": "30f29839f6e76d332c013a52cea60f1e6c9afc99731bb10df22442295439255a",
+  "license": {
+    "all_of": [
+      "GPL-2.0-or-later",
+      "LGPL-2.1-or-later"
+    ]
+  },
+  "name": "rtmpdump",
+  "pkg_version": "2.6_2",
+  "recipe_sha256": "dc114d13147f84cc57aa32ee7b61aa92cf6071716caab4070717c81e7f576576",
+  "release": "intel-37957112869-1-rtmpdump",
+  "revision": 2,
+  "run_id": "37957112869",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "b9a7a8d00371acc27f10a21a1e14d6129f0d1040fb304feb4b2b9dc3b3e1c01d",
+  "size": 166449,
+  "source": {
+    "filename": "rtmpdump--2.6_2.sources.tar.gz",
+    "sha256": "cb87cb9629e126e714a3c255a7ebe7285c4cc990557fd587868eb6aee214fed8",
+    "size": 156525
+  },
+  "tag": "sequoia",
+  "version": "2.6",
+  "version_scheme": 0,
+  "workflow_commit": "a52b71d9c179ce8c3ebf057d9c00a764406d632e"
+}
