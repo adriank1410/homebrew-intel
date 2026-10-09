@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "apr-util--1.6.5_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "c30728a913f5cfc01c5cc64135b5d7f8f149b8d85503a710da49d1c4228472d4",
+  "license": "Apache-2.0",
+  "name": "apr-util",
+  "pkg_version": "1.6.5_1",
+  "recipe_sha256": "f17af573b727157c3b24c11d237540d5f8438790a033a85744585577ce1a0fdb",
+  "release": "intel-37957112869-1-apr-util",
+  "revision": 1,
+  "run_id": "37957112869",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "0356730427b6c9dcb81ad473807a21dc66bc7d02f053654d10f6459b870eadde",
+      "name": "apr",
+      "pkg_version": "1.7.6"
+    },
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "689fe2d248253c903b239c731e800ec3c29c49ec0b965af230a53818bfe654cb",
+  "size": 247312,
+  "source": {
+    "filename": "apr-util--1.6.5_1.sources.tar.gz",
+    "sha256": "1de1a79effe3a3472a6c31760b5bb2d0e6da4b9770cfcd286ac92fc0c2d661a6",
+    "size": 452146
+  },
+  "tag": "sequoia",
+  "version": "1.6.5",
+  "version_scheme": 0,
+  "workflow_commit": "a52b71d9c179ce8c3ebf057d9c00a764406d632e"
+}
