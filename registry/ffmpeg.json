@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
-  "filename": "ffmpeg--9.0.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "d276ecab3d5e109fadcb93a671a7175569ca7ac942be46008a41f4fa678509f0",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "ffmpeg--9.0.2_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "1f3e7264a319af3096a9487b6847cf8dc1f888c7798a66b5f91bde1459a7a421",
   "license": "GPL-3.0-or-later",
   "name": "ffmpeg",
-  "pkg_version": "9.0.2",
-  "recipe_sha256": "a85f0ee9b028aa142ede346661cd8d85371cbc8f1ddc4044948c21d14c17e6ab",
-  "release": "intel-37171580714-1-ffmpeg",
-  "revision": 0,
-  "run_id": "37171580714",
+  "pkg_version": "9.0.2_1",
+  "recipe_sha256": "af2c76ee6026cda4df125d2245cff9d24731d54fb969c193e53d4b0a94f63362",
+  "release": "intel-37989827803-1-ffmpeg",
+  "revision": 1,
+  "run_id": "37989827803",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -19,7 +19,7 @@
       "pkg_version": "2026-09-25"
     },
     {
-      "formula_sha256": "6c96636f03986330f28ae4760357515cf27503b310e57d387d24c96ed2eee3c0",
+      "formula_sha256": "ceaebbf22c54822f9e1ff2d4fa6a5c26f3556dc6f5005ab77a335dfc185cbae6",
       "name": "dav1d",
       "pkg_version": "1.5.4"
     },
@@ -44,9 +44,9 @@
       "pkg_version": "1.33.7"
     },
     {
-      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
-      "name": "openssl@3",
-      "pkg_version": "3.6.5"
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
     },
     {
       "formula_sha256": "39611712ad2de37708493f43569e9266c4be9dcc5e88e7276ee78a562bf03a33",
@@ -64,7 +64,7 @@
       "pkg_version": "3.4.18"
     },
     {
-      "formula_sha256": "57bc694f1e94dae6894eeb022d4de8adbb8eb7ad7776c074f624c0d5803cea59",
+      "formula_sha256": "de4c69992e6ea2943c41d38dccae7ad37faed0f04f0d76935755da8f1cf210c0",
       "name": "svt-av1",
       "pkg_version": "4.2.0"
     },
@@ -74,7 +74,7 @@
       "pkg_version": "r3222"
     },
     {
-      "formula_sha256": "9df26445b47e71e2a69ea15dedf1f06bff396e9a57f75560b8d7c32df74cedc8",
+      "formula_sha256": "f34703d7f7cb05d2374b19565b076c8b3d9a6968ccfab406905e435829662ed6",
       "name": "x265",
       "pkg_version": "4.3"
     },
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b836bead0b1b4571f26a584e1390a7a1a4fee64115e87002b5efee27a68fcf63",
-  "size": 22173458,
+  "sha256": "0fe85af1bda2445d613111c10512c020986a3d698580c039f5303800df681f8e",
+  "size": 22173679,
   "source": {
-    "filename": "ffmpeg--9.0.2.sources.tar.gz",
-    "sha256": "7ad092f4297dd2e6e8bdbd7a15a9bceee1558b53bc102cfd7830ed2cbd34b174",
-    "size": 12077468
+    "filename": "ffmpeg--9.0.2_1.sources.tar.gz",
+    "sha256": "2ff50e59822379238109619efceeebf09d8feae196863bab0ab9826f7ca4fdeb",
+    "size": 12077479
   },
   "tag": "sequoia",
   "version": "9.0.2",
   "version_scheme": 0,
-  "workflow_commit": "dcc43438f618f2474a7cf2bf29cf79f0cfadabce"
+  "workflow_commit": "c12cf7745d6222f5bf7d2077f9f8aa762a175c45"
 }
