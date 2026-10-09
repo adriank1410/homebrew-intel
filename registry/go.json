@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "any_skip_relocation",
-  "core_commit": "d73aff725aac30fcfbbe8e252459ee1bec942aba",
-  "filename": "go--1.27.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "7e955fc4471e0457d9d4e9c03812d731e22d2728ec6a466cbdfa3e420bcd4ba5",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "go--1.27.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "63759f6bf0e7064f939af3b22b20ac81cab1f1ccd51aa12ecf5e082df86ee190",
   "license": "BSD-3-Clause",
   "name": "go",
-  "pkg_version": "1.27.1",
-  "recipe_sha256": "f6998cbf7c1c72bfa04de274c87f6b66d8323b0e5913a4758157c2ce907193a3",
-  "release": "intel-34562675729-1-go",
+  "pkg_version": "1.27.2",
+  "recipe_sha256": "427857b89a8eb9011e4d8f268dd9cfa9897ef7aacedd06dbac2b37668525dc05",
+  "release": "intel-37957112869-1-go",
   "revision": 0,
-  "run_id": "34562675729",
+  "run_id": "37957112869",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "ae64864e9da468c6a778583a018ec163b2d6e7bb09abfc95d622079c64bf9d15",
-  "size": 71529379,
+  "sha256": "3b13f9cea321690513027fb658f004b274eabc0c312b99185923213097090b43",
+  "size": 71597045,
   "source": {
-    "filename": "go--1.27.1.sources.tar.gz",
-    "sha256": "aa0d4e624ce991d7fb3461bcb67e34854ea542779cd77cb143d0891816a8bd9a",
-    "size": 113962904
+    "filename": "go--1.27.2.sources.tar.gz",
+    "sha256": "fe0985e0210fae280ed50db815c81f63612afdaec86be4b5c1945a562559d93e",
+    "size": 113982583
   },
   "tag": "sequoia",
-  "version": "1.27.1",
+  "version": "1.27.2",
   "version_scheme": 0,
-  "workflow_commit": "f04f5bc4e294a2b517485e634be99628e808b24f"
+  "workflow_commit": "a52b71d9c179ce8c3ebf057d9c00a764406d632e"
 }
