@@ -197,7 +197,10 @@ Each root builds, verifies on a separate fresh runner, and publishes independent
 a slow or failed build does not hold ready bottles behind a whole-batch barrier.
 The reusable `bottle-root.yml` signs new artifacts; the CLI also accepts the legacy
 `bottles.yml` signer, with the same exact commit, main-ref and hosted-runner checks.
-Remaining roots are reconsidered by the next scheduled run.
+When the sweep merges at least one bottle registry pull, it dispatches the next
+full sweep itself, for up to eight waves, after those pulls reach `main`. A sweep
+that publishes nothing, a single-root repair, and the eighth wave leave the
+remaining roots to the hourly schedule.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight. A manual single-root request has its own concurrency group,
 so an urgent repair can run alongside a sweep. Repeated requests for the same root
