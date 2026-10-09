@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "012f02a0eed322efa019960768acc89bf46fd6cc",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "c799c7ec3bc29124301389b207b3430368748fc0",
-  "filename": "openldap--2.7.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "d1123af4f15e7e0c1b59b8dcf0417c1d9ddaaaa97ff5a3bc49a93d9f40cdab01",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "openldap--2.7.1_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "f9626207be210e5fa52b4cae43c3a19994fc983aa2f93ed27d444fdce1273d65",
   "license": "OLDAP-2.8",
   "name": "openldap",
-  "pkg_version": "2.7.1",
-  "recipe_sha256": "e074fdd25c20a1693211a73650db5001eb99c34e6bba7a87d73aa9119f2d7ee6",
-  "release": "intel-36792829744-1-openldap",
-  "revision": 0,
-  "run_id": "36792829744",
+  "pkg_version": "2.7.1_1",
+  "recipe_sha256": "64af1ece6559cc730763a95c011da1a4f0d9340d3ea6a6721bf03efb0e09982d",
+  "release": "intel-37957112869-1-openldap",
+  "revision": 1,
+  "run_id": "37957112869",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -19,21 +19,21 @@
       "pkg_version": "2026-09-25"
     },
     {
-      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
-      "name": "openssl@3",
-      "pkg_version": "3.6.5"
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
     }
   ],
   "schema": 1,
-  "sha256": "3bca14b4bc5f7af2ca22c62c5707cf34c60b26d0caa337ae4844c143ca2fe667",
-  "size": 3342757,
+  "sha256": "3ba7ae064395095e87ec58c20843fc16dc317f088f2f26fa52a2cbf2996c57dd",
+  "size": 3343490,
   "source": {
-    "filename": "openldap--2.7.1.sources.tar.gz",
-    "sha256": "838cc047599679fb634efd0746e171d70619d82653506b1390b80fd9f5cf498a",
-    "size": 6483842
+    "filename": "openldap--2.7.1_1.sources.tar.gz",
+    "sha256": "b1ca409ffe28c0407c176752e3b3b50efe3c31174ac1a2a8443296a3512c6221",
+    "size": 6483801
   },
   "tag": "sequoia",
   "version": "2.7.1",
   "version_scheme": 0,
-  "workflow_commit": "8c4559363ba7443d4399dfc0f22afecffa4e70bd"
+  "workflow_commit": "a52b71d9c179ce8c3ebf057d9c00a764406d632e"
 }
