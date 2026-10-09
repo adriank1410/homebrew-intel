@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
+  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
   "cellar": "any",
-  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
+  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
   "filename": "py3cairo--1.29.2.sequoia.bottle.tar.gz",
   "formula_sha256": "606b15fcf988fb116199f59abb40776b01a55f99112b693b3d6f57726f35cd6b",
   "license": {
@@ -14,10 +14,15 @@
   "name": "py3cairo",
   "pkg_version": "1.29.2",
   "recipe_sha256": "7708b4d0b41da15c6f16e29e8f778ecd24c8141d2d8b175701cacabf340fc584",
-  "release": "intel-37710521258-1-py3cairo",
+  "release": "intel-37873062551-1-py3cairo",
   "revision": 0,
-  "run_id": "37710521258",
+  "run_id": "37873062551",
   "runtime_dependencies": [
+    {
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
       "name": "cairo",
@@ -29,7 +34,7 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
       "name": "freetype",
       "pkg_version": "2.14.3"
     },
@@ -110,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0f7645178eed6dd1b55ff980b4f6c2a9dc79f3d1a736d25141746360d9f1d6d0",
-  "size": 257871,
+  "sha256": "1b080e17ca44d89e564f4407441c97ec0e1f5141a6e8faf07497b0ef6e57b7ca",
+  "size": 257879,
   "source": {
     "filename": "py3cairo--1.29.2.sources.tar.gz",
-    "sha256": "8bc27b43df3f5b1f6a992f731d5072e2111dedfb3218487a807c3b9a42d3525a",
-    "size": 688425
+    "sha256": "c8c23cb1912d8f07103a1cb1c1a09daf489db1bacb42b7882b0f86852f4f30e7",
+    "size": 688435
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "ae6806e7d2449673653c3533cf8410923fdca4ac"
+  "workflow_commit": "c9209f2ca50552322e1bae60de5dbf03a9b5b217"
 }
