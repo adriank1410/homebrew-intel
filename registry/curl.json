@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "012f02a0eed322efa019960768acc89bf46fd6cc",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "any",
-  "core_commit": "c799c7ec3bc29124301389b207b3430368748fc0",
-  "filename": "curl--8.22.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "10ec287adb919bb9380983b5db9a069309331fbdc138a34b9384755eb2d737a2",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "curl--8.22.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "44d37fed117b98478b53437496ff0502bada8dd0e34f9d235a654d5dc77da527",
   "license": "curl",
   "name": "curl",
-  "pkg_version": "8.22.0",
-  "recipe_sha256": "d95239833919490b510e2a751637f96ffd7bf582fb13cd774872d2aab8610264",
-  "release": "intel-36821551901-1-curl",
-  "revision": 0,
-  "run_id": "36821551901",
+  "pkg_version": "8.22.0_1",
+  "recipe_sha256": "cd6184b28f443a6a1448274cb6e95a4368e6aa600d79b9b77bc40ead865eafd8",
+  "release": "intel-37989827803-1-curl",
+  "revision": 1,
+  "run_id": "37989827803",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -34,9 +34,9 @@
       "pkg_version": "1.18.0"
     },
     {
-      "formula_sha256": "2b0c1d6e66f9c6954f9868be8cb379cf7d7ae7161b44d832dff11efcfc49fd65",
+      "formula_sha256": "9c66d03a89cc9f9959c804a2017321fa134e65c0a3cf35c0eb5ffeadeb33167d",
       "name": "libngtcp2",
-      "pkg_version": "1.25.0"
+      "pkg_version": "1.25.0_1"
     },
     {
       "formula_sha256": "e9433a67ed9e920170308f8f67d3d28d87a8d067a952cd947cb61bf3653d84fc",
@@ -44,9 +44,9 @@
       "pkg_version": "0.23.3"
     },
     {
-      "formula_sha256": "3180adae5daa9b1935c3b8d0cf57133bdc8168ce775de2db201ea5743bf81350",
+      "formula_sha256": "eecf497120b0b28aad11f0536ac3c7759fe0d02db6ef972a811a7fc198ade8d3",
       "name": "libssh2",
-      "pkg_version": "1.11.1_6"
+      "pkg_version": "1.11.1_7"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -54,9 +54,9 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
-      "name": "openssl@3",
-      "pkg_version": "3.6.5"
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7486addb62449e14bdaaefb4134df27bc8b9958131fb5b04ec4a1b1c39705a0c",
-  "size": 1695403,
+  "sha256": "7dfd9d45c3c110b66c014671d32130d88ce5c8a4a076a23cbe7f7beaf880b0d7",
+  "size": 1693622,
   "source": {
-    "filename": "curl--8.22.0.sources.tar.gz",
-    "sha256": "48266251f452d42b650a554e572999f02155fd13163d6e08543f298911da232f",
-    "size": 3402687
+    "filename": "curl--8.22.0_1.sources.tar.gz",
+    "sha256": "aec4121e445586566ee2d3b7ab32bc405464e016144eac68d75e02f5b36ac56f",
+    "size": 3402561
   },
   "tag": "sequoia",
   "version": "8.22.0",
   "version_scheme": 0,
-  "workflow_commit": "2ef286086acc580294523333a9425edc29d66780"
+  "workflow_commit": "c12cf7745d6222f5bf7d2077f9f8aa762a175c45"
 }

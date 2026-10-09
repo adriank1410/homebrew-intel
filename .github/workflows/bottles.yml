@@ -10,6 +10,11 @@ on:
         required: true
         default: simdutf
         type: string
+      sweep_wave:
+        description: Full-sweep wave, from 1 through 8. Later waves are dispatched after registry pulls merge.
+        required: false
+        default: '1'
+        type: string
   schedule:
     - cron: '15 * * * *'
 permissions:
@@ -97,3 +102,33 @@ jobs:
       core_commit: ${{ needs.plan.outputs.core_commit }}
     secrets:
       app_private_key: ${{ secrets.INTELBREW_APP_PRIVATE_KEY }}
+  continue-sweep:
+    name: continue-sweep
+    needs: [root-pipeline]
+    # always() is required: a failed root must not skip the roots that published.
+    # This job holds the sweep concurrency group until it exits, so the queued
+    # wave starts only after the registry check below has finished.
+    if: >-
+      ${{ always() && !cancelled() &&
+          github.repository == 'adriank1410/homebrew-intel' &&
+          github.ref == 'refs/heads/main' &&
+          (github.event_name == 'schedule' || inputs.formula == 'all') &&
+          (needs.root-pipeline.result == 'success' || needs.root-pipeline.result == 'failure') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: write
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Start the next dependency wave after registry pulls merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUESTED_FORMULA: ${{ github.event_name == 'schedule' && 'all' || inputs.formula }}
+          INTELBREW_SWEEP_WAVE: ${{ inputs.sweep_wave || '1' }}
+          INTELBREW_CONTINUE_TIMEOUT: '1200'
+          INTELBREW_CONTINUE_INTERVAL: '20'
+        run: python3 scripts/continue-sweep.py
