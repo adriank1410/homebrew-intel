@@ -1,16 +1,16 @@
 {
   "arch": "x86_64",
   "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
-  "cellar": "any_skip_relocation",
+  "cellar": "any",
   "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
-  "filename": "pipx--1.17.12.sequoia.bottle.tar.gz",
-  "formula_sha256": "12c347899d725f18e2b816c78d9b55cc1038847300f414ad815fbab2f3451137",
-  "license": "MIT",
-  "name": "pipx",
-  "pkg_version": "1.17.12",
-  "recipe_sha256": "59fdcbcbf732923b154ba88839394e58262e3e1c8d1ba0f37e44bb138839d806",
-  "release": "intel-37989827803-1-pipx",
-  "revision": 0,
+  "filename": "ldns--1.9.2_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "788b11751f8c183417ea6ba0f0b0b172762b9358ef03df1a1a89d2326c63c3d1",
+  "license": "BSD-3-Clause",
+  "name": "ldns",
+  "pkg_version": "1.9.2_1",
+  "recipe_sha256": "9fdb731b5a54b5f874f7cabdfb5fa2580fdb2f5df02bb55700b8f740506e496f",
+  "release": "intel-37989827803-1-ldns",
+  "revision": 1,
   "run_id": "37989827803",
   "runtime_dependencies": [
     {
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0d939e6af17ec0505b5de31f548438b46034bc77b8b4d338be4770664e7fe4bc",
-  "size": 526093,
+  "sha256": "58d7d7580f633c1ffd5105798d7c4096290595370d912f8022bb68e370e0ebeb",
+  "size": 1309061,
   "source": {
-    "filename": "pipx--1.17.12.sources.tar.gz",
-    "sha256": "d385865b558c8fb369014ffe91795eebb8e845c281da6a7584f8413b96015eb9",
-    "size": 1473416
+    "filename": "ldns--1.9.2_1.sources.tar.gz",
+    "sha256": "dc900788179d6e110bd48bf84de71a3b74b1d296ca1e43e3c19adae7db06f719",
+    "size": 1314512
   },
   "tag": "sequoia",
-  "version": "1.17.12",
+  "version": "1.9.2",
   "version_scheme": 0,
   "workflow_commit": "c12cf7745d6222f5bf7d2077f9f8aa762a175c45"
 }
