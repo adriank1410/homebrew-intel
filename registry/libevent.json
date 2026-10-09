@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "cellar": "any",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "libevent--2.1.13_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "f710636b11d1ecbe657d4058d39ef4d0aa222cf251efaa190c9489a23b61b940",
+  "license": "BSD-3-Clause",
+  "name": "libevent",
+  "pkg_version": "2.1.13_1",
+  "recipe_sha256": "11a6fec9fceac71bef76abf8f4d1f14ea8386dde621309249b702c9ef74eb92f",
+  "release": "intel-37957112869-1-libevent",
+  "revision": 1,
+  "run_id": "37957112869",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "9e3e96670088eb3efa58bef70c2ed2e51b12a1e4b5a35b35e537f44d87a02786",
+  "size": 723289,
+  "source": {
+    "filename": "libevent--2.1.13_1.sources.tar.gz",
+    "sha256": "2800562784c303050ef76c25a79585e988c1e31513a46f3ea186a0c10708ca31",
+    "size": 1133237
+  },
+  "tag": "sequoia",
+  "version": "2.1.13",
+  "version_scheme": 0,
+  "workflow_commit": "a52b71d9c179ce8c3ebf057d9c00a764406d632e"
+}
