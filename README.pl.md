@@ -121,10 +121,11 @@ inwentarza nie są wysyłane. Instalacja pakietów pozostaje osobną komendą.
 
 Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza cogodzinne sprawdzanie
 kandydatów i obsługę PR-ów co pięć minut. Niepewni kandydaci są sprawdzani wspólnie
-na jednym runnerze Intel. Najpierw budowane są wspólne brakujące zależności;
-pakiety, które ich potrzebują, czekają na kolejny przebieg. Jeden przebieg wybiera
-do `scheduled_batch_size` celów (obecnie 24), a pozostali kandydaci są ponownie
-rozpatrywani w następnych przebiegach. Pakiety z dostępnymi butelkami nie zajmują
+na jednym runnerze Intel. Najpierw budowane są wspólne brakujące zależności.
+Gdy przebieg scali przynajmniej jedną butelkę, sam uruchamia następną falę,
+najwyżej osiem fal. Przebieg, który nic nie opublikował, zostawia pozostałe
+cele cogodzinnemu harmonogramowi. Jeden przebieg wybiera do `scheduled_batch_size`
+celów (obecnie 24), a kolejni kandydaci wracają w następnej fali. Pakiety z dostępnymi butelkami nie zajmują
 osobnych runnerów budowania i weryfikacji. Blokady są raportowane niezależnie od
 pozostałych pakietów. Jeden przebieg dopuszcza do pięciu równoległych zadań na
 runnerach Intel. Wybrana partia musi mieścić się w limicie GitHub wynoszącym
