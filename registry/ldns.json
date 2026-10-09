@@ -1,0 +1,74 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "cellar": "any",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "ldns--1.9.2_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "788b11751f8c183417ea6ba0f0b0b172762b9358ef03df1a1a89d2326c63c3d1",
+  "license": "BSD-3-Clause",
+  "name": "ldns",
+  "pkg_version": "1.9.2_1",
+  "recipe_sha256": "9fdb731b5a54b5f874f7cabdfb5fa2580fdb2f5df02bb55700b8f740506e496f",
+  "release": "intel-37989827803-1-ldns",
+  "revision": 1,
+  "run_id": "37989827803",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    },
+    {
+      "formula_sha256": "f8ad5ca25fab3451d118eb4977157ed535d6fcb0ab9d14bea12366a656162b1a",
+      "name": "python@3.14",
+      "pkg_version": "3.14.8_1"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "58d7d7580f633c1ffd5105798d7c4096290595370d912f8022bb68e370e0ebeb",
+  "size": 1309061,
+  "source": {
+    "filename": "ldns--1.9.2_1.sources.tar.gz",
+    "sha256": "dc900788179d6e110bd48bf84de71a3b74b1d296ca1e43e3c19adae7db06f719",
+    "size": 1314512
+  },
+  "tag": "sequoia",
+  "version": "1.9.2",
+  "version_scheme": 0,
+  "workflow_commit": "c12cf7745d6222f5bf7d2077f9f8aa762a175c45"
+}
