@@ -3,13 +3,13 @@
   "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "any",
   "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
-  "filename": "libngtcp2--1.25.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "9c66d03a89cc9f9959c804a2017321fa134e65c0a3cf35c0eb5ffeadeb33167d",
-  "license": "MIT",
-  "name": "libngtcp2",
-  "pkg_version": "1.25.0_1",
-  "recipe_sha256": "6c662926b51bd9f4caa969c2a382ad880d8d5f4b3bff2aaccaba4fe49de92717",
-  "release": "intel-37957112869-1-libngtcp2",
+  "filename": "libevent--2.1.13_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "f710636b11d1ecbe657d4058d39ef4d0aa222cf251efaa190c9489a23b61b940",
+  "license": "BSD-3-Clause",
+  "name": "libevent",
+  "pkg_version": "2.1.13_1",
+  "recipe_sha256": "11a6fec9fceac71bef76abf8f4d1f14ea8386dde621309249b702c9ef74eb92f",
+  "release": "intel-37957112869-1-libevent",
   "revision": 1,
   "run_id": "37957112869",
   "runtime_dependencies": [
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "af247865db3624b8e7253909daa1d47fd105b075250672f738605547344bb9bc",
-  "size": 425929,
+  "sha256": "9e3e96670088eb3efa58bef70c2ed2e51b12a1e4b5a35b35e537f44d87a02786",
+  "size": 723289,
   "source": {
-    "filename": "libngtcp2--1.25.0_1.sources.tar.gz",
-    "sha256": "14510b297e02c29d0a4192cba188eb3d502d9ee280db6e5f4463169072101bed",
-    "size": 716069
+    "filename": "libevent--2.1.13_1.sources.tar.gz",
+    "sha256": "2800562784c303050ef76c25a79585e988c1e31513a46f3ea186a0c10708ca31",
+    "size": 1133237
   },
   "tag": "sequoia",
-  "version": "1.25.0",
+  "version": "2.1.13",
   "version_scheme": 0,
   "workflow_commit": "a52b71d9c179ce8c3ebf057d9c00a764406d632e"
 }

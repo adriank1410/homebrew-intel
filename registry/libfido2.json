@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "cellar": "any",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "libfido2--1.17.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "ad8867ebdb4ff84bc801e694b5482a8cb7cc9b2ddb83443d10f18ac0df493141",
+  "license": "BSD-2-Clause",
+  "name": "libfido2",
+  "pkg_version": "1.17.0_1",
+  "recipe_sha256": "5c824b50be0edffd71828a2a01cf9c88a5a521e0654cecfbc35813434ac408dc",
+  "release": "intel-37957112869-1-libfido2",
+  "revision": 1,
+  "run_id": "37957112869",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "d54d3c9601ea3d00219616dd8a5123885851150a9ef9e461df7ce8fb1da8e8f5",
+      "name": "libcbor",
+      "pkg_version": "0.14.0"
+    },
+    {
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    }
+  ],
+  "schema": 1,
+  "sha256": "b452b65fbc1d6c88b0c0aed3bfe78e9a91c10fd72daa7887c08aeabe80d31b16",
+  "size": 362719,
+  "source": {
+    "filename": "libfido2--1.17.0_1.sources.tar.gz",
+    "sha256": "67b293ce416f85047bc53c321890ef6ddff44c6ba652d27d4d5b3084807ad1fc",
+    "size": 715728
+  },
+  "tag": "sequoia",
+  "version": "1.17.0",
+  "version_scheme": 0,
+  "workflow_commit": "a52b71d9c179ce8c3ebf057d9c00a764406d632e"
+}
