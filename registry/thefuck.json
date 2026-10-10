@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
   "cellar": "any_skip_relocation",
-  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
   "formula_sha256": "8b67b01fbed9f88367b6b737c40b78e3d5cdd9cdf2de8c1ba73a456d52ddb8c6",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "91e3bb3a642dc57db8afddf02202d44b44ce4500091b2f810c6d7936b43779f5",
-  "release": "intel-37989827803-1-thefuck",
+  "release": "intel-38059788536-1-thefuck",
   "revision": 0,
-  "run_id": "37989827803",
+  "run_id": "38059788536",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -34,9 +34,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "f8ad5ca25fab3451d118eb4977157ed535d6fcb0ab9d14bea12366a656162b1a",
+      "formula_sha256": "2d533cbd3bf1931dabb2302627b88dc917b1c6c12dc5f41ece766ef17f82162e",
       "name": "python@3.14",
-      "pkg_version": "3.14.8_1"
+      "pkg_version": "3.14.8_2"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6661ba48ab3e00ddd338cc969d606aa314139d92c97c9fbeed8556561570079a",
-  "size": 384769,
+  "sha256": "d9fb4771f6b582a9ac101ba37fd5f5a3a543a0120b8b1051f0565bbd0fa912b4",
+  "size": 384811,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "c8181d37079d7341c51fd77f7cfd3db4570db0fcde6de405cd3e0a9d1862670e",
-    "size": 894273
+    "sha256": "bb731543819e681f0528dc4d6c73ecceb52dba73eda6db5670aa39923a4a4927",
+    "size": 894267
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "c12cf7745d6222f5bf7d2077f9f8aa762a175c45"
+  "workflow_commit": "50288c16033440b24a1bc8bdd32a3918888bfa49"
 }
