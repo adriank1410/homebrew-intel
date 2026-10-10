@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
   "filename": "gobject-introspection--1.86.0_4.sequoia.bottle.tar.gz",
   "formula_sha256": "8a8403aea67d918b29adb1fdec849f08bc537e93b49b68fdc3409604df4fa5b2",
   "license": {
@@ -15,9 +15,9 @@
   "name": "gobject-introspection",
   "pkg_version": "1.86.0_4",
   "recipe_sha256": "8fdbfe500d9a011f4437a99f1f35497151ba78f3b2f4cd8a745327422a1f1ae4",
-  "release": "intel-37873062551-1-gobject-introspection",
+  "release": "intel-37989827803-1-gobject-introspection",
   "revision": 4,
-  "run_id": "37873062551",
+  "run_id": "37989827803",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -115,9 +115,9 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
-      "name": "openssl@3",
-      "pkg_version": "3.6.5"
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
     },
     {
       "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
@@ -135,9 +135,9 @@
       "pkg_version": "3.0.7"
     },
     {
-      "formula_sha256": "d944176cf07fcf41638dea8bdf00e9af59f3cdf7df1ff90806fb64131b516ec2",
+      "formula_sha256": "f8ad5ca25fab3451d118eb4977157ed535d6fcb0ab9d14bea12366a656162b1a",
       "name": "python@3.14",
-      "pkg_version": "3.14.8"
+      "pkg_version": "3.14.8_1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -166,15 +166,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b10fc21c77fa190124e9f9c5e716c75d438a8c02fd26d9c8c55c9dac56c1b004",
-  "size": 1314771,
+  "sha256": "b8d3ebba96a2d34f681b187a7bc0baf9dc493d5ce2c3a02466728617707132a0",
+  "size": 1314818,
   "source": {
     "filename": "gobject-introspection--1.86.0_4.sources.tar.gz",
-    "sha256": "5865aefa6a19d710c33788eb0e7fbd98fed16b4f583f8be14571501f76147efa",
-    "size": 3338300
+    "sha256": "c3325bddb35121c3a1bbe5945730ad55e8cb0dbe64aea60dbd59fe0646b6c66a",
+    "size": 3338281
   },
   "tag": "sequoia",
   "version": "1.86.0",
   "version_scheme": 0,
-  "workflow_commit": "c9209f2ca50552322e1bae60de5dbf03a9b5b217"
+  "workflow_commit": "c12cf7745d6222f5bf7d2077f9f8aa762a175c45"
 }

@@ -119,9 +119,11 @@ snapshots are not uploaded. Package installation remains a separate command.
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` to enable hourly candidate checks and five-minute
 PR maintenance. Scheduled checks inspect uncertain candidates together on one
-Intel runner. Shared missing dependencies are built first; dependent roots wait
-for a later sweep. Each sweep selects up to `scheduled_batch_size` roots
-(currently 24), with the remaining candidates reconsidered on subsequent runs.
+Intel runner. Shared missing dependencies are built first. When a sweep merges
+at least one bottle, it starts the next wave itself, for up to eight waves.
+A sweep that publishes nothing leaves the remaining roots to the hourly
+schedule. Each sweep selects up to `scheduled_batch_size` roots (currently 24),
+and later candidates are reconsidered on the next wave.
 Already covered roots do not receive separate build/verification runners.
 Blocked roots are reported without stopping eligible siblings. Build and
 verification jobs remain limited to five concurrent Intel runners per run. The
