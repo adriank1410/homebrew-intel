@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
   "cellar": "any",
-  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
-  "filename": "pygobject3--3.58.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "e1cf16758e4ae0ff27791c3e49d8e6462d0b80dd05e57852afb98227231711f5",
+  "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
+  "filename": "pygobject3--3.58.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "499a4bf3f02a63b0daedef3e03c742b3bb3f3d4fbd66eab37be0b8b0b5c7f90f",
   "license": "LGPL-2.1-or-later",
   "name": "pygobject3",
-  "pkg_version": "3.58.0",
-  "recipe_sha256": "18b8338f49f68a2baad6ca02ca574abb6b19843972aa7333c0cac291fcaabd0a",
-  "release": "intel-38010595574-1-pygobject3",
+  "pkg_version": "3.58.1",
+  "recipe_sha256": "f732608c13d25d75044440f2b61b6aeebfd4f69fcf9a3db775edcd2a5697c53c",
+  "release": "intel-38063561227-1-pygobject3",
   "revision": 0,
-  "run_id": "38010595574",
+  "run_id": "38063561227",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -139,9 +139,9 @@
       "pkg_version": "1.29.2"
     },
     {
-      "formula_sha256": "f8ad5ca25fab3451d118eb4977157ed535d6fcb0ab9d14bea12366a656162b1a",
+      "formula_sha256": "2d533cbd3bf1931dabb2302627b88dc917b1c6c12dc5f41ece766ef17f82162e",
       "name": "python@3.14",
-      "pkg_version": "3.14.8_1"
+      "pkg_version": "3.14.8_2"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -170,15 +170,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "89053254818d76be74f4da47b91c78532d05f951492510617cee1dcf6f6ef246",
-  "size": 469603,
+  "sha256": "a8b3a0c36f68f29c9982f9c79d5f6ee2c82992d0c6becf6f0ee6e4b9da19d303",
+  "size": 469597,
   "source": {
-    "filename": "pygobject3--3.58.0.sources.tar.gz",
-    "sha256": "1fbaa51f9be8edbab48b1ec0ab03e07c03e05b4ec58a05dea84609580a42d5c6",
-    "size": 1434338
+    "filename": "pygobject3--3.58.1.sources.tar.gz",
+    "sha256": "39d1fce2e292da8e3f40eeb5ce51fc3f2314ff8967694ee626b8291622b8f0e8",
+    "size": 1434337
   },
   "tag": "sequoia",
-  "version": "3.58.0",
+  "version": "3.58.1",
   "version_scheme": 0,
-  "workflow_commit": "fe81c6448ce1789f9d630d1cff9ed3d8e499d850"
+  "workflow_commit": "5cd30e17ad6af0b7b16dbe23502e24d4932fd64b"
 }
