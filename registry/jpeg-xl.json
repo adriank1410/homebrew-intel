@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "any",
-  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
   "filename": "jpeg-xl--0.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1e76478e13ef6cd18c73676e029f043cc0511386deeb07db11ddee7aa70217fd",
   "license": "BSD-3-Clause",
   "name": "jpeg-xl",
   "pkg_version": "0.12.0_1",
   "recipe_sha256": "82fd333a823054833eef66c2b04a5b5961f1eb2c1275c4da8b66f61d2b3fa642",
-  "release": "intel-37149763110-1-jpeg-xl",
+  "release": "intel-38010595574-1-jpeg-xl",
   "revision": 1,
-  "run_id": "37149763110",
+  "run_id": "38010595574",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -64,12 +64,12 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "abb57aab8cb9a43c9483e552088185d1ec574071a950092182e3d861bb56dfa9",
+      "formula_sha256": "58e89ba09d29081bfd738d746eb99ce49b5a88c6406254c5f76b833cd7cf5a5a",
       "name": "openexr",
       "pkg_version": "3.5.2"
     },
     {
-      "formula_sha256": "88a46493db4f820fb8415ec10ef5731795415a4ab806273e5e11a8611e01b8a6",
+      "formula_sha256": "31f6a548ac1d3bf9104557ad64bfe1f45749a7fb26421d8ee4830e1b4560121c",
       "name": "openjph",
       "pkg_version": "0.32.0"
     },
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1b210cdc218228bd84fbfdd9883fc8ec35e649298368315cf11b0315e607a8be",
-  "size": 18930170,
+  "sha256": "e9d12ccc8da72477a8257d9041ff0edc1b6c22e7c32f66bb3e70cf94a3df27d3",
+  "size": 18930265,
   "source": {
     "filename": "jpeg-xl--0.12.0_1.sources.tar.gz",
-    "sha256": "0ca7818577c96be6e5a784829139b63eeb1997cb024c49d510ae5c6dc3378c9d",
-    "size": 4196918
+    "sha256": "5d50b588abc6e9efab16076442100bfaffc2dbcc956af92479da83baeb660f67",
+    "size": 4196917
   },
   "tag": "sequoia",
   "version": "0.12.0",
   "version_scheme": 0,
-  "workflow_commit": "720f0b440c2c8f61b34e337d1d27fc0193d2a73f"
+  "workflow_commit": "fe81c6448ce1789f9d630d1cff9ed3d8e499d850"
 }

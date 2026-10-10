@@ -1,0 +1,79 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "cellar": "any_skip_relocation",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "filename": "sphinx-doc--9.1.0_5.sequoia.bottle.tar.gz",
+  "formula_sha256": "d3f058767064649060fd922951efcdbdabf8e3b7f8593d91427a9dec2ac66fbe",
+  "license": "BSD-2-Clause",
+  "name": "sphinx-doc",
+  "pkg_version": "9.1.0_5",
+  "recipe_sha256": "cc20123600abd51c30eaec0c151d29ecc82d2badc095b99c6c5ca219aaf3245c",
+  "release": "intel-38010595574-1-jpeg-xl",
+  "revision": 5,
+  "run_id": "38010595574",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "3c6a78933d08b52034b8b226e3d1755cb9598205c8355582d3a598afa320fa21",
+      "name": "certifi",
+      "pkg_version": "2026.7.22"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    },
+    {
+      "formula_sha256": "f8ad5ca25fab3451d118eb4977157ed535d6fcb0ab9d14bea12366a656162b1a",
+      "name": "python@3.14",
+      "pkg_version": "3.14.8_1"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "name": "sqlite",
+      "pkg_version": "3.53.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "dd47f46449f173f37ee9d8c2c0172b60154cc2a58bf2f03ef45334ada7775406",
+  "size": 15825082,
+  "source": {
+    "filename": "sphinx-doc--9.1.0_5.sources.tar.gz",
+    "sha256": "56c6f11b57b78fbcd7e34859b71e5ca28d16d21df28b5ab0854bac62891c7c17",
+    "size": 29933563
+  },
+  "tag": "sequoia",
+  "version": "9.1.0",
+  "version_scheme": 0,
+  "workflow_commit": "fe81c6448ce1789f9d630d1cff9ed3d8e499d850"
+}
