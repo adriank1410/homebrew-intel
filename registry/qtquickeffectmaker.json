@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
   "cellar": "any",
-  "core_commit": "6a3455e16b885e4931441206096910b48180ef6b",
+  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
   "filename": "qtquickeffectmaker--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "4cf088edec3cb4dee5dc4bab7e6b763e0e6551832608c060e7e526bbbd0a202d",
   "license": {
@@ -18,29 +18,29 @@
   "name": "qtquickeffectmaker",
   "pkg_version": "6.11.2",
   "recipe_sha256": "e4f99f4ce7533b07fc05afd084d7986b1cc5569f981bb07ee94af8fd3693ad91",
-  "release": "intel-34783767020-1-qtquickeffectmaker",
+  "release": "intel-38035779921-1-qtquickeffectmaker",
   "revision": 0,
-  "run_id": "34783767020",
+  "run_id": "38035779921",
   "runtime_dependencies": [
     {
-      "formula_sha256": "90d681b62b7c593173894590d080f3cf77966a2ce0a39203bbe92523b262e028",
+      "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
       "name": "assimp",
       "pkg_version": "6.0.5"
     },
     {
-      "formula_sha256": "456a5f8a7849596321e3db7b9d7e070d7ae5da3281365314c34eed8ab80f2b9d",
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
       "name": "brotli",
       "pkg_version": "1.2.0"
     },
     {
-      "formula_sha256": "268c54e7f54e318a1a31c8bcc5248fac3dca69a15eaa67c48d7b5336977a7e5d",
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
       "name": "ca-certificates",
-      "pkg_version": "2026-08-13"
+      "pkg_version": "2026-09-25"
     },
     {
-      "formula_sha256": "1dd37d3b5deb8e271967a4f15c36b776e9d21d41f2fbedea269ea3dea94b44a0",
+      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
       "name": "cairo",
-      "pkg_version": "1.18.4"
+      "pkg_version": "1.18.6"
     },
     {
       "formula_sha256": "f32f2de29dc4a6f56d401f6227c6d66f5b3601958566fe0e90ab6bdd006bd3b9",
@@ -48,7 +48,7 @@
       "pkg_version": "1.16.2_1"
     },
     {
-      "formula_sha256": "498525607d05dd29c7c33121a99edd8e04c863e9aae75ba60d6516901642ac4b",
+      "formula_sha256": "637f9f35235b227da8d6ce2c8bf5d51d54adf0aa7a0a93570e431387ad56e86a",
       "name": "double-conversion",
       "pkg_version": "3.4.0"
     },
@@ -58,29 +58,29 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
       "name": "freetype",
       "pkg_version": "2.14.3"
     },
     {
-      "formula_sha256": "ab4b2336f1f8096357223d4bd9efe85f82bb0bc69975005f79205fd0b4f4be9b",
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "1aaf28a6d39aa200190d56e27ba637442abcc8aa0277f84af8bd6d94ed762345",
+      "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
       "name": "glib",
-      "pkg_version": "2.88.3"
+      "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "14882778a574fa44380902d6cec822287842142e87d7e001c061a51ddad590f8",
+      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
       "name": "graphite2",
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "6ebecbf2b199f6bcb8f1c585d1a6614f05cfafa8e31516acd31f8322577c2f01",
+      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
       "name": "harfbuzz",
-      "pkg_version": "14.4.0"
+      "pkg_version": "14.6.0"
     },
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -103,17 +103,17 @@
       "pkg_version": "0.98.1"
     },
     {
-      "formula_sha256": "c9a4203ab9782e4898efabb0ee5c5b7ce55e75983e4dd47f146640de45f7312d",
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
       "name": "libpng",
-      "pkg_version": "1.6.58"
+      "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "9743c26c30e20b7c560576caf0b01acdbcf33e56cb7959e06767946cd690f218",
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
       "name": "libunistring",
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "ee1f3d24e4a35d3c0fe9725d3f0a76991c2aacb280adbf6b3ce05079ecd2e792",
+      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
       "name": "libx11",
       "pkg_version": "1.8.13"
     },
@@ -143,7 +143,7 @@
       "pkg_version": "0.9.12"
     },
     {
-      "formula_sha256": "22431ddc9d9b78eca495c7ce8e169f6b7e3dbb628019af327e84f034f410acc0",
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -153,19 +153,19 @@
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "a50e91b1ed02fea29f911c51d15d97c31d09b6d9ddb8bf8e970683010f770222",
+      "formula_sha256": "de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd",
       "name": "md4c",
-      "pkg_version": "0.5.3"
+      "pkg_version": "0.6.0"
     },
     {
-      "formula_sha256": "08b5adf4226fa7dba27fe00efeabb58a3af500e72f1f2b265604993659bf28e1",
-      "name": "openssl@3",
-      "pkg_version": "3.6.4"
+      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "42a64a40a5f0f10e847dbbb51f4e5c5fd8356b6fb0353cb9024b8380b9de17a7",
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
       "name": "pcre2",
-      "pkg_version": "10.48"
+      "pkg_version": "10.49"
     },
     {
       "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
@@ -173,9 +173,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5",
+      "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
       "name": "qtbase",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.11.2_1"
     },
     {
       "formula_sha256": "2f9fe816e3395954bfee008a2264febf22f19f06f66da69d8c00420140a8949b",
@@ -203,9 +203,9 @@
       "pkg_version": "6.11.2"
     },
     {
-      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
       "name": "xorgproto",
-      "pkg_version": "2025.1"
+      "pkg_version": "2026.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -219,15 +219,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b5debd22d30cd509f19e09d21eac5ef4ac624394d46efef53f5b2c12b89e22d3",
+  "sha256": "31e00dfe41bedfdde80fb432540ff5de8578478f56da30403193e4bcc47949a6",
   "size": 4193663,
   "source": {
     "filename": "qtquickeffectmaker--6.11.2.sources.tar.gz",
-    "sha256": "c1fa85eb121e06071712256c479377b9e2ca1b01f9562b2214715c5ecf68c56b",
-    "size": 4371702
+    "sha256": "0a6f928d99961df6d0231225e0d6e8dc782c0bd278a38d8669855908e685e6dc",
+    "size": 4371688
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "f79e180602243d5c8021813dcff78babb07fd46b"
+  "workflow_commit": "6a911faaf757fb3afcedccc57b114880a3fb8110"
 }
