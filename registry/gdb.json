@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
   "filename": "gdb--18.1.sequoia.bottle.tar.gz",
   "formula_sha256": "08a9156d1191b8e5968f9acde0acb0cfd56f3abf5aefac42ca6a46d24539db16",
   "license": "GPL-3.0-or-later",
   "name": "gdb",
   "pkg_version": "18.1",
   "recipe_sha256": "21e70ef6521bb417a9af53fde2d97b21fa02bdf012f5435d1db0e14c323b8823",
-  "release": "intel-37989827803-1-gdb",
+  "release": "intel-38059788536-1-gdb",
   "revision": 0,
-  "run_id": "37989827803",
+  "run_id": "38059788536",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -54,9 +54,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "f8ad5ca25fab3451d118eb4977157ed535d6fcb0ab9d14bea12366a656162b1a",
+      "formula_sha256": "2d533cbd3bf1931dabb2302627b88dc917b1c6c12dc5f41ece766ef17f82162e",
       "name": "python@3.14",
-      "pkg_version": "3.14.8_1"
+      "pkg_version": "3.14.8_2"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -80,15 +80,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1fb9bf37adfe720998d9cce7263e6cb795ecfed781af87c18a59b829388d6516",
-  "size": 9015700,
+  "sha256": "ec02837372e01a5d24d73bb2d5b3be0941cb046e5c2c1ba8a419012301686580",
+  "size": 9015728,
   "source": {
     "filename": "gdb--18.1.sources.tar.gz",
-    "sha256": "b6c323c1fedfe044ba41245dfd426e7db8dd1acce953365607e1c75487084df0",
-    "size": 22214023
+    "sha256": "0fdf4c7294da06b6b36554e80c7e6657eec8dc8adaa2f06cd5fe5c60dcf59e4f",
+    "size": 22214042
   },
   "tag": "sequoia",
   "version": "18.1",
   "version_scheme": 0,
-  "workflow_commit": "c12cf7745d6222f5bf7d2077f9f8aa762a175c45"
+  "workflow_commit": "50288c16033440b24a1bc8bdd32a3918888bfa49"
 }
