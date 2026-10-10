@@ -3,14 +3,14 @@
   "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
   "cellar": "/usr/local/Cellar",
   "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
-  "filename": "python@3.14--3.14.8_2.sequoia.bottle.tar.gz",
-  "formula_sha256": "2d533cbd3bf1931dabb2302627b88dc917b1c6c12dc5f41ece766ef17f82162e",
+  "filename": "python@3.15--3.15.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "c982fc23dc01373e23cb05620e63f78e88244c73690ef7db725e860f0e6bd5c9",
   "license": "Python-2.0",
-  "name": "python@3.14",
-  "pkg_version": "3.14.8_2",
-  "recipe_sha256": "e022e7b71c795f0c718facdb3c882aa4fef17bb4989d0e81f419166447e0c5df",
-  "release": "intel-38056510110-1-python-at-3.14",
-  "revision": 2,
+  "name": "python@3.15",
+  "pkg_version": "3.15.0",
+  "recipe_sha256": "9d0c57fcc69adaf9846ef0202f14f8797dee35c627106dac08a0a32729520756",
+  "release": "intel-38056510110-1-meson",
+  "revision": 0,
   "run_id": "38056510110",
   "runtime_dependencies": [
     {
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ca13b8a984322b8ff0acb34dd1b338beaf6ee4a3e8cf5581aa6b1066b142a5c3",
-  "size": 19258494,
+  "sha256": "902a6004b60ce904da9843c82a308556e7a123ddea025cf17d1d34ecc7943c17",
+  "size": 20294237,
   "source": {
-    "filename": "python@3.14--3.14.8_2.sources.tar.gz",
-    "sha256": "af11059e17a4e7b7bd1eb179ad031f0763a88aac57edbbe0c616e49852720384",
-    "size": 33726758
+    "filename": "python@3.15--3.15.0.sources.tar.gz",
+    "sha256": "b24acfaf63b7e2be5fe8d956d15cd1e864dd429a427f26c1723ccf4797dd5381",
+    "size": 45463439
   },
   "tag": "sequoia",
-  "version": "3.14.8",
+  "version": "3.15.0",
   "version_scheme": 0,
   "workflow_commit": "f49e89af08dcd2921c6b8ac8139c373aa0bb5c88"
 }
