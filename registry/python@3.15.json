@@ -1,15 +1,15 @@
 {
   "arch": "x86_64",
   "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
-  "cellar": "any_skip_relocation",
+  "cellar": "/usr/local/Cellar",
   "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
-  "filename": "pipx--1.17.12.sequoia.bottle.tar.gz",
-  "formula_sha256": "f131879da0e7c982dceda184908e170a82190daa29761e4e02b45457649f3c01",
-  "license": "MIT",
-  "name": "pipx",
-  "pkg_version": "1.17.12",
-  "recipe_sha256": "9ed23edf1d52c61446c3c56c0ce8a187b39b578b8c3f68e4912da0f174a13538",
-  "release": "intel-38056510110-1-pipx",
+  "filename": "python@3.15--3.15.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "c982fc23dc01373e23cb05620e63f78e88244c73690ef7db725e860f0e6bd5c9",
+  "license": "Python-2.0",
+  "name": "python@3.15",
+  "pkg_version": "3.15.0",
+  "recipe_sha256": "9d0c57fcc69adaf9846ef0202f14f8797dee35c627106dac08a0a32729520756",
+  "release": "intel-38056510110-1-meson",
   "revision": 0,
   "run_id": "38056510110",
   "runtime_dependencies": [
@@ -34,11 +34,6 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "c982fc23dc01373e23cb05620e63f78e88244c73690ef7db725e860f0e6bd5c9",
-      "name": "python@3.15",
-      "pkg_version": "3.15.0"
-    },
-    {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
       "name": "readline",
       "pkg_version": "8.3.6"
@@ -60,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "26a82d37ec0332869926861e61c76a3cee450c9cd6dedad905f069c52cb816e8",
-  "size": 526903,
+  "sha256": "902a6004b60ce904da9843c82a308556e7a123ddea025cf17d1d34ecc7943c17",
+  "size": 20294237,
   "source": {
-    "filename": "pipx--1.17.12.sources.tar.gz",
-    "sha256": "906d472f40aa2d1667d4f4fa5d914970fd9cc23f827e7908e696d81d3c088fcf",
-    "size": 1473883
+    "filename": "python@3.15--3.15.0.sources.tar.gz",
+    "sha256": "b24acfaf63b7e2be5fe8d956d15cd1e864dd429a427f26c1723ccf4797dd5381",
+    "size": 45463439
   },
   "tag": "sequoia",
-  "version": "1.17.12",
+  "version": "3.15.0",
   "version_scheme": 0,
   "workflow_commit": "f49e89af08dcd2921c6b8ac8139c373aa0bb5c88"
 }
