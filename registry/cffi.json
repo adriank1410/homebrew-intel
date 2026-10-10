@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
+  "cellar": "any_skip_relocation",
+  "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
+  "filename": "cffi--2.1.1_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
+  "license": "MIT-0",
+  "name": "cffi",
+  "pkg_version": "2.1.1_1",
+  "recipe_sha256": "42c45ea4ac801b8974ba6ec19ade431bc349684022e1a486d8d0ad2df9ccb917",
+  "release": "intel-38059788536-1-cffi",
+  "revision": 1,
+  "run_id": "38059788536",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "7482156150d8c1a8336ff81d4824613c8c1cb8e6ff36e0d49a887089ee8cedc7",
+      "name": "pycparser",
+      "pkg_version": "3.1_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "1735bb13bb9275b5be43449f440ddaa5acc04e38b64ad75f6c83b87c19f14351",
+  "size": 356041,
+  "source": {
+    "filename": "cffi--2.1.1_1.sources.tar.gz",
+    "sha256": "206788a824ad944857e0b2d8239b1897d2e6f84c86969350e97b5416dce5186a",
+    "size": 535594
+  },
+  "tag": "sequoia",
+  "version": "2.1.1",
+  "version_scheme": 0,
+  "workflow_commit": "50288c16033440b24a1bc8bdd32a3918888bfa49"
+}
