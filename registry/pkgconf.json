@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "42f17d98bb46c274008be95ab68cf359fed9610b",
-  "filename": "pkgconf--3.0.7.sequoia.bottle.tar.gz",
-  "formula_sha256": "aa4787b4c8af3925054fb55ae38c9ce16cea5325ce5788e2d1c6cec514f30f5c",
+  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "filename": "pkgconf--3.0.8.sequoia.bottle.tar.gz",
+  "formula_sha256": "1393841b30e06e9e210edc983d9532fa599f385d48becfa1069a68442e42478c",
   "license": "ISC",
   "name": "pkgconf",
-  "pkg_version": "3.0.7",
-  "recipe_sha256": "18650320e9599caed229bbd6dec72d42944df0e2cbe571c659e0ab2b59050b50",
-  "release": "intel-34663743378-1-aom",
+  "pkg_version": "3.0.8",
+  "recipe_sha256": "efe802d06f23356f99a7e3be6459d2c0e5e00287c2e5e59a3b998ade46e14514",
+  "release": "intel-38152089000-1-pkgconf",
   "revision": 0,
-  "run_id": "34663743378",
+  "run_id": "38152089000",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "5c6da5fc7726b5f4bc8b921b35a4cf7d9932b634f80e73c5989788fc513f691f",
-  "size": 190534,
+  "sha256": "c42484eb9ef22bc0c6dedb313a413356c5e60b520fd16870c9f37099be584067",
+  "size": 191101,
   "source": {
-    "filename": "pkgconf--3.0.7.sources.tar.gz",
-    "sha256": "6c07437e91c3a8bff142656a8906af99a89f7b16c3c0a91320c08d2a808dd2af",
-    "size": 437128
+    "filename": "pkgconf--3.0.8.sources.tar.gz",
+    "sha256": "545a463b8b9de2d485bb435ea5c4f6f8ccb4d393b4fc4795954a358cd6f3387d",
+    "size": 437682
   },
   "tag": "sequoia",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "version_scheme": 0,
-  "workflow_commit": "c308d9653a8a934819df3209f79bdaf07b4233ef"
+  "workflow_commit": "2ac1bc8f4d98e7d497360415843be55dd2740da1"
 }
