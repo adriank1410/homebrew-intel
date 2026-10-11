@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
+  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
   "cellar": "any_skip_relocation",
-  "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
+  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "f05bfef0e76fddab5b9fa9d4a6aeb1b050b0e1acb4b3de7cd79bc84709a552b0",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "9b020ade6c3e3802260f2cb7fc3e21ef35ee7f68e8db55cf2bfbc9a2da5956f8",
-  "release": "intel-38063561227-1-weasyprint",
+  "release": "intel-38172168647-1-weasyprint",
   "revision": 0,
-  "run_id": "38063561227",
+  "run_id": "38172168647",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -199,7 +199,7 @@
       "pkg_version": "2.5.4_1"
     },
     {
-      "formula_sha256": "6a0076ca2201b0e78547a47833e2b6b72dafa56da26322974326f3d7d1ffe59d",
+      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
       "name": "openssl@4",
       "pkg_version": "4.0.3"
     },
@@ -224,9 +224,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "7482156150d8c1a8336ff81d4824613c8c1cb8e6ff36e0d49a887089ee8cedc7",
+      "formula_sha256": "d6dc99b2b9705e667951d0667a2aa45f33bccd9d9b00424ef14b26d4b0a93794",
       "name": "pycparser",
-      "pkg_version": "3.1_1"
+      "pkg_version": "3.11"
     },
     {
       "formula_sha256": "2d533cbd3bf1931dabb2302627b88dc917b1c6c12dc5f41ece766ef17f82162e",
@@ -239,9 +239,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
       "name": "sqlite",
-      "pkg_version": "3.53.4"
+      "pkg_version": "3.54.0"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -265,15 +265,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0af25f69daf2f698fe3eadeb93465b494c898812f089f02661a9c0d9d079876d",
-  "size": 4054709,
+  "sha256": "8fb660512ceefe54e1ced7b51dfb3b08f48beb46606985f693a29006ecdb350b",
+  "size": 4054668,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "238544ad3699788234e51e2e9dcc2b57bfcded0cb0b1b5a32bb49ea34d261f03",
-    "size": 15193739
+    "sha256": "e003842e3d840cfb3283e6d87719eb0e18036d0687ccc30e6144bf62f7031285",
+    "size": 15193732
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "5cd30e17ad6af0b7b16dbe23502e24d4932fd64b"
+  "workflow_commit": "2c0246f8ef9abf7828431726bc1540fbf33f4e26"
 }
