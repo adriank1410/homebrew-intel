@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
+  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
   "cellar": "any",
-  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
-  "filename": "py3cairo--1.29.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "606b15fcf988fb116199f59abb40776b01a55f99112b693b3d6f57726f35cd6b",
+  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "filename": "py3cairo--1.29.2_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "a227a826bc277830cf061249aad1ff6a31d0a7d703ba5e28478c8992603a9414",
   "license": {
     "any_of": [
       "LGPL-2.1-only",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "py3cairo",
-  "pkg_version": "1.29.2",
-  "recipe_sha256": "7708b4d0b41da15c6f16e29e8f778ecd24c8141d2d8b175701cacabf340fc584",
-  "release": "intel-37873062551-1-py3cairo",
-  "revision": 0,
-  "run_id": "37873062551",
+  "pkg_version": "1.29.2_1",
+  "recipe_sha256": "65a3c1fea0d8514cb68e48084500cb67c8c5545cb2647034bce5ef41f9dabd51",
+  "release": "intel-38160918671-1-py3cairo",
+  "revision": 1,
+  "run_id": "38160918671",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1b080e17ca44d89e564f4407441c97ec0e1f5141a6e8faf07497b0ef6e57b7ca",
-  "size": 257879,
+  "sha256": "c61707ba77a646d83248bd784b5ae4af3075e87ad0604b6afbb30dc18114ead0",
+  "size": 257929,
   "source": {
-    "filename": "py3cairo--1.29.2.sources.tar.gz",
-    "sha256": "c8c23cb1912d8f07103a1cb1c1a09daf489db1bacb42b7882b0f86852f4f30e7",
-    "size": 688435
+    "filename": "py3cairo--1.29.2_1.sources.tar.gz",
+    "sha256": "05cc2a3021fb53336f86fa394753d3ad44e56fe875171b7962f296557e8fdca2",
+    "size": 688425
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "c9209f2ca50552322e1bae60de5dbf03a9b5b217"
+  "workflow_commit": "3b33f29d624a8ffbaaca42f856ec7e8848c44477"
 }
