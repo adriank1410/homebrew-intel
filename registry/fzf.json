@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
   "cellar": "any_skip_relocation",
-  "core_commit": "b1c5348f389250d371e21563b6c02e321b198585",
-  "filename": "fzf--0.74.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "989dd19a0ea94e2ac44203c0e3a2c7dcbc86171026ab21c1ed5840f417dd7325",
+  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "filename": "fzf--0.74.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "f4cae1e193a4c2a5a01cbeed469f26931b3b067cf22f5f505b97de46574128d7",
   "license": "MIT",
   "name": "fzf",
-  "pkg_version": "0.74.4",
-  "recipe_sha256": "7b1f88dade04c0d01b4afdc31a87e26ae9244fa175b385a05cfe9afa98dbad67",
-  "release": "intel-34703848019-1-fzf",
+  "pkg_version": "0.74.5",
+  "recipe_sha256": "527c710b67ea2ecb1bd1e22f54ebc9030f6242fee0705784f7ce8c2f4f9ce1e8",
+  "release": "intel-38152089000-1-fzf",
   "revision": 0,
-  "run_id": "34703848019",
+  "run_id": "38152089000",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "a37bbfc2f7d08bd0dbbeec34b6485da545edfdcc66c20926a06d4abbb1128bc5",
-  "size": 2395808,
+  "sha256": "fd6d9eb868ded26423e53519b6197ed4966b1a2f62a54e1336111c517790d2b8",
+  "size": 2402248,
   "source": {
-    "filename": "fzf--0.74.4.sources.tar.gz",
-    "sha256": "5b7cd41bd45a5a64648de429ba1789e93acd761dd0a2a5c057cf98c62027ca1a",
-    "size": 12743667
+    "filename": "fzf--0.74.5.sources.tar.gz",
+    "sha256": "2865b2af7cf2f6c96ae687fce22d37641b9fe4ad4c8d4a9de7c3903db5300d3e",
+    "size": 12750516
   },
   "tag": "sequoia",
-  "version": "0.74.4",
+  "version": "0.74.5",
   "version_scheme": 0,
-  "workflow_commit": "37b997849c6cc9877faae8d55410d7c14f94b24c"
+  "workflow_commit": "2ac1bc8f4d98e7d497360415843be55dd2740da1"
 }
