@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
+  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
   "cellar": "any",
-  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
-  "filename": "libimobiledevice--1.4.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "3670d2802ffc1db6abfba9d4d0b34c58fcce9494fa8261735ce7e1cf7b971b4c",
+  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "filename": "libimobiledevice--1.4.0_2.sequoia.bottle.tar.gz",
+  "formula_sha256": "2df4555ca5978537719e3ee40fe8dc82883f14165e4e6baa94e37720354d82a7",
   "license": "LGPL-2.1-or-later",
   "name": "libimobiledevice",
-  "pkg_version": "1.4.0_1",
-  "recipe_sha256": "9bf8b3b66b183cd25df500030acae5ad1f1f089793013e104a1d57d6bb9da66c",
-  "release": "intel-37430297536-1-libimobiledevice",
-  "revision": 1,
-  "run_id": "37430297536",
+  "pkg_version": "1.4.0_2",
+  "recipe_sha256": "90a5d750f7578b56c7d5fc7ad259ab7ddcdb4278798f9d5cb8680f378475869d",
+  "release": "intel-38153631705-1-libimobiledevice",
+  "revision": 2,
+  "run_id": "38153631705",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -44,21 +44,21 @@
       "pkg_version": "2.1.1_1"
     },
     {
-      "formula_sha256": "53136fa50edf4783384360626c1f30404879cd989e0dc4ae4d7713228b68dda7",
-      "name": "openssl@3",
-      "pkg_version": "3.6.5"
+      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
     }
   ],
   "schema": 1,
-  "sha256": "46d9b060b0f9a7676f36fbb82e3de148fee9eeb6880208c7beb17d13f262c600",
-  "size": 496445,
+  "sha256": "794dfcf16146c1d772ce21feebcc881bd1e26b1434eecff7309ea208ff55aca3",
+  "size": 496402,
   "source": {
-    "filename": "libimobiledevice--1.4.0_1.sources.tar.gz",
-    "sha256": "3007dd65c4994fadf88823a5dd5495df424dfa8eeb122d0043fee261c0839da1",
-    "size": 731241
+    "filename": "libimobiledevice--1.4.0_2.sources.tar.gz",
+    "sha256": "bd67a439fd0493dc5a63cc06bf6d1227b36ca6d272c23aa48af691ba083efac7",
+    "size": 731232
   },
   "tag": "sequoia",
   "version": "1.4.0",
   "version_scheme": 0,
-  "workflow_commit": "732b843562beaf4077dddabd5a23791072d12778"
+  "workflow_commit": "6faae81ddf349f97dd022e5e161b91491bc81b14"
 }
