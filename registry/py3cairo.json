@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
+  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
   "cellar": "any",
-  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
   "filename": "py3cairo--1.29.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a227a826bc277830cf061249aad1ff6a31d0a7d703ba5e28478c8992603a9414",
   "license": {
@@ -14,9 +14,9 @@
   "name": "py3cairo",
   "pkg_version": "1.29.2_1",
   "recipe_sha256": "65a3c1fea0d8514cb68e48084500cb67c8c5545cb2647034bce5ef41f9dabd51",
-  "release": "intel-38160918671-1-py3cairo",
+  "release": "intel-38306952752-1-py3cairo",
   "revision": 1,
-  "run_id": "38160918671",
+  "run_id": "38306952752",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -74,7 +74,7 @@
       "pkg_version": "1.0.12"
     },
     {
-      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
       "name": "libxcb",
       "pkg_version": "1.17.0"
     },
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c61707ba77a646d83248bd784b5ae4af3075e87ad0604b6afbb30dc18114ead0",
-  "size": 257929,
+  "sha256": "dc6a6d3fc93be55e9cdc14621da957138770cdd410dad5c56098fcb9c7bd7edc",
+  "size": 257937,
   "source": {
     "filename": "py3cairo--1.29.2_1.sources.tar.gz",
-    "sha256": "05cc2a3021fb53336f86fa394753d3ad44e56fe875171b7962f296557e8fdca2",
-    "size": 688425
+    "sha256": "973e099993d67b15e0afed0fc1d81876ae515c3ba60b33e2c6235a9a5c741758",
+    "size": 688430
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "3b33f29d624a8ffbaaca42f856ec7e8848c44477"
+  "workflow_commit": "38acd06cb1e544e98a26d7d61e4b1e3895afa195"
 }
