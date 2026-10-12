@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "59febf998bd38fdbbac2f6d2d1e591cfa109a7d6",
+  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
   "cellar": "any",
-  "core_commit": "07f11c6fa9cf6dc221185d5bf17a0099a0ee025b",
+  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
   "filename": "openjdk--27.sequoia.bottle.tar.gz",
   "formula_sha256": "275e623d1a3fa218d3d6cc2ebdc27c591ec67a19b62511018ea93e057a3feaba",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk",
   "pkg_version": "27",
   "recipe_sha256": "b8f389539e303280b6d817c7d8fd82e8f0247d64770b223325a42458dc5e5e16",
-  "release": "intel-38014926302-1-openjdk",
+  "release": "intel-38318515246-1-openjdk",
   "revision": 0,
-  "run_id": "38014926302",
+  "run_id": "38318515246",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -103,7 +103,7 @@
       "pkg_version": "1.0.12"
     },
     {
-      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
       "name": "libxcb",
       "pkg_version": "1.17.0"
     },
@@ -169,15 +169,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f6b992fcd863e6d48a14b1b9a1dc27bcac32ee4831b62c803ad2448c8a555682",
-  "size": 222796244,
+  "sha256": "13fe13c6bf038a87d48deb1e41fc96479614417de28dc44e987ad6abb42c82f4",
+  "size": 222796192,
   "source": {
     "filename": "openjdk--27.sources.tar.gz",
-    "sha256": "ba8eeb66f4d536a0838e2b7a8bfd9cae5f97fafc36921608fdd9fa91d4c8a65b",
-    "size": 340075301
+    "sha256": "a115ed3a1c857edfb0f3f540b59fcb241e2d768c27995234e66982a3b46e4fc4",
+    "size": 340075307
   },
   "tag": "sequoia",
   "version": "27",
   "version_scheme": 0,
-  "workflow_commit": "ecf88841b628cd560983688a2524e644c078dd10"
+  "workflow_commit": "ae0fc1322794e82e18f8c1b25ad2a56cc789c07a"
 }
