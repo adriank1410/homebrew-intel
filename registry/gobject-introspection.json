@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
+  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
   "filename": "gobject-introspection--1.86.0_4.sequoia.bottle.tar.gz",
   "formula_sha256": "8a8403aea67d918b29adb1fdec849f08bc537e93b49b68fdc3409604df4fa5b2",
   "license": {
@@ -15,9 +15,9 @@
   "name": "gobject-introspection",
   "pkg_version": "1.86.0_4",
   "recipe_sha256": "8fdbfe500d9a011f4437a99f1f35497151ba78f3b2f4cd8a745327422a1f1ae4",
-  "release": "intel-38160918671-1-gobject-introspection",
+  "release": "intel-38306952752-1-gobject-introspection",
   "revision": 4,
-  "run_id": "38160918671",
+  "run_id": "38306952752",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -80,7 +80,7 @@
       "pkg_version": "1.0.12"
     },
     {
-      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
       "name": "libxcb",
       "pkg_version": "1.17.0"
     },
@@ -166,15 +166,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fafb8b460d18b36519224deeda3e9f57396537b1a6bda62912ccb79edcb4babb",
-  "size": 1314892,
+  "sha256": "cc21e4177fb9dd07a4b3e0f744c0d7f576f05a11adbfe2fab4e196eee0f7362c",
+  "size": 1314813,
   "source": {
     "filename": "gobject-introspection--1.86.0_4.sources.tar.gz",
-    "sha256": "4a61ab3a75c864232c6f22ae3c585398a34395b27414323225729812f66c0ac6",
-    "size": 3338309
+    "sha256": "890b5fc320aa46ac45fa448a3ce278075883f7560be13f9b13975f06476d6b68",
+    "size": 3338311
   },
   "tag": "sequoia",
   "version": "1.86.0",
   "version_scheme": 0,
-  "workflow_commit": "3b33f29d624a8ffbaaca42f856ec7e8848c44477"
+  "workflow_commit": "38acd06cb1e544e98a26d7d61e4b1e3895afa195"
 }
