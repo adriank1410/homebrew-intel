@@ -54,6 +54,37 @@ end
                 self.assertEqual(result["foreign"], "foreign")
                 self.assertEqual(result["original"], "keg")
 
+    def test_metadata_compares_installed_version_scheme_before_pkg_version(self):
+        result = self.probe('''
+  formula = Formulary.factory("homebrew/core/zlib")
+  current = formula.pkg_version.to_s
+  revised = PkgVersion.new(formula.version, formula.revision + 1).to_s
+  results = []
+  # Real receipts and Homebrew PkgVersion ordering; only the target scheme
+  # is varied to exercise formula transitions independently of live core.
+  [["9999", 0, 1], ["9999", 0, 0], ["0.1", 1, 0],
+   ["0.1", 0, 0], [current, 0, 0], [revised, 0, 0]].each do |version, installed_scheme, target_scheme|
+    installed = HOMEBREW_CELLAR/"zlib"/version
+    installed.mkpath
+    FileUtils.rm_f(prefix/"opt/zlib")
+    File.symlink(installed, prefix/"opt/zlib")
+    File.write(installed/"INSTALL_RECEIPT.json", JSON.generate({
+      source: {tap: "homebrew/core", spec: "stable",
+        versions: {stable: version, version_scheme: installed_scheme}}
+    }))
+    Tab.clear_cache
+    Formula.clear_cache
+    Formulary.clear_cache
+    formula = Formulary.factory("homebrew/core/zlib")
+    formula.instance_variable_set(:@version_scheme, target_scheme)
+    # Formula resolution is the input boundary; metadata itself stays real.
+    IntelbrewNative.define_singleton_method(:core_formula) { |_name| formula }
+    results << IntelbrewNative.metadata("zlib")["installed_newer"]
+  end
+  puts JSON.generate(results)
+''')
+        self.assertEqual(result, [False, True, True, False, False, True])
+
     def test_prefix_conflict_can_relink_and_unlink_the_same_keg(self):
         result = self.probe('''
   File.write(prefix/"bin/probe", "foreign")
