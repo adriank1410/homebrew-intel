@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
+  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
   "cellar": "any",
-  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
   "filename": "qtsensors--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "f47c0b90f268440103e3bb88d965a1b8d21d89e326b706fcf959d22b7a029ade",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsensors",
   "pkg_version": "6.11.2",
   "recipe_sha256": "108ac4a6f8f51d23de32179a8d48938038e7eaf18772950850fb208d1a6d100f",
-  "release": "intel-38178052254-1-qtsensors",
+  "release": "intel-38342150686-1-qtsensors",
   "revision": 0,
-  "run_id": "38178052254",
+  "run_id": "38342150686",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -120,7 +120,7 @@
       "pkg_version": "1.0.12"
     },
     {
-      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
       "name": "libxcb",
       "pkg_version": "1.17.0"
     },
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ead2d97772070064cefb3fe9817b58e0cdfc66150c85911658c1e4003ee77c2c",
-  "size": 229313,
+  "sha256": "e1c0e182f9353ca09259a79a98a3f0164fcbeac8c6c8b38435243bc58097f8dc",
+  "size": 229330,
   "source": {
     "filename": "qtsensors--6.11.2.sources.tar.gz",
-    "sha256": "7eb36702ca073b6749bb3ae26760e56c6ff288ecb5a7da9c6a6814a4576ede36",
-    "size": 1523229
+    "sha256": "5cb97c8fbc88f73a0cae62055eafb208263ba07bb4cb22a18dcf6ed07e2873e7",
+    "size": 1523241
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "c3d2b64a7d6a41e5e6e92afbe5767d32bfcda29f"
+  "workflow_commit": "244d75969051e34ab29713f97866ce2e1215201f"
 }
