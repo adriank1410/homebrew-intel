@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "eb56e2b1f748e63d02be18a7660eec4e4cf32af1",
+  "cellar": "any",
+  "core_commit": "070dc09fe139fb386686bcf4c130b9f7c62fa2b0",
+  "filename": "gnu-getopt--2.42.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "5052ea85c3ad819ce766039a3c521915044a6d7927bffc5bc3c7095d98296e7f",
+  "license": "GPL-2.0-or-later",
+  "name": "gnu-getopt",
+  "pkg_version": "2.42.4",
+  "recipe_sha256": "01cb5df331074a43072134b89093832498df9db0787ba81d9b44712729200e31",
+  "release": "intel-38460648548-1-zbar",
+  "revision": 0,
+  "run_id": "38460648548",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "e719f9f60c90989d9120dba33e43e7c799ef6d0ea3a81ca7016789f478128a34",
+  "size": 54883,
+  "source": {
+    "filename": "gnu-getopt--2.42.4.sources.tar.gz",
+    "sha256": "14956c27df4d530a8e7b71047191975ec2b705a4c642f46aa5d25f0ad7030ec1",
+    "size": 23247728
+  },
+  "tag": "sequoia",
+  "version": "2.42.4",
+  "version_scheme": 0,
+  "workflow_commit": "895ed8e2ac979a9a3ecd0d61c6b05167ea5b2dfe"
+}
