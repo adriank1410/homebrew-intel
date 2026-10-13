@@ -74,6 +74,8 @@ class AvailablePlanTests(unittest.TestCase):
         self.assertEqual(stderr.getvalue(), "")
         self.assertEqual(stdout.getvalue(),
                          "Skipped unavailable upgrade roots (1): bad\n"
+                         "Missing provider reasons (1): no published record: 1\n"
+                         "Run `brew intel upgrade --available --json` for individual details.\n"
                          "No fully available upgrade roots; nothing installed.\n")
 
     def test_all_missing_json_keeps_machine_readable_skip_output(self):
@@ -91,8 +93,125 @@ class AvailablePlanTests(unittest.TestCase):
         self.assertEqual(json.loads(stdout.getvalue()), {"schema": 1, "roots": [], "order": [], "nodes": {}})
         self.assertEqual(
             json.loads(stderr.getvalue()),
-            {"skipped": [{"root": "bad", "missing_dependencies": ["bad"]}]},
+            {
+                "skipped": [{"root": "bad", "missing_dependencies": ["bad"]}],
+                "missing_providers": [{
+                    "name": "bad",
+                    "target_pkg_version": "1.0",
+                    "published_pkg_version": None,
+                    "reason": "no_published_record",
+                }],
+            },
         )
+
+    def test_available_json_reports_unique_missing_provider_reasons(self):
+        records = {
+            "version_mismatch": record("version_mismatch", pkg_version="0.9", version="0.9",
+                                        filename="version_mismatch--0.9.sequoia.bottle.tar.gz"),
+            "scheme_mismatch": record("scheme_mismatch", version_scheme=1),
+            "recipe_mismatch": record("recipe_mismatch", formula_sha256="0" * 64),
+            "drifted": record(
+                "drifted",
+                runtime_dependencies=[{"name": "changed_dep", "pkg_version": "1.0",
+                                       "formula_sha256": "a" * 64}],
+            ),
+            "shared_root_a": record("shared_root_a"),
+            "shared_root_b": record("shared_root_b"),
+        }
+        nodes = {
+            "absent": meta("absent"),
+            "version_mismatch": meta("version_mismatch"),
+            "scheme_mismatch": meta("scheme_mismatch"),
+            "recipe_mismatch": meta("recipe_mismatch", formula_sha256="2" * 64),
+            "drifted": meta("drifted", runtime=["changed_dep"]),
+            "changed_dep": meta("changed_dep", version="2.0", pkg_version="2.0",
+                                formula_sha256="b" * 64, official=True),
+            "shared_root_a": meta("shared_root_a", runtime=["shared"]),
+            "shared_root_b": meta("shared_root_b", runtime=["shared"]),
+            "shared": meta("shared"),
+        }
+        roots = ["absent", "version_mismatch", "scheme_mismatch", "recipe_mismatch",
+                 "drifted", "shared_root_a", "shared_root_b"]
+
+        def fake_native(payload):
+            mode = payload.get("mode")
+            if mode == "outdated":
+                return roots
+            if mode == "coverage":
+                return {"core": [], "external_taps": []}
+            if mode == "inspect":
+                return {name: nodes[name] for name in payload["names"]}
+            raise ValueError(f"Unexpected mode: {mode}")
+
+        config = {"repository": "adriank1410/homebrew-intel", "max_graph_nodes": 400}
+        with patch.object(cli.platform, "system", return_value="Darwin"), \
+             patch.object(cli.platform, "machine", return_value="x86_64"), \
+             patch.object(cli, "load_config", return_value=config), \
+             patch.object(cli, "registry", return_value=records), \
+             patch.object(cli, "native", side_effect=fake_native):
+            stdout = StringIO()
+            stderr = StringIO()
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                self.assertEqual(cli.main(["upgrade", "--available", "--json"]), 0)
+
+        self.assertEqual(json.loads(stdout.getvalue()),
+                         {"schema": 1, "roots": [], "order": [], "nodes": {}})
+        report = json.loads(stderr.getvalue())
+        self.assertEqual(set(report), {"skipped", "missing_providers"})
+        details = {item["name"]: item for item in report["missing_providers"]}
+        self.assertEqual(details, {
+            "absent": {"name": "absent", "target_pkg_version": "1.0",
+                       "published_pkg_version": None, "reason": "no_published_record"},
+            "version_mismatch": {"name": "version_mismatch", "target_pkg_version": "1.0",
+                                  "published_pkg_version": "0.9",
+                                  "reason": "version_or_scheme_differs"},
+            "scheme_mismatch": {"name": "scheme_mismatch", "target_pkg_version": "1.0",
+                                "published_pkg_version": "1.0",
+                                "reason": "version_or_scheme_differs"},
+            "recipe_mismatch": {"name": "recipe_mismatch", "target_pkg_version": "1.0",
+                                "published_pkg_version": "1.0", "reason": "recipe_differs"},
+            "drifted": {"name": "drifted", "target_pkg_version": "1.0",
+                        "published_pkg_version": "1.0", "reason": "runtime_dependency_drift"},
+            "shared": {"name": "shared", "target_pkg_version": "1.0",
+                       "published_pkg_version": None, "reason": "no_published_record"},
+        })
+        self.assertEqual(sum(item["name"] == "shared" for item in report["missing_providers"]), 1)
+        shared_skips = [item for item in report["skipped"]
+                        if item["root"] in {"shared_root_a", "shared_root_b"}]
+        self.assertEqual(shared_skips, [
+            {"root": "shared_root_a", "missing_dependencies": ["shared"]},
+            {"root": "shared_root_b", "missing_dependencies": ["shared"]},
+        ])
+
+    def test_available_all_covered_human_output_is_unchanged(self):
+        nodes = {"clean": meta("clean", official=True, build=["compiler"], test=["testdep"])}
+        config = {"repository": "adriank1410/homebrew-intel", "max_graph_nodes": 400}
+
+        def fake_native(payload):
+            mode = payload.get("mode")
+            if mode == "outdated":
+                return ["clean"]
+            if mode == "coverage":
+                return {"core": [], "external_taps": []}
+            if mode == "inspect":
+                return {name: nodes[name] for name in payload["names"]}
+            raise ValueError(f"Unexpected mode: {mode}")
+
+        with patch.object(cli.platform, "system", return_value="Darwin"), \
+             patch.object(cli.platform, "machine", return_value="x86_64"), \
+             patch.object(cli, "load_config", return_value=config), \
+             patch.object(cli, "registry", return_value={}), \
+             patch.object(cli, "native", side_effect=fake_native):
+            stdout = StringIO()
+            stderr = StringIO()
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                self.assertEqual(cli.main(["upgrade", "--available"]), 0)
+
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertEqual(stdout.getvalue(),
+                         "==> Upgrading 1 outdated package:\n"
+                         "clean 1.0\n"
+                         "\nDry run only. Add --apply to install. Missing bottles cause an error, not compilation.\n")
 
     def test_coverage_reports_candidates_and_keeps_external_taps_separate(self):
         config = {

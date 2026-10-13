@@ -399,6 +399,39 @@ class PlanWorkflowTests(unittest.TestCase):
         self.assertEqual(needed, ["base"])
         self.assertEqual(blocked, {})
 
+    def test_evaluate_roots_coverage_exposes_deferred_and_covered_breakdown(self):
+        def meta(name, *, runtime=(), official=False):
+            return {
+                "name": name, "tap": "homebrew/core", "version": "1.0",
+                "revision": 0, "version_scheme": 0, "pkg_version": "1.0",
+                "formula_sha256": ("a" if name == "base" else "b" if name == "app" else "c") * 64,
+                "runtime": list(runtime), "build": [], "test": [],
+                "official_bottle": official, "vcs_source": False, "license": "MIT",
+            }
+
+        class Inspector:
+            def prime(self, names): pass
+            def __call__(self, names):
+                items = {
+                    "base": meta("base"),
+                    "app": meta("app", runtime=("base",)),
+                    "covered": meta("covered", official=True),
+                }
+                return {name: items[name] for name in names}
+
+        config = {"max_graph_nodes": 20, "max_source_builds": 5,
+                  "blocked_source_builds": [], "permissive_license_tokens": ["MIT"],
+                  "redistribution_exceptions": {}, "scheduled_batch_size": 1}
+        coverage = native_plan.evaluate_roots_coverage(
+            ["covered", "app", "base"], Inspector(), {}, config, max_roots=1
+        )
+        self.assertEqual(coverage["covered_roots"], ["covered"])
+        self.assertEqual(coverage["eligible_roots"], ["base"])
+        self.assertEqual(coverage["selected_roots"], ["base"])
+        self.assertEqual(coverage["deferred_roots"], {"app": ["base"]})
+        self.assertEqual(coverage["waiting_roots"], [])
+        self.assertFalse(coverage["coverage_complete"])
+
     def test_load_formula_index_retries_transient_error(self):
         import io
         import urllib.error

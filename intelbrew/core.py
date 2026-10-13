@@ -5,6 +5,7 @@ import hashlib,http.client,json,os,re,socket,subprocess,sys,tarfile,time,urllib.
 from pathlib import Path,PurePosixPath
 ROOT=Path(__file__).resolve().parents[1];NAME=re.compile(r"[a-z0-9][a-z0-9+_.-]*(?:@[0-9][a-z0-9+_.-]*)?\Z");SHA256=re.compile(r"[0-9a-f]{64}\Z");SHA1=re.compile(r"[0-9a-f]{40}\Z");TAG=re.compile(r"intel-[0-9]+-[0-9]+-[a-z0-9_.+-]+\Z");MAX_JSON=8*1024*1024;MAX_ARTIFACT=2_000_000_000;MAX_OFFICIAL_METADATA=64*1024*1024
 RECORD_KEYS={"schema","name","version","revision","version_scheme","pkg_version","formula_sha256","recipe_sha256","core_commit","brew_commit","tag","arch","cellar","filename","sha256","size","license","runtime_dependencies","source","release","workflow_commit","run_id"}
+LLVM_NO_PGO = "llvm-no-pgo"
 _TRANSIENT_NETWORK=(TimeoutError, socket.timeout, ConnectionError, socket.gaierror, http.client.IncompleteRead)
 class Error(RuntimeError):pass
 
@@ -131,11 +132,20 @@ def load_config():
     c=read_json(ROOT/'policy/config.json')
     if c.get('schema')!=1 or c.get('repository')!='adriank1410/homebrew-intel':raise Error('Unexpected configuration')
     require_sha(c['brew_commit'],git=True);require_sha(c['core_commit'],git=True)
-    c['source_build_holds']=validate_source_build_holds(c.get('source_build_holds',[]));return c
+    c['source_build_holds']=validate_source_build_holds(c.get('source_build_holds',[]))
+    profiles=c.setdefault('build_profiles',{})
+    if not isinstance(profiles,dict) or profiles not in ({},{'llvm':LLVM_NO_PGO}):raise Error('Unsupported build profiles')
+    return c
+
+def source_build_blocklist(config):
+    """Permit the explicitly reviewed LLVM profile while retaining other holds."""
+    return [name for name in config.get('blocked_source_builds',[])
+            if not (name=='llvm' and config.get('build_profiles',{}).get(name)==LLVM_NO_PGO)]
 
 def validate_record(d,*,published=True):
-    if not isinstance(d,dict) or set(d)!=RECORD_KEYS or d.get('schema')!=1:raise Error('Unknown/incomplete record schema')
+    if not isinstance(d,dict) or set(d) not in (RECORD_KEYS,RECORD_KEYS|{'build_profile'}) or d.get('schema')!=1:raise Error('Unknown/incomplete record schema')
     n=canonical_name(d['name']);[require_sha(d[x]) for x in ('formula_sha256','recipe_sha256','sha256')];[require_sha(d[x],git=True) for x in ('core_commit','brew_commit','workflow_commit')]
+    if 'build_profile' in d and (n!='llvm' or d['build_profile']!=LLVM_NO_PGO):raise Error('Unsupported bottle build profile')
     if any(type(d[x]) is not int or d[x]<0 for x in ('revision','version_scheme')):raise Error('Invalid revision')
     if not isinstance(d['version'],str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._+-]{0,150}',d['version']):raise Error('Invalid version')
     if d['pkg_version']!=d['version']+(f'_{d["revision"]}' if d['revision'] else ''):raise Error('Version/revision mismatch')

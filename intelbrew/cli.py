@@ -196,6 +196,38 @@ def filter_available_plan(plan: dict) -> tuple[dict, list[dict]]:
     return filtered, skipped
 
 
+def missing_provider_details(plan: dict, records: dict) -> list[dict]:
+    """Explain unique missing nodes using the original plan and published registry."""
+    details: list[dict] = []
+    seen: set[str] = set()
+    for name in plan["order"]:
+        if name in seen or plan["nodes"][name]["provider"] != "missing":
+            continue
+        seen.add(name)
+        item = plan["nodes"][name]
+        published = records.get(name)
+        if published is None:
+            reason = "no_published_record"
+        elif (item["pkg_version"] != published["pkg_version"]
+              or item["version_scheme"] != published["version_scheme"]):
+            reason = "version_or_scheme_differs"
+        elif item["formula_sha256"] != published["formula_sha256"]:
+            # Homebrew's formula hash identifies the source recipe used for the bottle.
+            reason = "recipe_differs"
+        elif matching_record(item, records) is not None:
+            # Planner removed this exact match while replanning a stale runtime closure.
+            reason = "runtime_dependency_drift"
+        else:
+            raise Error(f"Cannot classify missing provider: {name}")
+        details.append({
+            "name": name,
+            "target_pkg_version": item["pkg_version"],
+            "published_pkg_version": published["pkg_version"] if published is not None else None,
+            "reason": reason,
+        })
+    return details
+
+
 def coverage_report(installed: dict, targets: list[str]) -> dict:
     core = set(installed.get("core", ()))
     target_set = set(targets)
@@ -247,7 +279,8 @@ def render_coverage(report: dict, stream: Any = None) -> None:
               f'{", ".join(external) if external else "none"}', file=stream)
 
 
-def render_skipped(skipped: list[dict], stream: Any = None) -> None:
+def render_skipped(skipped: list[dict], stream: Any = None,
+                   missing_providers: list[dict] | None = None) -> None:
     if stream is None:
         stream = sys.stdout
     roots = [item["root"] for item in skipped]
@@ -260,6 +293,20 @@ def render_skipped(skipped: list[dict], stream: Any = None) -> None:
         print(f"Skipped unavailable upgrade roots ({len(roots)}): {', '.join(roots)}", file=stream)
         if set(roots) != set(missing):
             print(f"Missing providers ({len(missing)}): {', '.join(missing) if missing else 'none'}", file=stream)
+    if missing_providers:
+        labels = {
+            "no_published_record": "no published record",
+            "version_or_scheme_differs": "version or scheme differs",
+            "recipe_differs": "recipe differs",
+            "runtime_dependency_drift": "runtime dependency drift",
+        }
+        reasons = Counter(item["reason"] for item in missing_providers)
+        summary = ", ".join(
+            f"{labels[reason]}: {count}"
+            for reason, count in sorted(reasons.items(), key=lambda pair: labels[pair[0]])
+        )
+        print(f"Missing provider reasons ({len(missing_providers)}): {summary}", file=stream)
+        print("Run `brew intel upgrade --available --json` for individual details.", file=stream)
 
 
 def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:
@@ -454,12 +501,14 @@ def main(argv: list[str] | None = None) -> int:
                        allow_drift_as_missing=bool(args.available)).make(names)
         skipped: list[dict] = []
         if args.available:
+            missing_providers = missing_provider_details(plan, records)
             plan, skipped = filter_available_plan(plan)
             if skipped:
                 if args.json:
-                    print(json.dumps({"skipped": skipped}, indent=2), file=sys.stderr)
+                    print(json.dumps({"skipped": skipped,
+                                      "missing_providers": missing_providers}, indent=2), file=sys.stderr)
                 else:
-                    render_skipped(skipped)
+                    render_skipped(skipped, missing_providers=missing_providers)
             if not plan["roots"]:
                 if args.json:
                     print(json.dumps(plan, indent=2))

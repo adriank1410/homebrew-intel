@@ -15,6 +15,9 @@
     "qtwebengine",
     "qtwebview"
   ],
+  "build_profiles": {
+    "llvm": "llvm-no-pgo"
+  },
   "source_build_holds": [
     {
       "name": "qtbase",

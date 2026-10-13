@@ -361,6 +361,55 @@ class PinPullRequestTests(unittest.TestCase):
         with patch.dict(os.environ, env, clear=True):
             self.assertEqual(main(["--reconcile", "--repository", REPOSITORY]), 1)
 
+    def test_cli_dispatches_a_sweep_only_after_a_verified_pin_merge(self):
+        env = {
+            "GITHUB_ACTIONS": "true", "GITHUB_REPOSITORY": REPOSITORY,
+            "GITHUB_REF": "refs/heads/main", "RUNNER_ENVIRONMENT": "github-hosted",
+            "RUNNER_OS": "Linux", "INTELBREW_BOT_LOGIN": BOT,
+        }
+        for pr, responses, dispatch in (
+                (pin_pr(), self._listed(pin_pr()) + [""], True),
+                (pin_pr(mergeStateStatus="BLOCKED"),
+                 [json.dumps([pin_pr(mergeStateStatus="BLOCKED")]),
+                  json.dumps([[{"filename": "policy/config.json", "status": "modified"}]])], False),
+                (None, [json.dumps([])], False)):
+            with self.subTest(pr=pr):
+                calls = []
+                def fake(args, **kwargs):
+                    calls.append(args)
+                    if not responses:
+                        raise AssertionError(args)
+                    return responses.pop(0)
+                with patch.dict(os.environ, env, clear=True), \
+                        patch("intelbrew.pin_pr.gh", side_effect=fake):
+                    self.assertEqual(main(["--reconcile", "--repository", REPOSITORY]), 0)
+                dispatches = [call for call in calls if call[:2] == ["workflow", "run"]]
+                self.assertEqual(dispatches, [[
+                    "workflow", "run", "bottles.yml", "--repo", REPOSITORY,
+                    "--ref", "main", "-f", "formula=all",
+                ]] if dispatch else [])
+                self.assertFalse(responses)
+                if dispatch:
+                    merge_index = next(i for i, call in enumerate(calls)
+                                       if call[:2] == ["pr", "merge"])
+                    self.assertGreater(calls.index(dispatches[0]), merge_index)
+
+    def test_cli_reports_a_failed_post_merge_sweep_dispatch(self):
+        env = {
+            "GITHUB_ACTIONS": "true", "GITHUB_REPOSITORY": REPOSITORY,
+            "GITHUB_REF": "refs/heads/main", "RUNNER_ENVIRONMENT": "github-hosted",
+            "RUNNER_OS": "Linux", "INTELBREW_BOT_LOGIN": BOT,
+        }
+        responses = self._listed(pin_pr())
+        def fake(args, **kwargs):
+            if args[:2] == ["workflow", "run"]:
+                raise Error("sweep dispatch failed")
+            return responses.pop(0)
+        with patch.dict(os.environ, env, clear=True), \
+                patch("intelbrew.pin_pr.gh", side_effect=fake):
+            self.assertEqual(main(["--reconcile", "--repository", REPOSITORY]), 1)
+        self.assertFalse(responses)
+
     def test_cli_reconciles_only_inside_the_hosted_main_job(self):
         env = {
             "GITHUB_ACTIONS": "true",
