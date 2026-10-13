@@ -135,7 +135,7 @@ class RootWorkflowTests(unittest.TestCase):
                              [f"{prefix}-1", f"{prefix}-2", f"{prefix}-3"])
             for step in uploads:
                 self.assertTrue(step["uses"].startswith(
-                    "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"))
+                    "actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9"))
                 self.assertEqual(step["with"]["name"], artifact)
                 self.assertEqual(step["with"]["if-no-files-found"], "error")
                 self.assertGreaterEqual(step["with"]["retention-days"], 35)
