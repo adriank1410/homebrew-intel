@@ -2,14 +2,16 @@
 """Build and verification stages. This module refuses to mutate non-CI hosts."""
 from __future__ import annotations
 import argparse, copy, hashlib, io, json, os, re, shutil, subprocess, sys, tarfile, tempfile
+from contextlib import nullcontext
 from pathlib import Path, PurePosixPath
 from .archive_notices import archive_notices
 from .build_sources import MAX_FILES as MAX_BUILD_SOURCE_FILES, collect_build_sources
+from .build_profiles import prepare_build_profile, recipe_sha256, variant_recipe
 from .cli import attest
 from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, blocked_toolchain_source,
                    brew_env, canonical_name, check_bottle, digest, download, load_config, native,
                    read_json, registry, require_sha, retry_transient, run, transient_source_builds,
-                   validate_record, write_json_new)
+                   validate_record, write_json_new, source_build_blocklist, LLVM_NO_PGO)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
@@ -207,14 +209,19 @@ def _generated_basename(value:str)->str:
     return safe
 
 
-def _building_text(name:str,core_commit:str,brew_commit:str,requirements=())->bytes:
+def _building_text(name:str,core_commit:str,brew_commit:str,requirements=(),build_profile=None)->bytes:
     altered=("\nThis is a Homebrew-packaged and patched build, not an unmodified upstream "
              "Info-ZIP release. The recipe and indexed patch archive identify every applied change.\n"
              if "Info-ZIP" in requirements else "")
+    profile_text=(
+        "Build profile: llvm-no-pgo. The LLVM PGO bootstrap is disabled; all other recipe steps are retained.\n"
+        "recipe/llvm.rb is the canonical upstream recipe. recipe/llvm-no-pgo.rb is the executed variant.\n"
+        "Before rebuilding, copy recipe/llvm-no-pgo.rb to the pinned core checkout at Formula/l/llvm.rb.\n\n"
+        if build_profile==LLVM_NO_PGO else "")
     return (f"Build inputs for homebrew/core/{name}\n\n"
             f"Homebrew/brew: https://github.com/Homebrew/brew/tree/{brew_commit}\n"
             f"Homebrew/core: https://github.com/Homebrew/homebrew-core/tree/{core_commit}\n\n"
-            f"Rebuild command: brew install --build-bottle homebrew/core/{name}\n\n"
+            f"{profile_text}Rebuild command: brew install --build-bottle homebrew/core/{name}\n\n"
             "Use the pinned recipe in recipe/ with the commits above. sources.json lists the "
             "original source archives and their hashes. Its build_sources labels preserve the "
             "original Go or Cargo cache paths for files stored in build-inputs/. Restore their indexed "
@@ -231,12 +238,21 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
     if archive.exists():raise Error("Refusing to overwrite a source bundle")
     index={"schema":1,"name":name,"core_commit":core_commit,"formula_sha256":meta["formula_sha256"],
            "license":meta.get("license"),"license_requirements":list(requirements),"resources":[],"notices":[],"build_sources":[]}
+    profile=sources.get('build_profile')
+    if profile is not None:
+        if name!='llvm' or profile!=LLVM_NO_PGO:raise Error('Unsupported source build profile')
+        index['build_profile']=profile
     with tarfile.open(archive,"x:gz") as bundle:
         recipe=Path(sources["formula_path"])
         if recipe.is_symlink() or not recipe.is_file() or digest(recipe)!=meta["formula_sha256"]:raise Error("Recipe changed during source collection")
         bundle.add(recipe,arcname=f"recipe/{name}.rb",recursive=False)
+        if profile:
+            variant=Path(sources['profile_recipe_path'])
+            if variant.is_symlink() or not variant.is_file() or variant.read_bytes()!=variant_recipe(recipe.read_bytes()):raise Error('Build profile variant differs')
+            if recipe_sha256(variant.read_bytes())!=sources['recipe_sha256']:raise Error('Build profile recipe digest differs')
+            bundle.add(variant,arcname='recipe/llvm-no-pgo.rb',recursive=False)
         bundle.add(ROOT/"LICENSES/Homebrew-BSD-2-Clause.txt",arcname="LICENSES/Homebrew-BSD-2-Clause.txt",recursive=False)
-        building=_building_text(name,core_commit,brew_commit,requirements);info=tarfile.TarInfo("BUILDING.txt");info.size=len(building);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(building))
+        building=_building_text(name,core_commit,brew_commit,requirements,profile);info=tarfile.TarInfo("BUILDING.txt");info.size=len(building);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(building))
         for i,res in enumerate(sources["resources"]):
             path=Path(res["path"])
             if path.is_symlink() or not path.is_file() or digest(path)!=res["sha256"]:raise Error("Source archive changed")
@@ -273,7 +289,7 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
 
 def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
     requirements=allowed_redistribution(record,config)
-    if not requirements:return # Compatibility with already-built permissive candidates.
+    if not requirements and not record.get('build_profile'):return # Compatibility with already-built permissive candidates.
     regular={};index_data=None;total=members=0
     try:
         with tarfile.open(path,"r:*") as archive:
@@ -292,10 +308,15 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
             if index_data is None:raise Error("Source bundle index missing")
             index=json.loads(index_data)
             required={"schema","name","core_commit","formula_sha256","license","license_requirements","resources","notices","build_sources"}
+            profile=record.get('build_profile')
+            if profile:
+                if record['name']!='llvm' or profile!=LLVM_NO_PGO:raise Error('Unsupported source build profile')
+                required.add('build_profile')
             if (not isinstance(index,dict) or set(index)!=required or index["schema"]!=1
                     or index["name"]!=record["name"] or index["core_commit"]!=record["core_commit"]
                     or index["formula_sha256"]!=record["formula_sha256"] or index["license"]!=record["license"]
-                    or index["license_requirements"]!=list(requirements)):raise Error("Source bundle identity mismatch")
+                    or index["license_requirements"]!=list(requirements)
+                    or index.get('build_profile')!=profile):raise Error("Source bundle identity mismatch")
             resources=index["resources"];notices=index["notices"];build_sources=index["build_sources"]
             if not isinstance(resources,list) or not 0<len(resources)<=400:raise Error("Invalid source resource index")
             if not isinstance(notices,list) or not 0<len(notices)<=MAX_SOURCE_NOTICES:raise Error("Source-required license notices missing")
@@ -312,9 +333,17 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
                 for chunk in iter(lambda:handle.read(1024*1024),b""):value.update(chunk)
                 return value.hexdigest()
             if member_hash(f"recipe/{record['name']}.rb")!=record["formula_sha256"]:raise Error("Source recipe checksum mismatch")
+            if profile:
+                canonical=regular[f"recipe/{record['name']}.rb"]
+                variant=regular.get('recipe/llvm-no-pgo.rb')
+                if canonical.size>MAX_JSON or variant is None or variant.size>MAX_JSON:raise Error('Build profile variant missing or too large')
+                original=archive.extractfile(canonical).read(MAX_JSON+1)
+                executed=archive.extractfile(variant).read(MAX_JSON+1)
+                if executed!=variant_recipe(original) or recipe_sha256(executed)!=record['recipe_sha256']:raise Error('Build profile variant or recipe digest differs')
+                expected.add('recipe/llvm-no-pgo.rb')
             building=regular.get("BUILDING.txt")
             handle=archive.extractfile(building) if building else None
-            if handle is None or handle.read(MAX_JSON+1)!=_building_text(record["name"],record["core_commit"],record["brew_commit"],requirements):raise Error("Source build instructions mismatch")
+            if handle is None or handle.read(MAX_JSON+1)!=_building_text(record["name"],record["core_commit"],record["brew_commit"],requirements,profile):raise Error("Source build instructions mismatch")
             for item in resources:
                 if not isinstance(item,dict) or set(item)!={"filename","label","url","sha256"}:raise Error("Invalid source resource")
                 if not item["filename"].startswith("inputs/") or not _safe_archive_name(item["filename"]):raise Error("Invalid source resource path")
@@ -362,7 +391,7 @@ def build(root:str,output:Path)->None:
     if root not in allowed:raise Error("Root is not in reviewed target list")
     if output.exists():raise Error("Build output must be fresh")
     output.mkdir(parents=True);registry_commit=sync_registry();records=registry();inspector=lambda batch:native({"mode":"inspect","names":batch},ci=True)
-    plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"],holds=config["source_build_holds"]).make([root])
+    plan=Planner(inspector,records,build=True,max_nodes=config["max_graph_nodes"],blocked=source_build_blocklist(config),holds=config["source_build_holds"]).make([root])
     excluded=blocked_toolchain_source(plan, config["blocked_source_builds"])
     if excluded:raise Error(f'Source build excluded by policy: {excluded}')
     transient=transient_builds(plan)
@@ -399,8 +428,11 @@ def build(root:str,output:Path)->None:
         package_caches.update(caches);source_sets.update(sources)
         sources=source_sets[name];cache=package_caches[name];env=_build_env(cache)
         if name in transient:print(f"intelbrew CI: {name} is only needed to compile published packages; building from source without a bottle",flush=True)
-        _prefetch_build_inputs(name, env)
-        run(_brew_install_args(name,transient),capture=False,env=env)
+        profile=config.get('build_profiles',{}).get(name) if name not in transient else None
+        scope=prepare_build_profile(name,sources,work/f'{name}-profile',profile) if profile else nullcontext(sources)
+        with scope as sources:
+            _prefetch_build_inputs(name, env)
+            run(_brew_install_args(name,transient),capture=False,env=env)
         if name in transient:continue
         context=native({"mode":"build-context"},ci=True,cache=cache)
         collected=collect_build_sources(context,work/f"{name}-build-sources")
@@ -412,6 +444,7 @@ def build(root:str,output:Path)->None:
         details=read_json(js[0]);bottle_sha,bottle_cellar=extract_bottle_metadata(details,"sequoia");filename=basename(files[0].name);target=output/filename;shutil.copyfile(files[0],target)
         if digest(target)!=bottle_sha:raise Error("Bottle checksum mismatch")
         rec={"schema":1,"name":name,"version":meta["version"],"revision":meta["revision"],"version_scheme":meta["version_scheme"],"pkg_version":meta["pkg_version"],"formula_sha256":meta["formula_sha256"],"recipe_sha256":sources["recipe_sha256"],"core_commit":core_commit,"brew_commit":config["brew_commit"],"tag":"sequoia","arch":"x86_64","cellar":bottle_cellar,"filename":filename,"sha256":digest(target),"size":target.stat().st_size,"license":meta["license"],"runtime_dependencies":[{"name":d,"pkg_version":plan["nodes"][d]["pkg_version"],"formula_sha256":plan["nodes"][d]["formula_sha256"]} for d in runtime_closure(name,plan["nodes"])],"source":{"filename":source_path.name,"sha256":digest(source_path),"size":source_path.stat().st_size},"release":None,"workflow_commit":workflow_commit,"run_id":os.environ["GITHUB_RUN_ID"]}
+        if profile:rec['build_profile']=profile
         check_bottle(target,rec);manifest["packages"].append(rec)
     write_json_new(output/"manifest.json",manifest);validate_candidate(output,expected_root=root,verified=False)
 
@@ -452,7 +485,7 @@ def verify(root:str,candidate:Path,output:Path)->None:
     if manifest.get("registry_commit"):sync_registry(manifest["registry_commit"])
     if manifest["packages"]:
         native({"mode":"guard-test"},ci=True);plan=manifest["plan"]
-        independent=Planner(lambda batch:native({"mode":"inspect","names":batch},ci=True),registry(),build=True,max_nodes=config["max_graph_nodes"],blocked=config["blocked_source_builds"],holds=config["source_build_holds"]).make([root])
+        independent=Planner(lambda batch:native({"mode":"inspect","names":batch},ci=True),registry(),build=True,max_nodes=config["max_graph_nodes"],blocked=source_build_blocklist(config),holds=config["source_build_holds"]).make([root])
         if plan!=independent:raise Error("Independent plan differs")
         transient=transient_builds(plan)
         local={r["name"]:r for r in manifest["packages"]};expected={n for n in plan["order"] if plan["nodes"][n]["provider"]=="build" and n not in transient}

@@ -48,13 +48,16 @@ Verify GitHub settings separately before treating them as a security boundary.
 planning and runner preparation use exactly that pair; an explicit mismatched
 `INTELBREW_CORE_COMMIT` is rejected. Published records retain their original pins.
 
-`homebrew-pins.yml` runs daily at 03:25 UTC and supports manual dispatch on `main`.
+`homebrew-pins.yml` runs every three hours at minute 25 UTC and supports manual dispatch on `main`.
 It proposes current upstream main commits together on `automation/homebrew-pins`,
 refreshes an existing proposal from repository main, and opens or updates a PR
 using the scoped App token. Registry maintenance squash-merges that pull request after the required `tests` check
 succeeds for that exact head. It does not queue GitHub auto-merge. A failed
 native check leaves the proposal open.
-New formula versions become build candidates after that merge.
+After merging the exact tested head, maintenance dispatches a full bottle sweep
+on `main` so new formula versions are considered without waiting for the next
+scheduled build. A dispatch failure fails maintenance visibly; the hourly bottle
+schedule remains the fallback. GitHub can delay scheduled runs.
 
 The Linux schedule prefilter uses live Homebrew API metadata only when its
 `tap_git_head` matches the reviewed core pin. While upstream has advanced, it
@@ -201,6 +204,13 @@ When the sweep merges at least one bottle registry pull, it dispatches the next
 full sweep itself, for up to eight waves, after those pulls reach `main`. A sweep
 that publishes nothing, a single-root repair, and the eighth wave leave the
 remaining roots to the hourly schedule.
+The native preflight writes a coverage summary against the exact core and engine
+pins: covered, eligible, selected, waiting for the batch cap, deferred for
+dependency waves, and blocked roots with their reasons. A successful workflow
+can still have incomplete coverage; the summary and warning state that explicitly.
+The `llvm-no-pgo` recipe variant builds LLVM separately before Rust-dependent
+waves; its provenance and retained verification gates are documented in
+`docs/BUILD-HOLDS.md`.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight. A manual single-root request has its own concurrency group,
 so an urgent repair can run alongside a sweep. Repeated requests for the same root
@@ -232,6 +242,10 @@ brew cleanup
 The Intel step includes official core bottles; the following step updates casks
 with standard Homebrew dependency handling. Other taps are outside the client
 scope. `--available` omits roots with missing bottle dependencies and reports them.
+Its JSON diagnostics on stderr include unique `missing_providers` with target
+and published versions, distinguishing absent records, version or scheme
+mismatches, changed recipes and runtime dependency drift. The plan on stdout
+keeps its existing shape.
 Without it, incomplete coverage stops the whole operation. A separate
 `brew cleanup` can remove retained old kegs; it is never run by this client.
 

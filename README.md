@@ -141,8 +141,10 @@ An LLVM install used only as a compiler, with no source-built formula that needs
 it at runtime or during its formula test, is built from source and omitted from
 the candidate set. Homebrew's `llvm`
 formula then skips the profile-guided bootstrap and its `check-clang` /
-`check-llvm` suite. Publishing `llvm` itself stays source-held: that bottle
-build does not finish inside the six-hour runner limit. CI does not start a
+`check-llvm` suite. A standalone `llvm` bottle uses the explicitly approved
+`llvm-no-pgo` recipe variant, retaining both upstream and executed recipes and
+the normal independent verification gates; see [BUILD-HOLDS](docs/BUILD-HOLDS.md).
+The unmodified PGO bottle build exceeds the six-hour runner limit. CI does not start a
 root that source-builds this LLVM and also source-builds a formula that needs
 it at runtime, such as `rust` or `lld`. That closure does not finish inside
 the six-hour job. A matching LLVM bottle lets the root be selected again.

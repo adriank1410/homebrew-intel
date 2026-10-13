@@ -191,7 +191,12 @@ def main(argv: list[str] | None = None) -> int:
                 os.environ.get("RUNNER_ENVIRONMENT") != "github-hosted" or
                 os.environ.get("RUNNER_OS") != "Linux"):
             raise Error("Pin merge is restricted to the main-branch GitHub-hosted Linux job")
-        print(f"Homebrew pin: {reconcile_pin(args.repository)}")
+        outcome = reconcile_pin(args.repository)
+        print(f"Homebrew pin: {outcome}")
+        if outcome == "merged":
+            gh(["workflow", "run", "bottles.yml", "--repo", args.repository,
+                "--ref", "main", "-f", "formula=all"], capture=False)
+            print("Bottle sweep dispatched for the refreshed Homebrew pair.")
         return 0
     except (Error, KeyError, OSError, TypeError, ValueError) as exc:
         print(f"intelbrew pin-pr: {exc}", file=sys.stderr)

@@ -37,7 +37,8 @@ It applies only when a published package would be built from that exact pair.
 Other Qt modules are not individually excluded. A complete, matching bottle
 graph is still installed.
 
-Daily pin maintenance moves `core_commit` when Homebrew's main branch moves.
+Pin maintenance checks upstream every three hours and moves `core_commit`
+through the reviewed native gate when Homebrew's main branch moves.
 The next bottle run then sees the new recipe files. If either hash differs,
 the hold does not match and `qtbase` is built with the normal scheduler. No
 policy edit is required for that retry. After a successful publication, delete
@@ -81,8 +82,8 @@ versioned formula skips the path. `--build-from-source` skips it as well.
 `llvm` at runtime. The planner still classifies that LLVM and those runtime
 dependents as transient when no published package needs them: the install mode
 would be `--build-from-source`, and they would stay out of the candidate set.
-CI does not start that root. A request whose published packages need a new
-`llvm` bottle, including a direct `llvm` root, stays source-held.
+CI does not start that combined root. The separately reviewed `llvm-no-pgo`
+profile described below permits a standalone LLVM bottle build.
 
 Skipping the profile-guided suite is not enough when another source build needs
 that LLVM at runtime. On
@@ -99,11 +100,32 @@ error in the build planner. A matching LLVM bottle removes the source build,
 so the root can be selected again. A build-only LLVM edge, with no source-built
 runtime dependent, still uses `--build-from-source`.
 
-Removal criteria for the direct hold: publish a reviewed Intel bottle through
-the normal attested path, including independent pour, formula test and linkage
-checks. Do not raise `timeout-minutes` beyond the hosted-job limit, patch the
-formula to delete `check-clang`/`check-llvm` while still passing
-`--build-bottle`, or substitute `llvm@22` for the dependency the recipe names.
+### Approved LLVM recipe variant: `llvm-no-pgo`
+
+The owner approved this explicit variant on 13 October 2026. It changes only
+the upstream `pgo_build` assignment to `false`, retaining the rest of the recipe.
+The PGO bootstrap and its conditional `check-clang`/`check-llvm` stage therefore
+do not execute. This trades upstream PGO optimization for a build that can fit
+the standard hosted runner budget; it does not claim upstream recipe identity.
+An unfamiliar or ambiguous upstream assignment fails before compilation.
+
+`policy/config.json` enables the variant only for unversioned `llvm`, now a
+reviewed standalone target. The recipe is changed temporarily on the ephemeral
+build runner, installed with `--build-bottle`, and restored on context exit.
+The bottle record includes `build_profile: llvm-no-pgo`. Its `formula_sha256`
+identifies the original pinned core recipe, while `recipe_sha256` identifies the
+executed variant embedded in the bottle. The source bundle retains both
+`recipe/llvm.rb` and `recipe/llvm-no-pgo.rb`, an explicit profile label and rebuild
+instructions. Verification checks the exact permitted transformation and both
+hashes before accepting the candidate. Clients need the updated tap to read the
+new optional profile field.
+
+The usual independent bottle pour, receipts, linkage checks, formula test,
+source validation and artifact attestation remain mandatory. The raw LLVM hold
+still rejects a closure that would compile LLVM and a source-built runtime
+dependent in one job. A matching published LLVM bottle allows Rust and those
+dependent roots to proceed in later waves. No hosted timeout is increased and
+`llvm@22` is not substituted for the dependency named by core.
 
 ## Existing resource exclusions
 

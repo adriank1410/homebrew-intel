@@ -16,6 +16,14 @@ SPEC.loader.exec_module(pins)
 
 
 class HomebrewPinUpdateTests(unittest.TestCase):
+    def test_pin_maintenance_checks_upstream_every_three_hours(self):
+        workflow = json.loads(subprocess.check_output([
+            "ruby", "-ryaml", "-rjson", "-e",
+            "puts JSON.generate(YAML.load_file(ARGV[0]))",
+            str(ROOT / ".github/workflows/homebrew-pins.yml")], text=True))
+        triggers = workflow.get("on", workflow.get("true"))
+        self.assertEqual(triggers["schedule"], [{"cron": "25 */3 * * *"}])
+
     def test_maintenance_workflow_updates_a_current_branch_with_app_auth(self):
         workflow = json.loads(subprocess.check_output([
             "ruby", "-ryaml", "-rjson", "-e",
