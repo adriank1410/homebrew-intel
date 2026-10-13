@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
+  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
   "cellar": "any",
-  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
   "filename": "qttasktree--6.11.2.sequoia.bottle.tar.gz",
   "formula_sha256": "f93eef7185e3788d562ee5894a12f3be5696eca3854904e2d68c9631fddfff6b",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qttasktree",
   "pkg_version": "6.11.2",
   "recipe_sha256": "654773609b982ec2b51b5b5c1bb681620db27b755eff191f6e14ec8c28e7eea6",
-  "release": "intel-38160918671-1-qttasktree",
+  "release": "intel-38323682930-1-qttasktree",
   "revision": 0,
-  "run_id": "38160918671",
+  "run_id": "38323682930",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -120,7 +120,7 @@
       "pkg_version": "1.0.12"
     },
     {
-      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
       "name": "libxcb",
       "pkg_version": "1.17.0"
     },
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "257af6329169bb5bd43de0fe9cfd6cdcfcd83129c508996b58d04428a751ef72",
-  "size": 132701,
+  "sha256": "4a76219209cacc6ebf39b3e740b20021d79ee2eaa1608df9ecb3b81813276cc4",
+  "size": 132694,
   "source": {
     "filename": "qttasktree--6.11.2.sources.tar.gz",
-    "sha256": "a23806bc2bc3d65aedfa4f292caba1af5727ce1014aa7174e4eab2b92a6833e2",
-    "size": 290190
+    "sha256": "8a069e11cc0605e54cf203b4f87c33e322bb76974aab18ac67528f231c723050",
+    "size": 290189
   },
   "tag": "sequoia",
   "version": "6.11.2",
   "version_scheme": 0,
-  "workflow_commit": "3b33f29d624a8ffbaaca42f856ec7e8848c44477"
+  "workflow_commit": "517816aae16523ce271b1a9070015a96efd4b5e4"
 }
