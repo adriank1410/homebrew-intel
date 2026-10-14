@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
+  "core_commit": "f901d08921a15dabd97ef8061e77a9fd8a153cdb",
   "filename": "harfbuzz--14.6.0.sequoia.bottle.tar.gz",
   "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
   "license": "MIT",
   "name": "harfbuzz",
   "pkg_version": "14.6.0",
   "recipe_sha256": "b2c3828ee3df77b7ddd92e94670555f6f94912fac4ce16820a4b9411e6d43bc5",
-  "release": "intel-38314649796-1-harfbuzz",
+  "release": "intel-38640907923-1-harfbuzz",
   "revision": 0,
-  "run_id": "38314649796",
+  "run_id": "38640907923",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -29,9 +29,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -120,15 +120,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f5762dd9e32c0bd7d3666c552cde2ca64a687ef02e00c208e638dbd8905ac734",
-  "size": 4302988,
+  "sha256": "d24f64d7802df921e06422257bcdb5532eed567c2329bd5d43986439f6a4f066",
+  "size": 4303012,
   "source": {
     "filename": "harfbuzz--14.6.0.sources.tar.gz",
-    "sha256": "26f4c1309d080e500ef806af31e1a0fe71c39dcf189a9f0de7c1a14b1215a71e",
-    "size": 20313215
+    "sha256": "761bd629d321465a40355980cffba64a3e1a7b1b042934aeb53d769dbb41e616",
+    "size": 20313202
   },
   "tag": "sequoia",
   "version": "14.6.0",
   "version_scheme": 0,
-  "workflow_commit": "c5e1e052706dcbc079c6e4d646a907c279719833"
+  "workflow_commit": "5611c1e77f614d4be9b6ab385060741fbb904175"
 }
