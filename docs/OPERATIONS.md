@@ -275,6 +275,14 @@ with ruleset `creation`, `update` (`update_allows_fetch_and_merge: false`) and
 `deletion`, plus an admin bypass (`always`). Do not add `pull_request`,
 `non_fast_forward` or `required_signatures`.
 
+When the coverage PR falls behind `main`, maintenance validates its boundary
+and reports that it is waiting for the owner, without attempting to write the
+protected head. Run `brew intel sync --apply` with the owner's login to refresh
+that pending PR even when the local report has no eligible additions. For an
+already complete proposal, the owner client uses GitHub's branch-update API with
+the exact expected head SHA. Checks must pass again on the updated head before
+maintenance can merge it. No branch protection or App bypass is changed.
+
 Five-minute coverage maintenance runs on trusted `main` with the same short-lived App
 token. It accepts only the expected owner, branch, repository and base; exactly
 `policy/targets.json` may change, strictly by adding canonical names. Current
