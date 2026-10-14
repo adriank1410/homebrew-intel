@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "cellar": "any_skip_relocation",
+  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "filename": "hyperfine--2.0.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "729a305f47cf291a59a934fd6b0eabe0cbbdd72615b31ca6e7e923774295893f",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "MIT"
+    ]
+  },
+  "name": "hyperfine",
+  "pkg_version": "2.0.0",
+  "recipe_sha256": "bfcf4ce80f0d93d616f6e363eb9959fdf2ac2ac02090f04976c64fb2bc8e4da5",
+  "release": "intel-38513515528-1-hyperfine",
+  "revision": 0,
+  "run_id": "38513515528",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "bafe661fa5d0d93296c9167a0e1c1e0f0ce9ee0f0a7d760735b3614d832e518a",
+  "size": 646102,
+  "source": {
+    "filename": "hyperfine--2.0.0.sources.tar.gz",
+    "sha256": "7b7aa9b212f5f1146bbe7513ea4e317b305d17f616e48945a3f5a7529a43e8dc",
+    "size": 9836093
+  },
+  "tag": "sequoia",
+  "version": "2.0.0",
+  "version_scheme": 0,
+  "workflow_commit": "8870643a4a082b95ed32bd4c88d893d28dff28d5"
+}
