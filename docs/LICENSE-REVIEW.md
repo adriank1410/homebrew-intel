@@ -104,6 +104,19 @@ formula-hash-pinned source-required exception, rather than treating every future
 does not bundle Npcap, and its source bundle records the small Homebrew packaging
 changes. Reference: https://nmap.org/npsl/
 
+The 2026-10-14 review refreshes that exact exception for core commit
+`83d6e753a35f8572863e53b9d73de1797d5020b2`: Nmap `7.991_1`, formula SHA-256
+`a89ce9706632ebd88561c8ec32da8ab561813deaf8e388fe13ba94dfb11c7c11`.
+Compared with the previously reviewed recipe, revision 1 migrates from OpenSSL 3
+to OpenSSL 4, updates upstream bottle metadata, and declares network access for
+the existing formula test. The source URL and SHA-256 remain unchanged:
+`https://nmap.org/dist/nmap-7.991.tar.bz2`,
+`a5d507f29437bef3bedd4771ff9aaa8fc1c2a109ddba1f5b1cf12027456929be`.
+The verified archive contains NPSL 0.95 in `nmap-7.991/LICENSE`; section 11 permits
+linking with any OpenSSL version. Standalone packaging and the source/notice
+publication requirements remain unchanged. A later recipe hash still requires
+a new review.
+
 Additional primary texts:
 
 - EUPL 1.2: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017D0863
