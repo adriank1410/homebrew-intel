@@ -1,0 +1,249 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "filename": "fontforge--20251009_2.sequoia.bottle.tar.gz",
+  "formula_sha256": "e83e3a2ede4bed1f21d7435b0bef0abb96c3b9fa73ddf8f254245f8ea61d586a",
+  "license": "GPL-3.0-or-later",
+  "name": "fontforge",
+  "pkg_version": "20251009_2",
+  "recipe_sha256": "e4e2a8c148bc8ded219db500b20e813f568b0e36183cfbe55ff26962abb86112",
+  "release": "intel-38562177045-1-fontforge",
+  "revision": 2,
+  "run_id": "38562177045",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
+      "name": "cairo",
+      "pkg_version": "1.18.6"
+    },
+    {
+      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "name": "fontconfig",
+      "pkg_version": "2.18.3"
+    },
+    {
+      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "name": "freetype",
+      "pkg_version": "2.14.3"
+    },
+    {
+      "formula_sha256": "a7a0f98a348293651e9dcd90b7a8ab80ef2ae93aae6fa8853b07d5e5002a8350",
+      "name": "fribidi",
+      "pkg_version": "1.0.17"
+    },
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
+      "name": "giflib",
+      "pkg_version": "6.1.3"
+    },
+    {
+      "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
+      "name": "glib",
+      "pkg_version": "2.90.1"
+    },
+    {
+      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
+      "name": "graphite2",
+      "pkg_version": "1.3.15"
+    },
+    {
+      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
+      "name": "harfbuzz",
+      "pkg_version": "14.6.0"
+    },
+    {
+      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
+      "name": "libdatrie",
+      "pkg_version": "0.2.14"
+    },
+    {
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
+      "name": "libpng",
+      "pkg_version": "1.6.59"
+    },
+    {
+      "formula_sha256": "1408a02dc37c8134671de76ccc59145320d5889c84e584941adbe42c5c1a8344",
+      "name": "libspiro",
+      "pkg_version": "20240903"
+    },
+    {
+      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "name": "libthai",
+      "pkg_version": "0.1.30"
+    },
+    {
+      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+      "name": "libtiff",
+      "pkg_version": "4.7.2"
+    },
+    {
+      "formula_sha256": "5513e09178e3dccafd9cbb3e24c1af5c4aee5d40769256a3963ef8b234c35a39",
+      "name": "libtool",
+      "pkg_version": "2.6.2"
+    },
+    {
+      "formula_sha256": "195980c63b6938ce86cbddc1a28677e662890670525d9dfd55cd7a60527d53be",
+      "name": "libuninameslist",
+      "pkg_version": "20260918"
+    },
+    {
+      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "name": "libunistring",
+      "pkg_version": "1.4.2"
+    },
+    {
+      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
+      "name": "libx11",
+      "pkg_version": "1.8.13"
+    },
+    {
+      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "name": "libxau",
+      "pkg_version": "1.0.12"
+    },
+    {
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
+      "name": "libxcb",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "name": "libxdmcp",
+      "pkg_version": "1.1.5"
+    },
+    {
+      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "name": "libxext",
+      "pkg_version": "1.3.7"
+    },
+    {
+      "formula_sha256": "96228e7db71fb1bfa9baaca00848653f4d807bfd98003f2a58094e981f3055c1",
+      "name": "libxrender",
+      "pkg_version": "0.9.12"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "name": "lzo",
+      "pkg_version": "2.10"
+    },
+    {
+      "formula_sha256": "4f77735ee9b10e73b569387e86f8c456c3d50d253d70325543dba1d6aba24675",
+      "name": "m4",
+      "pkg_version": "1.4.21"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    },
+    {
+      "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
+      "name": "pango",
+      "pkg_version": "1.58.2"
+    },
+    {
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
+      "name": "pcre2",
+      "pkg_version": "10.49"
+    },
+    {
+      "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
+      "name": "pixman",
+      "pkg_version": "0.46.4"
+    },
+    {
+      "formula_sha256": "c982fc23dc01373e23cb05620e63f78e88244c73690ef7db725e860f0e6bd5c9",
+      "name": "python@3.15",
+      "pkg_version": "3.15.0"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "name": "sqlite",
+      "pkg_version": "3.54.0"
+    },
+    {
+      "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
+      "name": "webp",
+      "pkg_version": "1.6.0"
+    },
+    {
+      "formula_sha256": "c523f3d6911f6fa7eecb4533a51ae4593aa4f726ae797cf28ebca7cd4b09252e",
+      "name": "woff2",
+      "pkg_version": "1.0.2"
+    },
+    {
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "name": "xorgproto",
+      "pkg_version": "2026.1"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "839aaafdf2502421ec9e122beb1f065019bff94f1c8462d6e7e0939aa344b8bd",
+  "size": 5858138,
+  "source": {
+    "filename": "fontforge--20251009_2.sources.tar.gz",
+    "sha256": "07b21af125150650509150bc4fee00c0de5b26159103954491ddf97724e816cd",
+    "size": 14132313
+  },
+  "tag": "sequoia",
+  "version": "20251009",
+  "version_scheme": 0,
+  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+}
