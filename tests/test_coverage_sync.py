@@ -6,6 +6,7 @@ import os
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from contextlib import redirect_stdout
 
 from helpers import meta
 from intelbrew.core import Error
@@ -173,7 +174,7 @@ class CoverageSyncTests(unittest.TestCase):
                                "disabled": False, "license": license}]).encode()
         return repository, calls, boundary, catalog
 
-    def test_reconcile_real_validation_merges_or_updates_and_disables_auto_merge(self):
+    def test_reconcile_real_validation_merges_or_waits_and_disables_auto_merge(self):
         for merge_state in ("CLEAN", "BEHIND"):
             with self.subTest(merge_state=merge_state):
                 repository, calls, boundary, catalog = self._reconcile_fixture(merge_state=merge_state)
@@ -187,20 +188,69 @@ class CoverageSyncTests(unittest.TestCase):
                     self.assertTrue(any(call[:3] == ["pr", "merge", "9"] and "--match-head-commit" in call for call in calls))
                     self.assertFalse(any("update-branch" in " ".join(call) for call in calls))
                 else:
-                    self.assertTrue(any("update-branch" in " ".join(call) and "expected_head_sha=" + "a" * 40 in call for call in calls))
+                    self.assertFalse(any("update-branch" in " ".join(call) for call in calls))
                     self.assertFalse(any("--match-head-commit" in call for call in calls))
 
-    def test_reconcile_updates_behind_pr_before_mutable_main_policy_validation(self):
+    def test_reconcile_waits_for_owner_before_mutable_main_policy_validation(self):
         repository, calls, boundary, catalog = self._reconcile_fixture(
             merge_state="BEHIND", auto_merge=False,
             base_formulae=["known", "other"], proposed_formulae=["good", "known"])
         with patch.dict(os.environ, {"INTELBREW_COVERAGE_LOGIN": "app/intelbrew"}), \
              patch("intelbrew.registry_pr.gh", side_effect=boundary), \
              patch("intelbrew.coverage_sync.gh", side_effect=boundary), \
-             patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)):
+             patch("intelbrew.coverage_sync.urllib.request.urlopen", return_value=io.BytesIO(catalog)), \
+             redirect_stdout(io.StringIO()) as output:
             reconcile(repository)
-        self.assertTrue(any("update-branch" in " ".join(call) and
-                            "expected_head_sha=" + "a" * 40 in call for call in calls))
+        self.assertIn("brew intel sync --apply", output.getvalue())
+        self.assertFalse(any("update-branch" in " ".join(call) for call in calls))
+
+    def test_owner_sync_refreshes_pending_pr_without_new_additions(self):
+        repository, calls, boundary, _ = self._reconcile_fixture(
+            merge_state="BEHIND", auto_merge=False)
+        def owner_boundary(args, **kwargs):
+            if args == ["api", "user"]: return json.dumps({"login": "adriank1410"})
+            value = boundary(args, **kwargs)
+            if args[:2] == ["pr", "list"]:
+                prs = json.loads(value); prs[0]["author"] = {"login": "adriank1410"}
+                return json.dumps(prs)
+            return value
+        with patch("intelbrew.registry_pr.gh", side_effect=owner_boundary), \
+             patch("intelbrew.coverage_sync.gh", side_effect=owner_boundary):
+            report = sync(self.config, apply=True, installed={"core": ["known"]},
+                          targets=["known"], inspect=lambda _: {})
+        self.assertEqual(report["eligible"], [])
+        self.assertEqual(report["added"], [])
+        self.assertEqual(report["pr_url"], f"https://github.com/{repository}/pull/9")
+        updates = [call for call in calls if "update-branch" in " ".join(call)]
+        self.assertEqual(len(updates), 1)
+        self.assertIn("expected_head_sha=" + "a" * 40, updates[0])
+
+    def test_owner_sync_without_additions_or_pending_pr_does_not_publish(self):
+        with patch("intelbrew.coverage_sync.gh_json", return_value={"login": "adriank1410"}), \
+             patch("intelbrew.coverage_sync._find_pr", return_value=None), \
+             patch("intelbrew.coverage_sync.gh") as gh_call:
+            report = sync(self.config, apply=True, installed={"core": ["known"]},
+                          targets=["known"], inspect=lambda _: {})
+        self.assertIsNone(report["pr_url"])
+        gh_call.assert_not_called()
+
+    def test_owner_refresh_rejects_extra_file_or_symlink_before_mutation(self):
+        for options, message in (({"second_file": True}, "exactly one file"), ({"mode": "120000"}, "100644")):
+            with self.subTest(options=options):
+                repository, calls, boundary, _ = self._reconcile_fixture(
+                    merge_state="BEHIND", auto_merge=False, **options)
+                def owner_boundary(args, **kwargs):
+                    if args == ["api", "user"]: return json.dumps({"login": "adriank1410"})
+                    value = boundary(args, **kwargs)
+                    if args[:2] == ["pr", "list"]:
+                        prs = json.loads(value); prs[0]["author"] = {"login": "adriank1410"}
+                        return json.dumps(prs)
+                    return value
+                with patch("intelbrew.registry_pr.gh", side_effect=owner_boundary), \
+                     patch("intelbrew.coverage_sync.gh", side_effect=owner_boundary), \
+                     self.assertRaisesRegex(Error, message):
+                    _publish(repository, ["known"], [])
+                self.assertFalse(any("update-branch" in " ".join(call) for call in calls))
 
     def test_reconcile_real_validation_rejects_second_file_and_symlink(self):
         for merge_state in ("CLEAN", "BEHIND"):
