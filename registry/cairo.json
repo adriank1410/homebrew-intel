@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
+  "core_commit": "f901d08921a15dabd97ef8061e77a9fd8a153cdb",
   "filename": "cairo--1.18.6.sequoia.bottle.tar.gz",
   "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
   "license": {
@@ -14,9 +14,9 @@
   "name": "cairo",
   "pkg_version": "1.18.6",
   "recipe_sha256": "9f872499482a41849cf1a706b7b1287e3f30242fbd5f95c17da74aac595ac725",
-  "release": "intel-38301819118-1-cairo",
+  "release": "intel-38628262816-1-cairo",
   "revision": 0,
-  "run_id": "38301819118",
+  "run_id": "38628262816",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -29,9 +29,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "584fac4abd90ebc63e06a42a83d55f4500e54ca947c9997c2656e77e52307d5a",
-  "size": 1648610,
+  "sha256": "60d14739608d4977b4dd8ad2e228210c967cf62b596803f72f9fcf617ce9b8c5",
+  "size": 1648635,
   "source": {
     "filename": "cairo--1.18.6.sources.tar.gz",
-    "sha256": "b1a3537d14d919dd5b428654fea626c67c05f6ec2287bc0d3057841e724fa691",
-    "size": 32764001
+    "sha256": "09a3eb8e3a77efa0680fcbd8169ce844a13c1666eb886f8b6074bf86e5aedb8e",
+    "size": 32764004
   },
   "tag": "sequoia",
   "version": "1.18.6",
   "version_scheme": 0,
-  "workflow_commit": "7ecdd5626cc3e97f0f3f6248bdc5ee3bae4724c9"
+  "workflow_commit": "4aecf9ca1135014217a3123418c503b03521ce0c"
 }
