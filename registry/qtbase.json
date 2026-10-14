@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb56e2b1f748e63d02be18a7660eec4e4cf32af1",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "070dc09fe139fb386686bcf4c130b9f7c62fa2b0",
+  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
   "filename": "qtbase--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtbase",
   "pkg_version": "6.12.0",
   "recipe_sha256": "dae28cdcb09e24e74b23278d6540324ceb84cd5c2ba5b2f58853142e74d891d1",
-  "release": "intel-38460648548-1-qtbase",
+  "release": "intel-38645252596-1-qtbase",
   "revision": 0,
-  "run_id": "38460648548",
+  "run_id": "38645252596",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -61,9 +61,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -192,15 +192,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ba69903860942fbc2dcceb5fb860a7dbd0aac2829b2af59eb956bcf725324305",
-  "size": 17636644,
+  "sha256": "a31e8cd496d00c84e87ee55057d19c38e49ed188a3741c3bb7b19fbef647d4e7",
+  "size": 17636738,
   "source": {
     "filename": "qtbase--6.12.0.sources.tar.gz",
-    "sha256": "468a840e46c27762c1c25e2217a38793a550ff16b5f56e4db62be8169ebeeda0",
-    "size": 51413851
+    "sha256": "cfc57d0e6bac3f0a5618802fe6b7b0e608649f97ae5299eb273a54ef76e97a62",
+    "size": 51413854
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "895ed8e2ac979a9a3ecd0d61c6b05167ea5b2dfe"
+  "workflow_commit": "c0da217920e1901707ea2962adb8f6554fc6359c"
 }
