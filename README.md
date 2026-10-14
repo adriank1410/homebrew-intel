@@ -71,6 +71,11 @@ coverage still stops the entire operation. Installation remains manual; no local
 background service is installed. `brew cleanup` is a separate user choice and
 can remove the old versions retained by this client.
 
+For individual missing-provider details, run
+`brew intel upgrade --available --json`. Diagnostics on stderr distinguish
+missing published records, version or scheme mismatches, changed recipes and
+runtime dependency drift; the available upgrade plan remains on stdout.
+
 Every repository bottle is checked before installation for its hash, formula and
 revision, recipe and dependency metadata, original core identity, and GitHub
 attestation. The source-build guard is process-local and fails closed if
@@ -116,6 +121,15 @@ head after protected checks pass. A later `brew update` brings the new list to t
 Mac. Repeated sync reuses the pending PR; uninstalling a formula does not remove
 it from monitoring. External-tap names, casks, local paths and full inventory
 snapshots are not uploaded. Package installation remains a separate command.
+
+The `Coverage` summary describes monitored installed formulae and eligible
+additions to the target list. Zero eligible additions does not mean that every
+monitored formula has a current bottle.
+
+Homebrew pin maintenance checks the engine and core commits together every
+three hours. It proposes a paired-pin PR, which merges only after native
+compatibility checks pass for that exact head. A merged pin update immediately
+requests a full bottle sweep; publication and dependency waves still take time.
 
 Set `INTELBREW_ENABLE_SCHEDULE=true` to enable hourly candidate checks and five-minute
 PR maintenance. Scheduled checks inspect uncertain candidates together on one
@@ -166,6 +180,9 @@ next scheduled run builds `qtbase` without a policy edit. See [build holds](docs
 
 All 36 modular Qt6 module formulas (such as `qtbase`, `qtdeclarative`,
 `qttools`, and `qtsvg`) have verified bottle records in the registry.
+Those records may describe older versions. When core updates Qt, modules are
+rebuilt in dependency waves; a record is usable only when the client's current
+formula and dependency checks accept it.
 
 To request one reviewed target, edit `policy/build-request.json` on `main` and
 increment `sequence`. See [Operations](docs/OPERATIONS.md) for the review and
