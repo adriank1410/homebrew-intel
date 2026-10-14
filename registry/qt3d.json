@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
-  "filename": "qt3d--6.11.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "7ad30055054d3a6cc955e7109e2762799e69d8037150f7bb971e7386da93ee36",
+  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
+  "filename": "qt3d--6.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "a99c03b9741d02fe94907373c0a93f454f89f5406691161426593f7e6d639bc7",
   "license": {
     "all_of": [
       {
@@ -19,11 +19,11 @@
     ]
   },
   "name": "qt3d",
-  "pkg_version": "6.11.2",
-  "recipe_sha256": "caee3e9f745169fb0266faa47db812324aee0e5f191337543c2d8583f1e05038",
-  "release": "intel-38342150686-1-qt3d",
+  "pkg_version": "6.12.0",
+  "recipe_sha256": "f7dd8519141c781b6241abcb4fc10b0fd0342453087ef1e2b68d8a78ec04ed81",
+  "release": "intel-38539139440-1-qt3d",
   "revision": 0,
-  "run_id": "38342150686",
+  "run_id": "38539139440",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -176,24 +176,24 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
+      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
       "name": "qtbase",
-      "pkg_version": "6.11.2_1"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "2f9fe816e3395954bfee008a2264febf22f19f06f66da69d8c00420140a8949b",
+      "formula_sha256": "fe2bbef21614a8ea86588bb2ff4685e3413ed64dd18f9cf78de60c342db0567f",
       "name": "qtdeclarative",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "cd7ef245de18cd6d506dbaadf541f6f8320771968f3f49d16bd742a815b3bee8",
+      "formula_sha256": "48634633b1867d8a749ddc9b03738050102167ecc0fda592bdba1319ffd5060e",
       "name": "qtshadertools",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "fe293ee50461aa75cde69e469530d85bd05b1e723f69a1a3dd58097d7d9de8a2",
+      "formula_sha256": "d456b5f595c21646eff6d1f3abfee8aa4fc35d141ab7fd7a6a6db281c9ea362f",
       "name": "qtsvg",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -212,15 +212,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7419957cbcdfe169bbca3b1639aff0317eb343bcdaf374956eea84685bb3f783",
-  "size": 3792448,
+  "sha256": "1dca8a63513cb0a1d56e9ca80236dd2f9770b3e3d63e660daa0e04a92bd25553",
+  "size": 3766574,
   "source": {
-    "filename": "qt3d--6.11.2.sources.tar.gz",
-    "sha256": "6312da41f44d0d99afe84c756ea1481488354c2bf856c95462b08f6bdb4ba598",
-    "size": 141961683
+    "filename": "qt3d--6.12.0.sources.tar.gz",
+    "sha256": "00410095e6a2cc2556a3660f068cd0a25c730fde446340d759d83204e3cc973c",
+    "size": 141960259
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "244d75969051e34ab29713f97866ce2e1215201f"
+  "workflow_commit": "b1ba109c2ef91cfc8a781d91530e50bc6d3bd63a"
 }
