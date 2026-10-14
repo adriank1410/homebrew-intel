@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
-  "filename": "qtspeech--6.11.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "7b46b5f8e8880379aac20aa2a9198955754afd9c82e6e901df4d85cae59e6323",
+  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "filename": "qtspeech--6.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "e8954b51e278db738930da67a78bb50b5b5b862e56e9e85f32985735de94f4ac",
   "license": {
     "all_of": [
       {
@@ -18,11 +18,11 @@
     ]
   },
   "name": "qtspeech",
-  "pkg_version": "6.11.2",
-  "recipe_sha256": "fbee10fae3f292646cdbbfd6086144dedf38b41ce95b4e61fa669001af229357",
-  "release": "intel-38363769384-1-qtspeech",
+  "pkg_version": "6.12.0",
+  "recipe_sha256": "190aab69b8e708bef1ad5bc47ca7d2d7aedd02bdc132a216274efadec7c467aa",
+  "release": "intel-38584198496-1-qtspeech",
   "revision": 0,
-  "run_id": "38363769384",
+  "run_id": "38584198496",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -175,39 +175,39 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
+      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
       "name": "qtbase",
-      "pkg_version": "6.11.2_1"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "2f9fe816e3395954bfee008a2264febf22f19f06f66da69d8c00420140a8949b",
+      "formula_sha256": "fe2bbef21614a8ea86588bb2ff4685e3413ed64dd18f9cf78de60c342db0567f",
       "name": "qtdeclarative",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "e53c07c9e083e2c7e7097cc796965af8381338b8afc5460a38921c69c44bf4e0",
+      "formula_sha256": "70c95d8ee3b2d8ec3c91ac64b50ecc749682599d8040e118965b09cd40764186",
       "name": "qtmultimedia",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "62d7cce3cdae2d96c2aa02ce0c8e83b60e1d12802416c769b213dc54884ec1e4",
+      "formula_sha256": "1f5bc347a985dba35923220add0ef41390e85843c105a3822a5e0caccc5b340b",
       "name": "qtquick3d",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "1cd1d454f8d71baeed6096c82003763c1d761b3c3fcea17e5ea54fa4d8474b10",
+      "formula_sha256": "0eec50a7437bc3921d8f821c05c0063343dc92b6d7371e3a0a6dabeb8742db5c",
       "name": "qtquicktimeline",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "cd7ef245de18cd6d506dbaadf541f6f8320771968f3f49d16bd742a815b3bee8",
+      "formula_sha256": "48634633b1867d8a749ddc9b03738050102167ecc0fda592bdba1319ffd5060e",
       "name": "qtshadertools",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "fe293ee50461aa75cde69e469530d85bd05b1e723f69a1a3dd58097d7d9de8a2",
+      "formula_sha256": "d456b5f595c21646eff6d1f3abfee8aa4fc35d141ab7fd7a6a6db281c9ea362f",
       "name": "qtsvg",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -226,15 +226,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fd19bfeaf7a87a1730e0450dfaa27cda57c90b96ad2162c2e94d7e985e86b922",
-  "size": 142279,
+  "sha256": "e91a735732f46c417a2b1871bf5413a1b3de9e8e90ee04aa720733e24c867bbd",
+  "size": 142725,
   "source": {
-    "filename": "qtspeech--6.11.2.sources.tar.gz",
-    "sha256": "5f3d5f4d71fd08909c63e11175821aee9aadb0f81fe1c396a88c04cd39fba324",
-    "size": 283217
+    "filename": "qtspeech--6.12.0.sources.tar.gz",
+    "sha256": "a80708d71540fc6077c89b0cce58751652a80f0f457c0f27093493fdef7c9d22",
+    "size": 288444
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "30c3bcd4d4963633af45534f5793afb2ac192ea7"
+  "workflow_commit": "d092353ecbe8368aebae8fdd005f43133242e579"
 }
