@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "eb56e2b1f748e63d02be18a7660eec4e4cf32af1",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
-  "filename": "qtbase--6.11.2_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
+  "core_commit": "070dc09fe139fb386686bcf4c130b9f7c62fa2b0",
+  "filename": "qtbase--6.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
   "license": {
     "all_of": [
       {
@@ -24,11 +24,11 @@
     ]
   },
   "name": "qtbase",
-  "pkg_version": "6.11.2_1",
-  "recipe_sha256": "b8794013d39768bd2b7f191861391b5cc44e18fccdbc7b96281cd12b3759c2e2",
-  "release": "intel-38318515246-1-qtbase",
-  "revision": 1,
-  "run_id": "38318515246",
+  "pkg_version": "6.12.0",
+  "recipe_sha256": "dae28cdcb09e24e74b23278d6540324ceb84cd5c2ba5b2f58853142e74d891d1",
+  "release": "intel-38460648548-1-qtbase",
+  "revision": 0,
+  "run_id": "38460648548",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -192,15 +192,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d1e2ec157d774955305a2332c3ed8f78afdcabd142b41373eac5e32ec6d667e6",
-  "size": 17262866,
+  "sha256": "ba69903860942fbc2dcceb5fb860a7dbd0aac2829b2af59eb956bcf725324305",
+  "size": 17636644,
   "source": {
-    "filename": "qtbase--6.11.2_1.sources.tar.gz",
-    "sha256": "687f8b33255a827fed84921a6b54f1fa10cf7f1096e75620306d59dc8c8aa15d",
-    "size": 50775532
+    "filename": "qtbase--6.12.0.sources.tar.gz",
+    "sha256": "468a840e46c27762c1c25e2217a38793a550ff16b5f56e4db62be8169ebeeda0",
+    "size": 51413851
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "ae0fc1322794e82e18f8c1b25ad2a56cc789c07a"
+  "workflow_commit": "895ed8e2ac979a9a3ecd0d61c6b05167ea5b2dfe"
 }
