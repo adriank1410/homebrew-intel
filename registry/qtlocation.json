@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
-  "filename": "qtlocation--6.11.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "4b2830b8537edf29f979782113bea02c10f0912f09e5e53b645a0c55631556ac",
+  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "filename": "qtlocation--6.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "0d551030d9727f393e0b7dd0abaddda16aea4137b5ef995f04c5ebd489fbb63b",
   "license": {
     "all_of": [
       {
@@ -18,11 +18,11 @@
     ]
   },
   "name": "qtlocation",
-  "pkg_version": "6.11.2",
-  "recipe_sha256": "93ff92ac1d6b1c3173a19176f9add684d784abf7af200fd746ce3fdd6d772949",
-  "release": "intel-38350885236-1-qtlocation",
+  "pkg_version": "6.12.0",
+  "recipe_sha256": "0676a8bbb2fe26a49f4444b87a981d1ed2bd520157d346dc3edf746ebdedd81b",
+  "release": "intel-38562177045-1-qtlocation",
   "revision": 0,
-  "run_id": "38350885236",
+  "run_id": "38562177045",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -170,29 +170,29 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
+      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
       "name": "qtbase",
-      "pkg_version": "6.11.2_1"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "2f9fe816e3395954bfee008a2264febf22f19f06f66da69d8c00420140a8949b",
+      "formula_sha256": "fe2bbef21614a8ea86588bb2ff4685e3413ed64dd18f9cf78de60c342db0567f",
       "name": "qtdeclarative",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "464798bf25d6ce150d561dbf915241900f3947977c9e634f9d4bdd9a0afd3b0a",
+      "formula_sha256": "ebcb6fc9de3c77d52fce8255f40d594cf4ff0eba72e62ed0b4829d64310e7cd9",
       "name": "qtpositioning",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "73036370393f34be1acf4a7ea5af94bc046f1ab12248171f82a3b5014f619581",
+      "formula_sha256": "e2f9bd17ed273b9091c8866da089d7a330f28896dad9141765fb982ccdf6fae9",
       "name": "qtserialport",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "fe293ee50461aa75cde69e469530d85bd05b1e723f69a1a3dd58097d7d9de8a2",
+      "formula_sha256": "d456b5f595c21646eff6d1f3abfee8aa4fc35d141ab7fd7a6a6db281c9ea362f",
       "name": "qtsvg",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -211,15 +211,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "bb3431d600ba81bfbb62ea5d08c4072e5f119ade3acadc9ffb89cff6ef4f4dda",
-  "size": 813771,
+  "sha256": "81c4e81e4d33c034eec9ad21f12d2a166b74aec3413fefb2c9d96f152e94de57",
+  "size": 822188,
   "source": {
-    "filename": "qtlocation--6.11.2.sources.tar.gz",
-    "sha256": "19712c2fac190980e67edca55f392911b177d6a573ac9caf73446cae2347d721",
-    "size": 3188612
+    "filename": "qtlocation--6.12.0.sources.tar.gz",
+    "sha256": "f23537152cbc106a6b6337e6c14224f11f2407a0fb0087b3e6fa2ad8afea6957",
+    "size": 3210609
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "7271e1f89a6a20c364e403f0d4f9558eea1b2f6c"
+  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
 }
