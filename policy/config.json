@@ -2,8 +2,8 @@
   "schema": 1,
   "repository": "adriank1410/homebrew-intel",
   "tap": "adriank1410/intel",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
   "max_graph_nodes": 400,
   "max_source_builds": 60,
   "runner": "macos-15-intel",
@@ -131,10 +131,10 @@
   ],
   "source_required_formula_exceptions": {
     "nmap": {
-      "formula_sha256": "54b920f77770308a11532d12645bd95151dc3e5bf873a52f47a89c137422890f",
+      "formula_sha256": "a89ce9706632ebd88561c8ec32da8ab561813deaf8e388fe13ba94dfb11c7c11",
       "license": "cannot_represent",
       "requirement": "Nmap-Public-Source-License",
-      "review": "Standalone Nmap 7.991 bottle; publish the exact upstream source, recipe, build inputs, license notices, and modification provenance together."
+      "review": "Standalone Nmap 7.991_1 bottle with OpenSSL 4; unchanged upstream source and NPSL 0.95 license, including OpenSSL linking permission. Publish the exact upstream source, recipe, build inputs, license notices, and modification provenance together."
     }
   },
   "redistribution_exceptions": {},

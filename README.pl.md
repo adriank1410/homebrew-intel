@@ -73,6 +73,12 @@ zatrzymuje całą operację. Instalację uruchamiasz ręcznie; projekt nie insta
 usługi działającej w tle na Macu. `brew cleanup` pozostaje osobnym krokiem
 użytkownika i może usunąć zachowane wcześniejsze wersje.
 
+Szczegóły brakujących dostawców butelek pokazuje
+`brew intel upgrade --available --json`. Diagnostyka na stderr rozróżnia brak
+opublikowanego wpisu, niezgodną wersję lub schemat wersji, zmienioną recepturę
+oraz zmiany zależności uruchomieniowych. Plan dostępnych aktualizacji pozostaje
+na stdout.
+
 Przed instalacją klient sprawdza sumę kontrolną, wersję i treść formuły,
 zależności, pochodzenie z `homebrew/core` oraz poświadczenie GitHub.
 Ochrona działająca w procesie instalatora zatrzymuje próbę kompilacji;
@@ -119,6 +125,16 @@ Powtórzenie sync wykorzystuje oczekujący PR. Odinstalowanie pakietu nie usuwa 
 z monitorowania. Nazwy obcych tapów, caski, lokalne ścieżki i pełny eksport
 inwentarza nie są wysyłane. Instalacja pakietów pozostaje osobną komendą.
 
+Podsumowanie `Coverage` opisuje monitorowane zainstalowane formuły i możliwe
+dodatki do listy celów. Zero nowych dodatków nie oznacza, że wszystkie
+monitorowane formuły mają butelkę dla bieżącej wersji.
+
+Automat sprawdza przypięte commity silnika Homebrew i core razem co trzy
+godziny. Zgłasza PR aktualizujący oba piny; merge następuje dopiero po natywnych
+testach zgodności dokładnie tego commita. Po scaleniu aktualizacji pinów od razu
+zlecany jest pełny przebieg budowania. Publikacja i kolejne fale zależności nadal
+wymagają czasu.
+
 Zmienna Actions `INTELBREW_ENABLE_SCHEDULE=true` włącza cogodzinne sprawdzanie
 kandydatów i obsługę PR-ów co pięć minut. Niepewni kandydaci są sprawdzani wspólnie
 na jednym runnerze Intel. Najpierw budowane są wspólne brakujące zależności.
@@ -144,8 +160,11 @@ LLVM używane tylko jako kompilator, gdy żadna formuła budowana ze źródeł n
 potrzebuje go przy uruchomieniu ani w teście formuły, powstaje ze źródeł i nie
 wchodzi do zestawu kandydatów.
 Przepis Homebrew pomija wtedy bootstrap profilowany oraz zestaw `check-clang` /
-`check-llvm`. Publikacja samego `llvm` pozostaje wstrzymana: ta butelka nie
-mieści się w sześciogodzinnym limicie runnera. Harmonogram pomija pakiet, który
+`check-llvm`. Butelka samego `llvm` korzysta z jawnie zatwierdzonego wariantu
+receptury `llvm-no-pgo`, zachowującego recepturę upstream, wykonaną recepturę
+oraz standardową niezależną weryfikację; zobacz
+[wstrzymania budowania](docs/BUILD-HOLDS.md). Niezmieniony build z PGO przekracza
+sześciogodzinny limit runnera. Harmonogram pomija pakiet, który
 buduje to LLVM ze źródeł i jednocześnie buduje ze źródeł formułę, która
 potrzebuje go w czasie działania, na przykład `rust` albo `lld`. Taki zestaw
 nie mieści się w limicie sześciu godzin. Pasująca butelka LLVM przywraca pakiet
@@ -168,6 +187,9 @@ z tych plików, następny cron buduje `qtbase` bez edycji polityki. Szczegóły:
 
 Wszystkie 36 modułowych pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`,
 `qttools` i `qtsvg`) mają w rejestrze zweryfikowane butelki.
+Wpisy mogą jednak dotyczyć starszych wersji. Po aktualizacji Qt w core moduły są
+przebudowywane falami zależności. Wpis nadaje się do użycia dopiero wtedy, gdy
+zaakceptują go kontrole bieżącej formuły i zależności po stronie klienta.
 
 Aby zlecić build jednego pakietu z listy celów, zmień `policy/build-request.json` na
 `main` i zwiększ `sequence`. Procedurę przeglądu i odzyskiwania po błędach
