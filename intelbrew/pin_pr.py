@@ -72,7 +72,8 @@ def _require_owned(pr: dict[str, Any], repository: str) -> None:
         raise Error("Pin PR has no number")
 
 
-def _require_pin_files(repository: str, pr: dict[str, Any]) -> None:
+def _require_pin_files(repository: str, pr: dict[str, Any]) -> bool:
+    """Return False when the pin PR has no changes left (pins already on main)."""
     payload = gh_json(["api", "--paginate", "--slurp",
                        f"repos/{repository}/pulls/{pr['number']}/files"])
     if not isinstance(payload, list):
@@ -82,12 +83,15 @@ def _require_pin_files(repository: str, pr: dict[str, Any]) -> None:
         if not isinstance(page, list):
             raise Error("GitHub returned an invalid pin file page")
         files.extend(page)
+    if not files:
+        return False
     item = files[0] if len(files) == 1 and isinstance(files[0], dict) else None
     path = item.get("filename", item.get("path")) if item else None
     status = str(item.get("status", "")).lower() if item else ""
     if (item is None or path != PIN_PATH or status != "modified" or
             item.get("previous_filename")):
         raise Error("Homebrew pin PR changes a file outside policy/config.json")
+    return True
 
 
 def _strict_json_equal(left: Any, right: Any) -> bool:
@@ -155,7 +159,11 @@ def reconcile_pin(repository: str) -> str:
         if pr is None:
             raise Error("Pin PR disappeared after disabling auto-merge")
         _require_owned(pr, repository)
-    _require_pin_files(repository, pr)
+    if not _require_pin_files(repository, pr):
+        # The pins already landed on main; an empty PR can never be merged.
+        gh(["pr", "close", str(pr["number"]), "--repo", repository, "--comment",
+            "Closing: the Homebrew pins in this PR are already on main."], capture=False)
+        return "closed-empty"
     number, head = pr["number"], pr["headRefOid"]
     state = pr.get("mergeStateStatus")
     if state == "BEHIND":
