@@ -106,7 +106,7 @@ def _publish(repository: str, targets: list[str], additions: list[str]) -> str |
             if existing.get("mergeStateStatus") == "BEHIND":
                 head = _validate_pr_boundary(repository, existing, login=expected_owner)
                 gh(["api", "--method", "PUT", f"repos/{repository}/pulls/{existing['number']}/update-branch",
-                    "-f", f"expected_head_sha={head}"], capture=False)
+                    "-f", f"expected_head_sha={head}"])
             return f"https://github.com/{repository}/pull/{existing['number']}"
     elif set(desired) == set(targets):
         return None

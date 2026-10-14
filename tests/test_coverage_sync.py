@@ -209,15 +209,20 @@ class CoverageSyncTests(unittest.TestCase):
             merge_state="BEHIND", auto_merge=False)
         def owner_boundary(args, **kwargs):
             if args == ["api", "user"]: return json.dumps({"login": "adriank1410"})
+            if "update-branch" in " ".join(args) and not kwargs.get("capture", True):
+                print('{"message":"Updating pull request branch."}')
             value = boundary(args, **kwargs)
             if args[:2] == ["pr", "list"]:
                 prs = json.loads(value); prs[0]["author"] = {"login": "adriank1410"}
                 return json.dumps(prs)
             return value
         with patch("intelbrew.registry_pr.gh", side_effect=owner_boundary), \
-             patch("intelbrew.coverage_sync.gh", side_effect=owner_boundary):
+             patch("intelbrew.coverage_sync.gh", side_effect=owner_boundary), \
+             redirect_stdout(io.StringIO()) as output:
             report = sync(self.config, apply=True, installed={"core": ["known"]},
                           targets=["known"], inspect=lambda _: {})
+            print(json.dumps(report))
+        self.assertEqual(json.loads(output.getvalue()), report)
         self.assertEqual(report["eligible"], [])
         self.assertEqual(report["added"], [])
         self.assertEqual(report["pr_url"], f"https://github.com/{repository}/pull/9")
