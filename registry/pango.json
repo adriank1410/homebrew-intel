@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
+  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-38318515246-1-pango",
+  "release": "intel-38645252596-1-pango",
   "revision": 0,
-  "run_id": "38318515246",
+  "run_id": "38645252596",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -29,9 +29,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "a7a0f98a348293651e9dcd90b7a8ab80ef2ae93aae6fa8853b07d5e5002a8350",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "03c3d956b9d95aed43f807931a2f666fb249d8f8446c6d5bab12c41a1f132322",
-  "size": 882833,
+  "sha256": "c2c7e4e33a35941753ce35d4f32a09906b314832b832b223380c8a9701a73d97",
+  "size": 882805,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "07d78550ad9f7d3c9961897b54fd8333a3eaba6a5a0f078de3f06eae7719ec51",
-    "size": 1932736
+    "sha256": "b31a5748ead63779e18680cb9b489be5762f881ead252ba3d61176a3049305bd",
+    "size": 1932735
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "ae0fc1322794e82e18f8c1b25ad2a56cc789c07a"
+  "workflow_commit": "c0da217920e1901707ea2962adb8f6554fc6359c"
 }
