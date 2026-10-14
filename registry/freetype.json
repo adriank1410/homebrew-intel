@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cdc1ca503231b9a96da64526774915d913c3ec9f",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "3580efd52d92c2e3c3da5b9c79553f6e88002426",
-  "filename": "freetype--2.14.3.sequoia.bottle.tar.gz",
-  "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+  "core_commit": "f901d08921a15dabd97ef8061e77a9fd8a153cdb",
+  "filename": "freetype--2.15.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
   "license": "FTL",
   "name": "freetype",
-  "pkg_version": "2.14.3",
-  "recipe_sha256": "1c447ca7ef33af193018928324dfc6d021644c03ad8966e2170d9187d4e3021c",
-  "release": "intel-37801821611-1-freetype",
+  "pkg_version": "2.15.0",
+  "recipe_sha256": "996aaa19623ee3f24f686922b0ca977fff33c9c2cf39f68ef688b7f9a338bb12",
+  "release": "intel-38622924725-1-freetype",
   "revision": 0,
-  "run_id": "37801821611",
+  "run_id": "38622924725",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7197bbd8da8eb332cfd6e07c6060a0bf8b94705f470dd0f212ab50384fbb167d",
-  "size": 1055301,
+  "sha256": "8e10ec88e4ac03804e12f1c10f3fea56206c3d82d3a51f3be92fb8e5633383cb",
+  "size": 1111518,
   "source": {
-    "filename": "freetype--2.14.3.sources.tar.gz",
-    "sha256": "8bca89eb217d1c98eed93b75110e697cc18062b96875e4f9f01e92c8d38b3dc8",
-    "size": 2676131
+    "filename": "freetype--2.15.0.sources.tar.gz",
+    "sha256": "11e2288fd91afd886786008cd0222a0761c322d1a073b81c681cfc64603f6633",
+    "size": 2723109
   },
   "tag": "sequoia",
-  "version": "2.14.3",
+  "version": "2.15.0",
   "version_scheme": 0,
-  "workflow_commit": "b3a6562ca83bc097c51b7187c5a86f01f3fdcb40"
+  "workflow_commit": "1ee0a49d92c2dd27727e0b85067f46eb4f61704e"
 }
