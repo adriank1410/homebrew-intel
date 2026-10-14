@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ddc6726c17186ec5c48041817f29e11454d22220",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "3ebddf0aedd662b65e6ee98a8e18577ae2f44c4d",
-  "filename": "simdutf--9.2.1_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "eb439c9bfa698aefd284040dc2c4b6d7ebc167dd5bfd40fd28adcb321a602cf1",
+  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
+  "filename": "simdutf--9.3.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "6e7695b4efb21c4c0ef8d9f334f7aad06ceb459396794b3a5d7d5f9bf978571d",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "simdutf",
-  "pkg_version": "9.2.1_1",
-  "recipe_sha256": "27289a5bb96539138f17978cae42aef6b7c88b1228c410e30c328ab6908ab671",
-  "release": "intel-36142899548-1-simdutf",
-  "revision": 1,
-  "run_id": "36142899548",
+  "pkg_version": "9.3.0",
+  "recipe_sha256": "6a0bb262db472701fd0314ea9f39cbc2da94edda25a96af5dcff9bdef7b12bc9",
+  "release": "intel-38645252596-1-simdutf",
+  "revision": 0,
+  "run_id": "38645252596",
   "runtime_dependencies": [
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c92e0ba634f706c64cfb33e2c2504ad1db02548ec12331daeeaca0c96b800bbb",
-  "size": 595059,
+  "sha256": "d909a21ada903da55c3cc4869f8024cf4c78150cb5c1ea3b5348c4bade6a3357",
+  "size": 616374,
   "source": {
-    "filename": "simdutf--9.2.1_1.sources.tar.gz",
-    "sha256": "fdf2bfe34a3802a46fea1b2a6417f971e9656b7b82c1372979a3f3985d946a60",
-    "size": 3492358
+    "filename": "simdutf--9.3.0.sources.tar.gz",
+    "sha256": "7d8867d4a510e3455f49327ac6657a2e7e4c6ea6749dd7f457cf624bb7f5f95f",
+    "size": 3519473
   },
   "tag": "sequoia",
-  "version": "9.2.1",
+  "version": "9.3.0",
   "version_scheme": 0,
-  "workflow_commit": "0e893bc5cce0a859d18501efb399813b16dd81e3"
+  "workflow_commit": "c0da217920e1901707ea2962adb8f6554fc6359c"
 }
