@@ -93,7 +93,6 @@ def _merge_targets(targets: list[str], additions: list[str]) -> list[str]:
 
 def _publish(repository: str, targets: list[str], additions: list[str]) -> str | None:
     desired = _merge_targets(targets, additions)
-    if desired == targets or set(desired) == set(targets): return None
     identity = gh_json(["api", "user"])
     expected_owner = repository.partition("/")[0]
     if not isinstance(identity, dict) or identity.get("login") != expected_owner:
@@ -104,7 +103,13 @@ def _publish(repository: str, targets: list[str], additions: list[str]) -> str |
             raise Error("Existing coverage PR is outside the repository-owner boundary")
         current = _content(repository, "policy/targets.json", existing["headRefOid"])["formulae"]
         if set(additions) <= set(current):
+            if existing.get("mergeStateStatus") == "BEHIND":
+                head = _validate_pr_boundary(repository, existing, login=expected_owner)
+                gh(["api", "--method", "PUT", f"repos/{repository}/pulls/{existing['number']}/update-branch",
+                    "-f", f"expected_head_sha={head}"])
             return f"https://github.com/{repository}/pull/{existing['number']}"
+    elif set(desired) == set(targets):
+        return None
     with tempfile.TemporaryDirectory(prefix="intelbrew-coverage-") as raw:
         directory = Path(raw) / "repo"
         gh(["repo", "clone", repository, str(directory), "--", "--filter=blob:none"])
@@ -161,7 +166,7 @@ def sync(config: dict[str, Any] | None = None, *, apply: bool = False, installed
     installed = installed if installed is not None else native({"mode": "coverage"})
     inspect = inspect or (lambda batch: native({"mode": "inspect", "names": batch}))
     report = coverage_report(installed, targets, config, inspect)
-    pr_url = _publish(config["repository"], targets, report["eligible"]) if apply and report["eligible"] else None
+    pr_url = _publish(config["repository"], targets, report["eligible"]) if apply else None
     report["added"] = list(report["eligible"]) if pr_url else []
     report["pr_url"] = pr_url
     return report
@@ -248,8 +253,9 @@ def _official_metadata() -> dict[str, dict[str, Any]]:
     return result
 
 
-def _validate_pr_boundary(repository: str, pr: dict[str, Any]) -> str:
-    if not _allowed_pr(repository, pr): raise Error("Refusing coverage PR outside its exact owner and branch boundary")
+def _validate_pr_boundary(repository: str, pr: dict[str, Any], *, login: str | None = None) -> str:
+    allowed = _allowed_pr(repository, pr) if login is None else _owned_pr(repository, pr, login)
+    if not allowed: raise Error("Refusing coverage PR outside its exact owner and branch boundary")
     number = pr.get("number")
     if not isinstance(number, int): raise Error("Coverage PR has invalid number")
     files = _pr_files(repository, number)
@@ -285,8 +291,7 @@ def reconcile(repository: str) -> None:
     pr = _disable_existing_auto_merge(repository, pr)
     if pr.get("mergeStateStatus") == "BEHIND":
         _validate_pr_boundary(repository, pr)
-        gh(["api", "--method", "PUT", f"repos/{repository}/pulls/{pr['number']}/update-branch",
-            "-f", f"expected_head_sha={pr['headRefOid']}"], capture=False)
+        print("Coverage PR is behind main; waiting for the owner to run brew intel sync --apply.")
         return
     validate_pr(repository, pr)
     if pr.get("mergeStateStatus") == "DIRTY": raise Error("Coverage PR has conflicts")
