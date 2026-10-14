@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
   "cellar": "any",
-  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
   "filename": "chafa--1.18.3.sequoia.bottle.tar.gz",
   "formula_sha256": "a173a268b7b733709b2762159b39b883c24a0c54fd3be25b428e1bf0ccdf51ac",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3",
   "recipe_sha256": "fe13cfa93b13dc6a5ecdcc102064c27440e8c1ba048471fcc53eb17eec4db978",
-  "release": "intel-37171580714-1-chafa",
+  "release": "intel-38539139440-1-chafa",
   "revision": 0,
-  "run_id": "37171580714",
+  "run_id": "38539139440",
   "runtime_dependencies": [
     {
-      "formula_sha256": "7d315c303e7e42571200c5b948c5872c9668a835b337df38ec8582b373ea34c7",
+      "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
       "name": "aom",
-      "pkg_version": "3.15.1"
+      "pkg_version": "3.15.2"
     },
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -29,7 +29,7 @@
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "6c96636f03986330f28ae4760357515cf27503b310e57d387d24c96ed2eee3c0",
+      "formula_sha256": "ceaebbf22c54822f9e1ff2d4fa6a5c26f3556dc6f5005ab77a335dfc185cbae6",
       "name": "dav1d",
       "pkg_version": "1.5.4"
     },
@@ -39,7 +39,7 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "8d37fea6100c7db4fba0d943353948b98042cf26c07cbebf2d88cd2cc8c78c11",
+      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
       "name": "freetype",
       "pkg_version": "2.14.3"
     },
@@ -64,19 +64,19 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "7e41107faf209528d2e993afec53ad1006bbe8945772bde43c2295e8a2ef7659",
+      "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
       "name": "glib",
-      "pkg_version": "2.90.0"
+      "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "27b88654eaa68701681d02c19abcb800b54b9cfd14fa4d084df113c133b552d4",
+      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
       "name": "graphite2",
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "9c67597f69970bdc1ca5e4f6d9d23c207dae365ac7ee40f62183372c28c32128",
+      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
       "name": "harfbuzz",
-      "pkg_version": "14.5.1"
+      "pkg_version": "14.6.0"
     },
     {
       "formula_sha256": "4cd06ebd5130b5983d8106f0d51ce97316d8e19dd20cdfd9cf7910932e8ed8d9",
@@ -164,7 +164,7 @@
       "pkg_version": "1.0.12"
     },
     {
-      "formula_sha256": "52e8716fe215c71e08b0c8be7ef5f91b04c043543ef4b4f996c87bffe15e24b3",
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
       "name": "libxcb",
       "pkg_version": "1.17.0"
     },
@@ -199,12 +199,12 @@
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "abb57aab8cb9a43c9483e552088185d1ec574071a950092182e3d861bb56dfa9",
+      "formula_sha256": "58e89ba09d29081bfd738d746eb99ce49b5a88c6406254c5f76b833cd7cf5a5a",
       "name": "openexr",
       "pkg_version": "3.5.2"
     },
     {
-      "formula_sha256": "88a46493db4f820fb8415ec10ef5731795415a4ab806273e5e11a8611e01b8a6",
+      "formula_sha256": "31f6a548ac1d3bf9104557ad64bfe1f45749a7fb26421d8ee4830e1b4560121c",
       "name": "openjph",
       "pkg_version": "0.32.0"
     },
@@ -229,9 +229,9 @@
       "pkg_version": "1.6.0"
     },
     {
-      "formula_sha256": "fe301c35944b4b7ef811ae18f410a62152ea2e90d6c2192467dbf560f5070e5c",
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
       "name": "xorgproto",
-      "pkg_version": "2025.1"
+      "pkg_version": "2026.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c4425f6cb10502ab28c624847c09034c30ccd63d2ec7836096e101ad60ce2336",
-  "size": 535043,
+  "sha256": "cd2d38116d061fa9dcc86e1e51a92f63ec8cbc4335a0c85a2bb841eb9e5f10d5",
+  "size": 535041,
   "source": {
     "filename": "chafa--1.18.3.sources.tar.gz",
-    "sha256": "c7f7fbd35ab44c7a0bde2aca05b0fa094f79109d912569ce16c80255438b0928",
+    "sha256": "eccec9eb78dd8571a0fcb1f68387ddbac649ba89776a3656ad01e5f0e3029af5",
     "size": 1091654
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "dcc43438f618f2474a7cf2bf29cf79f0cfadabce"
+  "workflow_commit": "b1ba109c2ef91cfc8a781d91530e50bc6d3bd63a"
 }
