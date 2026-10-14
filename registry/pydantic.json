@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
   "cellar": "any",
-  "core_commit": "6aebc9ae3f5571538928122455275355ae359ef1",
-  "filename": "pydantic--2.13.5.sequoia.bottle.tar.gz",
-  "formula_sha256": "78b3164fbc745cfceb19330c2140b80243709c27b063a383d5cfbc6d7ad60097",
+  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
+  "filename": "pydantic--2.14.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "2043d83738cd119ba6e4f704b1dc84fcdf1fde14219892e86c3346db3faf2f8c",
   "license": "MIT",
   "name": "pydantic",
-  "pkg_version": "2.13.5",
-  "recipe_sha256": "3f3b8dcce2e7b11dfc12bbc5724c57e4fcbd25f8029bc5154cc94bb67c0bdf27",
-  "release": "intel-34707292687-1-pydantic",
+  "pkg_version": "2.14.1",
+  "recipe_sha256": "11b573cf9b66fc1eb67d72e90afdadd238431ffaa2a69543869a0d5cb48fdd0d",
+  "release": "intel-38539139440-1-pydantic",
   "revision": 0,
-  "run_id": "34707292687",
+  "run_id": "38539139440",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "8c66bc6cb8d1f647f58030823fc68feb55c1166d9785d31b3731d197c8193e6b",
-  "size": 4975716,
+  "sha256": "d613778dd36311f53893edd4a36ce3e2e336521b6db4e6ffcd75531efb5b8dfc",
+  "size": 5299456,
   "source": {
-    "filename": "pydantic--2.13.5.sources.tar.gz",
-    "sha256": "43b0f4861a3e4f405742a98429e4cdbec5bce8ac8ae697b0a009e45228ad8ac3",
-    "size": 82290242
+    "filename": "pydantic--2.14.1.sources.tar.gz",
+    "sha256": "18086e92333173eb1256e06e6ffd4cfb9dd788b0b3590eba22ad28674a781fa7",
+    "size": 83105811
   },
   "tag": "sequoia",
-  "version": "2.13.5",
+  "version": "2.14.1",
   "version_scheme": 1,
-  "workflow_commit": "b6546f2f3b62feb80d19843c9dd2a6adb5f48cf1"
+  "workflow_commit": "b1ba109c2ef91cfc8a781d91530e50bc6d3bd63a"
 }
