@@ -1,0 +1,89 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "cellar": "any_skip_relocation",
+  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "filename": "ykman--5.9.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "2655c78d83cbe1e8697c24c02c945406bf30db46460cb93e2793c45cc0dfe722",
+  "license": "BSD-2-Clause",
+  "name": "ykman",
+  "pkg_version": "5.9.2",
+  "recipe_sha256": "59f3abd0fd7f9139563cdf1e261db7f3a9b3a2e51a0ff22a2f7c50b0401e7e3d",
+  "release": "intel-38562177045-1-ykman",
+  "revision": 0,
+  "run_id": "38562177045",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
+      "name": "cffi",
+      "pkg_version": "2.1.1_1"
+    },
+    {
+      "formula_sha256": "598e810dcea0f60929c2237ad0b84805bdcfb5d4cca756a2e88ea9eef1ca5366",
+      "name": "cryptography",
+      "pkg_version": "50.0.2_2"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    },
+    {
+      "formula_sha256": "d6dc99b2b9705e667951d0667a2aa45f33bccd9d9b00424ef14b26d4b0a93794",
+      "name": "pycparser",
+      "pkg_version": "3.11"
+    },
+    {
+      "formula_sha256": "c982fc23dc01373e23cb05620e63f78e88244c73690ef7db725e860f0e6bd5c9",
+      "name": "python@3.15",
+      "pkg_version": "3.15.0"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "name": "sqlite",
+      "pkg_version": "3.54.0"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "29a71997faf518b02faf4693029b853354a449068a446aa3ed484f3a2a73f586",
+  "size": 974469,
+  "source": {
+    "filename": "ykman--5.9.2.sources.tar.gz",
+    "sha256": "2eb9b5ef1e35e49243bd44b1967d258feeca6fded8dba07de41e599d730f4d68",
+    "size": 2060347
+  },
+  "tag": "sequoia",
+  "version": "5.9.2",
+  "version_scheme": 0,
+  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+}

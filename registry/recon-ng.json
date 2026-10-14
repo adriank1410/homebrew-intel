@@ -1,0 +1,89 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "cellar": "any",
+  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "filename": "recon-ng--5.1.2_4.sequoia.bottle.tar.gz",
+  "formula_sha256": "b55870247be2bc86cff7aa424fa7c677f86acf5ac53ae33337005cf94b902146",
+  "license": "GPL-3.0-only",
+  "name": "recon-ng",
+  "pkg_version": "5.1.2_4",
+  "recipe_sha256": "7a89ba397c23d5dc2b446539124580aba5804ac5d76a24f012b77c8fb734ed49",
+  "release": "intel-38562177045-1-recon-ng",
+  "revision": 4,
+  "run_id": "38562177045",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "9950faee71707c63ade094ab06424c159baa0f4e33df2596bf8ef52d72806079",
+      "name": "certifi",
+      "pkg_version": "2026.7.22_1"
+    },
+    {
+      "formula_sha256": "dfad02f7f8f65dff0f00fee6ca2d99b59309ad8c7bc6f2148ae60788f2bf8a79",
+      "name": "libyaml",
+      "pkg_version": "0.2.5"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    },
+    {
+      "formula_sha256": "c982fc23dc01373e23cb05620e63f78e88244c73690ef7db725e860f0e6bd5c9",
+      "name": "python@3.15",
+      "pkg_version": "3.15.0"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "d9b503309069aba4e2f696dc0cb3e7d94385f35ca1bc4eeb6ccd7084122646ae",
+      "name": "rpds-py",
+      "pkg_version": "2026.9.1_1"
+    },
+    {
+      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "name": "sqlite",
+      "pkg_version": "3.54.0"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "6d376676c654bb6421680093dc33433fc1578337554a98a7246d0c16b8082f00",
+  "size": 8729561,
+  "source": {
+    "filename": "recon-ng--5.1.2_4.sources.tar.gz",
+    "sha256": "0dab1af9f6077b430e778ef953d8753b694960a95bc33be27fa96897e1df4687",
+    "size": 129083475
+  },
+  "tag": "sequoia",
+  "version": "5.1.2",
+  "version_scheme": 0,
+  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+}
