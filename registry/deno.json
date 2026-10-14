@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
   "cellar": "any",
-  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
   "filename": "deno--2.9.7.sequoia.bottle.tar.gz",
   "formula_sha256": "5a154a1bcb4b2d16fac4d15bb31f4bc31d056461698bfc06a3a1244a8face9b1",
   "license": "MIT",
   "name": "deno",
   "pkg_version": "2.9.7",
   "recipe_sha256": "ec49bf1469c63bc2e104238d10ae879a7499ea1d64861ae7ae9d44f260a98255",
-  "release": "intel-37149763110-1-deno",
+  "release": "intel-38513515528-1-deno",
   "revision": 0,
-  "run_id": "37149763110",
+  "run_id": "38513515528",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -49,9 +49,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "72beb735cdbdbe21ff6134ac65df742c4b4c31a3511a88d979917ce37579c67a",
+      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
       "name": "sqlite",
-      "pkg_version": "3.53.4"
+      "pkg_version": "3.54.0"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a13fead338307d1513cf298d6af6d968b87fea5a5225a2fcf0d718e98ba0a4e7",
-  "size": 47408067,
+  "sha256": "419ebb840daafae97d4dcc3c8a7b4b254d60b324d3c93b640d14eada882b5dc4",
+  "size": 47397199,
   "source": {
     "filename": "deno--2.9.7.sources.tar.gz",
-    "sha256": "c2b6e691643f14e623aab089af8523794e2f0f137de7a4d658872a4e35058a0a",
-    "size": 175744368
+    "sha256": "cfff8eceb8bf11c79affa332e5afd539108b2d0e48a68ca21d241ffffff1e849",
+    "size": 175753090
   },
   "tag": "sequoia",
   "version": "2.9.7",
   "version_scheme": 0,
-  "workflow_commit": "720f0b440c2c8f61b34e337d1d27fc0193d2a73f"
+  "workflow_commit": "8870643a4a082b95ed32bd4c88d893d28dff28d5"
 }
