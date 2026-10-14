@@ -333,6 +333,18 @@ class PinPullRequestTests(unittest.TestCase):
         self.assertEqual(outcome, "absent")
         self.assertEqual(len(calls), 1)
 
+    def test_closes_an_empty_pin_pr_instead_of_failing(self):
+        outcome, calls = self._run([
+            json.dumps([pin_pr(mergeStateStatus="BEHIND")]),
+            json.dumps([[]]),
+            "",
+        ])
+
+        self.assertEqual(outcome, "closed-empty")
+        self.assertEqual(calls[-1][:2], ["pr", "close"])
+        self.assertFalse(any(call[:2] == ["pr", "merge"] for call in calls))
+        self.assertFalse(any("update-branch" in " ".join(call) for call in calls))
+
     def test_refuses_a_change_outside_the_pin_file(self):
         with self.assertRaisesRegex(Error, "outside policy/config.json"):
             self._run([
