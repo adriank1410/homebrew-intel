@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
   "cellar": "any_skip_relocation",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
-  "filename": "qtlanguageserver--6.11.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "8216beb228797b86a62804f5e2fb9f375b9628e4a6cfa5ec621ba1eca06542e2",
+  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "filename": "qtlanguageserver--6.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "ddd0eb02b5b37eecde2d7b6cf3327d753c4f63afdc6eb0b174da4d30483559f4",
   "license": {
     "all_of": [
       {
@@ -18,11 +18,11 @@
     ]
   },
   "name": "qtlanguageserver",
-  "pkg_version": "6.11.2",
-  "recipe_sha256": "697c3d92025bd9666fb949026b12d943f9619e9eca095bd88cda8178838e742d",
-  "release": "intel-38323682930-1-qtlanguageserver",
+  "pkg_version": "6.12.0",
+  "recipe_sha256": "5cca1022a01f8bed3f2d90f33f07769c32eb09c3685e9e881a7ce04a0f698a72",
+  "release": "intel-38497611195-1-qtlanguageserver",
   "revision": 0,
-  "run_id": "38323682930",
+  "run_id": "38497611195",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -170,9 +170,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
+      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
       "name": "qtbase",
-      "pkg_version": "6.11.2_1"
+      "pkg_version": "6.12.0"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "198fdf3bcb0bb6e70820aeca0a458fd7f0faf394ecf403ada42169e9f92c59fa",
-  "size": 676832,
+  "sha256": "a9972a5a421404ba4a7c1338edbbbfae87eac1982cd4d683bad86e9598b6321f",
+  "size": 890633,
   "source": {
-    "filename": "qtlanguageserver--6.11.2.sources.tar.gz",
-    "sha256": "dbe185b85ff32f4ab3365e1351a43dcad6759f8de3af7db72e6f700bf78304dd",
-    "size": 176531
+    "filename": "qtlanguageserver--6.12.0.sources.tar.gz",
+    "sha256": "a0cab5105fb04629cb35f84bb325a4df7df014f9e7549149fd90e3216dd448de",
+    "size": 174481
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "517816aae16523ce271b1a9070015a96efd4b5e4"
+  "workflow_commit": "bc95cb714d9896e21eaf92fdf0143a5cb95da669"
 }
