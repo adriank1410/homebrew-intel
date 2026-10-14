@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
-  "filename": "qtshadertools--6.11.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "cd7ef245de18cd6d506dbaadf541f6f8320771968f3f49d16bd742a815b3bee8",
+  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "filename": "qtshadertools--6.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "48634633b1867d8a749ddc9b03738050102167ecc0fda592bdba1319ffd5060e",
   "license": {
     "all_of": [
       {
@@ -42,11 +42,11 @@
     ]
   },
   "name": "qtshadertools",
-  "pkg_version": "6.11.2",
-  "recipe_sha256": "d36fa95685c27cb8a5690d70a98a2c4dd865335960e614030df8c00085698ae8",
-  "release": "intel-38323682930-1-qtshadertools",
+  "pkg_version": "6.12.0",
+  "recipe_sha256": "5276e71a91a7c8ea4935ec79a1fe8e0c98575cb4b9e821ceae4397f4d1e210da",
+  "release": "intel-38497611195-1-qtshadertools",
   "revision": 0,
-  "run_id": "38323682930",
+  "run_id": "38497611195",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -194,9 +194,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
+      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
       "name": "qtbase",
-      "pkg_version": "6.11.2_1"
+      "pkg_version": "6.12.0"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "47af8a9cd5b89c1eb6dea6be78ad7e210efe6aad68741024c94aa5b09dde7e32",
-  "size": 1768560,
+  "sha256": "4bf0135b5cbee1889f1d76007f712b3cea6611b1360bb1cd68092a850f140b4e",
+  "size": 1810566,
   "source": {
-    "filename": "qtshadertools--6.11.2.sources.tar.gz",
-    "sha256": "9608c5db6bd4518bc7459784021241f07ab4ed0f04b287c5e8852252c7bd96ba",
-    "size": 1283184
+    "filename": "qtshadertools--6.12.0.sources.tar.gz",
+    "sha256": "ff74af1762dc971e8b9c68f8df148a7b015ccf41334c56a1955c22d4f0605a28",
+    "size": 1310132
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "517816aae16523ce271b1a9070015a96efd4b5e4"
+  "workflow_commit": "bc95cb714d9896e21eaf92fdf0143a5cb95da669"
 }
