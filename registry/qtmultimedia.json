@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "be45bb102a7812f85377e3de86bf7a13d416aae4",
+  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
   "cellar": "any",
-  "core_commit": "d3cb9a34e3af971042653a5058fdb2c66de31e81",
-  "filename": "qtmultimedia--6.11.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "e53c07c9e083e2c7e7097cc796965af8381338b8afc5460a38921c69c44bf4e0",
+  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "filename": "qtmultimedia--6.12.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "70c95d8ee3b2d8ec3c91ac64b50ecc749682599d8040e118965b09cd40764186",
   "license": {
     "all_of": [
       {
@@ -27,11 +27,11 @@
     ]
   },
   "name": "qtmultimedia",
-  "pkg_version": "6.11.2",
-  "recipe_sha256": "af5d475020878e470c4c62f38e4d192d91829ca796db988be6810ff562c59912",
-  "release": "intel-38358561115-1-qtmultimedia",
+  "pkg_version": "6.12.0",
+  "recipe_sha256": "bfda16d6002a7c6692a815bbe2687fc020f74f9fc80956dffd49360b70fa37c5",
+  "release": "intel-38577500791-1-qtmultimedia",
   "revision": 0,
-  "run_id": "38358561115",
+  "run_id": "38577500791",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -184,34 +184,34 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "2d1103128687debc234e6bbc1bf5b425f5497b2b6ce355ac9f97d529ec8f0537",
+      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
       "name": "qtbase",
-      "pkg_version": "6.11.2_1"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "2f9fe816e3395954bfee008a2264febf22f19f06f66da69d8c00420140a8949b",
+      "formula_sha256": "fe2bbef21614a8ea86588bb2ff4685e3413ed64dd18f9cf78de60c342db0567f",
       "name": "qtdeclarative",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "62d7cce3cdae2d96c2aa02ce0c8e83b60e1d12802416c769b213dc54884ec1e4",
+      "formula_sha256": "1f5bc347a985dba35923220add0ef41390e85843c105a3822a5e0caccc5b340b",
       "name": "qtquick3d",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "1cd1d454f8d71baeed6096c82003763c1d761b3c3fcea17e5ea54fa4d8474b10",
+      "formula_sha256": "0eec50a7437bc3921d8f821c05c0063343dc92b6d7371e3a0a6dabeb8742db5c",
       "name": "qtquicktimeline",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "cd7ef245de18cd6d506dbaadf541f6f8320771968f3f49d16bd742a815b3bee8",
+      "formula_sha256": "48634633b1867d8a749ddc9b03738050102167ecc0fda592bdba1319ffd5060e",
       "name": "qtshadertools",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
-      "formula_sha256": "fe293ee50461aa75cde69e469530d85bd05b1e723f69a1a3dd58097d7d9de8a2",
+      "formula_sha256": "d456b5f595c21646eff6d1f3abfee8aa4fc35d141ab7fd7a6a6db281c9ea362f",
       "name": "qtsvg",
-      "pkg_version": "6.11.2"
+      "pkg_version": "6.12.0"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -230,15 +230,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c0f8c7a4197826eeac46c5eed5630d1b4306851e662ad2d469b899f5527fb556",
-  "size": 1758740,
+  "sha256": "6365e40024ea686d729194a564df9822f2e56549ce33221199f9919b91d242be",
+  "size": 1847431,
   "source": {
-    "filename": "qtmultimedia--6.11.2.sources.tar.gz",
-    "sha256": "6415a6a7ace98b562ec1b4cd28e8a5c4359d42bc1d17b53b5943d80ee30238d4",
-    "size": 10328077
+    "filename": "qtmultimedia--6.12.0.sources.tar.gz",
+    "sha256": "eba03f5cc2d5663add086a4c8d42f10ae4381bfdff002aa2cd52c299f553cac1",
+    "size": 10617572
   },
   "tag": "sequoia",
-  "version": "6.11.2",
+  "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "b47c762dc12be4337f8d2c9bffbac01e2ad139ba"
+  "workflow_commit": "5646cc8e4eb903cfc5c46dc5dd41d7565a757f5e"
 }
