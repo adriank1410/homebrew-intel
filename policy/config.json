@@ -131,10 +131,10 @@
   ],
   "source_required_formula_exceptions": {
     "nmap": {
-      "formula_sha256": "54b920f77770308a11532d12645bd95151dc3e5bf873a52f47a89c137422890f",
+      "formula_sha256": "a89ce9706632ebd88561c8ec32da8ab561813deaf8e388fe13ba94dfb11c7c11",
       "license": "cannot_represent",
       "requirement": "Nmap-Public-Source-License",
-      "review": "Standalone Nmap 7.991 bottle; publish the exact upstream source, recipe, build inputs, license notices, and modification provenance together."
+      "review": "Standalone Nmap 7.991_1 bottle with OpenSSL 4; unchanged upstream source and NPSL 0.95 license, including OpenSSL linking permission. Publish the exact upstream source, recipe, build inputs, license notices, and modification provenance together."
     }
   },
   "redistribution_exceptions": {},
