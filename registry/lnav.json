@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
   "filename": "lnav--0.14.1.sequoia.bottle.tar.gz",
   "formula_sha256": "297aa07ecd9d96f0a191e20c7b0e07ca8c50dea0b3c17f194c186e7cfd1c78f5",
   "license": "BSD-2-Clause",
   "name": "lnav",
   "pkg_version": "0.14.1",
   "recipe_sha256": "2436f5ae3849a3645ca8d70878cb1ce3e328cbf9cbf5886cf82c74ff96de04c9",
-  "release": "intel-38513515528-1-lnav",
+  "release": "intel-38653167069-1-lnav",
   "revision": 0,
-  "run_id": "38513515528",
+  "run_id": "38653167069",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f70c717f702afc86174a032f225770d1f9726ed2ab0b1520722cbea02561cbfb",
+      "formula_sha256": "56f3b5ed0c64bd2ec9305a9105d1119689f2c8de86b1dc71b78322ee1991354f",
       "name": "libarchive",
-      "pkg_version": "3.8.9"
+      "pkg_version": "3.8.10"
     },
     {
       "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c58bb19ef188941eaeae4fb0da2969cb6728ef89eb6264ff97e1887308065c06",
-  "size": 14075556,
+  "sha256": "6b31bd8f3126ac690e225d1dd7e9426d1677af547181cfc6d164d09798393a13",
+  "size": 14075526,
   "source": {
     "filename": "lnav--0.14.1.sources.tar.gz",
-    "sha256": "52b40d9c05f214ec645cb0923fdb2244dd29cd7f8993d1c27f7692e494df1d24",
+    "sha256": "7fcade0ce71f79deed97034d095f5c4580b3c289ed86666ffccc0dd4cb7aaa6d",
     "size": 27873161
   },
   "tag": "sequoia",
   "version": "0.14.1",
   "version_scheme": 0,
-  "workflow_commit": "8870643a4a082b95ed32bd4c88d893d28dff28d5"
+  "workflow_commit": "78080e035ffdf2c21818fa16fcadc1ad41ebd8a7"
 }
