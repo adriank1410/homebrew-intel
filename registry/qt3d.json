@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
   "cellar": "any",
-  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
+  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
   "filename": "qt3d--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "a99c03b9741d02fe94907373c0a93f454f89f5406691161426593f7e6d639bc7",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qt3d",
   "pkg_version": "6.12.0",
   "recipe_sha256": "f7dd8519141c781b6241abcb4fc10b0fd0342453087ef1e2b68d8a78ec04ed81",
-  "release": "intel-38539139440-1-qt3d",
+  "release": "intel-38684026190-1-qt3d",
   "revision": 0,
-  "run_id": "38539139440",
+  "run_id": "38684026190",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -61,9 +61,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -212,15 +212,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1dca8a63513cb0a1d56e9ca80236dd2f9770b3e3d63e660daa0e04a92bd25553",
-  "size": 3766574,
+  "sha256": "cdf4df9e38f7df7ca052060b90fd93a80f6203c65c860175ed1aad005b1734bb",
+  "size": 3766318,
   "source": {
     "filename": "qt3d--6.12.0.sources.tar.gz",
-    "sha256": "00410095e6a2cc2556a3660f068cd0a25c730fde446340d759d83204e3cc973c",
-    "size": 141960259
+    "sha256": "45b541b7d81bcf20060eefd997051f9c33830b8cb811dc40a5ec137e7b38614a",
+    "size": 141960266
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "b1ba109c2ef91cfc8a781d91530e50bc6d3bd63a"
+  "workflow_commit": "d6dfc6e65bd84ac867f50676eacd0ccc8ab940d5"
 }
