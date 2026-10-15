@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
   "cellar": "any",
-  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
+  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
   "filename": "qtgrpc--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "5eaac7e5e44c60a94e15f53afa2d5a6d170744957d02faa7cd8d6c5ea081ec49",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtgrpc",
   "pkg_version": "6.12.0",
   "recipe_sha256": "6ace04edebcf15d0d80c6309baa6ebfe3154b63bb703ed2231cc4d917b53465c",
-  "release": "intel-38539139440-1-qtgrpc",
+  "release": "intel-38684026190-1-qtgrpc",
   "revision": 0,
-  "run_id": "38539139440",
+  "run_id": "38684026190",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -66,9 +66,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "38d484e4b4682e14d728e87941e72bd102b2cbd625121b4daf1f5a459f6984a2",
-  "size": 1138114,
+  "sha256": "833f5a3b633d2cf226d2b410dea47b7149c9644f2a0a36cd959524015bfee257",
+  "size": 1138090,
   "source": {
     "filename": "qtgrpc--6.12.0.sources.tar.gz",
-    "sha256": "514e6ba9fc0a26b7487b614e7e39fed29602ebf0d391c59bed52363ab1a46b1a",
-    "size": 805774
+    "sha256": "38730786f00d434651e6d4e7816c362a69456518f574f9e4793c5c5b1db1eee3",
+    "size": 805777
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "b1ba109c2ef91cfc8a781d91530e50bc6d3bd63a"
+  "workflow_commit": "d6dfc6e65bd84ac867f50676eacd0ccc8ab940d5"
 }
