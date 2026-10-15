@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
   "filename": "qtserialport--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "e2f9bd17ed273b9091c8866da089d7a330f28896dad9141765fb982ccdf6fae9",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtserialport",
   "pkg_version": "6.12.0",
   "recipe_sha256": "ed0cc886c743c01725f7f06b6caa6c6cea15c380925c4b44bc37b946e2d5d0b2",
-  "release": "intel-38497611195-1-qtserialport",
+  "release": "intel-38653167069-1-qtserialport",
   "revision": 0,
-  "run_id": "38497611195",
+  "run_id": "38653167069",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -55,9 +55,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "731069880d8bc5d16c4aa9ba0089e7d154ab579fe74e44d4b6381278392fc2c1",
+  "sha256": "710e9eb31f02e7bbefbaf9b4c409d0969c2d70dd2059db6a599493cc3490aa2f",
   "size": 63849,
   "source": {
     "filename": "qtserialport--6.12.0.sources.tar.gz",
-    "sha256": "6986fc3924d4151d70d48c697124328a3055209ca4a8062a83e90f9724647e0e",
-    "size": 299552
+    "sha256": "b305f2c322a5fa73246eb26291492bbbe43ced4220cd7f4a71c219b0b569775c",
+    "size": 299554
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "bc95cb714d9896e21eaf92fdf0143a5cb95da669"
+  "workflow_commit": "78080e035ffdf2c21818fa16fcadc1ad41ebd8a7"
 }
