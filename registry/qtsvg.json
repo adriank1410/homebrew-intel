@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
   "filename": "qtsvg--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "d456b5f595c21646eff6d1f3abfee8aa4fc35d141ab7fd7a6a6db281c9ea362f",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsvg",
   "pkg_version": "6.12.0",
   "recipe_sha256": "3471d3f66cb929c212d9c3285f889c779047877fff38e2c718bfdd6d363ff9a7",
-  "release": "intel-38497611195-1-qtsvg",
+  "release": "intel-38653167069-1-qtsvg",
   "revision": 0,
-  "run_id": "38497611195",
+  "run_id": "38653167069",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -55,9 +55,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "64cdc95babd0b0e6bd78f72d1337d2293afed3dbf843c6b20c47adfc553d7812",
-  "size": 317433,
+  "sha256": "7d36983a33a953503243e6e69854d97f0035df212617710d4c87b4f4e562f5f9",
+  "size": 317422,
   "source": {
     "filename": "qtsvg--6.12.0.sources.tar.gz",
-    "sha256": "ecfde6a3458b380f355598814243053fa2f6a963a6defad2284fc91d5e22deba",
+    "sha256": "f9c1e65c20e581a1303f391867001df23d03b5d5f530d4ff0e8561515a7b57da",
     "size": 2376055
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "bc95cb714d9896e21eaf92fdf0143a5cb95da669"
+  "workflow_commit": "78080e035ffdf2c21818fa16fcadc1ad41ebd8a7"
 }
