@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
   "cellar": "any",
-  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
   "filename": "qtlottie--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "d54fa1206218064c0e4f747f17a4f73e0d25d3fa856ca1459a9f5ed1e7f55f0b",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtlottie",
   "pkg_version": "6.12.0",
   "recipe_sha256": "0d4137b9ec91dcf160c6389e27a247e72f60ad73fcc0e5326262d7d0fe6c7022",
-  "release": "intel-38562177045-1-qtlottie",
+  "release": "intel-38701247806-1-qtlottie",
   "revision": 0,
-  "run_id": "38562177045",
+  "run_id": "38701247806",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -49,9 +49,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -200,15 +200,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "be5894456e1cf865e84af35ab4ea26807cef87aec1dc37038869026441b43d86",
-  "size": 351432,
+  "sha256": "0784b822d1dbbb0a6586a83a318458d87625fc9a4eeed7fd1a04b5ca6e176693",
+  "size": 351374,
   "source": {
     "filename": "qtlottie--6.12.0.sources.tar.gz",
-    "sha256": "b1f8998e6855df90cacad7b6bc1b005bd1371588ccdeeaed436dd90356db1a42",
-    "size": 864167
+    "sha256": "6c50797f616819b538e2bd800674898534735846a8d14b273189cd2db97791d1",
+    "size": 864168
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+  "workflow_commit": "1f9ce50a5b32251e19cbfdc7dbd434f902237923"
 }
