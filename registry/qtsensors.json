@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
   "cellar": "any",
-  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
+  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
   "filename": "qtsensors--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "01e41528644e7870f6a1cd0275ebe5fdd05c94de58fb4af5d2cdfd28f63ee98c",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsensors",
   "pkg_version": "6.12.0",
   "recipe_sha256": "8e1145c6b31fbe0596bc899269ad095fc32ea7731bcb88d8150b6141b79aec89",
-  "release": "intel-38539139440-1-qtsensors",
+  "release": "intel-38684026190-1-qtsensors",
   "revision": 0,
-  "run_id": "38539139440",
+  "run_id": "38684026190",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -55,9 +55,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e36517105bb4e3ffa757d25ae1fbb7ced75c5f64008cbac9f3b79451ac14f6bd",
-  "size": 227297,
+  "sha256": "fecf39208248173d832269b59419167d7ff969fff779bf5a362c3585d7ed6682",
+  "size": 227294,
   "source": {
     "filename": "qtsensors--6.12.0.sources.tar.gz",
-    "sha256": "4bc0801d6b448c835b1dd8b8199c772f2262c74defdde325ff19fa26da9b3d13",
-    "size": 1528898
+    "sha256": "a2ca820191c6c9b3d813524442b118f016145d9e37aa1cfbc69c62c9d0a405b6",
+    "size": 1528884
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "b1ba109c2ef91cfc8a781d91530e50bc6d3bd63a"
+  "workflow_commit": "d6dfc6e65bd84ac867f50676eacd0ccc8ab940d5"
 }
