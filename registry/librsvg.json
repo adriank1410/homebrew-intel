@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
   "cellar": "any",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
   "filename": "librsvg--2.63.2.sequoia.bottle.tar.gz",
   "formula_sha256": "6faa5a10d3091739aeaa2f0dfa96013b3f4fc9169e65c52f382a71960a84d431",
   "license": "LGPL-2.1-or-later",
   "name": "librsvg",
   "pkg_version": "2.63.2",
   "recipe_sha256": "3b2a8ccad4e58a9a0ebea931509f304542149621bdd56e7e988de6f86572ebaf",
-  "release": "intel-38513515528-1-librsvg",
+  "release": "intel-38653167069-1-librsvg",
   "revision": 0,
-  "run_id": "38513515528",
+  "run_id": "38653167069",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -29,9 +29,9 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "5741f43fc1e23031a9f9be7da2404d6432d4856835d721bacd227099efbe043e",
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
       "name": "freetype",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.15.0"
     },
     {
       "formula_sha256": "a7a0f98a348293651e9dcd90b7a8ab80ef2ae93aae6fa8853b07d5e5002a8350",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9487a7ce0649c6b2d35df75fa59963aaa4eb19518ed608b6718eb12fcfba800b",
-  "size": 5011413,
+  "sha256": "0da13dd771498e75320440e46f730a67acc1f22f3df1c22f255ddba1160d8576",
+  "size": 5011394,
   "source": {
     "filename": "librsvg--2.63.2.sources.tar.gz",
-    "sha256": "e95e16d47a790e44aebae4b43c04e8126e884f2644c53a11cbe2a3934649a48f",
-    "size": 25697912
+    "sha256": "0535f321123eea4ab082035f69ec54b3d65799296eea5d5165a58954f57e9b36",
+    "size": 25698040
   },
   "tag": "sequoia",
   "version": "2.63.2",
   "version_scheme": 0,
-  "workflow_commit": "8870643a4a082b95ed32bd4c88d893d28dff28d5"
+  "workflow_commit": "78080e035ffdf2c21818fa16fcadc1ad41ebd8a7"
 }
