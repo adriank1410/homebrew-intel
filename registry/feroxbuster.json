@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "f8d1b25f33e032707f151123aca0eac3a239c676",
+  "cellar": "any_skip_relocation",
+  "core_commit": "72522085b36c186c66ffdc4edbc154ce2f3f1821",
+  "filename": "feroxbuster--2.13.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "03a2d42d3bbc7e658ceaeadf3b370d66adaae91b55f596c511537a53c0f067eb",
+  "license": "MIT",
+  "name": "feroxbuster",
+  "pkg_version": "2.13.1",
+  "recipe_sha256": "99a7c4d78097b7d9a65775aa47ece844157f7028bf366fb7f2141c9c1da663b3",
+  "release": "intel-38729737524-1-feroxbuster",
+  "revision": 0,
+  "run_id": "38729737524",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "263496d07d03c22bcee3fc487e1aa29472b8d2bae961574bc8fae1b9717f5a1f",
+  "size": 2836637,
+  "source": {
+    "filename": "feroxbuster--2.13.1.sources.tar.gz",
+    "sha256": "c1a80c2b5a0c6146432ee7976c8ecc5933fa14146e15bbb26c4967ae4cc9f873",
+    "size": 47065952
+  },
+  "tag": "sequoia",
+  "version": "2.13.1",
+  "version_scheme": 0,
+  "workflow_commit": "df515dd201277c6da0298dd283bc4454fdef2b5e"
+}
