@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "cellar": "any_skip_relocation",
+  "core_commit": "5acba4b25121279096f7daa71733d87a69417870",
+  "filename": "findomain--10.0.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "73b280aa23b17784c97932e4c7aa6eb1c0f71074036f6fdd06e68bdeac584740",
+  "license": "GPL-3.0-or-later",
+  "name": "findomain",
+  "pkg_version": "10.0.1",
+  "recipe_sha256": "8fdaa3cfc48118922660d3fff8414b23904e502624369bc165534533efda52a2",
+  "release": "intel-38895296003-1-findomain",
+  "revision": 0,
+  "run_id": "38895296003",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "296018268e43e452220c2dd5141cd16b521d675b269eec25ae13ce458f74fd49",
+  "size": 5313777,
+  "source": {
+    "filename": "findomain--10.0.1.sources.tar.gz",
+    "sha256": "ffa8055707677f01fed5fb4226fb13596d38db02e3d151627df13df2f8045eb2",
+    "size": 39041683
+  },
+  "tag": "sequoia",
+  "version": "10.0.1",
+  "version_scheme": 0,
+  "workflow_commit": "c1b9ae51bb776c54e358ebed6ec4991fd3ae2885"
+}
