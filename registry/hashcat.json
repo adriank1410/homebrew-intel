@@ -1,0 +1,45 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "5acba4b25121279096f7daa71733d87a69417870",
+  "filename": "hashcat--7.1.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "a29bba54b1ff5fbd5c14e10432d763d34c0dce8fc2091b2252b2bcb47b70be3c",
+  "license": {
+    "all_of": [
+      "MIT",
+      "LZMA-SDK-9.22",
+      "public_domain"
+    ]
+  },
+  "name": "hashcat",
+  "pkg_version": "7.1.2",
+  "recipe_sha256": "08d98d5cf21262dd6969ac69ec2c7a323f75fe4edae1f73e9bc4026e95cb642c",
+  "release": "intel-38895296003-1-hashcat",
+  "revision": 0,
+  "run_id": "38895296003",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f58cbef1c216ffb40be3307b407d333ca81fdb1f773158ec5b44cf83c5e8c256",
+      "name": "minizip",
+      "pkg_version": "1.3.2_1"
+    },
+    {
+      "formula_sha256": "d38306e5313078548d9b0d2236e0785ea545fba204131c9f59e76263bfb54207",
+      "name": "xxhash",
+      "pkg_version": "0.8.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "9323229c9fe1dbd3ff1a9efde8b3e2c9b7cfbdcf46d2f1f434e225973f3ead3f",
+  "size": 55293741,
+  "source": {
+    "filename": "hashcat--7.1.2.sources.tar.gz",
+    "sha256": "f3fe53c54a0fcdcc46368267a1844bdb1673f83f5dd9d0004b4ac8b4d62b3793",
+    "size": 18685961
+  },
+  "tag": "sequoia",
+  "version": "7.1.2",
+  "version_scheme": 1,
+  "workflow_commit": "c1b9ae51bb776c54e358ebed6ec4991fd3ae2885"
+}
