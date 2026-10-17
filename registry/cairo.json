@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "brew_commit": "aac1fb890f953b8ee31d572bf1956de16f16c23d",
   "cellar": "any",
-  "core_commit": "e8349eb3861a0ba674ab2069b63791df1cac2ea6",
+  "core_commit": "d113a0d46f3d63566587c05c837c92b19b88060c",
   "filename": "cairo--1.18.6.sequoia.bottle.tar.gz",
   "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
   "license": {
@@ -14,9 +14,9 @@
   "name": "cairo",
   "pkg_version": "1.18.6",
   "recipe_sha256": "9f872499482a41849cf1a706b7b1287e3f30242fbd5f95c17da74aac595ac725",
-  "release": "intel-39023029390-1-cairo",
+  "release": "intel-39035874484-1-cairo",
   "revision": 0,
-  "run_id": "39023029390",
+  "run_id": "39035874484",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -59,9 +59,9 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "0422fdcaf1056d28dc32ecf719cad43feafa386c7ad373fabe0711536fc2414b",
+      "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
       "name": "libx11",
-      "pkg_version": "1.8.13"
+      "pkg_version": "1.8.14"
     },
     {
       "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d7bfbe06df1ae5d7913c462f33b349b1a01cf35ff017560ade33fe1574f3ea87",
-  "size": 1648617,
+  "sha256": "7d1b83864dc5301bd60050d75c3f3e3d932781fc220635ffc2e8afa9f7163ba0",
+  "size": 1648636,
   "source": {
     "filename": "cairo--1.18.6.sources.tar.gz",
-    "sha256": "17f6efcc2c2c18cf09574fb3841d99048250237bea40817f449e38ce11ff5a86",
-    "size": 32763996
+    "sha256": "784eb848fea4e46d8e986d735f90f5dd25f218364cbcdb89e3b2ec1586545b1b",
+    "size": 32763998
   },
   "tag": "sequoia",
   "version": "1.18.6",
   "version_scheme": 0,
-  "workflow_commit": "214ed44aa12bce360e4731905891782fe507be06"
+  "workflow_commit": "1a2bdd9a5860d74fcfa63c6b80d04f9c1ecceb17"
 }
