@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "cellar": "any",
+  "core_commit": "e8349eb3861a0ba674ab2069b63791df1cac2ea6",
+  "filename": "libxrender--0.9.13.sequoia.bottle.tar.gz",
+  "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+  "license": "MIT",
+  "name": "libxrender",
+  "pkg_version": "0.9.13",
+  "recipe_sha256": "84e136e71e2c9a0768d929748da6bfd7956894b112870855401727889430f084",
+  "release": "intel-39006847294-1-libxrender",
+  "revision": 0,
+  "run_id": "39006847294",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "0422fdcaf1056d28dc32ecf719cad43feafa386c7ad373fabe0711536fc2414b",
+      "name": "libx11",
+      "pkg_version": "1.8.13"
+    },
+    {
+      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "name": "libxau",
+      "pkg_version": "1.0.12"
+    },
+    {
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
+      "name": "libxcb",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "name": "libxdmcp",
+      "pkg_version": "1.1.5"
+    },
+    {
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "name": "xorgproto",
+      "pkg_version": "2026.1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "1428f02fdb3a0a02214c9e27914d3d16bc66688a10592f6f53c55e2e0d6db532",
+  "size": 56324,
+  "source": {
+    "filename": "libxrender--0.9.13.sources.tar.gz",
+    "sha256": "07c8f37531071cff6def5a7577a1a6d5498b9ab44c895b6bb7152c624556868b",
+    "size": 464448
+  },
+  "tag": "sequoia",
+  "version": "0.9.13",
+  "version_scheme": 0,
+  "workflow_commit": "14c81e2d11320a967c5d0f9d7fc622e501c8ed56"
+}
