@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "brew_commit": "aac1fb890f953b8ee31d572bf1956de16f16c23d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "d1a7b6472a996b84583b7bf9c81ec990ca4e3459",
+  "core_commit": "d113a0d46f3d63566587c05c837c92b19b88060c",
   "filename": "node--26.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "77a423884b4db1abe8113fc404054b8baa0835edf73c36c66cb6cfc27e1a4251",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.12.0",
   "recipe_sha256": "561fd3fc05514a1af99f34abc4c88483e164a40d706b5556777b00cfcdee90bc",
-  "release": "intel-38936720221-1-node",
+  "release": "intel-39035874484-1-node",
   "revision": 0,
-  "run_id": "38936720221",
+  "run_id": "39035874484",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -109,9 +109,9 @@
       "pkg_version": "5.0.5"
     },
     {
-      "formula_sha256": "6e7695b4efb21c4c0ef8d9f334f7aad06ceb459396794b3a5d7d5f9bf978571d",
+      "formula_sha256": "ab161a72d2fed255ac87c057f289c33ac56a4997ad29416cbbd83e7924f7752e",
       "name": "simdutf",
-      "pkg_version": "9.3.0"
+      "pkg_version": "9.3.2"
     },
     {
       "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7b0ae2e5c1286ac4691559514acc6756bb1c3867152c7030231e2860d78c273b",
-  "size": 21759461,
+  "sha256": "64f0767fa8e805d8270101591e2d064593f8616d6b1ce070370b77d36c016bc7",
+  "size": 21760187,
   "source": {
     "filename": "node--26.12.0.sources.tar.gz",
-    "sha256": "4408c3852c7dddc3bd8e62cb3f031028e6d0d08b82a4fbb04c2e4c8277ae9f43",
-    "size": 65647702
+    "sha256": "90f6e1acc5f8dcad3bd75eebf0db9097f4856828c89e33c6102b9c94ef0d9a2a",
+    "size": 65647678
   },
   "tag": "sequoia",
   "version": "26.12.0",
   "version_scheme": 0,
-  "workflow_commit": "f2df33536e73e592ad9a0912a12b416e6fce02b9"
+  "workflow_commit": "1a2bdd9a5860d74fcfa63c6b80d04f9c1ecceb17"
 }
