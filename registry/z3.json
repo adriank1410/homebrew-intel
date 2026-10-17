@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "cellar": "any",
+  "core_commit": "1b00735b4ba8a6a9e1f8fc6989b956f05caa8bce",
+  "filename": "z3--5.3.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "7f8521430119af7bd3cd4d410ff2be9bdfcbd322b251ed2c8366b5db6d1576f8",
+  "license": "MIT",
+  "name": "z3",
+  "pkg_version": "5.3.0",
+  "recipe_sha256": "d4c58cf47bf8583915342fda1ae98e3a0372a51ecf790b68e12394d95dd16492",
+  "release": "intel-38983069946-1-z3",
+  "revision": 0,
+  "run_id": "38983069946",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "f9b13514873a21823db5d1a95cda8029d866734c63b9749445123560a231b359",
+  "size": 17750321,
+  "source": {
+    "filename": "z3--5.3.0.sources.tar.gz",
+    "sha256": "bca76f210bc6ac78efe2c78f2067b2d818647c6d557bb1e2953b50144b2592f0",
+    "size": 7789215
+  },
+  "tag": "sequoia",
+  "version": "5.3.0",
+  "version_scheme": 0,
+  "workflow_commit": "a24613ce8a28eacc1491491eed570ed5fbd2ed59"
+}
