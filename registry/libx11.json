@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "brew_commit": "aac1fb890f953b8ee31d572bf1956de16f16c23d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "e8349eb3861a0ba674ab2069b63791df1cac2ea6",
-  "filename": "libx11--1.8.13.sequoia.bottle.tar.gz",
-  "formula_sha256": "0422fdcaf1056d28dc32ecf719cad43feafa386c7ad373fabe0711536fc2414b",
+  "core_commit": "d113a0d46f3d63566587c05c837c92b19b88060c",
+  "filename": "libx11--1.8.14.sequoia.bottle.tar.gz",
+  "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
   "license": "MIT",
   "name": "libx11",
-  "pkg_version": "1.8.13",
-  "recipe_sha256": "66d412e9dc26e910e0e0cbd6e6d3efda5cd5b2c077eb91b3797441c8237fb422",
-  "release": "intel-39004197512-1-libx11",
+  "pkg_version": "1.8.14",
+  "recipe_sha256": "981d2902e9761b397dcf6378f86a3afabc7c1fe89039fb71de93a42e5bd8c94e",
+  "release": "intel-39033545227-1-libx11",
   "revision": 0,
-  "run_id": "39004197512",
+  "run_id": "39033545227",
   "runtime_dependencies": [
     {
       "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "16f2be89ba15854873dd4042f563d39a23dcbde2a414892dcd47413d3ad44b90",
-  "size": 2340452,
+  "sha256": "8e7d2c9b3a67ca472010b8101c2024e85bb4a2c955d7b66d7ab6c98c5c65c150",
+  "size": 2344661,
   "source": {
-    "filename": "libx11--1.8.13.sources.tar.gz",
-    "sha256": "bee833b6a212992d5ad3ed898d85c3ca90decf514747f63b0af3e40fc50060e9",
-    "size": 3193345
+    "filename": "libx11--1.8.14.sources.tar.gz",
+    "sha256": "98bc6557a7dbf17b4668f9a8a5eedb3d047725862add987779e37e7294e35119",
+    "size": 3199797
   },
   "tag": "sequoia",
-  "version": "1.8.13",
+  "version": "1.8.14",
   "version_scheme": 0,
-  "workflow_commit": "2daded48adedefacfea961ff7252073392b80926"
+  "workflow_commit": "80c4b4e0da7b02f9022188a4e9c213bced2447ac"
 }
