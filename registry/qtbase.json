@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
-  "filename": "qtbase--6.12.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
+  "filename": "qtbase--6.12.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d",
   "license": {
     "all_of": [
       {
@@ -24,11 +24,11 @@
     ]
   },
   "name": "qtbase",
-  "pkg_version": "6.12.0",
-  "recipe_sha256": "dae28cdcb09e24e74b23278d6540324ceb84cd5c2ba5b2f58853142e74d891d1",
-  "release": "intel-39060245056-1-qtbase",
-  "revision": 0,
-  "run_id": "39060245056",
+  "pkg_version": "6.12.0_1",
+  "recipe_sha256": "d7b3f160895d4ff888d8b1f3927dbc82a3bfc4f12bfc53a79483c10f2fdddf17",
+  "release": "intel-39164277599-1-qtbase",
+  "revision": 1,
+  "run_id": "39164277599",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -111,9 +111,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
@@ -192,15 +192,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "128a6c8eb8a731583c0c7f0aa8898b1defd4d6ebb07361cfadb1a509a7b1d4c6",
-  "size": 17636482,
+  "sha256": "0a110cbf9b7329a7081f9bcde47701e5638bfce52a30d06ded60451af08fe768",
+  "size": 17643711,
   "source": {
-    "filename": "qtbase--6.12.0.sources.tar.gz",
-    "sha256": "f6a5f46c5c4628a7d6fdaf2dbebd5c4203d5bb4a5ddf34307a3b0803f7aaad0a",
-    "size": 51413846
+    "filename": "qtbase--6.12.0_1.sources.tar.gz",
+    "sha256": "90f84f10eedd7f30d66e791e19847f3554c94998c914bc6ce6f98add29edb979",
+    "size": 51420411
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "eda88d392a57434bc848a04977ae57a38f0e3540"
+  "workflow_commit": "a8c8f12acb467358cc04ab5a670c18cf83695b4d"
 }
