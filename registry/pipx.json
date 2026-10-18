@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any_skip_relocation",
-  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
-  "filename": "pipx--1.18.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "735d12f907ddd1d027630f5db630fe9610ad0fb3d6d554533518e7d0295e7e06",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
+  "filename": "pipx--1.18.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "f22516283c251f73718ad789f2b37f24bf040f1a52e768a29b649e30412bf58c",
   "license": "MIT",
   "name": "pipx",
-  "pkg_version": "1.18.2",
-  "recipe_sha256": "fd180744f8cc8b9f38623d680a45d734cf4c1ff6ada6265573bcaaff0e5793ea",
-  "release": "intel-39110035642-1-pipx",
+  "pkg_version": "1.18.3",
+  "recipe_sha256": "eda3e7473cf9c894bb4a7ec8ac0b0e377fefc2eda377f1ca97842e54bd4742a6",
+  "release": "intel-39144505765-1-pipx",
   "revision": 0,
-  "run_id": "39110035642",
+  "run_id": "39144505765",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "094124adcf67b0088c3084719c1f4e07b74bbb42d9c70b18010d7f210d03c55c",
-  "size": 570581,
+  "sha256": "dced6d871ee97e8aa6ce5fa6e944c4779b8e4b5cd700c8d1de4e2da104662ab9",
+  "size": 570881,
   "source": {
-    "filename": "pipx--1.18.2.sources.tar.gz",
-    "sha256": "5a24715185d21394b3e00f41e4a78cbe0b3d1be886a33d60bde4961bf9a91066",
-    "size": 1816204
+    "filename": "pipx--1.18.3.sources.tar.gz",
+    "sha256": "78db8bfc0f05502aa199e2dd8622ec3b7dd5355924f6cd7a9145e2935087e4a8",
+    "size": 1816596
   },
   "tag": "sequoia",
-  "version": "1.18.2",
+  "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
+  "workflow_commit": "e05169412a3e4aa60ab302c59d7b9043264b6e9c"
 }
