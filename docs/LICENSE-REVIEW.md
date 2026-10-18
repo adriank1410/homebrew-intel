@@ -117,6 +117,19 @@ linking with any OpenSSL version. Standalone packaging and the source/notice
 publication requirements remain unchanged. A later recipe hash still requires
 a new review.
 
+The 2026-10-18 review refreshes that exception again for core commit
+`652f016237dc92ce3f1faa9e3af85017657fce75`: Nmap `7.992`, formula SHA-256
+`00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7`.
+The recipe drops revision 1 with the version bump, switches `ndiff` from
+`python@3.14` to `python@3.15`, and keeps OpenSSL 4 plus the macOS SDK libpcap.
+It still passes `--without-nmap-update` and `--without-zenmap` and does not
+bundle Npcap. The verified archive is
+`https://nmap.org/dist/nmap-7.992.tar.bz2`,
+`0c12660eddbf7eabeff6996cb0c044a4eadf2bb0c6fbcb340d6cf72b1caee402`.
+`nmap-7.992/LICENSE` is byte-identical to `nmap-7.991/LICENSE`: NPSL 0.95,
+whose section 11 permits linking with any OpenSSL version. A later recipe hash
+still requires a new review.
+
 Additional primary texts:
 
 - EUPL 1.2: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017D0863
