@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "recon-ng--5.1.2_4.sequoia.bottle.tar.gz",
   "formula_sha256": "b55870247be2bc86cff7aa424fa7c677f86acf5ac53ae33337005cf94b902146",
   "license": "GPL-3.0-only",
   "name": "recon-ng",
   "pkg_version": "5.1.2_4",
   "recipe_sha256": "7a89ba397c23d5dc2b446539124580aba5804ac5d76a24f012b77c8fb734ed49",
-  "release": "intel-38562177045-1-recon-ng",
+  "release": "intel-39110035642-1-recon-ng",
   "revision": 4,
-  "run_id": "38562177045",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -59,9 +59,9 @@
       "pkg_version": "2026.9.1_1"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6d376676c654bb6421680093dc33433fc1578337554a98a7246d0c16b8082f00",
-  "size": 8729561,
+  "sha256": "fc95bc6b981a3d271a0800c0c1865a5a76ae90da009694d86aea578daa0a3587",
+  "size": 8729457,
   "source": {
     "filename": "recon-ng--5.1.2_4.sources.tar.gz",
-    "sha256": "0dab1af9f6077b430e778ef953d8753b694960a95bc33be27fa96897e1df4687",
-    "size": 129083475
+    "sha256": "939c75cface93d143f0018040eb4e49b6af8a25bce6d54b6fbf4020ff29584d8",
+    "size": 129086194
   },
   "tag": "sequoia",
   "version": "5.1.2",
   "version_scheme": 0,
-  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
