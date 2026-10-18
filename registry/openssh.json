@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1db66fda35a3a1de41d2f352628f78678ccbaaf0",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "c6e1f164d25b434988d9f7c88ba924b682e3fce0",
+  "core_commit": "8a362003821e1605af73bc1488741cc6b2ea4799",
   "filename": "openssh--10.6p1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "830aaec6f582a6465192965732228d74c582bf2844ef493ac7034d51121faffa",
   "license": "SSH-OpenSSH",
   "name": "openssh",
   "pkg_version": "10.6p1_1",
   "recipe_sha256": "f377efdc3fa4c4c3607e79345d16d322ca6abeb79b9cd03eb958651d4aa7c465",
-  "release": "intel-38400485479-1-openssh",
+  "release": "intel-39127084449-1-openssh",
   "revision": 1,
-  "run_id": "38400485479",
+  "run_id": "39127084449",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -59,9 +59,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1f3025321429b56a91604ee22f9239c03bf1dff0b6db1328abff0680b5e559c9",
-  "size": 3292249,
+  "sha256": "5c1a7f5e21061bf7fc3f75301b72d65fa9142c1a8dc835f2f9573e03f7547f83",
+  "size": 3292247,
   "source": {
     "filename": "openssh--10.6p1_1.sources.tar.gz",
-    "sha256": "5752892801605784f223dab5d43b01ed3a3b926c0c3e5c3da860fe934b8f7920",
+    "sha256": "0bb40263ac22eecf73daa8335f4c3cc6e9f236f0a0d4c06d01c662b10a9bf45b",
     "size": 2360979
   },
   "tag": "sequoia",
   "version": "10.6p1",
   "version_scheme": 0,
-  "workflow_commit": "b7cb49b9a7420a738a513eaba290cafe22e05ecb"
+  "workflow_commit": "41e945655b16a387e0c09c3fd9964de973ec01d4"
 }
