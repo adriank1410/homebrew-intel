@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8b92a1a6b5716d1719d3a424e6955c725673cbe2",
+  "brew_commit": "013821de5e79b6e0698e59dced9e1e6a0fba8e0d",
   "cellar": "any",
-  "core_commit": "619eaea00c91ee438f5fcc0009ca354affeb2730",
+  "core_commit": "cbd0c8ddb11909fb209f06e08677973c0f211848",
   "filename": "llvm@22--22.1.8.sequoia.bottle.tar.gz",
-  "formula_sha256": "2ae4a1f22c4b435999f1103589a24774183d659ab1d00c2a46fcd774f6f0214d",
+  "formula_sha256": "e75d37d36a577f34d820e753515a1931fca9ea0a22ecf5d9903380850a2ddfdf",
   "license": {
     "Apache-2.0": {
       "with": "LLVM-exception"
@@ -12,10 +12,10 @@
   },
   "name": "llvm@22",
   "pkg_version": "22.1.8",
-  "recipe_sha256": "4638b7deb09971297e2d7bb439040d054bcae8dfb0afeecb742c65a867b11595",
-  "release": "intel-37228846682-1-llvm-at-22",
+  "recipe_sha256": "658dede1a18aa1374eb24fea13f9d98d980743fecffc3e8fc3a5217d6f8d3750",
+  "release": "intel-39081190953-1-llvm-at-22",
   "revision": 0,
-  "run_id": "37228846682",
+  "run_id": "39081190953",
   "runtime_dependencies": [
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -34,15 +34,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "21978cbab5858b4e701e2490c415d6f0e308bdea776afc1d3568793eb763f385",
-  "size": 338614541,
+  "sha256": "fec3b4ed545d94df9a6645f5af5a6d3b49fab7fd59890691bad4f890c69d7081",
+  "size": 338658964,
   "source": {
     "filename": "llvm@22--22.1.8.sources.tar.gz",
-    "sha256": "6a8881fa67f02744efcbd40c3e6ae9274486eb180288f3bf13a7e0a12c9a02d7",
-    "size": 167151866
+    "sha256": "58d6fecf515c43e2b47c64189403da736f7aaf5b4fc44d067308a66b14431872",
+    "size": 167151870
   },
   "tag": "sequoia",
   "version": "22.1.8",
   "version_scheme": 0,
-  "workflow_commit": "b9aedc49dd33d8f3e3b1bec9a878f18b62b78bd1"
+  "workflow_commit": "80874878ed359f21cea37f150e61ffa585c5e56f"
 }
