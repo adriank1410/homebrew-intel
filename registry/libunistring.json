@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "a5a3dff1dcd5766accd3aba78e3eeb871300f3a8",
-  "filename": "libunistring--1.4.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
+  "filename": "libunistring--1.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
   "license": {
     "any_of": [
       "GPL-2.0-or-later",
@@ -12,22 +12,22 @@
     ]
   },
   "name": "libunistring",
-  "pkg_version": "1.4.2",
-  "recipe_sha256": "f7a8b0596d62264dd4b315a975cb5415b0e1945f21f6d1c589214b0c09c62c9b",
-  "release": "intel-35629367624-1-libunistring",
+  "pkg_version": "1.5",
+  "recipe_sha256": "5a0ff014063865e7acebbe3b0e1e5b4434773b8124975898e235e78440279d6d",
+  "release": "intel-39099705541-1-libunistring",
   "revision": 0,
-  "run_id": "35629367624",
+  "run_id": "39099705541",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "a8dd941447ad9482a7fadb30ad59f6a897ee71c2be4c1bb4bd4c3a038f4d2410",
-  "size": 1925814,
+  "sha256": "fa20260d9976ea526aba0e81fbf6f4e395cf866f931cc62c4d852ff664ae8db8",
+  "size": 1952425,
   "source": {
-    "filename": "libunistring--1.4.2.sources.tar.gz",
-    "sha256": "0d4d73c5c8e89295accd0e3189e6918ef380f8ed31292a026b5f33f5d260fc20",
-    "size": 4816770
+    "filename": "libunistring--1.5.sources.tar.gz",
+    "sha256": "78518a41ff079b57cf608197c204a6b3f1532ee66badfb575689b9fe88d8ec59",
+    "size": 4919643
   },
   "tag": "sequoia",
-  "version": "1.4.2",
+  "version": "1.5",
   "version_scheme": 0,
-  "workflow_commit": "70677a7de6ba5d9553840445c6d4092b73613582"
+  "workflow_commit": "765dc1d5c5acb79dc63f6aab23f74ba7f740708e"
 }
