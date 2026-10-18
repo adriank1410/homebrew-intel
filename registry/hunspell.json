@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "hunspell--1.7.5.sequoia.bottle.tar.gz",
   "formula_sha256": "1292f1647c6bb60dc493d4fb27d8545e07d4e1d87281e19668e44eebe0fbc7d0",
   "license": {
@@ -15,9 +15,9 @@
   "name": "hunspell",
   "pkg_version": "1.7.5",
   "recipe_sha256": "47803950aa9eb1e13bc7577c96a82eb80f6f4603f13661e4c8891a451c5f9a63",
-  "release": "intel-37355759065-1-hunspell",
+  "release": "intel-39110035642-1-hunspell",
   "revision": 0,
-  "run_id": "37355759065",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -30,9 +30,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -41,15 +41,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "650e4572ea95ed2639a71f33c61082bb9cb021da2e4b8160e6270af5bacac3a0",
-  "size": 712479,
+  "sha256": "c962cf1c2879ec0a8a9fc61529f7367ae227c535096b4bdaace4958984ce4ea4",
+  "size": 712492,
   "source": {
     "filename": "hunspell--1.7.5.sources.tar.gz",
-    "sha256": "ae0bffdd1f4065582af553b6a21239282703ae01257ed79f856737833babc4f2",
-    "size": 1176279
+    "sha256": "9e86ac05566f51e6308c902a7d18603cad3c216d23ff25ac57096ed47362578a",
+    "size": 1176272
   },
   "tag": "sequoia",
   "version": "1.7.5",
   "version_scheme": 0,
-  "workflow_commit": "50b54aa57fad9317e323d05de5902c3ae2642d0c"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
