@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "f901d08921a15dabd97ef8061e77a9fd8a153cdb",
+  "core_commit": "8a362003821e1605af73bc1488741cc6b2ea4799",
   "filename": "gnupg--2.5.24_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532",
   "license": "GPL-3.0-or-later",
   "name": "gnupg",
   "pkg_version": "2.5.24_1",
   "recipe_sha256": "cb39cf745dea2547a67bb6e78175a6b29c0faa6f4c7ea5f0ad367a7e01f44d00",
-  "release": "intel-38622924725-1-gnupg",
+  "release": "intel-39127084449-1-gnupg",
   "revision": 1,
-  "run_id": "38622924725",
+  "run_id": "39127084449",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -69,9 +69,9 @@
       "pkg_version": "4.21.0"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "513c20f992711ced872639a391fbb0b3194e397ffddc4968b9f9b1e4f03b48ee",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fe2d896799994b94242cddd80167aa58d0496ae7049492126ac0d82192ac1ae8",
-  "size": 5773529,
+  "sha256": "125b6ae13cc3e8defa92533b89a1e76184f5f066b2d47467265559bd7da88d59",
+  "size": 5773536,
   "source": {
     "filename": "gnupg--2.5.24_1.sources.tar.gz",
-    "sha256": "7975bbce2b6487bc50d63ed1eadcd85c590c88bb3ea5045a1b1c0fb793a038ee",
+    "sha256": "bfba6fe087de05ed5fb0af61f152b09a0326f959f86c696f830de6318a94d985",
     "size": 8458490
   },
   "tag": "sequoia",
   "version": "2.5.24",
   "version_scheme": 0,
-  "workflow_commit": "1ee0a49d92c2dd27727e0b85067f46eb4f61704e"
+  "workflow_commit": "41e945655b16a387e0c09c3fd9964de973ec01d4"
 }
