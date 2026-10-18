@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
-  "filename": "qtnetworkauth--6.12.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "cc630efb661da841b27217a5054f84837b47451e9724cc76a4e2db4e9052653e",
+  "core_commit": "76bef543ad23d9705ee24960e9dd59e88ba60a7a",
+  "filename": "qtnetworkauth--6.12.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "1bb9f3bb5d7bc5a4d7b3441dd9890eb4d06018851fcb02fbe116b74e3d7de302",
   "license": {
     "all_of": [
       "GPL-3.0-only",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "qtnetworkauth",
-  "pkg_version": "6.12.0",
-  "recipe_sha256": "8e141c0890c369cefb478213ae4144d807486d02ade7135b858d649f2e1c58dd",
-  "release": "intel-39065355067-1-qtnetworkauth",
-  "revision": 0,
-  "run_id": "39065355067",
+  "pkg_version": "6.12.0_1",
+  "recipe_sha256": "8856ce6faece5ede3b65dee85a01ff34503895c739a8b61ae71ac315dac3bf48",
+  "release": "intel-39168602835-1-qtnetworkauth",
+  "revision": 1,
+  "run_id": "39168602835",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -99,9 +99,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
@@ -164,9 +164,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
+      "formula_sha256": "7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d",
       "name": "qtbase",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6b542e7cbb58cfa2d04c4a0d75746059e90c471c0da388e0105b52e06478db99",
-  "size": 138322,
+  "sha256": "6da06c376c8d851e25b809d0036aeefede53f4641387e6c59f565038f34a9f6f",
+  "size": 138499,
   "source": {
-    "filename": "qtnetworkauth--6.12.0.sources.tar.gz",
-    "sha256": "c9a4b1e121aeeeb33920f2bdb158e08cedd52460c145002d19c6e524f451a9cf",
-    "size": 462589
+    "filename": "qtnetworkauth--6.12.0_1.sources.tar.gz",
+    "sha256": "052961f3422d5182c6444c794a48ff88b7db4ad41ad33cea70a6bb4eaf308c80",
+    "size": 462603
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "3a90903e45d3752110249a41d2256a4d7c471475"
+  "workflow_commit": "6afdd31a091c592c52983a0718ea29eb285a3659"
 }

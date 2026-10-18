@@ -131,10 +131,10 @@
   ],
   "source_required_formula_exceptions": {
     "nmap": {
-      "formula_sha256": "a89ce9706632ebd88561c8ec32da8ab561813deaf8e388fe13ba94dfb11c7c11",
+      "formula_sha256": "00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7",
       "license": "cannot_represent",
       "requirement": "Nmap-Public-Source-License",
-      "review": "Standalone Nmap 7.991_1 bottle with OpenSSL 4; unchanged upstream source and NPSL 0.95 license, including OpenSSL linking permission. Publish the exact upstream source, recipe, build inputs, license notices, and modification provenance together."
+      "review": "Standalone Nmap 7.992 bottle with OpenSSL 4 and python@3.15 for ndiff; upstream LICENSE is byte-identical NPSL 0.95, including OpenSSL linking permission. The recipe uses the macOS SDK libpcap and does not bundle Npcap. Publish the exact upstream source, recipe, build inputs, license notices, and modification provenance together."
     }
   },
   "redistribution_exceptions": {},
