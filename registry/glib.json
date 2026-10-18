@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "glib--2.90.1.sequoia.bottle.tar.gz",
   "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
   "license": "LGPL-2.1-or-later",
   "name": "glib",
   "pkg_version": "2.90.1",
   "recipe_sha256": "ae7a82ab1ff54fff77ea987c6143955ea907f162aa68334f703637d63cd58b44",
-  "release": "intel-37637289224-1-glib",
+  "release": "intel-39110035642-1-glib",
   "revision": 0,
-  "run_id": "37637289224",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -24,9 +24,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b863dd3dd577abd5f6d44981b741aa644ae2dc4223d133517b1c12a96b79b2f9",
-  "size": 9283501,
+  "sha256": "c24f94d2fba077f7110e22cff8fad7b75030cbdc3839d1e0b982a7d149c2e225",
+  "size": 9283153,
   "source": {
     "filename": "glib--2.90.1.sources.tar.gz",
-    "sha256": "22d1fdaf3232f5bdae495ab637c0b25d820922c8616dbb5eadc0270c20a8c2c6",
-    "size": 7032347
+    "sha256": "2ade9573a50c751a298062b0b795edcbfe3ae227e653f7e4b42e6a566d2a6226",
+    "size": 7032339
   },
   "tag": "sequoia",
   "version": "2.90.1",
   "version_scheme": 0,
-  "workflow_commit": "240d9bc69d01851a29caf2582b62da754d5b1336"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
