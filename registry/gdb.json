@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "1b00735b4ba8a6a9e1f8fc6989b956f05caa8bce",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "gdb--18.1.sequoia.bottle.tar.gz",
   "formula_sha256": "9f95928f65533ac836e37d7550133cf64e49f74ae5a3ea640cb209c37b046d75",
   "license": "GPL-3.0-or-later",
   "name": "gdb",
   "pkg_version": "18.1",
   "recipe_sha256": "72b1a816d3a640a012ebe08ed8bb3673359c642047e382f82fad293c38aa4326",
-  "release": "intel-38983069946-1-gdb",
+  "release": "intel-39110035642-1-gdb",
   "revision": 0,
-  "run_id": "38983069946",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -64,9 +64,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -80,15 +80,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "712ec0ae890cf50571cea15295ffaf70d4fc09f8fec31bcbb6117a989053753f",
-  "size": 9015910,
+  "sha256": "a47ea88ff6a4fe8bd49f3fe0861f7d84db63f8e3074f6f856abd09bd3b7e494d",
+  "size": 9015842,
   "source": {
     "filename": "gdb--18.1.sources.tar.gz",
-    "sha256": "5a4403dcffa283c50f3c8ccc6ae86ca75541958dd48d31dac1aa7ffbf0ca0464",
-    "size": 22214029
+    "sha256": "81a14ee922b00dbef4d1dfe875f10831deef1d539af7fcaed85013d269540746",
+    "size": 22214046
   },
   "tag": "sequoia",
   "version": "18.1",
   "version_scheme": 0,
-  "workflow_commit": "a24613ce8a28eacc1491491eed570ed5fbd2ed59"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }

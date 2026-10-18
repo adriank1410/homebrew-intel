@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1db66fda35a3a1de41d2f352628f78678ccbaaf0",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "c6e1f164d25b434988d9f7c88ba924b682e3fce0",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "ldns--1.9.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ad053fa13bcf235ccb9daa313c62bd7c251b7977eea85e67112eb0a2f0dfe29b",
   "license": "BSD-3-Clause",
   "name": "ldns",
   "pkg_version": "1.9.2_1",
   "recipe_sha256": "c9cfc1eb09549873df6096ff6e3b5009021b0a8e8bd88e54f2277cf70624bdd7",
-  "release": "intel-38392314999-1-ldns",
+  "release": "intel-39110035642-1-ldns",
   "revision": 1,
-  "run_id": "38392314999",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -44,9 +44,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "88e71a50dac7656ad85258bb20c58c0f174fab4909bdf92488ce39ada5e70ce3",
-  "size": 1309056,
+  "sha256": "9f64bf2f5309852ffe5ac9d5685c326339274664a692ac3d88425dee13c04ce6",
+  "size": 1309107,
   "source": {
     "filename": "ldns--1.9.2_1.sources.tar.gz",
-    "sha256": "ac702eaa23361a39ea1789b15c591facff6fc1536819ea5070ae72cc3025cb55",
-    "size": 1314526
+    "sha256": "e6f2104b992e8fb3ddf7c97fe46389056d9fa433639964cf7f5eee3979e43484",
+    "size": 1314531
   },
   "tag": "sequoia",
   "version": "1.9.2",
   "version_scheme": 0,
-  "workflow_commit": "7140303577aac5a4a91501ab06252154fac39b1f"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
