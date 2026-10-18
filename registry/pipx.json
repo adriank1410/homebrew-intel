@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "aac1fb890f953b8ee31d572bf1956de16f16c23d",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any_skip_relocation",
-  "core_commit": "d113a0d46f3d63566587c05c837c92b19b88060c",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "pipx--1.18.2.sequoia.bottle.tar.gz",
   "formula_sha256": "735d12f907ddd1d027630f5db630fe9610ad0fb3d6d554533518e7d0295e7e06",
   "license": "MIT",
   "name": "pipx",
   "pkg_version": "1.18.2",
   "recipe_sha256": "fd180744f8cc8b9f38623d680a45d734cf4c1ff6ada6265573bcaaff0e5793ea",
-  "release": "intel-39033545227-1-pipx",
+  "release": "intel-39110035642-1-pipx",
   "revision": 0,
-  "run_id": "39033545227",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -44,9 +44,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ff9cfdb7a85b14dcd4b519a24cb115cfc6a8c46bb2760ee1466209c4bee93842",
-  "size": 570559,
+  "sha256": "094124adcf67b0088c3084719c1f4e07b74bbb42d9c70b18010d7f210d03c55c",
+  "size": 570581,
   "source": {
     "filename": "pipx--1.18.2.sources.tar.gz",
-    "sha256": "01ce6e653fdf774517fd29a2cc276ca5def3d7b99a96bac747d44b0bd615d8f4",
-    "size": 1816197
+    "sha256": "5a24715185d21394b3e00f41e4a78cbe0b3d1be886a33d60bde4961bf9a91066",
+    "size": 1816204
   },
   "tag": "sequoia",
   "version": "1.18.2",
   "version_scheme": 0,
-  "workflow_commit": "80c4b4e0da7b02f9022188a4e9c213bced2447ac"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
