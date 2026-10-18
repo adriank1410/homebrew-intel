@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "deno--2.9.7.sequoia.bottle.tar.gz",
   "formula_sha256": "5a154a1bcb4b2d16fac4d15bb31f4bc31d056461698bfc06a3a1244a8face9b1",
   "license": "MIT",
   "name": "deno",
   "pkg_version": "2.9.7",
   "recipe_sha256": "ec49bf1469c63bc2e104238d10ae879a7499ea1d64861ae7ae9d44f260a98255",
-  "release": "intel-38513515528-1-deno",
+  "release": "intel-39110035642-1-deno",
   "revision": 0,
-  "run_id": "38513515528",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -49,9 +49,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "419ebb840daafae97d4dcc3c8a7b4b254d60b324d3c93b640d14eada882b5dc4",
-  "size": 47397199,
+  "sha256": "e3b6770bdbc77e7703afbb8f3aced9af72e11cb78381248eaa346c2020e18169",
+  "size": 47419818,
   "source": {
     "filename": "deno--2.9.7.sources.tar.gz",
-    "sha256": "cfff8eceb8bf11c79affa332e5afd539108b2d0e48a68ca21d241ffffff1e849",
-    "size": 175753090
+    "sha256": "3192a47446555ad7686486860098f4d9edc74c70f6488beaf983674cfe0d9ed5",
+    "size": 175758799
   },
   "tag": "sequoia",
   "version": "2.9.7",
   "version_scheme": 0,
-  "workflow_commit": "8870643a4a082b95ed32bd4c88d893d28dff28d5"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
