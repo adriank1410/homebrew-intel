@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-39060245056-1-pango",
+  "release": "intel-39164277599-1-pango",
   "revision": 0,
-  "run_id": "39060245056",
+  "run_id": "39164277599",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -84,9 +84,9 @@
       "pkg_version": "0.1.30"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "36c4f507e8ea0fddc06e4a2094add5e3c7a9124ade73e0840a95ca2533bd2de3",
-  "size": 882865,
+  "sha256": "9e354710b64a2f3badb306ea383a659b37728d02843cc7884675a47a5a4d3861",
+  "size": 882849,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "f73973166e665e8632ce1f81ec72fa6028779b3aa2bc4248c52ee83900b11516",
-    "size": 1932736
+    "sha256": "63b7bbde29f27891478744a8879adcb8187869b714abf481c0ebf0e456841fad",
+    "size": 1932731
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "eda88d392a57434bc848a04977ae57a38f0e3540"
+  "workflow_commit": "a8c8f12acb467358cc04ab5a670c18cf83695b4d"
 }
