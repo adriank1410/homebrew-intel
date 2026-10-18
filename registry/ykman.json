@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any_skip_relocation",
-  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "ykman--5.9.2.sequoia.bottle.tar.gz",
   "formula_sha256": "2655c78d83cbe1e8697c24c02c945406bf30db46460cb93e2793c45cc0dfe722",
   "license": "BSD-2-Clause",
   "name": "ykman",
   "pkg_version": "5.9.2",
   "recipe_sha256": "59f3abd0fd7f9139563cdf1e261db7f3a9b3a2e51a0ff22a2f7c50b0401e7e3d",
-  "release": "intel-38562177045-1-ykman",
+  "release": "intel-39110035642-1-ykman",
   "revision": 0,
-  "run_id": "38562177045",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -59,9 +59,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "29a71997faf518b02faf4693029b853354a449068a446aa3ed484f3a2a73f586",
-  "size": 974469,
+  "sha256": "33e6354d73b1515201866d5160e525c0b62607437949e923945a633499678d25",
+  "size": 974456,
   "source": {
     "filename": "ykman--5.9.2.sources.tar.gz",
-    "sha256": "2eb9b5ef1e35e49243bd44b1967d258feeca6fded8dba07de41e599d730f4d68",
-    "size": 2060347
+    "sha256": "b59983dede5241311a1e856e90df57be0777c1b9c1eb2059db6f1f84388b4f4a",
+    "size": 2060359
   },
   "tag": "sequoia",
   "version": "5.9.2",
   "version_scheme": 0,
-  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
