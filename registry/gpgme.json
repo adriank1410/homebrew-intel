@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "f901d08921a15dabd97ef8061e77a9fd8a153cdb",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
   "filename": "gpgme--2.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "91bbde19b895edfe0e4e413ed77e4cf0cf3aea6631fb5d93e75290cc3eed58af",
   "license": "LGPL-2.1-or-later",
   "name": "gpgme",
   "pkg_version": "2.2.0",
   "recipe_sha256": "52a601311da12ef2587462a4b95237f98d987da442d9ee26d71e52bbf500a0fb",
-  "release": "intel-38628262816-1-gpgme",
+  "release": "intel-39144505765-1-gpgme",
   "revision": 0,
-  "run_id": "38628262816",
+  "run_id": "39144505765",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -74,9 +74,9 @@
       "pkg_version": "4.21.0"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "513c20f992711ced872639a391fbb0b3194e397ffddc4968b9f9b1e4f03b48ee",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cb97eeb26c8784c4a0351f6573e1ba91f9f3129b88bd49dc9428e01a5249e910",
-  "size": 786276,
+  "sha256": "c7c4b945cdb11557473abe27d8358e0ff5d6f993523eafba536fb8064f2ea0f8",
+  "size": 786268,
   "source": {
     "filename": "gpgme--2.2.0.sources.tar.gz",
-    "sha256": "5fb8a2bdf9095bead7986c17fb12e7044d8c7b317e83f7fd347c24ebcd69f192",
-    "size": 1439539
+    "sha256": "508e8ceb682df5e6c21e2dec5c4066d27cb93f6dab96e268593dfbd3e2ba5694",
+    "size": 1439540
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "4aecf9ca1135014217a3123418c503b03521ce0c"
+  "workflow_commit": "e05169412a3e4aa60ab302c59d7b9043264b6e9c"
 }
