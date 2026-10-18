@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Refresh the Nmap source-required exception for recipe `00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7` (7.992). The 7.991_1 exception no longer matches, which blocked `nmap` and `rustscan` before compilation.
 - After a sweep merges at least one bottle registry pull, start the next dependency wave immediately, for up to eight waves. A sweep that publishes nothing, a one-root repair, and the eighth wave leave the rest to the hourly schedule.
 
 ## 0.2.8 – skip blocked runtime toolchains
