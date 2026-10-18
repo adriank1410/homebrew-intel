@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
+  "cellar": "any_skip_relocation",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
+  "filename": "gengetopt--2.23.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "18782d8119e909877c9de242a9b19495cff2dd676c4a1c3facbab0fcb65528a5",
+  "license": "GPL-3.0-or-later",
+  "name": "gengetopt",
+  "pkg_version": "2.23.1",
+  "recipe_sha256": "64d590262428d44c51d3bdc795a4e38dd0973c6e9f9faf6c43cb9c4862f28602",
+  "release": "intel-39100653165-1-zmap",
+  "revision": 0,
+  "run_id": "39100653165",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "74804152e36d4c465f8e284be7394f8108b09c6a7b89923f916b5c0e2a29a521",
+  "size": 309069,
+  "source": {
+    "filename": "gengetopt--2.23.1.sources.tar.gz",
+    "sha256": "2fc7667a8e71e20e2c6c91c98ec24ae8149544abd18c9ee481873e1cfb823b7a",
+    "size": 679474
+  },
+  "tag": "sequoia",
+  "version": "2.23.1",
+  "version_scheme": 0,
+  "workflow_commit": "a551b2910944e66e59b8dad77d8c2a1c04cc36b6"
+}
