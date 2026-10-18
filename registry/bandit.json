@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "bandit--1.9.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8359d8da6489ffe3974aa2c43d12de7b5bc04392a37cd0363da6dcb05b264b1a",
   "license": "Apache-2.0",
   "name": "bandit",
   "pkg_version": "1.9.4_1",
   "recipe_sha256": "9e191c80016e5e1a66bc86493eefff6e24f69ff107cb6186fd0541eeb24987ab",
-  "release": "intel-38153631705-1-bandit",
+  "release": "intel-39110035642-1-bandit",
   "revision": 1,
-  "run_id": "38153631705",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -49,9 +49,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4babebfaf7b5e0be83c334cdd070ec026ccbabbcf70db4453b78cd310c9c5695",
-  "size": 1669662,
+  "sha256": "60490da7ce975e1572d85aa4222f9bca2f0153ca8d99aa33dcd3f8766aa61baf",
+  "size": 1669787,
   "source": {
     "filename": "bandit--1.9.4_1.sources.tar.gz",
-    "sha256": "656fb7f3be0a625cb83c915881eef2ef75b22a6299aac7b0505ec2dacfd42300",
-    "size": 10227977
+    "sha256": "aa9c816991ba25471d83ff0b074c193ff8c30d88c2663019c145de16c86ecf91",
+    "size": 10227973
   },
   "tag": "sequoia",
   "version": "1.9.4",
   "version_scheme": 0,
-  "workflow_commit": "6faae81ddf349f97dd022e5e161b91491bc81b14"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
