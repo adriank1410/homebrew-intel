@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
   "filename": "py3cairo--1.29.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a227a826bc277830cf061249aad1ff6a31d0a7d703ba5e28478c8992603a9414",
   "license": {
@@ -14,9 +14,9 @@
   "name": "py3cairo",
   "pkg_version": "1.29.2_1",
   "recipe_sha256": "65a3c1fea0d8514cb68e48084500cb67c8c5545cb2647034bce5ef41f9dabd51",
-  "release": "intel-39046630244-1-py3cairo",
+  "release": "intel-39144505765-1-py3cairo",
   "revision": 1,
-  "run_id": "39046630244",
+  "run_id": "39144505765",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -59,9 +59,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1ab76889f1b7a02c8a14cdee125892d5b2417ae04d8aea3372ad7aa766e6bc1c",
-  "size": 257929,
+  "sha256": "782c6f816c608616f940a948bf2167bea46cabd708ab5df8482dec3a992a5544",
+  "size": 257947,
   "source": {
     "filename": "py3cairo--1.29.2_1.sources.tar.gz",
-    "sha256": "5aacf3c02580f8375e1f9aed3e720e622d72b737571af544a5c2f0ec551a35c6",
-    "size": 688437
+    "sha256": "55997dcc5457a569a5168efa2397f2f6fda16779e0395929c84ed14af242215b",
+    "size": 688426
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "54e66ca268b41653896d472a15e38e9301469d79"
+  "workflow_commit": "e05169412a3e4aa60ab302c59d7b9043264b6e9c"
 }
