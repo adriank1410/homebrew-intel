@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
   "filename": "neovim--0.12.6.sequoia.bottle.tar.gz",
   "formula_sha256": "606913db5b7f1001339be19ee46a907259aa72bc8ca08424602672f225df3092",
   "license": "Apache-2.0",
   "name": "neovim",
   "pkg_version": "0.12.6",
   "recipe_sha256": "da613175b4b72e41036412b8b564f027039a909ab9c95b02e7c7608f06c030fe",
-  "release": "intel-38684026190-1-neovim",
+  "release": "intel-39110035642-1-neovim",
   "revision": 0,
-  "run_id": "38684026190",
+  "run_id": "39110035642",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -24,9 +24,9 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "ce98fd5a27fe5e0d9114f0d31507c6735a5784974b4aa0f5a6fa59bece96bf84",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "64f433b529a78fba44b3cb53c7b32d4bc41472af54d37bf7a8b2b15379c61a27",
-  "size": 8362845,
+  "sha256": "f09429daf929a73e4df3285ee19f2832ec6382686beeeaffc5562f652296eaf5",
+  "size": 8362682,
   "source": {
     "filename": "neovim--0.12.6.sources.tar.gz",
-    "sha256": "384e12dd8996df836a62358a224909f92cc58df7aa246c29a85b837f9d724c03",
-    "size": 14989668
+    "sha256": "30e02d322f9cd1114aaaee2c14ca0c2fdb4deeaab84273e10ee4576f22bf1415",
+    "size": 14989673
   },
   "tag": "sequoia",
   "version": "0.12.6",
   "version_scheme": 0,
-  "workflow_commit": "d6dfc6e65bd84ac867f50676eacd0ccc8ab940d5"
+  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
 }
