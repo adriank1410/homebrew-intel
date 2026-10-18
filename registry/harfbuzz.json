@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
   "filename": "harfbuzz--14.6.0.sequoia.bottle.tar.gz",
   "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
   "license": "MIT",
   "name": "harfbuzz",
   "pkg_version": "14.6.0",
   "recipe_sha256": "b2c3828ee3df77b7ddd92e94670555f6f94912fac4ce16820a4b9411e6d43bc5",
-  "release": "intel-39057549812-1-harfbuzz",
+  "release": "intel-39151600683-1-harfbuzz",
   "revision": 0,
-  "run_id": "39057549812",
+  "run_id": "39151600683",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -64,9 +64,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
@@ -120,15 +120,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9d6258e48ebbc28c7741deba080119622a3f813a0271d267b188fb86aa934476",
-  "size": 4303066,
+  "sha256": "417d6066f3ea3fa7f647bc0fafd84491670df88556e782d474dc113db282f97a",
+  "size": 4303047,
   "source": {
     "filename": "harfbuzz--14.6.0.sources.tar.gz",
-    "sha256": "b511c206ff55c965d9ba52ee4a0dbab0db20e0f40f4230eecacbf1f0b16d4e31",
-    "size": 20313216
+    "sha256": "feecd75fd1936dec0939beea0d3daa3cc6b6364aa00884892ecdcca92bfaba36",
+    "size": 20313206
   },
   "tag": "sequoia",
   "version": "14.6.0",
   "version_scheme": 0,
-  "workflow_commit": "ee2c2f5a71c23765ff79137082d8b1c1e2d8f079"
+  "workflow_commit": "bbc3b0d9ffb244de62110ac9a509bdfb3b942cfc"
 }
