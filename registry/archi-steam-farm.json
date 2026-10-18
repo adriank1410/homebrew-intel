@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any_skip_relocation",
-  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
   "filename": "archi-steam-farm--6.3.10.6.sequoia.bottle.tar.gz",
   "formula_sha256": "9d13fedf8a4bf6775ab9e9a9f8af8746845afc7bd55b02d6a10d381b5a30cf25",
   "license": "Apache-2.0",
   "name": "archi-steam-farm",
   "pkg_version": "6.3.10.6",
   "recipe_sha256": "a5bd3e55a160a4ab2522e7f408d9792b3a5c59dae8aeef3afeaf07e997c31fb7",
-  "release": "intel-38562177045-1-archi-steam-farm",
+  "release": "intel-39144505765-1-archi-steam-farm",
   "revision": 0,
-  "run_id": "38562177045",
+  "run_id": "39144505765",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -24,9 +24,9 @@
       "pkg_version": "2026-09-25"
     },
     {
-      "formula_sha256": "294ce0b7a664cefaec814d88330aa5438f3aeab890c85ab2e539380b764296e7",
+      "formula_sha256": "0c4a8f98e27df5f792d2f7e04b5229e2eaf59b2bfdd31920bf4e6a02fe571fc0",
       "name": "dotnet",
-      "pkg_version": "10.0.401_1"
+      "pkg_version": "10.0.402"
     },
     {
       "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "863a00af39e2b25f7e6df7096ac061cc295076ffaef1318110ac062eb7680509",
-  "size": 8231792,
+  "sha256": "53e533e0405ae01735ffed0b57ac0e68a2ccdb53a45de4b2f4f69e66e4a22c26",
+  "size": 8231615,
   "source": {
     "filename": "archi-steam-farm--6.3.10.6.sources.tar.gz",
-    "sha256": "35165583201ab14235070995d32aad834b06c9322b3b57ec62047aed3d084637",
-    "size": 10859500
+    "sha256": "43171348d30c6708a3bc77230a7d8e510bed194fc827c337f645c8a8b617b4a2",
+    "size": 10859485
   },
   "tag": "sequoia",
   "version": "6.3.10.6",
   "version_scheme": 0,
-  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+  "workflow_commit": "e05169412a3e4aa60ab302c59d7b9043264b6e9c"
 }
