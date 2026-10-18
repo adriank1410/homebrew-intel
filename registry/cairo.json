@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "aac1fb890f953b8ee31d572bf1956de16f16c23d",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "d113a0d46f3d63566587c05c837c92b19b88060c",
+  "core_commit": "8a362003821e1605af73bc1488741cc6b2ea4799",
   "filename": "cairo--1.18.6.sequoia.bottle.tar.gz",
   "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
   "license": {
@@ -14,9 +14,9 @@
   "name": "cairo",
   "pkg_version": "1.18.6",
   "recipe_sha256": "9f872499482a41849cf1a706b7b1287e3f30242fbd5f95c17da74aac595ac725",
-  "release": "intel-39035874484-1-cairo",
+  "release": "intel-39127084449-1-cairo",
   "revision": 0,
-  "run_id": "39035874484",
+  "run_id": "39127084449",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -54,9 +54,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7d1b83864dc5301bd60050d75c3f3e3d932781fc220635ffc2e8afa9f7163ba0",
-  "size": 1648636,
+  "sha256": "05da796341a3befa6f5d616013dc4d1e7be44a364074746901d4f80bf435b8b3",
+  "size": 1648621,
   "source": {
     "filename": "cairo--1.18.6.sources.tar.gz",
-    "sha256": "784eb848fea4e46d8e986d735f90f5dd25f218364cbcdb89e3b2ec1586545b1b",
-    "size": 32763998
+    "sha256": "55a59b8e0064b4b602edcbad16e31686e44a36fee17329dacbe2ef4a0d8f5a53",
+    "size": 32763997
   },
   "tag": "sequoia",
   "version": "1.18.6",
   "version_scheme": 0,
-  "workflow_commit": "1a2bdd9a5860d74fcfa63c6b80d04f9c1ecceb17"
+  "workflow_commit": "41e945655b16a387e0c09c3fd9964de973ec01d4"
 }
