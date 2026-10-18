@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6c0c05c0033861f3ff3ce076d9726a2eb7608261",
+  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
   "cellar": "any",
-  "core_commit": "f6f65b2a310c66f0f354615afea72349fa6db43a",
-  "filename": "sqlite--3.54.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
+  "filename": "sqlite--3.54.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
   "license": "blessing",
   "name": "sqlite",
-  "pkg_version": "3.54.0",
-  "recipe_sha256": "1ddb65adc6ea5d30b118e6eb9e8f8d61339215f8d4eabe3417b788c551d533fa",
-  "release": "intel-38152089000-1-sqlite",
+  "pkg_version": "3.54.1",
+  "recipe_sha256": "b990edd7ee43735d69ea67c3a0d111527c7136ff6ea0c2801b16421ba4a684e0",
+  "release": "intel-39099705541-1-sqlite",
   "revision": 0,
-  "run_id": "38152089000",
+  "run_id": "39099705541",
   "runtime_dependencies": [
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "81a76457bbcf4aafd66d9ab9003ea463c8dd2506b05ae30bf7e2d6f0b1300f8d",
-  "size": 2565927,
+  "sha256": "68d9ac4376b3c48927550ac8dea7259e49cf8606ee8b83dea564795cde6524c7",
+  "size": 2567429,
   "source": {
-    "filename": "sqlite--3.54.0.sources.tar.gz",
-    "sha256": "bf2199b02ac018dba8f2ef33c5f776c020561be4b2d64bc951d13403a2cb3ec6",
-    "size": 3339135
+    "filename": "sqlite--3.54.1.sources.tar.gz",
+    "sha256": "219dc4c0b98d5777767349c20a5076e79d5a1a174af6c939e97b3c69eb29eb6e",
+    "size": 3339587
   },
   "tag": "sequoia",
-  "version": "3.54.0",
+  "version": "3.54.1",
   "version_scheme": 0,
-  "workflow_commit": "2ac1bc8f4d98e7d497360415843be55dd2740da1"
+  "workflow_commit": "765dc1d5c5acb79dc63f6aab23f74ba7f740708e"
 }
