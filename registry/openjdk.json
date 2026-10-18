@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
   "filename": "openjdk--27.sequoia.bottle.tar.gz",
   "formula_sha256": "275e623d1a3fa218d3d6cc2ebdc27c591ec67a19b62511018ea93e057a3feaba",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk",
   "pkg_version": "27",
   "recipe_sha256": "b8f389539e303280b6d817c7d8fd82e8f0247d64770b223325a42458dc5e5e16",
-  "release": "intel-39060245056-1-openjdk",
+  "release": "intel-39164277599-1-openjdk",
   "revision": 0,
-  "run_id": "39060245056",
+  "run_id": "39164277599",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -88,9 +88,9 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
@@ -169,15 +169,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "89b79649cce88a7379b651121c0f55f6b3165bc711a711e9d52e93f394813f18",
-  "size": 222796169,
+  "sha256": "f4c900d95249fc1523669243d58d280a90df25c9b04a78bccaf3dfa7a1732578",
+  "size": 222796203,
   "source": {
     "filename": "openjdk--27.sources.tar.gz",
-    "sha256": "52227392b409c4f9185dc0f1dd11e72ec771c782bb40e9b6335786a41b988327",
-    "size": 340075366
+    "sha256": "84c9d29e53803c242d72e7c11baca7d2c8f430e5295242c47cec85cf34a7c85c",
+    "size": 340075309
   },
   "tag": "sequoia",
   "version": "27",
   "version_scheme": 0,
-  "workflow_commit": "eda88d392a57434bc848a04977ae57a38f0e3540"
+  "workflow_commit": "a8c8f12acb467358cc04ab5a670c18cf83695b4d"
 }
