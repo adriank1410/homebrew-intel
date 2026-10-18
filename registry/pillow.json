@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
+  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
   "filename": "pillow--12.3.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "f04e088b705d8af96d99f3d186e46b6c119111537249822f5beaf6114f9ec1a2",
   "license": "MIT-CMU",
   "name": "pillow",
   "pkg_version": "12.3.0_1",
   "recipe_sha256": "f4ac275cf640abc506c730ec0e209784b04b097cbc4a4e56e61143143f65726a",
-  "release": "intel-39060245056-1-pillow",
+  "release": "intel-39164277599-1-pillow",
   "revision": 1,
-  "run_id": "39060245056",
+  "run_id": "39164277599",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -114,9 +114,9 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "e26bc5341ea496e86d7f2be1f48a711235139d5ccd10556188d3c52b24a30f76",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dcca0440cecc632f5c179bac52c1b0953e89ca839248ddfb0562ea9cb9ad7945",
-  "size": 1390531,
+  "sha256": "62705caf75846c32343ed4d78c2a35633f6aba0e7118fce12d226b8de736ff0a",
+  "size": 1390545,
   "source": {
     "filename": "pillow--12.3.0_1.sources.tar.gz",
-    "sha256": "449c9af091440c980e903d6ca329e1f23e460d1b12296dc4949ef564f69e60f4",
-    "size": 46945524
+    "sha256": "7a8a937d1a613d5347e8b1893c9735cd89884c9599b5ee8a3369c2981adce1b5",
+    "size": 46945502
   },
   "tag": "sequoia",
   "version": "12.3.0",
   "version_scheme": 0,
-  "workflow_commit": "eda88d392a57434bc848a04977ae57a38f0e3540"
+  "workflow_commit": "a8c8f12acb467358cc04ab5a670c18cf83695b4d"
 }
