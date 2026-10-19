@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "8a362003821e1605af73bc1488741cc6b2ea4799",
-  "filename": "gts--0.7.6_3.sequoia.bottle.tar.gz",
-  "formula_sha256": "e3d6b09c676761a60774e90cd96015d36257b54cd1b0d0395ea707a87be18ae2",
+  "core_commit": "202772eb1d755ecbe630ea37cdd04c4806a684d1",
+  "filename": "gts--0.7.6_4.sequoia.bottle.tar.gz",
+  "formula_sha256": "e2d424ec33c7ef4a3b75265d1c21a9b25fe5f79c6e1a6f022008c93aa8ce50be",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
-  "pkg_version": "0.7.6_3",
-  "recipe_sha256": "fa36c048669fb895d41ef201607f9c8745b85b5d4868c69be5613cf719599e21",
-  "release": "intel-39127084449-1-gts",
-  "revision": 3,
-  "run_id": "39127084449",
+  "pkg_version": "0.7.6_4",
+  "recipe_sha256": "5ea32681a81c5217dc2e8f09094afc887a218565b7be62f3b4af98a712e3d39a",
+  "release": "intel-39185975395-1-gts",
+  "revision": 4,
+  "run_id": "39185975395",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -64,9 +64,9 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "63d7900f5a1da17b4ebb057de3598c9b6abbd6cc81e5dcad0dbeb738d5192cb5",
+      "formula_sha256": "3be5e60cb06705535cdc7b77d75cb12e6af4b18a9d9eec797e7fd96dab1d1be8",
       "name": "netpbm",
-      "pkg_version": "11.02.30"
+      "pkg_version": "10.86.51"
     },
     {
       "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "edb2dea355cc7b99194f9930de970758a149e88a5b06327036f0b7e134816ea7",
-  "size": 431569,
+  "sha256": "644508f5910bb05b7932e4cb8159a090d3e7fc65bad7577da80e532d0bf89e80",
+  "size": 431576,
   "source": {
-    "filename": "gts--0.7.6_3.sources.tar.gz",
-    "sha256": "5b1f45840e446d6c4308c485cc72c2cfd04a3cb61e18e45f2282ad9b9027f0f3",
-    "size": 959573
+    "filename": "gts--0.7.6_4.sources.tar.gz",
+    "sha256": "5fe98ac5b62f44e74e0243b4b5d6fcf0b3583eb9a81f095e98150074654e20c7",
+    "size": 959583
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "41e945655b16a387e0c09c3fd9964de973ec01d4"
+  "workflow_commit": "1d04d20c0c94e1fa76b4577c3c296e4098c97798"
 }
