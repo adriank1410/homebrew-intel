@@ -1,0 +1,154 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "d78c1943dc2b77930691102481df0d9e9bf7e257",
+  "cellar": "any_skip_relocation",
+  "core_commit": "bf15382d54581a9a5f9836fbe141cdd1b57eff67",
+  "filename": "gemini-cli--0.64.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "15ac7ca4222203a360f7d47b5badd361983531cd76336d8822ce6f72cd8ba717",
+  "license": "Apache-2.0",
+  "name": "gemini-cli",
+  "pkg_version": "0.64.0",
+  "recipe_sha256": "549079a4587ab3fbddecd83034c208bd0de66667225f95c60dbbe6ea1d574b0f",
+  "release": "intel-39297663432-1-gemini-cli",
+  "revision": 0,
+  "run_id": "39297663432",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
+      "name": "abseil",
+      "pkg_version": "20260817.0"
+    },
+    {
+      "formula_sha256": "52379177f404f68787018154cfee6754b42455bf376830d5c27123946d1a93d5",
+      "name": "ada-url",
+      "pkg_version": "4.0.0_1"
+    },
+    {
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "fdcab3038af1e615e42157bcda8145db6581e4d24cde38e2de2c3901300bc4d4",
+      "name": "c-ares",
+      "pkg_version": "1.34.8"
+    },
+    {
+      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "name": "ca-certificates",
+      "pkg_version": "2026-09-25"
+    },
+    {
+      "formula_sha256": "ebc7a265a6d41e1924dcf8251afcaad049030402567914b53da8270132a17a31",
+      "name": "fmt",
+      "pkg_version": "12.2.0"
+    },
+    {
+      "formula_sha256": "fb1802ef660c892dd90fe7ec47a14e38ce6e662703f52a39cb96a5b1774cae6f",
+      "name": "hdrhistogram_c",
+      "pkg_version": "0.12.1"
+    },
+    {
+      "formula_sha256": "4cd06ebd5130b5983d8106f0d51ce97316d8e19dd20cdfd9cf7910932e8ed8d9",
+      "name": "highway",
+      "pkg_version": "1.4.0"
+    },
+    {
+      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "312e209812b3b223dad00b6828149fd61fd593008c2da785f486bc6556c24962",
+      "name": "libffi",
+      "pkg_version": "3.8.0"
+    },
+    {
+      "formula_sha256": "3bfb2679bd1e7467374e1b40ea9c50206c95fb074fe7ad83706242f2c14a3205",
+      "name": "libnghttp2",
+      "pkg_version": "1.70.0"
+    },
+    {
+      "formula_sha256": "ce98fd5a27fe5e0d9114f0d31507c6735a5784974b4aa0f5a6fa59bece96bf84",
+      "name": "libuv",
+      "pkg_version": "1.53.0"
+    },
+    {
+      "formula_sha256": "fb046c70a9ea6d7d0482c23904078dbcd6a6c56ea57b3c9907c16ac85ba83dc7",
+      "name": "llhttp",
+      "pkg_version": "9.4.3"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "2281084d9724c42e4f92e7992ecde90b749f829fa815f1388cada6658c19d194",
+      "name": "merve",
+      "pkg_version": "1.2.2_4"
+    },
+    {
+      "formula_sha256": "40a620271610fec80bdb22d0dfa08a6bbd64bbddef864c0e5cc5f4c59a1c622b",
+      "name": "nbytes",
+      "pkg_version": "0.1.4"
+    },
+    {
+      "formula_sha256": "77a423884b4db1abe8113fc404054b8baa0835edf73c36c66cb6cfc27e1a4251",
+      "name": "node",
+      "pkg_version": "26.12.0"
+    },
+    {
+      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "47bbb72484963e208c72cc8b6531713e3587e073b8f00753e3f80951cdce883f",
+      "name": "simdjson",
+      "pkg_version": "5.0.5"
+    },
+    {
+      "formula_sha256": "ab161a72d2fed255ac87c057f289c33ac56a4997ad29416cbbd83e7924f7752e",
+      "name": "simdutf",
+      "pkg_version": "9.3.2"
+    },
+    {
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "name": "sqlite",
+      "pkg_version": "3.54.1"
+    },
+    {
+      "formula_sha256": "df4e53e6f0ecc9e9e392da1ffbd119fcce1c9bba6ea03f7786757f71a8dbe39f",
+      "name": "uvwasi",
+      "pkg_version": "0.0.23"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "ec926177d177f153947d158664776002ea10d08bf2a26d69360748ab2f6fabf7",
+  "size": 21507980,
+  "source": {
+    "filename": "gemini-cli--0.64.0.sources.tar.gz",
+    "sha256": "17f4c6f8def8e6661d40c9976338b1dc9fcdfab2c71ec49893e80e6bbf5ea4e7",
+    "size": 20829778
+  },
+  "tag": "sequoia",
+  "version": "0.64.0",
+  "version_scheme": 0,
+  "workflow_commit": "9bf740950a14357486776df9121837e36d160d8f"
+}
