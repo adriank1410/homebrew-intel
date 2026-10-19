@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any_skip_relocation",
-  "core_commit": "652f016237dc92ce3f1faa9e3af85017657fce75",
+  "core_commit": "ffe3e266efee644b28d73676d3f131b58950eebd",
   "filename": "sherlock--0.16.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "476b43958465cadcbf54f8cd90d04e9c0fe0b85a9315b8f94d26ac6befdb4e99",
   "license": "MIT",
   "name": "sherlock",
   "pkg_version": "0.16.2_1",
   "recipe_sha256": "27503168383111a9c4b107963c155c73a89dd297a8a57584ceaeee5836142c04",
-  "release": "intel-39148457646-1-sherlock",
+  "release": "intel-39204027732-1-sherlock",
   "revision": 1,
-  "run_id": "39148457646",
+  "run_id": "39204027732",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-09-25"
     },
     {
-      "formula_sha256": "9950faee71707c63ade094ab06424c159baa0f4e33df2596bf8ef52d72806079",
+      "formula_sha256": "12b5194d23029c97571b9b771987907d5e6b4c41ce6b012f0464768a164ca0dc",
       "name": "certifi",
-      "pkg_version": "2026.7.22_1"
+      "pkg_version": "2026.10.18"
     },
     {
       "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "31fb766261bb45b1e8ed6f9387a41633e91e0487c259457095a6942678407c49",
-  "size": 11947140,
+  "sha256": "291ed183747a6ca0e107b93dd43d800bee6dd87ca96d9bb8bd6780ffb22c288f",
+  "size": 11947010,
   "source": {
     "filename": "sherlock--0.16.2_1.sources.tar.gz",
-    "sha256": "283ec6d7e865ccb3050d863294e1f3cf210e5fbe7d0052024968e11569c51888",
-    "size": 9840700
+    "sha256": "6168c80c93aa027bece4ae2061c43bbd6a979717275a68687b38185955f237eb",
+    "size": 9840691
   },
   "tag": "sequoia",
   "version": "0.16.2",
   "version_scheme": 0,
-  "workflow_commit": "d867fd9b61dee2f3b6010add787dfed848b04712"
+  "workflow_commit": "125ac924320c45ee01145cb1d594f3b7f9e3067c"
 }
