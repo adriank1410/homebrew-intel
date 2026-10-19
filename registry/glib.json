@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
+  "core_commit": "ffe3e266efee644b28d73676d3f131b58950eebd",
   "filename": "glib--2.90.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
+  "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
   "license": "LGPL-2.1-or-later",
   "name": "glib",
   "pkg_version": "2.90.1",
-  "recipe_sha256": "ae7a82ab1ff54fff77ea987c6143955ea907f162aa68334f703637d63cd58b44",
-  "release": "intel-39110035642-1-glib",
+  "recipe_sha256": "7352a67a6a1a15554d996d38886812e858bebbbcbf3985901724cab444ee3b3b",
+  "release": "intel-39204027732-1-glib",
   "revision": 0,
-  "run_id": "39110035642",
+  "run_id": "39204027732",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c24f94d2fba077f7110e22cff8fad7b75030cbdc3839d1e0b982a7d149c2e225",
-  "size": 9283153,
+  "sha256": "524d76786d3dac2d30c9c864db0aea3ebe80e0b7006b992252fbc55fa3514a25",
+  "size": 9283479,
   "source": {
     "filename": "glib--2.90.1.sources.tar.gz",
-    "sha256": "2ade9573a50c751a298062b0b795edcbfe3ae227e653f7e4b42e6a566d2a6226",
-    "size": 7032339
+    "sha256": "945b98dacbf52cdff29d3db297a8645645c18dcbbd4bf81e3b5582e37845634b",
+    "size": 7032345
   },
   "tag": "sequoia",
   "version": "2.90.1",
   "version_scheme": 0,
-  "workflow_commit": "020bd860fbf204d9d9bd0f6ddbb32e66831bf2d4"
+  "workflow_commit": "125ac924320c45ee01145cb1d594f3b7f9e3067c"
 }

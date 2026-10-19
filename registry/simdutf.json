@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "aac1fb890f953b8ee31d572bf1956de16f16c23d",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "d113a0d46f3d63566587c05c837c92b19b88060c",
+  "core_commit": "ffe3e266efee644b28d73676d3f131b58950eebd",
   "filename": "simdutf--9.3.2.sequoia.bottle.tar.gz",
   "formula_sha256": "ab161a72d2fed255ac87c057f289c33ac56a4997ad29416cbbd83e7924f7752e",
   "license": {
@@ -14,26 +14,26 @@
   "name": "simdutf",
   "pkg_version": "9.3.2",
   "recipe_sha256": "98c3a1a9ba07c7a3ff0c04d15acf9452c463d72b2927300c1bc090815a0463ce",
-  "release": "intel-39033545227-1-simdutf",
+  "release": "intel-39204027732-1-simdutf",
   "revision": 0,
-  "run_id": "39033545227",
+  "run_id": "39204027732",
   "runtime_dependencies": [
     {
-      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
       "name": "icu4c@78",
       "pkg_version": "78.3"
     }
   ],
   "schema": 1,
-  "sha256": "0e3bc5bd8e1a50cb633433f0cfdc02b43a13dfbebe394fd78246cbf6bc4fc946",
-  "size": 616914,
+  "sha256": "de5e06326ffa84e54e4a1010efc0d4e9ec3b89e186b76f581ad6859c662725ad",
+  "size": 616909,
   "source": {
     "filename": "simdutf--9.3.2.sources.tar.gz",
-    "sha256": "0bdded4f9f8628413c7125d53de6090d6bf37c2a6f9b67ac311473aa0eff6fc2",
-    "size": 3519517
+    "sha256": "fb27b03279dea4ed5907da42234e80bd77f1849a9bed090bc23b26520c9c9181",
+    "size": 3519520
   },
   "tag": "sequoia",
   "version": "9.3.2",
   "version_scheme": 0,
-  "workflow_commit": "80c4b4e0da7b02f9022188a4e9c213bced2447ac"
+  "workflow_commit": "125ac924320c45ee01145cb1d594f3b7f9e3067c"
 }
