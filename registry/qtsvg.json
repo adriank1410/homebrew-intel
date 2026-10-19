@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "76bef543ad23d9705ee24960e9dd59e88ba60a7a",
+  "core_commit": "ffe3e266efee644b28d73676d3f131b58950eebd",
   "filename": "qtsvg--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "409cece157cb9725288e5c2fe76f6f2b0f6cbf830f9a91371c3c4b02778f4b58",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsvg",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "a13d4d1c52f77cb7bc331ba974becf6fdb01bd8f5b8905384ed0f37e08a48d1d",
-  "release": "intel-39168602835-1-qtsvg",
+  "release": "intel-39240898009-1-qtvirtualkeyboard",
   "revision": 1,
-  "run_id": "39168602835",
+  "run_id": "39240898009",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -65,7 +65,7 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
+      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
       "name": "glib",
       "pkg_version": "2.90.1"
     },
@@ -80,7 +80,7 @@
       "pkg_version": "14.6.0"
     },
     {
-      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
       "name": "icu4c@78",
       "pkg_version": "78.3"
     },
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ad3d57c5b15558ac8cfe87edbca10526a9c2700d3884c0a2eeb0a8570fdaa491",
-  "size": 317555,
+  "sha256": "6be394477e612f3965a64055829486e1e765c2e1541116d9f7e066c5c3ef7fc8",
+  "size": 317541,
   "source": {
     "filename": "qtsvg--6.12.0_1.sources.tar.gz",
-    "sha256": "36c1a6627d4ffe084811f26c32089edabb93fa4ee2e1a8e4d689ba67e4102416",
-    "size": 2376051
+    "sha256": "2b4e1b103dbfe74c8305ca1719da247c0aa727ba0c32eca4e5be6444857d1da2",
+    "size": 2376064
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "6afdd31a091c592c52983a0718ea29eb285a3659"
+  "workflow_commit": "8c3ad86bb8e609b183c95c92d99df2677b5bb2ab"
 }

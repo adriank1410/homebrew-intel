@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
-  "filename": "qtvirtualkeyboard--6.12.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "ac2607be4ae0b576bb64c6b8cabb96eaa5184749e2383bac33808b6d9da031bc",
+  "core_commit": "ffe3e266efee644b28d73676d3f131b58950eebd",
+  "filename": "qtvirtualkeyboard--6.12.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "c44304eec6fd7c6977957e2274ebb29ca35e729d023e54829615f02b1a077df3",
   "license": {
     "all_of": [
       "GPL-3.0-only",
@@ -13,11 +13,11 @@
     ]
   },
   "name": "qtvirtualkeyboard",
-  "pkg_version": "6.12.0",
-  "recipe_sha256": "ab1ca2ac444bc6190ab3f34c2d78b170e33ce8c2c64da81ae12520febd049465",
-  "release": "intel-38715510330-1-qtvirtualkeyboard",
-  "revision": 0,
-  "run_id": "38715510330",
+  "pkg_version": "6.12.0_1",
+  "recipe_sha256": "b237f4885badd105ff726b27853155fa02a70eef42e5ddd017ce1d1ff6d9b3e2",
+  "release": "intel-39240898009-1-qtvirtualkeyboard",
+  "revision": 1,
+  "run_id": "39240898009",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -65,7 +65,7 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "f853e530514c40c12c28def9bd991e03eea41fd37b0d868a122b55f752809fec",
+      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
       "name": "glib",
       "pkg_version": "2.90.1"
     },
@@ -85,7 +85,7 @@
       "pkg_version": "1.7.5"
     },
     {
-      "formula_sha256": "56435e8587d8b8252e3e6b5930c43d47346a6423c15583fde4056b651ac42a0f",
+      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
       "name": "icu4c@78",
       "pkg_version": "78.3"
     },
@@ -110,14 +110,14 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
+      "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
       "name": "libx11",
-      "pkg_version": "1.8.13"
+      "pkg_version": "1.8.14"
     },
     {
       "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
@@ -140,9 +140,9 @@
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "96228e7db71fb1bfa9baaca00848653f4d807bfd98003f2a58094e981f3055c1",
+      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
       "name": "libxrender",
-      "pkg_version": "0.9.12"
+      "pkg_version": "0.9.13"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -175,39 +175,39 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
+      "formula_sha256": "7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d",
       "name": "qtbase",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "fe2bbef21614a8ea86588bb2ff4685e3413ed64dd18f9cf78de60c342db0567f",
+      "formula_sha256": "d5e6a52b15baf0bc33b220a7d4586c9a4dc387dc883657312c855fd6f0a9e049",
       "name": "qtdeclarative",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "70c95d8ee3b2d8ec3c91ac64b50ecc749682599d8040e118965b09cd40764186",
+      "formula_sha256": "628583626079d4ddcef7c2dc933891bee2637dd1ee7e87cd2624e19d4ed6a1d3",
       "name": "qtmultimedia",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "1f5bc347a985dba35923220add0ef41390e85843c105a3822a5e0caccc5b340b",
+      "formula_sha256": "4985ce50502737d4d3a5628ae4712a4b13868b26b0308c5a56ef453438e88fbb",
       "name": "qtquick3d",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "0eec50a7437bc3921d8f821c05c0063343dc92b6d7371e3a0a6dabeb8742db5c",
+      "formula_sha256": "63dc55532f0a4771580a9b6c78bbcf337dbfdf292ceec34ae0b0cc2e7435cb68",
       "name": "qtquicktimeline",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "48634633b1867d8a749ddc9b03738050102167ecc0fda592bdba1319ffd5060e",
+      "formula_sha256": "c33a2969534c129bc1cae357e85b41f81338f73679ce65bddebf0e13ba702a88",
       "name": "qtshadertools",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "d456b5f595c21646eff6d1f3abfee8aa4fc35d141ab7fd7a6a6db281c9ea362f",
+      "formula_sha256": "409cece157cb9725288e5c2fe76f6f2b0f6cbf830f9a91371c3c4b02778f4b58",
       "name": "qtsvg",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -231,15 +231,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5fdde6b35608cac9bb6a6b4f586fd92dc340d9f1e5942520b3c666879f2ae711",
-  "size": 3030120,
+  "sha256": "8d9d38f5dd4e871b509e351840a954f08147e9d582e12c2cad5427039670d4af",
+  "size": 3030308,
   "source": {
-    "filename": "qtvirtualkeyboard--6.12.0.sources.tar.gz",
-    "sha256": "1356e1508c3394f014ef98ff32668a33eb03f9d0551c159b83afa7c7633010cf",
-    "size": 3317733
+    "filename": "qtvirtualkeyboard--6.12.0_1.sources.tar.gz",
+    "sha256": "bf9d8e41ea0c305ccf2b91ca79add73ae5d230236c38d063dc20a88ec0440ea3",
+    "size": 3317729
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "590a8da13186133bf058e346a57b40efc4b7a97a"
+  "workflow_commit": "8c3ad86bb8e609b183c95c92d99df2677b5bb2ab"
 }
