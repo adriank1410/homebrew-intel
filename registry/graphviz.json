@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f63eb293bebf995a821121c5e2e4b52ac2ff8cd4",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "838baf7f923ffb881c08c60974b1e750e1e43598",
+  "core_commit": "202772eb1d755ecbe630ea37cdd04c4806a684d1",
   "filename": "graphviz--16.1.0.sequoia.bottle.tar.gz",
   "formula_sha256": "9024b489a2ae2ccf591ae57ef96bf48acf9a1d3afbaf799323403d53322221c2",
   "license": "EPL-1.0",
   "name": "graphviz",
   "pkg_version": "16.1.0",
   "recipe_sha256": "8f7ac8741a220d3dba6f404183dbd527f2698e0ea42c92773a6b7c7a5d64f517",
-  "release": "intel-38665294582-1-graphviz",
+  "release": "intel-39195640440-1-graphviz",
   "revision": 0,
-  "run_id": "38665294582",
+  "run_id": "39195640440",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -79,9 +79,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "e3d6b09c676761a60774e90cd96015d36257b54cd1b0d0395ea707a87be18ae2",
+      "formula_sha256": "e2d424ec33c7ef4a3b75265d1c21a9b25fe5f79c6e1a6f022008c93aa8ce50be",
       "name": "gts",
-      "pkg_version": "0.7.6_3"
+      "pkg_version": "0.7.6_4"
     },
     {
       "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
@@ -124,9 +124,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "6faa5a10d3091739aeaa2f0dfa96013b3f4fc9169e65c52f382a71960a84d431",
+      "formula_sha256": "4841cd0bf59930ee76ec9c9610633419784db57412aff5bbb71685e58dc5c090",
       "name": "librsvg",
-      "pkg_version": "2.63.2"
+      "pkg_version": "2.63.3"
     },
     {
       "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
@@ -144,9 +144,9 @@
       "pkg_version": "2.6.2"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
       "formula_sha256": "e26bc5341ea496e86d7f2be1f48a711235139d5ccd10556188d3c52b24a30f76",
@@ -154,9 +154,9 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
+      "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
       "name": "libx11",
-      "pkg_version": "1.8.13"
+      "pkg_version": "1.8.14"
     },
     {
       "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
@@ -179,9 +179,9 @@
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "96228e7db71fb1bfa9baaca00848653f4d807bfd98003f2a58094e981f3055c1",
+      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
       "name": "libxrender",
-      "pkg_version": "0.9.12"
+      "pkg_version": "0.9.13"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -199,9 +199,9 @@
       "pkg_version": "1.4.21"
     },
     {
-      "formula_sha256": "4e0599b09fd7d83b2add030c9ae369f8160fe021f30b200e1cdde5896ecc0bb1",
+      "formula_sha256": "3be5e60cb06705535cdc7b77d75cb12e6af4b18a9d9eec797e7fd96dab1d1be8",
       "name": "netpbm",
-      "pkg_version": "11.02.30"
+      "pkg_version": "10.86.51"
     },
     {
       "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
@@ -240,15 +240,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "049bf9d2f1c027704f6ec259261c75b3256eb13bc06dc772d4fb4116bf5d5ebf",
-  "size": 3250883,
+  "sha256": "8bea84824919f2ecb8c0b0e8e34f739e66e501a877a57f7dfcc5806534da6d4f",
+  "size": 3250834,
   "source": {
     "filename": "graphviz--16.1.0.sources.tar.gz",
-    "sha256": "9bf79e628c6c3affebf067f506fd3eef2b9a33801a7f55282c7c1f6478bafd0c",
-    "size": 21018989
+    "sha256": "8fbee15ab0a7841ba999f3b3c1339c16327355e0a67416fa765a6b8e4c4ebfcc",
+    "size": 21018993
   },
   "tag": "sequoia",
   "version": "16.1.0",
   "version_scheme": 1,
-  "workflow_commit": "980a74c1993bcf4445f1da70fdc9af7677fc84e8"
+  "workflow_commit": "7a98ebdc9ee07ee3180851e6a5f8a4b83b713a4c"
 }
