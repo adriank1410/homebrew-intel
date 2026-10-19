@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "8f10429b56be28a25032b87463fffc95e556b5bc",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
-  "filename": "nmap--7.991_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "a89ce9706632ebd88561c8ec32da8ab561813deaf8e388fe13ba94dfb11c7c11",
+  "core_commit": "a4687008192bff359668e5aeeabada586b33ad88",
+  "filename": "nmap--7.992.sequoia.bottle.tar.gz",
+  "formula_sha256": "00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7",
   "license": "cannot_represent",
   "name": "nmap",
-  "pkg_version": "7.991_1",
-  "recipe_sha256": "5fb93061d1ce1ef9ce576447639011823618c047de2ce85fd52bb69e8e016f38",
-  "release": "intel-38535441107-1-nmap",
-  "revision": 1,
-  "run_id": "38535441107",
+  "pkg_version": "7.992",
+  "recipe_sha256": "8d4a1a8d9d12bbfa43b24a1021288893f72df7d0a84a63f58760bfdaa59c1126",
+  "release": "intel-39256413860-1-nmap",
+  "revision": 0,
+  "run_id": "39256413860",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -54,9 +54,9 @@
       "pkg_version": "10.49"
     },
     {
-      "formula_sha256": "2d533cbd3bf1931dabb2302627b88dc917b1c6c12dc5f41ece766ef17f82162e",
-      "name": "python@3.14",
-      "pkg_version": "3.14.8_2"
+      "formula_sha256": "c982fc23dc01373e23cb05620e63f78e88244c73690ef7db725e860f0e6bd5c9",
+      "name": "python@3.15",
+      "pkg_version": "3.15.0"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -64,9 +64,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "bbee4887580736c1ff890e611fcb857440f5b80099dbf5ec0b1e6010df723250",
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
       "name": "sqlite",
-      "pkg_version": "3.54.0"
+      "pkg_version": "3.54.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -80,15 +80,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "65863e3c0aa58ea9ec3ad437f4ade66c4fd301ea13d089dba6be98cd550325f3",
-  "size": 8288499,
+  "sha256": "823f0d9e5205e76e9b9e2b3ea1207da7785d63cec12a8ca42f557982700a5a10",
+  "size": 8363220,
   "source": {
-    "filename": "nmap--7.991_1.sources.tar.gz",
-    "sha256": "7e0a03fd9fc2c5f1f4625f0cdeed18d2c73e2510d9ca4a32ecec9b03392af594",
-    "size": 12896991
+    "filename": "nmap--7.992.sources.tar.gz",
+    "sha256": "4ba51ce7ea66ef6542af22abda263462498993721b1d8bd642443be34f33be39",
+    "size": 12954846
   },
   "tag": "sequoia",
-  "version": "7.991",
+  "version": "7.992",
   "version_scheme": 0,
-  "workflow_commit": "65e0ab918aead12bcbb7e1d962a2a4afd5e6e1e8"
+  "workflow_commit": "c342c7216cc9c8565651fc8ceb5988b84364a36f"
 }
