@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "013821de5e79b6e0698e59dced9e1e6a0fba8e0d",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b13b3dfc98ddbf69d7e695ff88959d8bcc8d4e3d",
-  "filename": "netpbm--11.02.30.sequoia.bottle.tar.gz",
-  "formula_sha256": "63d7900f5a1da17b4ebb057de3598c9b6abbd6cc81e5dcad0dbeb738d5192cb5",
+  "core_commit": "202772eb1d755ecbe630ea37cdd04c4806a684d1",
+  "filename": "netpbm--10.86.51.sequoia.bottle.tar.gz",
+  "formula_sha256": "3be5e60cb06705535cdc7b77d75cb12e6af4b18a9d9eec797e7fd96dab1d1be8",
   "license": "GPL-3.0-or-later",
   "name": "netpbm",
-  "pkg_version": "11.02.30",
-  "recipe_sha256": "ebd115b3f2031ea02914db293dcd96b9199d6c2b27f1633589d737229b32bef9",
-  "release": "intel-39074299472-1-netpbm",
+  "pkg_version": "10.86.51",
+  "recipe_sha256": "a04dc2b87ac10c01166ada1aa8c43287c864ad852fb509cb85239c642e037618",
+  "release": "intel-39177762501-1-netpbm",
   "revision": 0,
-  "run_id": "39074299472",
+  "run_id": "39177762501",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2bdab465ef0e40d6a605b0cea13026ecc1b597d93ec1284ffe409d54aab83d6c",
-  "size": 2287439,
+  "sha256": "8d2feb09ae5b16c15a056e2b95f8cc2ff7392e718848c0e163fbde4266b570d5",
+  "size": 1449764,
   "source": {
-    "filename": "netpbm--11.02.30.sources.tar.gz",
-    "sha256": "f86d2136623ffebe2d363cda57a78ac73308454f166cfd30f255630dbfb4ef8e",
-    "size": 4829778
+    "filename": "netpbm--10.86.51.sources.tar.gz",
+    "sha256": "b95c668179d0c1bfff748582400d668aacb7d37a375de001de70ddad70ba3069",
+    "size": 2926116
   },
   "tag": "sequoia",
-  "version": "11.02.30",
-  "version_scheme": 1,
-  "workflow_commit": "baa8154a3dabec6cac7062a6ce76cb79abcae1e1"
+  "version": "10.86.51",
+  "version_scheme": 2,
+  "workflow_commit": "5f89206fe2c04c58f30e0173dfaad5cae7a76f66"
 }
