@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
+  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
   "cellar": "any",
-  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
-  "filename": "qthttpserver--6.12.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "ef9b76aba61fb4b0f06f11aa8c0b71e4bf40b5a74392818f07820ae484023513",
+  "core_commit": "202772eb1d755ecbe630ea37cdd04c4806a684d1",
+  "filename": "qthttpserver--6.12.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "25ff551a7271e7c8d092f45985f0a69df0f86dfae65419832b05980b8f19cfff",
   "license": {
     "all_of": [
       "GPL-3.0-only",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "qthttpserver",
-  "pkg_version": "6.12.0",
-  "recipe_sha256": "e6594069975bad1a364164a54cf0950b80e9cee707d371d0d29b2b228ee3d2ce",
-  "release": "intel-38701247806-1-qthttpserver",
-  "revision": 0,
-  "run_id": "38701247806",
+  "pkg_version": "6.12.0_1",
+  "recipe_sha256": "afeed613abcc3cd242d44812be2a24cb4f3f7993e39706329e7e73cbcd906c7c",
+  "release": "intel-39195640440-1-qthttpserver",
+  "revision": 1,
+  "run_id": "39195640440",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -99,14 +99,14 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acac13619748b5c040c866f78955ea15fe51f555d60d494f52beae6ee24ce34",
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
       "name": "libunistring",
-      "pkg_version": "1.4.2"
+      "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "bab15130a1818393b207a07924762a05e40be0cd01d50fa1712dcaf9b5213e25",
+      "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
       "name": "libx11",
-      "pkg_version": "1.8.13"
+      "pkg_version": "1.8.14"
     },
     {
       "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
@@ -129,9 +129,9 @@
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "96228e7db71fb1bfa9baaca00848653f4d807bfd98003f2a58094e981f3055c1",
+      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
       "name": "libxrender",
-      "pkg_version": "0.9.12"
+      "pkg_version": "0.9.13"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -164,24 +164,24 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "a559d3f068c1aa7579703d355cf4c41435e1a2e5160972cd520b2930aecfb989",
+      "formula_sha256": "7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d",
       "name": "qtbase",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "fe2bbef21614a8ea86588bb2ff4685e3413ed64dd18f9cf78de60c342db0567f",
+      "formula_sha256": "d5e6a52b15baf0bc33b220a7d4586c9a4dc387dc883657312c855fd6f0a9e049",
       "name": "qtdeclarative",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "d456b5f595c21646eff6d1f3abfee8aa4fc35d141ab7fd7a6a6db281c9ea362f",
+      "formula_sha256": "409cece157cb9725288e5c2fe76f6f2b0f6cbf830f9a91371c3c4b02778f4b58",
       "name": "qtsvg",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "19e04dbd258e159bcf403e044e075d94511f7f70e3512972c64f9d38c775617b",
+      "formula_sha256": "fb4f7e8a6198208059da32585bd8062f2457747318dcb0afca75d356e83237a6",
       "name": "qtwebsockets",
-      "pkg_version": "6.12.0"
+      "pkg_version": "6.12.0_1"
     },
     {
       "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
@@ -200,15 +200,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "563167302b9c4b781e9588b321a76635f020070b62df6a4e98761ab885e4188b",
-  "size": 126937,
+  "sha256": "db882dad1a4ff8605b5559b5172f1a5b697817ccabe2ee99c6b06aa490612eac",
+  "size": 127145,
   "source": {
-    "filename": "qthttpserver--6.12.0.sources.tar.gz",
-    "sha256": "4a307426dee78b93565764e24243a1a19015a1a8f95686d24a66ae63cdf421be",
-    "size": 214403
+    "filename": "qthttpserver--6.12.0_1.sources.tar.gz",
+    "sha256": "0a36f3f4cd34f1727aa7bc81237633e2ff3a3b1263a3864f86ffe974d1f09932",
+    "size": 214406
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "1f9ce50a5b32251e19cbfdc7dbd434f902237923"
+  "workflow_commit": "7a98ebdc9ee07ee3180851e6a5f8a4b83b713a4c"
 }
