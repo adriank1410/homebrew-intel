@@ -13,8 +13,11 @@ from intelbrew.core import ROOT, brew_env, run
 @unittest.skipUnless(os.environ.get("INTELBREW_NATIVE_TESTS") == "1" and shutil.which("brew"),
                      "set INTELBREW_NATIVE_TESTS=1 on a host with Homebrew")
 class NativeSourcesTests(unittest.TestCase):
-    def _ruby(self, script):
-        return run(["brew", "ruby", "-e", script], env=brew_env())
+    def _ruby(self, script, extra=None):
+        environment = brew_env()
+        if extra:
+            environment.update(extra)
+        return run(["brew", "ruby", "-e", script], env=environment)
 
     def test_normalize_rejects_tampering_outside_index_lines(self):
         raw = b"diff --git a/a b/a\nindex 0123456789abcd..fedcba98765432 100644\n-old\n+new\n"
@@ -131,6 +134,104 @@ puts JSON.generate("sha256" => Digest::SHA256.file({json.dumps(str(cache))}).hex
 '''
             result = json.loads(self._ruby(script).splitlines()[-1])
             self.assertEqual(result, {"sha256": before})
+
+    def test_fallback_is_only_the_macports_copy_of_an_nmap_dist_tarball(self):
+        script = f'''require "json"; load {json.dumps(str(ROOT / "libexec/native_sources.rb"))}
+pairs = {{
+  "https://nmap.org/dist/nmap-7.992.tar.bz2" => "https://distfiles.macports.org/nmap/nmap-7.992.tar.bz2",
+  "https://nmap.org/dist/nmap-7.991_1.tar.bz2" => "https://distfiles.macports.org/nmap/nmap-7.991_1.tar.bz2",
+  "http://nmap.org/dist/nmap-7.992.tar.bz2" => nil,
+  "https://user:pass@nmap.org/dist/nmap-7.992.tar.bz2" => nil,
+  "https://nmap.org/dist/nmap-7.992.tar.bz2?x=1" => nil,
+  "https://nmap.org/dist/../nmap-7.992.tar.bz2" => nil,
+  "https://nmap.org/dist/nmap-7.992.tar.gz" => nil,
+  "https://example.invalid/nmap-7.992.tar.bz2" => nil,
+}}
+puts JSON.generate(pairs.keys.map {{ |url| IntelbrewNativeSources.fallback_url(url) }})'''
+        result = json.loads(self._ruby(script).splitlines()[-1])
+        self.assertEqual(result, [
+            "https://distfiles.macports.org/nmap/nmap-7.992.tar.bz2",
+            "https://distfiles.macports.org/nmap/nmap-7.991_1.tar.bz2",
+            None, None, None, None, None, None,
+        ])
+
+    def test_expired_certificate_seeds_the_homebrew_cache_and_retries(self):
+        payload = b"nmap-fallback-bytes"
+        expected = hashlib.sha256(payload).hexdigest()
+        primary = "https://nmap.org/dist/nmap-7.992.tar.bz2"
+        with tempfile.TemporaryDirectory() as folder:
+            script = f'''require "json"; require "digest"; require "pathname"
+load {json.dumps(str(ROOT / "libexec/native_sources.rb"))}
+IntelbrewNativeSources.https_reader = lambda do |url|
+  abort "unexpected mirror" unless url == "https://distfiles.macports.org/nmap/nmap-7.992.tar.bz2"
+  {json.dumps(payload.decode())}.b
+end
+class Fixture
+  attr_reader :calls, :url, :checksum
+  def initialize(url, expected)
+    @url = url; @checksum = Checksum.new(expected); @calls = 0
+  end
+  def download_queue_name = "nmap (7.992)"
+  def fetch(**_options)
+    @calls += 1
+    if @calls == 1
+      raise DownloadError.new(self, RuntimeError.new("curl: (60) SSL certificate problem: certificate has expired"))
+    end
+    path = IntelbrewNativeSources.cache_path_for(@url)
+    abort "cache missing" unless path.file? && !path.symlink?
+    abort "checksum" unless Digest::SHA256.file(path).hexdigest == @checksum.hexdigest
+    path
+  end
+end
+resource = Fixture.new({json.dumps(primary)}, {json.dumps(expected)})
+IntelbrewNativeSources.fetch(resource, verify_download_integrity: true)
+strategy = CurlDownloadStrategy.new({json.dumps(primary)}, "nmap", "7.992")
+puts JSON.generate({{"calls" => resource.calls, "cache" => strategy.cached_location.to_s,
+                    "sha256" => Digest::SHA256.file(strategy.cached_location).hexdigest}})'''
+            result = json.loads(self._ruby(script, {"HOMEBREW_CACHE": folder}).splitlines()[-1])
+            self.assertEqual(result["calls"], 2)
+            self.assertEqual(result["sha256"], expected)
+            self.assertTrue(result["cache"].startswith(folder))
+
+    def test_wrong_mirror_bytes_and_other_tls_errors_do_not_touch_the_cache(self):
+        primary = "https://nmap.org/dist/nmap-7.992.tar.bz2"
+        blank = "a" * 64
+        with tempfile.TemporaryDirectory() as folder:
+            script = f'''require "json"; require "digest"; require "pathname"
+load {json.dumps(str(ROOT / "libexec/native_sources.rb"))}
+IntelbrewNativeSources.https_reader = lambda do |_url|
+  "not-the-tarball".b
+end
+class Fixture
+  attr_reader :calls, :url, :checksum
+  def initialize(url, message)
+    @url = url; @checksum = Checksum.new({json.dumps(blank)}); @calls = 0; @message = message
+  end
+  def download_queue_name = "nmap (7.992)"
+  def fetch(**_options)
+    @calls += 1
+    raise DownloadError.new(self, RuntimeError.new(@message))
+  end
+end
+expired = Fixture.new({json.dumps(primary)}, "curl: (60) SSL certificate problem: certificate has expired")
+begin
+  IntelbrewNativeSources.fetch(expired, verify_download_integrity: true)
+  abort "bad bytes were accepted"
+rescue DownloadError
+  abort "bad bytes retried the fetch" unless expired.calls == 1
+end
+hostname = Fixture.new({json.dumps(primary)}, "curl: (60) SSL certificate problem: certificate subject name does not match")
+begin
+  IntelbrewNativeSources.fetch(hostname, verify_download_integrity: true)
+  abort "hostname mismatch used the mirror"
+rescue DownloadError
+  abort "hostname mismatch retried" unless hostname.calls == 1
+end
+downloads = Pathname.new({json.dumps(folder)}) / "downloads"
+entries = downloads.exist? ? downloads.children.reject {{ |path| path.basename.to_s.start_with?(".") }} : []
+puts JSON.generate({{"entries" => entries.map(&:to_s)}})'''
+            result = json.loads(self._ruby(script, {"HOMEBREW_CACHE": folder}).splitlines()[-1])
+            self.assertEqual(result, {"entries": []})
 
 
 if __name__ == "__main__":
