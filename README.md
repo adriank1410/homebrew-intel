@@ -171,12 +171,11 @@ Specifically, `qtwebengine` (Chromium engine with ~40,000 translation units,
 requiring more than 35 GB disk space and 8–10 hours of CPU compilation) and
 formulas requiring it (`qt`, `qtwebview`) cannot be built on standard runners.
 
-`qtbase` source builds are held only while the recipe file is still Qt 6.11.2
-`77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5` and `md4c`
-is still 0.6.0 `de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd`.
-Dependents that would rebuild that pair are held too. A complete, matching
-bottle graph is still installed. When Homebrew changes either recipe file, the
-next scheduled run builds `qtbase` without a policy edit. See [build holds](docs/BUILD-HOLDS.md).
+`source_build_holds` is empty. The Qt 6.11.2 and md4c 0.6.0 pair and the
+ocrmypdf 17.13.0 recipe hold were removed after Sequoia bottles for `qtbase`
+6.12.0_1 and `ocrmypdf` 17.13.0 were published. `blocked_source_builds` still
+excludes `llvm`, `qt`, `qtwebengine`, and `qtwebview`. See
+[build holds](docs/BUILD-HOLDS.md).
 
 All 36 modular Qt6 module formulas (such as `qtbase`, `qtdeclarative`,
 `qttools`, and `qtsvg`) have verified bottle records in the registry.
