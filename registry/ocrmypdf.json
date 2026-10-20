@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "41f40decfa0789cff312806606757300bb8bd1c3",
   "cellar": "any",
-  "core_commit": "4aef89dc369d9f743e6427e4369c63d89492b1bc",
+  "core_commit": "cced3ef1d489fce4eba453a333619722c3a8dd17",
   "filename": "ocrmypdf--17.13.0.sequoia.bottle.tar.gz",
   "formula_sha256": "1378b58fcd1888c0430167dc0c72a8b99202acc6667972b290e8fdb739119def",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.13.0",
   "recipe_sha256": "b8c56c858792bdb0e9db0cc326561d32b6cfb699a6e2ce048b8c9ff4b07ec0d1",
-  "release": "intel-39344675181-1-ocrmypdf",
+  "release": "intel-39377814000-1-ocrmypdf",
   "revision": 0,
-  "run_id": "39344675181",
+  "run_id": "39377814000",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -294,9 +294,9 @@
       "pkg_version": "10.49"
     },
     {
-      "formula_sha256": "f04e088b705d8af96d99f3d186e46b6c119111537249822f5beaf6114f9ec1a2",
+      "formula_sha256": "9d9678df81e3d9c873c921ccffc1246a98f37227a5211891c42adcc8b475613e",
       "name": "pillow",
-      "pkg_version": "12.3.0_1"
+      "pkg_version": "13.0.0"
     },
     {
       "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a3a791c96cec6537feab87c9ed5635e1b8cf04ef2b1aac9bb31359132d10a903",
-  "size": 17790539,
+  "sha256": "6fecdd7131056a80f4a25f9cfa05d7edf5623035ded7949002b21333d9e63749",
+  "size": 17790399,
   "source": {
     "filename": "ocrmypdf--17.13.0.sources.tar.gz",
-    "sha256": "003db9c32d6b2bf7d3ff1a3a2a6243c90b827634312aab0bbc00510e5fa75c43",
-    "size": 81001468
+    "sha256": "b4ad943c16de56c695cf151c577df2d7a551627355ba0861bf717929074e3807",
+    "size": 81001472
   },
   "tag": "sequoia",
   "version": "17.13.0",
   "version_scheme": 0,
-  "workflow_commit": "ccf57df78994f0881ac5ab2cb64e8595c654ac67"
+  "workflow_commit": "127219395cdd2b661b21199cb6684306d76f49fd"
 }
