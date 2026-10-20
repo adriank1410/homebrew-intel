@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "41f40decfa0789cff312806606757300bb8bd1c3",
   "cellar": "any_skip_relocation",
-  "core_commit": "4aef89dc369d9f743e6427e4369c63d89492b1bc",
+  "core_commit": "cced3ef1d489fce4eba453a333619722c3a8dd17",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "a4e773bafa931e5a34937f9c61271f71433f51b2a40ae23941b6b583efe8e5df",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "0c2278eb12b617ed78b8b189849587943e43fd87dcf0dcca3be0ef107484fd0e",
-  "release": "intel-39323222757-1-weasyprint",
+  "release": "intel-39361123580-1-weasyprint",
   "revision": 0,
-  "run_id": "39323222757",
+  "run_id": "39361123580",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -214,9 +214,9 @@
       "pkg_version": "10.49"
     },
     {
-      "formula_sha256": "f04e088b705d8af96d99f3d186e46b6c119111537249822f5beaf6114f9ec1a2",
+      "formula_sha256": "9d9678df81e3d9c873c921ccffc1246a98f37227a5211891c42adcc8b475613e",
       "name": "pillow",
-      "pkg_version": "12.3.0_1"
+      "pkg_version": "13.0.0"
     },
     {
       "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
@@ -265,15 +265,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9f6fcff77bdcb1a2f2390e61ac8db9de44d8b2617343e676d3985f428bff705a",
-  "size": 4064543,
+  "sha256": "9ae67456d2ad5f48c3ea6b540eb05cbea6c8427d7289f4b12dd1d5fd95bc0ecf",
+  "size": 4064090,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "eca917ef9f343ed2d89baed5f53ac298a408fd1a297faf7e1a17d6cebbbf9184",
-    "size": 15222244
+    "sha256": "26d9c0ff239e816ae41552f95a1ccbb700e6d89ad433dad882024adc606a0f5a",
+    "size": 15222246
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "32511d68135ce35dac72285f9c0172b4098d4cf2"
+  "workflow_commit": "b2bc17ef0afbfead3f997238aca0cf5c400b7e06"
 }
