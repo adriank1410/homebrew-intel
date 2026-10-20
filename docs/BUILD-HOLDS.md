@@ -15,6 +15,9 @@ bypass a source hold. The client still refuses an incomplete bottle graph.
 No target, existing registry record, release, source guard, signature check,
 license requirement or recipe is removed or weakened by these holds.
 
+`source_build_holds` is currently empty. The Qt 6.11.2 pair and the ocrmypdf
+17.13.0 recipe below were removed from `source_build_holds` after publication.
+
 ## Incident: 22 September 2026
 
 Evidence: [Sequoia Intel bottles run 35743217955](https://github.com/adriank1410/homebrew-intel/actions/runs/35743217955).
@@ -30,10 +33,10 @@ built Qt 6.11.2 after installing md4c 0.6.0. Compilation of
 assertion with `1068812 == 1593100` (false). Repeating the same pinned recipe and
 dependency graph does not resolve this source incompatibility.
 
-The hold is the pair of recipe-file hashes in `source_build_holds`: Qt 6.11.2
+The hold was the pair of recipe-file hashes in `source_build_holds`: Qt 6.11.2
 `77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5` together with
 md4c 0.6.0 `de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd`.
-It applies only when a published package would be built from that exact pair.
+It applied only when a published package would be built from that exact pair.
 Other Qt modules are not individually excluded. A complete, matching bottle
 graph is still installed.
 
@@ -44,6 +47,13 @@ the hold does not match and `qtbase` is built with the normal scheduler. No
 policy edit is required for that retry. After a successful publication, delete
 the stale hash entry so the policy file does not keep a pair that can no
 longer occur.
+
+That deletion is done. `qtbase` 6.12.0_1 is published as
+`intel-39399228992-1-qtbase`. On core
+`848bfa81ec12746fdd90a48d9bbc65e518e4cd39` the formula file SHA-256 is
+`7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d`, which is
+the bottle's `formula_sha256`. The 6.11.2 pair was removed from
+`source_build_holds`.
 
 Do not delete the assertion, patch the recipe silently, relabel an old bottle's
 dependency hashes, or disable dependency drift detection to obtain a green run.
@@ -57,14 +67,19 @@ The pinned core was `c799c7ec3bc29124301389b207b3430368748fc0`.
 (`7ca2d8e31bd8d0d40c496416b7d8bea423388669ffd494929f50e8c3a82326b8`).
 That package's build requires `ctypesgen` from a git URL. Homebrew's isolated
 pip install uses `--no-binary=:all:`, so the fetch fails and repeating the same
-formula file does not succeed. The Qt hold stays a pair because both recipe
-files decide that failure. This one is the formula file alone:
+formula file does not succeed. The Qt hold was a pair because both recipe
+files decided that failure. This one is the formula file alone:
 `39b84c91d0b8af18ffcd5bddbcae49cabbac0ea6ac26e8d872083ead3f9f2499`.
 
-The hold expires when `ocrmypdf.rb` changes. It does not publish a bottle.
-The client still reports the package missing. A manual dispatch stops in the
-planner with `Source build excluded by policy: ocrmypdf` instead of starting
-the source build. After a successful publication, delete the stale hash.
+The hold expired when `ocrmypdf.rb` changed. It did not publish a bottle by
+itself. A manual dispatch of that exact file stopped in the planner with
+`Source build excluded by policy: ocrmypdf` instead of starting the source
+build. After a successful publication, delete the stale hash.
+
+That deletion is done. `ocrmypdf` 17.13.0 is published as
+`intel-39377814000-1-ocrmypdf`. On the same core pin the formula file SHA-256
+is `1378b58fcd1888c0430167dc0c72a8b99202acc6667972b290e8fdb739119def`, which
+matches the bottle. The previous hash was removed from `source_build_holds`.
 
 ### LLVM: bottle builds run the profile-guided suite; compiler-only installs do not
 

@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
+  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
   "filename": "retdec--5.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "5daec87c56f24de93479553b6ead95a4624f1473c0a2a5db69a63623fe0bc8f2",
   "license": {
@@ -14,14 +14,14 @@
   "name": "retdec",
   "pkg_version": "5.0_1",
   "recipe_sha256": "fcaa3c0115be1b27beb8e117e8fa035cf1706d7d329954a5981bb164295690fc",
-  "release": "intel-38497611195-1-retdec",
+  "release": "intel-39448000605-1-retdec",
   "revision": 1,
-  "run_id": "38497611195",
+  "run_id": "39448000605",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25"
+      "pkg_version": "2026-09-25_1"
     },
     {
       "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "222e7066aee9991c384a32ee7ebad4fc5ee35d1a8269df669cce5271964e56fb",
-  "size": 270451435,
+  "sha256": "25c18fb7d893b909683ab59b60f338830afa86faa103a846ccec2c962095fb4e",
+  "size": 270451455,
   "source": {
     "filename": "retdec--5.0_1.sources.tar.gz",
-    "sha256": "09b04ffbf329cced5b5653a82f668c9bf10d376102c6b387a3493970650ee065",
-    "size": 26988078
+    "sha256": "002d336deaa4c9335dc3bb6fb0927526535936fd7b2d42faa5675ba63eec292c",
+    "size": 26988088
   },
   "tag": "sequoia",
   "version": "5.0",
   "version_scheme": 0,
-  "workflow_commit": "bc95cb714d9896e21eaf92fdf0143a5cb95da669"
+  "workflow_commit": "4f042743b28250756a51b657758ae757e939a29c"
 }
