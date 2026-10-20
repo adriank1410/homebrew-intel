@@ -783,6 +783,23 @@ class SourceBundleTests(unittest.TestCase):
         self.assertRegex((ROOT / "README.pl.md").read_text(),
                          rf"Wszystkie {count} modułowych")
 
+    def test_readme_records_retired_source_holds(self):
+        english = re.sub(r"\s+", " ", (ROOT / "README.md").read_text())
+        polish = re.sub(r"\s+", " ", (ROOT / "README.pl.md").read_text())
+        retired = "77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5"
+        self.assertRegex(english, r"`source_build_holds` is empty")
+        self.assertRegex(english, r"`qtbase` 6\.12\.0_1")
+        self.assertRegex(english, r"`ocrmypdf` 17\.13\.0")
+        self.assertNotIn(retired, english)
+        self.assertRegex(polish, r"`source_build_holds` jest puste")
+        self.assertRegex(polish, r"`qtbase` 6\.12\.0_1")
+        self.assertRegex(polish, r"`ocrmypdf` 17\.13\.0")
+        self.assertNotIn(retired, polish)
+        holds = (ROOT / "docs/BUILD-HOLDS.md").read_text()
+        self.assertIn("intel-39399228992-1-qtbase", holds)
+        self.assertIn("intel-39377814000-1-ocrmypdf", holds)
+        self.assertIn("removed from `source_build_holds`", holds)
+
     def test_readme_skips_roots_that_rebuild_a_runtime_toolchain_on_blocked_llvm(self):
         english = re.sub(r"\s+", " ", (ROOT / "README.md").read_text())
         polish = re.sub(r"\s+", " ", (ROOT / "README.pl.md").read_text())
