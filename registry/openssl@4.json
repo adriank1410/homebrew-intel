@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "14b6b228f7fd8921d3d4e4660e6a2d1dde922764",
+  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "a6a9a75565556333b39415f2a4ebb74f3ee5da3b",
+  "core_commit": "0c9247ef32656236b68850c98e1f1e6bebbb8af0",
   "filename": "openssl@4--4.0.3.sequoia.bottle.tar.gz",
   "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
   "license": "Apache-2.0",
   "name": "openssl@4",
   "pkg_version": "4.0.3",
   "recipe_sha256": "6bcbfdb19bd3341a86704fd7993598826d7c01e51953ed9826e6d258303e4b8b",
-  "release": "intel-39395805139-1-openssl-at-4",
+  "release": "intel-39515410674-1-openssl-at-4",
   "revision": 0,
-  "run_id": "39395805139",
+  "run_id": "39515410674",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     }
   ],
   "schema": 1,
-  "sha256": "4640e7465c9da7ab75e871dcda6ee6850990ffe9d89919ffb390429e4a985a20",
-  "size": 10493580,
+  "sha256": "c613103c69724304d643c7d3a239861d477d59b98a0290c049288907116e4d4c",
+  "size": 10495343,
   "source": {
     "filename": "openssl@4--4.0.3.sources.tar.gz",
-    "sha256": "26072f59df6f4e1235641787eec92d28ecc82e18f8e9816c508acfc71b6ac70e",
-    "size": 55227876
+    "sha256": "9f1b27c16bec3d3a6ee0a2e58e53b3ecab29622ea358f59e81181ba0447ae6eb",
+    "size": 55227893
   },
   "tag": "sequoia",
   "version": "4.0.3",
   "version_scheme": 0,
-  "workflow_commit": "7e54d8e2225fde60de0a57ac104aeb9dfef0b477"
+  "workflow_commit": "6c6cb1f3206a5b42dfd2745e9cd2709ea41e915a"
 }

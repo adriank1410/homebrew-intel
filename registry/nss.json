@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
+  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
-  "filename": "nss--3.131.sequoia.bottle.tar.gz",
-  "formula_sha256": "611abd7f9af7da70581f05fc40bd60f58c1d79726b79f838379361bb86040c6b",
+  "core_commit": "0c9247ef32656236b68850c98e1f1e6bebbb8af0",
+  "filename": "nss--3.131.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "bae2eb0bb49c8d87995d44667429f53a4e730ab11913759d9fb9292cf59a603a",
   "license": "MPL-2.0",
   "name": "nss",
-  "pkg_version": "3.131",
-  "recipe_sha256": "6e74dd9e38a1c656a189bba1a341daefe6b5d0de07a5e6c78b3108d62fd0e529",
-  "release": "intel-37637289224-1-nss",
+  "pkg_version": "3.131.1",
+  "recipe_sha256": "2869b10eb3d44b663cde3c937ea7f8fb7ade26ab775b19c02f1664f302e1bde2",
+  "release": "intel-39515410674-1-nss",
   "revision": 0,
-  "run_id": "37637289224",
+  "run_id": "39515410674",
   "runtime_dependencies": [
     {
       "formula_sha256": "3a04bd722494d824572512fd40cf3e284a1d86aa42ed0af1d3682665e424b554",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9b1bdd192e2a76cb14de8fcb51dae2354c7affa36d14500aefaaf548ab9d0e8f",
-  "size": 6368858,
+  "sha256": "6e96e51e780e0b433d707186463bd701ca7187f9857b558a8fa6f6543a1c1ee6",
+  "size": 6366345,
   "source": {
-    "filename": "nss--3.131.sources.tar.gz",
-    "sha256": "df742d216809ad058f5c97399e456aad81d15dc8e79a0ff409e2b978e780045b",
-    "size": 87997165
+    "filename": "nss--3.131.1.sources.tar.gz",
+    "sha256": "a15551e76a7d7b04beb072eae8c5cc5dfdb25fb045ccb6027d91ab9ddb3ded78",
+    "size": 87994088
   },
   "tag": "sequoia",
-  "version": "3.131",
+  "version": "3.131.1",
   "version_scheme": 0,
-  "workflow_commit": "240d9bc69d01851a29caf2582b62da754d5b1336"
+  "workflow_commit": "6c6cb1f3206a5b42dfd2745e9cd2709ea41e915a"
 }
