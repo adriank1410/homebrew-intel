@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
+  "brew_commit": "41f40decfa0789cff312806606757300bb8bd1c3",
   "cellar": "any",
-  "core_commit": "9f57012b3e21d0f619262520d79c284ce18d955a",
+  "core_commit": "cced3ef1d489fce4eba453a333619722c3a8dd17",
   "filename": "rust--1.99.1.sequoia.bottle.tar.gz",
   "formula_sha256": "b3e6ec47bc327e7d9f132be8b5ee880b64e8128ef3eedb70459677bdedabd18a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.99.1",
   "recipe_sha256": "aece397ba5dfeb11c93fc0d7ff2afe6ae3128da5c60f557a72196ab620f40bea",
-  "release": "intel-39100653165-1-rust",
+  "release": "intel-39351933716-1-rust",
   "revision": 0,
-  "run_id": "39100653165",
+  "run_id": "39351933716",
   "runtime_dependencies": [
     {
       "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
@@ -54,9 +54,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "5b94bb3ff7d10163be017115c715c4db6036efc2d6b42307b893826314a57114",
+      "formula_sha256": "824cd395375109bfca1aa408774c9c91214ca7d7792c555b1a9fa0635f78893c",
       "name": "pkgconf",
-      "pkg_version": "3.0.9"
+      "pkg_version": "3.0.10"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b7e2d3595085b3ee1276c982dd06862cc1d99e7e0164fae45a76fe7544ab8a57",
-  "size": 111579421,
+  "sha256": "27f496896f43ccd1b89f01cd38d8c6fd4e11d6b41849ac49521b7ca2bf0fe5d0",
+  "size": 111578632,
   "source": {
     "filename": "rust--1.99.1.sources.tar.gz",
-    "sha256": "d5c969d29cb454aefae452bd40a3ee138a95e4295c50afb7dac65ed162ea07e2",
-    "size": 657788421
+    "sha256": "1082291b4e85147893e3780abcd60177bd3c7f565efc7218b993430336f21ad1",
+    "size": 657788439
   },
   "tag": "sequoia",
   "version": "1.99.1",
   "version_scheme": 0,
-  "workflow_commit": "a551b2910944e66e59b8dad77d8c2a1c04cc36b6"
+  "workflow_commit": "cf3abba8f5ad66f191bd022b5038b79ddde5e388"
 }
