@@ -1,10 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.2.9 – retired source holds
 
 - When `nmap.org` presents an expired TLS certificate, fetch the same `nmap-<version>.tar.bz2` from `distfiles.macports.org` and keep it only when its SHA-256 matches the formula. Other TLS failures still fail closed. Homebrew does not try a mirror when certificate resolution fails, so this seeds the download cache before the retry.
 - Refresh the Nmap source-required exception for recipe `00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7` (7.992). The 7.991_1 exception no longer matches, which blocked `nmap` and `rustscan` before compilation.
 - After a sweep merges at least one bottle registry pull, start the next dependency wave immediately, for up to eight waves. A sweep that publishes nothing, a one-root repair, and the eighth wave leave the rest to the hourly schedule.
+- Remove the Qt 6.11.2 / md4c 0.6.0 pair and the ocrmypdf 17.13.0 recipe from `source_build_holds` after matching Sequoia bottles were published (`qtbase` 6.12.0_1, `ocrmypdf` 17.13.0). The list is empty. Name blocks for `llvm`, `qt`, `qtwebengine`, and `qtwebview` stay.
 
 ## 0.2.8 – skip blocked runtime toolchains
 

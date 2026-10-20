@@ -177,12 +177,10 @@ W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek komp
 wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
 (`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach.
 
-Budowa `qtbase` jest wstrzymana tylko dla przepisu Qt 6.11.2
-`77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5` razem z
-przepisem md4c 0.6.0 `de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd`.
-To samo dotyczy pakietów, które musiałyby przebudować tę parę. Komplet
-pasujących butelek nadal się instaluje. Gdy Homebrew zmieni którykolwiek
-z tych plików, następny cron buduje `qtbase` bez edycji polityki. Szczegóły:
+`source_build_holds` jest puste. Wpis dla pary Qt 6.11.2 z md4c 0.6.0 oraz
+wpis dla przepisu ocrmypdf 17.13.0 usunięto po publikacji butelek Sequoia dla
+`qtbase` 6.12.0_1 i `ocrmypdf` 17.13.0. `blocked_source_builds` wyklucza
+`llvm`, `qt`, `qtwebengine` i `qtwebview`. Szczegóły:
 [wstrzymania budowania](docs/BUILD-HOLDS.md).
 
 Wszystkie 36 modułowych pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`,
