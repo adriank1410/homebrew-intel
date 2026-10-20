@@ -16,6 +16,25 @@ from intelbrew.core import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# The September 2026 qtbase and ocrmypdf recipe holds. Live policy drops them
+# after publication; these tests keep the hashes so the mechanism stays covered.
+INCIDENT_HOLDS = [
+    {
+        "name": "qtbase",
+        "formula_sha256": "77fb639065c7f11b3c9c781a38013c2172f6c1fc3e5fe58efc1af975b6f861c5",
+        "dependencies": [{
+            "name": "md4c",
+            "formula_sha256": "de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd",
+        }],
+    },
+    {
+        "name": "ocrmypdf",
+        "formula_sha256": "39b84c91d0b8af18ffcd5bddbcae49cabbac0ea6ac26e8d872083ead3f9f2499",
+        "dependencies": [],
+    },
+]
+
 spec = importlib.util.spec_from_file_location(
     "native_plan_build_holds", ROOT / "scripts/native-plan.py")
 native_plan = importlib.util.module_from_spec(spec)
@@ -41,24 +60,33 @@ class SourceBuildHoldTests(unittest.TestCase):
         self.config = load_config()
         self.blocked = self.config["blocked_source_builds"]
 
-    def plan(self, nodes, roots, records=None, *, build=True):
+    def plan(self, nodes, roots, records=None, *, build=True, holds=None):
+        if holds is None:
+            holds = self.config["source_build_holds"]
         return Planner(Inspector(nodes), records or {}, build=build,
-                       blocked=self.blocked, holds=self.config["source_build_holds"]).make(roots)
+                       blocked=self.blocked, holds=holds).make(roots)
 
     def held_qt_pair(self):
-        hold = self.config["source_build_holds"][0]
+        hold = INCIDENT_HOLDS[0]
         md4c = hold["dependencies"][0]
         return {
             "qtbase": meta("qtbase", formula_sha256=hold["formula_sha256"], runtime=["md4c"]),
             "md4c": meta("md4c", formula_sha256=md4c["formula_sha256"], official=True),
         }
 
-    def test_incident_holds_are_explicit_and_do_not_block_all_qt_or_rust(self):
+    def incident_config(self):
+        config = copy.deepcopy(self.config)
+        config["source_build_holds"] = copy.deepcopy(INCIDENT_HOLDS)
+        return config
+
+    def test_retired_publication_holds_leave_only_heavy_name_blocks(self):
+        self.assertEqual(self.config["source_build_holds"], [])
         self.assertIn("llvm", self.blocked)
+        self.assertIn("qt", self.blocked)
+        self.assertIn("qtwebengine", self.blocked)
+        self.assertIn("qtwebview", self.blocked)
         self.assertNotIn("qtbase", self.blocked)
-        hold = self.config["source_build_holds"][0]
-        self.assertEqual(hold["name"], "qtbase")
-        self.assertEqual([item["name"] for item in hold["dependencies"]], ["md4c"])
+        self.assertNotIn("ocrmypdf", self.blocked)
         for name in ("deno", "rust", "qtsvg", "qtdeclarative", "qttools"):
             self.assertNotIn(name, self.blocked)
 
@@ -74,7 +102,7 @@ class SourceBuildHoldTests(unittest.TestCase):
         inspector = Inspector(nodes)
         with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):
             Planner(inspector, {}, build=True, blocked=self.blocked,
-                    holds=self.config["source_build_holds"]).make(["qtbase"])
+                    holds=INCIDENT_HOLDS).make(["qtbase"])
         self.assertEqual(inspector.calls, [["qtbase"], ["md4c"]])
 
     def test_deno_builds_its_compiler_toolchain_without_bottling_llvm(self):
@@ -93,19 +121,19 @@ class SourceBuildHoldTests(unittest.TestCase):
         nodes = self.held_qt_pair()
         nodes["qtsvg"] = meta("qtsvg", runtime=["qtbase"])
         with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):
-            self.plan(nodes, ["qtsvg"])
+            self.plan(nodes, ["qtsvg"], holds=INCIDENT_HOLDS)
 
     def test_schedule_reports_holds_without_starving_an_eligible_sibling(self):
         nodes = {
             "deno": meta("deno", build=["llvm"]),
             "llvm": meta("llvm"),
-            "qtbase": meta("qtbase", formula_sha256=self.config["source_build_holds"][0]["formula_sha256"], runtime=["md4c"]),
-            "md4c": meta("md4c", formula_sha256=self.config["source_build_holds"][0]["dependencies"][0]["formula_sha256"], official=True),
+            "qtbase": meta("qtbase", formula_sha256=INCIDENT_HOLDS[0]["formula_sha256"], runtime=["md4c"]),
+            "md4c": meta("md4c", formula_sha256=INCIDENT_HOLDS[0]["dependencies"][0]["formula_sha256"], official=True),
             "qtsvg": meta("qtsvg", runtime=["qtbase"]),
             "simdutf": meta("simdutf"),
         }
         selected, blocked = native_plan.roots_needing_build(
-            ["deno", "qtbase", "qtsvg", "simdutf"], Inspector(nodes), {}, self.config)
+            ["deno", "qtbase", "qtsvg", "simdutf"], Inspector(nodes), {}, self.incident_config())
         self.assertEqual(selected, ["simdutf", "deno"])
         self.assertEqual(set(blocked), {"qtbase", "qtsvg"})
         self.assertIn("qtbase", blocked["qtsvg"])
@@ -131,7 +159,7 @@ class SourceBuildHoldTests(unittest.TestCase):
         self.assertEqual(result["nodes"]["deno"]["provider"], "build")
 
     def test_qtbase_hold_expires_when_either_recipe_changes(self):
-        hold = self.config["source_build_holds"][0]
+        hold = INCIDENT_HOLDS[0]
         md4c_sha = hold["dependencies"][0]["formula_sha256"]
         for changed in (
             {"qtbase": meta("qtbase", formula_sha256="b" * 64, runtime=["md4c"]),
@@ -140,7 +168,7 @@ class SourceBuildHoldTests(unittest.TestCase):
              "md4c": meta("md4c", formula_sha256="b" * 64, official=True)},
         ):
             with self.subTest(changed=sorted(changed)):
-                result = self.plan(changed, ["qtbase"])
+                result = self.plan(changed, ["qtbase"], holds=INCIDENT_HOLDS)
                 self.assertEqual(result["nodes"]["qtbase"]["provider"], "build")
 
     def test_dependency_drift_cannot_bypass_the_hold_on_recursive_replanning(self):
@@ -149,7 +177,7 @@ class SourceBuildHoldTests(unittest.TestCase):
             "name": "md4c", "pkg_version": "0.5.2", "formula_sha256": "a" * 64,
         }])
         with self.assertRaisesRegex(Error, "Source build excluded by policy: qtbase"):
-            self.plan(nodes, ["qtbase"], {"qtbase": old})
+            self.plan(nodes, ["qtbase"], {"qtbase": old}, holds=INCIDENT_HOLDS)
 
     def test_client_still_reports_missing_bottles_instead_of_success(self):
         for name in ("llvm", "qtbase"):
@@ -163,7 +191,7 @@ class SourceBuildHoldTests(unittest.TestCase):
         nodes = self.held_qt_pair()
         for qualify_root, qualify_dependency in ((True, False), (False, True), (True, True)):
             with self.subTest(root=qualify_root, dependency=qualify_dependency):
-                holds = copy.deepcopy(self.config["source_build_holds"])
+                holds = copy.deepcopy(INCIDENT_HOLDS)
                 if qualify_root:
                     holds[0]["name"] = "homebrew/core/qtbase"
                 if qualify_dependency:
@@ -188,8 +216,8 @@ class SourceBuildHoldTests(unittest.TestCase):
             Planner(Inspector({"ocrmypdf": meta("ocrmypdf", formula_sha256=sha)}),
                     {}, build=True, holds=holds).make(["ocrmypdf"])
 
-    def test_ocrmypdf_hold_is_the_current_formula_file_alone(self):
-        holds = [item for item in self.config["source_build_holds"] if item["name"] == "ocrmypdf"]
+    def test_formula_file_hold_blocks_only_that_recipe(self):
+        holds = [item for item in INCIDENT_HOLDS if item["name"] == "ocrmypdf"]
         self.assertEqual(holds, [{
             "name": "ocrmypdf",
             "formula_sha256": "39b84c91d0b8af18ffcd5bddbcae49cabbac0ea6ac26e8d872083ead3f9f2499",
@@ -197,17 +225,19 @@ class SourceBuildHoldTests(unittest.TestCase):
         }])
         held = {"ocrmypdf": meta("ocrmypdf", formula_sha256=holds[0]["formula_sha256"])}
         with self.assertRaisesRegex(Error, "Source build excluded by policy: ocrmypdf"):
-            self.plan(held, ["ocrmypdf"])
+            self.plan(held, ["ocrmypdf"], holds=holds)
         changed = self.plan(
-            {"ocrmypdf": meta("ocrmypdf", formula_sha256="b" * 64)}, ["ocrmypdf"])
+            {"ocrmypdf": meta("ocrmypdf", formula_sha256="b" * 64)}, ["ocrmypdf"], holds=holds)
         self.assertEqual(changed["nodes"]["ocrmypdf"]["provider"], "build")
-        client = self.plan(held, ["ocrmypdf"], build=False)
+        client = self.plan(held, ["ocrmypdf"], build=False, holds=holds)
         self.assertEqual(client["nodes"]["ocrmypdf"]["provider"], "missing")
+        config = self.incident_config()
+        config["source_build_holds"] = holds
         selected, blocked = native_plan.roots_needing_build(
             ["ocrmypdf", "simdutf"], Inspector({
                 **held,
                 "simdutf": meta("simdutf"),
-            }), {}, self.config)
+            }), {}, config)
         self.assertEqual(selected, ["simdutf"])
         self.assertIn("ocrmypdf", blocked)
 
