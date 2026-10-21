@@ -2,21 +2,21 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any_skip_relocation",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
   "formula_sha256": "5ac5c9825238d0113ee6a8892cf818005e5d34a968c9eb070614ea4f1bc50885",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "d95a4ee571ce6f0bf152058ed06cdd22e389b9669365b4cfe2e10cfce2035217",
-  "release": "intel-39448000605-1-thefuck",
+  "release": "intel-39547434571-1-thefuck",
   "revision": 0,
-  "run_id": "39448000605",
+  "run_id": "39547434571",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f575d1c2e1288293675d2056c14304e829f3038fc5d9f9f6a1726591c8418b18",
-  "size": 836792,
+  "sha256": "8124dd25a620e3abd2ade5f8b3bad6d2c2c35f6eee416756f5bd457c9838fcf3",
+  "size": 836803,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "962da6cbd391d143a5dc1f261f9c3b8a0c16c70508a9d27b1d79a145964bc952",
-    "size": 1721150
+    "sha256": "7f0af3b9fac3cc63e23363a92b6443c046df4b77d17c5088cbab67c70ef66d4e",
+    "size": 1721153
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "4f042743b28250756a51b657758ae757e939a29c"
+  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
 }
