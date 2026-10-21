@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "14b6b228f7fd8921d3d4e4660e6a2d1dde922764",
+  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "a6a9a75565556333b39415f2a4ebb74f3ee5da3b",
+  "core_commit": "904de21248b30bd992cc3128dcb4cc19a98d2ce7",
   "filename": "curl--8.23.0.sequoia.bottle.tar.gz",
   "formula_sha256": "0d69822fa0db39c5730b76f619da1f1e0162e21a70a3477ea6730ee2b7ded0aa",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.23.0",
   "recipe_sha256": "e341560ea56db37ffcbf79d3a9c0b07be6b28200702d5a97323de14ee136223e",
-  "release": "intel-39425855848-1-curl",
+  "release": "intel-39546370855-1-curl",
   "revision": 0,
-  "run_id": "39425855848",
+  "run_id": "39546370855",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -19,9 +19,9 @@
       "pkg_version": "1.2.0"
     },
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "3bfb2679bd1e7467374e1b40ea9c50206c95fb074fe7ad83706242f2c14a3205",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "854b082e0d7e1e1a979456a7d104fec220ba191f472f6d39fc6536ba0154c2ff",
-  "size": 1716180,
+  "sha256": "3eb7eb4e404930514390e2b6d07a720ffba058132544ff9e2534ca142ffb1d04",
+  "size": 1716218,
   "source": {
     "filename": "curl--8.23.0.sources.tar.gz",
-    "sha256": "f62e26dd82c87d5db86a86903e5fc8e929d1e89ca2566f7de1daa4cb28c79699",
-    "size": 3453452
+    "sha256": "337b82f9d936e84ef160fdd51098d9f790fa37b1cb474df0088a1b7c2c54d758",
+    "size": 3453442
   },
   "tag": "sequoia",
   "version": "8.23.0",
   "version_scheme": 0,
-  "workflow_commit": "23d7c785b2609378d2b880fde5f764588f626c9c"
+  "workflow_commit": "47a52d489f79911e841baf6f3c2617436e2caef9"
 }

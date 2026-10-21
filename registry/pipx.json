@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "14b6b228f7fd8921d3d4e4660e6a2d1dde922764",
+  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any_skip_relocation",
-  "core_commit": "a6a9a75565556333b39415f2a4ebb74f3ee5da3b",
+  "core_commit": "904de21248b30bd992cc3128dcb4cc19a98d2ce7",
   "filename": "pipx--1.18.4.sequoia.bottle.tar.gz",
   "formula_sha256": "ac384b6f1415cd36b7a7f3662a11ebf4a4f04e04daf7e07cc034dd0cef9d0dc6",
   "license": "MIT",
   "name": "pipx",
   "pkg_version": "1.18.4",
   "recipe_sha256": "48ba6e03cc6113958c5b798be3e91ffdfe8ebf4a85f578765dc6615f76898ba2",
-  "release": "intel-39425855848-1-pipx",
+  "release": "intel-39546370855-1-pipx",
   "revision": 0,
-  "run_id": "39425855848",
+  "run_id": "39546370855",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c517e0a340d5f2415316913d2e69f6e97fd2212b04ff5c661256ecbf891e7784",
-  "size": 599588,
+  "sha256": "bf33f7a60df8599c9ff6ffb38f30de40f3f16fabe17ce891fa8dc6d3c20c1e26",
+  "size": 599590,
   "source": {
     "filename": "pipx--1.18.4.sources.tar.gz",
-    "sha256": "b89f7e527ed09f0da995e74840c392b296f939dcf5cf1679b95d3d4adf858f9d",
-    "size": 1899143
+    "sha256": "313782188b8c4f3b0d35351e53a1d10f698a43d6ed1836c543411c55ec80d787",
+    "size": 1899148
   },
   "tag": "sequoia",
   "version": "1.18.4",
   "version_scheme": 0,
-  "workflow_commit": "23d7c785b2609378d2b880fde5f764588f626c9c"
+  "workflow_commit": "47a52d489f79911e841baf6f3c2617436e2caef9"
 }

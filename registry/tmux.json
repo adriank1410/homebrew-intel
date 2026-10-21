@@ -2,21 +2,21 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "tmux--3.8.sequoia.bottle.tar.gz",
   "formula_sha256": "ba3f7933d0f68eced1d9104341d218c6538000fd358b0363d41ecccf72ad681e",
   "license": "ISC",
   "name": "tmux",
   "pkg_version": "3.8",
   "recipe_sha256": "ae7a4844a7903932b80cdff21ad49dd6ec2537d0783c2871ade1d2a56a5cf229",
-  "release": "intel-39448000605-1-tmux",
+  "release": "intel-39547434571-1-tmux",
   "revision": 0,
-  "run_id": "39448000605",
+  "run_id": "39547434571",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "9673f4add30a4c4db0fed1934b8c6c60e1df50a61ad24e6490296bb6e26a3863",
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "051741f9febc958f9a527e9ca1cf0cbf98c7be05ee9be082a79df0cdaebc20cd",
-  "size": 647527,
+  "sha256": "9a890fda0704a3f87f03f594fada851db80151f01cd06749b381fd7cbb96dced",
+  "size": 647516,
   "source": {
     "filename": "tmux--3.8.sources.tar.gz",
-    "sha256": "edf414f4717e129c4349892772f7ee8f4870b7280d8321fb45bb069288725f0d",
-    "size": 900689
+    "sha256": "e55626bcf123bb076343cda1fac92cbc012761a271685fc4f7a40f46096aa42c",
+    "size": 900681
   },
   "tag": "sequoia",
   "version": "3.8",
   "version_scheme": 0,
-  "workflow_commit": "4f042743b28250756a51b657758ae757e939a29c"
+  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
 }

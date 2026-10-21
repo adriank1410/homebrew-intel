@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any_skip_relocation",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "a4e773bafa931e5a34937f9c61271f71433f51b2a40ae23941b6b583efe8e5df",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "0c2278eb12b617ed78b8b189849587943e43fd87dcf0dcca3be0ef107484fd0e",
-  "release": "intel-39448000605-1-weasyprint",
+  "release": "intel-39547434571-1-weasyprint",
   "revision": 0,
-  "run_id": "39448000605",
+  "run_id": "39547434571",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -24,9 +24,9 @@
       "pkg_version": "1.2.0"
     },
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -265,15 +265,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "231659aba51c1475e964d6ec35bf9dad09e2b78125f82a1320955b19cc63ed88",
-  "size": 4064591,
+  "sha256": "e1f47b8caccca18b384a78242a9455be3145698fe7c039b4e6d40ec098da5356",
+  "size": 4064559,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "774a42f42a2fcec225fc88f784062780fc75a15994f25f5bf630f2c08ded70b7",
-    "size": 15222253
+    "sha256": "9af91c1e180da8918ace913e9a890bb6ec5797ed835ef045c163518eb4bebec9",
+    "size": 15222209
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "4f042743b28250756a51b657758ae757e939a29c"
+  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
 }
