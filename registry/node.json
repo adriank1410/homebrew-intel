@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "node--26.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "77a423884b4db1abe8113fc404054b8baa0835edf73c36c66cb6cfc27e1a4251",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.12.0",
   "recipe_sha256": "561fd3fc05514a1af99f34abc4c88483e164a40d706b5556777b00cfcdee90bc",
-  "release": "intel-39474474146-1-node",
+  "release": "intel-39582177682-1-node",
   "revision": 0,
-  "run_id": "39474474146",
+  "run_id": "39582177682",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -34,9 +34,9 @@
       "pkg_version": "1.34.9"
     },
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "ebc7a265a6d41e1924dcf8251afcaad049030402567914b53da8270132a17a31",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8cc4843c92db34d5efce6145d730d1e841873ba830d3d759faf1952a9ed786a6",
-  "size": 21760282,
+  "sha256": "c0935fa3f524c933abbae620d54f1fe2de9dad91079e6a37ec98d356cd657f93",
+  "size": 21759916,
   "source": {
     "filename": "node--26.12.0.sources.tar.gz",
-    "sha256": "16ba9a22f1f8629880f03ab1fc8bdcb7d0e2b8f68c11bf28818c64b96a3919ec",
-    "size": 65647682
+    "sha256": "5c0081c8c6f9bb824666852585af9f5ebb8b754ae101df432158bf9b4f44a458",
+    "size": 65647662
   },
   "tag": "sequoia",
   "version": "26.12.0",
   "version_scheme": 0,
-  "workflow_commit": "cab413850299f2c59a423cea36270a7820f1729f"
+  "workflow_commit": "3390f843d5e4c9dd7dabe31393cea94dcc9e6898"
 }
