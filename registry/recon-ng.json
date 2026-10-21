@@ -2,21 +2,21 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "recon-ng--5.1.2_4.sequoia.bottle.tar.gz",
   "formula_sha256": "b55870247be2bc86cff7aa424fa7c677f86acf5ac53ae33337005cf94b902146",
   "license": "GPL-3.0-only",
   "name": "recon-ng",
   "pkg_version": "5.1.2_4",
   "recipe_sha256": "7a89ba397c23d5dc2b446539124580aba5804ac5d76a24f012b77c8fb734ed49",
-  "release": "intel-39474474146-1-recon-ng",
+  "release": "intel-39582177682-1-recon-ng",
   "revision": 4,
-  "run_id": "39474474146",
+  "run_id": "39582177682",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "7c2b13a3615079670c859a8f4d5c396c87baf7e4abe3ed5b3043618780ff1fd8",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d9b9baf8839ec56e8aa7c569aa8fdfa02f01643981547c4177cb00dc463ee080",
-  "size": 8729582,
+  "sha256": "b4504205fd33ed3cafe91780e1f1b9c7a06d3002296f27bf43d32ea8311d57ce",
+  "size": 8729486,
   "source": {
     "filename": "recon-ng--5.1.2_4.sources.tar.gz",
-    "sha256": "2b55da5d776a5e6db61d2e672dea20efa6aed06e0f8961abf5ee4f4b541ed31f",
-    "size": 129087932
+    "sha256": "f3dfcee24c73ee906890393aef3860be2a11f132e09286ae97fa7abfeaf9b52b",
+    "size": 129088224
   },
   "tag": "sequoia",
   "version": "5.1.2",
   "version_scheme": 0,
-  "workflow_commit": "cab413850299f2c59a423cea36270a7820f1729f"
+  "workflow_commit": "3390f843d5e4c9dd7dabe31393cea94dcc9e6898"
 }
