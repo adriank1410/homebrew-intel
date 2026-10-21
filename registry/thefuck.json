@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any_skip_relocation",
-  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
+  "core_commit": "b243aaacabe35dfd62e8a19e73f4c2f9e57c1acb",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
   "formula_sha256": "5ac5c9825238d0113ee6a8892cf818005e5d34a968c9eb070614ea4f1bc50885",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "d95a4ee571ce6f0bf152058ed06cdd22e389b9669365b4cfe2e10cfce2035217",
-  "release": "intel-39547434571-1-thefuck",
+  "release": "intel-39648273537-1-thefuck",
   "revision": 0,
-  "run_id": "39547434571",
+  "run_id": "39648273537",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -34,9 +34,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "68e83568a71fc8e49742c9052148cbf128ab1fcdf7c951d78f4a3f44033434f1",
+      "formula_sha256": "88432c15200d2a74fff3a68c83d42ef14ee2336d3d3a185ade18424ebd4b5357",
       "name": "python@3.15",
-      "pkg_version": "3.15.0"
+      "pkg_version": "3.15.0_1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8124dd25a620e3abd2ade5f8b3bad6d2c2c35f6eee416756f5bd457c9838fcf3",
-  "size": 836803,
+  "sha256": "d7627e297cea49472c21447a53fb3fa1ae9573d3a2f590ae9e1e8a17bf3febc9",
+  "size": 836792,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "7f0af3b9fac3cc63e23363a92b6443c046df4b77d17c5088cbab67c70ef66d4e",
-    "size": 1721153
+    "sha256": "72ed8c71b88c9df48e6ab55f919437c84060d2aa32c80275877b101d1e8fa65b",
+    "size": 1721159
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
+  "workflow_commit": "96ca2ae3d421aa6c978cabc0c92e16e7f259e29d"
 }
