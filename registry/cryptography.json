@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "cryptography--50.0.2_2.sequoia.bottle.tar.gz",
   "formula_sha256": "598e810dcea0f60929c2237ad0b84805bdcfb5d4cca756a2e88ea9eef1ca5366",
   "license": {
@@ -14,14 +14,14 @@
   "name": "cryptography",
   "pkg_version": "50.0.2_2",
   "recipe_sha256": "1023765a15ee73cba3f87cec1eab9bbb6674e3c4fbbab78eb8e3bcfc71376f5e",
-  "release": "intel-39474474146-1-cryptography",
+  "release": "intel-39582177682-1-cryptography",
   "revision": 2,
-  "run_id": "39474474146",
+  "run_id": "39582177682",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "91d4b172642b6a7e5a6f977c4149ddde6ed1bad95d67e844d7d87852a8cb2a60",
-  "size": 4010510,
+  "sha256": "1c89fe663a677c5f8c1336cc6da0efcf8f0476e75d73684984c0e4dc266b3471",
+  "size": 4010491,
   "source": {
     "filename": "cryptography--50.0.2_2.sources.tar.gz",
-    "sha256": "55593fe3c272efdd0a53081495c0ea4ca88d3e7838c23934b083896a008caae2",
-    "size": 5210843
+    "sha256": "e2e980fb39cad3a3d9cde3442cb910e0940b4837bf65edef1048974749fd2302",
+    "size": 5210882
   },
   "tag": "sequoia",
   "version": "50.0.2",
   "version_scheme": 0,
-  "workflow_commit": "cab413850299f2c59a423cea36270a7820f1729f"
+  "workflow_commit": "3390f843d5e4c9dd7dabe31393cea94dcc9e6898"
 }
