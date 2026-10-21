@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "rust--1.99.1.sequoia.bottle.tar.gz",
   "formula_sha256": "b3e6ec47bc327e7d9f132be8b5ee880b64e8128ef3eedb70459677bdedabd18a",
   "license": {
@@ -14,14 +14,14 @@
   "name": "rust",
   "pkg_version": "1.99.1",
   "recipe_sha256": "aece397ba5dfeb11c93fc0d7ff2afe6ae3128da5c60f557a72196ab620f40bea",
-  "release": "intel-39448000605-1-rust",
+  "release": "intel-39547434571-1-rust",
   "revision": 0,
-  "run_id": "39448000605",
+  "run_id": "39547434571",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "04b7a084d3d8e07560656d34fb818210b165984366ff82cd2352d7a391c1452d",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c9c255f5f7f906f10b62be6ec464111a1155b56c910097354dc487e40c4cf842",
-  "size": 111579676,
+  "sha256": "a0c4719b457179587d4ef71cee4e76d204b33ada850fa6737e1236f3b199237c",
+  "size": 111579409,
   "source": {
     "filename": "rust--1.99.1.sources.tar.gz",
-    "sha256": "87f1410fed4652232f4412ef118d250ff3524c1a9adbc921092cf1ec62e20ed4",
-    "size": 657788414
+    "sha256": "9b1f515b592b01822a50b1557b256c4437fa78be07e6ad5190caa8ffbaa4135e",
+    "size": 657788426
   },
   "tag": "sequoia",
   "version": "1.99.1",
   "version_scheme": 0,
-  "workflow_commit": "4f042743b28250756a51b657758ae757e939a29c"
+  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
 }
