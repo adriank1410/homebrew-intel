@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
   "filename": "qtremoteobjects--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a19d6a49b918e148742797da6f1e802919168d3044aaa9f51d8e3335004dffc7",
   "license": {
@@ -25,9 +25,9 @@
   "name": "qtremoteobjects",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "24e183ac38f55edfc771038118fe331fa6beb767c4ee25ab31781a1ebcb5da3f",
-  "release": "intel-39474474146-1-qtremoteobjects",
+  "release": "intel-39623354244-1-qtremoteobjects",
   "revision": 1,
-  "run_id": "39474474146",
+  "run_id": "39623354244",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -35,9 +35,9 @@
       "pkg_version": "1.2.0"
     },
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -175,7 +175,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d",
+      "formula_sha256": "36e8f8c31bd23b9507ba6194ebd3ea7179c64b05567089d79e9a3963467d5d06",
       "name": "qtbase",
       "pkg_version": "6.12.0_1"
     },
@@ -206,15 +206,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e3ea0b30db889c14ddfed9f146a1e4ca44f4315950242cd9c4df18a9948331f3",
-  "size": 623246,
+  "sha256": "88bdc019c5ffe1a876b756f52e5b09077fcd6507d503289fead287065f7a846e",
+  "size": 623288,
   "source": {
     "filename": "qtremoteobjects--6.12.0_1.sources.tar.gz",
-    "sha256": "09d4eb8ba8a61cabb3b2f3eb297ad955c260a0e41f402c1da272840cedd7b300",
-    "size": 565249
+    "sha256": "cfdc904a93472c85068517a3d513b094723d01d19d744c85a49c69f6c543d358",
+    "size": 565242
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "cab413850299f2c59a423cea36270a7820f1729f"
+  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
 }
