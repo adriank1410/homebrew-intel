@@ -2,21 +2,21 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "gpgme--2.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "91bbde19b895edfe0e4e413ed77e4cf0cf3aea6631fb5d93e75290cc3eed58af",
   "license": "LGPL-2.1-or-later",
   "name": "gpgme",
   "pkg_version": "2.2.0",
   "recipe_sha256": "52a601311da12ef2587462a4b95237f98d987da442d9ee26d71e52bbf500a0fb",
-  "release": "intel-39474474146-1-gpgme",
+  "release": "intel-39582177682-1-gpgme",
   "revision": 0,
-  "run_id": "39474474146",
+  "run_id": "39582177682",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f08608aa0a5414dce4cec61b9ca4c1933ade5e17b95c02cf76ae27b232b6622c",
-  "size": 786287,
+  "sha256": "c78d4c619f98446d81291bc776d165d54c1575e8526720cfa61d19988560aa32",
+  "size": 786267,
   "source": {
     "filename": "gpgme--2.2.0.sources.tar.gz",
-    "sha256": "de7be62a9856da864b1cbd65a2616a50d728267c5567d831068fccd03255a7fd",
-    "size": 1439540
+    "sha256": "13cd44e19383e825db7d924696acb24e467fe3f8a80ae1e9966127f020abeb9a",
+    "size": 1439547
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "cab413850299f2c59a423cea36270a7820f1729f"
+  "workflow_commit": "3390f843d5e4c9dd7dabe31393cea94dcc9e6898"
 }
