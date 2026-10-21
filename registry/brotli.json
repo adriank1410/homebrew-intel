@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "cellar": "any",
+  "core_commit": "80a7992be000df4fdcf8da713793dd61fe277a12",
+  "filename": "brotli--1.2.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "8b12aedb4664014ed66e612a5b397d7bc9065450e29fcda2141cafbe6e43f40a",
+  "license": "MIT",
+  "name": "brotli",
+  "pkg_version": "1.2.0_1",
+  "recipe_sha256": "445e3d26ec8625ebd41405708859711efb58555f2c99c7525a64c53f484ef1c9",
+  "release": "intel-39691675621-1-brotli",
+  "revision": 1,
+  "run_id": "39691675621",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "97e2fdfe38a1b7cbe8c633389bb516b3569bf3428f5cfb40f958069978224bab",
+  "size": 812729,
+  "source": {
+    "filename": "brotli--1.2.0_1.sources.tar.gz",
+    "sha256": "5016c8fd231a4a79e5fb694a84ac41cb07775ab077c2d053c061c2ef628128ad",
+    "size": 650231
+  },
+  "tag": "sequoia",
+  "version": "1.2.0",
+  "version_scheme": 0,
+  "workflow_commit": "77f4d773457dda005a43bdac672d72ac153217cd"
+}
