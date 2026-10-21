@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "904de21248b30bd992cc3128dcb4cc19a98d2ce7",
+  "core_commit": "b243aaacabe35dfd62e8a19e73f4c2f9e57c1acb",
   "filename": "gdb--18.1.sequoia.bottle.tar.gz",
   "formula_sha256": "9f95928f65533ac836e37d7550133cf64e49f74ae5a3ea640cb209c37b046d75",
   "license": "GPL-3.0-or-later",
   "name": "gdb",
   "pkg_version": "18.1",
   "recipe_sha256": "72b1a816d3a640a012ebe08ed8bb3673359c642047e382f82fad293c38aa4326",
-  "release": "intel-39546370855-1-gdb",
+  "release": "intel-39648273537-1-gdb",
   "revision": 0,
-  "run_id": "39546370855",
+  "run_id": "39648273537",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -54,9 +54,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "68e83568a71fc8e49742c9052148cbf128ab1fcdf7c951d78f4a3f44033434f1",
+      "formula_sha256": "88432c15200d2a74fff3a68c83d42ef14ee2336d3d3a185ade18424ebd4b5357",
       "name": "python@3.15",
-      "pkg_version": "3.15.0"
+      "pkg_version": "3.15.0_1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -80,15 +80,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "699309cb82644d5b8da0b5b3e37ec18437d2b0ee842b4263ece93bb962bb4681",
-  "size": 9015920,
+  "sha256": "38e9a9d5eb360b46b95723902c42deb3c5398f6f41eec1b9ce0572dd9fe8748e",
+  "size": 9015895,
   "source": {
     "filename": "gdb--18.1.sources.tar.gz",
-    "sha256": "7b6d017ab9612d055765e62bbee3b18adb1e14f92c25c468e53abd92bf3578dc",
-    "size": 22214032
+    "sha256": "af97324bba69133cf6681972f89eb0becaf01ac2042420849f1300d3b5a20b33",
+    "size": 22214035
   },
   "tag": "sequoia",
   "version": "18.1",
   "version_scheme": 0,
-  "workflow_commit": "47a52d489f79911e841baf6f3c2617436e2caef9"
+  "workflow_commit": "96ca2ae3d421aa6c978cabc0c92e16e7f259e29d"
 }
