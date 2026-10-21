@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
   "filename": "qtcanvaspainter--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "b4c13ed5facaeb575f65a39bcf362b182512900b6b52e04d482a7330f1d8cc70",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtcanvaspainter",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "c5ec1d48de3b2f2f270d1b52a91baaab8af19c292fe96494462d887132b3ed77",
-  "release": "intel-39474474146-1-qtcanvaspainter",
+  "release": "intel-39623354244-1-qtcanvaspainter",
   "revision": 1,
-  "run_id": "39474474146",
+  "run_id": "39623354244",
   "runtime_dependencies": [
     {
       "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
@@ -30,9 +30,9 @@
       "pkg_version": "1.2.0"
     },
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -170,7 +170,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d",
+      "formula_sha256": "36e8f8c31bd23b9507ba6194ebd3ea7179c64b05567089d79e9a3963467d5d06",
       "name": "qtbase",
       "pkg_version": "6.12.0_1"
     },
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4e4322d44bed3c13b9990a94c7cb032e01b42331723791e4684ee139810515d0",
-  "size": 583945,
+  "sha256": "f5bad70db1afd147cfaa2b3b83119c3c4d08643d66a2414433b75b566ebdf9d2",
+  "size": 583954,
   "source": {
     "filename": "qtcanvaspainter--6.12.0_1.sources.tar.gz",
-    "sha256": "f3cec40c91f5f5f4283abf8298ebd0222553dec472b2889353a34d5f31d1480a",
-    "size": 1171374
+    "sha256": "b7b1eb999a13d12b29e098eb9507436e3baaec0e29a116412dd6bbde212ed893",
+    "size": 1171376
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "cab413850299f2c59a423cea36270a7820f1729f"
+  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
 }
