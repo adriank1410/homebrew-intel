@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any",
-  "core_commit": "904de21248b30bd992cc3128dcb4cc19a98d2ce7",
+  "core_commit": "b243aaacabe35dfd62e8a19e73f4c2f9e57c1acb",
   "filename": "ldns--1.9.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ad053fa13bcf235ccb9daa313c62bd7c251b7977eea85e67112eb0a2f0dfe29b",
   "license": "BSD-3-Clause",
   "name": "ldns",
   "pkg_version": "1.9.2_1",
   "recipe_sha256": "c9cfc1eb09549873df6096ff6e3b5009021b0a8e8bd88e54f2277cf70624bdd7",
-  "release": "intel-39546370855-1-ldns",
+  "release": "intel-39648273537-1-ldns",
   "revision": 1,
-  "run_id": "39546370855",
+  "run_id": "39648273537",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -34,9 +34,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "68e83568a71fc8e49742c9052148cbf128ab1fcdf7c951d78f4a3f44033434f1",
+      "formula_sha256": "88432c15200d2a74fff3a68c83d42ef14ee2336d3d3a185ade18424ebd4b5357",
       "name": "python@3.15",
-      "pkg_version": "3.15.0"
+      "pkg_version": "3.15.0_1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "09fac5df8a228a1c8969669ea26f65662244c23d1894d7fb32b5e9416557e1d8",
-  "size": 1308826,
+  "sha256": "c590de42f0c24be38d1686d995c7b474db755cc0fa75b89df7ed6843cbcd8296",
+  "size": 1308942,
   "source": {
     "filename": "ldns--1.9.2_1.sources.tar.gz",
-    "sha256": "832b0f19c03d1ef4dd3c74d09e3cb6a515508790753b45a106015aeb7d93592c",
-    "size": 1314517
+    "sha256": "3d655383d5bbdfb643b19780d80840abe8538ec99822307aac2e44f2a3482bfa",
+    "size": 1314530
   },
   "tag": "sequoia",
   "version": "1.9.2",
   "version_scheme": 0,
-  "workflow_commit": "47a52d489f79911e841baf6f3c2617436e2caef9"
+  "workflow_commit": "96ca2ae3d421aa6c978cabc0c92e16e7f259e29d"
 }

@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any",
-  "core_commit": "904de21248b30bd992cc3128dcb4cc19a98d2ce7",
+  "core_commit": "b243aaacabe35dfd62e8a19e73f4c2f9e57c1acb",
   "filename": "bandit--1.9.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8359d8da6489ffe3974aa2c43d12de7b5bc04392a37cd0363da6dcb05b264b1a",
   "license": "Apache-2.0",
   "name": "bandit",
   "pkg_version": "1.9.4_1",
   "recipe_sha256": "9e191c80016e5e1a66bc86493eefff6e24f69ff107cb6186fd0541eeb24987ab",
-  "release": "intel-39546370855-1-bandit",
+  "release": "intel-39648273537-1-bandit",
   "revision": 1,
-  "run_id": "39546370855",
+  "run_id": "39648273537",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -39,9 +39,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "68e83568a71fc8e49742c9052148cbf128ab1fcdf7c951d78f4a3f44033434f1",
+      "formula_sha256": "88432c15200d2a74fff3a68c83d42ef14ee2336d3d3a185ade18424ebd4b5357",
       "name": "python@3.15",
-      "pkg_version": "3.15.0"
+      "pkg_version": "3.15.0_1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8d8b5e14c88e83e91dc366e2972434c43fda73deaaa798cb7fea6a6be3e6b601",
-  "size": 1669671,
+  "sha256": "2116918ede0af96cb0ab1c6c9606452e7fb9300fccd0708a9b839c83aa0c4933",
+  "size": 1669637,
   "source": {
     "filename": "bandit--1.9.4_1.sources.tar.gz",
-    "sha256": "6c211ccffd978a341bc4d1ad99dea5c58e5eb83da998144adbabcc174ae9a747",
-    "size": 10227977
+    "sha256": "64edfebb61e8e80d3230cb27ffa84c45161601b21534523d9f8cd1e34bf5454f",
+    "size": 10227986
   },
   "tag": "sequoia",
   "version": "1.9.4",
   "version_scheme": 0,
-  "workflow_commit": "47a52d489f79911e841baf6f3c2617436e2caef9"
+  "workflow_commit": "96ca2ae3d421aa6c978cabc0c92e16e7f259e29d"
 }
