@@ -1,0 +1,183 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "cellar": "any",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
+  "filename": "openjdk@21--21.0.13.sequoia.bottle.tar.gz",
+  "formula_sha256": "767bd219b852989dabad7fde48f6e75326cc1ae17dfe1344d7120a1a17a44b70",
+  "license": {
+    "GPL-2.0-only": {
+      "with": "Classpath-exception-2.0"
+    }
+  },
+  "name": "openjdk@21",
+  "pkg_version": "21.0.13",
+  "recipe_sha256": "89471b441e9253be72b2705f61911a588740be04acf3ec76172e55ca204cd313",
+  "release": "intel-39547434571-1-openjdk-at-21",
+  "revision": 0,
+  "run_id": "39547434571",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "name": "brotli",
+      "pkg_version": "1.2.0"
+    },
+    {
+      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
+      "name": "cairo",
+      "pkg_version": "1.18.6"
+    },
+    {
+      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "name": "fontconfig",
+      "pkg_version": "2.18.3"
+    },
+    {
+      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
+      "name": "freetype",
+      "pkg_version": "2.15.0"
+    },
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
+      "name": "giflib",
+      "pkg_version": "6.1.3"
+    },
+    {
+      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "name": "glib",
+      "pkg_version": "2.90.1"
+    },
+    {
+      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
+      "name": "graphite2",
+      "pkg_version": "1.3.15"
+    },
+    {
+      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
+      "name": "harfbuzz",
+      "pkg_version": "14.6.0"
+    },
+    {
+      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
+      "name": "icu4c@78",
+      "pkg_version": "78.3"
+    },
+    {
+      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "name": "jpeg-turbo",
+      "pkg_version": "3.2.0"
+    },
+    {
+      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
+      "name": "libpng",
+      "pkg_version": "1.6.59"
+    },
+    {
+      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+      "name": "libtiff",
+      "pkg_version": "4.7.2"
+    },
+    {
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "name": "libunistring",
+      "pkg_version": "1.5"
+    },
+    {
+      "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
+      "name": "libx11",
+      "pkg_version": "1.8.14"
+    },
+    {
+      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "name": "libxau",
+      "pkg_version": "1.0.12"
+    },
+    {
+      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
+      "name": "libxcb",
+      "pkg_version": "1.17.0"
+    },
+    {
+      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "name": "libxdmcp",
+      "pkg_version": "1.1.5"
+    },
+    {
+      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "name": "libxext",
+      "pkg_version": "1.3.7"
+    },
+    {
+      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "name": "libxrender",
+      "pkg_version": "0.9.13"
+    },
+    {
+      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+      "name": "little-cms2",
+      "pkg_version": "2.19.1"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "name": "lzo",
+      "pkg_version": "2.10"
+    },
+    {
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
+      "name": "pcre2",
+      "pkg_version": "10.49"
+    },
+    {
+      "formula_sha256": "a9957ff4b6518062d2e2697b5ff8b470b06e5a73f8f9076c9d3e7d1c8dbc1d85",
+      "name": "pixman",
+      "pkg_version": "0.46.4"
+    },
+    {
+      "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
+      "name": "webp",
+      "pkg_version": "1.6.0"
+    },
+    {
+      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "name": "xorgproto",
+      "pkg_version": "2026.1"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "3cfd228324fdf6a97e5b594780c631c22b10a72f6a41fe5ec39670ae34e920d3",
+  "size": 202483329,
+  "source": {
+    "filename": "openjdk@21--21.0.13.sources.tar.gz",
+    "sha256": "88e43adfac2add8c599b5b2d3f1a0c22e995e94baed8c30011a5c66d3c9e1d41",
+    "size": 309813716
+  },
+  "tag": "sequoia",
+  "version": "21.0.13",
+  "version_scheme": 0,
+  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
+}
