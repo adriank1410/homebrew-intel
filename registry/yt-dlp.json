@@ -2,21 +2,21 @@
   "arch": "x86_64",
   "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
   "cellar": "any_skip_relocation",
-  "core_commit": "848bfa81ec12746fdd90a48d9bbc65e518e4cd39",
+  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
   "filename": "yt-dlp--2026.8.19_2.sequoia.bottle.tar.gz",
   "formula_sha256": "81f3643160f0257befc11ab88167391f1a760a23b5539fc8e40dfd8d86bcd05f",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.8.19_2",
   "recipe_sha256": "c40a4815b01035466f644fb56ba77015875a1674f58abffdaa40ce50220ed031",
-  "release": "intel-39448000605-1-yt-dlp",
+  "release": "intel-39547434571-1-yt-dlp",
   "revision": 2,
-  "run_id": "39448000605",
+  "run_id": "39547434571",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e60f682c5b84cfc8771641c3117eccb592636b34198161f80a81796e1b43a0a0",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25_1"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "7c2b13a3615079670c859a8f4d5c396c87baf7e4abe3ed5b3043618780ff1fd8",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "322c8082c0b37339b32745fc6a79c31d9bf6960265529811d70694e42bd50683",
-  "size": 8442760,
+  "sha256": "a516a84df88a3003f9a1eea52ae83d7804f07010b516bd0592aaeb860a16e7e7",
+  "size": 8442441,
   "source": {
     "filename": "yt-dlp--2026.8.19_2.sources.tar.gz",
-    "sha256": "6856f0ddd6b34fe8599a6368f31a1b78af82becda366764f48dfe9f1ac7be104",
-    "size": 18135542
+    "sha256": "cfb4937c5489d6706f7836ab8a4683ef068bb4d5b64140a0e422dbc3a995d687",
+    "size": 18135530
   },
   "tag": "sequoia",
   "version": "2026.8.19",
   "version_scheme": 0,
-  "workflow_commit": "4f042743b28250756a51b657758ae757e939a29c"
+  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
 }
