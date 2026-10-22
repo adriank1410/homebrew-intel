@@ -2,21 +2,21 @@
   "arch": "x86_64",
   "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any_skip_relocation",
-  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
+  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
   "filename": "archi-steam-farm--6.3.10.6.sequoia.bottle.tar.gz",
   "formula_sha256": "9d13fedf8a4bf6775ab9e9a9f8af8746845afc7bd55b02d6a10d381b5a30cf25",
   "license": "Apache-2.0",
   "name": "archi-steam-farm",
   "pkg_version": "6.3.10.6",
   "recipe_sha256": "a5bd3e55a160a4ab2522e7f408d9792b3a5c59dae8aeef3afeaf07e997c31fb7",
-  "release": "intel-39623354244-1-archi-steam-farm",
+  "release": "intel-39760891373-1-archi-steam-farm",
   "revision": 0,
-  "run_id": "39623354244",
+  "run_id": "39760891373",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6e04b207762c8e39fe2f00646159c7dac858bef746a4a3acad1adc3545834fff",
-  "size": 8231602,
+  "sha256": "dd92685feb3a8157e11f774c8909dc50e053b888483ab15d514b0a618953c50a",
+  "size": 8231761,
   "source": {
     "filename": "archi-steam-farm--6.3.10.6.sources.tar.gz",
-    "sha256": "3c532a0725771baedc8c6567e5adf40c96d98cddb70984dc0dc6b2ae7a549e3a",
-    "size": 10859491
+    "sha256": "e12051479dee619c3eca8ea0845a561b85d2e928244beb80d9a0721b68440cb6",
+    "size": 10859477
   },
   "tag": "sequoia",
   "version": "6.3.10.6",
   "version_scheme": 0,
-  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
+  "workflow_commit": "7213726f1ba9a96679db94b36d401409f5aa9b14"
 }
