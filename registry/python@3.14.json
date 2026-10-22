@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b243aaacabe35dfd62e8a19e73f4c2f9e57c1acb",
-  "filename": "python@3.14--3.14.8_3.sequoia.bottle.tar.gz",
-  "formula_sha256": "d509b77ddd569365999127ddb7ccc9ad70e73451118ec3ca00d8ef561ddca6c0",
+  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
+  "filename": "python@3.14--3.14.9.sequoia.bottle.tar.gz",
+  "formula_sha256": "b70e64b2ffea1d78e56f7eea04e7c3fbb3535655d6a227331d25506e6c00d34b",
   "license": "Python-2.0",
   "name": "python@3.14",
-  "pkg_version": "3.14.8_3",
-  "recipe_sha256": "10cf0d69af60e3229eca9ed333432f0ac5a18f3798a1a5b9feb690b474c33e9e",
-  "release": "intel-39648273537-1-python-at-3.14",
-  "revision": 3,
-  "run_id": "39648273537",
+  "pkg_version": "3.14.9",
+  "recipe_sha256": "0eb86022d4a6c109fcfd1bb771f858f55789b2c6fc453b7aec26b61ddefc16a9",
+  "release": "intel-39735106802-1-python-at-3.14",
+  "revision": 0,
+  "run_id": "39735106802",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fae4c4ce036eee43191a584ba4ae0135c9ff43063d48f21709e8a921887e1a22",
-  "size": 19288083,
+  "sha256": "acac5b540d2e956b5f2fe6328daefbf8603bd7d61043926196dd26dc26b6bd26",
+  "size": 19328612,
   "source": {
-    "filename": "python@3.14--3.14.8_3.sources.tar.gz",
-    "sha256": "29ed980576daad9d1bfeedc35d108e3225752f41dd44420294b96b0461329668",
-    "size": 33740198
+    "filename": "python@3.14--3.14.9.sources.tar.gz",
+    "sha256": "8c70416544cce3c3fa513d23935ff64ac642b1b12efc2f02fe7b32aa4b4c4851",
+    "size": 33803302
   },
   "tag": "sequoia",
-  "version": "3.14.8",
+  "version": "3.14.9",
   "version_scheme": 0,
-  "workflow_commit": "96ca2ae3d421aa6c978cabc0c92e16e7f259e29d"
+  "workflow_commit": "788febf13745615cbfdaecca2dd9bb77983d381b"
 }
