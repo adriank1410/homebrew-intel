@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
+  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
   "filename": "openjdk@21--21.0.13.sequoia.bottle.tar.gz",
   "formula_sha256": "767bd219b852989dabad7fde48f6e75326cc1ae17dfe1344d7120a1a17a44b70",
   "license": {
@@ -13,14 +13,14 @@
   "name": "openjdk@21",
   "pkg_version": "21.0.13",
   "recipe_sha256": "89471b441e9253be72b2705f61911a588740be04acf3ec76172e55ca204cd313",
-  "release": "intel-39547434571-1-openjdk-at-21",
+  "release": "intel-39836622384-1-openjdk-at-21",
   "revision": 0,
-  "run_id": "39547434571",
+  "run_id": "39836622384",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -169,15 +169,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3cfd228324fdf6a97e5b594780c631c22b10a72f6a41fe5ec39670ae34e920d3",
-  "size": 202483329,
+  "sha256": "fa49d1ce5b1aa7bb1a4b40661c48dd961ddf4628bee994c38d6ca31c52f2f90d",
+  "size": 202483063,
   "source": {
     "filename": "openjdk@21--21.0.13.sources.tar.gz",
-    "sha256": "88e43adfac2add8c599b5b2d3f1a0c22e995e94baed8c30011a5c66d3c9e1d41",
-    "size": 309813716
+    "sha256": "309deb3770a82084742199c0894f289d4bbb219b59ae6874e90ced5fd506a2c2",
+    "size": 309813752
   },
   "tag": "sequoia",
   "version": "21.0.13",
   "version_scheme": 0,
-  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
+  "workflow_commit": "b54ff1e25213ba45f58d46b6b6ba4c556b6d40fc"
 }
