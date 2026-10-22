@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8f10429b56be28a25032b87463fffc95e556b5bc",
+  "brew_commit": "f764734f3c2d5c24673359f91d753f85f12f0346",
   "cellar": "any",
-  "core_commit": "a4687008192bff359668e5aeeabada586b33ad88",
+  "core_commit": "20a64fdd49b6f3c4c0242ecd86f66e2712d228ac",
   "filename": "py3cairo--1.29.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a227a826bc277830cf061249aad1ff6a31d0a7d703ba5e28478c8992603a9414",
   "license": {
@@ -14,14 +14,14 @@
   "name": "py3cairo",
   "pkg_version": "1.29.2_1",
   "recipe_sha256": "65a3c1fea0d8514cb68e48084500cb67c8c5545cb2647034bce5ef41f9dabd51",
-  "release": "intel-39241454905-1-py3cairo",
+  "release": "intel-39777489748-1-py3cairo",
   "revision": 1,
-  "run_id": "39241454905",
+  "run_id": "39777489748",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "af3816686404fc126e6cce766348911596073a9c01deadd1c3757319b98be0eb",
-  "size": 257935,
+  "sha256": "fda2d531d02f69f403d83096c84506ae3d707a8e8d3a134abbba1be5c4218f12",
+  "size": 257939,
   "source": {
     "filename": "py3cairo--1.29.2_1.sources.tar.gz",
-    "sha256": "a5ab69e83298f8e6eb6e9f3faed35802be39bfea68ff156718902ff0a7deef0e",
-    "size": 688427
+    "sha256": "5ed6e6aafa3f45622433a41cb784b4d0c82b096ffe467ca5d14fbb8b2003ffc7",
+    "size": 688438
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "b4f558d9fdc96f18786e777ea1c899c702fb2a64"
+  "workflow_commit": "030481572064c575e34291fedd56bb7663584440"
 }
