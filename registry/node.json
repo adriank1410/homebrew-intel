@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "80a7992be000df4fdcf8da713793dd61fe277a12",
+  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
   "filename": "node--26.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "77a423884b4db1abe8113fc404054b8baa0835edf73c36c66cb6cfc27e1a4251",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.12.0",
   "recipe_sha256": "561fd3fc05514a1af99f34abc4c88483e164a40d706b5556777b00cfcdee90bc",
-  "release": "intel-39708678078-1-node",
+  "release": "intel-39738353830-1-node",
   "revision": 0,
-  "run_id": "39708678078",
+  "run_id": "39738353830",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -24,9 +24,9 @@
       "pkg_version": "4.0.0_1"
     },
     {
-      "formula_sha256": "8b12aedb4664014ed66e612a5b397d7bc9065450e29fcda2141cafbe6e43f40a",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0_1"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "0d6e516cdfac37e00bf121e61db1252ef4e8e89593568039862f081bd639e239",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3026973ed13aafb61132c750b89479152efc30e6f05812169b23884487c6ff9b",
-  "size": 21758981,
+  "sha256": "2cf9824e9d7c82d24129da01ab2896a7723aa781fb93fac82ae4580b99293c3f",
+  "size": 21758985,
   "source": {
     "filename": "node--26.12.0.sources.tar.gz",
-    "sha256": "8e389347d61afa01b14cbca665f92c1ddc2511973749de236d4381f65f13acb6",
-    "size": 65647683
+    "sha256": "81d4a57eafbe53e0014195a0d626a2464f0aaa454aa4c914900f60f6cdd28c92",
+    "size": 65647669
   },
   "tag": "sequoia",
   "version": "26.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9e71ca52c429983f974feab7278573a1c145807f"
+  "workflow_commit": "94ce85f2dd72ad17f5f15d6b64f27b41241ceacb"
 }
