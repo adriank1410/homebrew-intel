@@ -12,6 +12,23 @@ from intelbrew.core import Error
 
 
 class ArchiveNoticeTests(unittest.TestCase):
+    def test_extra_members_select_exact_paths_in_tar_and_zip(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            tar_path = root / "source.tar.gz"
+            with tarfile.open(tar_path, "w:gz") as archive:
+                for name, data in (("pkg/README", b"license in readme"), ("pkg/sub/README", b"other")):
+                    member = tarfile.TarInfo(name); member.size = len(data)
+                    archive.addfile(member, io.BytesIO(data))
+            self.assertEqual(archive_notices(tar_path, 1024, 4), [])
+            self.assertEqual(archive_notices(tar_path, 1024, 4, extra_members={"pkg/README": "x"}),
+                             [("pkg/README", b"license in readme")])
+            zip_path = root / "source.zip"
+            with zipfile.ZipFile(zip_path, "w") as archive:
+                archive.writestr("pkg/README", b"zip readme")
+            self.assertEqual(archive_notices(zip_path, 1024, 4, extra_members=("pkg/README",)),
+                             [("pkg/README", b"zip readme")])
+
     def test_reads_regular_notices_and_rejects_unsafe_or_symlink_members(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
