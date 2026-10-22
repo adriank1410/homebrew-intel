@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b243aaacabe35dfd62e8a19e73f4c2f9e57c1acb",
+  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
   "filename": "fontforge--20251009_2.sequoia.bottle.tar.gz",
   "formula_sha256": "e83e3a2ede4bed1f21d7435b0bef0abb96c3b9fa73ddf8f254245f8ea61d586a",
   "license": "GPL-3.0-or-later",
   "name": "fontforge",
   "pkg_version": "20251009_2",
   "recipe_sha256": "e4e2a8c148bc8ded219db500b20e813f568b0e36183cfbe55ff26962abb86112",
-  "release": "intel-39648273537-1-fontforge",
+  "release": "intel-39857866388-1-fontforge",
   "revision": 2,
-  "run_id": "39648273537",
+  "run_id": "39857866388",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -235,15 +235,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "74f96ee68a8b39a03b78fbd0fc1b283b01306ea0e77f2be93985fc453387fce2",
-  "size": 5858203,
+  "sha256": "af1a242d1ae591aea196bb1f196e95702ca02056dc00aaf5ed71e0e6d3f75d35",
+  "size": 5858189,
   "source": {
     "filename": "fontforge--20251009_2.sources.tar.gz",
-    "sha256": "738ef5440da50ad962d98ec1fe3f38e5edcf089c87e7098710d3644d250a4fe2",
-    "size": 14132300
+    "sha256": "acde9a1755c605c899a948474e4859ab0308dd0dfcc540683c2e04b03d28660e",
+    "size": 14132301
   },
   "tag": "sequoia",
   "version": "20251009",
   "version_scheme": 0,
-  "workflow_commit": "96ca2ae3d421aa6c978cabc0c92e16e7f259e29d"
+  "workflow_commit": "2e3876d8a5b0c4ed52b940a91c241276157b9b3a"
 }

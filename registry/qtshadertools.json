@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
+  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
   "filename": "qtshadertools--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "c33a2969534c129bc1cae357e85b41f81338f73679ce65bddebf0e13ba702a88",
   "license": {
@@ -44,14 +44,14 @@
   "name": "qtshadertools",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "13f019330404093993af71381c043f3bb70f9292fc930cdd55ddf1dd340efb58",
-  "release": "intel-39547434571-1-qtshadertools",
+  "release": "intel-39857866388-1-qtshadertools",
   "revision": 1,
-  "run_id": "39547434571",
+  "run_id": "39857866388",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "80f3009eaf56aba38d15e8281b3ebb08a651efe490063eedde7222bd2185f9da",
-  "size": 1810615,
+  "sha256": "ea9b347bb288f1be1d239aa6e94cde38ad5e6679ee35e42c738a00e391b30a6c",
+  "size": 1810607,
   "source": {
     "filename": "qtshadertools--6.12.0_1.sources.tar.gz",
-    "sha256": "3f3fda2e588af5c09490c1a3f04e57740641c9ea9da467e6cf0f970747360850",
-    "size": 1310125
+    "sha256": "600e772dc3effa761c01e325363710e805e658ce723ca4094fd88f74631d37ac",
+    "size": 1310124
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
+  "workflow_commit": "2e3876d8a5b0c4ed52b940a91c241276157b9b3a"
 }
