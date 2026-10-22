@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any_skip_relocation",
-  "core_commit": "80a7992be000df4fdcf8da713793dd61fe277a12",
-  "filename": "sphinx-doc--9.1.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "27df83599011aabbc2b86cb918bab7195aab2f3c80f2b7b13fbe71915755ea70",
+  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
+  "filename": "sphinx-doc--9.2.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "65bbea069506fa285782220ea5fefc2cd80f5737237ace627816cee2fd88b4b7",
   "license": "BSD-2-Clause",
   "name": "sphinx-doc",
-  "pkg_version": "9.1.1",
-  "recipe_sha256": "f18001404a934d7cf5e626ad1784f5622f213f2b6f218c4acf4d54b07f4e91c6",
-  "release": "intel-39708678078-1-jpeg-xl",
+  "pkg_version": "9.2.0",
+  "recipe_sha256": "20e8c1ba6cc33af8459dba3a6fd563348dbc06c79609c15f784f8507b31ecbe3",
+  "release": "intel-39738353830-1-jpeg-xl",
   "revision": 0,
-  "run_id": "39708678078",
+  "run_id": "39738353830",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9aa052268f5c6bc57b3602766073f057a99f718ec4107351dd9bea8c8296a1a5",
-  "size": 15829037,
+  "sha256": "b27f8e3d22c76c2b0c28c51dc62e1ed5a93d92ab2db90f46cbbcd784ac7f9943",
+  "size": 15837005,
   "source": {
-    "filename": "sphinx-doc--9.1.1.sources.tar.gz",
-    "sha256": "fdffc994e3df58214056cf59ef9fec7ca1a19a25da4402954552852e69bb65c6",
-    "size": 29940401
+    "filename": "sphinx-doc--9.2.0.sources.tar.gz",
+    "sha256": "8665b8631ab94d350283e6497879fa181d8d16a52dc4cafa38839d5cfe857d29",
+    "size": 30000464
   },
   "tag": "sequoia",
-  "version": "9.1.1",
+  "version": "9.2.0",
   "version_scheme": 0,
-  "workflow_commit": "9e71ca52c429983f974feab7278573a1c145807f"
+  "workflow_commit": "94ce85f2dd72ad17f5f15d6b64f27b41241ceacb"
 }
