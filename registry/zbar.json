@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "f764734f3c2d5c24673359f91d753f85f12f0346",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
+  "core_commit": "20a64fdd49b6f3c4c0242ecd86f66e2712d228ac",
   "filename": "zbar--0.23.95.sequoia.bottle.tar.gz",
   "formula_sha256": "585cca1c94e0d01f9fbdaafa0e8d263f614c397033c360a64184d152d378ff74",
   "license": "LGPL-2.1-only",
   "name": "zbar",
   "pkg_version": "0.23.95",
   "recipe_sha256": "08fdcbd41cd9e68379c9a1a9c491ebe4ebd46ed430b905f9f7a1f13ab14f795d",
-  "release": "intel-39547434571-1-zbar",
+  "release": "intel-39777489748-1-zbar",
   "revision": 0,
-  "run_id": "39547434571",
+  "run_id": "39777489748",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -19,9 +19,9 @@
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -150,15 +150,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "442e1a706bcf1e4466fbd63765c5f6a59541a725c3793155c3c28bbb21efaf95",
-  "size": 324367,
+  "sha256": "047cdb5a651bdeca2eed0c4abc1386d3fd8d7e8eb1b8ca1b52aa811e351beb3d",
+  "size": 324355,
   "source": {
     "filename": "zbar--0.23.95.sources.tar.gz",
-    "sha256": "1c301dcd38d1c4f235762ea5eea97817189394c9943041cf7d4a2f8f256ded15",
-    "size": 1031856
+    "sha256": "d98709c626fe0e06f307f057b061c760c825b680ea8b9925dc9b45a4baf2dc58",
+    "size": 1031842
   },
   "tag": "sequoia",
   "version": "0.23.95",
   "version_scheme": 0,
-  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
+  "workflow_commit": "030481572064c575e34291fedd56bb7663584440"
 }
