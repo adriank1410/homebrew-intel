@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "904de21248b30bd992cc3128dcb4cc19a98d2ce7",
+  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
   "filename": "qtnetworkauth--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1bb9f3bb5d7bc5a4d7b3441dd9890eb4d06018851fcb02fbe116b74e3d7de302",
   "license": {
@@ -14,14 +14,14 @@
   "name": "qtnetworkauth",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "8856ce6faece5ede3b65dee85a01ff34503895c739a8b61ae71ac315dac3bf48",
-  "release": "intel-39546370855-1-qtnetworkauth",
+  "release": "intel-39857866388-1-qtnetworkauth",
   "revision": 1,
-  "run_id": "39546370855",
+  "run_id": "39857866388",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "05a3049bca54488428d9b97f3b3dda7b3fd5dc2b92845df2cef57a6beacab1e4",
+  "sha256": "362ac33d712128637559d3e7cd8ecf8eebe3ef4737fa529b55fe3698bebbdc5a",
   "size": 138503,
   "source": {
     "filename": "qtnetworkauth--6.12.0_1.sources.tar.gz",
-    "sha256": "66eac9f0362d574910adfb598b46565166cd2fda939da4ffdc6a6a34c11ebd6d",
-    "size": 462593
+    "sha256": "82dbee4ab2e02ffd4c8e34121fe30c929419b92b7c5b9dcefaac46ac46f092f4",
+    "size": 462591
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "47a52d489f79911e841baf6f3c2617436e2caef9"
+  "workflow_commit": "2e3876d8a5b0c4ed52b940a91c241276157b9b3a"
 }
