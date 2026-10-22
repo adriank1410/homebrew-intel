@@ -1,0 +1,44 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
+  "cellar": "any",
+  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
+  "filename": "exiftool--13.55_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "753e549b053010342bb8e29043212ddedaa6c8a369340551fd41d7998aac23eb",
+  "license": {
+    "any_of": [
+      "Artistic-1.0-Perl",
+      "GPL-1.0-or-later"
+    ]
+  },
+  "name": "exiftool",
+  "pkg_version": "13.55_1",
+  "recipe_sha256": "4b151ae8d3cc48ff482c0e9ca24ad00995f0a87b8c376cd92da6d9823af94b2a",
+  "release": "intel-39825139583-1-exiftool",
+  "revision": 1,
+  "run_id": "39825139583",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
+      "name": "brotli",
+      "pkg_version": "1.2.1"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "ae624cce16545a09c2363ce7f9af9a1f887e540911374bf95b620ca869cf7724",
+  "size": 8331379,
+  "source": {
+    "filename": "exiftool--13.55_1.sources.tar.gz",
+    "sha256": "d2458f372dbdd7c32c11eed81b743692178e66def0bed807f915f46ed75b4c6d",
+    "size": 20470946
+  },
+  "tag": "sequoia",
+  "version": "13.55",
+  "version_scheme": 0,
+  "workflow_commit": "00798f43ca0abc058cf39b8ec83005b8e8d765ad"
+}
