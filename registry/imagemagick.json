@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9bd5746a1c0602103a0c083a1db8485c510cd5a3",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "05a2163181f54c724469013573922fab4d054e47",
+  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
   "filename": "imagemagick--7.1.2-34.sequoia.bottle.tar.gz",
   "formula_sha256": "9691820f710a4cce625645bb700dce63c847918d30782ab15c580262fea7264f",
   "license": "ImageMagick",
   "name": "imagemagick",
   "pkg_version": "7.1.2-34",
   "recipe_sha256": "d705cbdc604c4b33d7d1a69596e48999ba9729b04716057baf2e20eea89c40e3",
-  "release": "intel-38684026190-1-imagemagick",
+  "release": "intel-39760891373-1-imagemagick",
   "revision": 0,
-  "run_id": "38684026190",
+  "run_id": "39760891373",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -19,9 +19,9 @@
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c434b40472d009739e668b4fbbb825fe5ca0e451efd6866738388e95f6e9f419",
-  "size": 11046899,
+  "sha256": "b6deab4fc66617be5b0a8e3061485e1211d5731c3fe237853dda530d031591ef",
+  "size": 11047044,
   "source": {
     "filename": "imagemagick--7.1.2-34.sources.tar.gz",
-    "sha256": "316a106cd47144c1e9a7658c878804c0998289de9ce458823db038a5e7e4c486",
-    "size": 10290912
+    "sha256": "08d0baa6da6531fd88d1598bae5f88eb8d032b9f76bcb24b70ca7af6e15d3365",
+    "size": 10290898
   },
   "tag": "sequoia",
   "version": "7.1.2-34",
   "version_scheme": 0,
-  "workflow_commit": "d6dfc6e65bd84ac867f50676eacd0ccc8ab940d5"
+  "workflow_commit": "7213726f1ba9a96679db94b36d401409f5aa9b14"
 }
