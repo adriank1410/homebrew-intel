@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any_skip_relocation",
-  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
+  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
   "filename": "yt-dlp--2026.8.19_2.sequoia.bottle.tar.gz",
   "formula_sha256": "81f3643160f0257befc11ab88167391f1a760a23b5539fc8e40dfd8d86bcd05f",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.8.19_2",
   "recipe_sha256": "c40a4815b01035466f644fb56ba77015875a1674f58abffdaa40ce50220ed031",
-  "release": "intel-39547434571-1-yt-dlp",
+  "release": "intel-39735106802-1-yt-dlp",
   "revision": 2,
-  "run_id": "39547434571",
+  "run_id": "39735106802",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -29,9 +29,9 @@
       "pkg_version": "2.1.1_1"
     },
     {
-      "formula_sha256": "5a154a1bcb4b2d16fac4d15bb31f4bc31d056461698bfc06a3a1244a8face9b1",
+      "formula_sha256": "bd807084794cc89ef75696bef58f6b6cb6519a6ed9c1f2a78163bf3b7c331035",
       "name": "deno",
-      "pkg_version": "2.9.7"
+      "pkg_version": "2.9.8"
     },
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -79,9 +79,9 @@
       "pkg_version": "3.11"
     },
     {
-      "formula_sha256": "68e83568a71fc8e49742c9052148cbf128ab1fcdf7c951d78f4a3f44033434f1",
+      "formula_sha256": "88432c15200d2a74fff3a68c83d42ef14ee2336d3d3a185ade18424ebd4b5357",
       "name": "python@3.15",
-      "pkg_version": "3.15.0"
+      "pkg_version": "3.15.0_1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a516a84df88a3003f9a1eea52ae83d7804f07010b516bd0592aaeb860a16e7e7",
-  "size": 8442441,
+  "sha256": "8f23549f3e5bfc64757811f31e811fbf805fb3d4d3fd217f21f686426d48beba",
+  "size": 8442186,
   "source": {
     "filename": "yt-dlp--2026.8.19_2.sources.tar.gz",
-    "sha256": "cfb4937c5489d6706f7836ab8a4683ef068bb4d5b64140a0e422dbc3a995d687",
-    "size": 18135530
+    "sha256": "c22c0a0a879ffd653e5bb2046644883bb2044c9e87355dbd3f5e1383a0ab16a5",
+    "size": 18135545
   },
   "tag": "sequoia",
   "version": "2026.8.19",
   "version_scheme": 0,
-  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
+  "workflow_commit": "788febf13745615cbfdaecca2dd9bb77983d381b"
 }
