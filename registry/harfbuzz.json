@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "d78c1943dc2b77930691102481df0d9e9bf7e257",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "bf15382d54581a9a5f9836fbe141cdd1b57eff67",
+  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
   "filename": "harfbuzz--14.6.0.sequoia.bottle.tar.gz",
   "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
   "license": "MIT",
   "name": "harfbuzz",
   "pkg_version": "14.6.0",
   "recipe_sha256": "b2c3828ee3df77b7ddd92e94670555f6f94912fac4ce16820a4b9411e6d43bc5",
-  "release": "intel-39263018478-1-qtspeech",
+  "release": "intel-39825139583-1-harfbuzz",
   "revision": 0,
-  "run_id": "39263018478",
+  "run_id": "39825139583",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -120,15 +120,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5bbd126ffef837d34d39a3944ff79667a13a808c5bf54001a8d7ddc35439284e",
-  "size": 4302996,
+  "sha256": "250b83a8656024bd5df04a58e23db560798b37eaaf648207a2944d191ffb206e",
+  "size": 4302979,
   "source": {
     "filename": "harfbuzz--14.6.0.sources.tar.gz",
-    "sha256": "f8d5ebe162345bb017f59ea39e4feac1b59bdb729ad817ccd890c704a2921a3a",
-    "size": 20313206
+    "sha256": "1356951b438a702d20cc4e495c808bea2fc77be4345508f48a333e25ce99de9b",
+    "size": 20313207
   },
   "tag": "sequoia",
   "version": "14.6.0",
   "version_scheme": 0,
-  "workflow_commit": "e610d0702b08d5ac8eab322abebc1906b5ae8a1b"
+  "workflow_commit": "00798f43ca0abc058cf39b8ec83005b8e8d765ad"
 }
