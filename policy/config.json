@@ -122,6 +122,11 @@
     }
   },
   "redistribution_exceptions": {},
+  "source_license_notice_members": {
+    "exiftool": {
+      "Image-ExifTool-13.55/README": "4a25f5dfdd2c353123bfe805aec511a574cb695fffc9871defd2e0c4dee86091"
+    }
+  },
   "required_license_notices": {
     "tor": {
       "LICENSE": "5dc29ea302cc75db6db4a7c88d7b5d4638b4e0f5f1d2e6d21ce71f707470b766"

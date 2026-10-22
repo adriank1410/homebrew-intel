@@ -138,3 +138,19 @@ Additional primary texts:
 - OpenLDAP 2.8: https://spdx.org/licenses/OLDAP-2.8.html
 - OpenSSH: https://spdx.org/licenses/SSH-OpenSSH.html
 - ImageMagick: https://imagemagick.org/script/license.php
+
+## ExifTool README license notice (2026-10-22)
+
+Homebrew `exiftool` 13.55 declares `any_of: ["Artistic-1.0-Perl",
+"GPL-1.0-or-later"]`, so its bottle follows the source-required profile. The
+upstream archive `Image-ExifTool-13.55.tar.gz`
+(`5f4c81d34ad406538c2871ad72dbfceb5d9b412b2f16cbbeb4d712d270846667`) has no
+LICENSE or COPYING file. Its only license statement is the "COPYRIGHT AND
+LICENSE" section of `Image-ExifTool-13.55/README` ("Copyright 2003-2026, Phil
+Harvey ... same terms as Perl itself (either the Perl Artistic License or
+GPL)"). That README is pinned in `policy/config.json` under
+`source_license_notice_members` with SHA-256
+`4a25f5dfdd2c353123bfe805aec511a574cb695fffc9871defd2e0c4dee86091` and is
+copied into the source bundle as the main-archive notice. A missing or changed
+pinned member, including the new path after a version bump, blocks the build
+until the new text is reviewed.
