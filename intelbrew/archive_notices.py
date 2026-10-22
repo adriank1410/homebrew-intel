@@ -30,9 +30,9 @@ def _safe_name(value: str) -> bool:
     return bool(value) and not name.is_absolute() and ".." not in name.parts
 
 
-def _is_notice(value: str) -> bool:
+def _is_notice(value: str, extra: frozenset = frozenset()) -> bool:
     path = PurePosixPath(value)
-    return bool(NOTICE_NAME.fullmatch(path.name) or (
+    return bool(value in extra or NOTICE_NAME.fullmatch(path.name) or (
         len(path.parts) >= 2 and path.parts[-2] == "LICENSES"
         and SPDX_LICENSE_NAME.fullmatch(path.name)
     ))
@@ -49,12 +49,13 @@ def _append_notice(found, seen, name, data, max_count, deduplicate):
     found.append((name, data))
 
 
-def _read_tar(archive: tarfile.TarFile, max_size: int, max_count: int, deduplicate: bool):
+def _read_tar(archive: tarfile.TarFile, max_size: int, max_count: int, deduplicate: bool,
+              extra: frozenset = frozenset()):
     found = []
     seen = set()
     for member in archive:
         if (member.isfile() and _safe_name(member.name)
-                and _is_notice(member.name)
+                and _is_notice(member.name, extra)
                 and 0 < member.size <= max_size):
             handle = archive.extractfile(member)
             data = handle.read(max_size + 1) if handle else b""
@@ -76,7 +77,8 @@ class _BoundedReader:
         return data
 
 
-def _libarchive_notices(path: Path, max_size: int, max_count: int, deduplicate: bool):
+def _libarchive_notices(path: Path, max_size: int, max_count: int, deduplicate: bool,
+                        extra: frozenset = frozenset()):
     command = ["/usr/bin/bsdtar", "-cf", "-", "@" + os.fspath(path.resolve())]
     with tempfile.TemporaryFile() as stderr:
         try:
@@ -91,7 +93,7 @@ def _libarchive_notices(path: Path, max_size: int, max_count: int, deduplicate: 
         try:
             assert process.stdout is not None
             with tarfile.open(fileobj=_BoundedReader(process.stdout), mode="r|") as archive:
-                found = _read_tar(archive, max_size, max_count, deduplicate)
+                found = _read_tar(archive, max_size, max_count, deduplicate, extra)
             return_code = process.wait()
         except BaseException:
             process.kill(); process.wait()
@@ -107,9 +109,15 @@ def _libarchive_notices(path: Path, max_size: int, max_count: int, deduplicate: 
         return found
 
 
-def archive_notices(path: Path, max_notice_size: int, max_notices: int, *, deduplicate: bool = False):
-    """Return safe regular notice members as ``(archive_name, bytes)`` pairs."""
+def archive_notices(path: Path, max_notice_size: int, max_notices: int, *, deduplicate: bool = False,
+                    extra_members=()):
+    """Return safe regular notice members as ``(archive_name, bytes)`` pairs.
+
+    ``extra_members`` names exact archive paths that carry the license notice
+    for sources without a LICENSE/COPYING-style file (for example a README).
+    """
     path = Path(path)
+    extra = frozenset(extra_members)
     if max_notice_size <= 0 or max_notices <= 0:
         raise Error("Invalid archive notice limits")
     if path.is_symlink() or not path.is_file():
@@ -119,7 +127,7 @@ def archive_notices(path: Path, max_notice_size: int, max_notices: int, *, dedup
         if lower.endswith(PYTHON_TAR_SUFFIXES) or (
                 not lower.endswith(LIBARCHIVE_SUFFIXES) and tarfile.is_tarfile(path)):
             with tarfile.open(path, "r:*") as archive:
-                return _read_tar(archive, max_notice_size, max_notices, deduplicate)
+                return _read_tar(archive, max_notice_size, max_notices, deduplicate, extra)
         if lower.endswith(".zip") or (
                 not lower.endswith(LIBARCHIVE_SUFFIXES) and zipfile.is_zipfile(path)):
             found = []; seen = set()
@@ -127,7 +135,7 @@ def archive_notices(path: Path, max_notice_size: int, max_notices: int, *, dedup
                 for member in archive.infolist():
                     mode = (member.external_attr >> 16) & 0o170000
                     if (not member.is_dir() and mode in (0, 0o100000) and _safe_name(member.filename)
-                            and _is_notice(member.filename)
+                            and _is_notice(member.filename, extra)
                             and 0 < member.file_size <= max_notice_size):
                         data = archive.read(member)
                         if len(data) != member.file_size:
@@ -135,7 +143,7 @@ def archive_notices(path: Path, max_notice_size: int, max_notices: int, *, dedup
                         _append_notice(found, seen, member.filename, data, max_notices, deduplicate)
             return found
         if lower.endswith(LIBARCHIVE_SUFFIXES):
-            return _libarchive_notices(path, max_notice_size, max_notices, deduplicate)
+            return _libarchive_notices(path, max_notice_size, max_notices, deduplicate, extra)
         return []
     except Error:
         raise
