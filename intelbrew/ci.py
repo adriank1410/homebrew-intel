@@ -232,7 +232,7 @@ def _building_text(name:str,core_commit:str,brew_commit:str,requirements=(),buil
             f"{altered}").encode()
 
 
-def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirements=(),build_sources=()):
+def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirements=(),build_sources=(),notice_members=None):
     if sources["formula_sha256"]!=meta["formula_sha256"]:raise Error("Source recipe differs from plan")
     archive=output/f'{name}--{meta["pkg_version"]}.sources.tar.gz'
     if archive.exists():raise Error("Refusing to overwrite a source bundle")
@@ -258,12 +258,19 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
             if path.is_symlink() or not path.is_file() or digest(path)!=res["sha256"]:raise Error("Source archive changed")
             filename=f'{i:03d}-{_generated_basename(path.name)}';bundle.add(path,arcname=f"inputs/{filename}",recursive=False)
             index["resources"].append({"filename":f"inputs/{filename}","label":res["label"],"url":res["url"],"sha256":res["sha256"]})
+            pinned=(notice_members or {}) if res["label"]=="main" else {}
             try:
-                notices = archive_notices(path, MAX_JSON, MAX_SOURCE_NOTICES, deduplicate=True)
+                notices = archive_notices(path, MAX_JSON, MAX_SOURCE_NOTICES, deduplicate=True, extra_members=pinned)
             except Error as exc:
                 if "Too many upstream license notices" in str(exc):
                     raise Error(f"{name} {res['label']}: {exc}") from exc
                 raise
+            # Reviewed notice members (e.g. a README carrying the only license text)
+            # are pinned to their SHA-256; missing or changed text needs a new review.
+            found_pinned={source_name:hashlib.sha256(data).hexdigest() for source_name,data in notices if source_name in pinned}
+            for member_name,sha in pinned.items():
+                if found_pinned.get(member_name)!=require_sha(sha):
+                    raise Error(f"{name}: pinned source license notice {member_name} missing or changed; review needed")
             for source_name,data in notices:
                 if len(index["notices"])>=MAX_SOURCE_NOTICES:raise Error("Too many upstream license notices")
                 notice_name=f"upstream-notices/{i:03d}-{len(index['notices']):03d}-{_generated_basename(source_name)}"
@@ -437,7 +444,8 @@ def build(root:str,output:Path)->None:
         context=native({"mode":"build-context"},ci=True,cache=cache)
         collected=collect_build_sources(context,work/f"{name}-build-sources")
         source_path=source_bundle(name,meta,sources,output,core_commit,config["brew_commit"],
-                                  requirements=license_requirements[name],build_sources=collected["files"])
+                                  requirements=license_requirements[name],build_sources=collected["files"],
+                                  notice_members=config.get("source_license_notice_members",{}).get(name))
         bw=work/name;bw.mkdir();run(["brew","bottle",*BOTTLE_OPTIONS,f"homebrew/core/{name}"],capture=False,env=env,cwd=bw)
         files=list(bw.glob("*.sequoia.bottle*.tar.gz"));js=list(bw.glob("*.bottle.json"))
         if len(files)!=1 or len(js)!=1:raise Error("Expected one Sequoia bottle and JSON")

@@ -340,6 +340,23 @@ class SourceBundleTests(unittest.TestCase):
                 index=json.load(archive.extractfile('sources.json'))
             self.assertEqual(index['notices'][0]['source'],'tool/LICENSES/GPL-3.0-only.txt')
 
+    def test_source_required_bundle_uses_pinned_readme_notice(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);item,sources=self._fixture(folder,notice_name='tool/README')
+            with self.assertRaisesRegex(Error,'license notice missing from main source archive'):
+                source_bundle('tool',item,sources,folder,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',))
+            pinned={'tool/README':hashlib.sha256(b'license text').hexdigest()}
+            out=folder/'out';out.mkdir()
+            bundle=source_bundle('tool',item,sources,out,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',),notice_members=pinned)
+            rec=record(formula_sha256=item['formula_sha256'],core_commit=item['formula_sha256'][:40],license='GPL-3.0-only')
+            _validate_source_bundle(bundle,rec,load_config())
+            with tarfile.open(bundle) as archive:
+                index=json.load(archive.extractfile('sources.json'))
+            self.assertEqual([n['source'] for n in index['notices']],['tool/README'])
+            changed=folder/'changed';changed.mkdir()
+            with self.assertRaisesRegex(Error,'pinned source license notice tool/README missing or changed'):
+                source_bundle('tool',item,sources,changed,item['formula_sha256'][:40],G,requirements=('GPL-3.0-only',),notice_members={'tool/README':'b'*64})
+
     def test_source_notice_artifacts_sanitize_and_preserve_colliding_paths(self):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);item,sources=self._fixture(folder)
