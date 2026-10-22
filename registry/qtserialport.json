@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "904de21248b30bd992cc3128dcb4cc19a98d2ce7",
+  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
   "filename": "qtserialport--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "2ccb94b01d85cc634973f08d22c50a4b322cd1e8cf906123659014df6e81d04c",
   "license": {
@@ -20,14 +20,14 @@
   "name": "qtserialport",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "cd538151a08945ec12bad4ec07c596822f334560ef0d36a1e245b7d55debcb4f",
-  "release": "intel-39546370855-1-qtserialport",
+  "release": "intel-39857866388-1-qtserialport",
   "revision": 1,
-  "run_id": "39546370855",
+  "run_id": "39857866388",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "020a66374d31345d8322fb3f9490b747a48d7f3bfae869b60f5b655828fc3227",
-  "size": 63944,
+  "sha256": "71c7d8ea6002563a47611068f81642af9b7c9047d5836a44aa42bacc4a8023af",
+  "size": 63931,
   "source": {
     "filename": "qtserialport--6.12.0_1.sources.tar.gz",
-    "sha256": "b84095e9475f17035e1db468a207deb18f6d2fa3e2bbc898817e01e86d91e7d8",
-    "size": 299557
+    "sha256": "2465c98b93daaac93232c0f51ea4fa8d58d96c8a124fa3ec9dedb5dca8fc455c",
+    "size": 299556
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "47a52d489f79911e841baf6f3c2617436e2caef9"
+  "workflow_commit": "2e3876d8a5b0c4ed52b940a91c241276157b9b3a"
 }
