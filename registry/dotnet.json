@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
   "cellar": "any",
-  "core_commit": "0c9247ef32656236b68850c98e1f1e6bebbb8af0",
+  "core_commit": "80a7992be000df4fdcf8da713793dd61fe277a12",
   "filename": "dotnet--10.0.402.sequoia.bottle.tar.gz",
   "formula_sha256": "0c4a8f98e27df5f792d2f7e04b5229e2eaf59b2bfdd31920bf4e6a02fe571fc0",
   "license": "MIT",
   "name": "dotnet",
   "pkg_version": "10.0.402",
   "recipe_sha256": "bac5b7405efcde6600170500a75c1ec2a39ac912fb4693df8c7c66a79fd8e76f",
-  "release": "intel-39518244058-1-dotnet",
+  "release": "intel-39708678078-1-dotnet",
   "revision": 0,
-  "run_id": "39518244058",
+  "run_id": "39708678078",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "8b12aedb4664014ed66e612a5b397d7bc9065450e29fcda2141cafbe6e43f40a",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.0_1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cd2fca354f05a6c2966f6b735c9cbfdcabc13480867e6f4c4e152e229f078369",
-  "size": 230177161,
+  "sha256": "5fea6d7aec9e0c08dcf32e6a499970383a7b9fe78fea8f2aaaa600c8528d5b12",
+  "size": 230178257,
   "source": {
     "filename": "dotnet--10.0.402.sources.tar.gz",
-    "sha256": "cd063f354ffb6e3529ab13f127f35bc7be933a28476ee8547458e0bc9cb3c2ba",
-    "size": 779415057
+    "sha256": "636d9cc2cba0c1d5e0db299e53316e7a7e5deaae47e3e51a3fe9125a763231a6",
+    "size": 779415365
   },
   "tag": "sequoia",
   "version": "10.0.402",
   "version_scheme": 1,
-  "workflow_commit": "41daf413db8ffd9284aedbd41e23170b8ba50c04"
+  "workflow_commit": "9e71ca52c429983f974feab7278573a1c145807f"
 }
