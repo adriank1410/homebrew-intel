@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "librsvg--2.63.3.sequoia.bottle.tar.gz",
-  "formula_sha256": "4841cd0bf59930ee76ec9c9610633419784db57412aff5bbb71685e58dc5c090",
+  "formula_sha256": "29612cfd2ecf75a0a2a1ecccd9010a5dbc18c0207174aecd3e872bb5ef2b118f",
   "license": "LGPL-2.1-or-later",
   "name": "librsvg",
   "pkg_version": "2.63.3",
-  "recipe_sha256": "7f6ce986fa66cde9f962de8a50687786f405fee5aa96c1febe31f96d71a267d0",
-  "release": "intel-39857866388-1-librsvg",
+  "recipe_sha256": "77d9a232470de45f439e7e674326b253f5c52f0f942ca49aca2fad8c0de0ae80",
+  "release": "intel-39873474223-1-librsvg",
   "revision": 0,
-  "run_id": "39857866388",
+  "run_id": "39873474223",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "80cdfd87bdcd80b3cbdb0bb32d08f7649cd2d62c45d5a4c8a8e06756dd9df3cf",
-  "size": 5009265,
+  "sha256": "a17fa455305853bcaff3cf8a11f22625e8155805646bc10fbf667a8c5e6e6270",
+  "size": 5009386,
   "source": {
     "filename": "librsvg--2.63.3.sources.tar.gz",
-    "sha256": "d37e99f26564ca291386b1c9a59367a6b2b21e7c09735a622e39b9562fc1fa6a",
-    "size": 25617921
+    "sha256": "3797a16dc5da2807a668c8bc5a51684cc06fe0c76423aacc55462ee95d47d44b",
+    "size": 32462967
   },
   "tag": "sequoia",
   "version": "2.63.3",
   "version_scheme": 0,
-  "workflow_commit": "2e3876d8a5b0c4ed52b940a91c241276157b9b3a"
+  "workflow_commit": "4a7157f7bf80b3a884879f8a40062e67bfa8ea27"
 }
