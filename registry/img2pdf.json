@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "img2pdf--0.6.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "dd1cb2ad10ef2ce6f7a0a6d59ee6e1917081d3d0c1f62d25b4b00169f33aa4ee",
   "license": "LGPL-3.0-or-later",
   "name": "img2pdf",
   "pkg_version": "0.6.3_1",
   "recipe_sha256": "0665ca6ad703767d3b32fa34d11e18818479f27366ea769306074f6517f9eb7a",
-  "release": "intel-39857866388-1-img2pdf",
+  "release": "intel-39880098990-1-img2pdf",
   "revision": 1,
-  "run_id": "39857866388",
+  "run_id": "39880098990",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -99,7 +99,7 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "7d049dd0bacbfeee7f19b57982b14e3d1ec34ec363db5eb9fdb8235c79cc9803",
+      "formula_sha256": "27c1c1d92e1d2af11d329877e108e39c38e2bbc99cf043e5ab64be8ec3e9af97",
       "name": "libimagequant",
       "pkg_version": "4.4.1"
     },
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d18e365beb53320bb569a818759f6ae059df73f5019119e40ef380181165a166",
-  "size": 2592739,
+  "sha256": "5861634d4abbcfb124702dc589dcacd6aa637822a8474e5811041425cdca51ff",
+  "size": 2592792,
   "source": {
     "filename": "img2pdf--0.6.3_1.sources.tar.gz",
-    "sha256": "9624d645255efe0ca2820a69fad3689bdd9a3d784815486975762a5c469889ff",
-    "size": 14626714
+    "sha256": "bef98fa7850346265f6778a0c8f5e40b86c3164ff5275ec3cc8343e9c3c337ed",
+    "size": 14626689
   },
   "tag": "sequoia",
   "version": "0.6.3",
   "version_scheme": 0,
-  "workflow_commit": "2e3876d8a5b0c4ed52b940a91c241276157b9b3a"
+  "workflow_commit": "b14dea87120c48c2233408aeede35b48e42d0cb9"
 }
