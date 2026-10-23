@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
+  "brew_commit": "7685477141b47ac22179324b774b5fc230470a98",
   "cellar": "any",
-  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
+  "core_commit": "3aa17c6cb938813ff54413a8e3ba0a003b2773e8",
   "filename": "qtserialbus--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "0dd72f3f642932f3ce01a6f97bb46d8ee7c4e5edc5c4b85b27e0dbe8e963f9ae",
   "license": {
@@ -25,9 +25,9 @@
   "name": "qtserialbus",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "e2e66ac9ea7a8e0a25a4bb85dc7da3b7150cceb9afe978833f713732879c6bff",
-  "release": "intel-39873474223-1-qtserialbus",
+  "release": "intel-40003976797-1-qtserialbus",
   "revision": 1,
-  "run_id": "39873474223",
+  "run_id": "40003976797",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -80,9 +80,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
+      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
       "name": "harfbuzz",
-      "pkg_version": "14.6.0"
+      "pkg_version": "15.0.0"
     },
     {
       "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4cf2f6e9d38d5df14b1cdcc7d1ef3ec1098f574f147cedc744289e835683a5bc",
-  "size": 315433,
+  "sha256": "dd45664833cebd6a322509ce713650082096d49ff8109a841293fbfb5829cf53",
+  "size": 315414,
   "source": {
     "filename": "qtserialbus--6.12.0_1.sources.tar.gz",
-    "sha256": "233749ace85d03a8931c771b1161bf2d158b00802dfbf9221e1e5e81701233f8",
-    "size": 569562
+    "sha256": "e4f6584ce84645841874163eddc28dad78c37a960738c2bf50dedbef5d9ec58e",
+    "size": 569564
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "4a7157f7bf80b3a884879f8a40062e67bfa8ea27"
+  "workflow_commit": "1a9dcb1177a627d91a6d30cc07470ddf1695023f"
 }
