@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "qtcharts--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "0c808cca042420acd11028c7d670a493f3a3158882a8273694418c1c2d95e184",
   "license": {
@@ -14,14 +14,14 @@
   "name": "qtcharts",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "876549ab3df12eca95f87947c500c7d1d91e48df2799126013f194052a73f491",
-  "release": "intel-39623354244-1-qtcharts",
+  "release": "intel-39902009336-1-qtcharts",
   "revision": 1,
-  "run_id": "39623354244",
+  "run_id": "39902009336",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -195,15 +195,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "42149db40233804fd177b25a0f4d9c2d97d733bdaca76e5fdddae85b38eb76d0",
-  "size": 976998,
+  "sha256": "5b8ed3d097ae0e202467b84c951e80dce456b3161d7ab0f88992e7da8dba820a",
+  "size": 976990,
   "source": {
     "filename": "qtcharts--6.12.0_1.sources.tar.gz",
-    "sha256": "79a08eac2bfc6c3ebe50b587b2aace64159830fc10e84b0154e2b9f70308e2bf",
-    "size": 4679984
+    "sha256": "1bcfcb36bd5b80feb0b2ee75388dfbf9c424ec447ca813471fa019ab1f0f8d3f",
+    "size": 4679994
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
+  "workflow_commit": "18c9832968efecb27f0c949c43ba64d2380f1b38"
 }
