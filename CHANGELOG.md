@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Build `openjdk` 27.x on the Intel runner with the owner-approved `openjdk-intel-boot-jdk-26` recipe variant. Since 27.0.1, homebrew-core's macOS boot JDK is AArch64-only and `configure` rejects it on x86_64. The variant replaces only that resource with the official macOS x64 JDK 26.0.2.1 build from jdk.java.net, pinned by URL and SHA-256. Any other upstream layout, including JDK 28 or a restored upstream Intel boot JDK, stops before compilation with "review needed". The bottle record carries `build_profile`, and the source bundle keeps both recipes and the executed boot JDK.
+
 ## 0.2.9 – retired source holds
 
 - When `nmap.org` presents an expired TLS certificate, fetch the same `nmap-<version>.tar.bz2` from `distfiles.macports.org` and keep it only when its SHA-256 matches the formula. Other TLS failures still fail closed. Homebrew does not try a mirror when certificate resolution fails, so this seeds the download cache before the retry.

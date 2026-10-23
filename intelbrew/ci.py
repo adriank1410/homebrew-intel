@@ -6,12 +6,14 @@ from contextlib import nullcontext
 from pathlib import Path, PurePosixPath
 from .archive_notices import archive_notices
 from .build_sources import MAX_FILES as MAX_BUILD_SOURCE_FILES, collect_build_sources
-from .build_profiles import prepare_build_profile, recipe_sha256, variant_recipe
+from .build_profiles import (prepare_build_profile, profile_recipe_name, profile_resources_error,
+                             recipe_sha256, variant_recipe)
 from .cli import attest
 from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, blocked_toolchain_source,
                    brew_env, canonical_name, check_bottle, digest, download, load_config, native,
                    read_json, registry, require_sha, retry_transient, run, transient_source_builds,
-                   validate_record, write_json_new, source_build_blocklist, LLVM_NO_PGO)
+                   validate_record, write_json_new, source_build_blocklist, LLVM_NO_PGO,
+                   APPROVED_BUILD_PROFILES, OPENJDK_INTEL_BOOT_JDK_26)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
@@ -181,6 +183,21 @@ def _prepare_source_sets(names,work:Path):
     return caches,sources
 
 
+def _profile_sources(name:str,prepared:dict,cache:Path)->dict:
+    """Recollect sources from the applied variant, keeping canonical recipe identity.
+
+    A resource-swapping profile must publish the inputs that were actually
+    built, not the upstream resource it replaced.
+    """
+    collected=native({"mode":"sources","name":name},ci=True,cache=cache)
+    variant=Path(prepared["profile_recipe_path"])
+    if (not isinstance(collected,dict) or collected.get("formula_sha256")!=hashlib.sha256(variant.read_bytes()).hexdigest()
+            or collected.get("recipe_sha256")!=prepared["recipe_sha256"]):raise Error("Build profile sources do not match the applied variant")
+    problem=profile_resources_error(prepared["build_profile"],collected.get("resources"))
+    if problem:raise Error(f"{problem}; review needed")
+    return {**prepared,"resources":collected["resources"]}
+
+
 def _build_env(cache:Path):
     env=brew_env(ci=True);env["HOMEBREW_CACHE"]=str(cache);return env
 
@@ -217,7 +234,12 @@ def _building_text(name:str,core_commit:str,brew_commit:str,requirements=(),buil
         "Build profile: llvm-no-pgo. The LLVM PGO bootstrap is disabled; all other recipe steps are retained.\n"
         "recipe/llvm.rb is the canonical upstream recipe. recipe/llvm-no-pgo.rb is the executed variant.\n"
         "Before rebuilding, copy recipe/llvm-no-pgo.rb to the pinned core checkout at Formula/l/llvm.rb.\n\n"
-        if build_profile==LLVM_NO_PGO else "")
+        if build_profile==LLVM_NO_PGO else
+        "Build profile: openjdk-intel-boot-jdk-26. Only the macOS boot-jdk resource is replaced by the official "
+        "macOS x64 JDK 26.0.2.1 build, because upstream's JDK 27 boot JDK is AArch64-only; all other recipe steps are retained.\n"
+        "recipe/openjdk.rb is the canonical upstream recipe. recipe/openjdk-intel-boot-jdk-26.rb is the executed variant.\n"
+        "Before rebuilding, copy recipe/openjdk-intel-boot-jdk-26.rb to the pinned core checkout at Formula/o/openjdk.rb.\n\n"
+        if build_profile==OPENJDK_INTEL_BOOT_JDK_26 else "")
     return (f"Build inputs for homebrew/core/{name}\n\n"
             f"Homebrew/brew: https://github.com/Homebrew/brew/tree/{brew_commit}\n"
             f"Homebrew/core: https://github.com/Homebrew/homebrew-core/tree/{core_commit}\n\n"
@@ -240,7 +262,9 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
            "license":meta.get("license"),"license_requirements":list(requirements),"resources":[],"notices":[],"build_sources":[]}
     profile=sources.get('build_profile')
     if profile is not None:
-        if name!='llvm' or profile!=LLVM_NO_PGO:raise Error('Unsupported source build profile')
+        if APPROVED_BUILD_PROFILES.get(name)!=profile:raise Error('Unsupported source build profile')
+        problem=profile_resources_error(profile,sources.get("resources"))
+        if problem:raise Error(f"{problem}; review needed")
         index['build_profile']=profile
     with tarfile.open(archive,"x:gz") as bundle:
         recipe=Path(sources["formula_path"])
@@ -248,9 +272,9 @@ def source_bundle(name,meta,sources,output,core_commit,brew_commit,*,requirement
         bundle.add(recipe,arcname=f"recipe/{name}.rb",recursive=False)
         if profile:
             variant=Path(sources['profile_recipe_path'])
-            if variant.is_symlink() or not variant.is_file() or variant.read_bytes()!=variant_recipe(recipe.read_bytes()):raise Error('Build profile variant differs')
+            if variant.is_symlink() or not variant.is_file() or variant.read_bytes()!=variant_recipe(recipe.read_bytes(),profile):raise Error('Build profile variant differs')
             if recipe_sha256(variant.read_bytes())!=sources['recipe_sha256']:raise Error('Build profile recipe digest differs')
-            bundle.add(variant,arcname='recipe/llvm-no-pgo.rb',recursive=False)
+            bundle.add(variant,arcname=f'recipe/{profile_recipe_name(profile)}',recursive=False)
         bundle.add(ROOT/"LICENSES/Homebrew-BSD-2-Clause.txt",arcname="LICENSES/Homebrew-BSD-2-Clause.txt",recursive=False)
         building=_building_text(name,core_commit,brew_commit,requirements,profile);info=tarfile.TarInfo("BUILDING.txt");info.size=len(building);info.mode=0o644;info.mtime=0;bundle.addfile(info,io.BytesIO(building))
         for i,res in enumerate(sources["resources"]):
@@ -317,7 +341,7 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
             required={"schema","name","core_commit","formula_sha256","license","license_requirements","resources","notices","build_sources"}
             profile=record.get('build_profile')
             if profile:
-                if record['name']!='llvm' or profile!=LLVM_NO_PGO:raise Error('Unsupported source build profile')
+                if APPROVED_BUILD_PROFILES.get(record['name'])!=profile:raise Error('Unsupported source build profile')
                 required.add('build_profile')
             if (not isinstance(index,dict) or set(index)!=required or index["schema"]!=1
                     or index["name"]!=record["name"] or index["core_commit"]!=record["core_commit"]
@@ -342,12 +366,15 @@ def _validate_source_bundle(path:Path,record:dict,config:dict)->None:
             if member_hash(f"recipe/{record['name']}.rb")!=record["formula_sha256"]:raise Error("Source recipe checksum mismatch")
             if profile:
                 canonical=regular[f"recipe/{record['name']}.rb"]
-                variant=regular.get('recipe/llvm-no-pgo.rb')
+                variant_name=f'recipe/{profile_recipe_name(profile)}'
+                variant=regular.get(variant_name)
                 if canonical.size>MAX_JSON or variant is None or variant.size>MAX_JSON:raise Error('Build profile variant missing or too large')
                 original=archive.extractfile(canonical).read(MAX_JSON+1)
                 executed=archive.extractfile(variant).read(MAX_JSON+1)
-                if executed!=variant_recipe(original) or recipe_sha256(executed)!=record['recipe_sha256']:raise Error('Build profile variant or recipe digest differs')
-                expected.add('recipe/llvm-no-pgo.rb')
+                if executed!=variant_recipe(original,profile) or recipe_sha256(executed)!=record['recipe_sha256']:raise Error('Build profile variant or recipe digest differs')
+                problem=profile_resources_error(profile,resources)
+                if problem:raise Error(f"Build profile source mismatch: {problem}")
+                expected.add(variant_name)
             building=regular.get("BUILDING.txt")
             handle=archive.extractfile(building) if building else None
             if handle is None or handle.read(MAX_JSON+1)!=_building_text(record["name"],record["core_commit"],record["brew_commit"],requirements,profile):raise Error("Source build instructions mismatch")
@@ -438,6 +465,7 @@ def build(root:str,output:Path)->None:
         profile=config.get('build_profiles',{}).get(name) if name not in transient else None
         scope=prepare_build_profile(name,sources,work/f'{name}-profile',profile) if profile else nullcontext(sources)
         with scope as sources:
+            if profile==OPENJDK_INTEL_BOOT_JDK_26:sources=_profile_sources(name,sources,cache)
             _prefetch_build_inputs(name, env)
             run(_brew_install_args(name,transient),capture=False,env=env)
         if name in transient:continue

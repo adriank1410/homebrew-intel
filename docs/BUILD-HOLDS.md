@@ -142,6 +142,50 @@ dependent in one job. A matching published LLVM bottle allows Rust and those
 dependent roots to proceed in later waves. No hosted timeout is increased and
 `llvm@22` is not substituted for the dependency named by core.
 
+### Approved openjdk recipe variant: `openjdk-intel-boot-jdk-26`
+
+The owner approved this explicit variant on 23 October 2026. Since homebrew-core
+commit `a7f6b0e35d` (`openjdk 27.0.1`), the macOS `boot-jdk` resource is a single
+JDK 27 AArch64 archive with no `on_intel` alternative. On the x86_64 runner
+`configure` rejects it: "Potential Boot JDK ... is not a working JDK" and
+"The path given by --with-boot-jdk does not contain a valid Boot JDK"
+([run 39914935399](https://github.com/adriank1410/homebrew-intel/actions/runs/39914935399),
+[run 39932677468](https://github.com/adriank1410/homebrew-intel/actions/runs/39932677468)).
+
+The variant changes only the URL and SHA-256 inside the macOS block of the
+`boot-jdk` resource. It uses the official macOS x64 JDK 26.0.2.1 build from
+jdk.java.net, which upstream itself used as the Intel boot JDK before
+`a7f6b0e35d`:
+
+- URL: `https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_macos-x64_bin.tar.gz`
+- SHA-256: `5ec3817530ffa1c38f15a55609a2767335bbd0c59ea8ce41aad68d3cd620c0ae`
+
+JDK 26 is the N-1 boot JDK that the JDK 27 build supports. The Linux block,
+the source archive and every install step stay as upstream wrote them. The
+variant applies only when the recipe is class `Openjdk`, its source is a `jdk27u`
+`jdk-27...-ga` tag, it has exactly one `boot-jdk` resource, and that resource's
+macOS block contains only a JDK 27 `_macos-aarch64_bin` URL and its checksum.
+Later 27.x updates therefore keep using the pinned boot JDK. JDK 28, a restored
+upstream Intel boot JDK, or any other layout stops before compilation with
+"review needed".
+
+The mechanism is the same as `llvm-no-pgo`. `policy/config.json` enables the
+variant only for unversioned `openjdk`. The recipe is changed temporarily on the
+ephemeral build runner and restored on context exit. The bottle record includes
+`build_profile: openjdk-intel-boot-jdk-26`. Its `formula_sha256` is the pinned
+core recipe and its `recipe_sha256` is the executed variant. After the variant
+is applied, sources are collected again so that the source bundle contains the
+JDK 26 archive that was actually used, rather than the unused AArch64 archive.
+The bundle keeps `recipe/openjdk.rb`, `recipe/openjdk-intel-boot-jdk-26.rb`, a
+profile label and rebuild instructions. Verification re-derives the variant and
+accepts only the pinned boot JDK URL and checksum. All other verification gates
+stay as they are.
+
+To retire the variant, remove the `openjdk` entry from `build_profiles` in
+`policy/config.json` and from `APPROVED_BUILD_PROFILES` in `intelbrew/core.py`.
+Do this when upstream restores an Intel boot JDK or moves to JDK 28; at that
+point the variant already refuses to apply.
+
 ## Existing resource exclusions
 
 `qt`, `qtwebengine` and `qtwebview` retain their existing resource-policy
