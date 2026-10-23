@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
+  "brew_commit": "7a056ffd71e505f725b092d162fb09164a62b510",
   "cellar": "any",
-  "core_commit": "b9e20b84fd8e711a7139d1e893691da33d909fc9",
+  "core_commit": "713dcfc14f2a7c88a8b1497105b6ebeeca6ac913",
   "filename": "qtquick3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "4985ce50502737d4d3a5628ae4712a4b13868b26b0308c5a56ef453438e88fbb",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qtquick3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "1691564c532423b9eb18e08d920a685a8565606cf2c0d142185d713fc5c137e2",
-  "release": "intel-39914935399-1-qtquick3d",
+  "release": "intel-40028360964-1-qtquick3d",
   "revision": 1,
-  "run_id": "39914935399",
+  "run_id": "40028360964",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -81,9 +81,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
+      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
       "name": "harfbuzz",
-      "pkg_version": "14.6.0"
+      "pkg_version": "15.0.0"
     },
     {
       "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b40789c9edd3e244122879b97c509a20b1c6905e32d7abad621b95fb0be369b1",
-  "size": 10156662,
+  "sha256": "0c6e01bbc2fc64a09564307cc020359d5f55ab7831d6a86cc6c9eff0946fcb4d",
+  "size": 10156783,
   "source": {
     "filename": "qtquick3d--6.12.0_1.sources.tar.gz",
-    "sha256": "72c74c4de83b1cf4b9b5647ecbb5e72369a38eb587a8e1efe09bad949b36d030",
+    "sha256": "9429a39f15dae0fb74bb0f6b6dc0bb4f57ffb94e72a4f11668458fe44314af7d",
     "size": 70550164
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "a121d6652cdfe1ead775c851d3212e247efe915a"
+  "workflow_commit": "ed47ef83351a6e43fb18388b4004db1deeda0d42"
 }
