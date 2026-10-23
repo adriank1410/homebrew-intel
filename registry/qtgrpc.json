@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "qtgrpc--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "0025b3d66bd4fcdb359e868ab57f898e1588c37cc337f761d6290e129e1fd509",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtgrpc",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "1cb12e10852fa1ee342c5242bd73abc5cad2a9011aa981cac0205303b8db2e15",
-  "release": "intel-39623354244-1-qtgrpc",
+  "release": "intel-39902009336-1-qtgrpc",
   "revision": 1,
-  "run_id": "39623354244",
+  "run_id": "39902009336",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -36,9 +36,9 @@
       "pkg_version": "20260817.0"
     },
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "56741e706fa00b2fe019766c6976fc9e6c07dc4cfcfb9b986dd65668cd3a4e3a",
-  "size": 1138795,
+  "sha256": "95bf96cbd9ceedbe46e10c3d00103c7e8569c2977672dc50066ebbfe6e672fca",
+  "size": 1138825,
   "source": {
     "filename": "qtgrpc--6.12.0_1.sources.tar.gz",
-    "sha256": "eba180c1f2d2ba9b15ec795bd411f55bcba133d100cbf7270d6306ef7e43625a",
-    "size": 805784
+    "sha256": "1b71278575a12b3a6fa4d5525450f1b47bade3357c15e3afe1a383e878a7cfb7",
+    "size": 805786
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
+  "workflow_commit": "18c9832968efecb27f0c949c43ba64d2380f1b38"
 }
