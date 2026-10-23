@@ -164,6 +164,12 @@ it at runtime, such as `rust` or `lld`. That closure does not finish inside
 the six-hour job. A matching LLVM bottle lets the root be selected again.
 Compatible official bottles and the published `llvm@22` bottle remain usable.
 
+`openjdk` 27.x uses the explicitly approved `openjdk-intel-boot-jdk-26` recipe
+variant. Upstream's macOS boot JDK for 27.x is AArch64-only, so the variant
+swaps only that resource for the official x64 JDK 26.0.2.1 build, pinned by
+URL and SHA-256. Any other upstream layout stops before compilation; see
+[BUILD-HOLDS](docs/BUILD-HOLDS.md).
+
 Heavy source builds exceeding the physical limits of ephemeral GitHub-hosted runners
 (`macos-15-intel`: 6-hour execution timeout, ~14 GB available SSD storage, 4 vCPUs)
 are explicitly excluded via `blocked_source_builds` in `policy/config.json`.
