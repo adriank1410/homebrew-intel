@@ -16,7 +16,8 @@
     "qtwebview"
   ],
   "build_profiles": {
-    "llvm": "llvm-no-pgo"
+    "llvm": "llvm-no-pgo",
+    "openjdk": "openjdk-intel-boot-jdk-26"
   },
   "source_build_holds": [],
   "scheduled_batch_size": 24,
