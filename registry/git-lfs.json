@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any_skip_relocation",
-  "core_commit": "6a90764505602cbb3387197eb4438e377c90bf0f",
-  "filename": "git-lfs--3.8.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "55361effe3ab105aaf91022d458dc77f50ddad2e05826b680009df6a404b9adc",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
+  "filename": "git-lfs--3.8.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "dd96986e5b8c862c885e844c87e3cafa2de1f86f813b652b180a19458c1629f6",
   "license": "MIT",
   "name": "git-lfs",
-  "pkg_version": "3.8.0",
-  "recipe_sha256": "41d37d909282834b318e1e5355e9d35b1ba8b511060bd6d1ccf8e1ba2d557200",
-  "release": "intel-35408935324-1-git-lfs",
+  "pkg_version": "3.8.1",
+  "recipe_sha256": "c7a638d30063529087b2fe8ddac2038926cb46f39986eb31a7b925fb8b20974d",
+  "release": "intel-39873474223-1-git-lfs",
   "revision": 0,
-  "run_id": "35408935324",
+  "run_id": "39873474223",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "57d0ad523dd09ce8794709fe81df3eda624970e92815ba0235cc457e324fed57",
-  "size": 5949832,
+  "sha256": "4c93565b0159c2325a3f185efe8a9b673a09b7af781d6e5bb420866d56fae925",
+  "size": 5954310,
   "source": {
-    "filename": "git-lfs--3.8.0.sources.tar.gz",
-    "sha256": "5493e9a39e489b3de8ef4a49dc3287cf6cfb4fd20bac937d69bb55f81b3294e5",
-    "size": 53581708
+    "filename": "git-lfs--3.8.1.sources.tar.gz",
+    "sha256": "fab3ba71bc3c231e0b0b6a4d8e8281a7e1d4bc7dbfcb4e68ca0f51b469052118",
+    "size": 53604829
   },
   "tag": "sequoia",
-  "version": "3.8.0",
+  "version": "3.8.1",
   "version_scheme": 0,
-  "workflow_commit": "0a4051d27c090db23e8218e55434186f0199729e"
+  "workflow_commit": "4a7157f7bf80b3a884879f8a40062e67bfa8ea27"
 }

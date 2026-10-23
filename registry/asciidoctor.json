@@ -1,0 +1,49 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
+  "cellar": "any_skip_relocation",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
+  "filename": "asciidoctor--2.0.26.sequoia.bottle.tar.gz",
+  "formula_sha256": "28bfc66731a80cb1ec98589ead7635a743096ad91a81de7cb21a569b46fa8a30",
+  "license": "MIT",
+  "name": "asciidoctor",
+  "pkg_version": "2.0.26",
+  "recipe_sha256": "f5298b1d8f746cbae0911cfe3cda9bbfd5770c78e33c0e2c5a21ed30e367be12",
+  "release": "intel-39873474223-1-git-lfs",
+  "revision": 0,
+  "run_id": "39873474223",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "name": "ca-certificates",
+      "pkg_version": "2026-10-20"
+    },
+    {
+      "formula_sha256": "dfad02f7f8f65dff0f00fee6ca2d99b59309ad8c7bc6f2148ae60788f2bf8a79",
+      "name": "libyaml",
+      "pkg_version": "0.2.5"
+    },
+    {
+      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "name": "openssl@4",
+      "pkg_version": "4.0.3"
+    },
+    {
+      "formula_sha256": "7b4108878b27ced859f7312606a9f71944789f5b81756748d488a7b544a8e0c4",
+      "name": "ruby",
+      "pkg_version": "4.0.8"
+    }
+  ],
+  "schema": 1,
+  "sha256": "f8cc0d0fe5a1208951182b8c1802842d0fb525328aef77888b88baf832b8ed3b",
+  "size": 13809766,
+  "source": {
+    "filename": "asciidoctor--2.0.26.sources.tar.gz",
+    "sha256": "7935d3c74c9944329c143c93a0133c5d8755332166841ebd3776a71b102b8898",
+    "size": 8133102
+  },
+  "tag": "sequoia",
+  "version": "2.0.26",
+  "version_scheme": 0,
+  "workflow_commit": "4a7157f7bf80b3a884879f8a40062e67bfa8ea27"
+}
