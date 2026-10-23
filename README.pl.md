@@ -170,6 +170,13 @@ potrzebuje go w czasie działania, na przykład `rust` albo `lld`. Taki zestaw
 nie mieści się w limicie sześciu godzin. Pasująca butelka LLVM przywraca pakiet
 do wyboru. Zgodne butelki oficjalne i opublikowane `llvm@22` nadal można instalować.
 
+`openjdk` 27.x korzysta z jawnie zatwierdzonego wariantu receptury
+`openjdk-intel-boot-jdk-26`. Upstream dla 27.x udostępnia na macOS wyłącznie
+startowy JDK dla AArch64, więc wariant podmienia tylko ten zasób na oficjalny
+build x64 JDK 26.0.2.1, przypięty adresem URL i sumą SHA-256. Każdy inny układ
+receptury upstream zatrzymuje build przed kompilacją; zobacz
+[wstrzymania budowania](docs/BUILD-HOLDS.md).
+
 Ciężkie kompilacje ze źródeł przekraczające fizyczne ograniczenia bezpłatnych runnerów
 GitHub Actions (`macos-15-intel`: limit czasu wykonania 6 godzin, ~14 GB wolnego miejsca
 na dysku SSD, 4 vCPU) są jawnie wykluczone przez regułę `blocked_source_builds` w `policy/config.json`.
