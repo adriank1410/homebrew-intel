@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "4321e3dcb60e1e9ff0defcfc87d569443a15c55b",
   "cellar": "any_skip_relocation",
-  "core_commit": "b243aaacabe35dfd62e8a19e73f4c2f9e57c1acb",
+  "core_commit": "b0535df3f84749166e3a6ca74d16681c236f1794",
   "filename": "sherlock--0.16.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "476b43958465cadcbf54f8cd90d04e9c0fe0b85a9315b8f94d26ac6befdb4e99",
   "license": "MIT",
   "name": "sherlock",
   "pkg_version": "0.16.2_1",
   "recipe_sha256": "27503168383111a9c4b107963c155c73a89dd297a8a57584ceaeee5836142c04",
-  "release": "intel-39648273537-1-sherlock",
+  "release": "intel-39953652640-1-sherlock",
   "revision": 1,
-  "run_id": "39648273537",
+  "run_id": "39953652640",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -79,7 +79,7 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "88432c15200d2a74fff3a68c83d42ef14ee2336d3d3a185ade18424ebd4b5357",
+      "formula_sha256": "2aae0cac18819399a627a94b4e4f70b0946ffdc6da6878e923eb955482c9281e",
       "name": "python@3.15",
       "pkg_version": "3.15.0_1"
     },
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4c1efaaa217dfb59cb65ddff6d3234af70afa3a92fcc27ca2a2c34b0ae18b2d2",
-  "size": 11947259,
+  "sha256": "05663e93547db0aa5f6504fcb1544834cfb95ccdc7edcd939eb446adca706eb9",
+  "size": 11947014,
   "source": {
     "filename": "sherlock--0.16.2_1.sources.tar.gz",
-    "sha256": "77a73a52c7f10bba901cb725b54f2df228d56640215916bfd16429ec21291c62",
-    "size": 9840685
+    "sha256": "37b6a908147b725cf760bf25d19d43d8d3efea10fb6a5a024fd8e44d21520928",
+    "size": 9840690
   },
   "tag": "sequoia",
   "version": "0.16.2",
   "version_scheme": 0,
-  "workflow_commit": "96ca2ae3d421aa6c978cabc0c92e16e7f259e29d"
+  "workflow_commit": "16cfe64e2c48c40af426215db9d543962c6593f0"
 }
