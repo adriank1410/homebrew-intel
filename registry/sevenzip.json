@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8edbb6a3fcab3b9dfb9488bc2080dfbbc8ab3dd8",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "abb6b328a718def9677df42f4379045d8b2c4d9a",
-  "filename": "sevenzip--26.04.sequoia.bottle.tar.gz",
-  "formula_sha256": "792eab72a60c78d0aa3593a080b4c26b8ac61f91d96e6b67a956d099d4d9f515",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
+  "filename": "sevenzip--26.05.sequoia.bottle.tar.gz",
+  "formula_sha256": "358ecc8b3f7778ab30032357a5c9c2651cd54d8a902042229c6a2c62283f628d",
   "license": {
     "all_of": [
       "LGPL-2.1-or-later",
@@ -12,22 +12,22 @@
     ]
   },
   "name": "sevenzip",
-  "pkg_version": "26.04",
-  "recipe_sha256": "15969ade63f7975c53af82eef0c195c5658bfedc335f4568d48975e4621e4113",
-  "release": "intel-37637289224-1-sevenzip",
+  "pkg_version": "26.05",
+  "recipe_sha256": "cd5219f77038ab4b1867483fd6f60f2f05d43d9ca5f93134a0fba3cffeb73e9f",
+  "release": "intel-39873474223-1-sevenzip",
   "revision": 0,
-  "run_id": "37637289224",
+  "run_id": "39873474223",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "82924e8f186214c7911ed3cb89f4fc2b047126103ce4cb3ef291a1d6958e6c4f",
-  "size": 1961180,
+  "sha256": "135f0c2e1bf8350384940923bdf29ff822a7f5a212a4e08ba0140418af2d4f6c",
+  "size": 1970741,
   "source": {
-    "filename": "sevenzip--26.04.sources.tar.gz",
-    "sha256": "cffd88513f8e5c3c69b5ceac313b9a94b595788a11baa2427c986b59db92da05",
-    "size": 1577672
+    "filename": "sevenzip--26.05.sources.tar.gz",
+    "sha256": "cf1e6cad50bc30743b50cebdea256c5f65307a3253bb5419a72bd4e78a4c492b",
+    "size": 2281726
   },
   "tag": "sequoia",
-  "version": "26.04",
+  "version": "26.05",
   "version_scheme": 0,
-  "workflow_commit": "240d9bc69d01851a29caf2582b62da754d5b1336"
+  "workflow_commit": "4a7157f7bf80b3a884879f8a40062e67bfa8ea27"
 }
