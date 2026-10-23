@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any_skip_relocation",
-  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "weasyprint--70.0.sequoia.bottle.tar.gz",
   "formula_sha256": "a4e773bafa931e5a34937f9c61271f71433f51b2a40ae23941b6b583efe8e5df",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0",
   "recipe_sha256": "0c2278eb12b617ed78b8b189849587943e43fd87dcf0dcca3be0ef107484fd0e",
-  "release": "intel-39857866388-1-weasyprint",
+  "release": "intel-39880098990-1-weasyprint",
   "revision": 0,
-  "run_id": "39857866388",
+  "run_id": "39880098990",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -109,7 +109,7 @@
       "pkg_version": "0.2.14"
     },
     {
-      "formula_sha256": "7d049dd0bacbfeee7f19b57982b14e3d1ec34ec363db5eb9fdb8235c79cc9803",
+      "formula_sha256": "27c1c1d92e1d2af11d329877e108e39c38e2bbc99cf043e5ab64be8ec3e9af97",
       "name": "libimagequant",
       "pkg_version": "4.4.1"
     },
@@ -265,15 +265,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "444e0d7c05d4612f9f3f9d5cacf172c8315b938f2417c53c5bd1351f762b1ad7",
-  "size": 4064572,
+  "sha256": "49ac84cec09bdd2b2682b26ba1ec0393c99f76429ace2c1ce6affbaa91c6ad66",
+  "size": 4064506,
   "source": {
     "filename": "weasyprint--70.0.sources.tar.gz",
-    "sha256": "d83e1bb9dde1222efd38c144388f9cfd722856c7373a0fd66be3d76b0e823f20",
-    "size": 15222224
+    "sha256": "741604d79a7bcc1dd9e87265203ff74726f1e0d2e3b85a88e3389d2c3a472fd3",
+    "size": 15222213
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "2e3876d8a5b0c4ed52b940a91c241276157b9b3a"
+  "workflow_commit": "b14dea87120c48c2233408aeede35b48e42d0cb9"
 }
