@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "qt3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "2813a24a126e27af416c7f82ef814ea8936f2aec61841dad798329ace2850e81",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qt3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "bd60edcc60ccce108f37a33c1308c69fce3ea714f04100bb8871fce03f21113f",
-  "release": "intel-39623354244-1-qt3d",
+  "release": "intel-39902009336-1-qt3d",
   "revision": 1,
-  "run_id": "39623354244",
+  "run_id": "39902009336",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -31,9 +31,9 @@
       "pkg_version": "6.0.5"
     },
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -212,15 +212,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "004f10151743f20761382d2ee5d579b0d4d9e441d1a089ba809b89308b162198",
-  "size": 3769507,
+  "sha256": "08c204d7e1dfd7574ebb27216b7f40e59f2ebd6419ea6d7576012e826e83ce96",
+  "size": 3769550,
   "source": {
     "filename": "qt3d--6.12.0_1.sources.tar.gz",
-    "sha256": "9dc2005a55f3809fc247c95d46eee9799c3df88a8ef02dca54d5ad0fd21a6247",
-    "size": 141960275
+    "sha256": "7d84bc44bd64e1af76f75af376096f81a0658baf098829efd7c4555e44b9790c",
+    "size": 141960263
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
+  "workflow_commit": "18c9832968efecb27f0c949c43ba64d2380f1b38"
 }
