@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "qtcanvaspainter--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "b4c13ed5facaeb575f65a39bcf362b182512900b6b52e04d482a7330f1d8cc70",
   "license": {
@@ -20,14 +20,14 @@
   "name": "qtcanvaspainter",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "c5ec1d48de3b2f2f270d1b52a91baaab8af19c292fe96494462d887132b3ed77",
-  "release": "intel-39623354244-1-qtcanvaspainter",
+  "release": "intel-39902009336-1-qtcanvaspainter",
   "revision": 1,
-  "run_id": "39623354244",
+  "run_id": "39902009336",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f5bad70db1afd147cfaa2b3b83119c3c4d08643d66a2414433b75b566ebdf9d2",
-  "size": 583954,
+  "sha256": "dcd36dff1608d9ec37b4777d367b00296d03ae4b3c5e614488bbe9713ca3d193",
+  "size": 583921,
   "source": {
     "filename": "qtcanvaspainter--6.12.0_1.sources.tar.gz",
-    "sha256": "b7b1eb999a13d12b29e098eb9507436e3baaec0e29a116412dd6bbde212ed893",
-    "size": 1171376
+    "sha256": "941572bd3c50b2153ff7c95dd3fbfe0c01066828e6af0aef32b977000326e631",
+    "size": 1171369
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
+  "workflow_commit": "18c9832968efecb27f0c949c43ba64d2380f1b38"
 }
