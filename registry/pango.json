@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
+  "brew_commit": "4321e3dcb60e1e9ff0defcfc87d569443a15c55b",
   "cellar": "any",
-  "core_commit": "688a30fffc3116b5e8ef2ada588e1114213e8dd0",
+  "core_commit": "b0535df3f84749166e3a6ca74d16681c236f1794",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-39836622384-1-pango",
+  "release": "intel-39976370422-1-pango",
   "revision": 0,
-  "run_id": "39836622384",
+  "run_id": "39976370422",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -54,9 +54,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
+      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
       "name": "harfbuzz",
-      "pkg_version": "14.6.0"
+      "pkg_version": "15.0.0"
     },
     {
       "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2a5a94bac257b1d66c42d2da4224d01f5742939cbe935e0567a957e91edb093d",
-  "size": 882855,
+  "sha256": "248f9e15e4aa7beaa3d06d08eceda6f0dbdfe12da5d7076cd8d5afd1e1b08982",
+  "size": 882834,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "38de77c2657ce4058376e6d7b637f9fcf255c076ae1483282f9c6c58edbc6c90",
-    "size": 1932742
+    "sha256": "b27b8d3e5d3a815a85c4f260a463fb7e8b2c961095237dfd04ab9b016a5b2246",
+    "size": 1932734
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "b54ff1e25213ba45f58d46b6b6ba4c556b6d40fc"
+  "workflow_commit": "f12e72033583a5914d1bddcea0038417da048dee"
 }
