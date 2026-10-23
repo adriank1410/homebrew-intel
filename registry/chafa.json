@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "41f40decfa0789cff312806606757300bb8bd1c3",
+  "brew_commit": "7685477141b47ac22179324b774b5fc230470a98",
   "cellar": "any",
-  "core_commit": "4aef89dc369d9f743e6427e4369c63d89492b1bc",
+  "core_commit": "3aa17c6cb938813ff54413a8e3ba0a003b2773e8",
   "filename": "chafa--1.18.3.sequoia.bottle.tar.gz",
   "formula_sha256": "a173a268b7b733709b2762159b39b883c24a0c54fd3be25b428e1bf0ccdf51ac",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3",
   "recipe_sha256": "fe13cfa93b13dc6a5ecdcc102064c27440e8c1ba048471fcc53eb17eec4db978",
-  "release": "intel-39338741396-1-chafa",
+  "release": "intel-40003976797-1-chafa",
   "revision": 0,
-  "run_id": "39338741396",
+  "run_id": "40003976797",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -19,9 +19,9 @@
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -74,9 +74,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
+      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
       "name": "harfbuzz",
-      "pkg_version": "14.6.0"
+      "pkg_version": "15.0.0"
     },
     {
       "formula_sha256": "4cd06ebd5130b5983d8106f0d51ce97316d8e19dd20cdfd9cf7910932e8ed8d9",
@@ -129,7 +129,7 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "4841cd0bf59930ee76ec9c9610633419784db57412aff5bbb71685e58dc5c090",
+      "formula_sha256": "29612cfd2ecf75a0a2a1ecccd9010a5dbc18c0207174aecd3e872bb5ef2b118f",
       "name": "librsvg",
       "pkg_version": "2.63.3"
     },
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c9f51041e2e3b68a6dccc631990cbf162c9b1c815b8531ed0898ed78c90114a0",
-  "size": 535034,
+  "sha256": "46a6b4a71ee0bf686ab4301873954f295455ed230f2310e2c567ddd2f1c714d4",
+  "size": 535036,
   "source": {
     "filename": "chafa--1.18.3.sources.tar.gz",
-    "sha256": "718bb0c434c7952220fb7d96a4fffef1d87a7401a89225ac1791e0eb0164e050",
-    "size": 1091647
+    "sha256": "455ef808bb50410e3d0f2af200f883d451879e854f60742b927f481f3d8e01cd",
+    "size": 1091659
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "193ee8e80c2c4f4d007633d5abcf988c66088d83"
+  "workflow_commit": "1a9dcb1177a627d91a6d30cc07470ddf1695023f"
 }
