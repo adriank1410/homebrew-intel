@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
+  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
   "filename": "qtdatavis3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "621bcf9be9d86144ca58610b5a89c50554869451a557251eaa8f42685b11e00e",
   "license": {
@@ -14,14 +14,14 @@
   "name": "qtdatavis3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "77a050cf4ac20c5b0f7e5cb3151748618e1e2c4dc583c4c06a41778b5a530972",
-  "release": "intel-39623354244-1-qtdatavis3d",
+  "release": "intel-39902009336-1-qtdatavis3d",
   "revision": 1,
-  "run_id": "39623354244",
+  "run_id": "39902009336",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -195,15 +195,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2cd06b961fc4025c57355bb3f47342676243ed74ba396fcc62faf668c4dfe8d5",
-  "size": 768417,
+  "sha256": "d4ab1a78d3a8f61cab5529aad5d57644ea137f8aabd81fbce327ba9c3050a022",
+  "size": 768448,
   "source": {
     "filename": "qtdatavis3d--6.12.0_1.sources.tar.gz",
-    "sha256": "a88e68e1f557bd58e97d4dcec556c0419eb4e7ac283ba66783adb64e790ebd4c",
-    "size": 3966418
+    "sha256": "df57bf2d3c6991b87b9de943fe90afea0478a79bf6dec20ddc4123af05814aec",
+    "size": 3966433
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
+  "workflow_commit": "18c9832968efecb27f0c949c43ba64d2380f1b38"
 }
