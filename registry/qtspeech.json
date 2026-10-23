@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "d78c1943dc2b77930691102481df0d9e9bf7e257",
+  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
   "cellar": "any",
-  "core_commit": "bf15382d54581a9a5f9836fbe141cdd1b57eff67",
+  "core_commit": "b9e20b84fd8e711a7139d1e893691da33d909fc9",
   "filename": "qtspeech--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "4a58b887be2ea9dc5af28d9bac9356c4d978ab2e3a4f3fc1a197b24df986c1a2",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtspeech",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "f671a14dd14825f3bc3d4f9d7cbec437b083578ff6de8e1c45d1ce0cd9210193",
-  "release": "intel-39263018478-1-qtspeech",
+  "release": "intel-39927353177-1-qtspeech",
   "revision": 1,
-  "run_id": "39263018478",
+  "run_id": "39927353177",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -30,14 +30,14 @@
       "pkg_version": "6.0.5"
     },
     {
-      "formula_sha256": "b8df7117622413020974e47392069789b3115dae0ab85705424c71a78bf6d62f",
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
       "name": "brotli",
-      "pkg_version": "1.2.0"
+      "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "e7807634f02d41cfad036cdebb546daacd45e118fcb463acc6c6e4f6e07dcf3f",
+      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
       "name": "ca-certificates",
-      "pkg_version": "2026-09-25"
+      "pkg_version": "2026-10-20"
     },
     {
       "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
@@ -175,7 +175,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "7964578a98c1d8e8d443cd2b83e1874cfecd280a5779a047f279db2321c1e97d",
+      "formula_sha256": "36e8f8c31bd23b9507ba6194ebd3ea7179c64b05567089d79e9a3963467d5d06",
       "name": "qtbase",
       "pkg_version": "6.12.0_1"
     },
@@ -226,15 +226,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5d2d177f9a3cfd7ff9238be6c1367d4e93c13cf4bd0c75cb3bfb3e290b180d20",
-  "size": 142872,
+  "sha256": "83c7df8fea36540fbea70a6486244979efa3a97d9871ce94e77b694e4dcb087a",
+  "size": 142851,
   "source": {
     "filename": "qtspeech--6.12.0_1.sources.tar.gz",
-    "sha256": "391dfbbad0b2c2030c0b267d8d3a5224abdc49c277e052533ad931a69c861e58",
-    "size": 288440
+    "sha256": "b10454b5e9bdcdc4327b03e610835490c98d60075b2fb6d3c6aca7b827376697",
+    "size": 288439
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "e610d0702b08d5ac8eab322abebc1906b5ae8a1b"
+  "workflow_commit": "1051ae242065087f8d675ee05a21c4e2b24561ab"
 }
