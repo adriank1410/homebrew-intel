@@ -211,6 +211,9 @@ can still have incomplete coverage; the summary and warning state that explicitl
 The `llvm-no-pgo` recipe variant builds LLVM separately before Rust-dependent
 waves; its provenance and retained verification gates are documented in
 `docs/BUILD-HOLDS.md`.
+The `openjdk-intel-boot-jdk-26` variant replaces only the AArch64-only macOS
+boot JDK of `openjdk` 27.x with the pinned official x64 JDK 26.0.2.1. It is
+documented in the same file.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight. A manual single-root request has its own concurrency group,
 so an urgent repair can run alongside a sweep. Repeated requests for the same root
