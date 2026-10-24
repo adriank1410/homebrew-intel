@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7685477141b47ac22179324b774b5fc230470a98",
+  "brew_commit": "7a056ffd71e505f725b092d162fb09164a62b510",
   "cellar": "any",
-  "core_commit": "3aa17c6cb938813ff54413a8e3ba0a003b2773e8",
+  "core_commit": "7529a42ac51c0c04d456a6ae8378f428707c74c3",
   "filename": "chafa--1.18.3.sequoia.bottle.tar.gz",
   "formula_sha256": "a173a268b7b733709b2762159b39b883c24a0c54fd3be25b428e1bf0ccdf51ac",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3",
   "recipe_sha256": "fe13cfa93b13dc6a5ecdcc102064c27440e8c1ba048471fcc53eb17eec4db978",
-  "release": "intel-40003976797-1-chafa",
+  "release": "intel-40066387455-1-chafa",
   "revision": 0,
-  "run_id": "40003976797",
+  "run_id": "40066387455",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -129,9 +129,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "29612cfd2ecf75a0a2a1ecccd9010a5dbc18c0207174aecd3e872bb5ef2b118f",
+      "formula_sha256": "4ec0d20111f91fbc092f70c95895ae0740d8d30688d9d61c47649eeae43e94d0",
       "name": "librsvg",
-      "pkg_version": "2.63.3"
+      "pkg_version": "2.63.4"
     },
     {
       "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "46a6b4a71ee0bf686ab4301873954f295455ed230f2310e2c567ddd2f1c714d4",
-  "size": 535036,
+  "sha256": "046d4b013ff647a6a1ad355ed99d06d27e2643aa377b69cc63cacd5ef1354216",
+  "size": 535039,
   "source": {
     "filename": "chafa--1.18.3.sources.tar.gz",
-    "sha256": "455ef808bb50410e3d0f2af200f883d451879e854f60742b927f481f3d8e01cd",
-    "size": 1091659
+    "sha256": "00609a237c9d58b7a1f30f233bf6b2ee751081b17cb8d072a3666b447592a650",
+    "size": 1091646
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "1a9dcb1177a627d91a6d30cc07470ddf1695023f"
+  "workflow_commit": "bedbcbc64ed583b103672ec7c633541dc8a81f7e"
 }
