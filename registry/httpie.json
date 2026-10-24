@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "4321e3dcb60e1e9ff0defcfc87d569443a15c55b",
+  "brew_commit": "7c5b6053d5bacfc32cac99e56cb210831db26681",
   "cellar": "any_skip_relocation",
-  "core_commit": "b0535df3f84749166e3a6ca74d16681c236f1794",
-  "filename": "httpie--3.2.4_12.sequoia.bottle.tar.gz",
-  "formula_sha256": "0aed1af859c7f9748f01af5054a30dcd8bbf0e664c9e5ac95b637c251ebbefba",
+  "core_commit": "ba92202abde6446acbe0131fbd9fdb97d9e89652",
+  "filename": "httpie--3.2.4_13.sequoia.bottle.tar.gz",
+  "formula_sha256": "7d20200c7ab9c6c10a5b9fbbf624d599d9c297ee15701670e9841a74a2b175be",
   "license": "BSD-3-Clause",
   "name": "httpie",
-  "pkg_version": "3.2.4_12",
-  "recipe_sha256": "b3664d73751ac8b86686c3386bf9cfa016c3ace738b5b9325d4ee6f6bc5f5f8d",
-  "release": "intel-39953652640-1-httpie",
-  "revision": 12,
-  "run_id": "39953652640",
+  "pkg_version": "3.2.4_13",
+  "recipe_sha256": "fbfdaec1be5612c9986445e106a7d2d2ea9809b2e4b1e5261fc7d21e6b1bef76",
+  "release": "intel-40089392911-1-httpie",
+  "revision": 13,
+  "run_id": "40089392911",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "915007bf4169989fb85b457e119a8472536f4c1e6f568a39ebeae7db100bc814",
-  "size": 2618832,
+  "sha256": "fa6c56258e9a2ef62d2b2425af11ba0c4825c732b0e40ef9b2ef6e78eaa7ed4c",
+  "size": 2681349,
   "source": {
-    "filename": "httpie--3.2.4_12.sources.tar.gz",
-    "sha256": "28ff5ec2b45c10a3cc29531c80f1bc2948e8c661a65a9a0f9b2f092af6f8d7c9",
-    "size": 9636487
+    "filename": "httpie--3.2.4_13.sources.tar.gz",
+    "sha256": "29eeaae6406c9d47df5d1b1b64fa8b48a483d5d720b6f82a5a6c1f6f07db7166",
+    "size": 9779790
   },
   "tag": "sequoia",
   "version": "3.2.4",
   "version_scheme": 0,
-  "workflow_commit": "16cfe64e2c48c40af426215db9d543962c6593f0"
+  "workflow_commit": "09e01733d85a178216c2e49b6d030b41f3985704"
 }
