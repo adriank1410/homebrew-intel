@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
+  "brew_commit": "7a056ffd71e505f725b092d162fb09164a62b510",
   "cellar": "any",
-  "core_commit": "b9e20b84fd8e711a7139d1e893691da33d909fc9",
+  "core_commit": "713dcfc14f2a7c88a8b1497105b6ebeeca6ac913",
   "filename": "qtgraphs--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "e4b3321e3b3993055fb0f12e2ea3584d63191937f7b3b7520788087370b1d679",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtgraphs",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "3246e9fc018481ecb0b41216f874d39582ab56f22e047a4606b4baa181449dd1",
-  "release": "intel-39922029025-1-qtgraphs",
+  "release": "intel-40038984285-1-qtgraphs",
   "revision": 1,
-  "run_id": "39922029025",
+  "run_id": "40038984285",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -74,9 +74,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "c68fa286240c0ac1ac7a6a95f657161733ef6e38abaea04d4287f3274f1a2c62",
+      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
       "name": "harfbuzz",
-      "pkg_version": "14.6.0"
+      "pkg_version": "15.0.0"
     },
     {
       "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7e137f7a9f14852fdd442cbc6109aca583e4a26ba7904c83d193b50eabbb62e0",
-  "size": 1304032,
+  "sha256": "c3a735e5c42dcf592e1cd551e653f5ecf94602862b09c109a84ec1e47bfefb19",
+  "size": 1304006,
   "source": {
     "filename": "qtgraphs--6.12.0_1.sources.tar.gz",
-    "sha256": "d6f55e505873e12e0ee7521589c4c7c530e4ecd8ac823352da693d419ba68685",
-    "size": 9332639
+    "sha256": "dcfed5623433bac9aed61c2599b1fcaf8432f3b24f8caaf3a43f26f5e366c8e0",
+    "size": 9332636
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "75a9e3f4ad1829b46e450e42af7d864b456ee80b"
+  "workflow_commit": "c6e4f9bf7f74c9461602af17a9c4544a6986c8ec"
 }
