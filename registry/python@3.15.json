@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "4321e3dcb60e1e9ff0defcfc87d569443a15c55b",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b0535df3f84749166e3a6ca74d16681c236f1794",
-  "filename": "python@3.15--3.15.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "2aae0cac18819399a627a94b4e4f70b0946ffdc6da6878e923eb955482c9281e",
+  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
+  "filename": "python@3.15--3.15.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
   "license": "Python-2.0",
   "name": "python@3.15",
-  "pkg_version": "3.15.0_1",
-  "recipe_sha256": "96d687c0d8609771f1e3d81db118b8db7948b4d24971009759426c04ae80c606",
-  "release": "intel-39949138346-1-python-at-3.15",
-  "revision": 1,
-  "run_id": "39949138346",
+  "pkg_version": "3.15.1",
+  "recipe_sha256": "ac026375c534fd728895c7085e3f956c308cceec77d197f735124c1c7933390b",
+  "release": "intel-40142729307-1-python-at-3.15",
+  "revision": 0,
+  "run_id": "40142729307",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a7cc8793c7b82f9e8dda273c39dc2f9ae8f419995d792f5e8da773cdbec2d795",
-  "size": 20318437,
+  "sha256": "3f43d003e80fc8df66b5dd7f53e7c5e4ed3c7856aadba73a72ce8d51f2c711a1",
+  "size": 20418908,
   "source": {
-    "filename": "python@3.15--3.15.0_1.sources.tar.gz",
-    "sha256": "155c49ac5cd1ce5d7e8368c8c6d6e4c30f57c56bbf678974970a5ab1804c774b",
-    "size": 45477118
+    "filename": "python@3.15--3.15.1.sources.tar.gz",
+    "sha256": "3a6a1943f0e42971f23b6b49711f019ddb0cf1bbc91a483b756c3b73801a77c7",
+    "size": 45610546
   },
   "tag": "sequoia",
-  "version": "3.15.0",
+  "version": "3.15.1",
   "version_scheme": 0,
-  "workflow_commit": "0c72d1dbf46bfd14c16fc86a05e8db06402688e3"
+  "workflow_commit": "190f445832b0f31be47e6c41d8e4f8d1aae57d51"
 }
