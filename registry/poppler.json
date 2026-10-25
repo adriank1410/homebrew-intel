@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "4321e3dcb60e1e9ff0defcfc87d569443a15c55b",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b0535df3f84749166e3a6ca74d16681c236f1794",
+  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
   "filename": "poppler--26.10.0.sequoia.bottle.tar.gz",
   "formula_sha256": "d665f018ff60fa8bb9e308d77d7831a325f9221599d672c3008b4de369665711",
   "license": {
@@ -14,9 +14,9 @@
   "name": "poppler",
   "pkg_version": "26.10.0",
   "recipe_sha256": "0acc1b332a9cbc3fdda67863db7f917ddd070c408a194d33e9ba695d00326f9e",
-  "release": "intel-39976370422-1-poppler",
+  "release": "intel-40222463970-1-poppler",
   "revision": 0,
-  "run_id": "39976370422",
+  "run_id": "40222463970",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -89,14 +89,14 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
+      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0"
+      "pkg_version": "15.0.0_1"
     },
     {
-      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
-      "name": "icu4c@78",
-      "pkg_version": "78.3"
+      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "name": "icu4c@79",
+      "pkg_version": "79.1"
     },
     {
       "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
@@ -275,15 +275,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d79cc652edde1e2bc6d0f812a924058ece2f358297603c237259bb3d6d452eaf",
-  "size": 10017273,
+  "sha256": "1376380098db3bbb8df4e3e754a5a977bf0797f768fa4db3cd239a0b1f3dc5a2",
+  "size": 10017347,
   "source": {
     "filename": "poppler--26.10.0.sources.tar.gz",
-    "sha256": "732bb50c6103bccf2675242c7984466792f3c2862407869789f3b09190007991",
-    "size": 6498410
+    "sha256": "3709bfec4ff28d8c2c2e386af0f806a3c0aff48ef8d80401ccf700aefc6afd00",
+    "size": 6498412
   },
   "tag": "sequoia",
   "version": "26.10.0",
   "version_scheme": 0,
-  "workflow_commit": "f12e72033583a5914d1bddcea0038417da048dee"
+  "workflow_commit": "069262e38ee11e2a10d9b0a5a9d3bdd1819f4d35"
 }
