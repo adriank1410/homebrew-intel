@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "4321e3dcb60e1e9ff0defcfc87d569443a15c55b",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b0535df3f84749166e3a6ca74d16681c236f1794",
+  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
   "filename": "fontforge--20251009_2.sequoia.bottle.tar.gz",
   "formula_sha256": "e83e3a2ede4bed1f21d7435b0bef0abb96c3b9fa73ddf8f254245f8ea61d586a",
   "license": "GPL-3.0-or-later",
   "name": "fontforge",
   "pkg_version": "20251009_2",
   "recipe_sha256": "e4e2a8c148bc8ded219db500b20e813f568b0e36183cfbe55ff26962abb86112",
-  "release": "intel-39987987285-1-fontforge",
+  "release": "intel-40144815222-1-fontforge",
   "revision": 2,
-  "run_id": "39987987285",
+  "run_id": "40144815222",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -194,9 +194,9 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "2aae0cac18819399a627a94b4e4f70b0946ffdc6da6878e923eb955482c9281e",
+      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
       "name": "python@3.15",
-      "pkg_version": "3.15.0_1"
+      "pkg_version": "3.15.1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -235,15 +235,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "42293965de22d9a8432d233341372a0b0bb802b131a70c9d4e5b9928a14bfb07",
-  "size": 5858160,
+  "sha256": "85c09589e46ae289bb12b54dcde80ddb80bf11cd103130068e1d335182bc4b12",
+  "size": 5858210,
   "source": {
     "filename": "fontforge--20251009_2.sources.tar.gz",
-    "sha256": "ebcfbeb520e6f8642f1ea039744dafe0e0f332a51cdc90e71a60d31d85cd5be4",
-    "size": 14132311
+    "sha256": "dd2c8d74d66f0fd0a0ef65a2a3db810bf8772e40e745ce6fb4003888c895759c",
+    "size": 14132299
   },
   "tag": "sequoia",
   "version": "20251009",
   "version_scheme": 0,
-  "workflow_commit": "485c811e076a80afd3498f4fe183242d4faf08a9"
+  "workflow_commit": "00c4eb5b1c7f313b455d8878a75b80591e38af7d"
 }
