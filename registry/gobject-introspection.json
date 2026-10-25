@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7c5b6053d5bacfc32cac99e56cb210831db26681",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "ba92202abde6446acbe0131fbd9fdb97d9e89652",
+  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
   "filename": "gobject-introspection--1.86.0_6.sequoia.bottle.tar.gz",
   "formula_sha256": "d4a89b9c75de975f2beb6f9acb1bd980247d62bca37652235b6be65d8b0f5fb2",
   "license": {
@@ -15,9 +15,9 @@
   "name": "gobject-introspection",
   "pkg_version": "1.86.0_6",
   "recipe_sha256": "93e086e34ae96b6b4c518b596940a30ed267fd51b1d68e6dbe88d35c0f30b626",
-  "release": "intel-40089392911-1-gobject-introspection",
+  "release": "intel-40144815222-1-gobject-introspection",
   "revision": 6,
-  "run_id": "40089392911",
+  "run_id": "40144815222",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -135,9 +135,9 @@
       "pkg_version": "3.0.10"
     },
     {
-      "formula_sha256": "2aae0cac18819399a627a94b4e4f70b0946ffdc6da6878e923eb955482c9281e",
+      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
       "name": "python@3.15",
-      "pkg_version": "3.15.0_1"
+      "pkg_version": "3.15.1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -166,15 +166,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "64348a365b9f216d3f91ad289796a0d1afbb988fabc43c3af23e702adcb0acf1",
-  "size": 1372933,
+  "sha256": "4766472ee54d2d9d81f9c913e75858062f5a7f635f51e341cc00e9321cfaf0ec",
+  "size": 1372963,
   "source": {
     "filename": "gobject-introspection--1.86.0_6.sources.tar.gz",
-    "sha256": "e6f34c774c748624ab3b0763a43a85bf778237f9b1bf328baf6879dd0b46a6e8",
-    "size": 3405053
+    "sha256": "6181c9c4e5eab8dd5a0c353b697f8313ecbc48f8acf2e2cc245234f28e338bec",
+    "size": 3405080
   },
   "tag": "sequoia",
   "version": "1.86.0",
   "version_scheme": 0,
-  "workflow_commit": "09e01733d85a178216c2e49b6d030b41f3985704"
+  "workflow_commit": "00c4eb5b1c7f313b455d8878a75b80591e38af7d"
 }

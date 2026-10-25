@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7a056ffd71e505f725b092d162fb09164a62b510",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any_skip_relocation",
-  "core_commit": "713dcfc14f2a7c88a8b1497105b6ebeeca6ac913",
+  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
   "filename": "ykman--5.9.2.sequoia.bottle.tar.gz",
   "formula_sha256": "2655c78d83cbe1e8697c24c02c945406bf30db46460cb93e2793c45cc0dfe722",
   "license": "BSD-2-Clause",
   "name": "ykman",
   "pkg_version": "5.9.2",
   "recipe_sha256": "59f3abd0fd7f9139563cdf1e261db7f3a9b3a2e51a0ff22a2f7c50b0401e7e3d",
-  "release": "intel-40028360964-1-ykman",
+  "release": "intel-40144815222-1-ykman",
   "revision": 0,
-  "run_id": "40028360964",
+  "run_id": "40144815222",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -49,9 +49,9 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "2aae0cac18819399a627a94b4e4f70b0946ffdc6da6878e923eb955482c9281e",
+      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
       "name": "python@3.15",
-      "pkg_version": "3.15.0_1"
+      "pkg_version": "3.15.1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b3e6358232a94440d4af87732892868da29218befcc2a13dd892aec610f327eb",
-  "size": 974513,
+  "sha256": "d55847434e956e2a2f2d5bb67cd82fbd06f559fee75669e0c928078088e33249",
+  "size": 974462,
   "source": {
     "filename": "ykman--5.9.2.sources.tar.gz",
-    "sha256": "9b11e38a4dd9dceddda15ae021b2099cf86f3b6ffe01b4cfb935b0038103f49d",
-    "size": 2060350
+    "sha256": "e6ff6336a763af3e53811a38350db7ebcdc27ccb9db8b2ddb1fa086fe2aca742",
+    "size": 2060359
   },
   "tag": "sequoia",
   "version": "5.9.2",
   "version_scheme": 0,
-  "workflow_commit": "ed47ef83351a6e43fb18388b4004db1deeda0d42"
+  "workflow_commit": "00c4eb5b1c7f313b455d8878a75b80591e38af7d"
 }
