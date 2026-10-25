@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any_skip_relocation",
-  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
+  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
   "filename": "ykman--5.9.2.sequoia.bottle.tar.gz",
   "formula_sha256": "2655c78d83cbe1e8697c24c02c945406bf30db46460cb93e2793c45cc0dfe722",
   "license": "BSD-2-Clause",
   "name": "ykman",
   "pkg_version": "5.9.2",
   "recipe_sha256": "59f3abd0fd7f9139563cdf1e261db7f3a9b3a2e51a0ff22a2f7c50b0401e7e3d",
-  "release": "intel-40144815222-1-ykman",
+  "release": "intel-40222463970-1-ykman",
   "revision": 0,
-  "run_id": "40144815222",
+  "run_id": "40222463970",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -39,9 +39,9 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     },
     {
       "formula_sha256": "e6c7e0b80da4ec762e81ad9ee9c64f9c08bd559b25fd5c784e756d7112ce7d1e",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d55847434e956e2a2f2d5bb67cd82fbd06f559fee75669e0c928078088e33249",
-  "size": 974462,
+  "sha256": "122de9cdec5c5b2b1ce5c55e415b9ecf3763f3a46cf68d102c683ea0df9df6c7",
+  "size": 974533,
   "source": {
     "filename": "ykman--5.9.2.sources.tar.gz",
-    "sha256": "e6ff6336a763af3e53811a38350db7ebcdc27ccb9db8b2ddb1fa086fe2aca742",
-    "size": 2060359
+    "sha256": "98e2afe603d59d4f2e7fcf28e1192d36ba8281e9ec84ed462d4eda934048719d",
+    "size": 2060361
   },
   "tag": "sequoia",
   "version": "5.9.2",
   "version_scheme": 0,
-  "workflow_commit": "00c4eb5b1c7f313b455d8878a75b80591e38af7d"
+  "workflow_commit": "069262e38ee11e2a10d9b0a5a9d3bdd1819f4d35"
 }
