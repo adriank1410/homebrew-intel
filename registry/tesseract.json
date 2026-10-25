@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "4321e3dcb60e1e9ff0defcfc87d569443a15c55b",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any",
-  "core_commit": "b0535df3f84749166e3a6ca74d16681c236f1794",
-  "filename": "tesseract--5.5.3.sequoia.bottle.tar.gz",
-  "formula_sha256": "c52dad7fa4d8e0ee732b9e64cec7d667d9d1803c384c7a223b65b7c8d90a7a29",
+  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
+  "filename": "tesseract--5.5.3_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "1d0de0c87ae808e4fbd15cb3b330693e8987bb7ce10f0b825c4393f74367cefb",
   "license": "Apache-2.0",
   "name": "tesseract",
-  "pkg_version": "5.5.3",
-  "recipe_sha256": "56cc9aeccd939292917d52333a0d2a93c60e3cc27ba782be20026b8aa1c29395",
-  "release": "intel-39987987285-1-tesseract",
-  "revision": 0,
-  "run_id": "39987987285",
+  "pkg_version": "5.5.3_1",
+  "recipe_sha256": "a30b94f16a8005471132e85b7f1ba269ad40419c31ba3ef689bcf40124534bb4",
+  "release": "intel-40228962092-1-tesseract",
+  "revision": 1,
+  "run_id": "40228962092",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -59,14 +59,14 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
+      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0"
+      "pkg_version": "15.0.0_1"
     },
     {
-      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
-      "name": "icu4c@78",
-      "pkg_version": "78.3"
+      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "name": "icu4c@79",
+      "pkg_version": "79.1"
     },
     {
       "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7a44347716efd440a9359919b5b35852d1db9084ae330b9263ae08bed8dc9641",
-  "size": 10356869,
+  "sha256": "2f3d766f067bf4b4cb2abe3509845e2dd19d3f88c0cedc76c7f95bf14496067e",
+  "size": 10356953,
   "source": {
-    "filename": "tesseract--5.5.3.sources.tar.gz",
-    "sha256": "545e74c54b9411c5ac2eb4619c81576fdbbc0bcc5f87fd9b87b4a735333120bf",
-    "size": 8183916
+    "filename": "tesseract--5.5.3_1.sources.tar.gz",
+    "sha256": "0e26ca6d7f92531a84a168b944c3b6281515e6c17029b5e2abc51947f56f7e90",
+    "size": 8183941
   },
   "tag": "sequoia",
   "version": "5.5.3",
   "version_scheme": 0,
-  "workflow_commit": "485c811e076a80afd3498f4fe183242d4faf08a9"
+  "workflow_commit": "433e4d3dd7eda64d770b130c7b5b2ccc9255559d"
 }
