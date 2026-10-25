@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any_skip_relocation",
-  "core_commit": "9d2e1ddbe2aa14959a03bb7dfd53c0871e9858ee",
+  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
   "filename": "yt-dlp--2026.10.21.sequoia.bottle.tar.gz",
   "formula_sha256": "6b25650def975b122a5dd65854eb6283b9f9e435a05bad1a3a490d7ae3dc2790",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.10.21",
   "recipe_sha256": "46d6b02ae126139cdf9826965d8b7a4ebd3e1b416a1f44e7c6f6b332ee63ec8e",
-  "release": "intel-40132327878-1-yt-dlp",
+  "release": "intel-40144815222-1-yt-dlp",
   "revision": 0,
-  "run_id": "40132327878",
+  "run_id": "40144815222",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -79,9 +79,9 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "2aae0cac18819399a627a94b4e4f70b0946ffdc6da6878e923eb955482c9281e",
+      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
       "name": "python@3.15",
-      "pkg_version": "3.15.0_1"
+      "pkg_version": "3.15.1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2698882b8e894fb3059e925e2bfdd41c2d9e8556e0f928342f3265f776a367c8",
-  "size": 8449618,
+  "sha256": "dd0fbf0d503a1220923c690d1418377b0723852d50bf71bdddfebfdf2ef8d160",
+  "size": 8449125,
   "source": {
     "filename": "yt-dlp--2026.10.21.sources.tar.gz",
-    "sha256": "8fd3c1b0db9216e481e4b862bb578144551ab4de3c56eae3dc1e3f57e0537ca1",
-    "size": 18137293
+    "sha256": "0391b11ce971f71431a81aea33e6f6da1cd23cd2388acf4b60913a16a11cc8be",
+    "size": 18137289
   },
   "tag": "sequoia",
   "version": "2026.10.21",
   "version_scheme": 0,
-  "workflow_commit": "0bcaff654ace4a3d007c5152f52edd5fa0cae119"
+  "workflow_commit": "00c4eb5b1c7f313b455d8878a75b80591e38af7d"
 }
