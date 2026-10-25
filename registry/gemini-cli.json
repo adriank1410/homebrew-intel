@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f764734f3c2d5c24673359f91d753f85f12f0346",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any_skip_relocation",
-  "core_commit": "20a64fdd49b6f3c4c0242ecd86f66e2712d228ac",
+  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
   "filename": "gemini-cli--0.65.0.sequoia.bottle.tar.gz",
   "formula_sha256": "9984fa01719b07f906c64c4f9284d62870f4f64879659ea387565ea12fbc21c8",
   "license": "Apache-2.0",
   "name": "gemini-cli",
   "pkg_version": "0.65.0",
   "recipe_sha256": "4363741dd96c5a8e886fce956a690745233fbbb98d9f29fbfbe672b75403453c",
-  "release": "intel-39820536276-1-gemini-cli",
+  "release": "intel-40222463970-1-gemini-cli",
   "revision": 0,
-  "run_id": "39820536276",
+  "run_id": "40222463970",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -54,9 +54,9 @@
       "pkg_version": "1.4.0"
     },
     {
-      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
-      "name": "icu4c@78",
-      "pkg_version": "78.3"
+      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "name": "icu4c@79",
+      "pkg_version": "79.1"
     },
     {
       "formula_sha256": "312e209812b3b223dad00b6828149fd61fd593008c2da785f486bc6556c24962",
@@ -94,14 +94,14 @@
       "pkg_version": "0.1.4"
     },
     {
-      "formula_sha256": "5bcd014d81ca88a77bd0a2c5f59c1414764435e07012d588fbcfc34e8cfd3755",
+      "formula_sha256": "8e9e81072d51b298ee96207bff65092003342863f2179b0cc300dbfabb2b4b7a",
       "name": "node",
-      "pkg_version": "26.12.1"
+      "pkg_version": "26.12.1_1"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -114,9 +114,9 @@
       "pkg_version": "5.0.5"
     },
     {
-      "formula_sha256": "ab161a72d2fed255ac87c057f289c33ac56a4997ad29416cbbd83e7924f7752e",
+      "formula_sha256": "cc795002abbdc672ec3307a007e9197d6c4fa3a67f61d4bc3c1286ab1e59adc5",
       "name": "simdutf",
-      "pkg_version": "9.3.2"
+      "pkg_version": "9.3.2_1"
     },
     {
       "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6d35cebe921c16b4138f78092ce1697206893f3101e9dcb6158dcae3ae42792c",
-  "size": 21539766,
+  "sha256": "16c139faec2fe7fd258850b1a023002d7bfba16bf77e5f7dd1c4ed8cdb815bd3",
+  "size": 21539973,
   "source": {
     "filename": "gemini-cli--0.65.0.sources.tar.gz",
-    "sha256": "c13ad26f3d3150b5842b4e48644c6c8b601802ec8267fb7fca6d4de96e2053d8",
-    "size": 20860445
+    "sha256": "e73c35618200adfb1e65219257a511a56b7a8839de92c3ce06173c8ee41b7645",
+    "size": 20860439
   },
   "tag": "sequoia",
   "version": "0.65.0",
   "version_scheme": 0,
-  "workflow_commit": "06eacbce756659bd270621e8f868cf5e6e1975b0"
+  "workflow_commit": "069262e38ee11e2a10d9b0a5a9d3bdd1819f4d35"
 }
