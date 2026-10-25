@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any",
-  "core_commit": "0c9247ef32656236b68850c98e1f1e6bebbb8af0",
+  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
   "filename": "libimobiledevice--1.4.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "2df4555ca5978537719e3ee40fe8dc82883f14165e4e6baa94e37720354d82a7",
   "license": "LGPL-2.1-or-later",
   "name": "libimobiledevice",
   "pkg_version": "1.4.0_2",
   "recipe_sha256": "90a5d750f7578b56c7d5fc7ad259ab7ddcdb4278798f9d5cb8680f378475869d",
-  "release": "intel-39518244058-1-libimobiledevice",
+  "release": "intel-40165608131-1-libimobiledevice",
   "revision": 2,
-  "run_id": "39518244058",
+  "run_id": "40165608131",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -44,21 +44,21 @@
       "pkg_version": "2.1.1_1"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "e18ae255cb302f8bc595213aaa0a021aae89f03ed1e140f7a65c01c69dd5f636",
-  "size": 496385,
+  "sha256": "3520b98723101dc8d52fe3e9e6173063fa3984935e424b0e0f0e4fecba8fcb9c",
+  "size": 496387,
   "source": {
     "filename": "libimobiledevice--1.4.0_2.sources.tar.gz",
-    "sha256": "fadad0abf967c505573c9cd3e2a0720fc41cd8e9cb78e3bbd6dffdc9a32dc821",
-    "size": 731237
+    "sha256": "5bf045b79076c0097e92809fa68d7df93c43a2659ff32b24a1634e07d0df464d",
+    "size": 731233
   },
   "tag": "sequoia",
   "version": "1.4.0",
   "version_scheme": 0,
-  "workflow_commit": "41daf413db8ffd9284aedbd41e23170b8ba50c04"
+  "workflow_commit": "b6df9cadc753d4c791d0a41c60e4997c7785c9a3"
 }
