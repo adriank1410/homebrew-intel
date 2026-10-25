@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any",
-  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
+  "core_commit": "68739a4b8e3fd82750acd11b548705b8c61edcaa",
   "filename": "pygobject3--3.58.1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a12fe48b8372947e8c5c0b7da9201446642c0d4df6103e0e1ea7a0e7d2688a32",
   "license": "LGPL-2.1-or-later",
   "name": "pygobject3",
   "pkg_version": "3.58.1_1",
   "recipe_sha256": "624845f44674406ba8dc7e18fec08b9e7bff7f3acde481bbc9ec89d3d5f76e9c",
-  "release": "intel-40152372753-1-pygobject3",
+  "release": "intel-40196029872-1-pygobject3",
   "revision": 1,
-  "run_id": "40152372753",
+  "run_id": "40196029872",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -114,9 +114,9 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     },
     {
       "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
@@ -170,15 +170,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fb3e9bfcbf24609bea835720c2a91b676bde88eafe73143c3db1298a250c7df8",
-  "size": 470364,
+  "sha256": "571dce2523a2916d413de2a9a0cdac745c63b33016d159434f0b963cf8d344e9",
+  "size": 470359,
   "source": {
     "filename": "pygobject3--3.58.1_1.sources.tar.gz",
-    "sha256": "0f210806e52bfcb7a1a39b4e3fb6df66863047902848191c50a94171f0438e42",
-    "size": 1434348
+    "sha256": "2dcf3267d8000305e4fdec08394539dd1c949a69caab3afca56a1d2d0ee8997c",
+    "size": 1434354
   },
   "tag": "sequoia",
   "version": "3.58.1",
   "version_scheme": 0,
-  "workflow_commit": "2504d58b1d594196045faf1eef7af07d5a72c863"
+  "workflow_commit": "46ff4967d809b7d8a697c5ae4cfc135cb2c6608b"
 }
