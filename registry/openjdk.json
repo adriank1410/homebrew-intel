@@ -1,9 +1,9 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "build_profile": "openjdk-intel-boot-jdk-26",
   "cellar": "any",
-  "core_commit": "9d2e1ddbe2aa14959a03bb7dfd53c0871e9858ee",
+  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
   "filename": "openjdk--27.0.1.0.3.sequoia.bottle.tar.gz",
   "formula_sha256": "9d76c1ee3111634fc352aedf2d3078a041d1304214be9964f008b3cfdc1fe9b4",
   "license": {
@@ -14,9 +14,9 @@
   "name": "openjdk",
   "pkg_version": "27.0.1.0.3",
   "recipe_sha256": "230d1e971cba034a2d867883c1dfa9b2b8cb775779093e8be8a8d6bbaafd2a01",
-  "release": "intel-40132327878-1-openjdk",
+  "release": "intel-40222463970-1-openjdk",
   "revision": 0,
-  "run_id": "40132327878",
+  "run_id": "40222463970",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -59,14 +59,14 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "489e561dd0f817224430627ac7c45810a733035cb702cf7142761e4394ecaba0",
+      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0"
+      "pkg_version": "15.0.0_1"
     },
     {
-      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
-      "name": "icu4c@78",
-      "pkg_version": "78.3"
+      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "name": "icu4c@79",
+      "pkg_version": "79.1"
     },
     {
       "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
@@ -170,15 +170,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "be52e0ef8fd50318c121530f19311494d166a8a386938a29b15864caf6a04777",
-  "size": 222846437,
+  "sha256": "d170c1c6eef05a430a8c2667436ebc95da426a27e63e8ebb13eb0030a24d3c4a",
+  "size": 222845963,
   "source": {
     "filename": "openjdk--27.0.1.0.3.sources.tar.gz",
-    "sha256": "cf561ea4bf4405ec38777db2512b4a8ee84e2d2c551121cd35eae843404a2129",
-    "size": 340135529
+    "sha256": "9c4b2e6f11b3ce4d1b7a2d5389d17287df9c981a0c898d13afcf79aee77b8a92",
+    "size": 340135536
   },
   "tag": "sequoia",
   "version": "27.0.1.0.3",
   "version_scheme": 0,
-  "workflow_commit": "0bcaff654ace4a3d007c5152f52edd5fa0cae119"
+  "workflow_commit": "069262e38ee11e2a10d9b0a5a9d3bdd1819f4d35"
 }
