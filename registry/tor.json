@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "332963d53699d6a49b9d16bcb04b9fbc66ae5f00",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "5174f52f7893e1eb4211d994cab3179828a68c13",
+  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
   "filename": "tor--0.4.9.14_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1440fdcb378fb3d9b830f74710387996193700613fe0b0ac2acbe8031ec3f575",
   "license": {
@@ -16,9 +16,9 @@
   "name": "tor",
   "pkg_version": "0.4.9.14_1",
   "recipe_sha256": "90ac4e0a3b0cffc4b8d73d3ffb2546fba22f0426ab8fddc79186238da8ed0127",
-  "release": "intel-39547434571-1-tor",
+  "release": "intel-40188852486-1-tor",
   "revision": 1,
-  "run_id": "39547434571",
+  "run_id": "40188852486",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -36,21 +36,21 @@
       "pkg_version": "1.22"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "b9ad19f8af3eea476f3fd2be262762336cd41b3555abaa91f4b236423a8671e1",
-  "size": 6953830,
+  "sha256": "2ad4acb00eb89c93f145d210b255fac49d7e45077ff72e5814c697d3a29b71a9",
+  "size": 6953713,
   "source": {
     "filename": "tor--0.4.9.14_1.sources.tar.gz",
-    "sha256": "82d2e04d6188b25c3cafd30c8986a2f2dc2d97c66c62effe4b76a199fd2efb78",
-    "size": 10708894
+    "sha256": "6f061c82564fdae7a1b7f972253ba70405a3f683be55ab8037b50c3342ee7419",
+    "size": 10708903
   },
   "tag": "sequoia",
   "version": "0.4.9.14",
   "version_scheme": 0,
-  "workflow_commit": "bbd4ef3d4f911674e2eef6c64394d26c8f4b2a60"
+  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
 }
