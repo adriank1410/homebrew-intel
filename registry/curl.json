@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any",
-  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
+  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
   "filename": "curl--8.23.0.sequoia.bottle.tar.gz",
   "formula_sha256": "0d69822fa0db39c5730b76f619da1f1e0162e21a70a3477ea6730ee2b7ded0aa",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.23.0",
   "recipe_sha256": "e341560ea56db37ffcbf79d3a9c0b07be6b28200702d5a97323de14ee136223e",
-  "release": "intel-39738353830-1-curl",
+  "release": "intel-40188852486-1-curl",
   "revision": 0,
-  "run_id": "39738353830",
+  "run_id": "40188852486",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -54,9 +54,9 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "89f1cf176d714acade8649be76b1f503c091032d922b563ac520a9dbd77ec462",
-  "size": 1716329,
+  "sha256": "0feac701d7621aa6c2a3ece5ad5784b7b03ebb42a038831ab8de281aa623168f",
+  "size": 1716179,
   "source": {
     "filename": "curl--8.23.0.sources.tar.gz",
-    "sha256": "558df8928c4cbcc6fa45802fa5d2a33d7ffa8b6dde5c017759aabb3231931b95",
-    "size": 3453439
+    "sha256": "ab7a70c2dd919452ef5702dcbe00b1b5778547e02235a886e346d3d537d37c0e",
+    "size": 3453453
   },
   "tag": "sequoia",
   "version": "8.23.0",
   "version_scheme": 0,
-  "workflow_commit": "94ce85f2dd72ad17f5f15d6b64f27b41241ceacb"
+  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
 }
