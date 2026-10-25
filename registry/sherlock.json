@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any_skip_relocation",
-  "core_commit": "9d2e1ddbe2aa14959a03bb7dfd53c0871e9858ee",
+  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
   "filename": "sherlock--0.16.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "476b43958465cadcbf54f8cd90d04e9c0fe0b85a9315b8f94d26ac6befdb4e99",
   "license": "MIT",
   "name": "sherlock",
   "pkg_version": "0.16.2_1",
   "recipe_sha256": "27503168383111a9c4b107963c155c73a89dd297a8a57584ceaeee5836142c04",
-  "release": "intel-40132327878-1-sherlock",
+  "release": "intel-40144815222-1-sherlock",
   "revision": 1,
-  "run_id": "40132327878",
+  "run_id": "40144815222",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -79,9 +79,9 @@
       "pkg_version": "4.0.3"
     },
     {
-      "formula_sha256": "2aae0cac18819399a627a94b4e4f70b0946ffdc6da6878e923eb955482c9281e",
+      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
       "name": "python@3.15",
-      "pkg_version": "3.15.0_1"
+      "pkg_version": "3.15.1"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "86887e6eb7d30efb6d42053e53a7fcf62117a404213feb7f505a217aa4bf2b1b",
-  "size": 11946964,
+  "sha256": "76ce86428f4b215f0b3e50359cdef866b8af5affe371586493c0e22fff872eae",
+  "size": 11946965,
   "source": {
     "filename": "sherlock--0.16.2_1.sources.tar.gz",
-    "sha256": "4d9bf1c7d7ec1ee758c85c15a6d25dad1b9029f8309b93a6d37f9e2255cc43b1",
-    "size": 9840698
+    "sha256": "5870ee619880633f956c991788cf9a1d0b4d64871855518c456fcee25b7e5b45",
+    "size": 9840697
   },
   "tag": "sequoia",
   "version": "0.16.2",
   "version_scheme": 0,
-  "workflow_commit": "0bcaff654ace4a3d007c5152f52edd5fa0cae119"
+  "workflow_commit": "00c4eb5b1c7f313b455d8878a75b80591e38af7d"
 }
