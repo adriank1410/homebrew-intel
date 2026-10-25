@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any_skip_relocation",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
-  "filename": "yt-dlp--2026.10.21.sequoia.bottle.tar.gz",
-  "formula_sha256": "6b25650def975b122a5dd65854eb6283b9f9e435a05bad1a3a490d7ae3dc2790",
+  "core_commit": "68739a4b8e3fd82750acd11b548705b8c61edcaa",
+  "filename": "yt-dlp--2026.10.21_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "50c550d7ad67d6b2025ab096f4e061fd83f4164a1b522380a477005d86a741f8",
   "license": "Unlicense",
   "name": "yt-dlp",
-  "pkg_version": "2026.10.21",
-  "recipe_sha256": "46d6b02ae126139cdf9826965d8b7a4ebd3e1b416a1f44e7c6f6b332ee63ec8e",
-  "release": "intel-40188852486-1-yt-dlp",
-  "revision": 0,
-  "run_id": "40188852486",
+  "pkg_version": "2026.10.21_1",
+  "recipe_sha256": "1a6718d03fde266406971061f9b42ec67b36bacdf9a00ba66d22bf218741d282",
+  "release": "intel-40196029872-1-yt-dlp",
+  "revision": 1,
+  "run_id": "40196029872",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c4c37612a18e2564a6298c64067d69e622678d8f523a69f9ce6987f510ebf6c0",
-  "size": 8448948,
+  "sha256": "f7691345cd7c8072c002964d7dd888d1587dd178635ff5ef7982cc06167f6870",
+  "size": 8451528,
   "source": {
-    "filename": "yt-dlp--2026.10.21.sources.tar.gz",
-    "sha256": "9aa489866d8d60753a421bb7c4f635a62743252094e0b87ef8de0b1ec8017e1f",
-    "size": 18137311
+    "filename": "yt-dlp--2026.10.21_1.sources.tar.gz",
+    "sha256": "2953be908aec213434068ce966f779d4afa834a8cb85e05bafc306a090a49dd2",
+    "size": 18138430
   },
   "tag": "sequoia",
   "version": "2026.10.21",
   "version_scheme": 0,
-  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
+  "workflow_commit": "46ff4967d809b7d8a697c5ae4cfc135cb2c6608b"
 }
