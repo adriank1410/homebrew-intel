@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any_skip_relocation",
-  "core_commit": "58a591517f3a0053b74dc8f246e0237f066e5069",
+  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
   "filename": "yt-dlp--2026.10.21.sequoia.bottle.tar.gz",
   "formula_sha256": "6b25650def975b122a5dd65854eb6283b9f9e435a05bad1a3a490d7ae3dc2790",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.10.21",
   "recipe_sha256": "46d6b02ae126139cdf9826965d8b7a4ebd3e1b416a1f44e7c6f6b332ee63ec8e",
-  "release": "intel-40144815222-1-yt-dlp",
+  "release": "intel-40188852486-1-yt-dlp",
   "revision": 0,
-  "run_id": "40144815222",
+  "run_id": "40188852486",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -69,9 +69,9 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     },
     {
       "formula_sha256": "e6c7e0b80da4ec762e81ad9ee9c64f9c08bd559b25fd5c784e756d7112ce7d1e",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dd0fbf0d503a1220923c690d1418377b0723852d50bf71bdddfebfdf2ef8d160",
-  "size": 8449125,
+  "sha256": "c4c37612a18e2564a6298c64067d69e622678d8f523a69f9ce6987f510ebf6c0",
+  "size": 8448948,
   "source": {
     "filename": "yt-dlp--2026.10.21.sources.tar.gz",
-    "sha256": "0391b11ce971f71431a81aea33e6f6da1cd23cd2388acf4b60913a16a11cc8be",
-    "size": 18137289
+    "sha256": "9aa489866d8d60753a421bb7c4f635a62743252094e0b87ef8de0b1ec8017e1f",
+    "size": 18137311
   },
   "tag": "sequoia",
   "version": "2026.10.21",
   "version_scheme": 0,
-  "workflow_commit": "00c4eb5b1c7f313b455d8878a75b80591e38af7d"
+  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
 }
