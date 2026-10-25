@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "38495687df01c86c02349292cb58603c1130b2b7",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any",
-  "core_commit": "ffe3e266efee644b28d73676d3f131b58950eebd",
-  "filename": "simdutf--9.3.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "ab161a72d2fed255ac87c057f289c33ac56a4997ad29416cbbd83e7924f7752e",
+  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "filename": "simdutf--9.3.2_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "cc795002abbdc672ec3307a007e9197d6c4fa3a67f61d4bc3c1286ab1e59adc5",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -12,28 +12,28 @@
     ]
   },
   "name": "simdutf",
-  "pkg_version": "9.3.2",
-  "recipe_sha256": "98c3a1a9ba07c7a3ff0c04d15acf9452c463d72b2927300c1bc090815a0463ce",
-  "release": "intel-39204027732-1-simdutf",
-  "revision": 0,
-  "run_id": "39204027732",
+  "pkg_version": "9.3.2_1",
+  "recipe_sha256": "50f8c2e48b67235c94aca1cf55ec56c9fdb7bbc7d467e5826e218cb40d20be47",
+  "release": "intel-40163892376-1-simdutf",
+  "revision": 1,
+  "run_id": "40163892376",
   "runtime_dependencies": [
     {
-      "formula_sha256": "c4d64e2dec360643443674664512d0a8bce1f3b83e809932a1a29e7eeb6c0f51",
-      "name": "icu4c@78",
-      "pkg_version": "78.3"
+      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "name": "icu4c@79",
+      "pkg_version": "79.1"
     }
   ],
   "schema": 1,
-  "sha256": "de5e06326ffa84e54e4a1010efc0d4e9ec3b89e186b76f581ad6859c662725ad",
-  "size": 616909,
+  "sha256": "339c936fd9d09c09ab53f404aa43367d8b6ceebef7ed0ace9a7f98107a8d4b91",
+  "size": 616934,
   "source": {
-    "filename": "simdutf--9.3.2.sources.tar.gz",
-    "sha256": "fb27b03279dea4ed5907da42234e80bd77f1849a9bed090bc23b26520c9c9181",
-    "size": 3519520
+    "filename": "simdutf--9.3.2_1.sources.tar.gz",
+    "sha256": "1aaaec72864f5e540a85ef25b84b42ff8403eab437c25239338f91e811903f58",
+    "size": 3519513
   },
   "tag": "sequoia",
   "version": "9.3.2",
   "version_scheme": 0,
-  "workflow_commit": "125ac924320c45ee01145cb1d594f3b7f9e3067c"
+  "workflow_commit": "fded5ae8244f28492e6984340a9fe8240b395c2e"
 }

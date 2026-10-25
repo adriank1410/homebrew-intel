@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "cellar": "any",
+  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "filename": "icu4c@79--79.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+  "license": "Unicode-3.0",
+  "name": "icu4c@79",
+  "pkg_version": "79.1",
+  "recipe_sha256": "dc4e8baf0e49e638e00554492f8ba77bf3c67d074f91dcb30d2346fd5da8dde6",
+  "release": "intel-40163892376-1-simdutf",
+  "revision": 0,
+  "run_id": "40163892376",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "ed567ab8ac589c78831e7e90341098f6a559063c362ca33ecfb1ea9e1690f241",
+  "size": 31925595,
+  "source": {
+    "filename": "icu4c@79--79.1.sources.tar.gz",
+    "sha256": "eb349c45c57c65f96b3d51f50b0b8f0e79991accfd223e67e5ca0ed931eb5335",
+    "size": 26507929
+  },
+  "tag": "sequoia",
+  "version": "79.1",
+  "version_scheme": 0,
+  "workflow_commit": "fded5ae8244f28492e6984340a9fe8240b395c2e"
+}
