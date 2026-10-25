@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3073d6a8c34f71da054b000cfdbb62594a07c969",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "8a362003821e1605af73bc1488741cc6b2ea4799",
+  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
   "filename": "bash--5.3.20.sequoia.bottle.tar.gz",
-  "formula_sha256": "93070d9d6d116ab23653adfd72ef6ab4d2b8bde0beac258cbc7f335876d807c4",
+  "formula_sha256": "1e439a2d96db5460f5146e0652f480da856e8640eb59eec02f7ff5a46c107788",
   "license": "GPL-3.0-or-later",
   "name": "bash",
   "pkg_version": "5.3.20",
-  "recipe_sha256": "ee3734da1fb02d9f9a8902b3c43126165ca575994d78f54be4e68cefce4a2323",
-  "release": "intel-39127084449-1-dotnet",
+  "recipe_sha256": "b8d43aa83ce49cf6a27f2dcb11425dddafc1e640d83c849febf7800c888d6c27",
+  "release": "intel-40165608131-1-dotnet",
   "revision": 0,
-  "run_id": "39127084449",
+  "run_id": "40165608131",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "159ea53414b438b1c499beb3c966692a63fe8df84e043afddd3e0640b78b88c0",
-  "size": 3421015,
+  "sha256": "9523ca5c9e8a43d65c63b6b1e0341c7024463b705c14343d210ba2bc7f394c91",
+  "size": 3421019,
   "source": {
     "filename": "bash--5.3.20.sources.tar.gz",
-    "sha256": "a4cecccffed6bc5148b921e066e99bf5c561c85254de70875dc41db929cc9892",
-    "size": 11397343
+    "sha256": "55bf0b48cd41eb4d56e99df0dae70ffc50101d29e8e7735ffa4db3950995404b",
+    "size": 11397344
   },
   "tag": "sequoia",
   "version": "5.3.20",
   "version_scheme": 0,
-  "workflow_commit": "41e945655b16a387e0c09c3fd9964de973ec01d4"
+  "workflow_commit": "b6df9cadc753d4c791d0a41c60e4997c7785c9a3"
 }
