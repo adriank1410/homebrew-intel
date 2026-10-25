@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any",
-  "core_commit": "e8349eb3861a0ba674ab2069b63791df1cac2ea6",
-  "filename": "z3--5.3.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "7fa080c800e9dc84fb382a5185714d569cca941e0fdf31a13e01fa6d31d1beae",
+  "core_commit": "2ec512cb80d55669a92730381171a6950fcb94fe",
+  "filename": "z3--5.3.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "037c8653cb33fa77e154ab76e1fee068224805e96b0404d535085806650c8454",
   "license": "MIT",
   "name": "z3",
-  "pkg_version": "5.3.1",
-  "recipe_sha256": "9789cb35b3b8f2bca9f93fbf0cbf7835302fb839a2f2af7f2f80ac69f2e69182",
-  "release": "intel-39004197512-1-z3",
+  "pkg_version": "5.3.2",
+  "recipe_sha256": "6d292f62e7a882bbf2e4f0dc3f5bacc73ee6c1bd433f7d9d3bca759b64702fad",
+  "release": "intel-40238629073-1-z3",
   "revision": 0,
-  "run_id": "39004197512",
+  "run_id": "40238629073",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "4c24043359febb84809f91d81a2d9d2c218dfc8103de2c9279af080fe87ae5f6",
-  "size": 17771480,
+  "sha256": "edfb33eec7af8b23c0037a7d04b826bc6f2c29956cda61783a2e0211ec2d541d",
+  "size": 18313842,
   "source": {
-    "filename": "z3--5.3.1.sources.tar.gz",
-    "sha256": "01b4d3a4aa99f71a3569de0026d3ef7d123907ad5da86977270a81506e5fbaa6",
-    "size": 7869749
+    "filename": "z3--5.3.2.sources.tar.gz",
+    "sha256": "ec20f4d8341d61b920cdfe6752c9ef7c82bddf04f629431f050e4ef7e280538f",
+    "size": 10715957
   },
   "tag": "sequoia",
-  "version": "5.3.1",
+  "version": "5.3.2",
   "version_scheme": 0,
-  "workflow_commit": "2daded48adedefacfea961ff7252073392b80926"
+  "workflow_commit": "091935c10c006a41437a00870ddd2371a3755178"
 }
