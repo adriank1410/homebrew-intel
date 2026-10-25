@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any_skip_relocation",
-  "core_commit": "68739a4b8e3fd82750acd11b548705b8c61edcaa",
-  "filename": "amass--5.1.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "a1d98c083b2e62ff72f7791599e0772b8b6743a8282e93b586d8bc5068afbff7",
+  "core_commit": "2ec512cb80d55669a92730381171a6950fcb94fe",
+  "filename": "amass--5.1.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "2bbfc9e714f287e1e8726146e0607a4626c166a4a5137a1a526e38173fdbd74f",
   "license": "Apache-2.0",
   "name": "amass",
-  "pkg_version": "5.1.2",
-  "recipe_sha256": "0ea36271325a7c3673b117c77b789752df4add22386dd5af95f6884a70816daa",
-  "release": "intel-40196029872-1-amass",
+  "pkg_version": "5.1.3",
+  "recipe_sha256": "c8b6fdb96c60e94c3da2b7b7cf55d3f12cd16a47e4d902b9f10cf2f375bd2f9d",
+  "release": "intel-40238629073-1-amass",
   "revision": 0,
-  "run_id": "40196029872",
+  "run_id": "40238629073",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "e9a9196fda1d557993935b367a0491472f274ab64b59d43c366ff3a3f1af9ae8",
-  "size": 17500842,
+  "sha256": "18b1f6de112ff398276a2d117347db34d73d42a29109b6f9a264b4f72d4cb80b",
+  "size": 17500684,
   "source": {
-    "filename": "amass--5.1.2.sources.tar.gz",
-    "sha256": "d00166c0bda5c6077daab3fb77c224c16dddd791b9ce25a28bf4c70f7f9d77ad",
-    "size": 167430966
+    "filename": "amass--5.1.3.sources.tar.gz",
+    "sha256": "0f9484be694e1f9d6f443708b29f9114215958a1d91483e687450c52a59464c4",
+    "size": 167430953
   },
   "tag": "sequoia",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "version_scheme": 0,
-  "workflow_commit": "46ff4967d809b7d8a697c5ae4cfc135cb2c6608b"
+  "workflow_commit": "091935c10c006a41437a00870ddd2371a3755178"
 }
