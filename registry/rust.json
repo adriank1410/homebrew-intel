@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
   "cellar": "any",
-  "core_commit": "80a7992be000df4fdcf8da713793dd61fe277a12",
+  "core_commit": "68739a4b8e3fd82750acd11b548705b8c61edcaa",
   "filename": "rust--1.99.1.sequoia.bottle.tar.gz",
   "formula_sha256": "b3e6ec47bc327e7d9f132be8b5ee880b64e8128ef3eedb70459677bdedabd18a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.99.1",
   "recipe_sha256": "aece397ba5dfeb11c93fc0d7ff2afe6ae3128da5c60f557a72196ab620f40bea",
-  "release": "intel-39691675621-1-rust",
+  "release": "intel-40196029872-1-rust",
   "revision": 0,
-  "run_id": "39691675621",
+  "run_id": "40196029872",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -49,9 +49,9 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     },
     {
       "formula_sha256": "824cd395375109bfca1aa408774c9c91214ca7d7792c555b1a9fa0635f78893c",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c989080d61c71561f1f420ec34af4603b5267d002a8d9b4f65d2c25640a60896",
-  "size": 111577442,
+  "sha256": "760ff4d54f544f76e35c87c01d217f3861f100f62a378c5708d1cd96b717fde9",
+  "size": 111574307,
   "source": {
     "filename": "rust--1.99.1.sources.tar.gz",
-    "sha256": "55563f02ceb6cb445e3a1ac9f8c4c0db484cbba9fd1dd5badf9fbba41e47c408",
+    "sha256": "b660271c63348cbd8beb6c2d3b20a7577dba15a01c78a9e1f9e2960f87153eec",
     "size": 657788456
   },
   "tag": "sequoia",
   "version": "1.99.1",
   "version_scheme": 0,
-  "workflow_commit": "77f4d773457dda005a43bdac672d72ac153217cd"
+  "workflow_commit": "46ff4967d809b7d8a697c5ae4cfc135cb2c6608b"
 }
