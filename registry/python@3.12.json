@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "c4c6033d89313283783dbf22226cbd21ba9d341d",
-  "filename": "python@3.12--3.12.15_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "cfda5591ab44d6d5d61e6efebe57e93c0c3507cdad0c413100dd33995cdb0454",
+  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
+  "filename": "python@3.12--3.12.16.sequoia.bottle.tar.gz",
+  "formula_sha256": "c4f505d395c0b49bb4fb3b3ba4aa6394c46c3dcdb364a9ad11f9cb22c17e5ce9",
   "license": "Python-2.0",
   "name": "python@3.12",
-  "pkg_version": "3.12.15_1",
-  "recipe_sha256": "b447e359ecfe314d286f327ed7fbe82bffe06b90e870e3dd0a9c18aacbbcfa23",
-  "release": "intel-39623354244-1-python-at-3.12",
-  "revision": 1,
-  "run_id": "39623354244",
+  "pkg_version": "3.12.16",
+  "recipe_sha256": "bee6806e03b5a7dc485a7b0fe044740e21d0de934537214c5df01e463eb4f951",
+  "release": "intel-40248874254-1-python-at-3.12",
+  "revision": 0,
+  "run_id": "40248874254",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dc05d894eb739241609914451a780c11f196cf99cfb50ba5e263ac0a3a0da312",
-  "size": 18071692,
+  "sha256": "236ace6acb38d6b5b5086153fbe9362e0c4815cf5ec66111490459706485fe43",
+  "size": 18080119,
   "source": {
-    "filename": "python@3.12--3.12.15_1.sources.tar.gz",
-    "sha256": "5d12627358412c38890129df6aa3ffbe87d023cbbc5902ad66c0a1902485f547",
-    "size": 29543190
+    "filename": "python@3.12--3.12.16.sources.tar.gz",
+    "sha256": "e9acdb6e079127b79a6f8018c9b6f8e809f982d6a3bb2c879c019fb29f56b190",
+    "size": 29553485
   },
   "tag": "sequoia",
-  "version": "3.12.15",
+  "version": "3.12.16",
   "version_scheme": 0,
-  "workflow_commit": "9de7cc897a2ba117aafc1c34229d435c7f09286b"
+  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
 }
