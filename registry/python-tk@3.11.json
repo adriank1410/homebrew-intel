@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any",
-  "core_commit": "68739a4b8e3fd82750acd11b548705b8c61edcaa",
-  "filename": "python-tk@3.11--3.11.17.sequoia.bottle.tar.gz",
-  "formula_sha256": "93d1941bf9ac1671574946089ef740dc9969968f91ffcd12da7f59255a8ba1d6",
+  "core_commit": "52346286de0269d87ca1cb19ed0f0b376c007949",
+  "filename": "python-tk@3.11--3.11.18.sequoia.bottle.tar.gz",
+  "formula_sha256": "5c4a8ee22ef8df54bd1b2c3b25e1533d99138a83f6ec1d4f3daeaf27c707b2db",
   "license": "Python-2.0",
   "name": "python-tk@3.11",
-  "pkg_version": "3.11.17",
-  "recipe_sha256": "809f948cbc54e586208138ad69ce9c97ea28bea4b826ec35d051243cdc6d6583",
-  "release": "intel-40205253969-1-python-tk-at-3.11",
+  "pkg_version": "3.11.18",
+  "recipe_sha256": "c2698fa6455ceac2f6cf75268d38bd85bf32d4b60ed0643d9a23da7fd513d8e5",
+  "release": "intel-40292655967-1-python-tk-at-3.11",
   "revision": 0,
-  "run_id": "40205253969",
+  "run_id": "40292655967",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -29,9 +29,9 @@
       "pkg_version": "3.5.9"
     },
     {
-      "formula_sha256": "aa59205e82b1a5a0f2a5c612af3658b83c99225a9624fa118b316ec581c47c3c",
+      "formula_sha256": "c1ca553942fea43942ed1ad0c16af0d6a1a130016ba4a9e14a8b562ab6ca8d57",
       "name": "python@3.11",
-      "pkg_version": "3.11.17_2"
+      "pkg_version": "3.11.18"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ec3302080ec34292c417bea8f4b9d2f5a7c4145679611efa2227bcd0630d26ae",
-  "size": 33124,
+  "sha256": "ecb149e7f156912296e7630aaea6b70a9dde210bec768b39dc64369374e30f68",
+  "size": 33108,
   "source": {
-    "filename": "python-tk@3.11--3.11.17.sources.tar.gz",
-    "sha256": "d2619740c7cc65379275c2fada594f3bd1ccef145494dbd9486dab16321f4e14",
-    "size": 26524336
+    "filename": "python-tk@3.11--3.11.18.sources.tar.gz",
+    "sha256": "fd2eae8c6e23ef941cbb7c9001f84c1ec899c8cc1e1807921c3aefc5aaded8ea",
+    "size": 26535230
   },
   "tag": "sequoia",
-  "version": "3.11.17",
+  "version": "3.11.18",
   "version_scheme": 0,
-  "workflow_commit": "76e46e1135f09e109049a714fc47e278526c702e"
+  "workflow_commit": "40f298d5144646a0ecd21d020ec86c8cd42eac84"
 }
