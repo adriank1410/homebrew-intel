@@ -184,7 +184,9 @@ W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek komp
 wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
 (`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach.
 
-`source_build_holds` jest puste. Wpis dla pary Qt 6.11.2 z md4c 0.6.0 oraz
+`source_build_holds` wstrzymuje plik formuły `openjdk` 27.0.1 (upstream wymaga
+teraz Arm na macOS) oraz plik formuły `hashcat` 8.0.0 (jego test Metal przerywa
+się na runnerze Intel). Każde wstrzymanie wygasa, gdy ten plik się zmieni. Wpis dla pary Qt 6.11.2 z md4c 0.6.0 oraz
 wpis dla przepisu ocrmypdf 17.13.0 usunięto po publikacji butelek Sequoia dla
 `qtbase` 6.12.0_1 i `ocrmypdf` 17.13.0. `blocked_source_builds` wyklucza
 `llvm`, `qt`, `qtwebengine` i `qtwebview`. Szczegóły:
