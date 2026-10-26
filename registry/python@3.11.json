@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "68739a4b8e3fd82750acd11b548705b8c61edcaa",
-  "filename": "python@3.11--3.11.17_2.sequoia.bottle.tar.gz",
-  "formula_sha256": "aa59205e82b1a5a0f2a5c612af3658b83c99225a9624fa118b316ec581c47c3c",
+  "core_commit": "52346286de0269d87ca1cb19ed0f0b376c007949",
+  "filename": "python@3.11--3.11.18.sequoia.bottle.tar.gz",
+  "formula_sha256": "c1ca553942fea43942ed1ad0c16af0d6a1a130016ba4a9e14a8b562ab6ca8d57",
   "license": "Python-2.0",
   "name": "python@3.11",
-  "pkg_version": "3.11.17_2",
-  "recipe_sha256": "6d65b191d57356f60975e9c6b57bf43bc2c7081d9242153277f59c879d20b62b",
-  "release": "intel-40196029872-1-python-at-3.11",
-  "revision": 2,
-  "run_id": "40196029872",
+  "pkg_version": "3.11.18",
+  "recipe_sha256": "6efcd882b9892068cc82fee85299fe4109ee84b5a47bf404fe38587305359974",
+  "release": "intel-40276503007-1-python-at-3.11",
+  "revision": 0,
+  "run_id": "40276503007",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7f324c207371da939e04c7da5c8ba595648925f176b5fa53e1d25400e79abe36",
-  "size": 15452188,
+  "sha256": "6074fc65e22a188d5c07c490a500769825abdaea5ec0661dd47301bb019c66d4",
+  "size": 15459534,
   "source": {
-    "filename": "python@3.11--3.11.17_2.sources.tar.gz",
-    "sha256": "c0d3fb2bffa523998ece3527fb6e64688fdf0faa1d0eebfcac018fffd4467bf1",
-    "size": 30092801
+    "filename": "python@3.11--3.11.18.sources.tar.gz",
+    "sha256": "6fbbe40e6cfa36ef636a1e5b72ac2966e0f9854386e8ab54d7c62fa98064ba17",
+    "size": 30101192
   },
   "tag": "sequoia",
-  "version": "3.11.17",
+  "version": "3.11.18",
   "version_scheme": 0,
-  "workflow_commit": "46ff4967d809b7d8a697c5ae4cfc135cb2c6608b"
+  "workflow_commit": "84942b29fadde5b9e7c68b9edb305cce4dc75abc"
 }
