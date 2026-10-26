@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
   "filename": "icu4c@78--78.3_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "36d5977a4e166b0f4ec9230cf2e9e4c024373efca4f242071994b2c343e717b9",
+  "formula_sha256": "c69d7e6e3bc94f009fc7ae97426e974a1301c10b4e3d76efdf8282078629dfab",
   "license": "Unicode-3.0",
   "name": "icu4c@78",
   "pkg_version": "78.3_1",
-  "recipe_sha256": "83073f0aa911462d9104ecd82cfad548b609f0949700d2ae0edd9584028b8273",
-  "release": "intel-40163892376-1-icu4c-at-78",
+  "recipe_sha256": "4870b9c474f54c1cb816a28d06c6ced278f44fa823a7a5b8a88cafe074ee49ef",
+  "release": "intel-40248874254-1-icu4c-at-78",
   "revision": 1,
-  "run_id": "40163892376",
+  "run_id": "40248874254",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "a9e5faca8124acee0bbd058aa2935b3667d71630e0b27eb55912710190e0234d",
-  "size": 31816120,
+  "sha256": "d496ff219063eb6979c1aa26731d245c1e0585b11a17e3f2151c3f2999f44afd",
+  "size": 31816048,
   "source": {
     "filename": "icu4c@78--78.3_1.sources.tar.gz",
-    "sha256": "b2abddd8b75a3d4d200c01c2dbd1942987af24162a94bf7c258c9dc06fb4c9fd",
-    "size": 26315322
+    "sha256": "4b8fffd4d2bcca13de82a07043be030e708a43b0068d51009568a564a43b7279",
+    "size": 26315380
   },
   "tag": "sequoia",
   "version": "78.3",
   "version_scheme": 0,
-  "workflow_commit": "fded5ae8244f28492e6984340a9fe8240b395c2e"
+  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
 }
