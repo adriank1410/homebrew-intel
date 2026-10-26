@@ -19,7 +19,18 @@
     "llvm": "llvm-no-pgo",
     "openjdk": "openjdk-intel-boot-jdk-26"
   },
-  "source_build_holds": [],
+  "source_build_holds": [
+    {
+      "name": "hashcat",
+      "formula_sha256": "106cea3252302ae8e17386d19f9f025e70d0e21e7210d5d4a33f9a2dec28e797",
+      "dependencies": []
+    },
+    {
+      "name": "openjdk",
+      "formula_sha256": "0fea82ef0501c239c6c228105f59f9c01a4895b6c98db274955213d8c79329ad",
+      "dependencies": []
+    }
+  ],
   "scheduled_batch_size": 24,
   "permissive_license_tokens": [
     "0BSD",

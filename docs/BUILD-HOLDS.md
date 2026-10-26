@@ -15,8 +15,10 @@ bypass a source hold. The client still refuses an incomplete bottle graph.
 No target, existing registry record, release, source guard, signature check,
 license requirement or recipe is removed or weakened by these holds.
 
-`source_build_holds` is currently empty. The Qt 6.11.2 pair and the ocrmypdf
-17.13.0 recipe below were removed from `source_build_holds` after publication.
+`source_build_holds` currently holds two formula files from the
+26 October 2026 incident below: `openjdk` 27.0.1 and `hashcat` 8.0.0. The Qt
+6.11.2 pair and the ocrmypdf 17.13.0 recipe below were removed from
+`source_build_holds` after publication.
 
 ## Incident: 22 September 2026
 
@@ -185,6 +187,57 @@ To retire the variant, remove the `openjdk` entry from `build_profiles` in
 `policy/config.json` and from `APPROVED_BUILD_PROFILES` in `intelbrew/core.py`.
 Do this when upstream restores an Intel boot JDK or moves to JDK 28; at that
 point the variant already refuses to apply.
+
+## Incident: 26 October 2026
+
+Evidence: [Sequoia Intel bottles run 40329905222](https://github.com/adriank1410/homebrew-intel/actions/runs/40329905222)
+(head `21ffa00`) and its duplicate
+[run 40333768607](https://github.com/adriank1410/homebrew-intel/actions/runs/40333768607)
+(head `bde28e7`) failed for the same two reasons. Both ran with core pin
+`f046c3cb8ad40f4edf8a5e5c1710615bb93a1c2f`. The owner chose to hold both
+formula files rather than change either recipe.
+
+### openjdk: upstream now requires Arm on macOS
+
+Homebrew-core commit
+[`2d52dc6671`](https://github.com/Homebrew/homebrew-core/commit/2d52dc6671cddf66a3bee75aa2b2b68236894664)
+("openjdk: require Arm on macOS") added `depends_on arch: :arm64` inside
+`on_macos`. [`openjdk` job 121597153023](https://github.com/adriank1410/homebrew-intel/actions/runs/40329905222/job/121597153023)
+stopped with "openjdk: The arm64 architecture is required for this software."
+The `openjdk-intel-boot-jdk-26` variant replaces only the boot JDK resource, so
+it does not get past this requirement. A client would also reject a bottle
+built from this recipe at its requirement check. The arm64 requirement is not
+removed or patched: that alternative was rejected.
+
+The hold is the `openjdk` 27.0.1 formula file alone:
+`0fea82ef0501c239c6c228105f59f9c01a4895b6c98db274955213d8c79329ad`.
+The published `openjdk` record is not changed and remains subject to the normal
+dependency drift checks.
+
+### hashcat: Metal assertion during verification
+
+`hashcat` 8.0.0 (homebrew-core
+[`e155fe6dda`](https://github.com/Homebrew/homebrew-core/commit/e155fe6dda000e1a3414a40cf4bef7e4fc0df22b))
+built, but [`verify` job 121601159425](https://github.com/adriank1410/homebrew-intel/actions/runs/40329905222/job/121601159425)
+aborted in the formula test with
+"+[MTLLoader sliceIDForDevice:legacyDriverVersion:airntDriverVersion:]:685:
+failed assertion `Target device architecture is nil'". Repeating the same recipe
+on the same runner image does not change the result.
+
+The hold is the `hashcat` 8.0.0 formula file alone:
+`106cea3252302ae8e17386d19f9f025e70d0e21e7210d5d4a33f9a2dec28e797`.
+
+### Expiry and removal
+
+Each hold matches only that exact formula file. Any change to `openjdk.rb` or
+`hashcat.rb` picked up by pin maintenance, including a bottle-block update,
+expires the hold and the next run builds the root normally. For `openjdk`
+that retry fails the same way while upstream keeps the arm64 requirement; in
+that case add a hold for the new file hash rather than weakening the recipe.
+To lift a hold early, delete its entry from `source_build_holds` in
+`policy/config.json` (or revert the pull request that added it). Once the
+recipe file changes or a matching bottle is published, delete the stale
+entry so the policy file does not keep a hash that can no longer occur.
 
 ## Existing resource exclusions
 

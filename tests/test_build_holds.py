@@ -35,6 +35,22 @@ INCIDENT_HOLDS = [
     },
 ]
 
+# The 26 October 2026 holds (run 40329905222, core f046c3cb8a): openjdk 27.0.1
+# requires arm64 on macOS since core 2d52dc6671; hashcat 8.0.0 aborts on a Metal
+# assertion in its formula test.
+LIVE_HOLDS = [
+    {
+        "name": "hashcat",
+        "formula_sha256": "106cea3252302ae8e17386d19f9f025e70d0e21e7210d5d4a33f9a2dec28e797",
+        "dependencies": [],
+    },
+    {
+        "name": "openjdk",
+        "formula_sha256": "0fea82ef0501c239c6c228105f59f9c01a4895b6c98db274955213d8c79329ad",
+        "dependencies": [],
+    },
+]
+
 spec = importlib.util.spec_from_file_location(
     "native_plan_build_holds", ROOT / "scripts/native-plan.py")
 native_plan = importlib.util.module_from_spec(spec)
@@ -80,7 +96,7 @@ class SourceBuildHoldTests(unittest.TestCase):
         return config
 
     def test_retired_publication_holds_leave_only_heavy_name_blocks(self):
-        self.assertEqual(self.config["source_build_holds"], [])
+        self.assertEqual(self.config["source_build_holds"], LIVE_HOLDS)
         self.assertIn("llvm", self.blocked)
         self.assertIn("qt", self.blocked)
         self.assertIn("qtwebengine", self.blocked)
@@ -89,6 +105,26 @@ class SourceBuildHoldTests(unittest.TestCase):
         self.assertNotIn("ocrmypdf", self.blocked)
         for name in ("deno", "rust", "qtsvg", "qtdeclarative", "qttools"):
             self.assertNotIn(name, self.blocked)
+
+    def test_live_holds_stop_openjdk_and_hashcat_only_for_their_recipe_files(self):
+        for hold in LIVE_HOLDS:
+            name = hold["name"]
+            with self.subTest(name=name):
+                held = {name: meta(name, formula_sha256=hold["formula_sha256"])}
+                with self.assertRaisesRegex(Error, f"Source build excluded by policy: {name}"):
+                    self.plan(held, [name])
+                changed = self.plan({name: meta(name, formula_sha256="e" * 64)}, [name])
+                self.assertEqual(changed["nodes"][name]["provider"], "build")
+                self.assertNotIn(name, self.blocked)
+        nodes = {
+            "openjdk": meta("openjdk", formula_sha256=LIVE_HOLDS[1]["formula_sha256"]),
+            "hashcat": meta("hashcat", formula_sha256=LIVE_HOLDS[0]["formula_sha256"]),
+            "simdutf": meta("simdutf"),
+        }
+        selected, blocked = native_plan.roots_needing_build(
+            ["hashcat", "openjdk", "simdutf"], Inspector(nodes), {}, self.config)
+        self.assertEqual(selected, ["simdutf"])
+        self.assertEqual(set(blocked), {"hashcat", "openjdk"})
 
     def test_direct_source_holds_stop_before_fetching_dependency_metadata(self):
         inspector = Inspector({"llvm": meta("llvm", build=["must-not-inspect"])})
