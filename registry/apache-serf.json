@@ -1,25 +1,25 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
   "cellar": "any",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
   "filename": "apache-serf--1.3.10_1.sequoia.bottle.tar.gz",
   "formula_sha256": "77e45d4583457514a82878b29d2bfefd7f9ed43a2021f89dd5921d780066a265",
   "license": "Apache-2.0",
   "name": "apache-serf",
   "pkg_version": "1.3.10_1",
   "recipe_sha256": "b5ade8274e6fd5d111e4e75e5f7d9f5582093928f7a1229093284556774e5565",
-  "release": "intel-40188852486-1-apache-serf",
+  "release": "intel-40248874254-1-apache-serf",
   "revision": 1,
-  "run_id": "40188852486",
+  "run_id": "40248874254",
   "runtime_dependencies": [
     {
-      "formula_sha256": "0356730427b6c9dcb81ad473807a21dc66bc7d02f053654d10f6459b870eadde",
+      "formula_sha256": "ad73aa819d91760761c65d44ee7716c44743b1b901360e8967c0277e140c5bdd",
       "name": "apr",
       "pkg_version": "1.7.6"
     },
     {
-      "formula_sha256": "c30728a913f5cfc01c5cc64135b5d7f8f149b8d85503a710da49d1c4228472d4",
+      "formula_sha256": "23a489a3d1a8d113438c2d46c6263b693a7b14c9b79fcd282bc2e3e149de892f",
       "name": "apr-util",
       "pkg_version": "1.6.5_1"
     },
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "92bc102da491f4b1572c520cccbecd8087fdbcd51cbf5e663cdfcf1876790926",
-  "size": 320844,
+  "sha256": "8e1e9eb068016b3a28aa454ff089cd6cf93e387c5585dc1222697249f87b8e89",
+  "size": 320854,
   "source": {
     "filename": "apache-serf--1.3.10_1.sources.tar.gz",
-    "sha256": "9b6753a487655ecbc70c2986da7b6eb4d3269ad4def2852a6233fb7f1974a8f5",
-    "size": 158625
+    "sha256": "0dd56b5e1836bcdcb62b55ff5dbbd73ec27374003d823d54d558e6a2fcde2e4c",
+    "size": 158618
   },
   "tag": "sequoia",
   "version": "1.3.10",
   "version_scheme": 0,
-  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
+  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
 }
