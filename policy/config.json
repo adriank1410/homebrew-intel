@@ -3,7 +3,7 @@
   "repository": "adriank1410/homebrew-intel",
   "tap": "adriank1410/intel",
   "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
-  "core_commit": "f046c3cb8ad40f4edf8a5e5c1710615bb93a1c2f",
+  "core_commit": "e55bacbb3107e8e09dcfb7be5ede808a4b6f4c97",
   "max_graph_nodes": 400,
   "max_source_builds": 60,
   "runner": "macos-15-intel",
