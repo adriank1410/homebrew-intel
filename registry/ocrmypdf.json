@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
+  "brew_commit": "57c486f02ee4f8f1fc179bc3775c3ac3dc6262d8",
   "cellar": "any",
-  "core_commit": "23f236610be219a8ad0af042912f65415b93721e",
+  "core_commit": "cfcce8998db0bd2b8524dc19dd07dfbb2cf2acf9",
   "filename": "ocrmypdf--17.13.0.sequoia.bottle.tar.gz",
   "formula_sha256": "1378b58fcd1888c0430167dc0c72a8b99202acc6667972b290e8fdb739119def",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.13.0",
   "recipe_sha256": "b8c56c858792bdb0e9db0cc326561d32b6cfb699a6e2ce048b8c9ff4b07ec0d1",
-  "release": "intel-40427793946-1-ocrmypdf",
+  "release": "intel-40505159494-1-ocrmypdf",
   "revision": 0,
-  "run_id": "40427793946",
+  "run_id": "40505159494",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -319,14 +319,14 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "2043d83738cd119ba6e4f704b1dc84fcdf1fde14219892e86c3346db3faf2f8c",
+      "formula_sha256": "7bf31310bf3273ae643bbf182ad214f413e607c486fe73103ac0f627b7489377",
       "name": "pydantic",
       "pkg_version": "2.14.1"
     },
     {
-      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
+      "formula_sha256": "dbc5842dccebfa141473e066d07070fdd5c093c78250ec8959fa4b0b69a378c6",
       "name": "python@3.15",
-      "pkg_version": "3.15.1"
+      "pkg_version": "3.15.2"
     },
     {
       "formula_sha256": "1a013dfcaf66b899ddaaf87472345f149daa4c66fd7deecfa128be56cf72d808",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fea14590263fee88c572f5fa946996c3380bb7312ec1dd809980a94e03ffcc67",
-  "size": 17790554,
+  "sha256": "5c1d109db411a329ca9fbca05d32b54a2dfda0fae1d04789c7d80f4ff1102c4e",
+  "size": 17790266,
   "source": {
     "filename": "ocrmypdf--17.13.0.sources.tar.gz",
-    "sha256": "80fef3126ff8d81e95ec9c9e7df29c31d36a249597ca42c4323c0a4223079f39",
-    "size": 81001489
+    "sha256": "fe132ee2c7d11a83ac900bef2bec91b51652e5a0c69fc08c04482b900f8da769",
+    "size": 81001471
   },
   "tag": "sequoia",
   "version": "17.13.0",
   "version_scheme": 0,
-  "workflow_commit": "661b0cc3744dc76e829f1feb204d5c5f825134ff"
+  "workflow_commit": "3ae7849220542951a617dd02222bede47bd2e6b9"
 }
