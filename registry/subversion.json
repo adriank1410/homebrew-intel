@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "52346286de0269d87ca1cb19ed0f0b376c007949",
+  "core_commit": "23f236610be219a8ad0af042912f65415b93721e",
   "filename": "subversion--1.15.0.sequoia.bottle.tar.gz",
   "formula_sha256": "0c8781c175d017b327bd9a378633ac17a8a08e62acb48b7f6f6efa18ee1b1999",
   "license": "Apache-2.0",
   "name": "subversion",
   "pkg_version": "1.15.0",
   "recipe_sha256": "061346e89f8cd46bdd7ee0a88af533fa8e1939eb07a11134482ed46d614b7e55",
-  "release": "intel-40276503007-1-subversion",
+  "release": "intel-40435156173-1-subversion",
   "revision": 0,
-  "run_id": "40276503007",
+  "run_id": "40435156173",
   "runtime_dependencies": [
     {
-      "formula_sha256": "77e45d4583457514a82878b29d2bfefd7f9ed43a2021f89dd5921d780066a265",
+      "formula_sha256": "dccb7a7136dc4d3ce8677d466961ecb8dca60e264f4f15660a4458d394293c88",
       "name": "apache-serf",
       "pkg_version": "1.3.10_1"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e2757cb01bae9950137b94f62e71781ac8a65addcf1eb0db838d1a3ca7abcd93",
-  "size": 7824188,
+  "sha256": "47296fb8487ccc1e01c1dfccdcaca4e987aa14f2054f7dcab81dd94f97da4f59",
+  "size": 7824007,
   "source": {
     "filename": "subversion--1.15.0.sources.tar.gz",
-    "sha256": "af370067a86ab9e73f1955d8c0d80ed67dfd0cf1acdc933d1674af8b023e6641",
-    "size": 8670280
+    "sha256": "ba7d728954145cf3a6a1f16e11926e94fd79c21117f2e2356f83d2baf36cd1c3",
+    "size": 8670274
   },
   "tag": "sequoia",
   "version": "1.15.0",
   "version_scheme": 0,
-  "workflow_commit": "84942b29fadde5b9e7c68b9edb305cce4dc75abc"
+  "workflow_commit": "c3aae7726016ff45b62b1f76a77006edc70d334e"
 }
