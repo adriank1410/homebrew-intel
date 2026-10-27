@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "57c486f02ee4f8f1fc179bc3775c3ac3dc6262d8",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "core_commit": "cfcce8998db0bd2b8524dc19dd07dfbb2cf2acf9",
   "filename": "mono--6.14.1.sequoia.bottle.tar.gz",
   "formula_sha256": "d9b0f04df60d2a4312b5b4caf37d8d3d640fa5166e0700ead21fc8a92b4254cf",
   "license": "Apache-2.0",
   "name": "mono",
   "pkg_version": "6.14.1",
   "recipe_sha256": "8123db505e9490c29f5b2973ff02a3d54ce09ba10e49de515aff7e72b78bd406",
-  "release": "intel-40188852486-1-mono",
+  "release": "intel-40487758889-1-mono",
   "revision": 0,
-  "run_id": "40188852486",
+  "run_id": "40487758889",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -34,9 +34,9 @@
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
+      "formula_sha256": "dbc5842dccebfa141473e066d07070fdd5c093c78250ec8959fa4b0b69a378c6",
       "name": "python@3.15",
-      "pkg_version": "3.15.1"
+      "pkg_version": "3.15.2"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "10f56b764343ae3a4411b9c92e70c6e78ad6e7ea17b1d6700e63671b3bb99492",
-  "size": 121135487,
+  "sha256": "c69b4306e7fe864c16c0dfe6638b9f9538eeedb5eb7e4e9cc31585b7829dd38c",
+  "size": 121133628,
   "source": {
     "filename": "mono--6.14.1.sources.tar.gz",
-    "sha256": "6debac847405a8169e5e706f9a4cfd08fe5790d607b1ab2a8d55c7f10a05d0db",
-    "size": 303884389
+    "sha256": "177cafbdf6993b3e7822b5a7744374bbef75908b4b544a9ee3792963b947a6b0",
+    "size": 303884381
   },
   "tag": "sequoia",
   "version": "6.14.1",
   "version_scheme": 0,
-  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
+  "workflow_commit": "54c502c78cc9c8d39e6289c35a84fd584af1db9f"
 }
