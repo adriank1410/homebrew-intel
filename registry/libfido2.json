@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
   "cellar": "any",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "core_commit": "23f236610be219a8ad0af042912f65415b93721e",
   "filename": "libfido2--1.17.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "ad8867ebdb4ff84bc801e694b5482a8cb7cc9b2ddb83443d10f18ac0df493141",
+  "formula_sha256": "d85b699fad3f7d994ce9379224a73938ca8e6772f5c22e3dc9e67e481edcdddf",
   "license": "BSD-2-Clause",
   "name": "libfido2",
   "pkg_version": "1.17.0_1",
-  "recipe_sha256": "5c824b50be0edffd71828a2a01cf9c88a5a521e0654cecfbc35813434ac408dc",
-  "release": "intel-40165608131-1-libfido2",
+  "recipe_sha256": "d6c7d2b1463ee34b79aa6348a4096a0d309a6283b0690a43613446b68550336e",
+  "release": "intel-40427793946-1-libfido2",
   "revision": 1,
-  "run_id": "40165608131",
+  "run_id": "40427793946",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ab4b389ac037e1484fda1cc4b8c5a1d3aaf38a14af9d25a116b0d9a68a8d78f8",
-  "size": 362751,
+  "sha256": "e8b7251823db7e031e38cdd4064f825c37747c0eb020e4986ce617c1a9426377",
+  "size": 362758,
   "source": {
     "filename": "libfido2--1.17.0_1.sources.tar.gz",
-    "sha256": "3f5ea64b669ea60520f7df51d7d4d8ce4e2bbbada18d493a1091cb303bd1ca63",
-    "size": 715714
+    "sha256": "c253bc3be4a69f9812b1b5fbba6e6c4749807e18607b31a2aa0be662c598ba50",
+    "size": 715666
   },
   "tag": "sequoia",
   "version": "1.17.0",
   "version_scheme": 0,
-  "workflow_commit": "b6df9cadc753d4c791d0a41c60e4997c7785c9a3"
+  "workflow_commit": "661b0cc3744dc76e829f1feb204d5c5f825134ff"
 }
