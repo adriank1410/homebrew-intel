@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qttools--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "d9cb63f8ca221433a271807e20889f0723a3d4dde083e510d93e8397361a60d1",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qttools",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "210ad3078b5ac9804e4b550ea5470999714be713a9ac6577733065a80ea8a574",
-  "release": "intel-40248874254-1-qttools",
+  "release": "intel-40737008531-1-qttools",
   "revision": 1,
-  "run_id": "40248874254",
+  "run_id": "40737008531",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -96,9 +96,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "59c1940148d891192c22db93e1780cdf5e0c34ddb87c430d9020788fd4dcaeef",
+  "sha256": "ecbbd0bf55eaee74190e084b143652749b3c3c7d2ee316ebcf965ada84a16113",
   "size": 8097056,
   "source": {
     "filename": "qttools--6.12.0_1.sources.tar.gz",
-    "sha256": "642d5d3699880e0375f8123e70ab07900ca9019be19a31f277025b09d04cda88",
-    "size": 10880980
+    "sha256": "c93c8ad1b708236fc9e354f9dceb76f2d3e4212e8114a5166d8d5709b1119f2a",
+    "size": 10880988
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
+  "workflow_commit": "51e9f826137b622ba9edc9f12edacffd82887414"
 }
