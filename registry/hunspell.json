@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
+  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
   "cellar": "any",
-  "core_commit": "23f236610be219a8ad0af042912f65415b93721e",
+  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
   "filename": "hunspell--1.7.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "787bde1d5eb736708ff7bd41d3afd3e98f840385ee5a6d56431f203ea2acdf20",
+  "formula_sha256": "e7af465b72d574c0e663b7c00b0c991e737facaa60235e4a27786b71f5b9ab6a",
   "license": {
     "any_of": [
       "MPL-1.1",
@@ -14,10 +14,10 @@
   },
   "name": "hunspell",
   "pkg_version": "1.7.6",
-  "recipe_sha256": "99a011da97d6a425d89da029a23f52f7381b1def00c275d3260fe7f812d143c0",
-  "release": "intel-40427793946-1-hunspell",
+  "recipe_sha256": "e056d5fbc99c8377d9c4660d7f80d975db7961061fc7c7ee7715fdff259650bf",
+  "release": "intel-40774841573-1-hunspell",
   "revision": 0,
-  "run_id": "40427793946",
+  "run_id": "40774841573",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -41,15 +41,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1eb6ed47ba195fd340cc7ecbd9e0fc40242e9fb6130d8a688f8b7ea78438e04c",
-  "size": 725367,
+  "sha256": "7abbda44116246a7cf45448bde9c7a23674bc5721eb57c078bd5244b606b31d3",
+  "size": 725335,
   "source": {
     "filename": "hunspell--1.7.6.sources.tar.gz",
-    "sha256": "68d1cf6eaef5ab2f45f93879eaee32767f8dcbb004ef0da40d8081c4eb368b37",
-    "size": 1184785
+    "sha256": "0cd421141b2d333e3578196cae64a5888b2042bd891de0ff5f71bd0a3c972948",
+    "size": 1184801
   },
   "tag": "sequoia",
   "version": "1.7.6",
   "version_scheme": 0,
-  "workflow_commit": "661b0cc3744dc76e829f1feb204d5c5f825134ff"
+  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
 }

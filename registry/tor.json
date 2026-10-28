@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
-  "filename": "tor--0.4.9.14_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "1440fdcb378fb3d9b830f74710387996193700613fe0b0ac2acbe8031ec3f575",
+  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
+  "filename": "tor--0.4.9.15.sequoia.bottle.tar.gz",
+  "formula_sha256": "14f740b350f47e0ecf442021089f6ab61ca79f7bea4ad781f3e185aeba59303e",
   "license": {
     "all_of": [
       "BSD-2-Clause",
@@ -14,11 +14,11 @@
     ]
   },
   "name": "tor",
-  "pkg_version": "0.4.9.14_1",
-  "recipe_sha256": "90ac4e0a3b0cffc4b8d73d3ffb2546fba22f0426ab8fddc79186238da8ed0127",
-  "release": "intel-40188852486-1-tor",
-  "revision": 1,
-  "run_id": "40188852486",
+  "pkg_version": "0.4.9.15",
+  "recipe_sha256": "6b11fb32f499ce2c17e29b61a2923f2158c3a345de91c65de72fa349c5ca6f71",
+  "release": "intel-40774841573-1-tor",
+  "revision": 0,
+  "run_id": "40774841573",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -42,15 +42,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2ad4acb00eb89c93f145d210b255fac49d7e45077ff72e5814c697d3a29b71a9",
-  "size": 6953713,
+  "sha256": "0d6da880b166b5490f5eb6e09aeace090588865057fe713b7e63aec886bc9678",
+  "size": 6931183,
   "source": {
-    "filename": "tor--0.4.9.14_1.sources.tar.gz",
-    "sha256": "6f061c82564fdae7a1b7f972253ba70405a3f683be55ab8037b50c3342ee7419",
-    "size": 10708903
+    "filename": "tor--0.4.9.15.sources.tar.gz",
+    "sha256": "bb2290f2b4bb947b1b33ecce1c9e97372a5c436b5d746f4419674e18d3efd921",
+    "size": 10710781
   },
   "tag": "sequoia",
-  "version": "0.4.9.14",
+  "version": "0.4.9.15",
   "version_scheme": 0,
-  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
+  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
 }
