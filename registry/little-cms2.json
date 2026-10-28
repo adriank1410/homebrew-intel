@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "little-cms2--2.19.1.sequoia.bottle.tar.gz",
   "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
   "license": "MIT",
   "name": "little-cms2",
   "pkg_version": "2.19.1",
   "recipe_sha256": "7af482e897b7d6703f41e8595684e59eb2d7799f55055101add65d7301bc569b",
-  "release": "intel-37003591479-1-openjpeg",
+  "release": "intel-40716616899-1-little-cms2",
   "revision": 0,
-  "run_id": "37003591479",
+  "run_id": "40716616899",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -19,9 +19,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5460d337a39fce01dc15ff2aa74c206543ff905ea5b26370be8d1964feec1d71",
-  "size": 430480,
+  "sha256": "096e23ddcbbe8d4d3153a2bed8f1c81b80c42a4b2e76ea36f472185520a0ef4a",
+  "size": 430488,
   "source": {
     "filename": "little-cms2--2.19.1.sources.tar.gz",
-    "sha256": "23a2499f4c23c4d99e6bbb0bc96673b74a33198dfa73e468ba807cf56e3f3f66",
-    "size": 5733385
+    "sha256": "fd7c4feef8c55e9a232a95cfffe73ef569914a58372c59447915d7600cb770e9",
+    "size": 5733382
   },
   "tag": "sequoia",
   "version": "2.19.1",
   "version_scheme": 1,
-  "workflow_commit": "f388204cc0e32c5d7d3c8315511371649edc4400"
+  "workflow_commit": "40aa2220151f102ce545c554327115e656e6cce5"
 }
