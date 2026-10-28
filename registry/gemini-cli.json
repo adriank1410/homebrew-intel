@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "a59d9fc5f8361dccde817ce1c066fdf365c8df3e",
   "cellar": "any_skip_relocation",
-  "core_commit": "f4f43f894a1bb9baf29cb1f8ecff171cda80eab6",
+  "core_commit": "21be5f289b83af0efa40c20a9a08781971ff907c",
   "filename": "gemini-cli--0.65.0.sequoia.bottle.tar.gz",
   "formula_sha256": "9984fa01719b07f906c64c4f9284d62870f4f64879659ea387565ea12fbc21c8",
   "license": "Apache-2.0",
   "name": "gemini-cli",
   "pkg_version": "0.65.0",
   "recipe_sha256": "4363741dd96c5a8e886fce956a690745233fbbb98d9f29fbfbe672b75403453c",
-  "release": "intel-40626004866-1-gemini-cli",
+  "release": "intel-40681143545-1-gemini-cli",
   "revision": 0,
-  "run_id": "40626004866",
+  "run_id": "40681143545",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -114,9 +114,9 @@
       "pkg_version": "5.0.6"
     },
     {
-      "formula_sha256": "cc795002abbdc672ec3307a007e9197d6c4fa3a67f61d4bc3c1286ab1e59adc5",
+      "formula_sha256": "200d28856006f626a019e48cf7ff69cea53e982dc51377001b58cc3b929bacd6",
       "name": "simdutf",
-      "pkg_version": "9.3.2_1"
+      "pkg_version": "9.3.3"
     },
     {
       "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6a5ec6843573fe1025198f407a8bee358af6e5961afab28925e33b3f948cc503",
-  "size": 21539851,
+  "sha256": "c5cbd8ce11efbef566f934a4ad571c0b87ac1fedd3e6db23d420d1a87644c21c",
+  "size": 21539978,
   "source": {
     "filename": "gemini-cli--0.65.0.sources.tar.gz",
-    "sha256": "b9a20b30712c8b580a9193960d0668123791a30916ddd48fa27fa89b87c7d80b",
-    "size": 20860444
+    "sha256": "369b4f1ac1c9f417f1a901dc2d342d1de2ecc03c7a1bf2c65518d47a4fa74aaa",
+    "size": 20860437
   },
   "tag": "sequoia",
   "version": "0.65.0",
   "version_scheme": 0,
-  "workflow_commit": "c61db14b25a22759e1b251822e57b517f1f89c71"
+  "workflow_commit": "34989d4ab4593b2781eaa67c17b9eab83eba15c3"
 }
