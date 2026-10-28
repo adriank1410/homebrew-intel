@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qtsvg--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "409cece157cb9725288e5c2fe76f6f2b0f6cbf830f9a91371c3c4b02778f4b58",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsvg",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "a13d4d1c52f77cb7bc331ba974becf6fdb01bd8f5b8905384ed0f37e08a48d1d",
-  "release": "intel-40228962092-1-qtsvg",
+  "release": "intel-40706728745-1-qtsvg",
   "revision": 1,
-  "run_id": "40228962092",
+  "run_id": "40706728745",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -85,9 +85,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ad70d3319947e7b9fa5984399280d851ba16afa20cde8b0cbcea07d97a8ace9a",
-  "size": 317565,
+  "sha256": "999fce09c3d576ee6c358ed7e9830e794a1d42e76e0747294fc49d8dd56602ea",
+  "size": 317560,
   "source": {
     "filename": "qtsvg--6.12.0_1.sources.tar.gz",
-    "sha256": "05f66d773bd44b2a84172b677279a04f931e24b81faaf8efd36028bf24a3378b",
-    "size": 2376051
+    "sha256": "65c072ee25e3a130e7ff3c8207e8f72820917dafd590696cc66610d9caedfdd1",
+    "size": 2376061
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "433e4d3dd7eda64d770b130c7b5b2ccc9255559d"
+  "workflow_commit": "8c06685fa5962cebce5ec79876d82124ea549778"
 }
