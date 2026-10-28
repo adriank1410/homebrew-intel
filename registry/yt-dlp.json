@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57c486f02ee4f8f1fc179bc3775c3ac3dc6262d8",
+  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
   "cellar": "any_skip_relocation",
-  "core_commit": "cfcce8998db0bd2b8524dc19dd07dfbb2cf2acf9",
-  "filename": "yt-dlp--2026.10.21_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "50c550d7ad67d6b2025ab096f4e061fd83f4164a1b522380a477005d86a741f8",
+  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
+  "filename": "yt-dlp--2026.10.26.sequoia.bottle.tar.gz",
+  "formula_sha256": "01c80cd2905986b661787b691fb44a81e71014ed2c7fabd8feffcfaeda22016a",
   "license": "Unlicense",
   "name": "yt-dlp",
-  "pkg_version": "2026.10.21_1",
-  "recipe_sha256": "1a6718d03fde266406971061f9b42ec67b36bacdf9a00ba66d22bf218741d282",
-  "release": "intel-40487758889-1-yt-dlp",
-  "revision": 1,
-  "run_id": "40487758889",
+  "pkg_version": "2026.10.26",
+  "recipe_sha256": "e280e8043453857dc20ebc63b929049eb0c2976052bf7bc3af8747afc4f16db5",
+  "release": "intel-40774841573-1-yt-dlp",
+  "revision": 0,
+  "run_id": "40774841573",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -39,9 +39,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "96344bac0ec6fcd2d85504f6d514ccb91c6c611b9b12d1ac3f3aca4f2c46b693",
-  "size": 8451115,
+  "sha256": "759efebc32a8ab7f66c1db29f307cc9614ec6971b8fff933e685328f9c951a0c",
+  "size": 8595648,
   "source": {
-    "filename": "yt-dlp--2026.10.21_1.sources.tar.gz",
-    "sha256": "930be6cf94eadc056894d37524eccc582060c952149552e0e372c8a17fbc30e0",
-    "size": 18138416
+    "filename": "yt-dlp--2026.10.26.sources.tar.gz",
+    "sha256": "799ae2b939d0f3015b961fbea43c9a989812aca8e9329971f80aa9e67989720f",
+    "size": 18178642
   },
   "tag": "sequoia",
-  "version": "2026.10.21",
+  "version": "2026.10.26",
   "version_scheme": 0,
-  "workflow_commit": "54c502c78cc9c8d39e6289c35a84fd584af1db9f"
+  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
 }

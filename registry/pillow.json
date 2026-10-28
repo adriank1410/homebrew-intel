@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
   "cellar": "any",
-  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
+  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
   "filename": "pillow--13.0.0.sequoia.bottle.tar.gz",
   "formula_sha256": "9d9678df81e3d9c873c921ccffc1246a98f37227a5211891c42adcc8b475613e",
   "license": "MIT-CMU",
   "name": "pillow",
   "pkg_version": "13.0.0",
   "recipe_sha256": "3c587e6899af08adb9b0b37175f9ef5965da881f66fbab70a145faa17fb8a148",
-  "release": "intel-40222463970-1-pillow",
+  "release": "intel-40774841573-1-pillow",
   "revision": 0,
-  "run_id": "40222463970",
+  "run_id": "40774841573",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -79,9 +79,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "addbff80e1e0d499a407eb5d321e407809ac2860c53347f391312e026263e09f",
-  "size": 1410822,
+  "sha256": "297ba88359522cca7764e5bdc3ab7f0d59743509bb1b932a87452f66add19dd5",
+  "size": 1410814,
   "source": {
     "filename": "pillow--13.0.0.sources.tar.gz",
-    "sha256": "f4af3a3f7d72ed2c76bbc1d48f4a51462cb1140e220b6714a7fdb28b705efba3",
-    "size": 46981381
+    "sha256": "cf7c55b3b58a67421a1adbbb6c9f6784fb3e14f2b0af196e5979f2fc8efe5a5e",
+    "size": 46981402
   },
   "tag": "sequoia",
   "version": "13.0.0",
   "version_scheme": 0,
-  "workflow_commit": "069262e38ee11e2a10d9b0a5a9d3bdd1819f4d35"
+  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
 }
