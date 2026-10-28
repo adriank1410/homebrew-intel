@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qtgrpc--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "0025b3d66bd4fcdb359e868ab57f898e1588c37cc337f761d6290e129e1fd509",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtgrpc",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "1cb12e10852fa1ee342c5242bd73abc5cad2a9011aa981cac0205303b8db2e15",
-  "release": "intel-40248874254-1-qtgrpc",
+  "release": "intel-40737008531-1-qtgrpc",
   "revision": 1,
-  "run_id": "40248874254",
+  "run_id": "40737008531",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -96,9 +96,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e7c102b42e3562930da421481e369c972b7d7f6a7c9f66b03ea8f38a4db88de9",
-  "size": 1138804,
+  "sha256": "7408774bc1c74ce8e5e95be38d18cef86888e2b94ef59d714a85218d79614920",
+  "size": 1138795,
   "source": {
     "filename": "qtgrpc--6.12.0_1.sources.tar.gz",
-    "sha256": "4d6e86db3141c230cd0475cb93f752fb31d9df52a30be0f80a18d91c2d50a68a",
-    "size": 805800
+    "sha256": "bd0528d3deb4c990778c0763cde51a4ab708277ca7709119b0b953c3cf1d5998",
+    "size": 805778
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
+  "workflow_commit": "51e9f826137b622ba9edc9f12edacffd82887414"
 }
