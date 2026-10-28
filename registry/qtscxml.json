@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qtscxml--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ecba5ee6a1a7bba717f01fd3b34e1beb741d057845a87fec398ff7ba2fa3d7d5",
   "license": {
@@ -25,9 +25,9 @@
   "name": "qtscxml",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "e617fcf9cbceaf89f51436aac009cc31c9df9b0501f75231015a3746f146625b",
-  "release": "intel-40248874254-1-qtscxml",
+  "release": "intel-40737008531-1-qtscxml",
   "revision": 1,
-  "run_id": "40248874254",
+  "run_id": "40737008531",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -90,9 +90,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -206,15 +206,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5fce1d4c64968ee0594eada63d7233420f96313374d93dc5d474a4054938bf9d",
-  "size": 659422,
+  "sha256": "50ec712d3bfbc0f0085b7a7c8fd2f007c170187edf7105865c6b1fb94a12ac72",
+  "size": 659444,
   "source": {
     "filename": "qtscxml--6.12.0_1.sources.tar.gz",
-    "sha256": "9f262f30f1f3a1d176ac3204cb1647ecfe3b762ce8ee6ecb8bdd3fe5085da0d0",
-    "size": 591764
+    "sha256": "4fa4f5cea221eed9261d0f4689070ce544b609f5b594a8811c493bb3dec0a8bf",
+    "size": 591757
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
+  "workflow_commit": "51e9f826137b622ba9edc9f12edacffd82887414"
 }
