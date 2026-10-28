@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "9a526813eeca23c6e5fd659e7b4bd40cf99decc7",
-  "filename": "jpeg-turbo--3.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
+  "filename": "jpeg-turbo--3.2.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
   "license": {
     "all_of": [
       "IJG",
@@ -13,22 +13,22 @@
     ]
   },
   "name": "jpeg-turbo",
-  "pkg_version": "3.2.0",
-  "recipe_sha256": "860c0c90f8c2d0541de067218452d57f555dd4da5b5dc49151f13b563229ab24",
-  "release": "intel-34621863546-1-jpeg-turbo",
+  "pkg_version": "3.2.1",
+  "recipe_sha256": "a9839e669928c7ee0666c10f85e11d2c55f60986c58ff0c835845863f71af11b",
+  "release": "intel-40694893573-1-jpeg-turbo",
   "revision": 0,
-  "run_id": "34621863546",
+  "run_id": "40694893573",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "b771948b4d6810c61f303a17fa005d54827ede868a9ce84b0df4cb4d8eae1141",
-  "size": 1565625,
+  "sha256": "f5312db7a0d88ff4b3920f0b59704a2ff43ffd2761481cbafbee1a4c861894be",
+  "size": 1567185,
   "source": {
-    "filename": "jpeg-turbo--3.2.0.sources.tar.gz",
-    "sha256": "117ba3d3090e801024b87bd93f711d08d7cc1dd4ebbbf33c4ca29d5349c10505",
-    "size": 2543272
+    "filename": "jpeg-turbo--3.2.1.sources.tar.gz",
+    "sha256": "9584449bab603b760a995065f238cc927ba5d2d288fcb9f04687d412ee6fb2b5",
+    "size": 2555625
   },
   "tag": "sequoia",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "version_scheme": 0,
-  "workflow_commit": "e8b9bc59d0e0d492c6d2f9362111f122b9732e51"
+  "workflow_commit": "f11105b9a2fa4ae2592b0cbcdac10d5d8a874b16"
 }
