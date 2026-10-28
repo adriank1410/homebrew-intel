@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "a59d9fc5f8361dccde817ce1c066fdf365c8df3e",
   "cellar": "any",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
-  "filename": "simdutf--9.3.2_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "cc795002abbdc672ec3307a007e9197d6c4fa3a67f61d4bc3c1286ab1e59adc5",
+  "core_commit": "21be5f289b83af0efa40c20a9a08781971ff907c",
+  "filename": "simdutf--9.3.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "200d28856006f626a019e48cf7ff69cea53e982dc51377001b58cc3b929bacd6",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "simdutf",
-  "pkg_version": "9.3.2_1",
-  "recipe_sha256": "50f8c2e48b67235c94aca1cf55ec56c9fdb7bbc7d467e5826e218cb40d20be47",
-  "release": "intel-40163892376-1-simdutf",
-  "revision": 1,
-  "run_id": "40163892376",
+  "pkg_version": "9.3.3",
+  "recipe_sha256": "9c5d0be8dc934490a68fc9b5f63bd6d88a3529504bb61a59a3b9ef0b07171e8d",
+  "release": "intel-40647079024-1-simdutf",
+  "revision": 0,
+  "run_id": "40647079024",
   "runtime_dependencies": [
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "339c936fd9d09c09ab53f404aa43367d8b6ceebef7ed0ace9a7f98107a8d4b91",
-  "size": 616934,
+  "sha256": "5fe88b39b04638835b79382a4cf2f19a7bc52c456457b0b2987cad1800967cae",
+  "size": 618861,
   "source": {
-    "filename": "simdutf--9.3.2_1.sources.tar.gz",
-    "sha256": "1aaaec72864f5e540a85ef25b84b42ff8403eab437c25239338f91e811903f58",
-    "size": 3519513
+    "filename": "simdutf--9.3.3.sources.tar.gz",
+    "sha256": "6dd52fcbc2832af79b8e203d90c2dab25c3acaa9de6dd4ee4fa27d88a66f0c84",
+    "size": 3522538
   },
   "tag": "sequoia",
-  "version": "9.3.2",
+  "version": "9.3.3",
   "version_scheme": 0,
-  "workflow_commit": "fded5ae8244f28492e6984340a9fe8240b395c2e"
+  "workflow_commit": "a073571e401db12b4091a9015f4bd0ca708c032c"
 }
