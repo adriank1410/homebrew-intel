@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qpdf--12.4.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1a013dfcaf66b899ddaaf87472345f149daa4c66fd7deecfa128be56cf72d808",
   "license": "Apache-2.0",
   "name": "qpdf",
   "pkg_version": "12.4.2_1",
   "recipe_sha256": "02f1c3e48230d6257b702874d23d0d16aa22d87bc076916c88eeabb1c998fe49",
-  "release": "intel-40165608131-1-qpdf",
+  "release": "intel-40697349455-1-qpdf",
   "revision": 1,
-  "run_id": "40165608131",
+  "run_id": "40697349455",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b2ff9217b90ca956719b79dfa59dddff4dfa48677adfb9ff3b3ae0ab291aea32",
-  "size": 2838723,
+  "sha256": "9c48028dae1e06f1584bfd623cd1663f24f39587368a44885d6beffcdb15fd6a",
+  "size": 2838733,
   "source": {
     "filename": "qpdf--12.4.2_1.sources.tar.gz",
-    "sha256": "dcca4f702d34ade888f8ce9ff26fb91edd8227577d85235f30a81cc6aa10b262",
-    "size": 19355036
+    "sha256": "a4d58f4f6dfaff8ca269e95110085bd3f475f38eeb939f35de85c6ef301a9e27",
+    "size": 19355004
   },
   "tag": "sequoia",
   "version": "12.4.2",
   "version_scheme": 0,
-  "workflow_commit": "b6df9cadc753d4c791d0a41c60e4997c7785c9a3"
+  "workflow_commit": "fee829b2136edb5745ea5247f092cf713b95bd12"
 }
