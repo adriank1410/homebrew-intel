@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7f74c7bdd0969153a18bfa6fc9eb6518c113a035",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "bcac5d4259aeeaf2d1d1c7a8b3a6859a4bcc316e",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "webp--1.6.0.sequoia.bottle.tar.gz",
   "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
   "license": "BSD-3-Clause",
   "name": "webp",
   "pkg_version": "1.6.0",
   "recipe_sha256": "34110fc2ee69a3769f4a25b1fcb4836f3cefc88b0e16a615236223facfb1697d",
-  "release": "intel-37003591479-1-openjpeg",
+  "release": "intel-40697349455-1-webp",
   "revision": 0,
-  "run_id": "37003591479",
+  "run_id": "40697349455",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -19,9 +19,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c0ddf0d6a14393bb3393864a225ec8f69185ce78d5841b9377d2b4a148f9cd9b",
-  "size": 1058050,
+  "sha256": "387fa9d22dd0b58d19e1a63615feae98d71089babdc199842349b27671ac00f7",
+  "size": 1058061,
   "source": {
     "filename": "webp--1.6.0.sources.tar.gz",
-    "sha256": "237c32f2ea1bf0a29132c9da011740d82cb6120868aa3202fdd8f431401b6dee",
-    "size": 4300974
+    "sha256": "c411c11a2862ab54498e5048ca30c9fdd7973fa1c868ea9b514de4d2523b9f73",
+    "size": 4300976
   },
   "tag": "sequoia",
   "version": "1.6.0",
   "version_scheme": 0,
-  "workflow_commit": "f388204cc0e32c5d7d3c8315511371649edc4400"
+  "workflow_commit": "fee829b2136edb5745ea5247f092cf713b95bd12"
 }
