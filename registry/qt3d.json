@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qt3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "2813a24a126e27af416c7f82ef814ea8936f2aec61841dad798329ace2850e81",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qt3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "bd60edcc60ccce108f37a33c1308c69fce3ea714f04100bb8871fce03f21113f",
-  "release": "intel-40248874254-1-qt3d",
+  "release": "intel-40737008531-1-qt3d",
   "revision": 1,
-  "run_id": "40248874254",
+  "run_id": "40737008531",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -91,9 +91,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -212,15 +212,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "115a62fdc9102ec94eb74798dc56cd296b6c26d38169515a91e96e96fa339b3f",
-  "size": 3769405,
+  "sha256": "e1a3565eba57fad3c284e990e6fc315bd3acc7f3f7e8d69fdf7c42c72ce5ad4b",
+  "size": 3769980,
   "source": {
     "filename": "qt3d--6.12.0_1.sources.tar.gz",
-    "sha256": "edb716a6420aa32beb0e5b57f290cedabd555fbea6899cc45bd28221d0db3c74",
-    "size": 141960277
+    "sha256": "aff4c0085af29923ccbfc157ca77f9ec0cefddc2ad165793732b48c1072a8e04",
+    "size": 141960284
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
+  "workflow_commit": "51e9f826137b622ba9edc9f12edacffd82887414"
 }
