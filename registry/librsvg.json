@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "librsvg--2.63.4.sequoia.bottle.tar.gz",
   "formula_sha256": "4ec0d20111f91fbc092f70c95895ae0740d8d30688d9d61c47649eeae43e94d0",
   "license": "LGPL-2.1-or-later",
   "name": "librsvg",
   "pkg_version": "2.63.4",
   "recipe_sha256": "cf811e66039a8b286572e965a94ae1860a52078c5b193f66b21b5a498a833e1e",
-  "release": "intel-40228962092-1-librsvg",
+  "release": "intel-40716616899-1-librsvg",
   "revision": 0,
-  "run_id": "40228962092",
+  "run_id": "40716616899",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -74,9 +74,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "19f0af1bb9cf6e9f0e3ab16db8723c4949a81847e9612a02bb161182d37cd7ee",
-  "size": 5041546,
+  "sha256": "ffe95ab2a0910f5467ac8bf55a16ad0732c11f9be76732a1b663db22ddbd7b1d",
+  "size": 5041560,
   "source": {
     "filename": "librsvg--2.63.4.sources.tar.gz",
-    "sha256": "cff2cdb95a10b398a0d10d6038c029289bbd52aa97d76ed9772eaeb5ca0b9b45",
-    "size": 32629103
+    "sha256": "09b5c93b689e37bd83e9aec45ec7c1900d31f988a7a5a4cf303a4668210f435d",
+    "size": 32629529
   },
   "tag": "sequoia",
   "version": "2.63.4",
   "version_scheme": 0,
-  "workflow_commit": "433e4d3dd7eda64d770b130c7b5b2ccc9255559d"
+  "workflow_commit": "40aa2220151f102ce545c554327115e656e6cce5"
 }
