@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
+  "brew_commit": "a59d9fc5f8361dccde817ce1c066fdf365c8df3e",
   "cellar": "any_skip_relocation",
-  "core_commit": "23f236610be219a8ad0af042912f65415b93721e",
+  "core_commit": "21be5f289b83af0efa40c20a9a08781971ff907c",
   "filename": "archi-steam-farm--6.3.10.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "9d13fedf8a4bf6775ab9e9a9f8af8746845afc7bd55b02d6a10d381b5a30cf25",
+  "formula_sha256": "ff2c883f21c955d8be3620115201f5ac354bcf2bbc5330c9e8aa2b64e928f566",
   "license": "Apache-2.0",
   "name": "archi-steam-farm",
   "pkg_version": "6.3.10.6",
-  "recipe_sha256": "a5bd3e55a160a4ab2522e7f408d9792b3a5c59dae8aeef3afeaf07e997c31fb7",
-  "release": "intel-40427793946-1-archi-steam-farm",
+  "recipe_sha256": "b49e2d860c02f4803bc2b57aa97d110d6e65a1e998e06ac5407986a88968569f",
+  "release": "intel-40681143545-1-archi-steam-farm",
   "revision": 0,
-  "run_id": "40427793946",
+  "run_id": "40681143545",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4741122fd50638998124ee599a05ead2aa8333a6a6a45cf3b3d20bda02a73aea",
-  "size": 8231696,
+  "sha256": "c2cff3ce80fefdd1df7a4780fc37470150a2907bfa14d7f2651109475476b60c",
+  "size": 8232036,
   "source": {
     "filename": "archi-steam-farm--6.3.10.6.sources.tar.gz",
-    "sha256": "d302e76cb14d9820c8f4cabe4e4d1e20459aeab87bedc305cf22b322cb6e1868",
-    "size": 10859483
+    "sha256": "bc7ae4f294077ae312bc61e6009a75830c9c9784e6e8e4261fa2f66e50f0b260",
+    "size": 10859576
   },
   "tag": "sequoia",
   "version": "6.3.10.6",
   "version_scheme": 0,
-  "workflow_commit": "661b0cc3744dc76e829f1feb204d5c5f825134ff"
+  "workflow_commit": "34989d4ab4593b2781eaa67c17b9eab83eba15c3"
 }
