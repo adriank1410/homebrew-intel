@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qtbase--6.12.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "cec17022b9a75b196ecf11b7dd5a60a2446a2b9f43e8362081c6c0f185c60698",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtbase",
   "pkg_version": "6.12.0_2",
   "recipe_sha256": "14053524fcb326c1529812f4c6a2eb08658249c161c53c437687a9c74fbae133",
-  "release": "intel-40222463970-1-qtbase",
+  "release": "intel-40697349455-1-qtbase",
   "revision": 2,
-  "run_id": "40222463970",
+  "run_id": "40697349455",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -91,9 +91,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -192,15 +192,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e9b26a6e9d8a768abcb32e1e1e0863e8739b93ca2b444b02ca868c256c4098c2",
-  "size": 17643841,
+  "sha256": "9310227a6b787146a5f0e7708c3b3228594b96ea6ac2f6d1547fa9ab3dc08edd",
+  "size": 17643653,
   "source": {
     "filename": "qtbase--6.12.0_2.sources.tar.gz",
-    "sha256": "0691d6991750d79e63281f443794ef4bc1db330dc81b74f11a5cc179f4707b00",
-    "size": 51420528
+    "sha256": "3c02df2d546b60db71eabc0447312d18a7753a1f770448b02b61c43a7606ea64",
+    "size": 51420531
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "069262e38ee11e2a10d9b0a5a9d3bdd1819f4d35"
+  "workflow_commit": "fee829b2136edb5745ea5247f092cf713b95bd12"
 }
