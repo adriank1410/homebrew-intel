@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "c48b4ac81d0fd24b6e41c17d7fd570f70c39ea80",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "qtcanvaspainter--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "b4c13ed5facaeb575f65a39bcf362b182512900b6b52e04d482a7330f1d8cc70",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtcanvaspainter",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "c5ec1d48de3b2f2f270d1b52a91baaab8af19c292fe96494462d887132b3ed77",
-  "release": "intel-40248874254-1-qtcanvaspainter",
+  "release": "intel-40737008531-1-qtcanvaspainter",
   "revision": 1,
-  "run_id": "40248874254",
+  "run_id": "40737008531",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -85,9 +85,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b23405256bfb7181db6159b7bb4ae2036e4a12a5d4484a7dff80df4b6dc5e230",
-  "size": 583930,
+  "sha256": "c170e02b520b16968edc71582a23774b9d697f7d70038e514ebc22fb37efc330",
+  "size": 583952,
   "source": {
     "filename": "qtcanvaspainter--6.12.0_1.sources.tar.gz",
-    "sha256": "8fb30398f78a11c2a16ab97bf9538cf482a527331b43f299d6baec4f245da97f",
-    "size": 1171380
+    "sha256": "49beb82c91ef07756158bd97cc7703c18ab770e9df630dddc2d022232aeb891e",
+    "size": 1171374
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "89d7089b58469c826b329a9af5363ca6b21b222f"
+  "workflow_commit": "51e9f826137b622ba9edc9f12edacffd82887414"
 }
