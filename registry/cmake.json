@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
+  "brew_commit": "a59d9fc5f8361dccde817ce1c066fdf365c8df3e",
   "cellar": "any_skip_relocation",
-  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
-  "filename": "cmake--4.4.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "bfea34dcaa8182ea7896c21ea8b8eedd30d52f482aae3364cab2f61aa825c800",
+  "core_commit": "21be5f289b83af0efa40c20a9a08781971ff907c",
+  "filename": "cmake--4.4.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "1e65309cc7c25621f89cb9c318d091ea0e61890e260a26126f5238d1a2318477",
   "license": "BSD-3-Clause",
   "name": "cmake",
-  "pkg_version": "4.4.4",
-  "recipe_sha256": "1077771d2a7390d53bb9873269756d4d1f40aadb90f69484b4eb3a50ae090747",
-  "release": "intel-37355759065-1-cmake",
+  "pkg_version": "4.4.5",
+  "recipe_sha256": "2ed62afe204ce5b5f15205ce9f88c287e16c2e01a3a2db9da06a53de9fbd22ea",
+  "release": "intel-40641084095-1-cmake",
   "revision": 0,
-  "run_id": "37355759065",
+  "run_id": "40641084095",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "5ff768ffc4fb1f3fd2280a51bf8ea6e85f1dc5f9fd11a93787a40769448ad2b2",
-  "size": 21600430,
+  "sha256": "568ccc351835a64e2e8b064f13d6ecea55b9f8fd6e22bb2d2fa219aa462bfdeb",
+  "size": 21601672,
   "source": {
-    "filename": "cmake--4.4.4.sources.tar.gz",
-    "sha256": "bd45f2f56279923ad9299542ac108b6b94e007e133291ea882d615b500c527e4",
-    "size": 13265907
+    "filename": "cmake--4.4.5.sources.tar.gz",
+    "sha256": "ca15b1887ac89977ae1d65eced525eab1627ec89446a53734998d5c7e703836d",
+    "size": 13266038
   },
   "tag": "sequoia",
-  "version": "4.4.4",
+  "version": "4.4.5",
   "version_scheme": 0,
-  "workflow_commit": "50b54aa57fad9317e323d05de5902c3ae2642d0c"
+  "workflow_commit": "414c9c7428e7d11c4c3f0895015630035e807897"
 }
