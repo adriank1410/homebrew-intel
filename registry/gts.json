@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8f10429b56be28a25032b87463fffc95e556b5bc",
+  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
   "cellar": "any",
-  "core_commit": "a4687008192bff359668e5aeeabada586b33ad88",
+  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
   "filename": "gts--0.7.6_4.sequoia.bottle.tar.gz",
   "formula_sha256": "e2d424ec33c7ef4a3b75265d1c21a9b25fe5f79c6e1a6f022008c93aa8ce50be",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_4",
   "recipe_sha256": "5ea32681a81c5217dc2e8f09094afc887a218565b7be62f3b4af98a712e3d39a",
-  "release": "intel-39244541460-1-gts",
+  "release": "intel-40737008531-1-gts",
   "revision": 4,
-  "run_id": "39244541460",
+  "run_id": "40737008531",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -34,9 +34,9 @@
       "pkg_version": "4.2.9"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "718d3e189a77e57d646daa46209405293e519192d582ba2ba3a5d6cb1ce4f564",
-  "size": 431573,
+  "sha256": "2438fdac5d106e85bacb932d3faca53313a8b143151b9440de593a1a20292400",
+  "size": 431584,
   "source": {
     "filename": "gts--0.7.6_4.sources.tar.gz",
-    "sha256": "5ce8bc5ec862398f0c8caa5248308ee2cd33406d895dbe449ed50924999e6959",
-    "size": 959580
+    "sha256": "c6c9d4ac92b8b26c8f0cd6653d37caa6a48218afee9b030b0e9ae9fd9b8a805a",
+    "size": 959572
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "ae1fff3c7fbd9ceef6457ff47d648aa4f7c049a3"
+  "workflow_commit": "51e9f826137b622ba9edc9f12edacffd82887414"
 }
