@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
   "cellar": "any",
-  "core_commit": "2ec512cb80d55669a92730381171a6950fcb94fe",
+  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
   "filename": "chafa--1.18.3.sequoia.bottle.tar.gz",
   "formula_sha256": "8c0495656e300eb91c65d874b9355d988a6500b17bd1b210668ab29f684d481f",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3",
   "recipe_sha256": "35496c65de9b1c3ff2b0abe576daf457cdec8bed0a4b3c3d572cdcaae5bd815b",
-  "release": "intel-40238629073-1-chafa",
+  "release": "intel-40794525998-1-chafa",
   "revision": 0,
-  "run_id": "40238629073",
+  "run_id": "40794525998",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -94,9 +94,9 @@
       "pkg_version": "3.2.3"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "1e76478e13ef6cd18c73676e029f043cc0511386deeb07db11ddee7aa70217fd",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c792fa1cf2eb74cba30bf7f959802c53821e1ab6236d9137eddf74795558559a",
-  "size": 535066,
+  "sha256": "4bc58760afe89d26c75a68eab9bd299aca116452587b1a3d24e0697da72ca7f5",
+  "size": 535062,
   "source": {
     "filename": "chafa--1.18.3.sources.tar.gz",
-    "sha256": "d7910f9aaa07bc8b645aa92e24f418246e428a89abcf2eff951cec368e40eac3",
-    "size": 1091680
+    "sha256": "c69884c78c052c88e1b4c107b2e26eca7fe4351d2c7e6bb026cdabe3716fc51b",
+    "size": 1091687
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "091935c10c006a41437a00870ddd2371a3755178"
+  "workflow_commit": "d62b1576737e1a1bc00d09448966545c03ae64f0"
 }
