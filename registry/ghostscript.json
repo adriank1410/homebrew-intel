@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
+  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
   "filename": "ghostscript--10.08.0.sequoia.bottle.tar.gz",
   "formula_sha256": "2d6606514ac36c06fd4b00141ba01bfc2d4d83fc2318c0cdaa022c8187e9a62b",
   "license": "AGPL-3.0-or-later",
   "name": "ghostscript",
   "pkg_version": "10.08.0",
   "recipe_sha256": "f5f3954efa8a9a852b720514f095ad52d58f74173449442e2fe4231d5fe46d82",
-  "release": "intel-40794525998-1-ghostscript",
+  "release": "intel-40932464567-1-ghostscript",
   "revision": 0,
-  "run_id": "40794525998",
+  "run_id": "40932464567",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -69,7 +69,7 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "fffdef1156cb2ade2f628b1cf653cc56d7a046b864fdacac4f0fa8d0e5cee6c2",
+      "formula_sha256": "6c0d2001a70c1a4b5338ae7abecb0116f19d4374c449ab146a6b0abd30498497",
       "name": "jbig2dec",
       "pkg_version": "0.20"
     },
@@ -220,15 +220,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "619504463de3ce109a33ebe6daf5fe719744afa8e42f71cf246c48064942af21",
-  "size": 43801940,
+  "sha256": "11ffc84c9c3599c62b56114ece1c3a5e7c21e0bc5511b5e733612bd734fa0307",
+  "size": 43801962,
   "source": {
     "filename": "ghostscript--10.08.0.sources.tar.gz",
-    "sha256": "c667d85180aad61a1016aa07252d1abb7991272ac5c1d1f2e127b4af480c42e7",
-    "size": 78495469
+    "sha256": "f839f68c3f4963657dbb1cf222fe873b1462a9cd760297bd9c453ce3410548c6",
+    "size": 78495461
   },
   "tag": "sequoia",
   "version": "10.08.0",
   "version_scheme": 0,
-  "workflow_commit": "d62b1576737e1a1bc00d09448966545c03ae64f0"
+  "workflow_commit": "86eaf6f556b3eec93ce0a31356802443e74b681b"
 }
