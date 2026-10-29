@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc9ff034b1d98cdd4061f68cf715bb967c483a8f",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "any",
-  "core_commit": "231ce993c0c2dd82f06a15aa05120c45d859bd65",
+  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
   "filename": "gumbo-parser--0.14.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "0629f7590ff8bbe40cc51a9a4b1347f367e8afa2d89cc2db409cb2a3cc3ee3ee",
+  "formula_sha256": "bcf76efcff739b4bd15e68444e0236e75ac822592315642243e3da1537d70398",
   "license": "Apache-2.0",
   "name": "gumbo-parser",
   "pkg_version": "0.14.1",
-  "recipe_sha256": "8a8205fc7194dc340554f3a2f4491180ce2e604bdcf0971d6ffa9cb5cf70c958",
-  "release": "intel-36443401543-1-gumbo-parser",
+  "recipe_sha256": "09b6f7b72eaad6bedab7e6707dfcf7ec5380180a89570b3b463d79dd3f77d643",
+  "release": "intel-40932464567-1-gumbo-parser",
   "revision": 0,
-  "run_id": "36443401543",
+  "run_id": "40932464567",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "db2efc435391b4ec0900af735307ed375dea102d9655715347c52ebbb73d6d26",
-  "size": 175273,
+  "sha256": "9831924d4ac2ca5a46e4951c7db64fcfbe9c613b125b48ef2c13fae9c55c3c1a",
+  "size": 175290,
   "source": {
     "filename": "gumbo-parser--0.14.1.sources.tar.gz",
-    "sha256": "d2b186596e6d8ed7fb1e64dc567dd0f083e3c5a61db72e2b37862df16c65ab72",
-    "size": 2194021
+    "sha256": "013033d22d7896c912f06200cd495090a959c0af3c30e8809b6e11286c898728",
+    "size": 2194038
   },
   "tag": "sequoia",
   "version": "0.14.1",
   "version_scheme": 0,
-  "workflow_commit": "29591249e9dfffc2135fb4e6f9052573b816fc13"
+  "workflow_commit": "86eaf6f556b3eec93ce0a31356802443e74b681b"
 }

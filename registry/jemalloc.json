@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "any",
-  "core_commit": "3acd3141dc1ce679d1f06565131aebeb0f6f4057",
+  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
   "filename": "jemalloc--5.4.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "9673f4add30a4c4db0fed1934b8c6c60e1df50a61ad24e6490296bb6e26a3863",
+  "formula_sha256": "e2e5379e01da2e70912507be79aa48a981c2bf3ab109581a984972080bf524db",
   "license": "BSD-2-Clause",
   "name": "jemalloc",
   "pkg_version": "5.4.0",
-  "recipe_sha256": "40b08c4b9c7e253bee97d4da1d22fa9b51a9d7ccf5221cd1305e42057e72d234",
-  "release": "intel-35290420415-1-jemalloc",
+  "recipe_sha256": "11533c83d6d01cbbe95f15ff3be19fdecb0dfa7fc1dcedde1bd56780b03fd857",
+  "release": "intel-40932464567-1-jemalloc",
   "revision": 0,
-  "run_id": "35290420415",
+  "run_id": "40932464567",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "d4a191a994989e362aa5bf2cbd6ef4d7def430f4b3abe4b237c85542cfa07f0c",
-  "size": 884701,
+  "sha256": "db3372ed15a9ffb52928dee7edfee7e454317c931348672c6fdae05d6ed0499b",
+  "size": 884719,
   "source": {
     "filename": "jemalloc--5.4.0.sources.tar.gz",
-    "sha256": "09e1a3841aa0dfd664e08e3c2d195a0063310f20dc899269af8055a5a726cd0c",
-    "size": 918599
+    "sha256": "50e39d9416d1301281fc8f529e876e1c0756cff8c7d5cd9aa773ee280e9efb46",
+    "size": 918617
   },
   "tag": "sequoia",
   "version": "5.4.0",
   "version_scheme": 0,
-  "workflow_commit": "d8a835d9c5e14790f490774815823a291a3f50e6"
+  "workflow_commit": "86eaf6f556b3eec93ce0a31356802443e74b681b"
 }
