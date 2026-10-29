@@ -1,0 +1,49 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
+  "cellar": "any",
+  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
+  "filename": "boost--1.92.0_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "ea0ed2bb6e27be18ab1e1f0f852c2dadb0a2149369ad7f9847820b29c2ea357e",
+  "license": "BSL-1.0",
+  "name": "boost",
+  "pkg_version": "1.92.0_1",
+  "recipe_sha256": "de77f9901a1abb95ff48c2e42566500f8d94fccf967438ced7d34e7dc7a3385c",
+  "release": "intel-40774841573-1-jpeg-xl",
+  "revision": 1,
+  "run_id": "40774841573",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "name": "icu4c@79",
+      "pkg_version": "79.1"
+    },
+    {
+      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "name": "lz4",
+      "pkg_version": "1.10.0"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "ff0c957ea16722ed97eb5d5f10faddce69bc2ee4afca1ebff5be33647b0768d6",
+  "size": 61981114,
+  "source": {
+    "filename": "boost--1.92.0_1.sources.tar.gz",
+    "sha256": "94d54857d0fa08dbcbefcf0922b68e4d9756ae5b7eabd5093f964c0999ebc57d",
+    "size": 52664545
+  },
+  "tag": "sequoia",
+  "version": "1.92.0",
+  "version_scheme": 0,
+  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
+}
