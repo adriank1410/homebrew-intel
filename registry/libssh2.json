@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "any",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
   "filename": "libssh2--1.11.1_7.sequoia.bottle.tar.gz",
   "formula_sha256": "eecf497120b0b28aad11f0536ac3c7759fe0d02db6ef972a811a7fc198ade8d3",
   "license": "BSD-3-Clause",
   "name": "libssh2",
   "pkg_version": "1.11.1_7",
   "recipe_sha256": "c3daa027a30cc73aabeebddd940bb7366b8ffc02a681a8ccef4dac6642d118ea",
-  "release": "intel-40165608131-1-libssh2",
+  "release": "intel-40939955324-1-libssh2",
   "revision": 7,
-  "run_id": "40165608131",
+  "run_id": "40939955324",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,21 +19,21 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "f58143f30a15609030cf7c83f590aa293a66bf53a7d4902e2ebd71e0a91721a5",
-  "size": 427727,
+  "sha256": "5d19e3a1e7c51cc5cd439ad8ae28e2089c0d3a21ad8cadc07d5eea638f964fb2",
+  "size": 427763,
   "source": {
     "filename": "libssh2--1.11.1_7.sources.tar.gz",
-    "sha256": "82fee3ceb9d64071d6e1d863225f8597605937dfd025c8c70833e69742511a68",
-    "size": 1104182
+    "sha256": "97220a03852b7fd31b78f5759f9c55748af7bb831cfc4cbcba5617dfc26d3fb0",
+    "size": 1104195
   },
   "tag": "sequoia",
   "version": "1.11.1",
   "version_scheme": 0,
-  "workflow_commit": "b6df9cadc753d4c791d0a41c60e4997c7785c9a3"
+  "workflow_commit": "adb5f05ef4d19fe0f2d8f1df011523d74aceebfb"
 }
