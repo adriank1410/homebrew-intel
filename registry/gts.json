@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "any",
-  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
+  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
   "filename": "gts--0.7.6_4.sequoia.bottle.tar.gz",
-  "formula_sha256": "e2d424ec33c7ef4a3b75265d1c21a9b25fe5f79c6e1a6f022008c93aa8ce50be",
+  "formula_sha256": "93ae4e29bdee0e0f8d69897339b8b93e85d38d7286f7fcde827e7c4d5a0de412",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_4",
-  "recipe_sha256": "5ea32681a81c5217dc2e8f09094afc887a218565b7be62f3b4af98a712e3d39a",
-  "release": "intel-40737008531-1-gts",
+  "recipe_sha256": "deddf7a4e6b0bf9862d33c4757f45afa6796a5e914ba314cb13d5e427ce4a528",
+  "release": "intel-40932464567-1-gts",
   "revision": 4,
-  "run_id": "40737008531",
+  "run_id": "40932464567",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2438fdac5d106e85bacb932d3faca53313a8b143151b9440de593a1a20292400",
-  "size": 431584,
+  "sha256": "132c2315cac6a0570ea72e8b449d23b727c56ed4ce1f5742d83ad642fdcd619d",
+  "size": 431597,
   "source": {
     "filename": "gts--0.7.6_4.sources.tar.gz",
-    "sha256": "c6c9d4ac92b8b26c8f0cd6653d37caa6a48218afee9b030b0e9ae9fd9b8a805a",
-    "size": 959572
+    "sha256": "aa41baddaf2d72d1ee135478504d60a4410d845448f5f0c0d3dfc61f3df9220f",
+    "size": 959587
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "51e9f826137b622ba9edc9f12edacffd82887414"
+  "workflow_commit": "86eaf6f556b3eec93ce0a31356802443e74b681b"
 }
