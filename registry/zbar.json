@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
+  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "23f236610be219a8ad0af042912f65415b93721e",
+  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
   "filename": "zbar--0.23.95.sequoia.bottle.tar.gz",
   "formula_sha256": "585cca1c94e0d01f9fbdaafa0e8d263f614c397033c360a64184d152d378ff74",
   "license": "LGPL-2.1-only",
   "name": "zbar",
   "pkg_version": "0.23.95",
   "recipe_sha256": "08fdcbd41cd9e68379c9a1a9c491ebe4ebd46ed430b905f9f7a1f13ab14f795d",
-  "release": "intel-40435156173-1-zbar",
+  "release": "intel-40774841573-1-zbar",
   "revision": 0,
-  "run_id": "40435156173",
+  "run_id": "40774841573",
   "runtime_dependencies": [
     {
       "formula_sha256": "dda1dcc7b80de8001fe5c41e1abf6df7c47be5186a8571a4dc7ab25b0f822005",
@@ -54,9 +54,9 @@
       "pkg_version": "7.1.2-34"
     },
     {
-      "formula_sha256": "7e2e90fde4b71193c517e87763b199f3ebf185afcce4b99d82eee7467e761b8d",
+      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
       "name": "jpeg-turbo",
-      "pkg_version": "3.2.0"
+      "pkg_version": "3.2.1"
     },
     {
       "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
@@ -150,15 +150,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "70c2cd7d2adfe1b58e24415e29c0601feb73a89beb6ca27011f214409444f2ff",
-  "size": 324353,
+  "sha256": "03bfd1771229003a0b79ea1267b0e351f8c3941d4078fe90fc8c6bfa23100ba8",
+  "size": 324360,
   "source": {
     "filename": "zbar--0.23.95.sources.tar.gz",
-    "sha256": "4941328dbddf40e5697f0ead605c4113aa73fb1eee9d1c9c52c1880bfad67560",
-    "size": 1031852
+    "sha256": "dbe835f5f34c86dc1e03301419d95175a56fc02f47e9ee32b601ef0a7619f7df",
+    "size": 1031854
   },
   "tag": "sequoia",
   "version": "0.23.95",
   "version_scheme": 0,
-  "workflow_commit": "c3aae7726016ff45b62b1f76a77006edc70d334e"
+  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
 }
