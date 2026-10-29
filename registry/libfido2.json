@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c6069d2a943b71b0a90d91fc1ac93cb9c1634dcc",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "any",
-  "core_commit": "23f236610be219a8ad0af042912f65415b93721e",
+  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
   "filename": "libfido2--1.17.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "d85b699fad3f7d994ce9379224a73938ca8e6772f5c22e3dc9e67e481edcdddf",
   "license": "BSD-2-Clause",
   "name": "libfido2",
   "pkg_version": "1.17.0_1",
   "recipe_sha256": "d6c7d2b1463ee34b79aa6348a4096a0d309a6283b0690a43613446b68550336e",
-  "release": "intel-40427793946-1-libfido2",
+  "release": "intel-40939955324-1-libfido2",
   "revision": 1,
-  "run_id": "40427793946",
+  "run_id": "40939955324",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -24,21 +24,21 @@
       "pkg_version": "0.14.0"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "e8b7251823db7e031e38cdd4064f825c37747c0eb020e4986ce617c1a9426377",
-  "size": 362758,
+  "sha256": "f3baba4dd9f0995298f5e3a3b8daddc9f96684e3e0c71e18e1c5ce5f933e621d",
+  "size": 362705,
   "source": {
     "filename": "libfido2--1.17.0_1.sources.tar.gz",
-    "sha256": "c253bc3be4a69f9812b1b5fbba6e6c4749807e18607b31a2aa0be662c598ba50",
-    "size": 715666
+    "sha256": "bf5718727d54e97b92c9fd68d2c6dac4a680e83fee92de19cec326092e4206fe",
+    "size": 715667
   },
   "tag": "sequoia",
   "version": "1.17.0",
   "version_scheme": 0,
-  "workflow_commit": "661b0cc3744dc76e829f1feb204d5c5f825134ff"
+  "workflow_commit": "adb5f05ef4d19fe0f2d8f1df011523d74aceebfb"
 }
