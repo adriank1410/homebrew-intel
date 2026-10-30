@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
   "cellar": "any",
-  "core_commit": "3acd3141dc1ce679d1f06565131aebeb0f6f4057",
+  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
   "filename": "lz4--1.10.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+  "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
   "license": "BSD-2-Clause",
   "name": "lz4",
   "pkg_version": "1.10.0",
-  "recipe_sha256": "b97c8de8ab96ee1eaf88cefbbb0eaad45e900fc626e4fbc254f56ba76d040dfe",
-  "release": "intel-35290420415-1-lz4",
+  "recipe_sha256": "c79610aca64a846efad1b374466b248feb521b9a43ca28b4c391503f200c216a",
+  "release": "intel-41114503008-1-lz4",
   "revision": 0,
-  "run_id": "35290420415",
+  "run_id": "41114503008",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "defe815586913da15b8393c8684c1706408372be49ae3974264cb168b4825888",
-  "size": 295490,
+  "sha256": "f39363db5483f6c796433ed27de5359f5d9c9c07b3dda6949a913c30cca5555e",
+  "size": 295507,
   "source": {
     "filename": "lz4--1.10.0.sources.tar.gz",
-    "sha256": "a60cc122516e4ad651421892893f2517f26bfbcfa3882814351332e518f8e962",
-    "size": 398925
+    "sha256": "aaebd2bf55bea592e6f8ca6786115ec7ac6a34f66aa7564d44b34277c018a38f",
+    "size": 398945
   },
   "tag": "sequoia",
   "version": "1.10.0",
   "version_scheme": 0,
-  "workflow_commit": "d8a835d9c5e14790f490774815823a291a3f50e6"
+  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
 }
