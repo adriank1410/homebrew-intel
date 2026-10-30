@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57c486f02ee4f8f1fc179bc3775c3ac3dc6262d8",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "cfcce8998db0bd2b8524dc19dd07dfbb2cf2acf9",
+  "core_commit": "09d9e9447fcae7f0d0e3d8d49deb6625592b7834",
   "filename": "openssh--10.6p1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "830aaec6f582a6465192965732228d74c582bf2844ef493ac7034d51121faffa",
   "license": "SSH-OpenSSH",
   "name": "openssh",
   "pkg_version": "10.6p1_1",
   "recipe_sha256": "f377efdc3fa4c4c3607e79345d16d322ca6abeb79b9cd03eb958651d4aa7c465",
-  "release": "intel-40505159494-1-openssh",
+  "release": "intel-40992348183-1-openssh",
   "revision": 1,
-  "run_id": "40505159494",
+  "run_id": "40992348183",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -44,12 +44,12 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "dbc5842dccebfa141473e066d07070fdd5c093c78250ec8959fa4b0b69a378c6",
+      "formula_sha256": "63f95924d75555f5e6a4bea52cd0362706a6cf7b672ddd30766b286b21856637",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b7499464aac0ad621151ac54ff3de3c5c479b1820597d680e53ceb3613871e1d",
-  "size": 3292231,
+  "sha256": "d4c3dffefec0e37c5b484e29313a428f287289d04614333712831566aec6c190",
+  "size": 3292215,
   "source": {
     "filename": "openssh--10.6p1_1.sources.tar.gz",
-    "sha256": "da3734451ed41de0e7ebf0f0062267da242cf001392aeeeb3ac7db62b85d0180",
-    "size": 2360969
+    "sha256": "34c57013eb77f62d3875216d0de62a00cac133b3aad6852bcb6492492a844085",
+    "size": 2360982
   },
   "tag": "sequoia",
   "version": "10.6p1",
   "version_scheme": 0,
-  "workflow_commit": "3ae7849220542951a617dd02222bede47bd2e6b9"
+  "workflow_commit": "f98aa7e65fea8fd91fda477386046c1efc761425"
 }
