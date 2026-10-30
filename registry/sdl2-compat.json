@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
   "cellar": "any",
-  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
   "filename": "sdl2-compat--2.32.74.sequoia.bottle.tar.gz",
-  "formula_sha256": "58bc961ca5448e6b9d942916972dc05aadd2372de4f1231da5045743c2a5437b",
+  "formula_sha256": "becf17343e698f77299997ce24e08f6dd6fa7d179758084d4edde6f7fae10006",
   "license": "Zlib",
   "name": "sdl2-compat",
   "pkg_version": "2.32.74",
-  "recipe_sha256": "0ff0df232305f759b06d9f295eb4da3597e913879b3392c8f92742db52f1e706",
-  "release": "intel-37149763110-1-sdl2-compat",
+  "recipe_sha256": "f56f32cc4c62b712c83499a2e99e9ff4e9333ad40349799868d14082d16b9faf",
+  "release": "intel-41114503008-1-sdl2-compat",
   "revision": 0,
-  "run_id": "37149763110",
+  "run_id": "41114503008",
   "runtime_dependencies": [
     {
       "formula_sha256": "c3d6ea1becc0bb53773e82d3a7f885bf4cfeaec10b367d82530928859d41dc75",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0cdca5182d6a17e2a808a21f7e0a0642beebd42161f747b483515f290805eabd",
-  "size": 654788,
+  "sha256": "b0066cac4bc9403af34c7ebaa1a084f7f472b0846eb32959eb1ee81aef953670",
+  "size": 654786,
   "source": {
     "filename": "sdl2-compat--2.32.74.sources.tar.gz",
-    "sha256": "d2117cb65b9bc17312120e07d33320d615c712c4fd7b1b50e316ff9dfd600edd",
-    "size": 2740967
+    "sha256": "0e4ef90557ee4a2807adb411eea3dc8018bef59b21fc79e8a48480ec98b4fc3f",
+    "size": 2740962
   },
   "tag": "sequoia",
   "version": "2.32.74",
   "version_scheme": 0,
-  "workflow_commit": "720f0b440c2c8f61b34e337d1d27fc0193d2a73f"
+  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
 }
