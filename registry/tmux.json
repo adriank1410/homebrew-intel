@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
   "cellar": "any",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
+  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
   "filename": "tmux--3.8.sequoia.bottle.tar.gz",
   "formula_sha256": "ba3f7933d0f68eced1d9104341d218c6538000fd358b0363d41ecccf72ad681e",
   "license": "ISC",
   "name": "tmux",
   "pkg_version": "3.8",
   "recipe_sha256": "ae7a4844a7903932b80cdff21ad49dd6ec2537d0783c2871ade1d2a56a5cf229",
-  "release": "intel-40188852486-1-tmux",
+  "release": "intel-40976752251-1-tmux",
   "revision": 0,
-  "run_id": "40188852486",
+  "run_id": "40976752251",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,7 +19,7 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "9673f4add30a4c4db0fed1934b8c6c60e1df50a61ad24e6490296bb6e26a3863",
+      "formula_sha256": "e2e5379e01da2e70912507be79aa48a981c2bf3ab109581a984972080bf524db",
       "name": "jemalloc",
       "pkg_version": "5.4.0"
     },
@@ -34,7 +34,7 @@
       "pkg_version": "6.6"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5a50c8fa34dbb2ac05674d5acac73efc067472aee0e2821995209540f6b8488c",
-  "size": 647528,
+  "sha256": "3652732b17cc865282a64564f476eb81d9c6cbfd8d4741c29097f5777eac08e3",
+  "size": 647510,
   "source": {
     "filename": "tmux--3.8.sources.tar.gz",
-    "sha256": "45a4bd9ae095bbe9f2f2393ff3d16d92a28af71963db01f2798e89ef4f1acb3e",
-    "size": 900683
+    "sha256": "fc68ce7b242ce12446ae3bc0a9f887c0c906fda20bc7de6391beace5b89509c2",
+    "size": 900685
   },
   "tag": "sequoia",
   "version": "3.8",
   "version_scheme": 0,
-  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
+  "workflow_commit": "082beab1dfac4d9450e077ac2104e8636560b609"
 }
