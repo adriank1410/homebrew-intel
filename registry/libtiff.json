@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
+  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
   "cellar": "any",
-  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
+  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
   "filename": "libtiff--4.7.2.sequoia.bottle.tar.gz",
   "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
   "license": "libtiff",
   "name": "libtiff",
   "pkg_version": "4.7.2",
   "recipe_sha256": "fc00430585b1c694cc6c2749f0479a910cbc0a4dcc0e5dcb0d77efd5db6fa8ae",
-  "release": "intel-40706728745-1-libtiff",
+  "release": "intel-41120823467-1-libtiff",
   "revision": 0,
-  "run_id": "40706728745",
+  "run_id": "41120823467",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -29,7 +29,7 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "da5a47d637e91d7e79e0beed4d7250cf9804e367c1b43b92dba83343c97d5665",
-  "size": 1995589,
+  "sha256": "e515f297ce33d1ca6656a9294a08a8c8d46dfa871bfcc38eb4f4457a50128a05",
+  "size": 1995619,
   "source": {
     "filename": "libtiff--4.7.2.sources.tar.gz",
-    "sha256": "b59bc95b69872ac9c7a02e0b61354a27648e4c5dca06a6b7a1c7cffb39f88992",
-    "size": 4085474
+    "sha256": "23d954444220724a619ad2e9536339f7a540c91ce276e926a50c9ab4024a2347",
+    "size": 4085486
   },
   "tag": "sequoia",
   "version": "4.7.2",
   "version_scheme": 0,
-  "workflow_commit": "8c06685fa5962cebce5ec79876d82124ea549778"
+  "workflow_commit": "e6dcc9f04cce864d371e57bbe7806093e8ea88e2"
 }
