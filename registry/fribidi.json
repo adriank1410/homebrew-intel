@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6969bb3a222958a2c653c5ff77bd43a91e9720ec",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "c48d966391c9a986cd8c7ba7f0c59e62a40d91d4",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "fribidi--1.0.18.sequoia.bottle.tar.gz",
-  "formula_sha256": "79260de247e4e43a9bb97f427b9333fedd280c8720d739e6ad1374cd545a8312",
+  "formula_sha256": "6de01ee45c0fd9afc00b47412b9be1accce926e01a2ba9ece516ab7ff9bc4349",
   "license": {
     "all_of": [
       "GPL-2.0-or-later",
@@ -13,21 +13,21 @@
   },
   "name": "fribidi",
   "pkg_version": "1.0.18",
-  "recipe_sha256": "aebb8b26fdaacbc188660b4b765705c1f22b45fc30914ca3e027a7de545704c3",
-  "release": "intel-41064249682-1-fribidi",
+  "recipe_sha256": "834a0fc8fcc497fd9d6fc1c5ba79c287962c3719653d681de890fce30fc992d2",
+  "release": "intel-41138860341-1-fribidi",
   "revision": 0,
-  "run_id": "41064249682",
+  "run_id": "41138860341",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "0091041bfa4b9b81cac880c39800d6fa09bebac117e225d8f8864fa0927af535",
-  "size": 157602,
+  "sha256": "167e8be209c5f9b335fdd4a544d63cecb5e42c7a0605fd3a5de181cf61c99a88",
+  "size": 157623,
   "source": {
     "filename": "fribidi--1.0.18.sources.tar.gz",
-    "sha256": "986e7aa9361d5486dcbc1c3d39173f31db6dae6fccde923cf00242bc4d931862",
-    "size": 1237323
+    "sha256": "8e57b191d5dfb957a1798c48fdca8e51d1f8757f430e1ed052c21c3c0181b217",
+    "size": 1237339
   },
   "tag": "sequoia",
   "version": "1.0.18",
   "version_scheme": 0,
-  "workflow_commit": "07eea73d4e1d98315cc92df31700ea1676c1f401"
+  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
 }
