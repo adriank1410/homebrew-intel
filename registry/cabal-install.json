@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "eb42c7b2e73110af53aeafae7a40496ad0103f3c",
+  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
   "cellar": "any",
-  "core_commit": "cf2ce3b9428e2741a4881ddc65802ff8c14adf8d",
+  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
   "filename": "cabal-install--3.18.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "c036afaba00e60bc7a1bdec6e652e995ab2d77a795bcd4eb524ed34a9cc0fd36",
+  "formula_sha256": "31d7620537caf488070c1bb6126235d8905a1a664f6a75497b8247bce6df5c76",
   "license": "BSD-3-Clause",
   "name": "cabal-install",
   "pkg_version": "3.18.2.0",
-  "recipe_sha256": "31fe4c56e73a50718eb650c41c99feb17a060ba3bd929273eb2f384103150fdd",
-  "release": "intel-39046630244-1-cabal-install",
+  "recipe_sha256": "c275e897ce6ad51f16ec7857ef6c26796b3428113bc290eb51cb7ba4f08b38f2",
+  "release": "intel-41114503008-1-cabal-install",
   "revision": 0,
-  "run_id": "39046630244",
+  "run_id": "41114503008",
   "runtime_dependencies": [
     {
       "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dc907fcf57f2284d30b871f4bd8a7c2fe069e3eb4c701dc738a3bf764105e471",
-  "size": 10004533,
+  "sha256": "784644a7c2cf51435920769da0364637f730e5c55ba4386b9d2d91cdc4b882ff",
+  "size": 10004589,
   "source": {
     "filename": "cabal-install--3.18.2.0.sources.tar.gz",
-    "sha256": "f567e18c692040355e0c0fcad7ef5788966d43216766faf8e79e715c7f4975df",
-    "size": 6825257
+    "sha256": "2892c00c41b6a6f16330f69e3e0d74303599b1a9a37bf613efcae1a7309a9b46",
+    "size": 6825279
   },
   "tag": "sequoia",
   "version": "3.18.2.0",
   "version_scheme": 0,
-  "workflow_commit": "54e66ca268b41653896d472a15e38e9301469d79"
+  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
 }
