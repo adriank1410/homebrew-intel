@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
   "cellar": "any",
-  "core_commit": "e2681859d1faa84cbc5fc865b851097bef5a1f00",
+  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
   "filename": "libuninameslist--20260918.sequoia.bottle.tar.gz",
-  "formula_sha256": "195980c63b6938ce86cbddc1a28677e662890670525d9dfd55cd7a60527d53be",
+  "formula_sha256": "3530108c80f3f542e9526d4602e13317e58520203430c2f67ba8ea39882264c1",
   "license": "BSD-3-Clause",
   "name": "libuninameslist",
   "pkg_version": "20260918",
-  "recipe_sha256": "4dc91ec332fa81d7072506540530a103d3487f677cca4b1621ea6d41fb5c3492",
-  "release": "intel-35397895893-1-libuninameslist",
+  "recipe_sha256": "e3d9801e2de73a341e92b5a5e9fda20c8cb916d2e036468f80dc90344e34c632",
+  "release": "intel-41114503008-1-libuninameslist",
   "revision": 0,
-  "run_id": "35397895893",
+  "run_id": "41114503008",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "839298727dbf451495b07230f7d4232f65f62dd9d27d1e16fc15107720f8b04a",
-  "size": 1042281,
+  "sha256": "fd061180797c45f0b61f1e512de0e0118cba94dbe0513b1991a9da84dd5cbccb",
+  "size": 1042282,
   "source": {
     "filename": "libuninameslist--20260918.sources.tar.gz",
-    "sha256": "f9145a38ef3854fee75bf0c3e5c0477d549668b0e76d48cc4cd19ea256bd942b",
-    "size": 1428043
+    "sha256": "cde9e5fe5aa2f2aa99dc88a5d1dc0305f62ce2929bef3520bc438956593e3135",
+    "size": 1428069
   },
   "tag": "sequoia",
   "version": "20260918",
   "version_scheme": 0,
-  "workflow_commit": "c98a8c26250629886345bbf36a28e816c19426d4"
+  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
 }
