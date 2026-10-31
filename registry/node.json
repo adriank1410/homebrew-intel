@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
+  "brew_commit": "8a17c2078a1a2f91248915546216783978399e0c",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
-  "filename": "node--26.13.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "ad0483fbcc6e36759d551a241d41f86aaf71b5b85750f935419d231ea47693f1",
+  "core_commit": "8f4a1b194be5c87f2c68bd5d9d81dc14736b3cc2",
+  "filename": "node--26.13.0_2.sequoia.bottle.tar.gz",
+  "formula_sha256": "0df4cfbd8983110c9090e713ff17368ab0141db12dbf356fc271eb6634d7f5ad",
   "license": "MIT",
   "name": "node",
-  "pkg_version": "26.13.0_1",
-  "recipe_sha256": "ad32d0104bea7e864cd843a931a3e461469a7f3b533bcafd0d823545711fa16c",
-  "release": "intel-41202845158-1-node",
-  "revision": 1,
-  "run_id": "41202845158",
+  "pkg_version": "26.13.0_2",
+  "recipe_sha256": "bc0d0219fce22457911a4669486d6364e5f99abc91c386e7571dfdd55db5bd1b",
+  "release": "intel-41237445855-1-node",
+  "revision": 2,
+  "run_id": "41237445855",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -104,9 +104,9 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "90adbc8e94a19728700522d341f23127092b32e816d4f5f1246856f79242cc95",
+      "formula_sha256": "078d1bf3039686aff2cf85d1ffd3020265073c3fe8d322d36c607e5d0458d0ea",
       "name": "simdjson",
-      "pkg_version": "5.0.7"
+      "pkg_version": "5.1.0"
     },
     {
       "formula_sha256": "200d28856006f626a019e48cf7ff69cea53e982dc51377001b58cc3b929bacd6",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f8b3ee440666abc37a4d0d245b04f31b97dc5caae2bfe64a07587c7022fb2ec6",
-  "size": 21764072,
+  "sha256": "c190d6b1318d001ad1e912d6268f6fa1131a5230429136e48b65a1ca4d80147e",
+  "size": 21764011,
   "source": {
-    "filename": "node--26.13.0_1.sources.tar.gz",
-    "sha256": "26a3c72e0ff99c2781c2d7f5879c8f59001f1f88be83782b6162da364cee1fd4",
-    "size": 65776989
+    "filename": "node--26.13.0_2.sources.tar.gz",
+    "sha256": "0c1bc06278514515fe961dfa2e31f90c46414b29762764f1afeb16488a8465c2",
+    "size": 65776994
   },
   "tag": "sequoia",
   "version": "26.13.0",
   "version_scheme": 0,
-  "workflow_commit": "e401bc6c6f3ad5d213a78decb3d085b791697d1a"
+  "workflow_commit": "e68d3a033e69a7decfd723d0f836f122525908ec"
 }
