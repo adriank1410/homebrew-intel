@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "8a17c2078a1a2f91248915546216783978399e0c",
   "cellar": "any_skip_relocation",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "8f4a1b194be5c87f2c68bd5d9d81dc14736b3cc2",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
   "formula_sha256": "5ac5c9825238d0113ee6a8892cf818005e5d34a968c9eb070614ea4f1bc50885",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "d95a4ee571ce6f0bf152058ed06cdd22e389b9669365b4cfe2e10cfce2035217",
-  "release": "intel-41138860341-1-thefuck",
+  "release": "intel-41237445855-1-thefuck",
   "revision": 0,
-  "run_id": "41138860341",
+  "run_id": "41237445855",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -34,7 +34,7 @@
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "63f95924d75555f5e6a4bea52cd0362706a6cf7b672ddd30766b286b21856637",
+      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e08cbdb1a7ec64ed4f94515f04e77e6601a7150422fe202d73b7a6e26dc79f4c",
-  "size": 836803,
+  "sha256": "efa5fcc658516adf581dae276291b1e8bf1f1e6814968ebd1b509e7a86f34cbd",
+  "size": 836780,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "d151cf89b11e7d950b84e252a939c5a8572462f9a833874f0ead825946a21d59",
-    "size": 1721151
+    "sha256": "87eb8be6809f1aa94863e12b740690d79bfb0d118ca0b3eded0bf687b1a384dd",
+    "size": 1721157
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
+  "workflow_commit": "e68d3a033e69a7decfd723d0f836f122525908ec"
 }
