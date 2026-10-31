@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "52346286de0269d87ca1cb19ed0f0b376c007949",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "rust--1.99.1.sequoia.bottle.tar.gz",
   "formula_sha256": "b3e6ec47bc327e7d9f132be8b5ee880b64e8128ef3eedb70459677bdedabd18a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.99.1",
   "recipe_sha256": "aece397ba5dfeb11c93fc0d7ff2afe6ae3128da5c60f557a72196ab620f40bea",
-  "release": "intel-40276503007-1-rust",
+  "release": "intel-41169564614-1-rust",
   "revision": 0,
-  "run_id": "40276503007",
+  "run_id": "41169564614",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -44,12 +44,12 @@
       "pkg_version": "23.1.4"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -74,9 +74,9 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "037c8653cb33fa77e154ab76e1fee068224805e96b0404d535085806650c8454",
+      "formula_sha256": "296075b88fe49c33d7d9c20abde13779eccedeef27418e25ca99b1b1e9e7c98d",
       "name": "z3",
-      "pkg_version": "5.3.2"
+      "pkg_version": "5.3.3"
     },
     {
       "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "bef8370ad900292cf8f255b4147fd578442a225f488d4ec634ae61c1946b08f1",
-  "size": 111576338,
+  "sha256": "38b994f8da7f708ff461dba7a1839d4fa35bbab4245915367f283101a6f42295",
+  "size": 111574672,
   "source": {
     "filename": "rust--1.99.1.sources.tar.gz",
-    "sha256": "47f49963a7aee4c09097092c39094af01667cb9b314a11d132cc91894e2bc642",
-    "size": 657788436
+    "sha256": "3673006f11bf79d6ae25d3db544b59d14bf03d627c2984300e2803d8f4492b91",
+    "size": 657788458
   },
   "tag": "sequoia",
   "version": "1.99.1",
   "version_scheme": 0,
-  "workflow_commit": "84942b29fadde5b9e7c68b9edb305cce4dc75abc"
+  "workflow_commit": "36a5b16076c61c148dbc19e4649cbd463a754beb"
 }
