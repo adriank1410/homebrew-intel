@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a59d9fc5f8361dccde817ce1c066fdf365c8df3e",
+  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
   "cellar": "any_skip_relocation",
-  "core_commit": "21be5f289b83af0efa40c20a9a08781971ff907c",
+  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
   "filename": "archi-steam-farm--6.3.10.6.sequoia.bottle.tar.gz",
   "formula_sha256": "ff2c883f21c955d8be3620115201f5ac354bcf2bbc5330c9e8aa2b64e928f566",
   "license": "Apache-2.0",
   "name": "archi-steam-farm",
   "pkg_version": "6.3.10.6",
   "recipe_sha256": "b49e2d860c02f4803bc2b57aa97d110d6e65a1e998e06ac5407986a88968569f",
-  "release": "intel-40681143545-1-archi-steam-farm",
+  "release": "intel-41224222555-1-archi-steam-farm",
   "revision": 0,
-  "run_id": "40681143545",
+  "run_id": "41224222555",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -34,21 +34,21 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "c2cff3ce80fefdd1df7a4780fc37470150a2907bfa14d7f2651109475476b60c",
-  "size": 8232036,
+  "sha256": "f4ef0274092eaa2cec3c0e448afa0ab98765fbb4969cef151168ede14977d798",
+  "size": 8231985,
   "source": {
     "filename": "archi-steam-farm--6.3.10.6.sources.tar.gz",
-    "sha256": "bc7ae4f294077ae312bc61e6009a75830c9c9784e6e8e4261fa2f66e50f0b260",
-    "size": 10859576
+    "sha256": "d589372e7d022f51be73838423d99a332169b6c06de3bd8ab3a8d0a4ccf14756",
+    "size": 10859579
   },
   "tag": "sequoia",
   "version": "6.3.10.6",
   "version_scheme": 0,
-  "workflow_commit": "34989d4ab4593b2781eaa67c17b9eab83eba15c3"
+  "workflow_commit": "c6d6d363810fc63466fbb97623d509d10a2caa26"
 }
