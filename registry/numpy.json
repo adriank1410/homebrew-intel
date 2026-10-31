@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "09d9e9447fcae7f0d0e3d8d49deb6625592b7834",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "numpy--2.5.4.sequoia.bottle.tar.gz",
   "formula_sha256": "6dc2715d73a8bc3f9545958cf4bfe9d7b2660d09156fd67af00c14ced581af19",
   "license": {
@@ -17,9 +17,9 @@
   "name": "numpy",
   "pkg_version": "2.5.4",
   "recipe_sha256": "a069f328428addc11e357328c05bee9094913754dbdcad54f396d02a7d87c88e",
-  "release": "intel-41020370551-1-numpy",
+  "release": "intel-41138860341-1-numpy",
   "revision": 0,
-  "run_id": "41020370551",
+  "run_id": "41138860341",
   "runtime_dependencies": [
     {
       "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
@@ -32,7 +32,7 @@
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "df1660f25e0d6064d353377cddd4f84bbe37ec699ac5eea20050cd1066ea9a92",
+      "formula_sha256": "ae2f243901f133c7c0766e7cfd828b3a2a5d9684125c609828c159db6e3e21a2",
       "name": "isl",
       "pkg_version": "0.28"
     },
@@ -47,7 +47,7 @@
       "pkg_version": "23.1.4"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -73,15 +73,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "02b9343f39ceda97139262d5068b5e22d61eeba112d53d22f51a8354ae172338",
-  "size": 11172618,
+  "sha256": "b5ad28225e3c6b105fbd80f1c777c44c775aa622d1b62064fbd5109a8ebf04fa",
+  "size": 11172415,
   "source": {
     "filename": "numpy--2.5.4.sources.tar.gz",
-    "sha256": "90ecc1e138abb44b770c9acd789eaa22d0ba2ce46cbf26ad273b1bb5338cc75a",
-    "size": 20849463
+    "sha256": "fa4d84ec3923b1db689951abcbe4cdb1689c8351d706eaa663a229516c10ad1d",
+    "size": 20849469
   },
   "tag": "sequoia",
   "version": "2.5.4",
   "version_scheme": 0,
-  "workflow_commit": "419460f578bd2821fc33a10ccf91e18e78376ee6"
+  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
 }
