@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "hunspell--1.7.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "e7af465b72d574c0e663b7c00b0c991e737facaa60235e4a27786b71f5b9ab6a",
+  "formula_sha256": "ed4a27e0062e2eb0aab3e7be508e8b17078bd56bd68b74daaa7889a56c2ea82b",
   "license": {
     "any_of": [
       "MPL-1.1",
@@ -14,10 +14,10 @@
   },
   "name": "hunspell",
   "pkg_version": "1.7.6",
-  "recipe_sha256": "e056d5fbc99c8377d9c4660d7f80d975db7961061fc7c7ee7715fdff259650bf",
-  "release": "intel-40774841573-1-hunspell",
+  "recipe_sha256": "14d0cfd65d19afe6fed7e0bb1ff3e504aaae6d9a29eb845d0d58115ef2e4706f",
+  "release": "intel-41138860341-1-hunspell",
   "revision": 0,
-  "run_id": "40774841573",
+  "run_id": "41138860341",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -25,7 +25,7 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
       "name": "json-c",
       "pkg_version": "0.19"
     },
@@ -41,15 +41,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7abbda44116246a7cf45448bde9c7a23674bc5721eb57c078bd5244b606b31d3",
-  "size": 725335,
+  "sha256": "566236be8269c9b06cac6d624b8f7696fa419b3aba0f39de0df9045d0f89a784",
+  "size": 725352,
   "source": {
     "filename": "hunspell--1.7.6.sources.tar.gz",
-    "sha256": "0cd421141b2d333e3578196cae64a5888b2042bd891de0ff5f71bd0a3c972948",
-    "size": 1184801
+    "sha256": "45629952126ce147402b5689c538263d416ca4acea831a3a616b7cf7e3ed85cf",
+    "size": 1184823
   },
   "tag": "sequoia",
   "version": "1.7.6",
   "version_scheme": 0,
-  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
+  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
 }
