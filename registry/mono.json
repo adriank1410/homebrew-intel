@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57c486f02ee4f8f1fc179bc3775c3ac3dc6262d8",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "cfcce8998db0bd2b8524dc19dd07dfbb2cf2acf9",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "mono--6.14.1.sequoia.bottle.tar.gz",
   "formula_sha256": "d9b0f04df60d2a4312b5b4caf37d8d3d640fa5166e0700ead21fc8a92b4254cf",
   "license": "Apache-2.0",
   "name": "mono",
   "pkg_version": "6.14.1",
   "recipe_sha256": "8123db505e9490c29f5b2973ff02a3d54ce09ba10e49de515aff7e72b78bd406",
-  "release": "intel-40487758889-1-mono",
+  "release": "intel-41169564614-1-mono",
   "revision": 0,
-  "run_id": "40487758889",
+  "run_id": "41169564614",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,7 +19,7 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -29,12 +29,12 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "dbc5842dccebfa141473e066d07070fdd5c093c78250ec8959fa4b0b69a378c6",
+      "formula_sha256": "63f95924d75555f5e6a4bea52cd0362706a6cf7b672ddd30766b286b21856637",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c69b4306e7fe864c16c0dfe6638b9f9538eeedb5eb7e4e9cc31585b7829dd38c",
-  "size": 121133628,
+  "sha256": "4ca054f108d1bff8248290cc8f5f2a3dbd46485df5a7df4373ae067298e6f017",
+  "size": 121132811,
   "source": {
     "filename": "mono--6.14.1.sources.tar.gz",
-    "sha256": "177cafbdf6993b3e7822b5a7744374bbef75908b4b544a9ee3792963b947a6b0",
-    "size": 303884381
+    "sha256": "44edfc5add9cc41d511c2475f05ec037141dc248544b2d0de72984808aa2a885",
+    "size": 303884396
   },
   "tag": "sequoia",
   "version": "6.14.1",
   "version_scheme": 0,
-  "workflow_commit": "54c502c78cc9c8d39e6289c35a84fd584af1db9f"
+  "workflow_commit": "36a5b16076c61c148dbc19e4649cbd463a754beb"
 }
