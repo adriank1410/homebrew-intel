@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any_skip_relocation",
-  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
   "formula_sha256": "5ac5c9825238d0113ee6a8892cf818005e5d34a968c9eb070614ea4f1bc50885",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "d95a4ee571ce6f0bf152058ed06cdd22e389b9669365b4cfe2e10cfce2035217",
-  "release": "intel-40976752251-1-thefuck",
+  "release": "intel-41138860341-1-thefuck",
   "revision": 0,
-  "run_id": "40976752251",
+  "run_id": "41138860341",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,7 +19,7 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "80004247e260e405d99130c971c2b72d3c667ba469c31ddfe23f063b48f1c569",
-  "size": 836776,
+  "sha256": "e08cbdb1a7ec64ed4f94515f04e77e6601a7150422fe202d73b7a6e26dc79f4c",
+  "size": 836803,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "05ab49bf171c63d1bf26119b1d3dabfab738ef3d863691245970af424d1b7a3c",
-    "size": 1721155
+    "sha256": "d151cf89b11e7d950b84e252a939c5a8572462f9a833874f0ead825946a21d59",
+    "size": 1721151
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "082beab1dfac4d9450e077ac2104e8636560b609"
+  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
 }
