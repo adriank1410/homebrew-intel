@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any_skip_relocation",
-  "core_commit": "68739a4b8e3fd82750acd11b548705b8c61edcaa",
+  "core_commit": "e9e970a6894f23a16eaea5b7132dfd0627c870c1",
   "filename": "bun--1.4.4_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "c557a01a4d0922dcd1833c0d46e15baae882738a3533d427461267fbf08893fa",
+  "formula_sha256": "8d5549ebc350cb339e759b02014738257428a0e0f807fdada23d1093a3289829",
   "license": {
     "all_of": [
       "MIT",
@@ -24,21 +24,21 @@
   },
   "name": "bun",
   "pkg_version": "1.4.4_1",
-  "recipe_sha256": "98f8a7ccea4d632b334f85df158a18864919fd80996cd9190697dc26b0c48c6e",
-  "release": "intel-40205253969-1-bun",
+  "recipe_sha256": "1f5da8d7c62888a0da0e733d9291005c43f52d71b899c75ef06a2f9917ec89a4",
+  "release": "intel-41178370459-1-bun",
   "revision": 1,
-  "run_id": "40205253969",
+  "run_id": "41178370459",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "f05d7ebfe61ea90401fcdc24044cf0e5f7dd033f39dd873373fffd55e203c1f1",
-  "size": 41226508,
+  "sha256": "f16c3841d154b6b1d979b41480f6e9e516f9eb2a55d95086c96ee0786a652ca6",
+  "size": 41226460,
   "source": {
     "filename": "bun--1.4.4_1.sources.tar.gz",
-    "sha256": "307e32f5fe7e43cf32191fa610614f5e5d50a2148d1dc0326d5ac5610d784bdd",
-    "size": 134623881
+    "sha256": "b501592d3841024499739c462d8711b4a262c2ae5791ab1e5ee47d9762669ea7",
+    "size": 134635331
   },
   "tag": "sequoia",
   "version": "1.4.4",
   "version_scheme": 0,
-  "workflow_commit": "76e46e1135f09e109049a714fc47e278526c702e"
+  "workflow_commit": "6bf0e99b3f373088de894b726ce55fd7d6cc51b4"
 }

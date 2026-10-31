@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6969bb3a222958a2c653c5ff77bd43a91e9720ec",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "c48d966391c9a986cd8c7ba7f0c59e62a40d91d4",
+  "core_commit": "e9e970a6894f23a16eaea5b7132dfd0627c870c1",
   "filename": "py3cairo--1.29.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1f039864443a499d2ba9fd12f545548c0aa3d581e10993e44fb26b10e21d9e6c",
   "license": {
@@ -14,9 +14,9 @@
   "name": "py3cairo",
   "pkg_version": "1.29.2_1",
   "recipe_sha256": "03655e58cf912d065926342e5e598868ab8093c2c39b56dbf7b000f9cfa42892",
-  "release": "intel-41064249682-1-py3cairo",
+  "release": "intel-41178370459-1-py3cairo",
   "revision": 1,
-  "run_id": "41064249682",
+  "run_id": "41178370459",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -24,7 +24,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
+      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -49,7 +49,7 @@
       "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
       "name": "json-c",
       "pkg_version": "0.19"
     },
@@ -94,7 +94,7 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
       "name": "lzo",
       "pkg_version": "2.10"
     },
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "83a70994d2c8ce2f7029b3cf50e5f0de4a4964acf5dae0319fc4602d09ccf0b1",
-  "size": 257971,
+  "sha256": "0a3cf5eabd60c450a42fbc5bd31356bd6279e7a895de76dbf2080b1ee74398d0",
+  "size": 257958,
   "source": {
     "filename": "py3cairo--1.29.2_1.sources.tar.gz",
-    "sha256": "df8b4304519b392e76b69a7fc36b630f7ea5c1aa8d5be90184824a44276d62d9",
+    "sha256": "7eea621c3f43a9a0466bf6a50ef70273b30a8c2c62ab572c6906c6925b1b26a9",
     "size": 688448
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "07eea73d4e1d98315cc92df31700ea1676c1f401"
+  "workflow_commit": "6bf0e99b3f373088de894b726ce55fd7d6cc51b4"
 }
