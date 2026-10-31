@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
   "cellar": "any",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
   "filename": "cairo--1.18.6.sequoia.bottle.tar.gz",
   "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "cairo",
   "pkg_version": "1.18.6",
   "recipe_sha256": "f351d40bc328fe90a24b1efd058b9f83e060a5ac0d27e108e459c7f909b777cc",
-  "release": "intel-41169564614-1-cairo",
+  "release": "intel-41231472749-2-cairo",
   "revision": 0,
-  "run_id": "41169564614",
+  "run_id": "41231472749",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -104,21 +104,21 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "formula_sha256": "34141b84ad901dc8b65297d2351572f64db55520c0dbc6b75477110783eef797",
       "name": "xorgproto",
       "pkg_version": "2026.1"
     }
   ],
   "schema": 1,
-  "sha256": "98a39fb6b55036c3917acf88cd6cde6f790a234ae8ca3057b562529dc4d5e342",
-  "size": 1648615,
+  "sha256": "e63de176c2dfa2ec6ae08422e9a7848a535ed5971e1d8b71b895c6698cabbe5c",
+  "size": 1648604,
   "source": {
     "filename": "cairo--1.18.6.sources.tar.gz",
-    "sha256": "be4ceaafd466d3c75b94719c0b82793b84876febed185aa7f51e562305fb363f",
-    "size": 32764012
+    "sha256": "00ef7f949219de120eb12113044db193fe947ebc8ba43215c766e53b04ad55fe",
+    "size": 32764031
   },
   "tag": "sequoia",
   "version": "1.18.6",
   "version_scheme": 0,
-  "workflow_commit": "36a5b16076c61c148dbc19e4649cbd463a754beb"
+  "workflow_commit": "87b8eea2a5e1f446cbfca5565ef61d281f668cba"
 }
