@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3c1f920b67950c937656c26ace48fb8cf9d9935e",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "b8fd7a5e47680e8a4b9eb3bfad2199504478b996",
-  "filename": "maturin--1.15.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "979b1c97a1a78ad341eec2bf24c4a80658dd9b66102907fb2f367bfb80271a38",
+  "core_commit": "e9e970a6894f23a16eaea5b7132dfd0627c870c1",
+  "filename": "maturin--1.16.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "258cea9ac8a63535c4045e68e0444927a950dfde09db5fb4d488d2be2c001b04",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "maturin",
-  "pkg_version": "1.15.0_1",
-  "recipe_sha256": "89af59170c99f4f04df8ad5d8fe8977cc88e1320e7ed4cb871b19396f07af86d",
-  "release": "intel-38513515528-1-maturin",
-  "revision": 1,
-  "run_id": "38513515528",
+  "pkg_version": "1.16.0",
+  "recipe_sha256": "5572dfd28f535c6f95cc5fb9411dfd663828bbddedd565356216270f07112cc4",
+  "release": "intel-41178370459-1-maturin",
+  "revision": 0,
+  "run_id": "41178370459",
   "runtime_dependencies": [
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3f58a4bcc15d90ca7a67229ba25368e5fee5d5c0f9589849f963a31c9a139eeb",
-  "size": 10520969,
+  "sha256": "85c7f9dd86f5e894e5e21bbd2ce997ef5718ad66ff3258ce0141ac2ed0695c8b",
+  "size": 10800920,
   "source": {
-    "filename": "maturin--1.15.0_1.sources.tar.gz",
-    "sha256": "7fe7ae9740ca635497b349eef909d76c43bfed7f83dd033b9dd5876faf90df23",
-    "size": 32094523
+    "filename": "maturin--1.16.0.sources.tar.gz",
+    "sha256": "d90c356c0b3ae60b2a63319346936ea6438cc6948b67a120e13f70518ff9d67b",
+    "size": 32449894
   },
   "tag": "sequoia",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "version_scheme": 0,
-  "workflow_commit": "8870643a4a082b95ed32bd4c88d893d28dff28d5"
+  "workflow_commit": "6bf0e99b3f373088de894b726ce55fd7d6cc51b4"
 }

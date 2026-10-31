@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
-  "filename": "aom--3.15.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "a9071a176f85c03b01a7791f1c985209359e44bdda47725dee8ba41757d96788",
+  "core_commit": "e9e970a6894f23a16eaea5b7132dfd0627c870c1",
+  "filename": "aom--3.15.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
   "license": "BSD-2-Clause",
   "name": "aom",
-  "pkg_version": "3.15.2",
-  "recipe_sha256": "8c6af57de8a60506e03a9dfbc855d74f3f4a002e60f30cee6294309f26fe07b4",
-  "release": "intel-41114503008-1-aom",
+  "pkg_version": "3.15.3",
+  "recipe_sha256": "043432d4d7050be6fa2dad1c6388d1ec5e93b403bfdf3eba27d2c4383d3d4578",
+  "release": "intel-41178370459-1-aom",
   "revision": 0,
-  "run_id": "41114503008",
+  "run_id": "41178370459",
   "runtime_dependencies": [
     {
       "formula_sha256": "e26bc5341ea496e86d7f2be1f48a711235139d5ccd10556188d3c52b24a30f76",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "16bc4e7a8a4f970163aefcd85f7ed40f956b2ba31b36ccdb846886f93e26e42b",
-  "size": 4725836,
+  "sha256": "aeb55a48c1e9c43c3d095e71ba547b8efe162120f4c16e911faa3ecd7f24d8a3",
+  "size": 4725716,
   "source": {
-    "filename": "aom--3.15.2.sources.tar.gz",
-    "sha256": "ab0127497d4d5e4dca0087d7d6a98569a70a60ceefdf0ee43b5794fc4732e84f",
-    "size": 8657949
+    "filename": "aom--3.15.3.sources.tar.gz",
+    "sha256": "5de4f6ff4aab88b5cca85424f191fe22b219765a53dee05524efbd5b0d66b9d7",
+    "size": 8659800
   },
   "tag": "sequoia",
-  "version": "3.15.2",
+  "version": "3.15.3",
   "version_scheme": 0,
-  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
+  "workflow_commit": "6bf0e99b3f373088de894b726ce55fd7d6cc51b4"
 }
