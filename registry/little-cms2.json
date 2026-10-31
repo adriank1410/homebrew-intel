@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6fb3f99666607569cbf23ed6b159ff9f22e3749f",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "013c69a9cbf5c19816ab4e9315fb2caf98b64e85",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "little-cms2--2.19.1.sequoia.bottle.tar.gz",
   "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
   "license": "MIT",
   "name": "little-cms2",
   "pkg_version": "2.19.1",
   "recipe_sha256": "7af482e897b7d6703f41e8595684e59eb2d7799f55055101add65d7301bc569b",
-  "release": "intel-40716616899-1-little-cms2",
+  "release": "intel-41138860341-1-little-cms2",
   "revision": 0,
-  "run_id": "40716616899",
+  "run_id": "41138860341",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -34,7 +34,7 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "096e23ddcbbe8d4d3153a2bed8f1c81b80c42a4b2e76ea36f472185520a0ef4a",
-  "size": 430488,
+  "sha256": "a8dcb0b9c68118db08699c528377834aa1f5cf280ff23034d757a199a2710aee",
+  "size": 430482,
   "source": {
     "filename": "little-cms2--2.19.1.sources.tar.gz",
-    "sha256": "fd7c4feef8c55e9a232a95cfffe73ef569914a58372c59447915d7600cb770e9",
-    "size": 5733382
+    "sha256": "d5527285332233065d098e85deddc03e5cb1078af6e1cc2cc815c827f90746da",
+    "size": 5733397
   },
   "tag": "sequoia",
   "version": "2.19.1",
   "version_scheme": 1,
-  "workflow_commit": "40aa2220151f102ce545c554327115e656e6cce5"
+  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
 }
