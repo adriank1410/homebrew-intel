@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "bandit--1.9.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8359d8da6489ffe3974aa2c43d12de7b5bc04392a37cd0363da6dcb05b264b1a",
   "license": "Apache-2.0",
   "name": "bandit",
   "pkg_version": "1.9.4_1",
   "recipe_sha256": "9e191c80016e5e1a66bc86493eefff6e24f69ff107cb6186fd0541eeb24987ab",
-  "release": "intel-40976752251-1-bandit",
+  "release": "intel-41138860341-1-bandit",
   "revision": 1,
-  "run_id": "40976752251",
+  "run_id": "41138860341",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -24,7 +24,7 @@
       "pkg_version": "0.2.5"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3fa92f4067978b3d3cbc329ae4862d6e6f79a438b1e6d24b96f84029c509ddf0",
-  "size": 1669676,
+  "sha256": "ecbaa279ccec8bc2eb11772bf6d7db3541ff2847062b475dcfee0030a4274c07",
+  "size": 1669656,
   "source": {
     "filename": "bandit--1.9.4_1.sources.tar.gz",
-    "sha256": "627b3e57be4f271c360c4facc4c06e636b81a0e28a3f2edbb93141d3f95ce0eb",
-    "size": 10227986
+    "sha256": "177d9663af822c4d1f58a6e6ec8d39464adce63f42829938e6109b94a2b6401d",
+    "size": 10227979
   },
   "tag": "sequoia",
   "version": "1.9.4",
   "version_scheme": 0,
-  "workflow_commit": "082beab1dfac4d9450e077ac2104e8636560b609"
+  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
 }
