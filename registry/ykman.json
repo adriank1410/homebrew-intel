@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57c486f02ee4f8f1fc179bc3775c3ac3dc6262d8",
+  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
   "cellar": "any_skip_relocation",
-  "core_commit": "cfcce8998db0bd2b8524dc19dd07dfbb2cf2acf9",
+  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
   "filename": "ykman--5.9.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "2655c78d83cbe1e8697c24c02c945406bf30db46460cb93e2793c45cc0dfe722",
+  "formula_sha256": "fa8f24720e8b375ba15f62191dbe017dcd7730d7bb64153f066c0fea020cc3d0",
   "license": "BSD-2-Clause",
   "name": "ykman",
   "pkg_version": "5.9.2",
-  "recipe_sha256": "59f3abd0fd7f9139563cdf1e261db7f3a9b3a2e51a0ff22a2f7c50b0401e7e3d",
-  "release": "intel-40487758889-1-ykman",
+  "recipe_sha256": "0c6dea0e2ab871ffea30bd4f5ced9311279a037a877408ef49c475e755e3c396",
+  "release": "intel-41224222555-1-ykman",
   "revision": 0,
-  "run_id": "40487758889",
+  "run_id": "41224222555",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -29,7 +29,7 @@
       "pkg_version": "50.0.2_2"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -39,7 +39,7 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -49,7 +49,7 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "dbc5842dccebfa141473e066d07070fdd5c093c78250ec8959fa4b0b69a378c6",
+      "formula_sha256": "63f95924d75555f5e6a4bea52cd0362706a6cf7b672ddd30766b286b21856637",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1818792d330adb04ea21a3c9f4f633d305af3620ba8a54b0d61ca204f0366ff9",
-  "size": 974473,
+  "sha256": "8c77e27ca4a30892e60baa97abe3af44be2ae0847cc3d933ae548eec697184ec",
+  "size": 974529,
   "source": {
     "filename": "ykman--5.9.2.sources.tar.gz",
-    "sha256": "1c80f0152cbaa0551782a484d1f9a7c59209fbe07db2c2445775bd4a2bf6d0c4",
-    "size": 2060354
+    "sha256": "5ba1cab2d741e1f44d07731d1287ffb3f07510df0dc3979403d1585216d77d5d",
+    "size": 2060363
   },
   "tag": "sequoia",
   "version": "5.9.2",
   "version_scheme": 0,
-  "workflow_commit": "54c502c78cc9c8d39e6289c35a84fd584af1db9f"
+  "workflow_commit": "c6d6d363810fc63466fbb97623d509d10a2caa26"
 }
