@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
+  "brew_commit": "8a17c2078a1a2f91248915546216783978399e0c",
   "cellar": "any_skip_relocation",
-  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
+  "core_commit": "8f4a1b194be5c87f2c68bd5d9d81dc14736b3cc2",
   "filename": "yt-dlp--2026.10.26.sequoia.bottle.tar.gz",
   "formula_sha256": "01c80cd2905986b661787b691fb44a81e71014ed2c7fabd8feffcfaeda22016a",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.10.26",
   "recipe_sha256": "e280e8043453857dc20ebc63b929049eb0c2976052bf7bc3af8747afc4f16db5",
-  "release": "intel-41202845158-1-yt-dlp",
+  "release": "intel-41237445855-1-yt-dlp",
   "revision": 0,
-  "run_id": "41202845158",
+  "run_id": "41237445855",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -79,7 +79,7 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "63f95924d75555f5e6a4bea52cd0362706a6cf7b672ddd30766b286b21856637",
+      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "43cfa5f86564baf2dd126f9df4c2d369fac6f26c7db841d978861b3a9f2fe282",
-  "size": 8595632,
+  "sha256": "3575040823c868f460e613f749bdd5ca8a926429a1aef5517b33e3f18eb0c63e",
+  "size": 8595135,
   "source": {
     "filename": "yt-dlp--2026.10.26.sources.tar.gz",
-    "sha256": "1eedad1d23d017943e8a30819fd05b4d00fd61466bf5b13204e2764a9e734d6e",
+    "sha256": "187bfa77527612b448a08ad7c9fbfa03ec6f42e04874e19e193acb5eea90eacb",
     "size": 18178651
   },
   "tag": "sequoia",
   "version": "2026.10.26",
   "version_scheme": 0,
-  "workflow_commit": "e401bc6c6f3ad5d213a78decb3d085b791697d1a"
+  "workflow_commit": "e68d3a033e69a7decfd723d0f836f122525908ec"
 }
