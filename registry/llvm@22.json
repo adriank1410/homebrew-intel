@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "013821de5e79b6e0698e59dced9e1e6a0fba8e0d",
+  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
   "cellar": "any",
-  "core_commit": "cbd0c8ddb11909fb209f06e08677973c0f211848",
+  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
   "filename": "llvm@22--22.1.8.sequoia.bottle.tar.gz",
-  "formula_sha256": "e75d37d36a577f34d820e753515a1931fca9ea0a22ecf5d9903380850a2ddfdf",
+  "formula_sha256": "ce9c80a8eacf3b83e57b57fe7a13494c166c1713ce63adbda4a7c1ade4ff5a17",
   "license": {
     "Apache-2.0": {
       "with": "LLVM-exception"
@@ -12,13 +12,13 @@
   },
   "name": "llvm@22",
   "pkg_version": "22.1.8",
-  "recipe_sha256": "658dede1a18aa1374eb24fea13f9d98d980743fecffc3e8fc3a5217d6f8d3750",
-  "release": "intel-39081190953-1-llvm-at-22",
+  "recipe_sha256": "44629f5d87d9a7688e978aa98ac35174ca2893033e29f20debac0fa4c7b0b5de",
+  "release": "intel-41138860341-1-llvm-at-22",
   "revision": 0,
-  "run_id": "39081190953",
+  "run_id": "41138860341",
   "runtime_dependencies": [
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
@@ -34,15 +34,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fec3b4ed545d94df9a6645f5af5a6d3b49fab7fd59890691bad4f890c69d7081",
-  "size": 338658964,
+  "sha256": "a154b491b677b33c298ffdc18f67ae36b280b42c2c2bbdb53c4899c2caee7a66",
+  "size": 338657639,
   "source": {
     "filename": "llvm@22--22.1.8.sources.tar.gz",
-    "sha256": "58d6fecf515c43e2b47c64189403da736f7aaf5b4fc44d067308a66b14431872",
-    "size": 167151870
+    "sha256": "2e9a33998c5c5c7cd4d3f9e175d09ddc25852f8a808bc803a3ef8a6cb253a123",
+    "size": 167151879
   },
   "tag": "sequoia",
   "version": "22.1.8",
   "version_scheme": 0,
-  "workflow_commit": "80874878ed359f21cea37f150e61ffa585c5e56f"
+  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
 }
