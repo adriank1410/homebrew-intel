@@ -14,6 +14,13 @@ module IntelbrewNativeSources
   # Homebrew does not try mirrors when that failure happens during URL
   # resolution, so keep one checksum-gated HTTPS copy of the upstream tarball.
   MAX_FALLBACK_BYTES = 64 * 1024 * 1024
+  # Some upstreams (for example linuxtv.org behind a bot challenge) return an
+  # HTML page instead of the archive. ci.py can then extract the inputs of the
+  # root's previously published, attested source bundle into this directory,
+  # one file per SHA-256. A file is used only when its digest equals the
+  # formula checksum, so the recipe stays the trust anchor.
+  SOURCE_SEEDS_ENV = "HOMEBREW_INTELBREW_SOURCE_SEEDS"
+  MAX_SEED_BYTES = 2 * 1024 * 1024 * 1024
   NMAP_DISTFILE = %r{\Ahttps://nmap\.org/dist/(nmap-[0-9]+(?:\.[0-9]+){1,4}(?:_[0-9]+)?\.tar\.bz2)\z}
   INDEX_LINE = /\Aindex ([0-9a-f]+)\.\.([0-9a-f]+)([^\r\n]*)(\r?\n)?\z/
 
@@ -85,7 +92,12 @@ module IntelbrewNativeSources
   def fetch(resource, **options)
     resource.fetch(**options)
   rescue ChecksumMismatchError => error
-    raise unless github_patch_url?(resource.url)
+    unless github_patch_url?(resource.url)
+      raise error unless seed_published_source(resource)
+
+      # Homebrew verifies the seeded cache entry against the formula checksum.
+      return resource.fetch(**options)
+    end
 
     cached = Pathname(resource.cached_download.to_s)
     stat = File.lstat(cached.to_s)
@@ -99,10 +111,67 @@ module IntelbrewNativeSources
     # repaired cache entry; the digest check above only selects the candidate.
     resource.fetch(**options)
   rescue DownloadError => error
-    raise error unless seed_expired_certificate(resource, error)
+    raise error unless seed_expired_certificate(resource, error) || seed_published_source(resource)
 
     resource.fetch(**options)
   end
+
+  def seed_published_source(resource)
+    directory = ENV.fetch(SOURCE_SEEDS_ENV, "")
+    return false if directory.empty?
+
+    expected = resource.checksum
+    return false unless expected.respond_to?(:hexdigest) && expected.hexdigest.match?(/\A[0-9a-f]{64}\z/)
+
+    root = Pathname(directory)
+    return false unless root.absolute? && !root.symlink? && root.directory?
+
+    candidate = root/expected.hexdigest
+    stat = File.lstat(candidate.to_s)
+    return false unless stat.file? && stat.size <= MAX_SEED_BYTES
+
+    target = Pathname(resource.cached_download.to_s)
+    target.dirname.mkpath
+    raise ArgumentError, "refusing to replace a symlink" if target.symlink?
+    return false unless copy_verified(candidate, target, expected.hexdigest)
+
+    warn "intelbrew: seeded #{target.basename} from the previously published source bundle"
+    true
+  rescue ArgumentError, SystemCallError
+    false
+  end
+
+  # Copy without following links, hash the bytes actually copied and publish
+  # the cache entry only when they match the expected digest.
+  def copy_verified(source, target, expected)
+    temporary = Tempfile.new([".intelbrew-seed-", ".partial"], target.dirname.to_s)
+    begin
+      temporary.binmode
+      digest = Digest::SHA256.new
+      copied = 0
+      File.open(source.to_s, File::RDONLY | (defined?(File::NOFOLLOW) ? File::NOFOLLOW : 0)) do |input|
+        input.binmode
+        while (chunk = input.read(1024 * 1024))
+          copied += chunk.bytesize
+          return false if copied > MAX_SEED_BYTES
+
+          digest.update(chunk)
+          temporary.write(chunk)
+        end
+      end
+      return false unless digest.hexdigest == expected
+
+      temporary.flush
+      temporary.fsync
+      File.chmod(0o644, temporary.path)
+      temporary.close
+      File.rename(temporary.path, target.to_s)
+      true
+    ensure
+      temporary.close!
+    end
+  end
+  private_class_method :copy_verified
 
   def seed_expired_certificate(resource, error)
     return false unless certificate_expired?(error)

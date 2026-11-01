@@ -203,9 +203,12 @@ def run(args,*,capture=True,input_text=None,env=None,cwd=None,timeout=None,echo=
         raise Error(f'{args[0]} failed ({p.returncode}): {details}')
     return p.stdout or ''
 
-def native(request,*,capture=True,ci=False,cache=None):
+def native(request,*,capture=True,ci=False,cache=None,source_seeds=None):
     env=brew_env(ci=ci)
+    env.pop('HOMEBREW_INTELBREW_SOURCE_SEEDS',None)
     if cache is not None:env['HOMEBREW_CACHE']=os.fspath(cache)
+    # brew keeps HOMEBREW_* variables; native_sources.rb reads this directory.
+    if source_seeds is not None:env['HOMEBREW_INTELBREW_SOURCE_SEEDS']=os.fspath(source_seeds)
     out=run(['brew','ruby',str(ROOT/'libexec/native.rb')],input_text=json.dumps(request),capture=capture,env=env)
     if not capture:return None
     try:return json.loads(out)

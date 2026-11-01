@@ -175,11 +175,71 @@ def _brew_install_args(name:str,transient:set[str])->list[str]:
     return ["brew","install",mode,"--no-ask",f"homebrew/core/{name}"]
 
 
-def _prepare_source_sets(names,work:Path):
+MAX_SEED_BYTES = 2_000_000_000
+
+
+def _previous_source_seeds(name:str,records:dict,config:dict,work:Path)->Path|None:
+    """Extract the inputs of the root's previously published source bundle.
+
+    The files are named by SHA-256 and are only candidates: native_sources.rb
+    uses one solely when it matches the pinned formula checksum, after the
+    upstream download returned different bytes or failed. Any problem here
+    means no seeds, never a weaker check.
+    """
+    record=records.get(name) if isinstance(records,dict) else None
+    if not isinstance(record,dict) or not record.get("release"):return None
+    try:
+        source=record["source"];repository=config["repository"]
+        bundle=work/f"{name}-previous-sources"/basename(source["filename"])
+        download(artifact_url(repository,record,source["filename"]),bundle,source["sha256"],source["size"])
+        attest(bundle,repository,record["workflow_commit"])
+        seeds=work/f"{name}-source-seeds";seeds.mkdir()
+        total=0;count=0
+        with tarfile.open(bundle,"r:gz") as archive:
+            index_member=archive.getmember("sources.json")
+            if not index_member.isfile() or index_member.size>MAX_JSON:raise Error("Invalid source index")
+            index=json.loads(archive.extractfile(index_member).read(MAX_JSON+1))
+            resources=index.get("resources") if isinstance(index,dict) else None
+            if not isinstance(resources,list) or len(resources)>400:raise Error("Invalid source resource index")
+            for item in resources:
+                if not isinstance(item,dict):raise Error("Invalid source resource")
+                filename=item.get("filename");expected=require_sha(item.get("sha256"))
+                if not isinstance(filename,str) or not filename.startswith("inputs/") or not _safe_archive_name(filename):
+                    raise Error("Invalid source resource path")
+                target=seeds/expected
+                if target.exists():continue
+                member=archive.getmember(filename)
+                total+=member.size
+                if not member.isfile() or total>MAX_SEED_BYTES:raise Error("Source input is not a bounded regular file")
+                handle=archive.extractfile(member);part=seeds/f".{expected}.partial";value=hashlib.sha256()
+                with part.open("xb") as out:
+                    for chunk in iter(lambda:handle.read(1024*1024),b""):value.update(chunk);out.write(chunk)
+                if value.hexdigest()!=expected:part.unlink();raise Error("Source input checksum mismatch")
+                part.rename(target);count+=1
+        if not count:return None
+        print(f"intelbrew CI: prepared {count} checksum-gated source input(s) from {record['release']}",flush=True)
+        return seeds
+    except (Error,OSError,ValueError,KeyError,TypeError,tarfile.TarError,EOFError) as exc:
+        print(f"intelbrew CI: previously published sources for {name} are unavailable: {exc}",flush=True)
+        return None
+
+
+def _prepare_source_sets(names,work:Path,*,records=None,config=None):
     caches={};sources={}
     for name in names:
         cache=work/f"{name}-cache";cache.mkdir();caches[name]=cache
-        sources[name]=native({"mode":"sources","name":name},ci=True,cache=cache)
+        request={"mode":"sources","name":name}
+        try:
+            sources[name]=native(request,ci=True,cache=cache)
+        except Error as exc:
+            # Upstream hosts can start serving bot challenges for unchanged
+            # archives. Retry once with byte-identical inputs from our own
+            # previous release; the recipe checksum still decides.
+            seeds=_previous_source_seeds(name,records or {},config or {},work)
+            if seeds is None:raise
+            reason=(str(exc).strip().splitlines() or ["unknown error"])[-1][:300]
+            print(f"intelbrew CI: {name} source fetch failed ({reason}); retrying with previously published inputs",flush=True)
+            sources[name]=native(request,ci=True,cache=cache,source_seeds=seeds)
     return caches,sources
 
 
@@ -458,7 +518,7 @@ def build(root:str,output:Path)->None:
         if meta["provider"]=="personal":
             rec=records[name];path=work/rec["sha256"]/rec["filename"];download(artifact_url(config["repository"],rec),path,rec["sha256"],rec["size"]);attest(path,config["repository"],rec["workflow_commit"]);check_bottle(path,rec);install_binary(name,meta,local=path,sha=rec["sha256"],as_dependency=name!=root);continue
         if meta["provider"]!="build":raise Error("Unexpected CI package provider")
-        caches,sources=_prepare_source_sets([name],work)
+        caches,sources=_prepare_source_sets([name],work,records=records,config=config)
         package_caches.update(caches);source_sets.update(sources)
         sources=source_sets[name];cache=package_caches[name];env=_build_env(cache)
         if name in transient:print(f"intelbrew CI: {name} is only needed to compile published packages; building from source without a bottle",flush=True)
