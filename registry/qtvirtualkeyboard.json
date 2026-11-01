@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
+  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
   "cellar": "any",
-  "core_commit": "3731c916d5263af6800a4247924d9cb454fd636a",
+  "core_commit": "afac45a3d88a17286b67103ad30708dc3c123975",
   "filename": "qtvirtualkeyboard--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "c44304eec6fd7c6977957e2274ebb29ca35e729d023e54829615f02b1a077df3",
   "license": {
@@ -15,9 +15,9 @@
   "name": "qtvirtualkeyboard",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "b237f4885badd105ff726b27853155fa02a70eef42e5ddd017ce1d1ff6d9b3e2",
-  "release": "intel-40802566607-1-qtvirtualkeyboard",
+  "release": "intel-41310551314-1-qtvirtualkeyboard",
   "revision": 1,
-  "run_id": "40802566607",
+  "run_id": "41310551314",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -35,7 +35,7 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
+      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -70,7 +70,7 @@
       "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
+      "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
       "name": "graphite2",
       "pkg_version": "1.3.15"
     },
@@ -80,7 +80,7 @@
       "pkg_version": "15.0.0_1"
     },
     {
-      "formula_sha256": "e7af465b72d574c0e663b7c00b0c991e737facaa60235e4a27786b71f5b9ab6a",
+      "formula_sha256": "ed4a27e0062e2eb0aab3e7be508e8b17078bd56bd68b74daaa7889a56c2ea82b",
       "name": "hunspell",
       "pkg_version": "1.7.6"
     },
@@ -95,7 +95,7 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
       "name": "json-c",
       "pkg_version": "0.19"
     },
@@ -145,22 +145,22 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
       "name": "lzo",
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd",
+      "formula_sha256": "0fda7ee9fa68cad87939ff0bc9207d611e21441c9b27e98af1d6943cbcf7a72b",
       "name": "md4c",
       "pkg_version": "0.6.0"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -215,7 +215,7 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "formula_sha256": "34141b84ad901dc8b65297d2351572f64db55520c0dbc6b75477110783eef797",
       "name": "xorgproto",
       "pkg_version": "2026.1"
     },
@@ -231,15 +231,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ea7bf7bcc44250c33ed85f0d8ae90d7fa3d338264cdfed0e90308738f2eaa65e",
-  "size": 3030482,
+  "sha256": "2ad4979a597b0b77885166346cae8459701a32a721fa2339206f14b39168cc25",
+  "size": 3030474,
   "source": {
     "filename": "qtvirtualkeyboard--6.12.0_1.sources.tar.gz",
-    "sha256": "2d67ab9e26246bd1e5a9fd97fa356c46704bb167b166bf75a07bab5234cdb04b",
-    "size": 3317728
+    "sha256": "f28f53886a431af7854d7be864707bddd00265f66d4666ef30b1600352cba8dc",
+    "size": 3317726
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "d8805f024a17443690d0e194e419b502b64960ff"
+  "workflow_commit": "b1b6e0877b186e8f00b72d6e1f992598b04ab108"
 }
