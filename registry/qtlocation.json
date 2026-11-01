@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
+  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
   "cellar": "any",
-  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
+  "core_commit": "afac45a3d88a17286b67103ad30708dc3c123975",
   "filename": "qtlocation--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "58a80ee4b6ac9dca72a634113b86ce43e015ad6d6f64740efe331f1564da7c1a",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtlocation",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "751479f9617141c3c29d8c985a7cda591adc5c5dd10fa0d2d509991403a688cf",
-  "release": "intel-40774841573-1-qtlocation",
+  "release": "intel-41288041172-1-qtlocation",
   "revision": 1,
-  "run_id": "40774841573",
+  "run_id": "41288041172",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -35,7 +35,7 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
+      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -70,7 +70,7 @@
       "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
+      "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
       "name": "graphite2",
       "pkg_version": "1.3.15"
     },
@@ -90,7 +90,7 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
       "name": "json-c",
       "pkg_version": "0.19"
     },
@@ -140,22 +140,22 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
       "name": "lzo",
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "de1668120c0626d17e55981476fb6169f112606c43e4bc35991d50aff21666cd",
+      "formula_sha256": "0fda7ee9fa68cad87939ff0bc9207d611e21441c9b27e98af1d6943cbcf7a72b",
       "name": "md4c",
       "pkg_version": "0.6.0"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -195,7 +195,7 @@
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "formula_sha256": "34141b84ad901dc8b65297d2351572f64db55520c0dbc6b75477110783eef797",
       "name": "xorgproto",
       "pkg_version": "2026.1"
     },
@@ -211,15 +211,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "007930d4f4a2bab3c1d4271ce9737909ff279e841e6da89e25347920ce44641e",
-  "size": 822746,
+  "sha256": "ad1392a7d6de2ff41b919b58f0a928360c6118b99bbc274c38f04b55313ab4d6",
+  "size": 822736,
   "source": {
     "filename": "qtlocation--6.12.0_1.sources.tar.gz",
-    "sha256": "1b1eb8a1f0feaf372478ef904a0c7ada248d071f330a5fbe5b81d9a5c8f790d5",
-    "size": 3210618
+    "sha256": "a6f4ee64d2d5b7cba7f3ceec226f3159d7c28f48c2b437db2d69678e0d2936ec",
+    "size": 3210607
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
+  "workflow_commit": "e53bfa471543d91d47a7fc78ddf49b76c6a5fedd"
 }

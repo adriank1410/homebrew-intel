@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
+  "cellar": "any_skip_relocation",
+  "core_commit": "afac45a3d88a17286b67103ad30708dc3c123975",
+  "filename": "bottom--0.15.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "0f5d796892fe6451585a09ff7834340d6d3420cdd7a236cd646755597c35cd25",
+  "license": "MIT",
+  "name": "bottom",
+  "pkg_version": "0.15.0",
+  "recipe_sha256": "7ec73c9182257949cf921647387beff38c587582f350315608180874a88d2316",
+  "release": "intel-41288041172-1-bottom",
+  "revision": 0,
+  "run_id": "41288041172",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "0ee7a7a8a986031debe61c4a964084415f73d4a3507e1a576d372dfce063f34c",
+  "size": 1909153,
+  "source": {
+    "filename": "bottom--0.15.0.sources.tar.gz",
+    "sha256": "3af9e94c3cb16adb4f7522c3efc539e84020316401faf5fec7d730b1f4aab228",
+    "size": 17067681
+  },
+  "tag": "sequoia",
+  "version": "0.15.0",
+  "version_scheme": 0,
+  "workflow_commit": "e53bfa471543d91d47a7fc78ddf49b76c6a5fedd"
+}
