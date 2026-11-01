@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
+  "core_commit": "cc07696e3d5e897ab0afd3a0fc66d4c143d62627",
   "filename": "ghostscript--10.08.0.sequoia.bottle.tar.gz",
   "formula_sha256": "2d6606514ac36c06fd4b00141ba01bfc2d4d83fc2318c0cdaa022c8187e9a62b",
   "license": "AGPL-3.0-or-later",
   "name": "ghostscript",
   "pkg_version": "10.08.0",
   "recipe_sha256": "f5f3954efa8a9a852b720514f095ad52d58f74173449442e2fe4231d5fe46d82",
-  "release": "intel-40932464567-1-ghostscript",
+  "release": "intel-41271434681-1-ghostscript",
   "revision": 0,
-  "run_id": "40932464567",
+  "run_id": "41271434681",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -19,7 +19,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
+      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -34,9 +34,9 @@
       "pkg_version": "2.15.0"
     },
     {
-      "formula_sha256": "a7a0f98a348293651e9dcd90b7a8ab80ef2ae93aae6fa8853b07d5e5002a8350",
+      "formula_sha256": "6de01ee45c0fd9afc00b47412b9be1accce926e01a2ba9ece516ab7ff9bc4349",
       "name": "fribidi",
-      "pkg_version": "1.0.17"
+      "pkg_version": "1.0.18"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -54,7 +54,7 @@
       "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
+      "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
       "name": "graphite2",
       "pkg_version": "1.3.15"
     },
@@ -69,7 +69,7 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "6c0d2001a70c1a4b5338ae7abecb0116f19d4374c449ab146a6b0abd30498497",
+      "formula_sha256": "0881bc03a2abd44018d0234261a66cefdcfb5e92acda7b5ef8d5169afbaf5379",
       "name": "jbig2dec",
       "pkg_version": "0.20"
     },
@@ -79,7 +79,7 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
       "name": "json-c",
       "pkg_version": "0.19"
     },
@@ -89,9 +89,9 @@
       "pkg_version": "1.87.0"
     },
     {
-      "formula_sha256": "56f3b5ed0c64bd2ec9305a9105d1119689f2c8de86b1dc71b78322ee1991354f",
+      "formula_sha256": "9b417e382e4cccdbf2b9b4b4cb7107b4b5cbb3409b0eca1f1a3db8871711e6ac",
       "name": "libarchive",
-      "pkg_version": "3.8.10"
+      "pkg_version": "3.8.11"
     },
     {
       "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
@@ -164,12 +164,12 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
       "name": "lz4",
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
       "name": "lzo",
       "pkg_version": "2.10"
     },
@@ -204,7 +204,7 @@
       "pkg_version": "1.6.0"
     },
     {
-      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "formula_sha256": "34141b84ad901dc8b65297d2351572f64db55520c0dbc6b75477110783eef797",
       "name": "xorgproto",
       "pkg_version": "2026.1"
     },
@@ -220,15 +220,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "11ffc84c9c3599c62b56114ece1c3a5e7c21e0bc5511b5e733612bd734fa0307",
-  "size": 43801962,
+  "sha256": "f8511d744654bed1aea7956bd3f4b795255a2f9de163395a87b026304f820a8e",
+  "size": 43802009,
   "source": {
     "filename": "ghostscript--10.08.0.sources.tar.gz",
-    "sha256": "f839f68c3f4963657dbb1cf222fe873b1462a9cd760297bd9c453ce3410548c6",
-    "size": 78495461
+    "sha256": "3f0ab87c240a2493b8fffa278a930e263ee9212d4bf98b361af1ed49a86f4bc6",
+    "size": 78495463
   },
   "tag": "sequoia",
   "version": "10.08.0",
   "version_scheme": 0,
-  "workflow_commit": "86eaf6f556b3eec93ce0a31356802443e74b681b"
+  "workflow_commit": "f3de96723021245ff746b146df431a1310133b27"
 }
