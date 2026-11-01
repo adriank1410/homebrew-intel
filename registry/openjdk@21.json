@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
+  "brew_commit": "219ff9a49ba6efea0d6bec57c73801224367f976",
   "cellar": "any",
-  "core_commit": "cc07696e3d5e897ab0afd3a0fc66d4c143d62627",
+  "core_commit": "169cd1a87482e9c5badb95ee99b8954d562eb557",
   "filename": "openjdk@21--21.0.13.0.3.sequoia.bottle.tar.gz",
   "formula_sha256": "6571d4b90d890346af42e42fa689bedb62c9ba5c8b2bfcc25819ad7c992c18a6",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk@21",
   "pkg_version": "21.0.13.0.3",
   "recipe_sha256": "a1ab26e46e09a6489de7517c97b90ad56d2e3a6506f3275a349fe8a95bf222ba",
-  "release": "intel-41256209788-1-openjdk-at-21",
+  "release": "intel-41358216715-1-openjdk-at-21",
   "revision": 0,
-  "run_id": "41256209788",
+  "run_id": "41358216715",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -133,7 +133,7 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
+      "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
       "name": "lzo",
       "pkg_version": "2.10"
     },
@@ -169,15 +169,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2cbded31649e331096b57de6352af5074e5548a41e7c92f6c9ecd2497735a26e",
-  "size": 202480746,
+  "sha256": "f22306d7c50c41604a06b63f8ae11dfcb27c415f4495d1798ec95aa7ecbb8c89",
+  "size": 202480720,
   "source": {
     "filename": "openjdk@21--21.0.13.0.3.sources.tar.gz",
-    "sha256": "4f7d7db0e9ce9b5e840e5f4ff36addce834878da9edc0cf6dbb874b98fe4ad16",
-    "size": 309827434
+    "sha256": "7f7618c6ccc808357c7f39d62dc034424f9115a102393cf59e26cac8dd40612b",
+    "size": 309827439
   },
   "tag": "sequoia",
   "version": "21.0.13.0.3",
   "version_scheme": 0,
-  "workflow_commit": "3a0fa97f7bf7ab28a61062c7befba5ce1f19455c"
+  "workflow_commit": "ab2c515a44c81adb02112343a54918a187b64481"
 }
