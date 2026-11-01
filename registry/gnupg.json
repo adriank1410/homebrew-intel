@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "219ff9a49ba6efea0d6bec57c73801224367f976",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "169cd1a87482e9c5badb95ee99b8954d562eb557",
   "filename": "gnupg--2.5.24_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532",
   "license": "GPL-3.0-or-later",
   "name": "gnupg",
   "pkg_version": "2.5.24_1",
   "recipe_sha256": "cb39cf745dea2547a67bb6e78175a6b29c0faa6f4c7ea5f0ad367a7e01f44d00",
-  "release": "intel-41169564614-1-gnupg",
+  "release": "intel-41343806260-1-gnupg",
   "revision": 1,
-  "run_id": "41169564614",
+  "run_id": "41343806260",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -79,12 +79,12 @@
       "pkg_version": "1.0.30"
     },
     {
-      "formula_sha256": "8135edd1ccf828e5a9550a965bd5f11a862ad028335f451838998f3e5215e4f2",
+      "formula_sha256": "087bd49b2efaa8892d7ad9b13d596c985dfeeaaede2084dccfeda52f528be428",
       "name": "nettle",
       "pkg_version": "4.0"
     },
     {
-      "formula_sha256": "9519f04cf36fa1b178bb4f390e2b906babcd8ba8d03a8e0f549d31b27184eb80",
+      "formula_sha256": "dbee901e05fa128f34120d4cd426d611b6532f40ca71caff9c65d8510c93a572",
       "name": "npth",
       "pkg_version": "1.8"
     },
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9a8a649b814e3120bed534fe53e7d23a9fc98c7e9dc07ab11cef71bfdf2edc6a",
-  "size": 5773484,
+  "sha256": "62a0e9d92fa7116830ef085a2ebaeb82b8ec10a7fc4de6703b6dbe327b431193",
+  "size": 5773512,
   "source": {
     "filename": "gnupg--2.5.24_1.sources.tar.gz",
-    "sha256": "4e24a66f89b66709c084934e1a50d5a16a8af216eb4026df87c6ec7e4a272611",
-    "size": 8458492
+    "sha256": "5510d3f04ff363dc84850065de2e041a1b1902ab31c23c8e2ef9c713b98ce818",
+    "size": 8458489
   },
   "tag": "sequoia",
   "version": "2.5.24",
   "version_scheme": 0,
-  "workflow_commit": "36a5b16076c61c148dbc19e4649cbd463a754beb"
+  "workflow_commit": "49f446d18d9942cdfc91732bcbd00cbe02b73ea9"
 }
