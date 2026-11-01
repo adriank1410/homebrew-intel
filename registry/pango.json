@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8d799352d3ff25e726867ce3a8c989461df25ab2",
+  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
   "cellar": "any",
-  "core_commit": "652c20d8bb99e0a3abbd5f62e1682c8bf65a7c7d",
+  "core_commit": "cc07696e3d5e897ab0afd3a0fc66d4c143d62627",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-40222463970-1-pango",
+  "release": "intel-41256209788-1-pango",
   "revision": 0,
-  "run_id": "40222463970",
+  "run_id": "41256209788",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -19,7 +19,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "a2cb21214a44f8c1d90f6fddea2d60af9233916946a2596314a2f9d1895b6f2c",
+      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -34,9 +34,9 @@
       "pkg_version": "2.15.0"
     },
     {
-      "formula_sha256": "a7a0f98a348293651e9dcd90b7a8ab80ef2ae93aae6fa8853b07d5e5002a8350",
+      "formula_sha256": "6de01ee45c0fd9afc00b47412b9be1accce926e01a2ba9ece516ab7ff9bc4349",
       "name": "fribidi",
-      "pkg_version": "1.0.17"
+      "pkg_version": "1.0.18"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -49,7 +49,7 @@
       "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "c6f07d76dbcf74bd4ad449c114cfecb025f6778c93a5e41ae37fe2b9a2945f09",
+      "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
       "name": "graphite2",
       "pkg_version": "1.3.15"
     },
@@ -64,7 +64,7 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "7b6c55b79158a98a41e376a39e05bbee827f425b67654af75db461f79402af37",
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
       "name": "json-c",
       "pkg_version": "0.19"
     },
@@ -119,7 +119,7 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "8acc83503bd65a1e198d16638fe911201c7922cf70b24b5db3015fcd948c54cd",
+      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
       "name": "lzo",
       "pkg_version": "2.10"
     },
@@ -134,21 +134,21 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "b69294d3d2e166830fedaf30b978ecc89d8dea1d05ba07354846784225675140",
+      "formula_sha256": "34141b84ad901dc8b65297d2351572f64db55520c0dbc6b75477110783eef797",
       "name": "xorgproto",
       "pkg_version": "2026.1"
     }
   ],
   "schema": 1,
-  "sha256": "7cacd6035db27952afb328a5b5d8dfb1b11e7cd363dd73dbe431e83fe7fb9911",
-  "size": 882873,
+  "sha256": "4e4b83d8e475867f906f1f69a72318475d2fac37bd78b60251e810cc24bde46a",
+  "size": 882872,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "b6ab462519f2291a2c53b15240d02908d4618af5b409db54ea2927c7469253d7",
+    "sha256": "3da1eb67deb0cf5119637d04ea78c932271de0af7064f05fcca54c4f860671f2",
     "size": 1932733
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "069262e38ee11e2a10d9b0a5a9d3bdd1819f4d35"
+  "workflow_commit": "3a0fa97f7bf7ab28a61062c7befba5ce1f19455c"
 }
