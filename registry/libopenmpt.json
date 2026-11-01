@@ -1,0 +1,69 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
+  "cellar": "any",
+  "core_commit": "0a5a4096d0647426c9cab1f153e9d8fd615389a8",
+  "filename": "libopenmpt--0.8.10.sequoia.bottle.tar.gz",
+  "formula_sha256": "32188a308ce11f5a56e185564a477a0a589b8e47cfd6915a94542180eb4b679d",
+  "license": "BSD-3-Clause",
+  "name": "libopenmpt",
+  "pkg_version": "0.8.10",
+  "recipe_sha256": "ab25263c78e9a74cb34bbf4ce463e739e089f4bd2b351c2001e1e9553b7c5eb7",
+  "release": "intel-41314145045-1-libopenmpt",
+  "revision": 0,
+  "run_id": "41314145045",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "0f8fde69a72a4e0ee0d130d1d16919dfe34db9ebd62b0c0a79ed66145ab2a152",
+      "name": "flac",
+      "pkg_version": "1.5.0"
+    },
+    {
+      "formula_sha256": "ce4a855da3c473fe789a3ec97b264f8e80143260adf57e5fd3d95f3fc6cbb2ac",
+      "name": "lame",
+      "pkg_version": "4.0"
+    },
+    {
+      "formula_sha256": "db61e30a120a0a92b7a3af0b6c5d9f87368daa9d1ac643f051f16084cce6e250",
+      "name": "libogg",
+      "pkg_version": "1.3.6"
+    },
+    {
+      "formula_sha256": "eade91fe64bbfd958d691a37345f2b6d8769fc0de1598dee6f5c9b30517066a1",
+      "name": "libsndfile",
+      "pkg_version": "1.2.2_1"
+    },
+    {
+      "formula_sha256": "046b78906be2a2b4bee7e308532a5fa07180e3231b9b4033d6dcc3fdcb7d5d53",
+      "name": "libvorbis",
+      "pkg_version": "1.3.7"
+    },
+    {
+      "formula_sha256": "3698eb1f9ba852c034a659b627386f0113671b77ea828535343b9c058fe0f9fb",
+      "name": "mpg123",
+      "pkg_version": "1.33.7"
+    },
+    {
+      "formula_sha256": "39611712ad2de37708493f43569e9266c4be9dcc5e88e7276ee78a562bf03a33",
+      "name": "opus",
+      "pkg_version": "1.6.1"
+    },
+    {
+      "formula_sha256": "644a40ef8cea00e4535dbb94c8b20f631290d6e71cf82aff0d011a6012f33ec1",
+      "name": "portaudio",
+      "pkg_version": "19.7.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "72a420b4d8558abb503dc9ed271ca95679f5e7c59cfaa6aa15d56aa5331c3993",
+  "size": 2946146,
+  "source": {
+    "filename": "libopenmpt--0.8.10.sources.tar.gz",
+    "sha256": "c50ae0fb5e440117353c3edb45c2046bd4eece64bcb7af390facbb2b353a41f8",
+    "size": 2040058
+  },
+  "tag": "sequoia",
+  "version": "0.8.10",
+  "version_scheme": 0,
+  "workflow_commit": "347204e0a77777f0435b200c3e057af96c3583c2"
+}
