@@ -685,7 +685,7 @@ class SourceBundleTests(unittest.TestCase):
             return json.loads(Path(path).read_text())
         def fake_install(name, meta, **kwargs):
             events.append(("install", name))
-        def fake_prepare(names, work):
+        def fake_prepare(names, work, **_kwargs):
             for name in names:
                 events.append(("prepare_sources", name))
             return ({name: Path(work) / f"{name}-cache" for name in names}, {name: {} for name in names})

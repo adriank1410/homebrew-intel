@@ -162,6 +162,9 @@ exact-revision Subversion exports. Unpinned Git and other VCS strategies fail
 explicitly before compiling dependencies. Source sets are fetched before building, then Go/Cargo source caches
 are captured after compilation. GNU ftpmirror resources gain the canonical
 ftp.gnu.org mirror; the original recipe and required checksum stay unchanged.
+If an upstream host returns a bot challenge or refuses the download, source
+collection is retried once with the inputs of the root's previously published,
+attested source bundle; a file is used only when it matches the recipe checksum.
 See [License review](LICENSE-REVIEW.md) for the
 supported expressions and remaining limitations.
 
