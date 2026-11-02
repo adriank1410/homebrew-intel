@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
+  "brew_commit": "59604a815c50587ba6454f894caa7bd7dc58803a",
   "cellar": "any",
-  "core_commit": "cc07696e3d5e897ab0afd3a0fc66d4c143d62627",
+  "core_commit": "992feb273e747d5e26b1209f6eafbb62dab1d435",
   "filename": "qtshadertools--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "c33a2969534c129bc1cae357e85b41f81338f73679ce65bddebf0e13ba702a88",
   "license": {
@@ -44,9 +44,9 @@
   "name": "qtshadertools",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "13f019330404093993af71381c043f3bb70f9292fc930cdd55ddf1dd340efb58",
-  "release": "intel-41271434681-1-qtshadertools",
+  "release": "intel-41369808702-1-qtshadertools",
   "revision": 1,
-  "run_id": "41271434681",
+  "run_id": "41369808702",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -169,7 +169,7 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
+      "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
       "name": "lzo",
       "pkg_version": "2.10"
     },
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5f874f876e49c3eba8fd9331bebc20cfcd088b1b20e2076f4a50206fcb22ef2d",
-  "size": 1810610,
+  "sha256": "35f7bf6b156777e5e2846ef29e83f2a04ce32e3817fa6739e4c78ecfa4eaa336",
+  "size": 1810613,
   "source": {
     "filename": "qtshadertools--6.12.0_1.sources.tar.gz",
-    "sha256": "9f4a0d0a3e3cde3bd8356b5d7311c57ee74418308cce526ca8264ff8094c01d7",
-    "size": 1310124
+    "sha256": "7afe2a549af2fda4011121aaab9e83b69420375786ca7943f7afa45480066f93",
+    "size": 1310135
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "f3de96723021245ff746b146df431a1310133b27"
+  "workflow_commit": "5396d9a6ce076e761da661a0222f290fe8f10ab0"
 }
