@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "856ce8c40ae1d336da27940b08bb549798454ba1",
+  "cellar": "any",
+  "core_commit": "184a6c38682139b48cdb80d5f3db0df843cae326",
+  "filename": "svt-av1--4.3.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "3a319df1bd4c653d8673debdfb7959a41289fee36bee9d540518303164a35e9d",
+  "license": "BSD-3-Clause",
+  "name": "svt-av1",
+  "pkg_version": "4.3.0",
+  "recipe_sha256": "b2257e616925a4cfb29a9862a64b1a2632904e965469f3802e12d0e0c335a6ad",
+  "release": "intel-41437286408-1-svt-av1",
+  "revision": 0,
+  "run_id": "41437286408",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "795d158817214a9b7724828d0d7477657de803994b74d8f8bbfcc0e995803550",
+  "size": 2205393,
+  "source": {
+    "filename": "svt-av1--4.3.0.sources.tar.gz",
+    "sha256": "45acfc794905234ddf25ada44c6771eed628cb01fe2165d474718a95e55e7334",
+    "size": 10415585
+  },
+  "tag": "sequoia",
+  "version": "4.3.0",
+  "version_scheme": 0,
+  "workflow_commit": "a82703a2670b0f0af58a8e4c3b88851aa30219eb"
+}
