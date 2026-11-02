@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
+  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
   "cellar": "any_skip_relocation",
-  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
-  "filename": "glab--1.126.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "ad664617749a3e8d7886c27cd4fc1a65e3903ada52c5db78be1fdd075eede977",
+  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
+  "filename": "glab--1.127.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "df83a21b8c2b6e3887567bc265f21444e3ff399494b29704069e032582f96dfb",
   "license": "MIT",
   "name": "glab",
-  "pkg_version": "1.126.0",
-  "recipe_sha256": "ac04ca82caa616abb941a65fd796237e21381b6ed59042570016227dbf4fb493",
-  "release": "intel-41114503008-1-glab",
+  "pkg_version": "1.127.0",
+  "recipe_sha256": "297838f89633699bec9b02d4320f787b94728c2bacec5130a34f20f9e6b9a196",
+  "release": "intel-41532187650-1-glab",
   "revision": 0,
-  "run_id": "41114503008",
+  "run_id": "41532187650",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "fed98dc65d8d96252bc23d89f7837d4ab2d5c4bb243ddcd92898a11ff8db0168",
-  "size": 18168670,
+  "sha256": "f58c02d5284067d2306355fd720138fd5a5462e77f9f8ce5236ad97ce4f904dc",
+  "size": 18192231,
   "source": {
-    "filename": "glab--1.126.0.sources.tar.gz",
-    "sha256": "b656d9d554a4b15eb32c6efeaab9bd1fce8ca019104f1c79d9468f0b2abd3454",
-    "size": 114837374
+    "filename": "glab--1.127.0.sources.tar.gz",
+    "sha256": "b6807e36d46f6d01d75415f511b972907399616d434c719d02f9bbc613ca95c1",
+    "size": 114873744
   },
   "tag": "sequoia",
-  "version": "1.126.0",
+  "version": "1.127.0",
   "version_scheme": 0,
-  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
+  "workflow_commit": "63b1d766c35f8a210a999afdc3783b7b92aca519"
 }
