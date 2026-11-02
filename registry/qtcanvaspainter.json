@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
+  "brew_commit": "59604a815c50587ba6454f894caa7bd7dc58803a",
   "cellar": "any",
-  "core_commit": "cc07696e3d5e897ab0afd3a0fc66d4c143d62627",
+  "core_commit": "992feb273e747d5e26b1209f6eafbb62dab1d435",
   "filename": "qtcanvaspainter--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a44f02f2e93380ec2a2322cddd1a68822091f3e88f7cdf90bcada2af8aa13fb5",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtcanvaspainter",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "6c01bf319a298d4646b5f3f695af4e19acadf1c3f17874e69b0b17cac1f47716",
-  "release": "intel-41280874924-1-qtcanvaspainter",
+  "release": "intel-41397608491-1-qtcanvaspainter",
   "revision": 1,
-  "run_id": "41280874924",
+  "run_id": "41397608491",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -145,7 +145,7 @@
       "pkg_version": "1.10.0"
     },
     {
-      "formula_sha256": "2c49fb30010a525e727e3a2b1e43fa0c46de39c4418dcc928bc4928e9684e1df",
+      "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
       "name": "lzo",
       "pkg_version": "2.10"
     },
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8a7114da86179e3ef2ddcfb32599ad31fd1787463e1b418db1b5ba73ceda9d21",
-  "size": 583958,
+  "sha256": "a60ec09e3e3a1429495cba8d0e593031df55400cb1852229515b5e1a19aa3fa0",
+  "size": 583941,
   "source": {
     "filename": "qtcanvaspainter--6.12.0_1.sources.tar.gz",
-    "sha256": "4dddd5dd0e316b01ecc577e8a23c7008e1a803edb8d7e4d9cd4e8e07a12da122",
-    "size": 1171385
+    "sha256": "5bf0374dc274486b089e2c06a5630a0baa3fc09ab690cd8be6aaf47202157faf",
+    "size": 1171390
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "51b1c6fb02c503cc675ad215fe8717b8275a1bfa"
+  "workflow_commit": "14aaa96cdf07f4fd31f8cc0c42461d433d1aaa1c"
 }
