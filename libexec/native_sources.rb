@@ -101,14 +101,18 @@ module IntelbrewNativeSources
 
     cached = Pathname(resource.cached_download.to_s)
     stat = File.lstat(cached.to_s)
-    raise error unless stat.file? && !stat.symlink? && stat.size <= MAX_NORMALIZE_BYTES
-
-    repaired = normalize(File.binread(cached.to_s), error.expected)
-    raise error unless repaired
-
-    replace_atomically(cached, repaired, stat.mode & 0o7777)
+    repaired = if stat.file? && !stat.symlink? && stat.size <= MAX_NORMALIZE_BYTES
+      normalize(File.binread(cached.to_s), error.expected)
+    end
+    if repaired
+      replace_atomically(cached, repaired, stat.mode & 0o7777)
+    else
+      # A challenge page cannot be repaired; fall back to the checksum-gated
+      # input from the previously published source bundle, if any.
+      raise error unless seed_published_source(resource)
+    end
     # Make Homebrew perform the authoritative checksum verification against the
-    # repaired cache entry; the digest check above only selects the candidate.
+    # repaired or seeded cache entry; the digest checks above only select it.
     resource.fetch(**options)
   rescue DownloadError => error
     raise error unless seed_expired_certificate(resource, error) || seed_published_source(resource)
