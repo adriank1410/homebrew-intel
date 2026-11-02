@@ -233,6 +233,67 @@ puts JSON.generate({{"entries" => entries.map(&:to_s)}})'''
             result = json.loads(self._ruby(script, {"HOMEBREW_CACHE": folder}).splitlines()[-1])
             self.assertEqual(result, {"entries": []})
 
+    def test_published_source_seed_replaces_a_bot_challenge_only_with_matching_bytes(self):
+        payload = b"published-upstream-archive"
+        expected = hashlib.sha256(payload).hexdigest()
+        with tempfile.TemporaryDirectory() as folder, tempfile.TemporaryDirectory() as seeds:
+            Path(seeds, "real").write_bytes(payload)
+            script = f'''require "json"; require "digest"; require "pathname"
+load {json.dumps(str(ROOT / "libexec/native_sources.rb"))}
+class Fixture
+  attr_reader :calls, :url, :checksum, :cached_download
+  def initialize(name, expected, mode)
+    @url = "https://linuxtv.org/downloads/zbar/zbar-0.23.95.tar.gz"
+    @checksum = Checksum.new(expected); @calls = 0; @mode = mode
+    @cached_download = HOMEBREW_CACHE/"downloads"/name
+  end
+  def download_queue_name = "zbar (0.23.95)"
+  def fetch(**_options)
+    @calls += 1
+    if @calls == 1
+      raise DownloadError.new(self, RuntimeError.new("curl: (22) 403")) if @mode == :download
+      @cached_download.dirname.mkpath
+      @cached_download.binwrite("<html>Making sure you're not a bot!</html>")
+      raise ChecksumMismatchError.new(@cached_download, @checksum, Checksum.new("0" * 64))
+    end
+    actual = Digest::SHA256.file(@cached_download).hexdigest
+    raise ChecksumMismatchError.new(@cached_download, @checksum, Checksum.new(actual)) unless actual == @checksum.hexdigest
+    @cached_download
+  end
+end
+seeds = Pathname.new({json.dumps(seeds)})
+expected = {json.dumps(expected)}
+outcome = lambda do |name, mode|
+  resource = Fixture.new(name, expected, mode)
+  IntelbrewNativeSources.fetch(resource, verify_download_integrity: true)
+  ["accepted", resource.calls, resource.cached_download.binread]
+rescue ChecksumMismatchError, DownloadError
+  ["refused", resource.calls, resource.cached_download.exist? ? resource.cached_download.binread : nil]
+end
+result = {{}}
+ENV.delete(IntelbrewNativeSources::SOURCE_SEEDS_ENV)
+result["unset"] = outcome.call("a--zbar.tar.gz", :html)
+ENV[IntelbrewNativeSources::SOURCE_SEEDS_ENV] = seeds.to_s
+result["missing"] = outcome.call("b--zbar.tar.gz", :html)
+(seeds/expected).binwrite("tampered")
+result["tampered"] = outcome.call("c--zbar.tar.gz", :html)
+(seeds/expected).delete
+File.symlink((seeds/"real").to_s, (seeds/expected).to_s)
+result["symlink"] = outcome.call("d--zbar.tar.gz", :html)
+(seeds/expected).delete
+(seeds/expected).binwrite((seeds/"real").binread)
+result["challenge"] = outcome.call("e--zbar.tar.gz", :html)
+result["download"] = outcome.call("f--zbar.tar.gz", :download)
+puts JSON.generate(result)'''
+            result = json.loads(self._ruby(script, {"HOMEBREW_CACHE": folder}).splitlines()[-1])
+            challenge = "<html>Making sure you're not a bot!</html>"
+            self.assertEqual(result["unset"], ["refused", 1, challenge])
+            self.assertEqual(result["missing"], ["refused", 1, challenge])
+            self.assertEqual(result["tampered"], ["refused", 1, challenge])
+            self.assertEqual(result["symlink"], ["refused", 1, challenge])
+            self.assertEqual(result["challenge"], ["accepted", 2, payload.decode()])
+            self.assertEqual(result["download"], ["accepted", 2, payload.decode()])
+
 
 if __name__ == "__main__":
     unittest.main()
