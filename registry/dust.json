@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a83186e02a6c4b98cd44a290cdb56e136feaa596",
+  "brew_commit": "59604a815c50587ba6454f894caa7bd7dc58803a",
   "cellar": "any_skip_relocation",
-  "core_commit": "a08808a830138ee15ddf975e8d6b04c922db6602",
-  "filename": "dust--1.2.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "38a64a98b961a1758810ef6ff12b9a744628cf0b318341463ad7e60079b3161d",
+  "core_commit": "992feb273e747d5e26b1209f6eafbb62dab1d435",
+  "filename": "dust--1.2.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "3aaf9d7deffbfec5586eeaa7ab9d9d195c5285eb81184943a6f05308aeb009e0",
   "license": "Apache-2.0",
   "name": "dust",
-  "pkg_version": "1.2.6",
-  "recipe_sha256": "8101f7716c3edc195cd0e49018ccadf9878be7933a112d3047acd1de8fb29f8b",
-  "release": "intel-35670423186-1-dust",
+  "pkg_version": "1.2.7",
+  "recipe_sha256": "66de55fa699ae4fcc5bb7306e9e4d89a7140c96a735977744eb14fc221a3daa1",
+  "release": "intel-41369808702-1-dust",
   "revision": 0,
-  "run_id": "35670423186",
+  "run_id": "41369808702",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "a52dad49bc59ab4715af59ba062cdf3575b2b0980ebe7950bbbc9d55fabd18d5",
-  "size": 1125695,
+  "sha256": "c79c32875463eb1db2893b4ebf82524f319d92668f2301b0082e841049b10596",
+  "size": 1130904,
   "source": {
-    "filename": "dust--1.2.6.sources.tar.gz",
-    "sha256": "ba5e6f8383422dda0706235a70c1966e50c382f863e36e9aa94eb643a32b95c5",
-    "size": 9099579
+    "filename": "dust--1.2.7.sources.tar.gz",
+    "sha256": "faa1deac3a92e46622c88047c45852650cd21a622d553bf6c252f06c0c8cccb7",
+    "size": 9120283
   },
   "tag": "sequoia",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "version_scheme": 0,
-  "workflow_commit": "4c3038c20bbfdee8eb13789dc415a8490b4b839f"
+  "workflow_commit": "5396d9a6ce076e761da661a0222f290fe8f10ab0"
 }
