@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
+  "brew_commit": "59604a815c50587ba6454f894caa7bd7dc58803a",
   "cellar": "any_skip_relocation",
-  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
-  "filename": "archi-steam-farm--6.3.10.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "ff2c883f21c955d8be3620115201f5ac354bcf2bbc5330c9e8aa2b64e928f566",
+  "core_commit": "992feb273e747d5e26b1209f6eafbb62dab1d435",
+  "filename": "archi-steam-farm--6.3.11.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "1d2fba0e814e9568b49f9f2d9454eca8ed7e15b9526608c6e3019d8303facac4",
   "license": "Apache-2.0",
   "name": "archi-steam-farm",
-  "pkg_version": "6.3.10.6",
-  "recipe_sha256": "b49e2d860c02f4803bc2b57aa97d110d6e65a1e998e06ac5407986a88968569f",
-  "release": "intel-41224222555-1-archi-steam-farm",
+  "pkg_version": "6.3.11.7",
+  "recipe_sha256": "5160f2867afebf167d70646fd3125c68a4e6c2468cb233e15929170dfb356b79",
+  "release": "intel-41369808702-1-archi-steam-farm",
   "revision": 0,
-  "run_id": "41224222555",
+  "run_id": "41369808702",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f4ef0274092eaa2cec3c0e448afa0ab98765fbb4969cef151168ede14977d798",
-  "size": 8231985,
+  "sha256": "aefa2ec0b681d139c10b17d026b05db35d2ff03b3e79b9c3cba73f79d82bb8bd",
+  "size": 8752400,
   "source": {
-    "filename": "archi-steam-farm--6.3.10.6.sources.tar.gz",
-    "sha256": "d589372e7d022f51be73838423d99a332169b6c06de3bd8ab3a8d0a4ccf14756",
-    "size": 10859579
+    "filename": "archi-steam-farm--6.3.11.7.sources.tar.gz",
+    "sha256": "96eb30a63e000a788fe5c579fac9a254584b2ccf22a2a0278e98007f36861d99",
+    "size": 10874841
   },
   "tag": "sequoia",
-  "version": "6.3.10.6",
+  "version": "6.3.11.7",
   "version_scheme": 0,
-  "workflow_commit": "c6d6d363810fc63466fbb97623d509d10a2caa26"
+  "workflow_commit": "5396d9a6ce076e761da661a0222f290fe8f10ab0"
 }
