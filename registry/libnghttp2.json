@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
   "cellar": "any",
-  "core_commit": "b3b5031ac8612527890d9e5e57dd382f133316f9",
-  "filename": "libnghttp2--1.70.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "3bfb2679bd1e7467374e1b40ea9c50206c95fb074fe7ad83706242f2c14a3205",
+  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
+  "filename": "libnghttp2--1.71.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "ad7f105d2df6c62cd286220d88428a99cd763933c0880c8e1049fbb858092e17",
   "license": "MIT",
   "name": "libnghttp2",
-  "pkg_version": "1.70.0",
-  "recipe_sha256": "7a3aff8e1fbfc44c6d17f8520537236d5f6ce325ac07779f39bc43f67bdde328",
-  "release": "intel-35507872938-1-libnghttp2",
+  "pkg_version": "1.71.0",
+  "recipe_sha256": "516c1fe7d49ddb0499c9071589d3f01a0fdb8f501eeb877d33cacacfca3cad9f",
+  "release": "intel-41532187650-1-libnghttp2",
   "revision": 0,
-  "run_id": "35507872938",
+  "run_id": "41532187650",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "3d13c525f6a3ec3cdbbf26c0669f07a035d5bf8482dad3c00c587365eb841cc4",
-  "size": 235951,
+  "sha256": "1a153cceb140e12ba30803933c05b8a60940aafe72cbfcafa9e358e269f2b5d0",
+  "size": 222749,
   "source": {
-    "filename": "libnghttp2--1.70.0.sources.tar.gz",
-    "sha256": "bac68aa4cd125ef3343f6d318fbadfb78bfb05ded486018c26ffb92a51afdd26",
-    "size": 3106281
+    "filename": "libnghttp2--1.71.0.sources.tar.gz",
+    "sha256": "71ab6eb0d9fc7750638b4bdbf51122f01c70069fecf78cb949f807e322235eed",
+    "size": 3094388
   },
   "tag": "sequoia",
-  "version": "1.70.0",
+  "version": "1.71.0",
   "version_scheme": 0,
-  "workflow_commit": "ad48ccf9b8ca94e8384c7930b492999adc4c2117"
+  "workflow_commit": "63b1d766c35f8a210a999afdc3783b7b92aca519"
 }
