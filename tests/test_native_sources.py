@@ -294,6 +294,55 @@ puts JSON.generate(result)'''
             self.assertEqual(result["challenge"], ["accepted", 2, payload.decode()])
             self.assertEqual(result["download"], ["accepted", 2, payload.decode()])
 
+    def test_unrepairable_github_patch_falls_back_to_a_matching_published_seed(self):
+        payload = b"diff --git a/a b/a\nindex 0123456..89abcde 100644\n-old\n+new\n"
+        expected = hashlib.sha256(payload).hexdigest()
+        with tempfile.TemporaryDirectory() as folder, tempfile.TemporaryDirectory() as seeds:
+            script = f'''require "json"; require "digest"; require "pathname"
+load {json.dumps(str(ROOT / "libexec/native_sources.rb"))}
+class Fixture
+  attr_reader :calls, :url, :checksum, :cached_download
+  def initialize(name, expected)
+    @url = "https://github.com/example/repo/commit/abc.patch"
+    @checksum = Checksum.new(expected); @calls = 0
+    @cached_download = HOMEBREW_CACHE/"downloads"/name
+  end
+  def fetch(**_options)
+    @calls += 1
+    if @calls == 1
+      @cached_download.dirname.mkpath
+      @cached_download.binwrite("<html>Too many requests</html>")
+      raise ChecksumMismatchError.new(@cached_download, @checksum, Checksum.new("0" * 64))
+    end
+    actual = Digest::SHA256.file(@cached_download).hexdigest
+    raise ChecksumMismatchError.new(@cached_download, @checksum, Checksum.new(actual)) unless actual == @checksum.hexdigest
+    @cached_download
+  end
+end
+seeds = Pathname.new({json.dumps(seeds)})
+expected = {json.dumps(expected)}
+outcome = lambda do |name|
+  resource = Fixture.new(name, expected)
+  IntelbrewNativeSources.fetch(resource, verify_download_integrity: true)
+  ["accepted", resource.calls, resource.cached_download.binread]
+rescue ChecksumMismatchError
+  ["refused", resource.calls, resource.cached_download.binread]
+end
+result = {{}}
+ENV.delete(IntelbrewNativeSources::SOURCE_SEEDS_ENV)
+result["unset"] = outcome.call("a--abc.patch")
+ENV[IntelbrewNativeSources::SOURCE_SEEDS_ENV] = seeds.to_s
+(seeds/expected).binwrite("tampered")
+result["tampered"] = outcome.call("b--abc.patch")
+(seeds/expected).binwrite({json.dumps(payload.decode())})
+result["seeded"] = outcome.call("c--abc.patch")
+puts JSON.generate(result)'''
+            result = json.loads(self._ruby(script, {"HOMEBREW_CACHE": folder}).splitlines()[-1])
+            page = "<html>Too many requests</html>"
+            self.assertEqual(result["unset"], ["refused", 1, page])
+            self.assertEqual(result["tampered"], ["refused", 1, page])
+            self.assertEqual(result["seeded"], ["accepted", 2, payload.decode()])
+
 
 if __name__ == "__main__":
     unittest.main()
