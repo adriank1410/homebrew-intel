@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
+  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
   "cellar": "any_skip_relocation",
-  "core_commit": "0a5a4096d0647426c9cab1f153e9d8fd615389a8",
+  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
   "filename": "gemini-cli--0.66.0.sequoia.bottle.tar.gz",
   "formula_sha256": "957a3e8857e0ced65518b22d28d8733c2681aae0f8dab2f1672ba6d9cb5eed71",
   "license": "Apache-2.0",
   "name": "gemini-cli",
   "pkg_version": "0.66.0",
   "recipe_sha256": "346eeceead575ca6f38d70a7ecda56ddc0b23bdec776ac6c25ef15e809088c81",
-  "release": "intel-41339480346-1-gemini-cli",
+  "release": "intel-41565074563-1-gemini-cli",
   "revision": 0,
-  "run_id": "41339480346",
+  "run_id": "41565074563",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -64,9 +64,9 @@
       "pkg_version": "3.8.0"
     },
     {
-      "formula_sha256": "3bfb2679bd1e7467374e1b40ea9c50206c95fb074fe7ad83706242f2c14a3205",
+      "formula_sha256": "ad7f105d2df6c62cd286220d88428a99cd763933c0880c8e1049fbb858092e17",
       "name": "libnghttp2",
-      "pkg_version": "1.70.0"
+      "pkg_version": "1.71.0"
     },
     {
       "formula_sha256": "ce98fd5a27fe5e0d9114f0d31507c6735a5784974b4aa0f5a6fa59bece96bf84",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "47eb9ef084c7918b698ac7692a6440749a94d5ba8e943d6cf3354cf93d8faa57",
-  "size": 21553440,
+  "sha256": "673271198c5e02a15d47faa044e1a61be719d1a767541d887bba08907e193ee7",
+  "size": 21553398,
   "source": {
     "filename": "gemini-cli--0.66.0.sources.tar.gz",
-    "sha256": "35b460ca97c1a0ff18105a23185ef8d6799de07d5c9515aee8329755922ca48d",
-    "size": 20873325
+    "sha256": "2f9c7efe70d772e4bbd960fad9b9a262b843f6add78c87a7ccc87c146943030f",
+    "size": 20873324
   },
   "tag": "sequoia",
   "version": "0.66.0",
   "version_scheme": 0,
-  "workflow_commit": "d88f4f56279021d89dfa08791a91dca1c30f181f"
+  "workflow_commit": "c915f93d7cb24603108c01c5558d3fd6caebb3ce"
 }
