@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "d462cb3f7c849ef43df00f90bbedd90bd75312d0",
   "cellar": "any",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "1798d9442ccd1a1e871b644365aaac3355c74764",
   "filename": "libgcrypt--1.12.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "1c5900b00dfb4f1e5603b847f30c12a839caa5113a3a06d16607fabf908f1cb2",
+  "formula_sha256": "55b4df6ecb663fbe8bcb0783017fcc960477f0d8b7442c79c2fad730b800648b",
   "license": {
     "all_of": [
       "LGPL-2.1-or-later",
@@ -13,10 +13,10 @@
   },
   "name": "libgcrypt",
   "pkg_version": "1.12.4",
-  "recipe_sha256": "3385548916b16224540d08673d6b24a52ab1ada87550ba8913867c93d5db6529",
-  "release": "intel-41138860341-1-libgcrypt",
+  "recipe_sha256": "59f28d087b146509aae83c81e912f1ae86fd0a45c799f32545e24702de6a51c7",
+  "release": "intel-41682183769-1-libgcrypt",
   "revision": 0,
-  "run_id": "41138860341",
+  "run_id": "41682183769",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -29,7 +29,7 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "fd2f8088c05e477207e4ecd08bbc9cd3c16138976042028c80d06d9825696e87",
+      "formula_sha256": "a92983fd472dc51e72a3f0abeec1165decc4f7d4c6aa95db9ca6f49ba76f68ef",
       "name": "libgpg-error",
       "pkg_version": "1.61"
     },
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dcc2e9c45fbf3b5b5b067307a8e22f9980473cff8b78976ec0f54cd1ec8a6e34",
-  "size": 1537738,
+  "sha256": "b583338a9578149a8ddacfcada2b828b35f56484228734ccb8853739c0cb19ad",
+  "size": 1537769,
   "source": {
     "filename": "libgcrypt--1.12.4.sources.tar.gz",
-    "sha256": "4ebace32e09b1ec12b50a327f2a3fcf5bce735a6d51b2aaea2281565248715a6",
-    "size": 4489006
+    "sha256": "bc011592d66c6e53daf5b524bb933be852926fb6631ea3de58c785d3fe4d7ad7",
+    "size": 4489012
   },
   "tag": "sequoia",
   "version": "1.12.4",
   "version_scheme": 0,
-  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
+  "workflow_commit": "f2fa9e3298a1631492e4f32af79d322470289664"
 }
