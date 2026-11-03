@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
+  "brew_commit": "4f254c4cdd7bf27a402f18ae021894c9e298a675",
   "cellar": "any_skip_relocation",
-  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
-  "filename": "mole--1.67.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "010c6075c0aae247019d63d3d5d9fdde10b50d8fc41a90725cf197597d97a638",
+  "core_commit": "35ba8acfc3b1bfe74db33767a168e8a4db64134e",
+  "filename": "mole--1.68.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "bd00138b4c4e20e9b46ccbb7f0f16da360839a03a79ad1e3cb8fb8119d4e1bd4",
   "license": "GPL-3.0-or-later",
   "name": "mole",
-  "pkg_version": "1.67.0",
-  "recipe_sha256": "cd8f5f5feb1e1027cc87bc189d8069fdbaad4ffe9b2ea7a259314dfad91474bb",
-  "release": "intel-41202845158-1-mole",
+  "pkg_version": "1.68.0",
+  "recipe_sha256": "f42a01934e7458736d58be25b82b2b4129af6da5d7aa51d1572704b211c1b004",
+  "release": "intel-41593694331-1-mole",
   "revision": 0,
-  "run_id": "41202845158",
+  "run_id": "41593694331",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "860bb2e3727bcae564b90d5181e0201878cf801bf3059a9a75d65cea5e22ca77",
-  "size": 4529361,
+  "sha256": "32b7fb086031bab7ff3dfc9015879e9f5809daf5d9689a99d992fe4c53567185",
+  "size": 4534899,
   "source": {
-    "filename": "mole--1.67.0.sources.tar.gz",
-    "sha256": "ee6e9afe8c1f264b1d13e320b579116afb29c81a3e3b37f097183fd8d52267c9",
-    "size": 20508639
+    "filename": "mole--1.68.0.sources.tar.gz",
+    "sha256": "dc3a84561206e0796c3c4d72012aac1a7f4225f44d140b8e83f1e66d0116214d",
+    "size": 20547071
   },
   "tag": "sequoia",
-  "version": "1.67.0",
+  "version": "1.68.0",
   "version_scheme": 0,
-  "workflow_commit": "e401bc6c6f3ad5d213a78decb3d085b791697d1a"
+  "workflow_commit": "c4992c0db0555e5dc116f59a1813589bbced9452"
 }
