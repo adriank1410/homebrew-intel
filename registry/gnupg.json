@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "219ff9a49ba6efea0d6bec57c73801224367f976",
+  "brew_commit": "d462cb3f7c849ef43df00f90bbedd90bd75312d0",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "169cd1a87482e9c5badb95ee99b8954d562eb557",
+  "core_commit": "1798d9442ccd1a1e871b644365aaac3355c74764",
   "filename": "gnupg--2.5.24_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532",
   "license": "GPL-3.0-or-later",
   "name": "gnupg",
   "pkg_version": "2.5.24_1",
   "recipe_sha256": "cb39cf745dea2547a67bb6e78175a6b29c0faa6f4c7ea5f0ad367a7e01f44d00",
-  "release": "intel-41343806260-1-gnupg",
+  "release": "intel-41696466670-1-gnupg",
   "revision": 1,
-  "run_id": "41343806260",
+  "run_id": "41696466670",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -44,17 +44,17 @@
       "pkg_version": "3.0.2"
     },
     {
-      "formula_sha256": "1c5900b00dfb4f1e5603b847f30c12a839caa5113a3a06d16607fabf908f1cb2",
+      "formula_sha256": "55b4df6ecb663fbe8bcb0783017fcc960477f0d8b7442c79c2fad730b800648b",
       "name": "libgcrypt",
       "pkg_version": "1.12.4"
     },
     {
-      "formula_sha256": "fd2f8088c05e477207e4ecd08bbc9cd3c16138976042028c80d06d9825696e87",
+      "formula_sha256": "a92983fd472dc51e72a3f0abeec1165decc4f7d4c6aa95db9ca6f49ba76f68ef",
       "name": "libgpg-error",
       "pkg_version": "1.61"
     },
     {
-      "formula_sha256": "032d48cd71a4c81e9c6a7847b1dc2d3b0a1d1f21a8fa6fead4a7ff1b60df2160",
+      "formula_sha256": "ec612e2853549a7735d514b215bee957cebd1f63db243ce70393b948d8052f07",
       "name": "libidn2",
       "pkg_version": "2.3.8"
     },
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "62a0e9d92fa7116830ef085a2ebaeb82b8ec10a7fc4de6703b6dbe327b431193",
-  "size": 5773512,
+  "sha256": "eaa6a3e7be73e5376e9dae5b3cbe43ebd31c88649673953cef63b49788116b0f",
+  "size": 5773576,
   "source": {
     "filename": "gnupg--2.5.24_1.sources.tar.gz",
-    "sha256": "5510d3f04ff363dc84850065de2e041a1b1902ab31c23c8e2ef9c713b98ce818",
-    "size": 8458489
+    "sha256": "0f60d17e087d09a6866815d8749df2808938eedacc07f37bec1a5ee62aaa8905",
+    "size": 8458497
   },
   "tag": "sequoia",
   "version": "2.5.24",
   "version_scheme": 0,
-  "workflow_commit": "49f446d18d9942cdfc91732bcbd00cbe02b73ea9"
+  "workflow_commit": "a5112044f3b6b3d14437aa45c2f4b0b1182c4e3a"
 }
