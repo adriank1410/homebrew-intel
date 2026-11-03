@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57c486f02ee4f8f1fc179bc3775c3ac3dc6262d8",
+  "brew_commit": "d462cb3f7c849ef43df00f90bbedd90bd75312d0",
   "cellar": "any_skip_relocation",
-  "core_commit": "cfcce8998db0bd2b8524dc19dd07dfbb2cf2acf9",
-  "filename": "uv--0.13.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "95b69c924ed3167a113efd368a47815aeb50580cd399176d98eea7ada1547ce0",
+  "core_commit": "1798d9442ccd1a1e871b644365aaac3355c74764",
+  "filename": "uv--0.13.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "677a95eaec615987a0c410fd7426f92c02422dd653f78b5222506819818ce01f",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -12,22 +12,22 @@
     ]
   },
   "name": "uv",
-  "pkg_version": "0.13.6",
-  "recipe_sha256": "937298fd74cc1ceda1c1ef442badf216fdf5280170d084a41cf69fe8f012e2cb",
-  "release": "intel-40479014044-1-uv",
+  "pkg_version": "0.13.7",
+  "recipe_sha256": "da77f0ec38fb6728dea23df0ed3a2ecde1b1545de7520911f4846ca117980e48",
+  "release": "intel-41682183769-1-uv",
   "revision": 0,
-  "run_id": "40479014044",
+  "run_id": "41682183769",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "a9f159a1007e42a2482350a1a2ff9b487a897772990a86c66bda03a7875872c2",
-  "size": 16612628,
+  "sha256": "c974e28a0ef956ce14a9ff0fafc3738e424e34e695c2504e200e3a082cbc4a54",
+  "size": 16624945,
   "source": {
-    "filename": "uv--0.13.6.sources.tar.gz",
-    "sha256": "2547cfb54ebf4bedcbacdc9213e06bb1b81687e4c8941f77cc11a0427a2c94ff",
-    "size": 64405110
+    "filename": "uv--0.13.7.sources.tar.gz",
+    "sha256": "4ef437bb0b6e42ff2ec87e468f526574035e9fb506ac237fc5136c4bf0a199c7",
+    "size": 64492033
   },
   "tag": "sequoia",
-  "version": "0.13.6",
+  "version": "0.13.7",
   "version_scheme": 0,
-  "workflow_commit": "9f440122f00d55f26ba10c013ca27500186cfd66"
+  "workflow_commit": "f2fa9e3298a1631492e4f32af79d322470289664"
 }
