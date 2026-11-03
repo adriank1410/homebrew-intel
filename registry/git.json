@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
   "filename": "git--2.56.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "5884e345d5e79ae925821bc8b753a7c1a56ffef130aa479e64940a6888af0092",
   "license": {
@@ -17,9 +17,9 @@
   "name": "git",
   "pkg_version": "2.56.0_2",
   "recipe_sha256": "405a88cd53a985aae1747baefb4f2d8eaccd8a9ef1a7ea77ce9705853dc6de33",
-  "release": "intel-41138860341-1-git",
+  "release": "intel-41565074563-1-git",
   "revision": 2,
-  "run_id": "41138860341",
+  "run_id": "41565074563",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -47,14 +47,14 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "3bfb2679bd1e7467374e1b40ea9c50206c95fb074fe7ad83706242f2c14a3205",
+      "formula_sha256": "ad7f105d2df6c62cd286220d88428a99cd763933c0880c8e1049fbb858092e17",
       "name": "libnghttp2",
-      "pkg_version": "1.70.0"
+      "pkg_version": "1.71.0"
     },
     {
-      "formula_sha256": "9385581b6be2a617a550082da4fe038901c7411ba7f22278af3c8d6540f04a59",
+      "formula_sha256": "9e892ed65ed3595791fb18e8ee6eee756b4d32e4d7227046ba5196762a77162f",
       "name": "libnghttp3",
-      "pkg_version": "1.18.0"
+      "pkg_version": "1.19.0"
     },
     {
       "formula_sha256": "9c66d03a89cc9f9959c804a2017321fa134e65c0a3cf35c0eb5ffeadeb33167d",
@@ -103,15 +103,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "525d09c4dcd3f599edf1d22c8e0b89de446cf1747cb664b1add1c0ab5c16a066",
-  "size": 24978718,
+  "sha256": "d2696bbeb5b39dd2695bcdf09103355ce089c44a17617ba20fe22ad1c6880d22",
+  "size": 24978742,
   "source": {
     "filename": "git--2.56.0_2.sources.tar.gz",
-    "sha256": "287d6119fd4f9c95ad59745f29340f2225b76eeca7848079ef788a306b5af53d",
-    "size": 10940670
+    "sha256": "f8c72a085186ba9eeb17a51efca88f6ba1f29ebc364dab90bb9c2849dc63f8ad",
+    "size": 10940681
   },
   "tag": "sequoia",
   "version": "2.56.0",
   "version_scheme": 0,
-  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
+  "workflow_commit": "c915f93d7cb24603108c01c5558d3fd6caebb3ce"
 }
