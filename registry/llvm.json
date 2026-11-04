@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
   "build_profile": "llvm-no-pgo",
   "cellar": "any",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
-  "filename": "llvm--23.1.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "0c4a5f980542a997d3f3b2d46c61334fdf72e26ac9ffa47d2e077900e9d4f08d",
+  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
+  "filename": "llvm--23.1.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "2645efaa0a0ea21d615acef0ef8779e37194246033088f58f8817d15df9c16ed",
   "license": {
     "Apache-2.0": {
       "with": "LLVM-exception"
     }
   },
   "name": "llvm",
-  "pkg_version": "23.1.4",
-  "recipe_sha256": "a7caaceb4ef39600261189b32b13fb551762cd3c2e7eeccef944daa7f636f4e1",
-  "release": "intel-41138860341-1-llvm",
+  "pkg_version": "23.1.5",
+  "recipe_sha256": "1f3d767ab814dd4bf0e12131a085572db2fa87e65cc97c3283fc2b9bd745e3ad",
+  "release": "intel-41880030977-1-llvm",
   "revision": 0,
-  "run_id": "41138860341",
+  "run_id": "41880030977",
   "runtime_dependencies": [
     {
       "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a6d8a2a7af17448f721006a41e2ad9fc0ea873402a80bde573afe633df04e87d",
-  "size": 356228086,
+  "sha256": "24728612a463b8c94ddd17f8415a720a458c7bdd1047a9b40205ca15c56156a2",
+  "size": 356233967,
   "source": {
-    "filename": "llvm--23.1.4.sources.tar.gz",
-    "sha256": "5f7f05596d4f2ee2abc55321201097ff35c9c72d6c8542901417af912184c27f",
-    "size": 179366737
+    "filename": "llvm--23.1.5.sources.tar.gz",
+    "sha256": "5b6deadb0abe45b1368cf5a26246bae335a76a0078938d1c00908c131acae260",
+    "size": 179313520
   },
   "tag": "sequoia",
-  "version": "23.1.4",
+  "version": "23.1.5",
   "version_scheme": 0,
-  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
+  "workflow_commit": "0692856d089ac6f7542aea1ac269de69e7a5ce65"
 }
