@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "856ce8c40ae1d336da27940b08bb549798454ba1",
+  "brew_commit": "86e082cb082ab7914d8ffd29685f9ccbdbbbcdbd",
   "cellar": "any",
-  "core_commit": "184a6c38682139b48cdb80d5f3db0df843cae326",
+  "core_commit": "55711ea862c695b69a38a8b44ee72ef817ec364a",
   "filename": "numpy--2.5.4.sequoia.bottle.tar.gz",
   "formula_sha256": "6dc2715d73a8bc3f9545958cf4bfe9d7b2660d09156fd67af00c14ced581af19",
   "license": {
@@ -17,9 +17,9 @@
   "name": "numpy",
   "pkg_version": "2.5.4",
   "recipe_sha256": "a069f328428addc11e357328c05bee9094913754dbdcad54f396d02a7d87c88e",
-  "release": "intel-41474972776-1-numpy",
+  "release": "intel-41789484058-1-numpy",
   "revision": 0,
-  "run_id": "41474972776",
+  "run_id": "41789484058",
   "runtime_dependencies": [
     {
       "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
@@ -42,9 +42,9 @@
       "pkg_version": "1.4.1"
     },
     {
-      "formula_sha256": "795e330dddd098c88d8b11d9bb93874c1cd3815e6ab239a66be55e57f233aef8",
+      "formula_sha256": "903e28ea02af580caa857ec6b1e16770dac89bf4448f2345e44866a712a09c4f",
       "name": "libomp",
-      "pkg_version": "23.1.4"
+      "pkg_version": "23.1.5"
     },
     {
       "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
@@ -73,15 +73,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "369d09aedb67c7603fc113a891e989ca7f00862de7c12aa51a264aebbeac3a95",
-  "size": 11172788,
+  "sha256": "2de713bf9305e8e9506254623e6abc7e7d652a3126abbf7c43dc09305338c123",
+  "size": 11173985,
   "source": {
     "filename": "numpy--2.5.4.sources.tar.gz",
-    "sha256": "1f80069acce3235b310e2da60d1715e400921a4e4445598cd037049fbd2b72cb",
-    "size": 20849470
+    "sha256": "6700bbca01ebfd95f075a9898248faca69e2073e29d6f47c17d301918d398b8d",
+    "size": 20849459
   },
   "tag": "sequoia",
   "version": "2.5.4",
   "version_scheme": 0,
-  "workflow_commit": "3634f3b002440de80bc22edd3e3ab9680d99aaa3"
+  "workflow_commit": "1bed4acdd27294c7043922d530045fa8345dc33a"
 }
