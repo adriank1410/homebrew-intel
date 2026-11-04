@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
   "cellar": "any",
-  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
-  "filename": "libngtcp2--1.25.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "9c66d03a89cc9f9959c804a2017321fa134e65c0a3cf35c0eb5ffeadeb33167d",
+  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
+  "filename": "libngtcp2--1.26.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "2e25d28bbd7c8b1190b02bcc106a8a24cb1f1950620981cd66d505472729e5b5",
   "license": "MIT",
   "name": "libngtcp2",
-  "pkg_version": "1.25.0_1",
-  "recipe_sha256": "6c662926b51bd9f4caa969c2a382ad880d8d5f4b3bff2aaccaba4fe49de92717",
-  "release": "intel-40939955324-1-libngtcp2",
-  "revision": 1,
-  "run_id": "40939955324",
+  "pkg_version": "1.26.0",
+  "recipe_sha256": "1d089745a6705763b43a87fe8638ade54ca497ec45abe27c90567b5e858d01b9",
+  "release": "intel-41880030977-1-libngtcp2",
+  "revision": 0,
+  "run_id": "41880030977",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5789a9623326ef26ca98bcb0ba987d9dab1b4f0880f8bd9ce9a39a66df365d48",
-  "size": 425924,
+  "sha256": "88c2a108918297da45bcd9577e56266a64faf54d56dea0d40b89b361fcbb111a",
+  "size": 439351,
   "source": {
-    "filename": "libngtcp2--1.25.0_1.sources.tar.gz",
-    "sha256": "fe9a9c2fefb7edc83c57fc8fc8b5fd3684658b61fb89c0a89c50dd8e13a7fad2",
-    "size": 716063
+    "filename": "libngtcp2--1.26.0.sources.tar.gz",
+    "sha256": "d7199c22beeb8e243e8224e1695d002840910ba2b815362e4fc5178526454b76",
+    "size": 740581
   },
   "tag": "sequoia",
-  "version": "1.25.0",
+  "version": "1.26.0",
   "version_scheme": 0,
-  "workflow_commit": "adb5f05ef4d19fe0f2d8f1df011523d74aceebfb"
+  "workflow_commit": "0692856d089ac6f7542aea1ac269de69e7a5ce65"
 }
