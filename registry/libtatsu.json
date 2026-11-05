@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
+  "brew_commit": "d4824f13d18d0d978eff714588ab59919793e4d3",
   "cellar": "any",
-  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
-  "filename": "libtatsu--1.0.5_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "6faa3223ef205cef56785e840577ab3e04ec59b6d433a9bc541ccf6cdc3691c6",
+  "core_commit": "24bd80530c4270536ee7cecdf60c82e71b2f6aad",
+  "filename": "libtatsu--1.1.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "6ec7595250d202e4963ce37e40ab16de41df9e4c00fe8a8cfc7680e40a6b0037",
   "license": "LGPL-2.1-or-later",
   "name": "libtatsu",
-  "pkg_version": "1.0.5_1",
-  "recipe_sha256": "a4e433fb6d7d93016339a50e20b9d856aadca5888f42b882579e1c86de8c0024",
-  "release": "intel-41114503008-1-libtatsu",
-  "revision": 1,
-  "run_id": "41114503008",
+  "pkg_version": "1.1.0",
+  "recipe_sha256": "a2a949649a67c200936f941bf973e4ff710956cb3ba8d322c853741e58e518ae",
+  "release": "intel-42093193393-1-libtatsu",
+  "revision": 0,
+  "run_id": "42093193393",
   "runtime_dependencies": [
     {
       "formula_sha256": "68840871784ab58faf52c84d0a797a19d081d0bd4c0da8f1888256d17fd8a561",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "92008750ba5e6195cd48bbc6cfe371d7a13a2f3b6e895f2d277b3619710f3cc7",
-  "size": 45612,
+  "sha256": "6992343f1b9da28713345a920f3bb44ac6fcf068e6dba7fd96e4b25dac5c435e",
+  "size": 47112,
   "source": {
-    "filename": "libtatsu--1.0.5_1.sources.tar.gz",
-    "sha256": "6f589bd4f17b5ece6fba334b67dafe7f517fdadc5cae82b9b0fdaf835448a6ad",
-    "size": 317415
+    "filename": "libtatsu--1.1.0.sources.tar.gz",
+    "sha256": "aff613a628657cd21d4f92faa4d3e7ef1f23ae9070cd67129bb84f0a7949c075",
+    "size": 323214
   },
   "tag": "sequoia",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "version_scheme": 0,
-  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
+  "workflow_commit": "029b6a853799af47947dd2f95d9c827e074e7330"
 }
