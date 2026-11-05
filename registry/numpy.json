@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any",
-  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "numpy--2.5.4.sequoia.bottle.tar.gz",
   "formula_sha256": "6dc2715d73a8bc3f9545958cf4bfe9d7b2660d09156fd67af00c14ced581af19",
   "license": {
@@ -17,9 +17,9 @@
   "name": "numpy",
   "pkg_version": "2.5.4",
   "recipe_sha256": "a069f328428addc11e357328c05bee9094913754dbdcad54f396d02a7d87c88e",
-  "release": "intel-41935896621-1-numpy",
+  "release": "intel-41998629461-1-numpy",
   "revision": 0,
-  "run_id": "41935896621",
+  "run_id": "41998629461",
   "runtime_dependencies": [
     {
       "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
@@ -47,9 +47,9 @@
       "pkg_version": "23.1.5"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "35ac684468efbedf81c16eb0dbea380e977720a9b234276da1847219aa767aa4",
@@ -73,15 +73,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c13134077ca32b4f459df6bcc41a74890ba0df3f0231bc032d5f812127a1eeab",
-  "size": 11174024,
+  "sha256": "852ebafe155fb0bc440e022c320cf6c4846ed3762d7e28c6dca0959720a76752",
+  "size": 11174010,
   "source": {
     "filename": "numpy--2.5.4.sources.tar.gz",
-    "sha256": "c02594fae6e52d80fa02f28597eb4c69731e5b04e6edf8f297067f8d4b873e28",
-    "size": 20849458
+    "sha256": "3cb1379f99b3ef311ba0f13fff66499ee39b13a01d928839132a5f0ae20b63cf",
+    "size": 20849470
   },
   "tag": "sequoia",
   "version": "2.5.4",
   "version_scheme": 0,
-  "workflow_commit": "cb8e19d933fa692e458b02be05f07871bfc3fa7c"
+  "workflow_commit": "03c380effb83f998555eb29150f23c0d53f4413a"
 }
