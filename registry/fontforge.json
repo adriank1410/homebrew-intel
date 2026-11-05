@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "856ce8c40ae1d336da27940b08bb549798454ba1",
+  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "184a6c38682139b48cdb80d5f3db0df843cae326",
+  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
   "filename": "fontforge--20251009_2.sequoia.bottle.tar.gz",
   "formula_sha256": "e83e3a2ede4bed1f21d7435b0bef0abb96c3b9fa73ddf8f254245f8ea61d586a",
   "license": "GPL-3.0-or-later",
   "name": "fontforge",
   "pkg_version": "20251009_2",
   "recipe_sha256": "e4e2a8c148bc8ded219db500b20e813f568b0e36183cfbe55ff26962abb86112",
-  "release": "intel-41437286408-1-fontforge",
+  "release": "intel-41935896621-1-fontforge",
   "revision": 2,
-  "run_id": "41437286408",
+  "run_id": "41935896621",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -84,7 +84,7 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
+      "formula_sha256": "d7c3277d10bca7bb437d16a08c4d63c12fd944cfe7f0cb4f89b61769f68d798f",
       "name": "libdatrie",
       "pkg_version": "0.2.14"
     },
@@ -235,15 +235,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6a5423e2d8ce5bf00fd662e08d30aea2a5cf259f5c31cdf5c8682e86a46c75e6",
-  "size": 5858171,
+  "sha256": "c1e6fead5cfd8a201500ce13546b3f1544b3d051ef8bbdf5e238a99d94518424",
+  "size": 5858206,
   "source": {
     "filename": "fontforge--20251009_2.sources.tar.gz",
-    "sha256": "5cc4224565c6261b795ecf81fff9ec859cc63336a591d4aea1db7e1ab1450528",
-    "size": 14132301
+    "sha256": "5e927b5b5c2c284f24122c17b99bcbab4ad426d3016cffd9f46f7a204ff43392",
+    "size": 14132303
   },
   "tag": "sequoia",
   "version": "20251009",
   "version_scheme": 0,
-  "workflow_commit": "a82703a2670b0f0af58a8e4c3b88851aa30219eb"
+  "workflow_commit": "cb8e19d933fa692e458b02be05f07871bfc3fa7c"
 }

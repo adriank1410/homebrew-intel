@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "219ff9a49ba6efea0d6bec57c73801224367f976",
+  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
   "cellar": "any",
-  "core_commit": "169cd1a87482e9c5badb95ee99b8954d562eb557",
+  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
   "filename": "tesseract--5.5.4.sequoia.bottle.tar.gz",
   "formula_sha256": "0e8b9ae80c4ff4a0e2887316599e63539f9d2ee1e76641d70ba1f51231685c7b",
   "license": "Apache-2.0",
   "name": "tesseract",
   "pkg_version": "5.5.4",
   "recipe_sha256": "1caefce31f4a699a5e278c2b6bfeeb6f2b6b8181491cde0b9dfb94bf0ba9532d",
-  "release": "intel-41362471635-1-tesseract",
+  "release": "intel-41935896621-1-tesseract",
   "revision": 0,
-  "run_id": "41362471635",
+  "run_id": "41935896621",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -84,17 +84,17 @@
       "pkg_version": "1.87.0"
     },
     {
-      "formula_sha256": "9b417e382e4cccdbf2b9b4b4cb7107b4b5cbb3409b0eca1f1a3db8871711e6ac",
+      "formula_sha256": "b9b7a716e1f39cd51d25fddec1085d2a5fcf42e6751ed07a4ffc3f5701fd3ef1",
       "name": "libarchive",
       "pkg_version": "3.8.11"
     },
     {
-      "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
+      "formula_sha256": "d79bbe155f713e445bddfa581f9bef666518d0642f70a75f22cf898bb1fb5b46",
       "name": "libb2",
       "pkg_version": "0.98.1"
     },
     {
-      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
+      "formula_sha256": "d7c3277d10bca7bb437d16a08c4d63c12fd944cfe7f0cb4f89b61769f68d798f",
       "name": "libdatrie",
       "pkg_version": "0.2.14"
     },
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "65fb0fad678e5e7dca742aa2963f37b11d46167573500af52aa501c482043472",
-  "size": 10380382,
+  "sha256": "a01385beb4f7bd4fb0a9546ddcd23e5fa1c92157ba0f2431900e20e6301b06d9",
+  "size": 10380362,
   "source": {
     "filename": "tesseract--5.5.4.sources.tar.gz",
-    "sha256": "79a8a7e324157b097cb25617af4728dcec46d991f1d2ee4d144c3e3db1f01208",
-    "size": 8239368
+    "sha256": "29c13de087a8aeee4626f236b8d9019d74c9ed9ad62fa2b14b29ec6e742e1159",
+    "size": 8239353
   },
   "tag": "sequoia",
   "version": "5.5.4",
   "version_scheme": 0,
-  "workflow_commit": "fef3011dfcf1ab1c788ba63db53dc6ef72141dc7"
+  "workflow_commit": "cb8e19d933fa692e458b02be05f07871bfc3fa7c"
 }
