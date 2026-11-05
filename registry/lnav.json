@@ -1,25 +1,25 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8a17c2078a1a2f91248915546216783978399e0c",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any",
-  "core_commit": "8f4a1b194be5c87f2c68bd5d9d81dc14736b3cc2",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "lnav--0.14.1.sequoia.bottle.tar.gz",
   "formula_sha256": "6f9b77029f8a1c29aeca058e0688233e2dd97a69096d3e7b6e03b14bb9100932",
   "license": "BSD-2-Clause",
   "name": "lnav",
   "pkg_version": "0.14.1",
   "recipe_sha256": "55c69ad0c585301200eec159d15912a0846d98ae62bac9a9ea1f32c6becfb100",
-  "release": "intel-41237445855-1-lnav",
+  "release": "intel-42068122922-1-lnav",
   "revision": 0,
-  "run_id": "41237445855",
+  "run_id": "42068122922",
   "runtime_dependencies": [
     {
-      "formula_sha256": "9b417e382e4cccdbf2b9b4b4cb7107b4b5cbb3409b0eca1f1a3db8871711e6ac",
+      "formula_sha256": "b9b7a716e1f39cd51d25fddec1085d2a5fcf42e6751ed07a4ffc3f5701fd3ef1",
       "name": "libarchive",
       "pkg_version": "3.8.11"
     },
     {
-      "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
+      "formula_sha256": "d79bbe155f713e445bddfa581f9bef666518d0642f70a75f22cf898bb1fb5b46",
       "name": "libb2",
       "pkg_version": "0.98.1"
     },
@@ -29,9 +29,9 @@
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b7363675014ddb78c07d681c0ed49bc2a59bdb4d3ab3f9473b13c9d26c289c3b",
-  "size": 14077514,
+  "sha256": "0e01aecff1e04277dd94bb4c7656118910e580ac4862743e05897efd8953f708",
+  "size": 14105205,
   "source": {
     "filename": "lnav--0.14.1.sources.tar.gz",
-    "sha256": "6084dab3c3d264daa41999653f0c4a6ca403c92787a07ad27d97535a4a8cf198",
-    "size": 27877296
+    "sha256": "c8db36524da5e7894463716917c3ede2289a3399818895ad7326e2d9410cb20f",
+    "size": 27877700
   },
   "tag": "sequoia",
   "version": "0.14.1",
   "version_scheme": 0,
-  "workflow_commit": "e68d3a033e69a7decfd723d0f836f122525908ec"
+  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
 }
