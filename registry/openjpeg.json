@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "openjpeg--2.5.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "4b595e734d2c800750ba2abc90e5a532235fbe82c38b7a7ec09fd11b21d42ce9",
   "license": "BSD-2-Clause",
   "name": "openjpeg",
   "pkg_version": "2.5.4_1",
   "recipe_sha256": "915431603bad9e45dae28681590d4773f3f4b8576880b336b070e45a48f26594",
-  "release": "intel-41169564614-1-openjpeg",
+  "release": "intel-42068122922-1-openjpeg",
   "revision": 1,
-  "run_id": "41169564614",
+  "run_id": "42068122922",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -39,9 +39,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "582f190c553ac5b2f2d79554db634593b79b3bbbea433579d676c989a40e0eec",
-  "size": 2393078,
+  "sha256": "e701935b8718e850877f0c08dd3f7846539d6238c31348797b6f024c299c8fdd",
+  "size": 2395079,
   "source": {
     "filename": "openjpeg--2.5.4_1.sources.tar.gz",
-    "sha256": "bda4d7892ef7c718748d8b6435b1d2b9422cf9566997c8ca0aeb01e56ac4e08e",
-    "size": 2163173
+    "sha256": "5e9cf2fea81a43d6f751fa7a1645d43da86cbbf4807d9d6314f36e3112af262b",
+    "size": 2163176
   },
   "tag": "sequoia",
   "version": "2.5.4",
   "version_scheme": 0,
-  "workflow_commit": "36a5b16076c61c148dbc19e4649cbd463a754beb"
+  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
 }
