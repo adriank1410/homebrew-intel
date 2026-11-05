@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1f55ebf835304c959bd2617fe8086316c5d94b37",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any_skip_relocation",
-  "core_commit": "cc07696e3d5e897ab0afd3a0fc66d4c143d62627",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "you-get--0.4.1743.sequoia.bottle.tar.gz",
   "formula_sha256": "d5246a95f4def95e3960b639e399dae7e822e161b5c3689212b56e4f9ab423aa",
   "license": "MIT",
   "name": "you-get",
   "pkg_version": "0.4.1743",
   "recipe_sha256": "a45fdb3dfbbf0cc35a17dc8e90f7e16361f6c623ba7f57da64f129ca3dd6d7e7",
-  "release": "intel-41256209788-1-you-get",
+  "release": "intel-41998629461-1-you-get",
   "revision": 0,
-  "run_id": "41256209788",
+  "run_id": "41998629461",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9cd2352158133996efa6de8af304f8dcbcc5cf923aab3ed16e7be085e4e91ac2",
-  "size": 2635851,
+  "sha256": "7a417f65bb2fe4edd0ec272e4bae07a15c41fe34c20cbb062943744d7ffe4f3a",
+  "size": 2635835,
   "source": {
     "filename": "you-get--0.4.1743.sources.tar.gz",
-    "sha256": "2aa1abd2c38237aceeccd071396736c39d2f70584ff742a56fda53c7612ea2c2",
-    "size": 2791698
+    "sha256": "bf5522b970d2de5933db48240d95bb346baff137ba7a59a949989fd182affe37",
+    "size": 2791710
   },
   "tag": "sequoia",
   "version": "0.4.1743",
   "version_scheme": 0,
-  "workflow_commit": "3a0fa97f7bf7ab28a61062c7befba5ce1f19455c"
+  "workflow_commit": "03c380effb83f998555eb29150f23c0d53f4413a"
 }
