@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
+  "brew_commit": "8b0b7e44193854e22b84bcf2f58d65f21408d458",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
+  "core_commit": "4974e072453a29858744bd9e922eb2782b6b01c3",
   "filename": "gcc--16.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "f09c8035d0874fb1d8a2d7ca3464f8108273c4c532cec582d7b9f340aa544aa3",
   "license": {
@@ -13,9 +13,9 @@
   "name": "gcc",
   "pkg_version": "16.2.0",
   "recipe_sha256": "3de4fc891d72dd8936080ecabae3ffe736a5f8b4352ce843c57688588d9820d8",
-  "release": "intel-41880030977-1-gcc",
+  "release": "intel-41961893473-1-gcc",
   "revision": 0,
-  "run_id": "41880030977",
+  "run_id": "41961893473",
   "runtime_dependencies": [
     {
       "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
@@ -33,9 +33,9 @@
       "pkg_version": "1.4.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "35ac684468efbedf81c16eb0dbea380e977720a9b234276da1847219aa767aa4",
@@ -54,15 +54,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f35b4174437bdea701c9ac0e5413a8cbef94ad77c089cd04711d44b29d179354",
-  "size": 175593063,
+  "sha256": "c03af98c2445bd34fdc497b5239041334652d49ea7ea797459b5bf1c813ff11b",
+  "size": 175592571,
   "source": {
     "filename": "gcc--16.2.0.sources.tar.gz",
-    "sha256": "df8fd8523c0b1ced748c597d1575348f2652895324180f5f3ccb6266d0c5e326",
-    "size": 107304567
+    "sha256": "30915ecd430f321742af433274d6c3ce0107d5c5591c3451c2c61a8818f93177",
+    "size": 107304576
   },
   "tag": "sequoia",
   "version": "16.2.0",
   "version_scheme": 0,
-  "workflow_commit": "0692856d089ac6f7542aea1ac269de69e7a5ce65"
+  "workflow_commit": "b144a09facb90228776ee701f6598f6799ef9f7f"
 }
