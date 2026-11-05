@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any",
-  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "boost--1.92.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ea0ed2bb6e27be18ab1e1f0f852c2dadb0a2149369ad7f9847820b29c2ea357e",
   "license": "BSL-1.0",
   "name": "boost",
   "pkg_version": "1.92.0_1",
   "recipe_sha256": "de77f9901a1abb95ff48c2e42566500f8d94fccf967438ced7d34e7dc7a3385c",
-  "release": "intel-41202845158-1-jpeg-xl",
+  "release": "intel-42068122922-1-jpeg-xl",
   "revision": 1,
-  "run_id": "41202845158",
+  "run_id": "42068122922",
   "runtime_dependencies": [
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -19,9 +19,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f25909dc232e09be470dfcc9e806d5c7245e53829a31246cd1a1a669399266ab",
-  "size": 61980066,
+  "sha256": "f4676512559a8bcd2bd18301045239317c778f6867e04e8705f96950c7742f51",
+  "size": 61979328,
   "source": {
     "filename": "boost--1.92.0_1.sources.tar.gz",
-    "sha256": "8090dfd7ac460557c0c6fd76aad3e92440688b31dee3feb0eb8da53fabc0f5c0",
-    "size": 52664537
+    "sha256": "fbd0dcf40e6f34ffecb519af058e84fe6a1e02c1d05306be0193e3ede80503db",
+    "size": 52664541
   },
   "tag": "sequoia",
   "version": "1.92.0",
   "version_scheme": 0,
-  "workflow_commit": "e401bc6c6f3ad5d213a78decb3d085b791697d1a"
+  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
 }
