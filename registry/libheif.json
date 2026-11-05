@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e277871ab2c1223e6f2af22984ed5ebe19d6c926",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any",
-  "core_commit": "f5b1c0cca15313f661d178588785f318551d29f1",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "libheif--1.23.7.sequoia.bottle.tar.gz",
   "formula_sha256": "ccf020d6dc644a50858261556eec24a0aa8695045676793d4cd2f0c4328fcecb",
   "license": "LGPL-3.0-or-later",
   "name": "libheif",
   "pkg_version": "1.23.7",
   "recipe_sha256": "a1e1dda0891c69e93e36802ed9d6b22f5e6fb8978e8067bc68a20d1cc931457d",
-  "release": "intel-41202845158-1-libheif",
+  "release": "intel-42068122922-1-libheif",
   "revision": 0,
-  "run_id": "41202845158",
+  "run_id": "42068122922",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -49,9 +49,9 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "bb27f96d39854d8c6fd12116415c7325600c26e42ac41ab6d9f28767e3ffb3c4",
-  "size": 3164554,
+  "sha256": "c1d9d93a93f74414c1851f6dd47a1d852b79372ef0b8fbf29e755f0d1a84ef65",
+  "size": 3164566,
   "source": {
     "filename": "libheif--1.23.7.sources.tar.gz",
-    "sha256": "5210a27477c58f5c4a202e34d996b78404056bc3ca6b1327a6d6c353bd9ff2d7",
-    "size": 2457142
+    "sha256": "b655f235afe24a8fa2b9dcc5920c9223068b62d7a9276e873dab3c389cd2be2d",
+    "size": 2457152
   },
   "tag": "sequoia",
   "version": "1.23.7",
   "version_scheme": 0,
-  "workflow_commit": "e401bc6c6f3ad5d213a78decb3d085b791697d1a"
+  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
 }
