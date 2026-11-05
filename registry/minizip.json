@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "d4824f13d18d0d978eff714588ab59919793e4d3",
+  "cellar": "any",
+  "core_commit": "24bd80530c4270536ee7cecdf60c82e71b2f6aad",
+  "filename": "minizip--1.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "8a1fa64baf8b87b0432ecd0eb4b3dbf878041a04e17a94a5f21b200479484693",
+  "license": "Zlib",
+  "name": "minizip",
+  "pkg_version": "1.4",
+  "recipe_sha256": "0aaddc2f2805f9e8863966897cf12d1f08edc54207b4dbefffa5a3927b3cd8e5",
+  "release": "intel-42093193393-1-minizip",
+  "revision": 0,
+  "run_id": "42093193393",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "91d4a2d08ae2ac5eeecc85cd4b4f1dcb403a1ff02d305d7985c67dafab196e04",
+  "size": 86210,
+  "source": {
+    "filename": "minizip--1.4.sources.tar.gz",
+    "sha256": "2ace1f1274454719600a4522b58044f5efd0cb9de1ac00933dab4da4af828118",
+    "size": 1514804
+  },
+  "tag": "sequoia",
+  "version": "1.4",
+  "version_scheme": 0,
+  "workflow_commit": "029b6a853799af47947dd2f95d9c827e074e7330"
+}
