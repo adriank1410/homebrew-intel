@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
+  "brew_commit": "8b0b7e44193854e22b84bcf2f58d65f21408d458",
   "cellar": "any",
-  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
+  "core_commit": "4974e072453a29858744bd9e922eb2782b6b01c3",
   "filename": "libtiff--4.7.2.sequoia.bottle.tar.gz",
   "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
   "license": "libtiff",
   "name": "libtiff",
   "pkg_version": "4.7.2",
   "recipe_sha256": "fc00430585b1c694cc6c2749f0479a910cbc0a4dcc0e5dcb0d77efd5db6fa8ae",
-  "release": "intel-41120823467-1-libtiff",
+  "release": "intel-41961893473-1-libtiff",
   "revision": 0,
-  "run_id": "41120823467",
+  "run_id": "41961893473",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -29,9 +29,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e515f297ce33d1ca6656a9294a08a8c8d46dfa871bfcc38eb4f4457a50128a05",
-  "size": 1995619,
+  "sha256": "bdda4a6e9aa2d261c7e00875e9e1e790857724f3c7f2f7fd58d3d511960404e6",
+  "size": 1995609,
   "source": {
     "filename": "libtiff--4.7.2.sources.tar.gz",
-    "sha256": "23d954444220724a619ad2e9536339f7a540c91ce276e926a50c9ab4024a2347",
-    "size": 4085486
+    "sha256": "a041358910025d13afc2985522d78bc93dd8fd506d8022b6f611fd449a920d02",
+    "size": 4085479
   },
   "tag": "sequoia",
   "version": "4.7.2",
   "version_scheme": 0,
-  "workflow_commit": "e6dcc9f04cce864d371e57bbe7806093e8ea88e2"
+  "workflow_commit": "b144a09facb90228776ee701f6598f6799ef9f7f"
 }
