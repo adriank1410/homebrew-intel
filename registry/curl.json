@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
+  "brew_commit": "8b0b7e44193854e22b84bcf2f58d65f21408d458",
   "cellar": "any",
-  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
+  "core_commit": "4974e072453a29858744bd9e922eb2782b6b01c3",
   "filename": "curl--8.23.0.sequoia.bottle.tar.gz",
   "formula_sha256": "33e932ab597435e4b7013abdcea8c1737e12db3fe77e4cf475d15fc831a1cf9a",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.23.0",
   "recipe_sha256": "d0656bcb4d4a8478c6a32f78849cb11740ae833a8663c2eb2d6c57bdcc3bf804",
-  "release": "intel-41935896621-1-curl",
+  "release": "intel-41961893473-1-curl",
   "revision": 0,
-  "run_id": "41935896621",
+  "run_id": "41961893473",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -49,9 +49,9 @@
       "pkg_version": "1.11.1_7"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ada98c10e774d2b0119c7e91355a88d999664564ae5e3b523b4a01f394fa3e3f",
-  "size": 1716181,
+  "sha256": "b591d97db4f9e0887007023fbf98aff41746d0b3e2fc411abaec240ae96e16ce",
+  "size": 1716024,
   "source": {
     "filename": "curl--8.23.0.sources.tar.gz",
-    "sha256": "519ee3fbc6e1d49bdfe57eb0f053f82f144b8b3d30be0430463a056bd3737b62",
-    "size": 3453427
+    "sha256": "7beb9ab281260a6b5bb57c6d1c7a1ded92c1206b7216394c4e95fa8e4fd9fd82",
+    "size": 3453440
   },
   "tag": "sequoia",
   "version": "8.23.0",
   "version_scheme": 0,
-  "workflow_commit": "cb8e19d933fa692e458b02be05f07871bfc3fa7c"
+  "workflow_commit": "b144a09facb90228776ee701f6598f6799ef9f7f"
 }
