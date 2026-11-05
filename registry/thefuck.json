@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8a17c2078a1a2f91248915546216783978399e0c",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any_skip_relocation",
-  "core_commit": "8f4a1b194be5c87f2c68bd5d9d81dc14736b3cc2",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
   "formula_sha256": "5ac5c9825238d0113ee6a8892cf818005e5d34a968c9eb070614ea4f1bc50885",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "d95a4ee571ce6f0bf152058ed06cdd22e389b9669365b4cfe2e10cfce2035217",
-  "release": "intel-41237445855-1-thefuck",
+  "release": "intel-41998629461-1-thefuck",
   "revision": 0,
-  "run_id": "41237445855",
+  "run_id": "41998629461",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "efa5fcc658516adf581dae276291b1e8bf1f1e6814968ebd1b509e7a86f34cbd",
-  "size": 836780,
+  "sha256": "bb8b19a26a026d8c63111954fcc009ef2ee6b68a8a278df9a3a289e5c5c1cd42",
+  "size": 836771,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "87eb8be6809f1aa94863e12b740690d79bfb0d118ca0b3eded0bf687b1a384dd",
-    "size": 1721157
+    "sha256": "333131a4b092072122a962dd1e4be8bd4608a70eff564a6abf8f61b778a45d09",
+    "size": 1721151
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "e68d3a033e69a7decfd723d0f836f122525908ec"
+  "workflow_commit": "03c380effb83f998555eb29150f23c0d53f4413a"
 }
