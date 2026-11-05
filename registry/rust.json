@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
   "cellar": "any",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
   "filename": "rust--1.99.1.sequoia.bottle.tar.gz",
   "formula_sha256": "b3e6ec47bc327e7d9f132be8b5ee880b64e8128ef3eedb70459677bdedabd18a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.99.1",
   "recipe_sha256": "aece397ba5dfeb11c93fc0d7ff2afe6ae3128da5c60f557a72196ab620f40bea",
-  "release": "intel-41169564614-1-rust",
+  "release": "intel-41935896621-1-rust",
   "revision": 0,
-  "run_id": "41169564614",
+  "run_id": "41935896621",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -39,9 +39,9 @@
       "pkg_version": "9.4.3"
     },
     {
-      "formula_sha256": "0c4a5f980542a997d3f3b2d46c61334fdf72e26ac9ffa47d2e077900e9d4f08d",
+      "formula_sha256": "2645efaa0a0ea21d615acef0ef8779e37194246033088f58f8817d15df9c16ed",
       "name": "llvm",
-      "pkg_version": "23.1.4"
+      "pkg_version": "23.1.5"
     },
     {
       "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "38b994f8da7f708ff461dba7a1839d4fa35bbab4245915367f283101a6f42295",
-  "size": 111574672,
+  "sha256": "c24582c1e8dbca14d20fc858aa7b955b6ec9f657048ec66e69377abc17365d8a",
+  "size": 111589868,
   "source": {
     "filename": "rust--1.99.1.sources.tar.gz",
-    "sha256": "3673006f11bf79d6ae25d3db544b59d14bf03d627c2984300e2803d8f4492b91",
-    "size": 657788458
+    "sha256": "7b46f42211231ae7bf512ce77e12df5bf0e79aecc0fa1149b0959c59c4890fbb",
+    "size": 657788415
   },
   "tag": "sequoia",
   "version": "1.99.1",
   "version_scheme": 0,
-  "workflow_commit": "36a5b16076c61c148dbc19e4649cbd463a754beb"
+  "workflow_commit": "cb8e19d933fa692e458b02be05f07871bfc3fa7c"
 }
