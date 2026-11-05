@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8a17c2078a1a2f91248915546216783978399e0c",
+  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
   "cellar": "any",
-  "core_commit": "8f4a1b194be5c87f2c68bd5d9d81dc14736b3cc2",
+  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
   "filename": "ldns--1.9.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ad053fa13bcf235ccb9daa313c62bd7c251b7977eea85e67112eb0a2f0dfe29b",
   "license": "BSD-3-Clause",
   "name": "ldns",
   "pkg_version": "1.9.2_1",
   "recipe_sha256": "c9cfc1eb09549873df6096ff6e3b5009021b0a8e8bd88e54f2277cf70624bdd7",
-  "release": "intel-41237445855-1-ldns",
+  "release": "intel-41998629461-1-ldns",
   "revision": 1,
-  "run_id": "41237445855",
+  "run_id": "41998629461",
   "runtime_dependencies": [
     {
       "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-10-20"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6f35d1d92d1abab64e1d8582ab7096aa841d7f2e52fe95c9ef91b358d9f0a80b",
-  "size": 1308858,
+  "sha256": "c33c627d9247b4e25f4c506347d98c87e119c7ff8040419849f9a10e1cb81a75",
+  "size": 1308830,
   "source": {
     "filename": "ldns--1.9.2_1.sources.tar.gz",
-    "sha256": "e72cf5c561af0f27e20f2c790f4bf71947b8b1c7c383e4f7c9202a4ff414ff1f",
-    "size": 1314526
+    "sha256": "8ab7f770eec95af1772653847c6fdc6d61e1b501b874625b9913b322b36a33fe",
+    "size": 1314533
   },
   "tag": "sequoia",
   "version": "1.9.2",
   "version_scheme": 0,
-  "workflow_commit": "e68d3a033e69a7decfd723d0f836f122525908ec"
+  "workflow_commit": "03c380effb83f998555eb29150f23c0d53f4413a"
 }
