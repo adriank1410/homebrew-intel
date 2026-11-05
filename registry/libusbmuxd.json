@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a57af195cf9d7addb48bdb1204c9151313cd0057",
+  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
   "cellar": "any",
-  "core_commit": "9d40391c0025ac4420dac0705b39feaf3c903d73",
+  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
   "filename": "libusbmuxd--2.1.1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "56a12a1ec7bf87a3ac122e166b6b436067948e81b342a170271e0b6d37916ae7",
   "license": {
@@ -14,12 +14,12 @@
   "name": "libusbmuxd",
   "pkg_version": "2.1.1_1",
   "recipe_sha256": "2037e3e1f7a1628effdf85b29e294553e9b8d191de71df57f75871773c2f8dc7",
-  "release": "intel-37395823962-1-libusbmuxd",
+  "release": "intel-41935896621-1-libusbmuxd",
   "revision": 1,
-  "run_id": "37395823962",
+  "run_id": "41935896621",
   "runtime_dependencies": [
     {
-      "formula_sha256": "65261ed6153d1d8026f4ff9df5d1a40691344fbce9a39f5223b7bf0eca5f5d8a",
+      "formula_sha256": "50936aca24b49d5777e8fa6ceaacb96a206774b081fd5bb72c4ba80a12d31491",
       "name": "libimobiledevice-glue",
       "pkg_version": "1.3.3"
     },
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b74e01e25ad74bb686b2840f79de408d51e7217587640f2b9328c981f0959805",
-  "size": 52655,
+  "sha256": "baee1603a2c8f8b2157f7d69cc68d0e768d3aebb358b9d1dd2b20eae7d0609fc",
+  "size": 52651,
   "source": {
     "filename": "libusbmuxd--2.1.1_1.sources.tar.gz",
-    "sha256": "1485f9bea6d3c04c66469d4d0322ebd778b25fbb9191fccadbe85bc793c76c06",
-    "size": 338638
+    "sha256": "ca76058facf0c3bf18ed5637abcb299786807e1ac361d5d05d05f0e7d0b102f6",
+    "size": 338635
   },
   "tag": "sequoia",
   "version": "2.1.1",
   "version_scheme": 0,
-  "workflow_commit": "035fe5d174af00a71e38a3ddaf6cf126eac41f81"
+  "workflow_commit": "cb8e19d933fa692e458b02be05f07871bfc3fa7c"
 }
