@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "96d2a24a745d3f7dcf41ccdbb6f67243b54c27a4",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "15a61d5461e5b5dacfbffd397bb8c143a1925a47",
+  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
   "filename": "zbar--0.23.95.sequoia.bottle.tar.gz",
   "formula_sha256": "3f034ae9558468bcb2c7ebfceaa47928482e538a53541b2f5d046133c8eb4923",
   "license": "LGPL-2.1-only",
   "name": "zbar",
   "pkg_version": "0.23.95",
   "recipe_sha256": "2f6e7840c3b1485ecc7431fd30a32b998407a13e45d87f8a2fd3613b67513b07",
-  "release": "intel-41880030977-1-zbar",
+  "release": "intel-42169382172-1-zbar",
   "revision": 0,
-  "run_id": "41880030977",
+  "run_id": "42169382172",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -114,9 +114,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "dc9816d9da445bc0e866ebc4d22053d2de302976f8ebbed0bde2e842f3da69df",
@@ -150,15 +150,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7531450d4316c042f8f2d115bc06339f0e0657ecd7e56bffad770a5a0f5c7557",
-  "size": 324370,
+  "sha256": "b5ffac9ab42bebc0c89a3ca61035801bce789afb39ae0825f24a5666e8757fae",
+  "size": 324373,
   "source": {
     "filename": "zbar--0.23.95.sources.tar.gz",
-    "sha256": "d15ab8d21a6f5c14d82fc3e3b2d772361bf4b2cb4a4b296303773e017cd1b3d1",
-    "size": 1031859
+    "sha256": "fae760a6846162022580c145ecb332498a8fa20c2cb3346899b49e2e95bd4c0c",
+    "size": 1031857
   },
   "tag": "sequoia",
   "version": "0.23.95",
   "version_scheme": 0,
-  "workflow_commit": "0692856d089ac6f7542aea1ac269de69e7a5ce65"
+  "workflow_commit": "39eae45a48ba620093ea25596982c084c72d7600"
 }
