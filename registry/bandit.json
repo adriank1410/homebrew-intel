@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
   "filename": "bandit--1.9.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8359d8da6489ffe3974aa2c43d12de7b5bc04392a37cd0363da6dcb05b264b1a",
   "license": "Apache-2.0",
   "name": "bandit",
   "pkg_version": "1.9.4_1",
   "recipe_sha256": "9e191c80016e5e1a66bc86493eefff6e24f69ff107cb6186fd0541eeb24987ab",
-  "release": "intel-42036626130-1-bandit",
+  "release": "intel-42169382172-1-bandit",
   "revision": 1,
-  "run_id": "42036626130",
+  "run_id": "42169382172",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "dfad02f7f8f65dff0f00fee6ca2d99b59309ad8c7bc6f2148ae60788f2bf8a79",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "30cad8ebb14b694134d7c5dfce42655a051b27d9fa8fd0aa89dffe0587a56336",
-  "size": 1669657,
+  "sha256": "2b37c57f0a059295d36afc181fc1183c218bed7ff6b6fcf9dec9ba6f5887cafa",
+  "size": 1669660,
   "source": {
     "filename": "bandit--1.9.4_1.sources.tar.gz",
-    "sha256": "eb59de261562c1448edf9f2c7eb5b32be247139acf2ebbc61c2aeda182b8a996",
-    "size": 10227977
+    "sha256": "591905c3c6410ef60b9686b3c1dd79b470ccbf98aace0bc7c843726b789258e5",
+    "size": 10227987
   },
   "tag": "sequoia",
   "version": "1.9.4",
   "version_scheme": 0,
-  "workflow_commit": "60e2ae0e3fcbbe92a0e257ce0b2a31481f445635"
+  "workflow_commit": "39eae45a48ba620093ea25596982c084c72d7600"
 }
