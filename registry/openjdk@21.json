@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "219ff9a49ba6efea0d6bec57c73801224367f976",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any",
-  "core_commit": "169cd1a87482e9c5badb95ee99b8954d562eb557",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
   "filename": "openjdk@21--21.0.13.0.3.sequoia.bottle.tar.gz",
   "formula_sha256": "6571d4b90d890346af42e42fa689bedb62c9ba5c8b2bfcc25819ad7c992c18a6",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk@21",
   "pkg_version": "21.0.13.0.3",
   "recipe_sha256": "a1ab26e46e09a6489de7517c97b90ad56d2e3a6506f3275a349fe8a95bf222ba",
-  "release": "intel-41358216715-1-openjdk-at-21",
+  "release": "intel-42229656387-1-openjdk-at-21",
   "revision": 0,
-  "run_id": "41358216715",
+  "run_id": "42229656387",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -58,9 +58,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
+      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0_1"
+      "pkg_version": "15.1.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -128,9 +128,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -169,15 +169,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f22306d7c50c41604a06b63f8ae11dfcb27c415f4495d1798ec95aa7ecbb8c89",
-  "size": 202480720,
+  "sha256": "8195c7cade3e62903a7898fddcca57d464a1276664343c63b811d47c5dde2def",
+  "size": 202480811,
   "source": {
     "filename": "openjdk@21--21.0.13.0.3.sources.tar.gz",
-    "sha256": "7f7618c6ccc808357c7f39d62dc034424f9115a102393cf59e26cac8dd40612b",
-    "size": 309827439
+    "sha256": "ca51a623dbe8c0d3f6656d006a641ba81da0f12bea93a9465cdab1be4f27a421",
+    "size": 309827460
   },
   "tag": "sequoia",
   "version": "21.0.13.0.3",
   "version_scheme": 0,
-  "workflow_commit": "ab2c515a44c81adb02112343a54918a187b64481"
+  "workflow_commit": "9b2f24759f821b3857438d94752bd3b9b9229f06"
 }
