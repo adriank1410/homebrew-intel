@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "219ff9a49ba6efea0d6bec57c73801224367f976",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any",
-  "core_commit": "169cd1a87482e9c5badb95ee99b8954d562eb557",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
   "filename": "img2pdf--0.6.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "90c4ba7ad1d69500dad8bbc000f8b2c207d25cc4b3305cb2f55dbccaae12f288",
   "license": "LGPL-3.0-or-later",
   "name": "img2pdf",
   "pkg_version": "0.6.3_1",
   "recipe_sha256": "090f19d724578f6de713cd90b39c5627775418d0f69580a6576450a20496aa9e",
-  "release": "intel-41362471635-1-img2pdf",
+  "release": "intel-42248944233-1-img2pdf",
   "revision": 1,
-  "run_id": "41362471635",
+  "run_id": "42248944233",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -24,9 +24,9 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
@@ -74,9 +74,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
+      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0_1"
+      "pkg_version": "15.1.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -164,9 +164,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "133a36744969a175f03fbeb4d4ecbdfb2a543398346719e6b0325d745203ab7e",
-  "size": 2592800,
+  "sha256": "f2f3adea29184d0f58e0cd0511a35528fbf18c87c56a11cd947e27aa1d4fee30",
+  "size": 2592704,
   "source": {
     "filename": "img2pdf--0.6.3_1.sources.tar.gz",
-    "sha256": "67928b64d8d94873c2bfae6c040205f61c8efee4fb95ab8ec1d1abc219c421cb",
-    "size": 14626728
+    "sha256": "906cee47bc2a9d51c709667bd5c083cc34f2d77de27084497c63cccae319d943",
+    "size": 14626727
   },
   "tag": "sequoia",
   "version": "0.6.3",
   "version_scheme": 0,
-  "workflow_commit": "fef3011dfcf1ab1c788ba63db53dc6ef72141dc7"
+  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
 }
