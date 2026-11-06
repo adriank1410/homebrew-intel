@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86e082cb082ab7914d8ffd29685f9ccbdbbbcdbd",
+  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
   "cellar": "any_skip_relocation",
-  "core_commit": "55711ea862c695b69a38a8b44ee72ef817ec364a",
+  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
   "filename": "docker--29.9.3.sequoia.bottle.tar.gz",
-  "formula_sha256": "32a25b0a60c48a470a2186f7d802893eea35654a9a6692b05b29a60799e4eed9",
+  "formula_sha256": "d90ecb5069cf4eac8a6808c460c3598502171744a30811fb3d487cff9c0888a9",
   "license": "Apache-2.0",
   "name": "docker",
   "pkg_version": "29.9.3",
-  "recipe_sha256": "5171879542092b7fad1bd4de17dc40d0c326a9012f5f20c2b074a109196a75f8",
-  "release": "intel-41787504815-1-docker",
+  "recipe_sha256": "f275a020de993a9d257c4fc30cb2347ade457b065d275593238c73f4c35b1d2c",
+  "release": "intel-42272692752-1-docker",
   "revision": 0,
-  "run_id": "41787504815",
+  "run_id": "42272692752",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "335eada7e34a79dec6aa46df9cfcfedf80b0ed11aaae5a66b20476aa7d7211d2",
-  "size": 10744711,
+  "sha256": "0c4013aeb25d135560b094467e249d7b9bbfa83be0f10ff5f563bb229b46c59e",
+  "size": 10744678,
   "source": {
     "filename": "docker--29.9.3.sources.tar.gz",
-    "sha256": "2ba0c2c90a510054497359027416a4697bf311d468f3b2f621b473fe3b43e1c8",
-    "size": 7083027
+    "sha256": "d6e1d5107b8b9780eefe364150b555199f3b17be0049be2727f286c08d218672",
+    "size": 7083029
   },
   "tag": "sequoia",
   "version": "29.9.3",
   "version_scheme": 0,
-  "workflow_commit": "7ea58aea683cf3d4342142a2f27d8b9be1fea5c3"
+  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
 }
