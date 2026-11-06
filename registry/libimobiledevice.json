@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8b0b7e44193854e22b84bcf2f58d65f21408d458",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any",
-  "core_commit": "4974e072453a29858744bd9e922eb2782b6b01c3",
+  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
   "filename": "libimobiledevice--1.4.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "2df4555ca5978537719e3ee40fe8dc82883f14165e4e6baa94e37720354d82a7",
   "license": "LGPL-2.1-or-later",
   "name": "libimobiledevice",
   "pkg_version": "1.4.0_2",
   "recipe_sha256": "90a5d750f7578b56c7d5fc7ad259ab7ddcdb4278798f9d5cb8680f378475869d",
-  "release": "intel-41959473992-1-libimobiledevice",
+  "release": "intel-42131922421-1-libimobiledevice",
   "revision": 2,
-  "run_id": "41959473992",
+  "run_id": "42131922421",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "50936aca24b49d5777e8fa6ceaacb96a206774b081fd5bb72c4ba80a12d31491",
@@ -34,9 +34,9 @@
       "pkg_version": "4.21.0"
     },
     {
-      "formula_sha256": "6faa3223ef205cef56785e840577ab3e04ec59b6d433a9bc541ccf6cdc3691c6",
+      "formula_sha256": "6ec7595250d202e4963ce37e40ab16de41df9e4c00fe8a8cfc7680e40a6b0037",
       "name": "libtatsu",
-      "pkg_version": "1.0.5_1"
+      "pkg_version": "1.1.0"
     },
     {
       "formula_sha256": "56a12a1ec7bf87a3ac122e166b6b436067948e81b342a170271e0b6d37916ae7",
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3c3c6f1be0b9f36aef2b0702147d214fc55b8854d05cc5d5ff2a414af5bc1764",
-  "size": 496396,
+  "sha256": "686e3d6fb6fe7cb2efc44b7453b872660f2b033b4157a3ff387e95c906be4ae3",
+  "size": 496378,
   "source": {
     "filename": "libimobiledevice--1.4.0_2.sources.tar.gz",
-    "sha256": "e1b8262952d3272364fefb93d02ca9c740213f98d9119b89197b35b1f477d82e",
-    "size": 731242
+    "sha256": "4163a31f9de9e76548ec289a7eea1ddc1a99e3e926c98204a78dc482daeecb52",
+    "size": 731231
   },
   "tag": "sequoia",
   "version": "1.4.0",
   "version_scheme": 0,
-  "workflow_commit": "f244f557d5344cdc236ee472911a1f95fc75d272"
+  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
 }

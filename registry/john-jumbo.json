@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
+  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
   "filename": "john-jumbo--1.9.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8f553bf49edd4e466e69d56b8dc0ebe6d0c6239f177292b710bc11fba94c9648",
   "license": "GPL-2.0-or-later",
   "name": "john-jumbo",
   "pkg_version": "1.9.0_1",
   "recipe_sha256": "62da42e5b7e69bfa7c92ae9ed84867c1a7088c2cb2ecb447dcd2bad6d1e573a8",
-  "release": "intel-40939955324-1-john-jumbo",
+  "release": "intel-42131922421-1-john-jumbo",
   "revision": 1,
-  "run_id": "40939955324",
+  "run_id": "42131922421",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9863596c982159e26dd611f6b4e9e6101d766e17b08e40b29f4bf6523b4529ab",
-  "size": 42495784,
+  "sha256": "89acfbdaf3e8baf2f42d575a54df0c5d4196524c64e082f21704003075382ccd",
+  "size": 42495766,
   "source": {
     "filename": "john-jumbo--1.9.0_1.sources.tar.gz",
-    "sha256": "c99fc55d450e2fa99df37380eab2efb01847dee0b6b984270859e4c3c633c951",
-    "size": 33668719
+    "sha256": "9bae5d20a6ef4428c8ea580df30059f9cc91d9d4947433a7af1aa6883d34143d",
+    "size": 33668724
   },
   "tag": "sequoia",
   "version": "1.9.0",
   "version_scheme": 0,
-  "workflow_commit": "adb5f05ef4d19fe0f2d8f1df011523d74aceebfb"
+  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
 }
