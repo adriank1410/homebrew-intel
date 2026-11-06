@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any_skip_relocation",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
   "filename": "ykman--5.9.2.sequoia.bottle.tar.gz",
   "formula_sha256": "fa8f24720e8b375ba15f62191dbe017dcd7730d7bb64153f066c0fea020cc3d0",
   "license": "BSD-2-Clause",
   "name": "ykman",
   "pkg_version": "5.9.2",
   "recipe_sha256": "0c6dea0e2ab871ffea30bd4f5ced9311279a037a877408ef49c475e755e3c396",
-  "release": "intel-41998629461-1-ykman",
+  "release": "intel-42229656387-1-ykman",
   "revision": 0,
-  "run_id": "41998629461",
+  "run_id": "42229656387",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8fef76f94a9db05a2bb9e1500f07fa3874c635e9f8048b65313196a8cecb006f",
-  "size": 974521,
+  "sha256": "967ca17919e9f9abf737579254e600296e2b2464747e7ff67595ce73785db374",
+  "size": 974545,
   "source": {
     "filename": "ykman--5.9.2.sources.tar.gz",
-    "sha256": "66b0d5ce99b65e16f81ef759f7c5ed4eeb51912392e36a58ddf06faf298c30f9",
-    "size": 2060376
+    "sha256": "823c5e8862e240424d31c70b6445cfbb5d80ba0d052390512c2a7f23d348f92b",
+    "size": 2060367
   },
   "tag": "sequoia",
   "version": "5.9.2",
   "version_scheme": 0,
-  "workflow_commit": "03c380effb83f998555eb29150f23c0d53f4413a"
+  "workflow_commit": "9b2f24759f821b3857438d94752bd3b9b9229f06"
 }
