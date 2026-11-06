@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86e082cb082ab7914d8ffd29685f9ccbdbbbcdbd",
+  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
   "cellar": "any",
-  "core_commit": "55711ea862c695b69a38a8b44ee72ef817ec364a",
+  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
   "filename": "ocrmypdf--17.13.0.sequoia.bottle.tar.gz",
   "formula_sha256": "1378b58fcd1888c0430167dc0c72a8b99202acc6667972b290e8fdb739119def",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.13.0",
   "recipe_sha256": "b8c56c858792bdb0e9db0cc326561d32b6cfb699a6e2ce048b8c9ff4b07ec0d1",
-  "release": "intel-41798475513-1-ocrmypdf",
+  "release": "intel-42288846666-1-ocrmypdf",
   "revision": 0,
-  "run_id": "41798475513",
+  "run_id": "42288846666",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -24,9 +24,9 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
@@ -94,9 +94,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
+      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0_1"
+      "pkg_version": "15.1.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -139,7 +139,7 @@
       "pkg_version": "1.87.0"
     },
     {
-      "formula_sha256": "9b417e382e4cccdbf2b9b4b4cb7107b4b5cbb3409b0eca1f1a3db8871711e6ac",
+      "formula_sha256": "b9b7a716e1f39cd51d25fddec1085d2a5fcf42e6751ed07a4ffc3f5701fd3ef1",
       "name": "libarchive",
       "pkg_version": "3.8.11"
     },
@@ -149,12 +149,12 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "18439fcdeadceaadb9fd8fed4e8a4f4df2e9a5b750bdeae8338fe430b5bd3533",
+      "formula_sha256": "d79bbe155f713e445bddfa581f9bef666518d0642f70a75f22cf898bb1fb5b46",
       "name": "libb2",
       "pkg_version": "0.98.1"
     },
     {
-      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
+      "formula_sha256": "d7c3277d10bca7bb437d16a08c4d63c12fd944cfe7f0cb4f89b61769f68d798f",
       "name": "libdatrie",
       "pkg_version": "0.2.14"
     },
@@ -249,9 +249,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5fab1ac3a304cbf7c963d0cbc9ebb6e5729f9d826ad041b1751ab5fa0d159bf1",
-  "size": 17790558,
+  "sha256": "95d4a0b1d425502630c738d0027b6f3d577f735ce9c2935e473322047a4bbbd1",
+  "size": 17790599,
   "source": {
     "filename": "ocrmypdf--17.13.0.sources.tar.gz",
-    "sha256": "c8a17bf99fa978a4f89447d33afd32e9c342bc6a3f85fe8e6ecadec14f3286d8",
-    "size": 81001471
+    "sha256": "2e1bb3000056f681597350261ed187f09fb5b010d7bcb2c11689cd81a0bf7d81",
+    "size": 81001474
   },
   "tag": "sequoia",
   "version": "17.13.0",
   "version_scheme": 0,
-  "workflow_commit": "79a615c85ac53978daebdc6853c29f0d1f1d0d1f"
+  "workflow_commit": "cbeb04640c9a9dc3dcc68dbfb18d4aec5c0dcdf1"
 }
