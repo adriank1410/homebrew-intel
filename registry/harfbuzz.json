@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "219ff9a49ba6efea0d6bec57c73801224367f976",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any",
-  "core_commit": "169cd1a87482e9c5badb95ee99b8954d562eb557",
-  "filename": "harfbuzz--15.0.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "filename": "harfbuzz--15.1.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
   "license": "MIT",
   "name": "harfbuzz",
-  "pkg_version": "15.0.0_1",
-  "recipe_sha256": "6a207173ff2ab790555608e9ac9745427687686536adaee43faebc730155b60e",
-  "release": "intel-41355663504-1-harfbuzz",
-  "revision": 1,
-  "run_id": "41355663504",
+  "pkg_version": "15.1.0",
+  "recipe_sha256": "53f78918f9017795c8678485127a95140afeb1e60b56fe0d6d620fcb4b1a03ee",
+  "release": "intel-42198302799-1-harfbuzz",
+  "revision": 0,
+  "run_id": "42198302799",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -120,15 +120,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cb56affa6ca291d9c52d475568ce7801a2e092a2211ac4fec36f4a37039403bd",
-  "size": 4782186,
+  "sha256": "45df2e39a99e89b1f9099b7accd6f017e3fea6222b3bb8ea61d2d234ebeb6de7",
+  "size": 4837696,
   "source": {
-    "filename": "harfbuzz--15.0.0_1.sources.tar.gz",
-    "sha256": "532928b3566288f8bbf5c770e7f10e43c055b74703a801f982e4e1d5f8d0a1da",
-    "size": 20414509
+    "filename": "harfbuzz--15.1.0.sources.tar.gz",
+    "sha256": "196b376928d26a5d45274fcf87905d2d40a5ab6d84d98c4ac01ba398f0a363c4",
+    "size": 20533779
   },
   "tag": "sequoia",
-  "version": "15.0.0",
+  "version": "15.1.0",
   "version_scheme": 0,
-  "workflow_commit": "e89df27470fb64b3dd742c6cadc5f01e3210e71b"
+  "workflow_commit": "cd9cb21abc6cf02c861951b605b84c996934e59e"
 }
