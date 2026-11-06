@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any_skip_relocation",
-  "core_commit": "96c457277e52d9fa16e37873c7b7994fa64b57a8",
-  "filename": "pnpm--12.16.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "69c05ab0b3efd44961781a3069af32ca445f2d2a6068d12bea9d2a014be1b216",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "filename": "pnpm--12.18.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "078b5b938e445e27cf2777ae64cdca6d99641057a69acb2cec23f20d32a66380",
   "license": "MIT",
   "name": "pnpm",
-  "pkg_version": "12.16.1",
-  "recipe_sha256": "20cd72ed52fed871eba98d9257f61add6e1761eed461881532e8e25cc55265f3",
-  "release": "intel-40774841573-1-pnpm",
+  "pkg_version": "12.18.0",
+  "recipe_sha256": "46454e78f4b4959db3d20b7b2bbe86e751dc50c3d8eb594cb45a7b5c1bcf93fc",
+  "release": "intel-42229656387-1-pnpm",
   "revision": 0,
-  "run_id": "40774841573",
+  "run_id": "42229656387",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "33e57cdc2ce1aa46489bf36cd537a5a53f9da4e6cadcab0337c611b39f8d5bea",
-  "size": 24219515,
+  "sha256": "72723177279936e358cd78d5a048313e070f0650a8226aa8d9323a4860b58d0e",
+  "size": 25118693,
   "source": {
-    "filename": "pnpm--12.16.1.sources.tar.gz",
-    "sha256": "6988a14766b362a401d6aa5f2b803fe65cb35cd6ceed96f628cca193fcbdf93f",
-    "size": 120355830
+    "filename": "pnpm--12.18.0.sources.tar.gz",
+    "sha256": "5980fd8e719a33799b5d64f54bea5a9ce13023e9c07184a49eed44f0c2543a15",
+    "size": 121814214
   },
   "tag": "sequoia",
-  "version": "12.16.1",
+  "version": "12.18.0",
   "version_scheme": 0,
-  "workflow_commit": "8cd4c126ad04d25d63feed36a748f25eb56c9f89"
+  "workflow_commit": "9b2f24759f821b3857438d94752bd3b9b9229f06"
 }
