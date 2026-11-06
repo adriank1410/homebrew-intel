@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "16f166d36cddcb485be5a3f2ed5b25dc445d1580",
+  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
   "cellar": "any_skip_relocation",
-  "core_commit": "a36b25bfb27e21fda3c5af84ba8f9c81fe0013c2",
-  "filename": "rclone--1.75.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "72e6db00d7cbff2af6eebb6d3da29b13a7a7fca01a3006781b6c308bcae703b6",
+  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "filename": "rclone--1.76.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "6b92340dc1bc27e3091012c45f24f4caa9171077cdf7d404c370edd21b9aab69",
   "license": "MIT",
   "name": "rclone",
-  "pkg_version": "1.75.2",
-  "recipe_sha256": "f991ac2b6fe3fdd5e06e32c1cca20e220356057ae37360351f5448f0f87ef0e1",
-  "release": "intel-38056510110-1-rclone",
+  "pkg_version": "1.76.0",
+  "recipe_sha256": "3d8ee50256025842aa9d8e4f97bdbc67d33fdea690ad178afb471e562d8edf74",
+  "release": "intel-42272692752-1-rclone",
   "revision": 0,
-  "run_id": "38056510110",
+  "run_id": "42272692752",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "b7e18d66a3d10e7c3b79e4be3e9e367493d9549d401d70163dd9ed022f915121",
-  "size": 33267584,
+  "sha256": "9f1b4b7748353b1d39b61a4c8eb0446d852cbaa38394d7bc624c9c4645b8160f",
+  "size": 33963781,
   "source": {
-    "filename": "rclone--1.75.2.sources.tar.gz",
-    "sha256": "77b9001da6db1dc1031ee764a5219dcadfe644beea7bd75dab81e7bf022d16e6",
-    "size": 384856897
+    "filename": "rclone--1.76.0.sources.tar.gz",
+    "sha256": "e5758b285ac2258dd0d537e96aaa6ee82f44257d702243d9529fad21d2b343a0",
+    "size": 392736922
   },
   "tag": "sequoia",
-  "version": "1.75.2",
+  "version": "1.76.0",
   "version_scheme": 0,
-  "workflow_commit": "f49e89af08dcd2921c6b8ac8139c373aa0bb5c88"
+  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
 }

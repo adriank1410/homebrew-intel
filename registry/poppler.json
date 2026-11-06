@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
-  "filename": "poppler--26.10.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "d665f018ff60fa8bb9e308d77d7831a325f9221599d672c3008b4de369665711",
+  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "filename": "poppler--26.11.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "337eeaf41b47ed75f430f8804d429853ffcc7ddcf04d67561548f0d43470d8d6",
   "license": {
     "any_of": [
       "GPL-2.0-only",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "poppler",
-  "pkg_version": "26.10.0",
-  "recipe_sha256": "0acc1b332a9cbc3fdda67863db7f917ddd070c408a194d33e9ba695d00326f9e",
-  "release": "intel-42248944233-1-poppler",
+  "pkg_version": "26.11.0",
+  "recipe_sha256": "66de2a8ddddbb41083c9059ce9458452fd40863b3959535a4b041eacb78db5ca",
+  "release": "intel-42272692752-1-poppler",
   "revision": 0,
-  "run_id": "42248944233",
+  "run_id": "42272692752",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -275,15 +275,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "327c21fdcee48c40eaa5ed52a7750c2619545822305106235eee2ca31212758d",
-  "size": 10017394,
+  "sha256": "c23c44f0bcf765452131fb76d09a20ee6bfd29dd8e02fe8c5e41631c029dad23",
+  "size": 10042614,
   "source": {
-    "filename": "poppler--26.10.0.sources.tar.gz",
-    "sha256": "c54c2eb0d191fc93114a373e85aa871d1049e42ad9dcd966a940e2bb881dcf68",
-    "size": 6498434
+    "filename": "poppler--26.11.0.sources.tar.gz",
+    "sha256": "c12c6bb6ff23bb4b174025e0685eaf42c6fe8411864142e5472f3f4e0058c16d",
+    "size": 6507651
   },
   "tag": "sequoia",
-  "version": "26.10.0",
+  "version": "26.11.0",
   "version_scheme": 0,
-  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
+  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
 }
