@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "d462cb3f7c849ef43df00f90bbedd90bd75312d0",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "1798d9442ccd1a1e871b644365aaac3355c74764",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
   "filename": "poppler--26.10.0.sequoia.bottle.tar.gz",
   "formula_sha256": "d665f018ff60fa8bb9e308d77d7831a325f9221599d672c3008b4de369665711",
   "license": {
@@ -14,9 +14,9 @@
   "name": "poppler",
   "pkg_version": "26.10.0",
   "recipe_sha256": "0acc1b332a9cbc3fdda67863db7f917ddd070c408a194d33e9ba695d00326f9e",
-  "release": "intel-41715615276-1-poppler",
+  "release": "intel-42248944233-1-poppler",
   "revision": 0,
-  "run_id": "41715615276",
+  "run_id": "42248944233",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -24,9 +24,9 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
@@ -89,9 +89,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
+      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0_1"
+      "pkg_version": "15.1.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -109,7 +109,7 @@
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "d958780a5f7e6e4b570bf854d31f7600e7e0bd98c5a207360bd8bd0295a79a44",
+      "formula_sha256": "4b2eb520d9bfdfd49ac34e30674f4db66db386562694486e14e346fd0bccb30b",
       "name": "libassuan",
       "pkg_version": "3.0.2"
     },
@@ -129,7 +129,7 @@
       "pkg_version": "2.3.8"
     },
     {
-      "formula_sha256": "6bc5cb2abd89a705bf496b149d45e967bab82f110d0c1e96b2c764d13408bb22",
+      "formula_sha256": "3c0b50b243cd3107c72d32d1a46621eac0263296d8b9b3a49268a94d7bae6c08",
       "name": "libksba",
       "pkg_version": "1.8.1"
     },
@@ -194,9 +194,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -219,9 +219,9 @@
       "pkg_version": "4.40"
     },
     {
-      "formula_sha256": "b2a661bf3ebc086ae156709048c9674282d15ad3022f63ea34494dfa3f376bc9",
+      "formula_sha256": "7674f1e9ac1108f35cc1753a6b70e642c51a6243590e9c26e037efc254a9f72b",
       "name": "nss",
-      "pkg_version": "3.132"
+      "pkg_version": "3.133"
     },
     {
       "formula_sha256": "4b595e734d2c800750ba2abc90e5a532235fbe82c38b7a7ec09fd11b21d42ce9",
@@ -275,15 +275,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6a7e962e2203edaf2bc4e300871e62a4ade5cc61d98f3211da4f67cc0b3ed3e1",
-  "size": 10017354,
+  "sha256": "327c21fdcee48c40eaa5ed52a7750c2619545822305106235eee2ca31212758d",
+  "size": 10017394,
   "source": {
     "filename": "poppler--26.10.0.sources.tar.gz",
-    "sha256": "933299ccd5a9201365568645d733133c7e3aa7575abf7960843a5173dc229219",
-    "size": 6498407
+    "sha256": "c54c2eb0d191fc93114a373e85aa871d1049e42ad9dcd966a940e2bb881dcf68",
+    "size": 6498434
   },
   "tag": "sequoia",
   "version": "26.10.0",
   "version_scheme": 0,
-  "workflow_commit": "b28e2336a7cc5277200e812eb36c0dad323acbfa"
+  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
 }
