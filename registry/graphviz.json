@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "856ce8c40ae1d336da27940b08bb549798454ba1",
+  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "184a6c38682139b48cdb80d5f3db0df843cae326",
+  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
   "filename": "graphviz--16.1.0.sequoia.bottle.tar.gz",
   "formula_sha256": "9024b489a2ae2ccf591ae57ef96bf48acf9a1d3afbaf799323403d53322221c2",
   "license": "EPL-1.0",
   "name": "graphviz",
   "pkg_version": "16.1.0",
   "recipe_sha256": "8f7ac8741a220d3dba6f404183dbd527f2698e0ea42c92773a6b7c7a5d64f517",
-  "release": "intel-41437286408-1-graphviz",
+  "release": "intel-42272692752-1-graphviz",
   "revision": 0,
-  "run_id": "41437286408",
+  "run_id": "42272692752",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -84,9 +84,9 @@
       "pkg_version": "0.7.6_4"
     },
     {
-      "formula_sha256": "93346a12384ee13cd1a2fe13cce5063f6014f31be1139d7507b0f57a22296b45",
+      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
       "name": "harfbuzz",
-      "pkg_version": "15.0.0_1"
+      "pkg_version": "15.1.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -114,7 +114,7 @@
       "pkg_version": "1.4.2"
     },
     {
-      "formula_sha256": "b20b65d517aa418d34b4f8d873e0fe8ff0862cf131a075c2f36dc77007c459cf",
+      "formula_sha256": "d7c3277d10bca7bb437d16a08c4d63c12fd944cfe7f0cb4f89b61769f68d798f",
       "name": "libdatrie",
       "pkg_version": "0.2.14"
     },
@@ -184,9 +184,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -240,15 +240,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c8c66c2fdeac883661069b27cb7155c08e7a46000323f64da3fed9f476def557",
-  "size": 3250846,
+  "sha256": "f7df4cd6a8859590b5d1909b8534de78ecc4cda3649549486a18dd554ca556f0",
+  "size": 3250771,
   "source": {
     "filename": "graphviz--16.1.0.sources.tar.gz",
-    "sha256": "fe2240f414f8972fc299101aa60086c63f56b55dfc8ff6f94a763c500bb32321",
-    "size": 21018993
+    "sha256": "013ef1e2bcd7f0b3071f90a0c9f45be1340ded59a83a85b14d9dd1d7bca7f156",
+    "size": 21018990
   },
   "tag": "sequoia",
   "version": "16.1.0",
   "version_scheme": 1,
-  "workflow_commit": "a82703a2670b0f0af58a8e4c3b88851aa30219eb"
+  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
 }
