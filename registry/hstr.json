@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "cellar": "any",
+  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "filename": "hstr--3.3.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "27d3844c8adc90a4242d9fd48ba693d3d3153c4de4d6082df5aec561ace550b0",
+  "license": "Apache-2.0",
+  "name": "hstr",
+  "pkg_version": "3.3.0",
+  "recipe_sha256": "6f684d5cbe6af886f27b7dd62be659177618f273675e1439b794c809a6e2f9ed",
+  "release": "intel-42131922421-1-hstr",
+  "revision": 0,
+  "run_id": "42131922421",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    }
+  ],
+  "schema": 1,
+  "sha256": "b55387e1defdd31826a3f0482a0ca5c2441ce9034ecba621ec8ff3ac57a59ae0",
+  "size": 39368,
+  "source": {
+    "filename": "hstr--3.3.0.sources.tar.gz",
+    "sha256": "2df64e16352fd60732e6cde1265f9e79119cfb68cd4abc48b6715a4494420d0c",
+    "size": 190257
+  },
+  "tag": "sequoia",
+  "version": "3.3.0",
+  "version_scheme": 0,
+  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
+}
