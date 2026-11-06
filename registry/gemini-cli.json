@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any_skip_relocation",
-  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
-  "filename": "gemini-cli--0.66.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "957a3e8857e0ced65518b22d28d8733c2681aae0f8dab2f1672ba6d9cb5eed71",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "filename": "gemini-cli--0.67.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "c2c4eb888462ab2f8e134e2d00b013eb0ac9cb43e7fd2cd4ded797462caa9757",
   "license": "Apache-2.0",
   "name": "gemini-cli",
-  "pkg_version": "0.66.0",
-  "recipe_sha256": "346eeceead575ca6f38d70a7ecda56ddc0b23bdec776ac6c25ef15e809088c81",
-  "release": "intel-41565074563-1-gemini-cli",
+  "pkg_version": "0.67.0",
+  "recipe_sha256": "24dd4385a680500e287a94092aab4ea40903c6bc274dc22e4d14d3234b734c29",
+  "release": "intel-42229656387-1-gemini-cli",
   "revision": 0,
-  "run_id": "41565074563",
+  "run_id": "42229656387",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -34,9 +34,9 @@
       "pkg_version": "1.34.9"
     },
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "ebc7a265a6d41e1924dcf8251afcaad049030402567914b53da8270132a17a31",
@@ -79,9 +79,9 @@
       "pkg_version": "9.4.3"
     },
     {
-      "formula_sha256": "d12f801e19b51a1a9a9b52c0c40bb4f9c526eb0a257b85436ed03e26353b783d",
+      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.0"
     },
     {
       "formula_sha256": "5c3df22d858d3120b3a6ca76283124fa1aea1e879c00e855e144f7b83a9c8c16",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "673271198c5e02a15d47faa044e1a61be719d1a767541d887bba08907e193ee7",
-  "size": 21553398,
+  "sha256": "6c54dd34dcbbdf1cc0594ef143a447e308eb439a6a01656d8f77d0acda1e4f28",
+  "size": 21609955,
   "source": {
-    "filename": "gemini-cli--0.66.0.sources.tar.gz",
-    "sha256": "2f9c7efe70d772e4bbd960fad9b9a262b843f6add78c87a7ccc87c146943030f",
-    "size": 20873324
+    "filename": "gemini-cli--0.67.0.sources.tar.gz",
+    "sha256": "ba1b4a9bff1c83c741565c706abfd1ac25fea23d96fcdae205aa4a413c023ba0",
+    "size": 20930230
   },
   "tag": "sequoia",
-  "version": "0.66.0",
+  "version": "0.67.0",
   "version_scheme": 0,
-  "workflow_commit": "c915f93d7cb24603108c01c5558d3fd6caebb3ce"
+  "workflow_commit": "9b2f24759f821b3857438d94752bd3b9b9229f06"
 }
