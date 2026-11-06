@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8b0b7e44193854e22b84bcf2f58d65f21408d458",
+  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
   "cellar": "any",
-  "core_commit": "4974e072453a29858744bd9e922eb2782b6b01c3",
+  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
   "filename": "gpgmepp--2.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "eda4f9d9ec0ec54b2a8ab0575b7e049f1a818aa22aea44944f461a89eb1f8a0c",
   "license": "LGPL-2.1-or-later",
   "name": "gpgmepp",
   "pkg_version": "2.2.0",
   "recipe_sha256": "b7a441aff9864d1efb0365edec2934e3f8a1b6b2bb8fe9a202aeaffa8de52ae7",
-  "release": "intel-41959473992-1-gpgmepp",
+  "release": "intel-42229656387-1-gpgmepp",
   "revision": 0,
-  "run_id": "41959473992",
+  "run_id": "42229656387",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4a69f82beb244e1d09a88054c8fe78b3066253fcf1621158891aaf9e85a6028c",
-  "size": 206317,
+  "sha256": "9e8263abf561d6622e7ba91f0bd63469179abc08ffb8cfd8922e0100f0b11dec",
+  "size": 206322,
   "source": {
     "filename": "gpgmepp--2.2.0.sources.tar.gz",
-    "sha256": "c10d9365ddf635e4bb2a1f535813a76cc160a9c5f1abf9381080281820270fca",
-    "size": 142510
+    "sha256": "9c36836df82537c2cca5f31e200ca4db086166e881ce8f476e30ca5235a64f0d",
+    "size": 142507
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "f244f557d5344cdc236ee472911a1f95fc75d272"
+  "workflow_commit": "9b2f24759f821b3857438d94752bd3b9b9229f06"
 }
