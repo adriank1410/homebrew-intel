@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "7bf7241d54ed626e5132ec47f559d5f15541352a",
   "filename": "openjdk@21--21.0.13.0.3.sequoia.bottle.tar.gz",
   "formula_sha256": "6571d4b90d890346af42e42fa689bedb62c9ba5c8b2bfcc25819ad7c992c18a6",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk@21",
   "pkg_version": "21.0.13.0.3",
   "recipe_sha256": "a1ab26e46e09a6489de7517c97b90ad56d2e3a6506f3275a349fe8a95bf222ba",
-  "release": "intel-42229656387-1-openjdk-at-21",
+  "release": "intel-42366176938-1-openjdk-at-21",
   "revision": 0,
-  "run_id": "42229656387",
+  "run_id": "42366176938",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -98,7 +98,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -108,17 +108,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -169,15 +169,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8195c7cade3e62903a7898fddcca57d464a1276664343c63b811d47c5dde2def",
-  "size": 202480811,
+  "sha256": "ee9fa573eb04acc61b8c47ff7f78a2f64fb6e270a9a05d0c13ff163573b065d9",
+  "size": 202480669,
   "source": {
     "filename": "openjdk@21--21.0.13.0.3.sources.tar.gz",
-    "sha256": "ca51a623dbe8c0d3f6656d006a641ba81da0f12bea93a9465cdab1be4f27a421",
-    "size": 309827460
+    "sha256": "fd681c8327339cbb31918bbe3734702a31f7bfe16521d52da5e3827c355d158f",
+    "size": 309827434
   },
   "tag": "sequoia",
   "version": "21.0.13.0.3",
   "version_scheme": 0,
-  "workflow_commit": "9b2f24759f821b3857438d94752bd3b9b9229f06"
+  "workflow_commit": "b2e27675917345cf3fc56302966d5fcaf4e87170"
 }
