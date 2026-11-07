@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
   "cellar": "any",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
   "filename": "recon-ng--5.1.2_4.sequoia.bottle.tar.gz",
   "formula_sha256": "b55870247be2bc86cff7aa424fa7c677f86acf5ac53ae33337005cf94b902146",
   "license": "GPL-3.0-only",
   "name": "recon-ng",
   "pkg_version": "5.1.2_4",
   "recipe_sha256": "7a89ba397c23d5dc2b446539124580aba5804ac5d76a24f012b77c8fb734ed49",
-  "release": "intel-42198302799-1-recon-ng",
+  "release": "intel-42330963652-1-recon-ng",
   "revision": 4,
-  "run_id": "42198302799",
+  "run_id": "42330963652",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -24,7 +24,7 @@
       "pkg_version": "2026.10.23"
     },
     {
-      "formula_sha256": "dfad02f7f8f65dff0f00fee6ca2d99b59309ad8c7bc6f2148ae60788f2bf8a79",
+      "formula_sha256": "1664ef8ed12ce548509600813e2fbcd8160e0b1015ac0876e3c7832f8e18dbb1",
       "name": "libyaml",
       "pkg_version": "0.2.5"
     },
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a5e13d2c585b1c5a3bd0408fea744900a642d61c1e7294a2b1d351a4d206c025",
-  "size": 8729548,
+  "sha256": "64e302eb495d7ad16fe7aa70d29281adcebf3799342d7626b3708a798df1e770",
+  "size": 8729553,
   "source": {
     "filename": "recon-ng--5.1.2_4.sources.tar.gz",
-    "sha256": "d64b92af023ac1b502f63dc92244a3a86182bae188c46a99f50007fcbee69f80",
-    "size": 129981950
+    "sha256": "f46e64ec19f69e51dca38255b7878e4e9d5bd1b483b90bb88da20858abeab487",
+    "size": 129982226
   },
   "tag": "sequoia",
   "version": "5.1.2",
   "version_scheme": 0,
-  "workflow_commit": "cd9cb21abc6cf02c861951b605b84c996934e59e"
+  "workflow_commit": "5f11027c3b1d066cb16cbc59458a420b7994784e"
 }
