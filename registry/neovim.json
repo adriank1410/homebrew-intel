@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
+  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
   "filename": "neovim--0.12.6.sequoia.bottle.tar.gz",
   "formula_sha256": "606913db5b7f1001339be19ee46a907259aa72bc8ca08424602672f225df3092",
   "license": "Apache-2.0",
   "name": "neovim",
   "pkg_version": "0.12.6",
   "recipe_sha256": "da613175b4b72e41036412b8b564f027039a909ab9c95b02e7c7608f06c030fe",
-  "release": "intel-41532187650-1-neovim",
+  "release": "intel-42382430330-1-neovim",
   "revision": 0,
-  "run_id": "41532187650",
+  "run_id": "42382430330",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -49,9 +49,9 @@
       "pkg_version": "1.53.0-1"
     },
     {
-      "formula_sha256": "a52ecbda82e4f607634e3bb3727c28254c35d7ebe12c1b328ff867b9868b951c",
+      "formula_sha256": "51fbaa5b137cfeeb1e04882d7ba341913fe63a1aa6505189e017220a94faf8ce",
       "name": "tree-sitter",
-      "pkg_version": "0.27.1"
+      "pkg_version": "0.27.2"
     },
     {
       "formula_sha256": "1f26d690916215f63a0c1b6ea80bde4b535c87cd81d280d5c7aff2584b575d63",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c8b31200815f96f8aad0f95364be8ac017fbe6acf67c55036a2bfdeae599a94e",
-  "size": 8362766,
+  "sha256": "524488da98f4f8ae763a615b699ffa29350df4207b3a38f0cded6d4cb883df95",
+  "size": 8362854,
   "source": {
     "filename": "neovim--0.12.6.sources.tar.gz",
-    "sha256": "25d200236c01886650a14ad7e79eaea24a856eb5aab7bb66ff3befa83a73e64d",
-    "size": 14989685
+    "sha256": "fcc74e02c0b9d447f59d28668d5920039e479045ea8a7ad95a98162b9f972a5c",
+    "size": 14989668
   },
   "tag": "sequoia",
   "version": "0.12.6",
   "version_scheme": 0,
-  "workflow_commit": "63b1d766c35f8a210a999afdc3783b7b92aca519"
+  "workflow_commit": "7a512919837e129ef5efe833a7070e3e722b3566"
 }
