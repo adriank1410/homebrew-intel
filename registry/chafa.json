@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
   "filename": "chafa--1.18.3.sequoia.bottle.tar.gz",
   "formula_sha256": "8c0495656e300eb91c65d874b9355d988a6500b17bd1b210668ab29f684d481f",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3",
   "recipe_sha256": "35496c65de9b1c3ff2b0abe576daf457cdec8bed0a4b3c3d572cdcaae5bd815b",
-  "release": "intel-42272692752-1-chafa",
+  "release": "intel-42390157040-1-chafa",
   "revision": 0,
-  "run_id": "42272692752",
+  "run_id": "42390157040",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -134,7 +134,7 @@
       "pkg_version": "2.63.4"
     },
     {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "formula_sha256": "7b47dc61081b0b0e712475313e4a3b782b549a5a1dcbbd4a19a01c047bf1a7e4",
       "name": "libthai",
       "pkg_version": "0.1.30"
     },
@@ -159,7 +159,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -169,17 +169,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "690a1fb34cad6b8445e98813abcdd97c5e39cede9f16d7b65ee16f403e54a291",
-  "size": 535049,
+  "sha256": "f155d8c7b1dd7b2786d51b80c0541cd3ea7767887647b9a8dd8dbcc5eba32cf2",
+  "size": 535106,
   "source": {
     "filename": "chafa--1.18.3.sources.tar.gz",
-    "sha256": "2fcf4303031f9b55b6e13d3cde8ff83aa27cb5684ea21d6aafcbc559d43eb618",
+    "sha256": "e56000d33c70158b6afda2e6068f15336c14c4e1e2dea7f17ae92e31d72f1031",
     "size": 1091685
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
+  "workflow_commit": "2abda70f3cb44181808eea188a2bb4e4c4ea4d54"
 }
