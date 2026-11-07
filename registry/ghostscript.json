@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
   "filename": "ghostscript--10.08.0.sequoia.bottle.tar.gz",
   "formula_sha256": "2d6606514ac36c06fd4b00141ba01bfc2d4d83fc2318c0cdaa022c8187e9a62b",
   "license": "AGPL-3.0-or-later",
   "name": "ghostscript",
   "pkg_version": "10.08.0",
   "recipe_sha256": "f5f3954efa8a9a852b720514f095ad52d58f74173449442e2fe4231d5fe46d82",
-  "release": "intel-42272692752-1-ghostscript",
+  "release": "intel-42390157040-1-ghostscript",
   "revision": 0,
-  "run_id": "42272692752",
+  "run_id": "42390157040",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -114,7 +114,7 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "formula_sha256": "7b47dc61081b0b0e712475313e4a3b782b549a5a1dcbbd4a19a01c047bf1a7e4",
       "name": "libthai",
       "pkg_version": "0.1.30"
     },
@@ -134,7 +134,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -144,17 +144,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -220,15 +220,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "568eb9a7f21ebcab34a51432490f139976e2aa513101dde6a8263c81c9943fdc",
-  "size": 43801993,
+  "sha256": "c0f1d27250297e0245f544fbe58ef33dabba0f16ae15ed3d82183fa294e78b2d",
+  "size": 43801969,
   "source": {
     "filename": "ghostscript--10.08.0.sources.tar.gz",
-    "sha256": "9bf8fc389d9e868de7d465867582d967a6fad9bc725a5e1a0beec60b6dee10b2",
-    "size": 78495462
+    "sha256": "7223fa371eeb216585cfa9bf0281ef793a7ce475b17d4502b2646d57e6ff0bab",
+    "size": 78495474
   },
   "tag": "sequoia",
   "version": "10.08.0",
   "version_scheme": 0,
-  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
+  "workflow_commit": "2abda70f3cb44181808eea188a2bb4e4c4ea4d54"
 }
