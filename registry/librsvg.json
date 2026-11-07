@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
   "filename": "librsvg--2.63.4.sequoia.bottle.tar.gz",
   "formula_sha256": "4ec0d20111f91fbc092f70c95895ae0740d8d30688d9d61c47649eeae43e94d0",
   "license": "LGPL-2.1-or-later",
   "name": "librsvg",
   "pkg_version": "2.63.4",
   "recipe_sha256": "cf811e66039a8b286572e965a94ae1860a52078c5b193f66b21b5a498a833e1e",
-  "release": "intel-42248944233-1-librsvg",
+  "release": "intel-42382430330-1-librsvg",
   "revision": 0,
-  "run_id": "42248944233",
+  "run_id": "42382430330",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -94,7 +94,7 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "formula_sha256": "7b47dc61081b0b0e712475313e4a3b782b549a5a1dcbbd4a19a01c047bf1a7e4",
       "name": "libthai",
       "pkg_version": "0.1.30"
     },
@@ -114,7 +114,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -124,17 +124,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6e3d9d27f3b2485e8e88ed2336641281f0276922571c844414df10b0ebf63e68",
+  "sha256": "62b66901c404fd89c7eba7281d740fb4cf4197d149bbcbcdc5657390f04f39fb",
   "size": 5041835,
   "source": {
     "filename": "librsvg--2.63.4.sources.tar.gz",
-    "sha256": "5b01356d787cef5e57b55bb2da804d0acef79230b71bc763b4a8c9f2c8307c96",
-    "size": 32640940
+    "sha256": "9d405a700193c71558a5cf53806bc861db1532d91c8494b0a5eb274d9109e211",
+    "size": 32641753
   },
   "tag": "sequoia",
   "version": "2.63.4",
   "version_scheme": 0,
-  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
+  "workflow_commit": "7a512919837e129ef5efe833a7070e3e722b3566"
 }
