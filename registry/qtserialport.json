@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "7bf7241d54ed626e5132ec47f559d5f15541352a",
   "filename": "qtserialport--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "2ccb94b01d85cc634973f08d22c50a4b322cd1e8cf906123659014df6e81d04c",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtserialport",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "cd538151a08945ec12bad4ec07c596822f334560ef0d36a1e245b7d55debcb4f",
-  "release": "intel-42248944233-1-qtserialport",
+  "release": "intel-42372062527-1-qtserialport",
   "revision": 1,
-  "run_id": "42248944233",
+  "run_id": "42372062527",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -115,7 +115,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -125,17 +125,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f27a829f618aeb7faa98ff0582d3bae768f91e3176cdd887356cc33d17ac81e5",
-  "size": 63922,
+  "sha256": "f6cedbd93875d23962b372c53f4fe42d4539afdb5419643db5fdabe32799f8c2",
+  "size": 63926,
   "source": {
     "filename": "qtserialport--6.12.0_1.sources.tar.gz",
-    "sha256": "da88fc0aedaeeac4f246c827808dd9b027384bf42076f7c5ca934be11e85acd6",
-    "size": 299557
+    "sha256": "767bbba4ccc838a868f08d28cbf01558279600828bfb25acf73ef9bcb94afb54",
+    "size": 299565
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
+  "workflow_commit": "2f0f8e94932f9d25781b8671a8a8812bdc325408"
 }
