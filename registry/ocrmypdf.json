@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
   "filename": "ocrmypdf--17.13.0.sequoia.bottle.tar.gz",
   "formula_sha256": "1378b58fcd1888c0430167dc0c72a8b99202acc6667972b290e8fdb739119def",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.13.0",
   "recipe_sha256": "b8c56c858792bdb0e9db0cc326561d32b6cfb699a6e2ce048b8c9ff4b07ec0d1",
-  "release": "intel-42288846666-1-ocrmypdf",
+  "release": "intel-42401231629-1-ocrmypdf",
   "revision": 0,
-  "run_id": "42288846666",
+  "run_id": "42401231629",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -189,7 +189,7 @@
       "pkg_version": "0.11.0"
     },
     {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "formula_sha256": "7b47dc61081b0b0e712475313e4a3b782b549a5a1dcbbd4a19a01c047bf1a7e4",
       "name": "libthai",
       "pkg_version": "0.1.30"
     },
@@ -219,7 +219,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -229,17 +229,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -319,9 +319,9 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "5e2e24993b167fb192c89e2dd04f8184f225d40e39daa40105c74bff21183927",
+      "formula_sha256": "3833cbad1bd3c444da54cffd9f60ea7b65d8997d3ce7af39e2b3b883e02fb6e9",
       "name": "pydantic",
-      "pkg_version": "2.14.2"
+      "pkg_version": "2.14.3"
     },
     {
       "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "95d4a0b1d425502630c738d0027b6f3d577f735ce9c2935e473322047a4bbbd1",
-  "size": 17790599,
+  "sha256": "28eb79abf03eecaff7f87aa4549dd0e4a26c6a572852a1a954c6c8db49ee0c0d",
+  "size": 17790576,
   "source": {
     "filename": "ocrmypdf--17.13.0.sources.tar.gz",
-    "sha256": "2e1bb3000056f681597350261ed187f09fb5b010d7bcb2c11689cd81a0bf7d81",
-    "size": 81001474
+    "sha256": "16aff90850f6efc5ae11ba6887062e277e9eb91bccc925cd1af381ef95962b12",
+    "size": 81001477
   },
   "tag": "sequoia",
   "version": "17.13.0",
   "version_scheme": 0,
-  "workflow_commit": "cbeb04640c9a9dc3dcc68dbfb18d4aec5c0dcdf1"
+  "workflow_commit": "2e3590fc97c9965c915460910150813d62c00677"
 }
