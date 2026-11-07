@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
   "filename": "qtdeclarative--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "d5e6a52b15baf0bc33b220a7d4586c9a4dc387dc883657312c855fd6f0a9e049",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtdeclarative",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "7fc752a026a902e5e9f71edd6d84d5e6b18512b970b4905c7344ea839e401f37",
-  "release": "intel-42272692752-1-qtdeclarative",
+  "release": "intel-42382430330-1-qtdeclarative",
   "revision": 1,
-  "run_id": "42272692752",
+  "run_id": "42382430330",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -121,7 +121,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -131,17 +131,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -202,15 +202,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4f3370694ef849fc50bb97a481afac55a2e04d38a71b673a4029b28b9fbb3929",
-  "size": 33059481,
+  "sha256": "30dd7909b85ef5b15ecb804e91cd50d9c0c6200aac2b01f621f6e8dd2deca736",
+  "size": 33053798,
   "source": {
     "filename": "qtdeclarative--6.12.0_1.sources.tar.gz",
-    "sha256": "78844fd8a8437cba20550caa9268aa31c557c0336d6bb5dc4f7b8eb48c5c1d52",
-    "size": 39279255
+    "sha256": "a8e9073d0ac80356daff513a79bfab5ddc370eea427269de45fe8a4debb0664d",
+    "size": 39279246
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
+  "workflow_commit": "7a512919837e129ef5efe833a7070e3e722b3566"
 }
