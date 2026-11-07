@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
   "filename": "gnupg--2.5.24_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532",
   "license": "GPL-3.0-or-later",
   "name": "gnupg",
   "pkg_version": "2.5.24_1",
   "recipe_sha256": "cb39cf745dea2547a67bb6e78175a6b29c0faa6f4c7ea5f0ad367a7e01f44d00",
-  "release": "intel-42182509431-1-gnupg",
+  "release": "intel-42317576294-1-gnupg",
   "revision": 1,
-  "run_id": "42182509431",
+  "run_id": "42317576294",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -64,7 +64,7 @@
       "pkg_version": "1.8.1"
     },
     {
-      "formula_sha256": "8c0814380e9449c0b9b5cfcbf12e7e44e25e581c8f3909f2467c63bb482bcd2d",
+      "formula_sha256": "ed078be38ddf16705fd0e9cc3a60a310d31f935cfbee6893dccb05b16fc9bcb7",
       "name": "libtasn1",
       "pkg_version": "4.21.0"
     },
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5781203bf5570d99e04520f5ec97810c118e8207948319db35a87b7a362d7ac2",
-  "size": 5773529,
+  "sha256": "515cde65061e011a6e5cda6dd91845435795ade10d8a0f1d25d995b1b8f5a2be",
+  "size": 5773537,
   "source": {
     "filename": "gnupg--2.5.24_1.sources.tar.gz",
-    "sha256": "1f118e7928f66ffda12e4a71b523baf2b221f89c80ece6febb83a60704ab9850",
-    "size": 8458486
+    "sha256": "c16f2133387ec2bbdd36489ff997369bf80ac176b3562896bc74a9b4dd86eee1",
+    "size": 8458478
   },
   "tag": "sequoia",
   "version": "2.5.24",
   "version_scheme": 0,
-  "workflow_commit": "1ff964fcb6efe8e08dea15426249f0b6070d27f7"
+  "workflow_commit": "091ad3bc5e7e87c5435730bc0f24f265cd015f7c"
 }
