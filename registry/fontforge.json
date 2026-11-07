@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "7bf7241d54ed626e5132ec47f559d5f15541352a",
   "filename": "fontforge--20251009_2.sequoia.bottle.tar.gz",
   "formula_sha256": "e83e3a2ede4bed1f21d7435b0bef0abb96c3b9fa73ddf8f254245f8ea61d586a",
   "license": "GPL-3.0-or-later",
   "name": "fontforge",
   "pkg_version": "20251009_2",
   "recipe_sha256": "e4e2a8c148bc8ded219db500b20e813f568b0e36183cfbe55ff26962abb86112",
-  "release": "intel-42248944233-1-fontforge",
+  "release": "intel-42372062527-1-fontforge",
   "revision": 2,
-  "run_id": "42248944233",
+  "run_id": "42372062527",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -94,12 +94,12 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "37e5e974e81ef8d608963b9e3a4fbd81695b47a918cad246201e84ae59480ada",
+      "formula_sha256": "4b502587b1648a3b022099094f93152010f0bb2b411c14dd446981920fd87070",
       "name": "libspiro",
       "pkg_version": "20240903"
     },
     {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "formula_sha256": "7b47dc61081b0b0e712475313e4a3b782b549a5a1dcbbd4a19a01c047bf1a7e4",
       "name": "libthai",
       "pkg_version": "0.1.30"
     },
@@ -114,7 +114,7 @@
       "pkg_version": "2.6.2"
     },
     {
-      "formula_sha256": "3530108c80f3f542e9526d4602e13317e58520203430c2f67ba8ea39882264c1",
+      "formula_sha256": "f98814c556ec8a5d1180480eabf762dbfb0c1b1d724b4e7c48de7c1fb7740fc4",
       "name": "libuninameslist",
       "pkg_version": "20260918"
     },
@@ -129,7 +129,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -139,17 +139,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -235,15 +235,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cb2c9dfcf84e9b977baab53d99bb4096b1d02bd598c5f308bebecfd029946f2d",
-  "size": 5858216,
+  "sha256": "e27ef4271f764cfbd35a7db018923d23a81d2bf409c0af6cc88608288443d947",
+  "size": 5858198,
   "source": {
     "filename": "fontforge--20251009_2.sources.tar.gz",
-    "sha256": "d99fa22ffd8d98b55e6709ba2cd153d1517ceb64bdd5201d8c6ab9f16efb3fc7",
-    "size": 14132309
+    "sha256": "46ef4c5438d9c50c9bde844232812c68b75241fe3f4a864e17d8da406e32c5fb",
+    "size": 14132301
   },
   "tag": "sequoia",
   "version": "20251009",
   "version_scheme": 0,
-  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
+  "workflow_commit": "2f0f8e94932f9d25781b8671a8a8812bdc325408"
 }
