@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "cellar": "any",
+  "core_commit": "6e92844e6b94717b535d9fb729181b855dd4bed5",
+  "filename": "fmt--12.2.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "7aced41e0896abf5f58833f3112a075b2364ead07735098488dac2f5a1000d6a",
+  "license": "MIT",
+  "name": "fmt",
+  "pkg_version": "12.2.1",
+  "recipe_sha256": "bc5e3a024491f9e3e61ba3e6253df55328a246201862af28bd4206abd70c568a",
+  "release": "intel-42406923991-1-fmt",
+  "revision": 0,
+  "run_id": "42406923991",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "db1a2850233aef3df82a178eb34a73f5db93bf756fbc0f8ffa7c17456b0c847e",
+  "size": 291559,
+  "source": {
+    "filename": "fmt--12.2.1.sources.tar.gz",
+    "sha256": "c46ad1156d3e9a4d601befb1ac217eaee1d4465f70fe479bdcc999881f47dc84",
+    "size": 1457603
+  },
+  "tag": "sequoia",
+  "version": "12.2.1",
+  "version_scheme": 0,
+  "workflow_commit": "5f057da9a799dffab551aa3b4bdd134bf0ab83e9"
+}
