@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any_skip_relocation",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
   "filename": "weasyprint--70.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "eb5e28a12ba4b7abde5d5ffa553df6c4d0c30fa3b95ca5f82035fc04ff71cfb6",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0_1",
   "recipe_sha256": "ce7d66a2b910c384250feba4bd0fc471a0498bf551d615fe3c414537599ca5c4",
-  "release": "intel-42248944233-1-weasyprint",
+  "release": "intel-42382430330-1-weasyprint",
   "revision": 1,
-  "run_id": "42248944233",
+  "run_id": "42382430330",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -124,7 +124,7 @@
       "pkg_version": "0.11.0"
     },
     {
-      "formula_sha256": "4052bd1b5090015a244b5ceedf915ecd324fb6271624c426ea1502b2078e0958",
+      "formula_sha256": "7b47dc61081b0b0e712475313e4a3b782b549a5a1dcbbd4a19a01c047bf1a7e4",
       "name": "libthai",
       "pkg_version": "0.1.30"
     },
@@ -149,7 +149,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -159,17 +159,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -265,15 +265,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0fe2a5d9cf9fba42322b98714622ad793a6245ccb54458121c243bc77afc7d2b",
-  "size": 4076632,
+  "sha256": "37da961f5c6259808663a29c3f8f4697b4708eb4442ff340fa9ca96bdcaaaf88",
+  "size": 4076784,
   "source": {
     "filename": "weasyprint--70.0_1.sources.tar.gz",
-    "sha256": "3fd3d675ce30c9f543c446640cef593d6b3e7bc64861a739208576b0562d474b",
-    "size": 15279347
+    "sha256": "3ded61908b8f9e648b6c219a9f972b7f12a6bc774223b5c4d0fea66c21a11333",
+    "size": 15279345
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
+  "workflow_commit": "7a512919837e129ef5efe833a7070e3e722b3566"
 }
