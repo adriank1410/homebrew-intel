@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "7bf7241d54ed626e5132ec47f559d5f15541352a",
   "filename": "qtbase--6.12.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "cec17022b9a75b196ecf11b7dd5a60a2446a2b9f43e8362081c6c0f185c60698",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtbase",
   "pkg_version": "6.12.0_2",
   "recipe_sha256": "14053524fcb326c1529812f4c6a2eb08658249c161c53c437687a9c74fbae133",
-  "release": "intel-42229656387-1-qtbase",
+  "release": "intel-42366176938-1-qtbase",
   "revision": 2,
-  "run_id": "42229656387",
+  "run_id": "42366176938",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -121,7 +121,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -131,17 +131,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -192,15 +192,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0136750f36a01a7b58cc55e5404f808f9e56417f1bcd1d92dd86430dcad62607",
-  "size": 17643703,
+  "sha256": "d571a5f263f70446807220474e88e9a9609fa6d3e856963a786bdf81fdb7238a",
+  "size": 17644008,
   "source": {
     "filename": "qtbase--6.12.0_2.sources.tar.gz",
-    "sha256": "d1bde2dd321bb24a3c3afa120989e423b1e3aca66ae2cd59dcfa0e4e2f599df6",
-    "size": 51420529
+    "sha256": "dd6a6f8be7549d5e1975891f0f11fe2465ddb25a59db7baf063b6b6b9a7df7e8",
+    "size": 51420539
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9b2f24759f821b3857438d94752bd3b9b9229f06"
+  "workflow_commit": "b2e27675917345cf3fc56302966d5fcaf4e87170"
 }
