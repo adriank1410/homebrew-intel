@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
   "cellar": "any",
-  "core_commit": "e89e124624836d9cffe52131a4189e391a8fbbc2",
+  "core_commit": "7bf7241d54ed626e5132ec47f559d5f15541352a",
   "filename": "qttasktree--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "06e2bddc115584fd490d02a987d47115ae0d46a6db8a1e85e981c1c04b07d475",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qttasktree",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "58e62d2a5c64cef10f7c75e21a9918b48a06e8d31b27a9975efae8c3236aac41",
-  "release": "intel-42248944233-1-qttasktree",
+  "release": "intel-42372062527-1-qttasktree",
   "revision": 1,
-  "run_id": "42248944233",
+  "run_id": "42372062527",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -115,7 +115,7 @@
       "pkg_version": "1.8.14"
     },
     {
-      "formula_sha256": "2cdf3d1c459a7e58615dd07cb087aa511ad415619ced460636d2401ee652fa7f",
+      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
@@ -125,17 +125,17 @@
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6ecf6850f41a7a182ffcc47db4c7025001669c74208fbb37f5fc227119a37a29",
+      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "a56be613f2f488afe0858c286a1443f8e9ba9a7ee4b0d1c0538d40bb3740fb7f",
+      "formula_sha256": "9cf85089e416d23a006778f30831c4f0e2b14879a8251290c3af58924df72d84",
       "name": "libxext",
       "pkg_version": "1.3.7"
     },
     {
-      "formula_sha256": "b7720acf02112e6c6a6a072fa85c1c003a533a886fcd71b6b07764a573b1f66c",
+      "formula_sha256": "5254dc82887e3abe1efe67790c18ba79b34f8fd6be05c7e5d35b7f7dc60ae2a7",
       "name": "libxrender",
       "pkg_version": "0.9.13"
     },
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a7e7504eb242cf5654ce7ba4b85ffd9c64c70fa7b6d765ed21569d759979adc1",
-  "size": 138020,
+  "sha256": "2beaed4666fdf785e161e192b0d73343d211d14784b2762854c743fa0409b06d",
+  "size": 137994,
   "source": {
     "filename": "qttasktree--6.12.0_1.sources.tar.gz",
-    "sha256": "71cad885c58a27d60c9d0d41937722f8ceed334dc3cb5d387b15a6a9493982b2",
-    "size": 291697
+    "sha256": "19f5ce86acb02667f2c5295ddaa964fcbf8999fb44132004f356a33d1286feaa",
+    "size": 291685
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9e7e9e41378bf22ce578bf2cd04c9b368b99b866"
+  "workflow_commit": "2f0f8e94932f9d25781b8671a8a8812bdc325408"
 }
