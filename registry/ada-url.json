@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a59d9fc5f8361dccde817ce1c066fdf365c8df3e",
+  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
   "cellar": "any",
-  "core_commit": "21be5f289b83af0efa40c20a9a08781971ff907c",
+  "core_commit": "6e92844e6b94717b535d9fb729181b855dd4bed5",
   "filename": "ada-url--4.0.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "52379177f404f68787018154cfee6754b42455bf376830d5c27123946d1a93d5",
   "license": {
@@ -14,14 +14,14 @@
   "name": "ada-url",
   "pkg_version": "4.0.0_1",
   "recipe_sha256": "c5ec8c57be400e2f43ac725d95fa7ed2a3c3fc93846acb2fd2fd69bfb706c7dc",
-  "release": "intel-40648835858-1-ada-url",
+  "release": "intel-42411017031-1-ada-url",
   "revision": 1,
-  "run_id": "40648835858",
+  "run_id": "42411017031",
   "runtime_dependencies": [
     {
-      "formula_sha256": "ebc7a265a6d41e1924dcf8251afcaad049030402567914b53da8270132a17a31",
+      "formula_sha256": "7aced41e0896abf5f58833f3112a075b2364ead07735098488dac2f5a1000d6a",
       "name": "fmt",
-      "pkg_version": "12.2.0"
+      "pkg_version": "12.2.1"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1c575445da7151a1dff0e5b8f599bf9c29eb865585ee9334801ab1568028b0eb",
-  "size": 350174,
+  "sha256": "a8fa6765e05234c868382fbbbbabc86b673710cd539d9644dca13a6201582236",
+  "size": 350159,
   "source": {
     "filename": "ada-url--4.0.0_1.sources.tar.gz",
-    "sha256": "21c036d4c04a132188fb582d117a8a3383e7389529008e3cb33d8b86248081b3",
-    "size": 533356
+    "sha256": "7822ab8306560e43c5ea3a18001ceece0a31b1b1c22bb9cb6906907a298c5282",
+    "size": 533336
   },
   "tag": "sequoia",
   "version": "4.0.0",
   "version_scheme": 0,
-  "workflow_commit": "9c41a4981855d61aaa99495f025ce5a588734535"
+  "workflow_commit": "e42023358958c2e99d74d20fda698d327b10f78e"
 }
