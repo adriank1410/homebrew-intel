@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "0320d5a7ac3d7470022ac0bd0a855f485adab24f",
   "filename": "pyqt@5--5.15.11_3.sequoia.bottle.tar.gz",
   "formula_sha256": "1fc7fe2f3ca2f3329c71b2d6387856d09e74d038a84541c2209d968f3fd91535",
   "license": "GPL-3.0-only",
   "name": "pyqt@5",
   "pkg_version": "5.15.11_3",
   "recipe_sha256": "100ad4b4ea77dadfe98aa87a64897a0f616c6527de27bd6653104d3f6fc61e25",
-  "release": "intel-42169382172-1-pyqt-at-5",
+  "release": "intel-42438209784-1-pyqt-at-5",
   "revision": 3,
-  "run_id": "42169382172",
+  "run_id": "42438209784",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -24,7 +24,7 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
+      "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
       "name": "freetype",
       "pkg_version": "2.15.0"
     },
@@ -130,15 +130,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e7b011fc4b74d03cabdd8736d64cc26cd1f3eb75e464ef717b73b713cabb2a5c",
-  "size": 7031819,
+  "sha256": "5bb5d39d8a32cb9a5e2846b68ea9851d5e21f4fe740c8fa74e0bdb4208045871",
+  "size": 7031895,
   "source": {
     "filename": "pyqt@5--5.15.11_3.sources.tar.gz",
-    "sha256": "f3b578f373cfe04a43ce2275ac1486d12102caede3c752ab980ddae1936155bb",
-    "size": 11141908
+    "sha256": "e2e8ab1a12f62f226f8fe8f12685c3676cdb5bd68e57e7cdee02b39358076cb4",
+    "size": 11141891
   },
   "tag": "sequoia",
   "version": "5.15.11",
   "version_scheme": 0,
-  "workflow_commit": "39eae45a48ba620093ea25596982c084c72d7600"
+  "workflow_commit": "0eb86de32770fb38692fc7f7577390e90609a9ed"
 }
