@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
   "cellar": "any",
-  "core_commit": "6e92844e6b94717b535d9fb729181b855dd4bed5",
+  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
   "filename": "qtquick3dphysics--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "0ebaa147b040e16217dc12d7806138118d6b4f0603813d2deedb9fbf5fb0177f",
   "license": {
@@ -19,9 +19,9 @@
   "name": "qtquick3dphysics",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "7e9788ce69378155b65577ee23a4c312d983a103f0a94934a33fb79a0b115d7e",
-  "release": "intel-42406923991-1-qtquick3dphysics",
+  "release": "intel-42496638640-1-qtquick3dphysics",
   "revision": 1,
-  "run_id": "42406923991",
+  "run_id": "42496638640",
   "runtime_dependencies": [
     {
       "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
@@ -59,7 +59,7 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
+      "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
       "name": "freetype",
       "pkg_version": "2.15.0"
     },
@@ -220,15 +220,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2acb5bc627958e95aa18ef53802f77edc9f258781c8475a47477a5687bd4f37f",
-  "size": 5066296,
+  "sha256": "0cf0b9554ab853b0bb2fdcdd0f5d52d946ce009b9d599cc29c95a454ed38caaf",
+  "size": 5066314,
   "source": {
     "filename": "qtquick3dphysics--6.12.0_1.sources.tar.gz",
-    "sha256": "433c781cb529739720cc26a29bf9ed8431e2d98e5fe2e8b3dd58a9d58f38adb6",
-    "size": 4734791
+    "sha256": "6ad98f9aed46713f828334cdf890968beba17407432e281f707da525a81e82b9",
+    "size": 4734792
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "5f057da9a799dffab551aa3b4bdd134bf0ab83e9"
+  "workflow_commit": "ea855b0ae071cbc86c500fef9a729ac8ce886579"
 }
