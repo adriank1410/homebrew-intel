@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
+  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
   "cellar": "any",
-  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
+  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
   "filename": "qttools--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1f842491d0fe45240fc85a501bb3e29870e12967b2908da4f213ed52e3f24174",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qttools",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "0cb3612e4981e0937f3736ce906b1289177332805f8665dee9f81f97c3ee9b11",
-  "release": "intel-42390157040-1-qttools",
+  "release": "intel-42482354290-1-qttools",
   "revision": 1,
-  "run_id": "42390157040",
+  "run_id": "42482354290",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -61,7 +61,7 @@
       "pkg_version": "2.18.3"
     },
     {
-      "formula_sha256": "55306144d6c059f30be7c8d2c0b4909836c259edc470c48fb4375d1f3e08fd34",
+      "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
       "name": "freetype",
       "pkg_version": "2.15.0"
     },
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "662bf69d528e646bcfbbf1e25189afe2aef64726f33a3f124bd0aeab9dc4eb7a",
-  "size": 8097006,
+  "sha256": "d66aa1c4dc004778a60b4639f80f49d83086ab96f925dc48bb736760dd821a76",
+  "size": 8097039,
   "source": {
     "filename": "qttools--6.12.0_1.sources.tar.gz",
-    "sha256": "2c987a57ad304551562815cbf91372fd900c56ff283a2118682681da9b08593b",
-    "size": 10880992
+    "sha256": "fea7aef177eff1ec897f169308c5d20553c6b27647d1f999117a998cc25b99e4",
+    "size": 10880989
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "2abda70f3cb44181808eea188a2bb4e4c4ea4d54"
+  "workflow_commit": "baed56d2c7836a41e114b7ee9fad42987bf4244a"
 }
