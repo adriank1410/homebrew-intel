@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
+  "brew_commit": "71c7a2a511d5cfd4d12e439fed71e6168ecdf748",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
+  "core_commit": "32a3b7235b3ee5a2a86bdd090772bfa666daa731",
   "filename": "neovim--0.12.6.sequoia.bottle.tar.gz",
   "formula_sha256": "606913db5b7f1001339be19ee46a907259aa72bc8ca08424602672f225df3092",
   "license": "Apache-2.0",
   "name": "neovim",
   "pkg_version": "0.12.6",
   "recipe_sha256": "da613175b4b72e41036412b8b564f027039a909ab9c95b02e7c7608f06c030fe",
-  "release": "intel-42382430330-1-neovim",
+  "release": "intel-42529619010-1-neovim",
   "revision": 0,
-  "run_id": "42382430330",
+  "run_id": "42529619010",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -39,9 +39,9 @@
       "pkg_version": "1.1.0_2"
     },
     {
-      "formula_sha256": "5c6273320809119d78ea525cd6d158bed4aff00672f3ea51c6c59111e9313984",
+      "formula_sha256": "4c80d5ac64add3055436cefd3cc019be31a377b1ef0b6e12b24234d7f97515a0",
       "name": "luajit",
-      "pkg_version": "2.1.1793383622"
+      "pkg_version": "2.1.1794160931"
     },
     {
       "formula_sha256": "524b1f58d41e8420a8244644a78755fd43fc073625af873843669c159e23e1fc",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "524488da98f4f8ae763a615b699ffa29350df4207b3a38f0cded6d4cb883df95",
-  "size": 8362854,
+  "sha256": "3abb92f2887ea97a386ac00ac50876e8ebb099990cd0b06001ecbf5ed368030e",
+  "size": 8362893,
   "source": {
     "filename": "neovim--0.12.6.sources.tar.gz",
-    "sha256": "fcc74e02c0b9d447f59d28668d5920039e479045ea8a7ad95a98162b9f972a5c",
-    "size": 14989668
+    "sha256": "d6510bd19dabf5608a7db1ffb0c923e8841ac8199acd2f96e9bafe2fc251a68d",
+    "size": 14989687
   },
   "tag": "sequoia",
   "version": "0.12.6",
   "version_scheme": 0,
-  "workflow_commit": "7a512919837e129ef5efe833a7070e3e722b3566"
+  "workflow_commit": "b1ae30a8613d316de9eff1460048e8f6ff7eb24f"
 }
