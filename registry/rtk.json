@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "2ed87166a21c29527db16218bc79a8a534faa4e8",
   "cellar": "any_skip_relocation",
-  "core_commit": "e9e970a6894f23a16eaea5b7132dfd0627c870c1",
-  "filename": "rtk--1.1.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "213f25625a85de891f4eb59d89ec55257de79f8a65355edeaf1dda68fe9745a5",
+  "core_commit": "2578d519cc710c90294adc8a8eea28d1bdaf4104",
+  "filename": "rtk--1.2.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "ce081ce87fa01a34f67bc8b1638571fbe80bf15f5035c3834ca0b72f3c3e88fd",
   "license": "Apache-2.0",
   "name": "rtk",
-  "pkg_version": "1.1.0",
-  "recipe_sha256": "415e12597718a0a688d90d81ad0ffe3bb12af23f1822c2d3ca1a769b148f2eff",
-  "release": "intel-41178370459-1-rtk",
+  "pkg_version": "1.2.0",
+  "recipe_sha256": "c4d54ceed91f0e676f033345cc35bdb2304ac62703958ee36a200b6bdcd044cc",
+  "release": "intel-42508328367-1-rtk",
   "revision": 0,
-  "run_id": "41178370459",
+  "run_id": "42508328367",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "0c0bd8851c679b752d0ce1225a931be622558984e6cd4066bc6dd64b3f54471c",
-  "size": 6441147,
+  "sha256": "82cd95c249cdb7c438636bfed4eab1803dc522c21f0ce9460fbac9931d35438b",
+  "size": 6510383,
   "source": {
-    "filename": "rtk--1.1.0.sources.tar.gz",
-    "sha256": "d76bf779a11bec76882dbb23c035120fe1015cda996e49409a1e216efa6a0a8a",
-    "size": 24097426
+    "filename": "rtk--1.2.0.sources.tar.gz",
+    "sha256": "ad088b8fc9f0df5be56b724315e3a8ef8200b589881b0854e9d219df649c396d",
+    "size": 24632353
   },
   "tag": "sequoia",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "version_scheme": 0,
-  "workflow_commit": "6bf0e99b3f373088de894b726ce55fd7d6cc51b4"
+  "workflow_commit": "6352d9ffc4b21a98a4ebde846e644d25dab04ad1"
 }
