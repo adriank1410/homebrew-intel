@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "19fe946b9a257cb41ebb5cef5c592ba7923d1f3b",
+  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
   "cellar": "any_skip_relocation",
-  "core_commit": "5acba4b25121279096f7daa71733d87a69417870",
-  "filename": "lazygit--0.66.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "5ddcbab948fefebd8eb6392bd5062f9f47d5a6b416128b7ddf3e63f7b71504e4",
+  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
+  "filename": "lazygit--0.66.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "f780a8bd11aed15f62dd33e0742619664d289f26f1efcdde5e0b9d76a9f9de49",
   "license": "MIT",
   "name": "lazygit",
-  "pkg_version": "0.66.2",
-  "recipe_sha256": "afab63c83af9bd5eeb0db6ff55b939dc76440355e16b24da19f297b0b8fc7341",
-  "release": "intel-38895296003-1-lazygit",
+  "pkg_version": "0.66.3",
+  "recipe_sha256": "b2e0755eee8560add0474e7f63999b96f1a4ffb49ff92bfacad2cc889c3d547b",
+  "release": "intel-42476308960-1-lazygit",
   "revision": 0,
-  "run_id": "38895296003",
+  "run_id": "42476308960",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "e2da00721114b26888d1db64b3c7ca5d95edcb17b38e47f30ddc8304cc50ea55",
-  "size": 7566069,
+  "sha256": "270645ff206c9cb067e310cea8a2025814925ed9286a8ae76ad96cdd1445081b",
+  "size": 7568383,
   "source": {
-    "filename": "lazygit--0.66.2.sources.tar.gz",
-    "sha256": "22eb649ce05a14dac1643c2750bb9e3c7928c40d2fa74d22d2bbfd0894a40300",
-    "size": 5112335
+    "filename": "lazygit--0.66.3.sources.tar.gz",
+    "sha256": "5b2f5b8d56121b372c3d44babe87d323e4052d2019a87a558d1f1daf4290fc9c",
+    "size": 5095449
   },
   "tag": "sequoia",
-  "version": "0.66.2",
+  "version": "0.66.3",
   "version_scheme": 0,
-  "workflow_commit": "c1b9ae51bb776c54e358ebed6ec4991fd3ae2885"
+  "workflow_commit": "a94c189e17a50daa5d2ed9f8234b1fc82adccde3"
 }
