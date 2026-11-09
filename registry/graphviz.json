@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "bc63375ac3a4d6debb1ceb441ae6e22854f0909a",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
-  "filename": "graphviz--16.1.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "9024b489a2ae2ccf591ae57ef96bf48acf9a1d3afbaf799323403d53322221c2",
+  "core_commit": "01230b75466364ee6ab9ce78de0748be2e62e466",
+  "filename": "graphviz--16.1.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "16fdbfd338051620f270ddb2d7bbe448a9be13366cc5a5b2850a69e38f69c69c",
   "license": "EPL-1.0",
   "name": "graphviz",
-  "pkg_version": "16.1.0",
-  "recipe_sha256": "8f7ac8741a220d3dba6f404183dbd527f2698e0ea42c92773a6b7c7a5d64f517",
-  "release": "intel-42472248914-1-graphviz",
+  "pkg_version": "16.1.1",
+  "recipe_sha256": "7dca50fb0df2b695d693fe411df386d198ae537f4df12b37701ceb5d9d9764a2",
+  "release": "intel-42676707344-1-graphviz",
   "revision": 0,
-  "run_id": "42472248914",
+  "run_id": "42676707344",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -240,15 +240,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e1fad11defe6ca5e76b72a11f933b1b934bf1b47eead3261a2268373e129362f",
-  "size": 3250815,
+  "sha256": "8bdc268c3a8d51812a32e9a0cd2af01eb6160538c5abec6b673402f515a0e930",
+  "size": 3252973,
   "source": {
-    "filename": "graphviz--16.1.0.sources.tar.gz",
-    "sha256": "12e43ad7919f80ae8072543dd67fd594e140981c93883dacf7972c0488211e30",
-    "size": 21018989
+    "filename": "graphviz--16.1.1.sources.tar.gz",
+    "sha256": "0caf036382ae9f1023f7b7ba09fbd99b459df71fc421d457a3fa069df205b1e4",
+    "size": 21059042
   },
   "tag": "sequoia",
-  "version": "16.1.0",
+  "version": "16.1.1",
   "version_scheme": 1,
-  "workflow_commit": "5ea692bac90c2bde9f64284d0a2b5533d134ae92"
+  "workflow_commit": "0e9b7546678612fa1e3f8859008534cdae14ce97"
 }
