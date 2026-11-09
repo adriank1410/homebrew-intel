@@ -12,6 +12,21 @@ module IntelbrewBottleOnly
     with_env(HOMEBREW_INTERNAL_ALLOW_PACKAGES_FROM_PATHS: "1") { yield }
   end
 
+  # Homebrew/brew ec249da5f removed path loading from Formulary.factory and the
+  # internal opt-out above; explicitly selected local bottles now load through
+  # Formulary.from_bottle. Older pins keep the factory path inside the scope.
+  def self.local_bottle_loading_allowed?
+    Formulary.respond_to?(:from_bottle) || !Homebrew::EnvConfig.forbid_packages_from_paths?
+  end
+
+  def self.load_local_bottle(path)
+    if Formulary.respond_to?(:from_bottle)
+      Formulary.from_bottle(path, force_bottle: true)
+    else
+      Formulary.factory(path, force_bottle: true)
+    end
+  end
+
   def build(*)
     raise SourceBuildRefused,
           "intelbrew: a Homebrew source build was requested. Refusing instead of compiling locally."

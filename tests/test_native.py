@@ -13,10 +13,10 @@ from intelbrew.ci import BOTTLE_OPTIONS, transient_builds
                      "set INTELBREW_NATIVE_TESTS=1 on Intel Sequoia")
 class NativeTests(unittest.TestCase):
     def test_verified_local_bottle_scope_uses_homebrew_opt_out(self):
-        script = ('require ' + json.dumps(str(ROOT / 'libexec/bottle_only.rb')) + '; '
+        script = ('require "formulary"; require ' + json.dumps(str(ROOT / 'libexec/bottle_only.rb')) + '; '
                   'before = ENV["HOMEBREW_INTERNAL_ALLOW_PACKAGES_FROM_PATHS"]; '
                   'IntelbrewBottleOnly.with_local_bottle do; '
-                  'abort "local bottles still forbidden" if Homebrew::EnvConfig.forbid_packages_from_paths?; '
+                  'abort "local bottles still forbidden" unless IntelbrewBottleOnly.local_bottle_loading_allowed?; '
                   'end; abort "scope leaked" unless '
                   'ENV["HOMEBREW_INTERNAL_ALLOW_PACKAGES_FROM_PATHS"] == before')
         run(["brew", "ruby", "-e", script], env=brew_env())

@@ -217,7 +217,7 @@ module IntelbrewNative
     end
     install=proc do
       if local_bottle
-        local=Formulary.factory(target,force_bottle:true)
+        local=IntelbrewBottleOnly.load_local_bottle(target)
         raise "Local bottle identity/version differs" unless local.name==name&&local.tap&.name=="homebrew/core"&&local.pkg_version.to_s==request.fetch("pkg_version")
       end
       old=before["installed_versions"];args=["--force-bottle","--no-ask","--formula"];args<<"--as-dependency" if request["as_dependency"];args<<target;Homebrew::Cmd::InstallCmd.new(args).run;raise "Homebrew installation failed" if Homebrew.respond_to?(:failed?)&&Homebrew.failed?;installed=receipt(name);raise "Package was not poured as core bottle" unless installed["poured_from_bottle"]&&installed["tap"]=="homebrew/core";raise "Old keg unexpectedly removed" unless (old-installed["installed_versions"]).empty?
