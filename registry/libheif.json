@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "libheif--1.23.7.sequoia.bottle.tar.gz",
   "formula_sha256": "ccf020d6dc644a50858261556eec24a0aa8695045676793d4cd2f0c4328fcecb",
   "license": "LGPL-3.0-or-later",
   "name": "libheif",
   "pkg_version": "1.23.7",
   "recipe_sha256": "a1e1dda0891c69e93e36802ed9d6b22f5e6fb8978e8067bc68a20d1cc931457d",
-  "release": "intel-42068122922-1-libheif",
+  "release": "intel-42876885524-1-libheif",
   "revision": 0,
-  "run_id": "42068122922",
+  "run_id": "42876885524",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -49,9 +49,9 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c1d9d93a93f74414c1851f6dd47a1d852b79372ef0b8fbf29e755f0d1a84ef65",
-  "size": 3164566,
+  "sha256": "0f206693d13a3db2e46abbc90e3d903660f0aba4e143b5ea13fa82bac38fbc05",
+  "size": 3164564,
   "source": {
     "filename": "libheif--1.23.7.sources.tar.gz",
-    "sha256": "b655f235afe24a8fa2b9dcc5920c9223068b62d7a9276e873dab3c389cd2be2d",
-    "size": 2457152
+    "sha256": "41c64c10307fd973b7d0b7e17cd427b0bf281d1ab7a1ffa3bdd1630126c5a97d",
+    "size": 2457143
   },
   "tag": "sequoia",
   "version": "1.23.7",
   "version_scheme": 0,
-  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
+  "workflow_commit": "9d2ad0c1a04f2a7f2ec8877b73afc9dad83831c0"
 }
