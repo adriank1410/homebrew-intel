@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "8b0b7e44193854e22b84bcf2f58d65f21408d458",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "any",
-  "core_commit": "4974e072453a29858744bd9e922eb2782b6b01c3",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "libarchive--3.8.11.sequoia.bottle.tar.gz",
   "formula_sha256": "b9b7a716e1f39cd51d25fddec1085d2a5fcf42e6751ed07a4ffc3f5701fd3ef1",
   "license": "BSD-2-Clause",
   "name": "libarchive",
   "pkg_version": "3.8.11",
   "recipe_sha256": "91d4febb6429d4d0c28ba8409ad0f91612da3370c3d5810c4664d7767246e5b4",
-  "release": "intel-41961893473-1-libarchive",
+  "release": "intel-42844253801-1-libarchive",
   "revision": 0,
-  "run_id": "41961893473",
+  "run_id": "42844253801",
   "runtime_dependencies": [
     {
       "formula_sha256": "d79bbe155f713e445bddfa581f9bef666518d0642f70a75f22cf898bb1fb5b46",
@@ -19,9 +19,9 @@
       "pkg_version": "0.98.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "000dd393a94f7149d0d05644eeba63f3166dcb8ec64a6581a74d534a0a801d23",
-  "size": 1657469,
+  "sha256": "686748bea8d13eaf1906bb0f800cf9a27fc740538b8b33d7ad3d9ee681c4b09e",
+  "size": 1657459,
   "source": {
     "filename": "libarchive--3.8.11.sources.tar.gz",
-    "sha256": "fed5f6e9d7b4c8d613fc9a8314878f3f90118f0000188b360c5d6cb285447747",
-    "size": 6762121
+    "sha256": "fcb2103c9583d733577981097dc3c616d8aee6554ad56401927e9d3869d642dc",
+    "size": 6762124
   },
   "tag": "sequoia",
   "version": "3.8.11",
   "version_scheme": 0,
-  "workflow_commit": "b144a09facb90228776ee701f6598f6799ef9f7f"
+  "workflow_commit": "69651c5b56f37a6d33f261fa072cb41902873d4a"
 }
