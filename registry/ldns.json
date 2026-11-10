@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "ldns--1.9.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ad053fa13bcf235ccb9daa313c62bd7c251b7977eea85e67112eb0a2f0dfe29b",
   "license": "BSD-3-Clause",
   "name": "ldns",
   "pkg_version": "1.9.2_1",
   "recipe_sha256": "c9cfc1eb09549873df6096ff6e3b5009021b0a8e8bd88e54f2277cf70624bdd7",
-  "release": "intel-42169382172-1-ldns",
+  "release": "intel-42876885524-1-ldns",
   "revision": 1,
-  "run_id": "42169382172",
+  "run_id": "42876885524",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "daedc3b9875f78559b2ff25128483d906c101934cff7fa0bfb6992c7d68d2688",
-  "size": 1308851,
+  "sha256": "97ba93059afef8b5ac2acd22dedaca775dd9db901f1f01aca6a2ae406df8ae5c",
+  "size": 1308838,
   "source": {
     "filename": "ldns--1.9.2_1.sources.tar.gz",
-    "sha256": "590cc9448b692929a9308e1ced71f854fade0779d89f49968f09f47dbdf4dd32",
-    "size": 1314526
+    "sha256": "35b006809ef5722234a167e8b91d6f4f159f39701c02f0fcbbfbf1aeb71de96d",
+    "size": 1314509
   },
   "tag": "sequoia",
   "version": "1.9.2",
   "version_scheme": 0,
-  "workflow_commit": "39eae45a48ba620093ea25596982c084c72d7600"
+  "workflow_commit": "9d2ad0c1a04f2a7f2ec8877b73afc9dad83831c0"
 }

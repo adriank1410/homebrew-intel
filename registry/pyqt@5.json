@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "any",
-  "core_commit": "0320d5a7ac3d7470022ac0bd0a855f485adab24f",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "pyqt@5--5.15.11_3.sequoia.bottle.tar.gz",
   "formula_sha256": "1fc7fe2f3ca2f3329c71b2d6387856d09e74d038a84541c2209d968f3fd91535",
   "license": "GPL-3.0-only",
   "name": "pyqt@5",
   "pkg_version": "5.15.11_3",
   "recipe_sha256": "100ad4b4ea77dadfe98aa87a64897a0f616c6527de27bd6653104d3f6fc61e25",
-  "release": "intel-42438209784-1-pyqt-at-5",
+  "release": "intel-42876885524-1-pyqt-at-5",
   "revision": 3,
-  "run_id": "42438209784",
+  "run_id": "42876885524",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -69,9 +69,9 @@
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "0fda7ee9fa68cad87939ff0bc9207d611e21441c9b27e98af1d6943cbcf7a72b",
@@ -130,15 +130,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5bb5d39d8a32cb9a5e2846b68ea9851d5e21f4fe740c8fa74e0bdb4208045871",
-  "size": 7031895,
+  "sha256": "fba7afe8515613ac98ccbf5173309deb3c400d89363c639d71ef42785b6a1ae0",
+  "size": 7031923,
   "source": {
     "filename": "pyqt@5--5.15.11_3.sources.tar.gz",
-    "sha256": "e2e8ab1a12f62f226f8fe8f12685c3676cdb5bd68e57e7cdee02b39358076cb4",
-    "size": 11141891
+    "sha256": "98ec4f1eba4b98f12369a2e343ac58b931fca74223d6e7b2572e72ab762e6d2a",
+    "size": 11141899
   },
   "tag": "sequoia",
   "version": "5.15.11",
   "version_scheme": 0,
-  "workflow_commit": "0eb86de32770fb38692fc7f7577390e90609a9ed"
+  "workflow_commit": "9d2ad0c1a04f2a7f2ec8877b73afc9dad83831c0"
 }
