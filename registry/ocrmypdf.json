@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "d9287800cf7871864f5f82ca6885b3ac83de460f",
+  "brew_commit": "60555dbc9b4a861c19f8b229211941675b8433df",
   "cellar": "any",
-  "core_commit": "cc6e2d6b8ebbe15061baf39dea095290298a5b89",
-  "filename": "ocrmypdf--17.13.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "1378b58fcd1888c0430167dc0c72a8b99202acc6667972b290e8fdb739119def",
+  "core_commit": "0bb5dc7f80258bf6d8479b48f15f8c4879648cd0",
+  "filename": "ocrmypdf--17.14.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "97965180177dfb4ddbafe0cdd069fb2a619efef18175bfee657ba0d68500c85c",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
-  "pkg_version": "17.13.0",
-  "recipe_sha256": "b8c56c858792bdb0e9db0cc326561d32b6cfb699a6e2ce048b8c9ff4b07ec0d1",
-  "release": "intel-42743602118-1-ocrmypdf",
+  "pkg_version": "17.14.0",
+  "recipe_sha256": "fdedba643b5dbe7352699b7d2e5c7c2f6f2b49b164947bd81d032bc79a489923",
+  "release": "intel-42751109029-1-ocrmypdf",
   "revision": 0,
-  "run_id": "42743602118",
+  "run_id": "42751109029",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "bb04a8bffdb46f36784c9725927996ddabb4bf4fa64877bbd3352c06ca5603c3",
-  "size": 17790618,
+  "sha256": "cd8f3179ad63906639f2cccbceff200853078a429fa684e2825f68b80e955aa7",
+  "size": 18190216,
   "source": {
-    "filename": "ocrmypdf--17.13.0.sources.tar.gz",
-    "sha256": "cc0db8ca49f72f5122082c5ad117853ac4601e62990781ff8b74534f91d577bd",
-    "size": 81001458
+    "filename": "ocrmypdf--17.14.0.sources.tar.gz",
+    "sha256": "c7cfdaa13c3617cdc5d3d081b4c4e8766d04da62f2fc5e05aa1f049f51c5510f",
+    "size": 81880551
   },
   "tag": "sequoia",
-  "version": "17.13.0",
+  "version": "17.14.0",
   "version_scheme": 0,
-  "workflow_commit": "b4fb520d759578ce48f78901eb619cd087a069cf"
+  "workflow_commit": "115e292b5a2331337a0b40d2ea4d7bd8f7ef3e3e"
 }
