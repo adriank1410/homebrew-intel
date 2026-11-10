@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "gdb--18.1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "744d4c6b2737bf4210652fe69ae3c5af731c1b2391ffb1d76248129fad17a14b",
   "license": "GPL-3.0-or-later",
   "name": "gdb",
   "pkg_version": "18.1_1",
   "recipe_sha256": "50953202b190e0e91f3f3c69d0dfc1d77be82a109fc620cc3ad078c90b1239fc",
-  "release": "intel-42169382172-1-gdb",
+  "release": "intel-42876885524-1-gdb",
   "revision": 1,
-  "run_id": "42169382172",
+  "run_id": "42876885524",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -29,9 +29,9 @@
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "eb43f28cf084c93dfd3b4935e48653c61951ee2f931ab9c2efe080c3e03e90e1",
-  "size": 9015767,
+  "sha256": "121dabcebc47ee516e24b8dee630632777cb221acfd3cd62445f25e368db9ee4",
+  "size": 9015819,
   "source": {
     "filename": "gdb--18.1_1.sources.tar.gz",
-    "sha256": "0ff61693de864e15fc92bbda97f3247ff93dc63593f306b83a705db4dfea05eb",
-    "size": 22214251
+    "sha256": "ccc28bb43c1483212660f33c04bf4d4f0f695362f56a93344582afb7a36bbae8",
+    "size": 22214237
   },
   "tag": "sequoia",
   "version": "18.1",
   "version_scheme": 0,
-  "workflow_commit": "39eae45a48ba620093ea25596982c084c72d7600"
+  "workflow_commit": "9d2ad0c1a04f2a7f2ec8877b73afc9dad83831c0"
 }
