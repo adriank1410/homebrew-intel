@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "any",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "curl--8.23.0.sequoia.bottle.tar.gz",
   "formula_sha256": "33e932ab597435e4b7013abdcea8c1737e12db3fe77e4cf475d15fc831a1cf9a",
   "license": "curl",
   "name": "curl",
   "pkg_version": "8.23.0",
   "recipe_sha256": "d0656bcb4d4a8478c6a32f78849cb11740ae833a8663c2eb2d6c57bdcc3bf804",
-  "release": "intel-42317576294-1-curl",
+  "release": "intel-42844253801-1-curl",
   "revision": 0,
-  "run_id": "42317576294",
+  "run_id": "42844253801",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -49,9 +49,9 @@
       "pkg_version": "1.11.1_7"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "df1d0a721b68cf4dd509076e3141a90ee32a084fab9b830fc6b1d4c60d3ad8cc",
-  "size": 1716183,
+  "sha256": "b92aef253c3bb08caefceb139174b840b2f668d09e4765cd581bb5a3032a24ea",
+  "size": 1716205,
   "source": {
     "filename": "curl--8.23.0.sources.tar.gz",
-    "sha256": "afe540329bc3e1b22726ab31ba4c4586c20315407fbd02a95bdd1d103ac414ed",
-    "size": 3453428
+    "sha256": "252b2c9dcf7e0bf1c200bd41b9f8348a0c86b25b353d21c851f12871afca4b11",
+    "size": 3453427
   },
   "tag": "sequoia",
   "version": "8.23.0",
   "version_scheme": 0,
-  "workflow_commit": "091ad3bc5e7e87c5435730bc0f24f265cd015f7c"
+  "workflow_commit": "69651c5b56f37a6d33f261fa072cb41902873d4a"
 }
