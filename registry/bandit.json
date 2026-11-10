@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "any",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "bandit--1.9.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8359d8da6489ffe3974aa2c43d12de7b5bc04392a37cd0363da6dcb05b264b1a",
   "license": "Apache-2.0",
   "name": "bandit",
   "pkg_version": "1.9.4_1",
   "recipe_sha256": "9e191c80016e5e1a66bc86493eefff6e24f69ff107cb6186fd0541eeb24987ab",
-  "release": "intel-42314323352-1-bandit",
+  "release": "intel-42876885524-1-bandit",
   "revision": 1,
-  "run_id": "42314323352",
+  "run_id": "42876885524",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -24,9 +24,9 @@
       "pkg_version": "0.2.5"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "21640c07a19bf8f7e95004ef6dc7313a91014f920335ed412172b63a17fb846f",
-  "size": 1669658,
+  "sha256": "97cfd00404a214055766c7c3115d2da84eb0eb4976a8aa5a21eb1e99d4bcfa60",
+  "size": 1669675,
   "source": {
     "filename": "bandit--1.9.4_1.sources.tar.gz",
-    "sha256": "9b7707518da22afa28f9852a647dcf6cdc69fe3c26fd8c7fe2a7286ea528d38e",
-    "size": 10227976
+    "sha256": "12060b32e32237027ada88dd997a99994d689ffa78057163c86f680f3a5a8378",
+    "size": 10227982
   },
   "tag": "sequoia",
   "version": "1.9.4",
   "version_scheme": 0,
-  "workflow_commit": "faf96751c5ec14dc108f0b70a52b975748d5575e"
+  "workflow_commit": "9d2ad0c1a04f2a7f2ec8877b73afc9dad83831c0"
 }
