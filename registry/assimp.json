@@ -1,0 +1,37 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "60555dbc9b4a861c19f8b229211941675b8433df",
+  "cellar": "any",
+  "core_commit": "0bb5dc7f80258bf6d8479b48f15f8c4879648cd0",
+  "filename": "assimp--6.0.6.sequoia.bottle.tar.gz",
+  "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
+  "license": {
+    "all_of": [
+      "BSD-3-Clause",
+      "CC-PDDC",
+      "MIT",
+      "BSL-1.0",
+      "Unlicense",
+      "Zlib"
+    ]
+  },
+  "name": "assimp",
+  "pkg_version": "6.0.6",
+  "recipe_sha256": "7b473967f99e4c1fa69c527f61ad40fd53ffe86af65a9aee73adb280e3ccd611",
+  "release": "intel-42751109029-1-assimp",
+  "revision": 0,
+  "run_id": "42751109029",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "849ba11d1370bf1f4ec23c798e3caf3e83740efb79d5e7a7974694954c90beac",
+  "size": 3105267,
+  "source": {
+    "filename": "assimp--6.0.6.sources.tar.gz",
+    "sha256": "169364617306dec8161967689083200cb9b051da49ecb54c6921a1c3db626022",
+    "size": 152195596
+  },
+  "tag": "sequoia",
+  "version": "6.0.6",
+  "version_scheme": 0,
+  "workflow_commit": "115e292b5a2331337a0b40d2ea4d7bd8f7ef3e3e"
+}
