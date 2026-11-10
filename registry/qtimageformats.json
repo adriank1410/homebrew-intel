@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "403b869a79661254b78a641da8bfbbdd86f0c2c9",
   "cellar": "any",
-  "core_commit": "0320d5a7ac3d7470022ac0bd0a855f485adab24f",
+  "core_commit": "0774c2f1a33882bde4c201ff9079777575bcf7df",
   "filename": "qtimageformats--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "ddff04c52574442afd646c4551000e78a23313d7e8d254c5bcc4a1fe221541dd",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtimageformats",
   "pkg_version": "6.12.0",
   "recipe_sha256": "17e1dfe8cd03eee87c8f772ff23d1f8cca00525aa09e898ae0845b271dbf1a94",
-  "release": "intel-42455013993-1-qtimageformats",
+  "release": "intel-42876885524-1-qtimageformats",
   "revision": 0,
-  "run_id": "42455013993",
+  "run_id": "42876885524",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -150,9 +150,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -206,15 +206,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d49e26b8f292957b29d98d09a9be9b8dd1d7728a1410b0f13188acbb8fe2eb76",
-  "size": 101688,
+  "sha256": "0a8e3a5c2311fe48097070eadc137d33108bfd28befee1a34ac7f3f25be9ea7f",
+  "size": 101735,
   "source": {
     "filename": "qtimageformats--6.12.0.sources.tar.gz",
-    "sha256": "69984de378666ce8c7394a0f366b81382383a74e7c08e23998f370c2c721df8d",
-    "size": 1882767
+    "sha256": "6e8516c58056b4c21cecbaaf3bb040edc782b9c175e0e790b70dd88e093f1810",
+    "size": 1882765
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "f63232ee4d4b83dbc68f721258763b10bd52a844"
+  "workflow_commit": "9d2ad0c1a04f2a7f2ec8877b73afc9dad83831c0"
 }
