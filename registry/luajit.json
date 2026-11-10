@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71c7a2a511d5cfd4d12e439fed71e6168ecdf748",
+  "brew_commit": "d9287800cf7871864f5f82ca6885b3ac83de460f",
   "cellar": "any",
-  "core_commit": "32a3b7235b3ee5a2a86bdd090772bfa666daa731",
-  "filename": "luajit--2.1.1794160931.sequoia.bottle.tar.gz",
-  "formula_sha256": "4c80d5ac64add3055436cefd3cc019be31a377b1ef0b6e12b24234d7f97515a0",
+  "core_commit": "cc6e2d6b8ebbe15061baf39dea095290298a5b89",
+  "filename": "luajit--2.1.1794214635.sequoia.bottle.tar.gz",
+  "formula_sha256": "4fcf824d41a191ba1701e03be7fa46ea85ca08a6e1653e87f86b5a714fe22a70",
   "license": "MIT",
   "name": "luajit",
-  "pkg_version": "2.1.1794160931",
-  "recipe_sha256": "ef6d371a3f578054c143d4216cd534b05ae4f116466b50f38da853e37d51337d",
-  "release": "intel-42529619010-1-neovim",
+  "pkg_version": "2.1.1794214635",
+  "recipe_sha256": "387a6ea40d9c355f910aafab5b443d67d054378ffe90e49ff381794187c09032",
+  "release": "intel-42740149239-1-neovim",
   "revision": 0,
-  "run_id": "42529619010",
+  "run_id": "42740149239",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "2df5d2f8b5cb51af3e0a53fa39d85e03c7c3cb9fcdfab05f300d60ce8e4c02d9",
-  "size": 911042,
+  "sha256": "85ec65f49c8c8337822a478f5eb89c55b5f97467f2b2a9fcc9873abad5c34385",
+  "size": 911007,
   "source": {
-    "filename": "luajit--2.1.1794160931.sources.tar.gz",
-    "sha256": "fc13145d2587a279bd7bfb198b221ae79c2f7e9325f463ad40a631989022df79",
-    "size": 1110195
+    "filename": "luajit--2.1.1794214635.sources.tar.gz",
+    "sha256": "3e33b426fa652ec5ae5e1d60383ff95830859c0729dbd90f64e42f45c0a5cc94",
+    "size": 1110254
   },
   "tag": "sequoia",
-  "version": "2.1.1794160931",
+  "version": "2.1.1794214635",
   "version_scheme": 0,
-  "workflow_commit": "b1ae30a8613d316de9eff1460048e8f6ff7eb24f"
+  "workflow_commit": "5e48c58bcd28a2abab6efd9b41c66bde36dedca2"
 }
