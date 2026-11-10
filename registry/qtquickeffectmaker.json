@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "60555dbc9b4a861c19f8b229211941675b8433df",
   "cellar": "any",
-  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
+  "core_commit": "0bb5dc7f80258bf6d8479b48f15f8c4879648cd0",
   "filename": "qtquickeffectmaker--6.12.0.sequoia.bottle.tar.gz",
   "formula_sha256": "2255cbb6f26b485d6cf828db0beb4bb5b067ee4ec1172314d7f04bbedbf1e8f5",
   "license": {
@@ -18,14 +18,14 @@
   "name": "qtquickeffectmaker",
   "pkg_version": "6.12.0",
   "recipe_sha256": "6db72edc7c0ae11cb30fc843df0cd9e4baced344336695c18ccba844ba41a7c8",
-  "release": "intel-42496638640-1-qtquickeffectmaker",
+  "release": "intel-42762461527-1-qtquickeffectmaker",
   "revision": 0,
-  "run_id": "42496638640",
+  "run_id": "42762461527",
   "runtime_dependencies": [
     {
-      "formula_sha256": "d5f452ed5bc16dc7ebe3b69dc81cd81d577c1eeec9c321ed21f25d5d5c2edf60",
+      "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
       "name": "assimp",
-      "pkg_version": "6.0.5"
+      "pkg_version": "6.0.6"
     },
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -219,15 +219,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8a3b3b4a4e72df60e4b7310eed2bb14b2310a7b5437d00e43621f2fc0e7311e8",
-  "size": 4190288,
+  "sha256": "aa6c77d3412d06d92ffd933e75d36f8f82613a57572a7a374741e43e9f48c10d",
+  "size": 4190299,
   "source": {
     "filename": "qtquickeffectmaker--6.12.0.sources.tar.gz",
-    "sha256": "bc582dcb67241be77d7ed031f4ba53586fa17c380a975690fae2faa76a994ea6",
+    "sha256": "f46f3dff589a0279e03f729366bc55f89fa175d704727d534c5df308f6277aff",
     "size": 4372005
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "ea855b0ae071cbc86c500fef9a729ac8ce886579"
+  "workflow_commit": "eac5a30c7f2ee21a32d0cc5fe6764ee8401d138a"
 }
