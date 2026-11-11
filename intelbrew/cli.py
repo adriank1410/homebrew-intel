@@ -416,6 +416,13 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
             packages = "package" if completed == 1 else "packages"
             raise Error(f"Stopped after {completed} {packages}; this is not a transaction rollback. "
                         f"Old versioned kegs are retained. Journal: {journal_dir}. {exc}") from exc
+        except KeyboardInterrupt:
+            # Without this the journal path is lost behind a Python traceback.
+            packages = "package" if completed == 1 else "packages"
+            onoe(f"Interrupted after {completed} completed {packages}; this is not a transaction rollback. "
+                 f"The package being installed may be incomplete. Old versioned kegs are retained. "
+                 f"Journal: {journal_dir}.")
+            raise
         ohai("Summary")
         bottles = "bottle" if completed == 1 else "bottles"
         print(f"🍺  Installed {completed} {bottles}. No Homebrew source build was permitted.")
@@ -538,6 +545,9 @@ def main(argv: list[str] | None = None) -> int:
     except (Error, KeyError, TypeError, OSError) as exc:
         onoe(str(exc))
         return 1
+    except KeyboardInterrupt:
+        onoe("Interrupted.")
+        return 130
 
 
 if __name__ == "__main__":

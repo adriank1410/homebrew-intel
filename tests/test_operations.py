@@ -59,6 +59,25 @@ class OperationTests(unittest.TestCase):
             if request['mode']=='install' and request['name']=='tool':raise Error('network failure')
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action):
             with self.assertRaisesRegex(Error,'Stopped after 1 package;'):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+    def test_interrupt_reports_the_journal_and_exits_130_without_a_traceback(self):
+        from intelbrew import cli
+        nodes={'tool':meta(runtime=['dep'],official=True),'dep':meta('dep',official=True)};p=self.plan(nodes)
+        def action(request,**kwargs):
+            if request['mode']=='inspect':return nodes
+            if request['mode']=='receipt':return {'tap':'homebrew/core','poured_from_bottle':True}
+            if request['mode']=='install' and request['name']=='tool':raise KeyboardInterrupt
+        err=io.StringIO()
+        with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action),redirect_stderr(err):
+            with self.assertRaises(KeyboardInterrupt):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+            journal=[path for path in (Path(d)/'cache').iterdir() if path.name.startswith('transaction-')]
+            self.assertEqual(len(journal),1)
+            self.assertIn('Interrupted after 1 completed package;',err.getvalue())
+            self.assertIn(f'Journal: {journal[0]}.',err.getvalue())
+        err=io.StringIO()
+        with patch.object(cli.platform,'system',return_value='Darwin'),patch.object(cli.platform,'machine',return_value='x86_64'), \
+             patch.object(cli,'load_config',side_effect=KeyboardInterrupt),redirect_stderr(err):
+            self.assertEqual(cli.main(['plan','tool']),130)
+        self.assertIn('Interrupted.',err.getvalue())
     def test_attestation_identity_pinned(self):
         with patch('intelbrew.cli.shutil.which',return_value='/bin/gh'),patch('intelbrew.cli.run') as run:
             attest(Path('/file'), 'adriank1410/homebrew-intel',G);args=run.call_args.args[0]
