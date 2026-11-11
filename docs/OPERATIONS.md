@@ -138,6 +138,9 @@ When independent builds publish the same dependency, the controller can rebuild
 a conflicted registry branch from main after checking both attested manifests.
 It preserves the already-published dependency only when its recipe, version and
 provenance match; incompatible records or a changed main snapshot stop the repair.
+A record that `main` has not changed since the branch point, such as the older
+version of the root being updated, is replaced as a clean merge would replace it.
+A record that `main` did change still stops the repair, and the pull is closed as stale.
 
 Source and workflow PRs still need explicit owner approval to merge. The
 App-authored Homebrew pin update is the maintenance exception above, and the narrowly

@@ -373,8 +373,40 @@ def _git(arguments: list[str], directory: Path) -> str:
                 "-c", "commit.gpgsign=false", *arguments], cwd=directory)
 
 
+def _unchanged_on_main(repository: str, pr: dict[str, Any],
+                       existing: list[dict[str, Any]]) -> set[str]:
+    """Return names whose record on main is the one this branch started from.
+
+    A conflicted pull request is stale only for the records that main changed
+    after the branch point. A record main still holds unchanged is simply the
+    older version this pull request replaces, as a clean merge would. The
+    branch point comes from the compare API, because ``baseRefOid`` moves with
+    main. Any failed lookup raises, which leaves the pull request open.
+    """
+    head = pr.get("headRefOid")
+    if not isinstance(head, str) or not re.fullmatch(r"[0-9a-f]{40}", head):
+        raise Error("PR has no valid head commit")
+    comparison = gh_json(["api", f"repos/{repository}/compare/{MAIN}...{head}"])
+    merge_base = comparison.get("merge_base_commit") if isinstance(comparison, dict) else None
+    base = require_sha(merge_base.get("sha") if isinstance(merge_base, dict) else None, git=True)
+    unchanged: set[str] = set()
+    for record in existing:
+        path = f"registry/{canonical_name(record['name'])}.json"
+        try:
+            payload = gh_json(["api", "--method", "GET", f"repos/{repository}/contents/{path}",
+                               "-f", f"ref={base}"])
+        except Error as exc:
+            if "HTTP 404" in str(exc):
+                continue  # added on main after the branch point
+            raise
+        if _record_from_content(payload, path) == record:
+            unchanged.add(record["name"])
+    return unchanged
+
+
 def _rebuild_conflicted_pr(repository: str, pr: dict[str, Any], records: list[dict[str, Any]],
-                           existing: list[dict[str, Any]], manifest: dict[str, Any]) -> None:
+                           existing: list[dict[str, Any]], manifest: dict[str, Any],
+                           unchanged: frozenset[str] | set[str] = frozenset()) -> None:
     root = manifest["root"]
     existing_by_name = {record["name"]: record for record in existing}
     manifest_by_name = {record["name"]: record for record in manifest["packages"]}
@@ -382,6 +414,10 @@ def _rebuild_conflicted_pr(repository: str, pr: dict[str, Any], records: list[di
     for record in records:
         current = existing_by_name.get(record["name"])
         if current is None:
+            continue
+        if record["name"] in unchanged:
+            # Main has not touched this record since the branch point, so the
+            # conflict is elsewhere and this record is still main's successor.
             continue
         if record["name"] == root:
             raise Error("Refusing to replace a registry root already present on main")
@@ -524,7 +560,10 @@ def reconcile(repository: str) -> None:
                     continue
             elif pr.get("mergeStateStatus") == "DIRTY":
                 records, existing, manifest = validate_pr(repository, pr)
-                _rebuild_conflicted_pr(repository, pr, records, existing, manifest)
+                changed = {record["name"] for record in records}
+                unchanged = _unchanged_on_main(
+                    repository, pr, [record for record in existing if record["name"] in changed])
+                _rebuild_conflicted_pr(repository, pr, records, existing, manifest, unchanged)
                 continue
             pr = _disable_existing_auto_merge(repository, pr)
             validate_pr(repository, pr)
