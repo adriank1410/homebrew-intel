@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "c5479ce06d940cab56516a8c0feee1679fcdce5a",
   "filename": "rust--1.99.1.sequoia.bottle.tar.gz",
   "formula_sha256": "b3e6ec47bc327e7d9f132be8b5ee880b64e8128ef3eedb70459677bdedabd18a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.99.1",
   "recipe_sha256": "aece397ba5dfeb11c93fc0d7ff2afe6ae3128da5c60f557a72196ab620f40bea",
-  "release": "intel-42320938596-1-rust",
+  "release": "intel-42935398553-1-rust",
   "revision": 0,
-  "run_id": "42320938596",
+  "run_id": "42935398553",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -44,9 +44,9 @@
       "pkg_version": "23.1.5"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9f0b52da98fd81bd84a649ceee9315453378078031cceb149bd6148fa15c5c06",
-  "size": 111589904,
+  "sha256": "758e43b3a101bba89c0173a2a3234809d6b4c698365c5697e6af5482bd2a6315",
+  "size": 111589932,
   "source": {
     "filename": "rust--1.99.1.sources.tar.gz",
-    "sha256": "3f047b33f96d1f4c715d690d1376226e8cabf7a04432393d270904bf69d20ff0",
-    "size": 657788473
+    "sha256": "b9ca5f0dee15720ff65062417364bebc58080caf5217175b94a13daf345cb182",
+    "size": 657788456
   },
   "tag": "sequoia",
   "version": "1.99.1",
   "version_scheme": 0,
-  "workflow_commit": "701624705fc243c28cfb4bd38982f2c9851de917"
+  "workflow_commit": "2416e13506348eebcccccd464de0a2e09d710cf0"
 }
