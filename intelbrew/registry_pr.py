@@ -63,6 +63,19 @@ def allowed_pr(pr: dict[str, Any], *, repository: str) -> bool:
             (author.get("is_bot", True) is True))
 
 
+def same_repository_prs(prs: list[Any]) -> list[dict[str, Any]]:
+    """Drop pull requests whose head branch lives in a fork.
+
+    ``gh pr list --head NAME`` matches the branch name in any repository, so
+    anyone could open a fork pull request from a branch with an automation
+    name and make the lookup see two. Automation never acts on a fork pull
+    request, so such a pull request must not count. An entry that does not say
+    it is same-repository is dropped; the ownership checks still apply to the
+    one that remains.
+    """
+    return [pr for pr in prs if isinstance(pr, dict) and pr.get("isCrossRepository") is False]
+
+
 def changed_registry_files(pr: dict[str, Any]) -> list[str]:
     """Validate the PR file list and return its canonical registry paths."""
     files = pr.get("files")
@@ -430,6 +443,7 @@ def _find_pr(repository: str, branch: str) -> dict[str, Any] | None:
                    "isCrossRepository,files,statusCheckRollup,autoMergeRequest,mergeStateStatus"])
     if not isinstance(prs, list):
         raise Error("GitHub CLI returned an invalid PR list")
+    prs = same_repository_prs(prs)
     if len(prs) > 1:
         raise Error("Multiple open registry PRs exist for one branch")
     return prs[0] if prs else None

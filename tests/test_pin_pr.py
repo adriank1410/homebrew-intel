@@ -5,7 +5,7 @@ import unittest
 from unittest.mock import patch
 
 from intelbrew.core import Error
-from intelbrew.pin_pr import main, reconcile_pin
+from intelbrew.pin_pr import _one_pin_pr, main, reconcile_pin
 
 
 REPOSITORY = "adriank1410/homebrew-intel"
@@ -126,6 +126,18 @@ class PinPullRequestTests(unittest.TestCase):
             result.extend([json.dumps(BASE_POLICY), json.dumps(ONE_PIN_POLICY)])
         result.append("")
         return result
+
+    def test_fork_pull_request_with_the_pin_branch_name_does_not_block_lookup(self):
+        own = pin_pr()
+        fork = pin_pr(number=900, isCrossRepository=True, author={"login": "someone", "is_bot": False},
+                      headRepository={"nameWithOwner": "someone/homebrew-intel"})
+        with patch("intelbrew.pin_pr.gh_json", return_value=[fork, own]):
+            self.assertEqual(_one_pin_pr(REPOSITORY), own)
+        with patch("intelbrew.pin_pr.gh_json", return_value=[fork]):
+            self.assertIsNone(_one_pin_pr(REPOSITORY))
+        with patch("intelbrew.pin_pr.gh_json", return_value=[own, pin_pr(number=817)]), \
+                self.assertRaisesRegex(Error, "Multiple open Homebrew pin PRs"):
+            _one_pin_pr(REPOSITORY)
 
     def test_merges_the_exact_head_after_tests_succeed(self):
         outcome, calls = self._run(self._listed(pin_pr()))

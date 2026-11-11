@@ -118,6 +118,21 @@ class RegistryPullRequestTests(unittest.TestCase):
             with self.subTest(changes=changes):
                 self.assertFalse(allowed_pr(pull_request(**changes), repository=REPOSITORY))
 
+    def test_fork_pull_request_with_a_registry_branch_name_does_not_block_lookup(self):
+        from intelbrew.registry_pr import _find_pr
+        own = pull_request()
+        fork = pull_request(number=99, isCrossRepository=True, author={"login": "someone"},
+                            headRepository={"nameWithOwner": "someone/homebrew-intel"})
+        unmarked = {key: value for key, value in pull_request(number=98).items()
+                    if key != "isCrossRepository"}
+        with patch("intelbrew.registry_pr.gh_json", return_value=[fork, own, unmarked]):
+            self.assertEqual(_find_pr(REPOSITORY, BRANCH), own)
+        with patch("intelbrew.registry_pr.gh_json", return_value=[fork]):
+            self.assertIsNone(_find_pr(REPOSITORY, BRANCH))
+        with patch("intelbrew.registry_pr.gh_json", return_value=[own, pull_request(number=8)]), \
+                self.assertRaisesRegex(Error, "Multiple open registry PRs"):
+            _find_pr(REPOSITORY, BRANCH)
+
     def test_file_allowlist_rejects_deletion_and_non_registry_change(self):
         with self.assertRaises(Error):
             changed_registry_files(pull_request(files=[{"path": "registry/tool.json", "status": "removed"}]))
