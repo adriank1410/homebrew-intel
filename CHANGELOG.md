@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-- List every release before selecting old ones for deletion. `gh release list --limit 1000` returned only the newest 1000, which on 2026-11-10 covered about 17 days. No listed release reached the 30-day threshold, so the daily retention job reported "0 releases selected for deletion" while more than 2800 releases existed. The listing now asks for up to 100000 and stops with an error if it reaches that limit. Deletion stays capped at 20 a day.
+- List every release before selecting old ones for deletion. `gh release list --limit 1000` returned only the newest 1000, which on 2026-11-10 covered about 17 days. No listed release reached the 30-day threshold, so the daily retention job reported "0 releases selected for deletion" while more than 2800 releases existed. The listing now asks for up to 100000 and stops with an error if it reaches that limit. Retention still deleted 20 releases on 2026-10-12 and stopped once the repository passed 1000.
+- Raise the daily release deletion cap from 20 to 100 and the job timeout from 10 to 20 minutes. About 60 releases a day were published in early November 2026.
 - Apply release retention only on `main`. A manual dispatch from another ref is always a dry-run, because referenced releases are read from the checked-out registry.
 - Stop asking GitHub about a registry pull that has already merged while a sweep waits to start the next wave. One request per root per poll could reach 1464 requests in 20 minutes on the workflow token.
 - After "Re-run failed jobs", look for each registry pull on the branch of the run attempt that published it. The continuation used the current attempt for every root, never found the earlier pulls, waited 20 minutes and started no wave.

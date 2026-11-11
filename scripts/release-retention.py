@@ -59,7 +59,9 @@ def all_releases() -> list[dict]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
-    parser.add_argument("--max-delete", type=int, default=20)
+    # About 60 releases a day were published in early November 2026, so a
+    # cap of 20 could not keep up. 20 deletions took 67 s on 2026-10-12.
+    parser.add_argument("--max-delete", type=int, default=100)
     args = parser.parse_args()
     apply_mode = args.apply or os.environ.get("INTELBREW_RETENTION_APPLY", "").lower() == "true"
     releases = all_releases()

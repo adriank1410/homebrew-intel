@@ -151,6 +151,24 @@ class RetentionSafetyTests(unittest.TestCase):
         self.assertIn("DRY-RUN: 3 releases selected for deletion", out.getvalue())
         gh.assert_not_called()
 
+    def test_default_cap_exceeds_the_daily_publication_rate(self):
+        import io, sys
+        today = datetime.now(timezone.utc)
+        listed = [{"tagName": f"intel-{i}-1-tool", "isDraft": False,
+                   "createdAt": (today - timedelta(days=40 + i)).isoformat().replace("+00:00", "Z")}
+                  for i in range(1, 152)]
+        with patch.object(sys, "argv", ["release-retention.py"]), \
+                patch.dict("os.environ", {"INTELBREW_RETENTION_APPLY": "false"}), \
+                patch.object(retention_script, "gh_json", return_value=listed), \
+                patch.object(retention_script, "open_pull_requests", return_value=[]), \
+                patch.object(retention_script, "referenced_releases", return_value=set()), \
+                patch("sys.stdout", new_callable=io.StringIO) as out:
+            self.assertEqual(retention_script.main(), 0)
+        # 151 old releases of one formula: the newest stays, 150 qualify, 100 are taken.
+        self.assertIn("DRY-RUN: 100 releases selected for deletion", out.getvalue())
+        workflow = (ROOT / ".github/workflows/release-retention.yml").read_text(encoding="utf-8")
+        self.assertIn("timeout-minutes: 20", workflow)
+
     def test_workflow_deletes_only_from_main(self):
         workflow = (ROOT / ".github/workflows/release-retention.yml").read_text(encoding="utf-8")
         self.assertIn(

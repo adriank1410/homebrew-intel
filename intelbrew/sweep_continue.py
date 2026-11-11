@@ -212,7 +212,7 @@ def run_continuation(
         return 0
     # A merged pull stays merged, so it is not requested again. One request per
     # root per poll would be 24 roots x 61 polls = 1464 requests in 20 minutes
-    # against the 1000 an hour that GITHUB_TOKEN gets for this repository.
+    # on the workflow token, which registry maintenance also uses.
     merged: set[str] = set()
     for _poll in range(MAX_POLLS):
         statuses: dict[str, str] = {root: "merged" for root in merged}
