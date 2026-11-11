@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "qtlottie--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "736a575244c173e810a41459e204142bfbd8471c3d42f36bcedab5e6bf5f2bfc",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtlottie",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "f9fe9458ad7a33bfecda40280b050565b356db675245319c86c67cd3188d8a4d",
-  "release": "intel-42492099019-1-qtlottie",
+  "release": "intel-42984772671-1-qtlottie",
   "revision": 1,
-  "run_id": "42492099019",
+  "run_id": "42984772671",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -134,9 +134,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -200,15 +200,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "28668681b7951420daa970448aeb4308c86a7f27384db2cbd77c161e2e95521f",
-  "size": 351593,
+  "sha256": "dc44bc1164fcff85ecd8bc9f5e147e313da8146eaad6ab34c24b52efe67575c9",
+  "size": 351599,
   "source": {
     "filename": "qtlottie--6.12.0_1.sources.tar.gz",
-    "sha256": "1dfb8a7db99d1d08aaf6a23e7a4bc780440cb32c9b0c203ffa0b0d593a427c75",
-    "size": 864149
+    "sha256": "892549a20531ca5cd3589a6a15253b47e633981658643434575d7879b1a26dba",
+    "size": 864159
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "da555565352bc6590f79bfe07e98ca2d53a43a29"
+  "workflow_commit": "795142db72100e655dbed769809644d8f46cdb4d"
 }
