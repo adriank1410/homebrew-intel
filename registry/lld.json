@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "lld--23.1.5.sequoia.bottle.tar.gz",
   "formula_sha256": "b685d393605469f9b31a18cfa6ff4c340016fa7e9e090f5957b322b3ae8bc060",
   "license": {
@@ -13,9 +13,9 @@
   "name": "lld",
   "pkg_version": "23.1.5",
   "recipe_sha256": "0627c4d65cec137ae6fb87964daf0b9f961dac7a0e3f30360e2c4a4423163afa",
-  "release": "intel-42068122922-1-deno",
+  "release": "intel-42954810606-1-deno",
   "revision": 0,
-  "run_id": "42068122922",
+  "run_id": "42954810606",
   "runtime_dependencies": [
     {
       "formula_sha256": "2645efaa0a0ea21d615acef0ef8779e37194246033088f58f8817d15df9c16ed",
@@ -23,9 +23,9 @@
       "pkg_version": "23.1.5"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -44,15 +44,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "daa92f97d443f7f8bf6c033c20178a1e962f576a771ce926b0886864da9a109a",
-  "size": 2017786,
+  "sha256": "4b8f82fb8488f042e5d2a0185994e7bdabc6d1861e1c4a79f5eb55362d27a2b5",
+  "size": 2017790,
   "source": {
     "filename": "lld--23.1.5.sources.tar.gz",
-    "sha256": "2896ba16f6eebfe998bb33f46a22dd83876a1e2ca4a556fd7e459e595bcb51f7",
-    "size": 179295270
+    "sha256": "85fa2c617917c913756c721ecad9e43d0d156a55ce80a7af286beb01b7ebc106",
+    "size": 179295269
   },
   "tag": "sequoia",
   "version": "23.1.5",
   "version_scheme": 0,
-  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
+  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
 }
