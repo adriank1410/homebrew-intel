@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.10 – retention, source export and registry automation
 
 - List every release before selecting old ones for deletion. `gh release list --limit 1000` returned only the newest 1000, which on 2026-11-10 covered about 17 days. No listed release reached the 30-day threshold, so the daily retention job reported "0 releases selected for deletion" while more than 2800 releases existed. The listing now asks for up to 100000 and stops with an error if it reaches that limit. Retention still deleted 20 releases on 2026-10-12 and stopped once the repository passed 1000.
 - Raise the daily release deletion cap from 20 to 100 and the job timeout from 10 to 20 minutes. About 60 releases a day were published in early November 2026.
