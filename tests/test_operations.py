@@ -59,6 +59,24 @@ class OperationTests(unittest.TestCase):
             if request['mode']=='install' and request['name']=='tool':raise Error('network failure')
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action):
             with self.assertRaisesRegex(Error,'Stopped after 1 package;'):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+    def test_upgrade_keeps_request_flags_of_installed_roots(self):
+        nodes={'tool':meta(runtime=['dep','fresh'],official=True,installed_versions=['0.9']),
+               'dep':meta('dep',official=True,installed_versions=['0.9']),'fresh':meta('fresh',official=True),
+               'new':meta('new',official=True)}
+        def flags(**kwargs):
+            p=Planner(lambda names:{n:copy.deepcopy(nodes[n]) for n in names},{}).make(['tool','dep','new'])
+            seen={}
+            def action(request,**_):
+                if request['mode']=='inspect':return nodes
+                if request['mode']=='receipt':return {'tap':'homebrew/core','poured_from_bottle':True}
+                seen[request['name']]=request['as_dependency']
+            with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action),redirect_stdout(io.StringIO()):
+                apply_plan(p,{},load_config(),cache=Path(d)/'cache',**kwargs)
+            return seen
+        # install: every named root is requested; only the pulled-in dependency is not.
+        self.assertEqual(flags(),{'tool':False,'dep':False,'new':False,'fresh':True})
+        # upgrade: roots that already have a keg keep whatever flag that keg has.
+        self.assertEqual(flags(keep_request_flags=True),{'tool':True,'dep':True,'new':False,'fresh':True})
     def test_interrupt_reports_the_journal_and_exits_130_without_a_traceback(self):
         from intelbrew import cli
         nodes={'tool':meta(runtime=['dep'],official=True),'dep':meta('dep',official=True)};p=self.plan(nodes)

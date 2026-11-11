@@ -351,7 +351,8 @@ def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:
             print("No new coverage PR needed.", file=stream)
 
 
-def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose: bool = False) -> None:
+def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose: bool = False,
+               keep_request_flags: bool = False) -> None:
     ensure_complete(plan)
     cache.mkdir(parents=True, exist_ok=True, mode=0o700)
     if cache.is_symlink():
@@ -411,7 +412,12 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                     "mode": "install", "name": name,
                     "target": str(downloaded[name]) if name in downloaded else f"homebrew/core/{name}",
                     "formula_sha256": item["formula_sha256"], "pkg_version": item["pkg_version"],
-                    "as_dependency": name not in plan["roots"],
+                    # `brew install` without --as-dependency marks the keg as
+                    # installed on request; with it, Homebrew keeps the old
+                    # keg's flag. A bare `upgrade` makes every outdated formula
+                    # a root, so an upgrade must not relabel what is installed.
+                    "as_dependency": (name not in plan["roots"]
+                                      or (keep_request_flags and bool(item["installed_versions"]))),
                 }
                 if name in downloaded:
                     request["sha256"] = records[name]["sha256"]
@@ -545,7 +551,8 @@ def main(argv: list[str] | None = None) -> int:
                 raise Error("plan is read-only; use install/upgrade --apply")
             apply_plan(plan, records, config,
                        cache=Path.home() / "Library/Caches/homebrew-intel",
-                       verbose=args.verbose)
+                       verbose=args.verbose,
+                       keep_request_flags=args.command == "upgrade")
         elif not args.json:
             print("\nDry run only. Add --apply to install. Missing bottles cause an error, not compilation.")
         return 0
