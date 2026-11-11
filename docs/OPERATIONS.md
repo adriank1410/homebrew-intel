@@ -219,7 +219,10 @@ boot JDK of `openjdk` 27.x with the pinned official x64 JDK 26.0.2.1. It is
 documented in the same file.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight. A manual single-root request has its own concurrency group,
-so an urgent repair can run alongside a sweep. Repeated requests for the same root
+so an urgent repair can run alongside a sweep. A manual multi-root request and a
+`policy/build-request.json` push each get a group of their own too: in the shared
+sweep group a waiting run is replaced by the next one, so the hourly schedule
+cancelled such a request while it waited behind a sweep. Repeated requests for the same root
 remain serialized through a lock on the canonical planned root, also shared with
 scheduled builds; aliases and whitespace cannot bypass it. Manual requests can
 temporarily add runners beyond the sweep's five-root limit.

@@ -21,7 +21,11 @@ permissions:
   contents: read
 concurrency:
   # Explicit single-root repairs must not queue behind a long scheduled sweep.
-  group: intelbrew-bottles-${{ github.ref }}${{ github.event_name == 'workflow_dispatch' && inputs.formula != 'all' && !contains(inputs.formula, ',') && format('-{0}', inputs.formula) || '' }}
+  # A group keeps one pending run and a newer one replaces it, so a multi-root
+  # request or a build-request push waiting behind a sweep was cancelled by the
+  # next hourly run. Those get a group of their own; only sweeps share one.
+  # The per-root lock below still serializes work on the same root.
+  group: intelbrew-bottles-${{ github.ref }}${{ github.event_name == 'workflow_dispatch' && inputs.formula != 'all' && !contains(inputs.formula, ',') && format('-{0}', inputs.formula) || (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.formula != 'all')) && format('-run-{0}', github.run_id) || '' }}
   cancel-in-progress: false
 jobs:
   plan:
