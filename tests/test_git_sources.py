@@ -63,6 +63,21 @@ puts JSON.generate(GitSources.export(r, {json.dumps(str(out))}))'''
             listing = subprocess.check_output(["tar", "-tf", str(archive)], text=True)
             self.assertEqual(listing.strip().splitlines(), ["README"])
 
+    def test_export_keeps_export_ignored_files_and_unexpanded_keywords(self):
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw); repo, _ = self._repo(root); out = root / "out"; out.mkdir()
+            (repo / "tests").mkdir(); (repo / "tests/a.txt").write_text("a\n")
+            (repo / "version.txt").write_text("rev $Format:%H$\n")
+            (repo / ".gitattributes").write_text("tests export-ignore\nversion.txt export-subst\n")
+            subprocess.run(["git", "-C", str(repo), "add", "-A"], check=True)
+            subprocess.run(["git", "-C", str(repo), "commit", "-q", "-m", "attributes"], check=True)
+            revision = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
+            result = json.loads(self._ruby(self._resource_script(repo, revision, out)).splitlines()[-1])
+            with tarfile.open(result["path"]) as archive:
+                names = sorted(member.name for member in archive.getmembers() if member.isfile())
+                self.assertEqual(names, [".gitattributes", "README", "tests/a.txt", "version.txt"])
+                self.assertEqual(archive.extractfile("version.txt").read(), b"rev $Format:%H$\n")
+
     def test_rejects_cached_revision_mismatch(self):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw); repo, revision = self._repo(root); out = root / "out"; out.mkdir()

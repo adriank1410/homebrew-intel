@@ -213,3 +213,17 @@ class PublicationRetryTests(unittest.TestCase):
             result = git(["ls-remote", "--heads", "origin", "refs/heads/main"])
             self.assertEqual(result, "abc refs/heads/main")
             self.assertEqual(run_mock.call_count, 2)
+
+    def test_main_reports_a_malformed_candidate_without_a_traceback(self):
+        import io
+        import sys
+        from contextlib import redirect_stderr
+        from intelbrew import publish as publish_module
+        err = io.StringIO()
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(sys, "argv", ["publish", "--root", "tool", "--candidate", directory]), \
+                patch.object(publish_module, "publish",
+                             side_effect=AttributeError("'str' object has no attribute 'get'")), \
+                redirect_stderr(err):
+            self.assertEqual(publish_module.main(), 1)
+        self.assertIn("intelbrew publish: 'str' object has no attribute 'get'", err.getvalue())

@@ -26,9 +26,9 @@ PUBLISH_STEP = "Publish immutable release and attested registry PR"
 _WAITING = {"missing", "open", "unknown"}
 
 
-def published_roots(jobs: list[Any]) -> list[str]:
-    """Return roots whose publish step created a registry pull."""
-    roots: list[str] = []
+def _published_jobs(jobs: list[Any]) -> list[tuple[str, dict[str, Any]]]:
+    """Return ``(root, job)`` for each publish job that created a registry pull."""
+    published: list[tuple[str, dict[str, Any]]] = []
     for job in jobs:
         if not isinstance(job, dict) or job.get("status") != "completed":
             continue
@@ -43,8 +43,32 @@ def published_roots(jobs: list[Any]) -> list[str]:
             continue
         if any(isinstance(step, dict) and step.get("name") == PUBLISH_STEP
                and step.get("conclusion") == "success" for step in steps):
-            roots.append(root)
-    return sorted(set(roots))
+            published.append((root, job))
+    return published
+
+
+def published_roots(jobs: list[Any]) -> list[str]:
+    """Return roots whose publish step created a registry pull."""
+    return sorted({root for root, _job in _published_jobs(jobs)})
+
+
+def publication_attempts(jobs: list[Any], current: str) -> dict[str, str]:
+    """Map each published root to the run attempt that published it.
+
+    After "Re-run failed jobs" the latest job list still holds the publish
+    jobs that succeeded in an earlier attempt. Their pulls are on branches
+    named for that attempt, not for the attempt running this continuation.
+    A job without a usable attempt keeps ``current``.
+    """
+    limit = _digits(current, maximum=1000, minimum=1)
+    attempts: dict[str, str] = {}
+    for root, job in _published_jobs(jobs):
+        value = job.get("run_attempt")
+        if limit is None or type(value) is not int or not 1 <= value <= limit:
+            value = current
+        if root not in attempts or str(value) == current:
+            attempts[root] = str(value)
+    return attempts
 
 
 def branch_for(root: str, run_id: str, attempt: str) -> str:
@@ -168,9 +192,12 @@ def run_continuation(
         return 0
     deadline = clock() + timeout
     roots: list[str] | None = None
+    attempts: dict[str, str] = {}
     for _poll in range(MAX_POLLS):
         try:
-            roots = published_roots(fetch_jobs())
+            jobs = fetch_jobs()
+            roots = published_roots(jobs)
+            attempts = publication_attempts(jobs, attempt)
             break
         except (Error, OSError, TypeError, ValueError, KeyError) as exc:
             print(f"Sweep continuation could not read jobs: {exc}")
@@ -183,16 +210,24 @@ def run_continuation(
     if not roots:
         print("Sweep continuation stopped: no bottle registry pull was published.")
         return 0
+    # A merged pull stays merged, so it is not requested again. One request per
+    # root per poll would be 24 roots x 61 polls = 1464 requests in 20 minutes
+    # on the workflow token, which registry maintenance also uses.
+    merged: set[str] = set()
     for _poll in range(MAX_POLLS):
-        statuses: dict[str, str] = {}
+        statuses: dict[str, str] = {root: "merged" for root in merged}
         try:
             for root in roots:
-                branch = branch_for(root, run_id, attempt)
+                if root in merged:
+                    continue
+                branch = branch_for(root, run_id, attempts.get(root, attempt))
                 statuses[root] = pull_status(
                     fetch_pulls(branch), repository=repository, branch=branch)
+                if statuses[root] == "merged":
+                    merged.add(root)
         except (Error, OSError, TypeError, ValueError, KeyError) as exc:
             print(f"Sweep continuation could not read pulls: {exc}")
-            statuses = {root: "unknown" for root in roots}
+            statuses = {root: "merged" if root in merged else "unknown" for root in roots}
         decision = continuation_decision(event, formula, wave, roots, statuses)
         if decision == "dispatch":
             try:

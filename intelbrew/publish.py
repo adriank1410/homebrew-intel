@@ -231,7 +231,7 @@ def main() -> int:
     try:
         publish(args.candidate.resolve(), canonical_name(args.root), source_run=args.source_run)
         return 0
-    except (Error, KeyError, OSError, TypeError, ValueError) as exc:
+    except (Error, KeyError, OSError, TypeError, ValueError, AttributeError) as exc:
         print(f"intelbrew publish: {exc}", file=sys.stderr)
         return 1
 

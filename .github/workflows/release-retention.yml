@@ -20,7 +20,8 @@ jobs:
       github.repository == 'adriank1410/homebrew-intel' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    # 100 deletions at the 3.4 s each measured on 2026-10-12 take about six minutes.
+    timeout-minutes: 20
     permissions:
       contents: write
       pull-requests: read
@@ -41,5 +42,8 @@ jobs:
       - name: Retain referenced releases and remove old duplicates
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          INTELBREW_RETENTION_APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+          # Referenced releases are read from the checked-out registry, so a
+          # stale branch would see releases that main still uses as unreferenced.
+          # Off main the run is always a dry-run.
+          INTELBREW_RETENTION_APPLY: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || inputs.apply) }}
         run: python3 scripts/release-retention.py

@@ -63,6 +63,32 @@ class RootWorkflowTests(unittest.TestCase):
         self.assertIn("format('-{0}', inputs.formula)", group)
         self.assertIn("${{ github.ref }}", group)
 
+    def test_only_full_sweeps_share_the_replaceable_sweep_group(self):
+        group = workflow("bottles.yml")["concurrency"]["group"]
+        prefix, single, other, sweep = (
+            "intelbrew-bottles-${{ github.ref }}${{ ",
+            "github.event_name == 'workflow_dispatch' && inputs.formula != 'all' && "
+            "!contains(inputs.formula, ',') && format('-{0}', inputs.formula)",
+            "(github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && "
+            "inputs.formula != 'all')) && format('-run-{0}', github.run_id)",
+            "''",
+        )
+        self.assertEqual(group, prefix + " || ".join((single, other, sweep)) + " }}")
+
+        def suffix(event, formula):
+            # The same expression, evaluated the way GitHub does: && before ||.
+            dispatch = event == "workflow_dispatch"
+            if dispatch and formula != "all" and "," not in formula:
+                return f"-{formula}"
+            if event == "push" or (dispatch and formula != "all"):
+                return "-run-RUN"
+            return ""
+        self.assertEqual(suffix("schedule", ""), "")
+        self.assertEqual(suffix("workflow_dispatch", "all"), "")
+        self.assertEqual(suffix("workflow_dispatch", "simdutf"), "-simdutf")
+        self.assertEqual(suffix("workflow_dispatch", "simdjson,gnupg"), "-run-RUN")
+        self.assertEqual(suffix("push", ""), "-run-RUN")
+
     def test_root_workflow_declares_explicit_inputs_and_secret(self):
         document = workflow("bottle-root.yml")
         trigger = document.get("on", document.get("true"))

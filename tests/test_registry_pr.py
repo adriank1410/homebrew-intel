@@ -118,6 +118,21 @@ class RegistryPullRequestTests(unittest.TestCase):
             with self.subTest(changes=changes):
                 self.assertFalse(allowed_pr(pull_request(**changes), repository=REPOSITORY))
 
+    def test_fork_pull_request_with_a_registry_branch_name_does_not_block_lookup(self):
+        from intelbrew.registry_pr import _find_pr
+        own = pull_request()
+        fork = pull_request(number=99, isCrossRepository=True, author={"login": "someone"},
+                            headRepository={"nameWithOwner": "someone/homebrew-intel"})
+        unmarked = {key: value for key, value in pull_request(number=98).items()
+                    if key != "isCrossRepository"}
+        with patch("intelbrew.registry_pr.gh_json", return_value=[fork, own, unmarked]):
+            self.assertEqual(_find_pr(REPOSITORY, BRANCH), own)
+        with patch("intelbrew.registry_pr.gh_json", return_value=[fork]):
+            self.assertIsNone(_find_pr(REPOSITORY, BRANCH))
+        with patch("intelbrew.registry_pr.gh_json", return_value=[own, pull_request(number=8)]), \
+                self.assertRaisesRegex(Error, "Multiple open registry PRs"):
+            _find_pr(REPOSITORY, BRANCH)
+
     def test_file_allowlist_rejects_deletion_and_non_registry_change(self):
         with self.assertRaises(Error):
             changed_registry_files(pull_request(files=[{"path": "registry/tool.json", "status": "removed"}]))
@@ -218,6 +233,127 @@ class RegistryPullRequestTests(unittest.TestCase):
                                        [root, proposed_dependency], [stale_snapshot], manifest)
             self.assertEqual(subprocess.run(["git", "--git-dir", str(origin), "rev-parse", BRANCH],
                                             text=True, capture_output=True, check=True).stdout.strip(), rebuilt_head)
+
+    def test_conflicted_root_update_is_rebuilt_when_main_still_holds_the_old_root(self):
+        # A root update whose only conflict is a dependency a sibling merged first.
+        with tempfile.TemporaryDirectory() as raw:
+            base = Path(raw); origin = base / "origin.git"; seed = base / "seed"
+            subprocess.run(["git", "init", "--bare", "-q", str(origin)], check=True)
+            subprocess.run(["git", "init", "-q", str(seed)], check=True)
+            for key, value in (("user.name", "test"), ("user.email", "test@example.invalid"),
+                               ("commit.gpgsign", "false")):
+                subprocess.run(["git", "-C", str(seed), "config", key, value], check=True)
+            old_root = record(name="root", release="intel-100-1-root", version="0.9", pkg_version="0.9",
+                              filename="root--0.9.sequoia.bottle.tar.gz")
+            dependency = record(release="intel-999-1-tool", sha256="d" * 64, size=999)
+            (seed / "registry").mkdir()
+            (seed / "registry/root.json").write_text(json.dumps(old_root))
+            (seed / "registry/tool.json").write_text(json.dumps(dependency))
+            subprocess.run(["git", "-C", str(seed), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(seed), "commit", "-q", "-m", "main"], check=True)
+            subprocess.run(["git", "-C", str(seed), "branch", "-M", "main"], check=True)
+            subprocess.run(["git", "-C", str(seed), "remote", "add", "origin", str(origin)], check=True)
+            subprocess.run(["git", "-C", str(seed), "push", "-q", "origin", "main"], check=True)
+            subprocess.run(["git", "-C", str(seed), "switch", "-q", "-c", BRANCH], check=True)
+            (seed / "stale").write_text("branch")
+            subprocess.run(["git", "-C", str(seed), "add", "stale"], check=True)
+            subprocess.run(["git", "-C", str(seed), "commit", "-q", "-m", "branch"], check=True)
+            subprocess.run(["git", "-C", str(seed), "push", "-q", "origin", BRANCH], check=True)
+            head = subprocess.run(["git", "-C", str(seed), "rev-parse", "HEAD"], text=True,
+                                  capture_output=True, check=True).stdout.strip()
+            new_root = record(name="root", release=RELEASE)
+            proposed_dependency = {**dependency, "release": RELEASE, "sha256": "e" * 64, "size": 1000}
+            manifest = {"schema": 1, "verified": True, "root": "root", "core_commit": G,
+                        "brew_commit": G, "workflow_commit": G,
+                        "packages": [{**new_root, "release": None}, {**proposed_dependency, "release": None}]}
+            def boundary(args, **kwargs):
+                self.assertEqual(args[:2], ["repo", "clone"])
+                subprocess.run(["git", "clone", "-q", str(origin), args[3]], check=True)
+                return ""
+            arguments = (REPOSITORY, pull_request(headRefOid=head), [new_root, proposed_dependency],
+                         [old_root, dependency], manifest)
+            # Main changed the root after the branch point: still stale, nothing is pushed.
+            with patch("intelbrew.registry_pr.gh") as untouched, self.assertRaisesRegex(
+                    Error, "registry root already present on main"):
+                _rebuild_conflicted_pr(*arguments)
+            untouched.assert_not_called()
+            with patch("intelbrew.registry_pr.gh") as untouched, self.assertRaisesRegex(
+                    Error, "registry root already present on main"):
+                _rebuild_conflicted_pr(*arguments, unchanged={"tool"})
+            untouched.assert_not_called()
+            # Main still holds the root this branch started from: rebuild on main.
+            with patch("intelbrew.registry_pr.gh", side_effect=boundary):
+                _rebuild_conflicted_pr(*arguments, unchanged={"root"})
+            inspect = base / "inspect"
+            subprocess.run(["git", "clone", "-q", "-b", BRANCH, str(origin), str(inspect)], check=True)
+            self.assertEqual(json.loads((inspect / "registry/root.json").read_text()), new_root)
+            self.assertEqual(json.loads((inspect / "registry/tool.json").read_text()), dependency)
+            self.assertFalse((inspect / "stale").exists())
+            changed = subprocess.run(["git", "-C", str(inspect), "diff", "--name-only", "origin/main", "HEAD"],
+                                     text=True, capture_output=True, check=True).stdout.split()
+            self.assertEqual(changed, ["registry/root.json"])
+
+    def test_unchanged_on_main_compares_main_with_the_merge_base(self):
+        from intelbrew.registry_pr import _unchanged_on_main
+        merge_base = "9" * 40
+        root = record(name="root", release="intel-100-1-root")
+        moved = record(name="moved", release="intel-101-1-moved")
+        added = record(name="added", release="intel-102-1-added")
+        at_base = {"root": root, "moved": {**moved, "release": "intel-90-1-moved"}}
+        calls = []
+        def fake(args):
+            calls.append(args)
+            if args[1] == f"repos/{REPOSITORY}/compare/main...{HEAD}":
+                return {"merge_base_commit": {"sha": merge_base}}
+            self.assertEqual(args[:3], ["api", "--method", "GET"])
+            self.assertEqual(args[4:], ["-f", f"ref={merge_base}"])
+            name = args[3].rsplit("/", 1)[1].removesuffix(".json")
+            if name not in at_base:
+                raise Error("gh failed (1): gh: Not Found (HTTP 404)")
+            return {"type": "file", "content": base64.b64encode(json.dumps(at_base[name]).encode()).decode()}
+        with patch("intelbrew.registry_pr.gh_json", side_effect=fake):
+            self.assertEqual(_unchanged_on_main(REPOSITORY, pull_request(), [root, moved, added]), {"root"})
+        self.assertEqual(calls[0], ["api", f"repos/{REPOSITORY}/compare/main...{HEAD}"])
+        for broken in ({}, {"merge_base_commit": None}, {"merge_base_commit": {"sha": "short"}}, []):
+            with self.subTest(broken=broken), patch("intelbrew.registry_pr.gh_json", return_value=broken), \
+                    self.assertRaises(Error):
+                _unchanged_on_main(REPOSITORY, pull_request(), [root])
+        def unavailable(args):
+            if "compare" in args[1]:
+                return {"merge_base_commit": {"sha": merge_base}}
+            raise Error("gh failed (1): HTTP 502")
+        with patch("intelbrew.registry_pr.gh_json", side_effect=unavailable), self.assertRaisesRegex(Error, "502"):
+            _unchanged_on_main(REPOSITORY, pull_request(), [root])
+        with self.assertRaisesRegex(Error, "head commit"):
+            _unchanged_on_main(REPOSITORY, pull_request(headRefOid=None), [root])
+
+    def test_reconcile_rebuilds_a_conflict_with_the_unchanged_set_and_keeps_the_pr_on_lookup_failure(self):
+        dirty = pull_request(number=7, mergeStateStatus="DIRTY")
+        root = record(name="root", release=RELEASE)
+        old_root = record(name="root", release="intel-100-1-root")
+        other = record(name="other", release="intel-5-1-other")
+        manifest = {"root": "root", "packages": []}
+        with patch("intelbrew.registry_pr.gh_json", return_value=[dirty]), \
+             patch("intelbrew.registry_pr._find_pr", return_value=dirty), \
+             patch("intelbrew.registry_pr.validate_pr", return_value=([root], [old_root, other], manifest)), \
+             patch("intelbrew.registry_pr._unchanged_on_main", return_value={"root"}) as lookup, \
+             patch("intelbrew.registry_pr._rebuild_conflicted_pr") as rebuild, \
+             patch("intelbrew.registry_pr.gh") as gh_mock:
+            reconcile(REPOSITORY)
+        # Only records this pull request changes are looked up.
+        lookup.assert_called_once_with(REPOSITORY, dirty, [old_root])
+        rebuild.assert_called_once_with(REPOSITORY, dirty, [root], [old_root, other], manifest, {"root"})
+        gh_mock.assert_not_called()
+        with patch("intelbrew.registry_pr.gh_json", return_value=[dirty]), \
+             patch("intelbrew.registry_pr._find_pr", return_value=dirty), \
+             patch("intelbrew.registry_pr.validate_pr", return_value=([root], [old_root], manifest)), \
+             patch("intelbrew.registry_pr._unchanged_on_main", side_effect=Error("gh failed (1): HTTP 502")), \
+             patch("intelbrew.registry_pr._rebuild_conflicted_pr") as rebuild, \
+             patch("intelbrew.registry_pr.gh") as gh_mock, \
+             self.assertRaisesRegex(Error, "PR 7: gh failed"):
+            reconcile(REPOSITORY)
+        rebuild.assert_not_called()
+        gh_mock.assert_not_called()
 
     def test_conflicted_rebuild_refuses_incompatible_existing_record_before_git_io(self):
         dependency = record(release=None)

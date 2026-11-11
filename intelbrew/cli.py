@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from . import __version__
-from .core import (Error, Planner, artifact_url, brew_env, check_bottle,
+from .core import (LOCAL_BLOCKS, Error, Planner, artifact_url, brew_env, check_bottle,
                    download, ensure_complete, load_config, matching_record,
                    native, read_json, registry, require_sha, retry_transient, run, write_json_new)
 from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
@@ -206,7 +206,10 @@ def missing_provider_details(plan: dict, records: dict) -> list[dict]:
         seen.add(name)
         item = plan["nodes"][name]
         published = records.get(name)
-        if published is None:
+        if item.get("blocked") in LOCAL_BLOCKS:
+            # The planner stopped at this Mac's own state, not at bottle coverage.
+            reason = item["blocked"]
+        elif published is None:
             reason = "no_published_record"
         elif (item["pkg_version"] != published["pkg_version"]
               or item["version_scheme"] != published["version_scheme"]):
@@ -299,6 +302,10 @@ def render_skipped(skipped: list[dict], stream: Any = None,
             "version_or_scheme_differs": "version or scheme differs",
             "recipe_differs": "recipe differs",
             "runtime_dependency_drift": "runtime dependency drift",
+            "installed_options_or_head": "installed with options or HEAD",
+            "foreign_install": "foreign install",
+            "installed_newer": "installed version is newer",
+            "pinned": "pinned",
         }
         reasons = Counter(item["reason"] for item in missing_providers)
         summary = ", ".join(
@@ -344,7 +351,8 @@ def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:
             print("No new coverage PR needed.", file=stream)
 
 
-def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose: bool = False) -> None:
+def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose: bool = False,
+               keep_request_flags: bool = False) -> None:
     ensure_complete(plan)
     cache.mkdir(parents=True, exist_ok=True, mode=0o700)
     if cache.is_symlink():
@@ -404,7 +412,12 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                     "mode": "install", "name": name,
                     "target": str(downloaded[name]) if name in downloaded else f"homebrew/core/{name}",
                     "formula_sha256": item["formula_sha256"], "pkg_version": item["pkg_version"],
-                    "as_dependency": name not in plan["roots"],
+                    # `brew install` without --as-dependency marks the keg as
+                    # installed on request; with it, Homebrew keeps the old
+                    # keg's flag. A bare `upgrade` makes every outdated formula
+                    # a root, so an upgrade must not relabel what is installed.
+                    "as_dependency": (name not in plan["roots"]
+                                      or (keep_request_flags and bool(item["installed_versions"]))),
                 }
                 if name in downloaded:
                     request["sha256"] = records[name]["sha256"]
@@ -416,6 +429,13 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
             packages = "package" if completed == 1 else "packages"
             raise Error(f"Stopped after {completed} {packages}; this is not a transaction rollback. "
                         f"Old versioned kegs are retained. Journal: {journal_dir}. {exc}") from exc
+        except KeyboardInterrupt:
+            # Without this the journal path is lost behind a Python traceback.
+            packages = "package" if completed == 1 else "packages"
+            onoe(f"Interrupted after {completed} completed {packages}; this is not a transaction rollback. "
+                 f"The package being installed may be incomplete. Old versioned kegs are retained. "
+                 f"Journal: {journal_dir}.")
+            raise
         ohai("Summary")
         bottles = "bottle" if completed == 1 else "bottles"
         print(f"🍺  Installed {completed} {bottles}. No Homebrew source build was permitted.")
@@ -531,13 +551,17 @@ def main(argv: list[str] | None = None) -> int:
                 raise Error("plan is read-only; use install/upgrade --apply")
             apply_plan(plan, records, config,
                        cache=Path.home() / "Library/Caches/homebrew-intel",
-                       verbose=args.verbose)
+                       verbose=args.verbose,
+                       keep_request_flags=args.command == "upgrade")
         elif not args.json:
             print("\nDry run only. Add --apply to install. Missing bottles cause an error, not compilation.")
         return 0
     except (Error, KeyError, TypeError, OSError) as exc:
         onoe(str(exc))
         return 1
+    except KeyboardInterrupt:
+        onoe("Interrupted.")
+        return 130
 
 
 if __name__ == "__main__":
