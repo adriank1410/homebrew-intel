@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any_skip_relocation",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "sphinx-doc--9.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "dd2090da9e7f583369eecb370be309db24e9343515fa5a8b4d1b7e88b89034ed",
   "license": "BSD-2-Clause",
   "name": "sphinx-doc",
   "pkg_version": "9.2.0",
   "recipe_sha256": "6d08c30d4a5e8ca3829505bcf756c5cb399b73818a2f52ebab239aa5fb6535f2",
-  "release": "intel-42068122922-1-jpeg-xl",
+  "release": "intel-42954810606-1-jpeg-xl",
   "revision": 0,
-  "run_id": "42068122922",
+  "run_id": "42954810606",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "c278c562aaf26ff9c9742c8ce26c3c75117d85a5a5f7d323402bf5538c5e905a",
@@ -24,9 +24,9 @@
       "pkg_version": "2026.10.23"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0738ce7b97b2b1445cbad6696705a43e5c6bb1d06b24527acf33cf3d79d85f8a",
-  "size": 15836434,
+  "sha256": "e5f67a37c01f24c37327ec0814d7b2c0e7a7664a0c0b70ac4f190daff2da7beb",
+  "size": 15835770,
   "source": {
     "filename": "sphinx-doc--9.2.0.sources.tar.gz",
-    "sha256": "c856fa56198ab46126d4b72291aec8480c79722487e0a159af3541b103032ad9",
-    "size": 30000510
+    "sha256": "2798c6c66a277de718a139273a13187757a8db8e95585bcf38db83e89a045deb",
+    "size": 30000504
   },
   "tag": "sequoia",
   "version": "9.2.0",
   "version_scheme": 0,
-  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
+  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
 }
