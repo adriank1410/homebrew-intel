@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "c5479ce06d940cab56516a8c0feee1679fcdce5a",
   "filename": "openexr--3.5.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a453358007471329f6598ad0cee0c3ba282f38f6fd17b8eeb16337c53c1d6c99",
   "license": "BSD-3-Clause",
   "name": "openexr",
   "pkg_version": "3.5.3_1",
   "recipe_sha256": "17bc324db2584c52da1d92ac8329f520620051fb96cb6e251f19d862b7c6f114",
-  "release": "intel-42036626130-1-openexr",
+  "release": "intel-42935398553-1-openexr",
   "revision": 1,
-  "run_id": "42036626130",
+  "run_id": "42935398553",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -44,9 +44,9 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "2b035b8e8da68e81b737dbd95dc5b2a86fcd746404dd3a98d88b7a62734e11de",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dc21031e14ed85028a142bfeb78fd6400e5d19d89cca8f7eb837ad498edc8d4b",
+  "sha256": "d36363f2c62e831b05f90753f989909f8a5ccc45c2216b2754c1d5c124a44a2b",
   "size": 1303999,
   "source": {
     "filename": "openexr--3.5.3_1.sources.tar.gz",
-    "sha256": "7bebcce1165ec63cbf4a0502dc861baae3d510a47ffd08f7c4ec7be1500f8a0d",
-    "size": 26430011
+    "sha256": "cac34270726e049a5d722582e126814113baebb75b4c14291f4cc6fd987dcd69",
+    "size": 26430000
   },
   "tag": "sequoia",
   "version": "3.5.3",
   "version_scheme": 0,
-  "workflow_commit": "60e2ae0e3fcbbe92a0e257ce0b2a31481f445635"
+  "workflow_commit": "2416e13506348eebcccccd464de0a2e09d710cf0"
 }

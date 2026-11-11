@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "c5479ce06d940cab56516a8c0feee1679fcdce5a",
   "filename": "openjpeg--2.5.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "4b595e734d2c800750ba2abc90e5a532235fbe82c38b7a7ec09fd11b21d42ce9",
   "license": "BSD-2-Clause",
   "name": "openjpeg",
   "pkg_version": "2.5.4_1",
   "recipe_sha256": "915431603bad9e45dae28681590d4773f3f4b8576880b336b070e45a48f26594",
-  "release": "intel-42068122922-1-openjpeg",
+  "release": "intel-42935398553-1-openjpeg",
   "revision": 1,
-  "run_id": "42068122922",
+  "run_id": "42935398553",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -39,9 +39,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e701935b8718e850877f0c08dd3f7846539d6238c31348797b6f024c299c8fdd",
-  "size": 2395079,
+  "sha256": "0fe4b01d86da944ab40494a0567be95c0e1bd9848da75b8ae25cb7e41d8331ef",
+  "size": 2393899,
   "source": {
     "filename": "openjpeg--2.5.4_1.sources.tar.gz",
-    "sha256": "5e9cf2fea81a43d6f751fa7a1645d43da86cbbf4807d9d6314f36e3112af262b",
-    "size": 2163176
+    "sha256": "e988f73340ea26527dc3a18f088d4456c26596a2f3bd4c7f134c40cab0c9e868",
+    "size": 2163165
   },
   "tag": "sequoia",
   "version": "2.5.4",
   "version_scheme": 0,
-  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
+  "workflow_commit": "2416e13506348eebcccccd464de0a2e09d710cf0"
 }
