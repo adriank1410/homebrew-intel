@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Raise the daily release deletion cap from 100 to 200. The first run at 100, on 2026-11-11, took 3.5 minutes and left about 990 deletable releases, a backlog of about 25 days at that rate against about 60 new releases a day. At 200 it clears in about a week; after that the job deletes only what newly crosses the 30-day threshold.
+
 ## 0.2.10 – retention, source export and registry automation
 
 - List every release before selecting old ones for deletion. `gh release list --limit 1000` returned only the newest 1000, which on 2026-11-10 covered about 17 days. No listed release reached the 30-day threshold, so the daily retention job reported "0 releases selected for deletion" while more than 2800 releases existed. The listing now asks for up to 100000 and stops with an error if it reaches that limit. Retention still deleted 20 releases on 2026-10-12 and stopped once the repository passed 1000.

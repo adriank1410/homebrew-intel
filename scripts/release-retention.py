@@ -60,8 +60,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
     # About 60 releases a day were published in early November 2026, so a
-    # cap of 20 could not keep up. 20 deletions took 67 s on 2026-10-12.
-    parser.add_argument("--max-delete", type=int, default=100)
+    # cap of 20 could not keep up. On 2026-11-11 about 990 releases were
+    # deletable; at 100 a day that backlog lasts about 25 days, at 200 about 7.
+    # 100 deletions took 3.5 minutes that day, two DELETE requests each.
+    parser.add_argument("--max-delete", type=int, default=200)
     args = parser.parse_args()
     apply_mode = args.apply or os.environ.get("INTELBREW_RETENTION_APPLY", "").lower() == "true"
     releases = all_releases()

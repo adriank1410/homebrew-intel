@@ -20,7 +20,7 @@ jobs:
       github.repository == 'adriank1410/homebrew-intel' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-24.04
-    # 100 deletions at the 3.4 s each measured on 2026-10-12 take about six minutes.
+    # 200 deletions at the 2.1 s each measured on 2026-11-11 take about seven minutes.
     timeout-minutes: 20
     permissions:
       contents: write
