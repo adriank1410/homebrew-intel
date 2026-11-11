@@ -634,6 +634,40 @@ class SourceBundleTests(unittest.TestCase):
             self.assertEqual(setup.args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install-bundler-gems", "--add-groups=bottle"])
             self.assertEqual(setup.kwargs["env"]["BUNDLE_RETRY"], "3")
             self.assertEqual(setup.kwargs["env"]["BUNDLE_TIMEOUT"], "30")
+            # The bottle work directory is freed once the bottle is in the output.
+            work = next(Path(d).glob("intelbrew-build-*"))
+            self.assertFalse((work / "fastfetch").exists())
+            self.assertTrue((out / manifest["packages"][0]["filename"]).is_file())
+
+    def test_free_scratch_removes_only_paths_inside_the_work_directory(self):
+        from intelbrew.ci import _free_scratch
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d); work = base / "work"; outside = base / "outside"
+            for folder in (work / "tool-cache/go/pkg/mod/readonly", work / "tool", outside / "keep"):
+                folder.mkdir(parents=True)
+            locked = work / "tool-cache/go/pkg/mod/readonly"
+            (locked / "module.go").write_text("package x\n")
+            os.chmod(locked / "module.go", 0o444); os.chmod(locked, 0o555)
+            (work / "tool/bottle.tar.gz").write_bytes(b"bottle")
+            (work / "single").write_text("file")
+            (outside / "keep/data").write_text("keep")
+            (work / "link").symlink_to(outside / "keep")
+            try:
+                _free_scratch(work, work / "tool-cache", work / "tool", work / "single", work / "missing",
+                              work / "link", outside / "keep", base, work)
+                self.assertEqual(sorted(path.name for path in work.iterdir()), ["link"])
+                self.assertEqual((outside / "keep/data").read_text(), "keep")
+            finally:
+                if locked.exists():
+                    os.chmod(locked, 0o755)
+
+    def test_free_scratch_never_raises(self):
+        from intelbrew.ci import _free_scratch
+        with tempfile.TemporaryDirectory() as d:
+            work = Path(d) / "work"; target = work / "tool-cache"; target.mkdir(parents=True)
+            with patch("intelbrew.ci.shutil.rmtree", side_effect=RuntimeError("boom")):
+                _free_scratch(work, target)
+            self.assertTrue(target.exists())
 
     def test_verify_does_not_install_transient_llvm(self):
         metadata = {'llvm': meta('llvm'), 'fastfetch': meta('fastfetch', build=['llvm'])}
