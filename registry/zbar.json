@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "0320d5a7ac3d7470022ac0bd0a855f485adab24f",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "zbar--0.23.95.sequoia.bottle.tar.gz",
   "formula_sha256": "3f034ae9558468bcb2c7ebfceaa47928482e538a53541b2f5d046133c8eb4923",
   "license": "LGPL-2.1-only",
   "name": "zbar",
   "pkg_version": "0.23.95",
   "recipe_sha256": "2f6e7840c3b1485ecc7431fd30a32b998407a13e45d87f8a2fd3613b67513b07",
-  "release": "intel-42443753621-1-zbar",
+  "release": "intel-42954810606-1-zbar",
   "revision": 0,
-  "run_id": "42443753621",
+  "run_id": "42954810606",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -114,9 +114,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "dc9816d9da445bc0e866ebc4d22053d2de302976f8ebbed0bde2e842f3da69df",
@@ -150,15 +150,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f791859573908fa73f2f8a7e2035b5bd406ec4f0bc8c75f0ef48be2fdf6e5170",
-  "size": 324378,
+  "sha256": "500d90ed2d33606a79de5dd39fd851911c02127e6224540109ae045521e8cbd0",
+  "size": 324370,
   "source": {
     "filename": "zbar--0.23.95.sources.tar.gz",
-    "sha256": "e36e8b6f9e83780bcf606ae92ac7c02209a294bec38b508efb493470c67d7c28",
-    "size": 1031861
+    "sha256": "cd3a62b20c5d9ea4eab2e3ab2b320afc0a4f3684a59d68681f05dcbd0b8a2b0c",
+    "size": 1031871
   },
   "tag": "sequoia",
   "version": "0.23.95",
   "version_scheme": 0,
-  "workflow_commit": "c08d026f9dba1f1a5c27b914791eeb81c24bdcd8"
+  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
 }
