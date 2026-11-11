@@ -78,6 +78,9 @@ Szczegóły brakujących dostawców butelek pokazuje
 opublikowanego wpisu, niezgodną wersję lub schemat wersji, zmienioną recepturę
 oraz zmiany zależności uruchomieniowych. Plan dostępnych aktualizacji pozostaje
 na stdout.
+Formuła zablokowana przez stan tego Maca (przypięta, zainstalowana z opcjami lub
+z HEAD, pochodząca z obcej instalacji albo zainstalowana w nowszej wersji) jest
+zgłaszana tak samo, a pomijane są tylko te pakiety, które jej wymagają.
 
 Przed instalacją klient sprawdza sumę kontrolną, wersję i treść formuły,
 zależności, pochodzenie z `homebrew/core` oraz poświadczenie GitHub.

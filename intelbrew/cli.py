@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from . import __version__
-from .core import (Error, Planner, artifact_url, brew_env, check_bottle,
+from .core import (LOCAL_BLOCKS, Error, Planner, artifact_url, brew_env, check_bottle,
                    download, ensure_complete, load_config, matching_record,
                    native, read_json, registry, require_sha, retry_transient, run, write_json_new)
 from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
@@ -206,7 +206,10 @@ def missing_provider_details(plan: dict, records: dict) -> list[dict]:
         seen.add(name)
         item = plan["nodes"][name]
         published = records.get(name)
-        if published is None:
+        if item.get("blocked") in LOCAL_BLOCKS:
+            # The planner stopped at this Mac's own state, not at bottle coverage.
+            reason = item["blocked"]
+        elif published is None:
             reason = "no_published_record"
         elif (item["pkg_version"] != published["pkg_version"]
               or item["version_scheme"] != published["version_scheme"]):
@@ -299,6 +302,10 @@ def render_skipped(skipped: list[dict], stream: Any = None,
             "version_or_scheme_differs": "version or scheme differs",
             "recipe_differs": "recipe differs",
             "runtime_dependency_drift": "runtime dependency drift",
+            "installed_options_or_head": "installed with options or HEAD",
+            "foreign_install": "foreign install",
+            "installed_newer": "installed version is newer",
+            "pinned": "pinned",
         }
         reasons = Counter(item["reason"] for item in missing_providers)
         summary = ", ".join(

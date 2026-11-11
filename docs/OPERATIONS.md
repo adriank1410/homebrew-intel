@@ -252,6 +252,9 @@ Its JSON diagnostics on stderr include unique `missing_providers` with target
 and published versions, distinguishing absent records, version or scheme
 mismatches, changed recipes and runtime dependency drift. The plan on stdout
 keeps its existing shape.
+A formula blocked by the Mac's own state appears there with reason `pinned`,
+`installed_options_or_head`, `foreign_install` or `installed_newer`; only the
+roots that need it are skipped.
 Without it, incomplete coverage stops the whole operation. A separate
 `brew cleanup` can remove retained old kegs; it is never run by this client.
 
