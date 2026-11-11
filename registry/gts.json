@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "c5479ce06d940cab56516a8c0feee1679fcdce5a",
   "filename": "gts--0.7.6_4.sequoia.bottle.tar.gz",
   "formula_sha256": "9f96b0add0376ef2ff3a639c5ef9aa39c20b7459900284d48b841dbc4ebe6029",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_4",
   "recipe_sha256": "018ef6238ed29972628b043e1b8db765b36921bc7b7b7358ed9a90de931a01b6",
-  "release": "intel-42036626130-1-gts",
+  "release": "intel-42935398553-1-gts",
   "revision": 4,
-  "run_id": "42036626130",
+  "run_id": "42935398553",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -59,9 +59,9 @@
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "3be5e60cb06705535cdc7b77d75cb12e6af4b18a9d9eec797e7fd96dab1d1be8",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7acf316cb30e879868f1e914e4f4a4a502ab539c82986df95480b1a406a7d715",
-  "size": 431604,
+  "sha256": "9e884bc3b249a9075bc20756071e917dc02ba8600a86958940b7000bd915bd4e",
+  "size": 431617,
   "source": {
     "filename": "gts--0.7.6_4.sources.tar.gz",
-    "sha256": "32d80692b8c02b18e7ff18681380ba51496a48c82cbd294d0c1cc8dba94a99b9",
-    "size": 959605
+    "sha256": "a0679f1c4842b811a3dae91af569bab9b495b725f76ecd2e9f967d3c2cf9e1d5",
+    "size": 959606
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "60e2ae0e3fcbbe92a0e257ce0b2a31481f445635"
+  "workflow_commit": "2416e13506348eebcccccd464de0a2e09d710cf0"
 }
