@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "qtcharts--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "0c808cca042420acd11028c7d670a493f3a3158882a8273694418c1c2d95e184",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtcharts",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "876549ab3df12eca95f87947c500c7d1d91e48df2799126013f194052a73f491",
-  "release": "intel-42482354290-1-qtcharts",
+  "release": "intel-42954810606-1-qtcharts",
   "revision": 1,
-  "run_id": "42482354290",
+  "run_id": "42954810606",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -134,9 +134,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -195,15 +195,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ef44dcd26a0fc87dd877de35e8b5bfc0784d0db03f433d280457f7a75de210ad",
-  "size": 977027,
+  "sha256": "7beffa9e0a7fe891bb709d265e5bd783d2bdad353b2093d66febe00236c8a78d",
+  "size": 977054,
   "source": {
     "filename": "qtcharts--6.12.0_1.sources.tar.gz",
-    "sha256": "833db6fbc305ac32b044c95a0a5eca3f4b2a99e96c75ef387aa19dd11e2127c3",
-    "size": 4679990
+    "sha256": "63db15ac2faa311831c3b513ac4750786553ace9f2152f22535923c55a7156b6",
+    "size": 4679992
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "baed56d2c7836a41e114b7ee9fad42987bf4244a"
+  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
 }
