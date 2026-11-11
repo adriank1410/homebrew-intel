@@ -30,27 +30,31 @@ def release(tag, days, *, draft=False):
     return {"tagName": tag, "createdAt": created.isoformat().replace("+00:00", "Z"), "isDraft": draft}
 
 
-def test_retention_keeps_referenced_active_and_newest_unreferenced():
-    releases = [
-        release("intel-1-1-tool", 40),
-        release("intel-2-1-tool", 35),
-        release("intel-6-1-tool", 10),
-        release("intel-3-1-tool", 40),
-        release("intel-4-1-other", 40),
-        release("intel-5-1-draft", 10, draft=True),
-        release("intel-7-1-draft", 1, draft=True),
-    ]
-    selected = select_releases(releases, referenced={"intel-1-1-tool"},
-                               active={"intel-3-1-tool"}, now=NOW)
-    assert [item["tagName"] for item in selected] == ["intel-2-1-tool", "intel-5-1-draft"]
-
-
-def test_active_release_tags_come_from_open_bottle_prs():
-    assert active_release_tags([{"headRefName": "bottles/intel-2-1-tool"},
-                                {"headRefName": "feature/nope"}]) == {"intel-2-1-tool"}
-
-
 class RetentionSafetyTests(unittest.TestCase):
+    # These two were module-level functions. CI runs ``unittest discover``,
+    # which collects TestCase methods only, so they never ran.
+    def test_retention_keeps_referenced_active_and_newest_unreferenced(self):
+        releases = [
+            release("intel-1-1-tool", 40),
+            release("intel-2-1-tool", 35),
+            release("intel-6-1-tool", 10),
+            release("intel-3-1-tool", 40),
+            release("intel-4-1-other", 40),
+            release("intel-5-1-draft", 10, draft=True),
+            release("intel-7-1-draft", 1, draft=True),
+        ]
+        selected = select_releases(releases, referenced={"intel-1-1-tool"},
+                                   active={"intel-3-1-tool"}, now=NOW)
+        self.assertEqual([item["tagName"] for item in selected],
+                         ["intel-2-1-tool", "intel-5-1-draft"])
+
+    def test_active_release_tags_come_from_open_bottle_prs(self):
+        self.assertEqual(
+            active_release_tags([{"headRefName": "bottles/intel-2-1-tool"},
+                                 {"headRefName": "feature/nope"}]),
+            {"intel-2-1-tool"},
+        )
+
     def test_active_release_tags_accepts_github_api_head_shape(self):
         self.assertEqual(
             active_release_tags([{"head": {"ref": "bottles/intel-2-1-tool"}},
@@ -103,6 +107,56 @@ class RetentionSafetyTests(unittest.TestCase):
             "api", "--paginate", "--slurp",
             "repos/adriank1410/homebrew-intel/pulls?state=open&per_page=100",
         ])
+
+    def test_release_listing_is_not_cut_off_at_the_newest_thousand(self):
+        # 1000 releases covered about 17 days in November 2026, less than the
+        # 30-day threshold, so a 1000-release list never held a candidate.
+        listed = [{"tagName": f"intel-{i}-1-tool"} for i in range(1500)]
+        with patch.object(retention_script, "gh_json", return_value=listed) as gh_json:
+            self.assertEqual(retention_script.all_releases(), listed)
+        arguments = gh_json.call_args.args[0]
+        self.assertEqual(arguments[:2], ["release", "list"])
+        limit = int(arguments[arguments.index("--limit") + 1])
+        self.assertEqual(limit, retention_script.RELEASE_LIST_LIMIT)
+        self.assertGreaterEqual(limit, 100_000)
+
+    def test_release_listing_refuses_a_list_that_reaches_the_limit(self):
+        listed = [{"tagName": f"intel-{i}-1-tool"} for i in range(3)]
+        with patch.object(retention_script, "RELEASE_LIST_LIMIT", 3), \
+                patch.object(retention_script, "gh_json", return_value=listed):
+            with self.assertRaisesRegex(Error, "partial list"):
+                retention_script.all_releases()
+        with patch.object(retention_script, "gh_json", return_value={"tagName": "x"}):
+            with self.assertRaisesRegex(Error, "invalid release list"):
+                retention_script.all_releases()
+
+    def test_main_selects_from_the_complete_release_list(self):
+        import io, sys
+        # main() compares against the real clock, not the fixed NOW above.
+        today = datetime.now(timezone.utc)
+        def listed(tag, days):
+            created = today - timedelta(days=days)
+            return {"tagName": tag, "createdAt": created.isoformat().replace("+00:00", "Z"),
+                    "isDraft": False}
+        old = [listed(f"intel-{i}-1-tool", 40 + i) for i in range(1, 4)]
+        recent = [listed(f"intel-{100 + i}-1-tool", 1) for i in range(1200)]
+        with patch.object(sys, "argv", ["release-retention.py"]), \
+                patch.dict("os.environ", {"INTELBREW_RETENTION_APPLY": "false"}), \
+                patch.object(retention_script, "gh_json", return_value=recent + old), \
+                patch.object(retention_script, "open_pull_requests", return_value=[]), \
+                patch.object(retention_script, "referenced_releases", return_value=set()), \
+                patch.object(retention_script, "gh") as gh, \
+                patch("sys.stdout", new_callable=io.StringIO) as out:
+            self.assertEqual(retention_script.main(), 0)
+        self.assertIn("DRY-RUN: 3 releases selected for deletion", out.getvalue())
+        gh.assert_not_called()
+
+    def test_workflow_deletes_only_from_main(self):
+        workflow = (ROOT / ".github/workflows/release-retention.yml").read_text(encoding="utf-8")
+        self.assertIn(
+            "INTELBREW_RETENTION_APPLY: ${{ github.ref == 'refs/heads/main' && "
+            "(github.event_name == 'schedule' || inputs.apply) }}", workflow)
+        self.assertEqual(workflow.count("INTELBREW_RETENTION_APPLY:"), 1)
 
     def test_main_summary_pluralization(self):
         import io, sys

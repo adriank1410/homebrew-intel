@@ -175,6 +175,81 @@ class SweepContinueTests(unittest.TestCase):
         self.assertEqual(calls["dispatched"], [2])
         self.assertEqual(calls["pulls"], 2)
 
+    def test_runner_does_not_ask_again_about_a_merged_pull(self):
+        from intelbrew.sweep_continue import run_continuation
+
+        requests = {"aom": 0, "go": 0}
+        branches = {"bottles/" + release_tag(root, RUN_ID, ATTEMPT): root for root in requests}
+        dispatched = []
+
+        def fetch_pulls(requested):
+            root = branches[requested]
+            requests[root] += 1
+            if root == "go" and requests[root] < 4:
+                if requests[root] == 2:
+                    raise OSError("temporary failure")
+                return [{"state": "open", "merged_at": None,
+                         "head": {"ref": requested, "repo": {"full_name": REPOSITORY}}}]
+            return [merged_pr(root)]
+
+        clock = {"now": 0}
+
+        def sleep(seconds):
+            clock["now"] += seconds
+
+        result = run_continuation({
+            "GITHUB_EVENT_NAME": "schedule",
+            "REQUESTED_FORMULA": "all",
+            "INTELBREW_SWEEP_WAVE": "1",
+            "GITHUB_RUN_ID": RUN_ID,
+            "GITHUB_RUN_ATTEMPT": ATTEMPT,
+            "GITHUB_REPOSITORY": REPOSITORY,
+            "INTELBREW_CONTINUE_TIMEOUT": "200",
+            "INTELBREW_CONTINUE_INTERVAL": "20",
+        }, fetch_jobs=lambda: [publish_job("aom"), publish_job("go")],
+           fetch_pulls=fetch_pulls, dispatch=dispatched.append,
+           sleep=sleep, clock=lambda: clock["now"])
+        self.assertEqual(result, 0)
+        self.assertEqual(dispatched, [2])
+        # aom merged on the first poll; go was open, failed to read, open, merged.
+        self.assertEqual(requests, {"aom": 1, "go": 4})
+
+    def test_rerun_looks_for_pulls_on_the_attempt_that_published_them(self):
+        from intelbrew.sweep_continue import publication_attempts, run_continuation
+
+        first = {**publish_job("aom"), "run_attempt": 1}
+        second = {**publish_job("go"), "run_attempt": 2}
+        unknown = publish_job("jq")
+        future = {**publish_job("xz"), "run_attempt": 3}
+        boolean = {**publish_job("fd"), "run_attempt": True}
+        self.assertEqual(publication_attempts([first, second, unknown, future, boolean], "2"),
+                         {"aom": "1", "go": "2", "jq": "2", "xz": "2", "fd": "2"})
+        self.assertEqual(publication_attempts([first], "1"), {"aom": "1"})
+
+        expected = {
+            "bottles/" + release_tag("aom", RUN_ID, "1"): "1",
+            "bottles/" + release_tag("go", RUN_ID, "2"): "2",
+        }
+        asked, dispatched = [], []
+
+        def fetch_pulls(requested):
+            asked.append(requested)
+            return [{"state": "closed", "merged_at": "2026-10-09T17:20:00Z",
+                     "head": {"ref": requested, "repo": {"full_name": REPOSITORY}}}]
+
+        result = run_continuation({
+            "GITHUB_EVENT_NAME": "schedule",
+            "REQUESTED_FORMULA": "all",
+            "INTELBREW_SWEEP_WAVE": "1",
+            "GITHUB_RUN_ID": RUN_ID,
+            "GITHUB_RUN_ATTEMPT": "2",
+            "GITHUB_REPOSITORY": REPOSITORY,
+        }, fetch_jobs=lambda: [first, second], fetch_pulls=fetch_pulls,
+           dispatch=dispatched.append, sleep=lambda _seconds: None, clock=lambda: 0)
+        self.assertEqual(result, 0)
+        self.assertEqual(sorted(asked), sorted(expected))
+        self.assertEqual(dispatched, [2])
+
     def test_runner_stops_when_nothing_published_or_the_deadline_passes(self):
         from intelbrew.sweep_continue import run_continuation
 

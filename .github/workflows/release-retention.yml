@@ -41,5 +41,8 @@ jobs:
       - name: Retain referenced releases and remove old duplicates
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          INTELBREW_RETENTION_APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+          # Referenced releases are read from the checked-out registry, so a
+          # stale branch would see releases that main still uses as unreferenced.
+          # Off main the run is always a dry-run.
+          INTELBREW_RETENTION_APPLY: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || inputs.apply) }}
         run: python3 scripts/release-retention.py
