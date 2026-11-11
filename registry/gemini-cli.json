@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any_skip_relocation",
-  "core_commit": "0320d5a7ac3d7470022ac0bd0a855f485adab24f",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "gemini-cli--0.67.0.sequoia.bottle.tar.gz",
   "formula_sha256": "c2c4eb888462ab2f8e134e2d00b013eb0ac9cb43e7fd2cd4ded797462caa9757",
   "license": "Apache-2.0",
   "name": "gemini-cli",
   "pkg_version": "0.67.0",
   "recipe_sha256": "24dd4385a680500e287a94092aab4ea40903c6bc274dc22e4d14d3234b734c29",
-  "release": "intel-42436720114-1-gemini-cli",
+  "release": "intel-42984772671-1-gemini-cli",
   "revision": 0,
-  "run_id": "42436720114",
+  "run_id": "42984772671",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -79,9 +79,9 @@
       "pkg_version": "9.4.3"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "5c3df22d858d3120b3a6ca76283124fa1aea1e879c00e855e144f7b83a9c8c16",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b039f4077c5ddeb0f1e614ee15b8f96a97a7d17556fcd15d67407f3dca6b9df4",
-  "size": 21609957,
+  "sha256": "6881a5ff78be4fee885edcc9b3f1e00466af5f9340fcee0ae64dcf4a9fa04452",
+  "size": 21609940,
   "source": {
     "filename": "gemini-cli--0.67.0.sources.tar.gz",
-    "sha256": "6de796f81ea5a15bbfc55f320d597a5c867b5ec9a1c80dc243b9368eb72e43ce",
-    "size": 20930235
+    "sha256": "849f17338fc1b718041bc024bcfd35982ac79cd9bf27ae1034c1122b29890eca",
+    "size": 20930238
   },
   "tag": "sequoia",
   "version": "0.67.0",
   "version_scheme": 0,
-  "workflow_commit": "8336f5d2de7882b1dcceb90a10b88ec0e460067f"
+  "workflow_commit": "795142db72100e655dbed769809644d8f46cdb4d"
 }
