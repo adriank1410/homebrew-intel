@@ -19,6 +19,7 @@ from intelbrew.release_retention import active_release_tags, referenced_releases
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = os.environ.get("GITHUB_REPOSITORY", "adriank1410/homebrew-intel")
+RELEASE_LIST_LIMIT = 100_000
 
 
 def open_pull_requests() -> list[dict]:
@@ -39,14 +40,31 @@ def open_pull_requests() -> list[dict]:
     return result
 
 
+def all_releases() -> list[dict]:
+    """List every release, or fail instead of judging a partial list.
+
+    ``gh release list`` returns the newest ``--limit`` releases and gives no
+    sign that older ones were cut off. The old ones are the deletion
+    candidates, so a list that reaches the limit is refused.
+    """
+    releases = gh_json(["release", "list", "--repo", REPOSITORY, "--limit", str(RELEASE_LIST_LIMIT),
+                        "--json", "tagName,createdAt,isDraft,isPrerelease"])
+    if not isinstance(releases, list):
+        raise Error("GitHub CLI returned an invalid release list")
+    if len(releases) >= RELEASE_LIST_LIMIT:
+        raise Error("Release list reached its limit; refusing to select from a partial list")
+    return releases
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
-    parser.add_argument("--max-delete", type=int, default=20)
+    # About 60 releases a day were published in early November 2026, so a
+    # cap of 20 could not keep up. 20 deletions took 67 s on 2026-10-12.
+    parser.add_argument("--max-delete", type=int, default=100)
     args = parser.parse_args()
     apply_mode = args.apply or os.environ.get("INTELBREW_RETENTION_APPLY", "").lower() == "true"
-    releases = gh_json(["release", "list", "--repo", REPOSITORY, "--limit", "1000",
-                        "--json", "tagName,createdAt,isDraft,isPrerelease"])
+    releases = all_releases()
     prs = open_pull_requests()
     selected = select_releases(releases, referenced=referenced_releases(ROOT / "registry"),
                                active=active_release_tags(prs), now=datetime.now(timezone.utc))

@@ -389,6 +389,56 @@ class AvailablePlanTests(unittest.TestCase):
                 self.assertEqual(cli.main(["upgrade", "--apply"]), 1)
             self.assertIn("Personal bottle dependency drift: drifted -> dep", stderr.getvalue())
 
+    def test_available_skips_roots_blocked_by_local_state_and_keeps_the_rest(self):
+        nodes = {
+            "app": meta("app", runtime=["pinlib"], official=True),
+            "pinlib": meta("pinlib", runtime=["never-inspected"], official=True, pinned=True,
+                           installed_versions=["0.9"]),
+            "other": meta("other", official=True),
+            "foreign": meta("foreign", official=True, foreign_install=True),
+            "optioned": meta("optioned", official=True, installed_options=["--with-x"]),
+            "newer": meta("newer", official=True, installed_newer=True),
+        }
+        inspect = lambda names: {name: copy.deepcopy(nodes[name]) for name in names}
+        roots = ["app", "other", "foreign", "optioned", "newer"]
+        plan = Planner(inspect, {}, allow_drift_as_missing=True).make(roots)
+        self.assertEqual(plan["nodes"]["pinlib"]["provider"], "missing")
+        self.assertEqual(plan["nodes"]["pinlib"]["blocked"], "pinned")
+        self.assertEqual(plan["nodes"]["pinlib"]["dependencies"], [])
+        self.assertNotIn("never-inspected", plan["nodes"])
+
+        details = {item["name"]: item["reason"] for item in cli.missing_provider_details(plan, {})}
+        self.assertEqual(details, {"pinlib": "pinned", "foreign": "foreign_install",
+                                   "optioned": "installed_options_or_head", "newer": "installed_newer"})
+        filtered, skipped = cli.filter_available_plan(plan)
+        self.assertEqual(filtered["roots"], ["other"])
+        self.assertEqual(set(filtered["nodes"]), {"other"})
+        self.assertEqual({item["root"]: item["missing_dependencies"] for item in skipped},
+                         {"app": ["pinlib"], "foreign": ["foreign"], "optioned": ["optioned"],
+                          "newer": ["newer"]})
+        output = StringIO()
+        with patch.object(cli, "is_color_enabled", return_value=False):
+            cli.render_skipped(skipped, stream=output,
+                               missing_providers=cli.missing_provider_details(plan, {}))
+        self.assertIn("pinned: 1", output.getvalue())
+        self.assertIn("foreign install: 1", output.getvalue())
+
+    def test_local_state_still_stops_every_other_plan(self):
+        from intelbrew.core import Error
+        cases = {
+            "Pinned formula would change: dep": meta("dep", official=True, pinned=True),
+            "Foreign install: dep": meta("dep", official=True, foreign_install=True),
+            "Options/HEAD needs review: dep": meta("dep", official=True, installed_head=True),
+            "Refusing downgrade: dep": meta("dep", official=True, installed_newer=True),
+        }
+        for message, dep in cases.items():
+            nodes = {"app": meta("app", runtime=["dep"], official=True), "dep": dep}
+            inspect = lambda names, nodes=nodes: {name: copy.deepcopy(nodes[name]) for name in names}
+            for build in (False, True):
+                with self.subTest(message=message, build=build):
+                    with self.assertRaisesRegex(Error, message):
+                        Planner(inspect, {}, build=build).make(["app"])
+
     def test_available_is_only_valid_for_upgrade(self):
         for command in ("plan", "install", "doctor"):
             with self.subTest(command=command), patch.object(cli.platform, "system", return_value="Darwin"), \

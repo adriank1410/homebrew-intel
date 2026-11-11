@@ -42,7 +42,10 @@ class PreviousSourceSeedTests(unittest.TestCase):
         rec = rec or record()
         with patch("intelbrew.ci.download", side_effect=fake_download(payload)) as download, \
              patch("intelbrew.ci.attest") as attest:
-            folder = Path(self.enterContext(tempfile.TemporaryDirectory()))
+            # enterContext needs Python 3.11; macOS system Python is 3.9.
+            directory = tempfile.TemporaryDirectory()
+            self.addCleanup(directory.cleanup)
+            folder = Path(directory.name)
             result = _previous_source_seeds("tool", {"tool": rec}, CONFIG, folder)
         return result, download, attest
 

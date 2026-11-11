@@ -474,6 +474,27 @@ def extract_bottle_metadata(details:dict, tag:str)->tuple[str,str]:
     return tag_data["sha256"], str(bottle["cellar"]).lstrip(":")
 
 
+def _free_scratch(work:Path,*paths:Path)->None:
+    """Remove one finished package's scratch space. Best effort: it never fails a build.
+
+    A root with several source builds otherwise keeps every package's Homebrew
+    cache, its collected build sources and a second copy of its bottle until
+    the job ends, on a runner with about 14 GB free. Only paths inside
+    ``work`` are removed, and only after that package is done with them.
+    """
+    def retry(function,path,_error):
+        # Go's module cache is read-only, so make the entry writable and try once more.
+        try:os.chmod(os.path.dirname(path),0o700);os.chmod(path,0o700);function(path)
+        except OSError:pass
+    handler={"onexc":retry} if sys.version_info>=(3,12) else {"onerror":retry}
+    for path in paths:
+        try:
+            if work not in path.parents or path.is_symlink():continue
+            if path.is_dir():shutil.rmtree(path,**handler)
+            elif path.exists():path.unlink()
+        except Exception:pass
+
+
 def install_binary(name,meta,*,local=None,sha=None,as_dependency=True):
     req={"mode":"install","name":name,"pkg_version":meta["pkg_version"],"formula_sha256":meta["formula_sha256"],"as_dependency":as_dependency,"target":str(local.resolve()) if local else f"homebrew/core/{name}"}
     if local:req["sha256"]=sha
@@ -516,7 +537,7 @@ def build(root:str,output:Path)->None:
         meta=plan["nodes"][name]
         if meta["provider"]=="official":install_binary(name,meta,as_dependency=name!=root);continue
         if meta["provider"]=="personal":
-            rec=records[name];path=work/rec["sha256"]/rec["filename"];download(artifact_url(config["repository"],rec),path,rec["sha256"],rec["size"]);attest(path,config["repository"],rec["workflow_commit"]);check_bottle(path,rec);install_binary(name,meta,local=path,sha=rec["sha256"],as_dependency=name!=root);continue
+            rec=records[name];path=work/rec["sha256"]/rec["filename"];download(artifact_url(config["repository"],rec),path,rec["sha256"],rec["size"]);attest(path,config["repository"],rec["workflow_commit"]);check_bottle(path,rec);install_binary(name,meta,local=path,sha=rec["sha256"],as_dependency=name!=root);_free_scratch(work,path.parent);continue
         if meta["provider"]!="build":raise Error("Unexpected CI package provider")
         caches,sources=_prepare_source_sets([name],work,records=records,config=config)
         package_caches.update(caches);source_sets.update(sources)
@@ -528,7 +549,8 @@ def build(root:str,output:Path)->None:
             if profile==OPENJDK_INTEL_BOOT_JDK_26:sources=_profile_sources(name,sources,cache)
             _prefetch_build_inputs(name, env)
             run(_brew_install_args(name,transient),capture=False,env=env)
-        if name in transient:continue
+        scratch=[work/f"{name}-cache",work/f"{name}-previous-sources",work/f"{name}-source-seeds"]
+        if name in transient:_free_scratch(work,*scratch);continue
         context=native({"mode":"build-context"},ci=True,cache=cache)
         collected=collect_build_sources(context,work/f"{name}-build-sources")
         source_path=source_bundle(name,meta,sources,output,core_commit,config["brew_commit"],
@@ -542,6 +564,8 @@ def build(root:str,output:Path)->None:
         rec={"schema":1,"name":name,"version":meta["version"],"revision":meta["revision"],"version_scheme":meta["version_scheme"],"pkg_version":meta["pkg_version"],"formula_sha256":meta["formula_sha256"],"recipe_sha256":sources["recipe_sha256"],"core_commit":core_commit,"brew_commit":config["brew_commit"],"tag":"sequoia","arch":"x86_64","cellar":bottle_cellar,"filename":filename,"sha256":digest(target),"size":target.stat().st_size,"license":meta["license"],"runtime_dependencies":[{"name":d,"pkg_version":plan["nodes"][d]["pkg_version"],"formula_sha256":plan["nodes"][d]["formula_sha256"]} for d in runtime_closure(name,plan["nodes"])],"source":{"filename":source_path.name,"sha256":digest(source_path),"size":source_path.stat().st_size},"release":None,"workflow_commit":workflow_commit,"run_id":os.environ["GITHUB_RUN_ID"]}
         if profile:rec['build_profile']=profile
         check_bottle(target,rec);manifest["packages"].append(rec)
+        # The bottle and its source bundle are in the output directory now.
+        _free_scratch(work,*scratch,work/f"{name}-build-sources",bw)
     write_json_new(output/"manifest.json",manifest);validate_candidate(output,expected_root=root,verified=False)
 
 

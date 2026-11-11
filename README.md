@@ -75,6 +75,9 @@ For individual missing-provider details, run
 `brew intel upgrade --available --json`. Diagnostics on stderr distinguish
 missing published records, version or scheme mismatches, changed recipes and
 runtime dependency drift; the available upgrade plan remains on stdout.
+A formula that this Mac's own state blocks (pinned, installed with options or
+HEAD, a foreign install, or a newer installed version) is reported the same
+way, and only the roots that need it are skipped.
 
 Every repository bottle is checked before installation for its hash, formula and
 revision, recipe and dependency metadata, original core identity, and GitHub

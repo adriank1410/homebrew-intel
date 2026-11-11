@@ -10,6 +10,7 @@ import sys
 from typing import Any
 
 from .core import ROOT, Error, retry_transient, run
+from .registry_pr import same_repository_prs
 
 PIN_BRANCH = "automation/homebrew-pins"
 PIN_PATH = "policy/config.json"
@@ -44,6 +45,8 @@ def _one_pin_pr(repository: str) -> dict[str, Any] | None:
     ])
     if not isinstance(payload, list):
         raise Error("GitHub CLI returned an invalid PR list")
+    # A fork pull request from a branch of the same name must not block this one.
+    payload = same_repository_prs(payload)
     if not payload:
         return None
     if len(payload) != 1 or not isinstance(payload[0], dict):
