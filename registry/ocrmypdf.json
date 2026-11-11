@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "60555dbc9b4a861c19f8b229211941675b8433df",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "0bb5dc7f80258bf6d8479b48f15f8c4879648cd0",
-  "filename": "ocrmypdf--17.14.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "97965180177dfb4ddbafe0cdd069fb2a619efef18175bfee657ba0d68500c85c",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "filename": "ocrmypdf--17.14.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "69427fd58b6e6f371f31863408f7de43f6ae71ff5db680bb597db55bbca61f3d",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
-  "pkg_version": "17.14.0",
-  "recipe_sha256": "fdedba643b5dbe7352699b7d2e5c7c2f6f2b49b164947bd81d032bc79a489923",
-  "release": "intel-42751109029-1-ocrmypdf",
+  "pkg_version": "17.14.1",
+  "recipe_sha256": "7baa5918bfaf655738a499f7178ea290d5fb25d6d2f5cf21eff61ef2fb03a66b",
+  "release": "intel-43009153978-1-ocrmypdf",
   "revision": 0,
-  "run_id": "42751109029",
+  "run_id": "43009153978",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -249,9 +249,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cd8f3179ad63906639f2cccbceff200853078a429fa684e2825f68b80e955aa7",
-  "size": 18190216,
+  "sha256": "dc2df81e51f2676458ca576cd15200d1e7530ddca0c430eef67765fa65cb681c",
+  "size": 18186730,
   "source": {
-    "filename": "ocrmypdf--17.14.0.sources.tar.gz",
-    "sha256": "c7cfdaa13c3617cdc5d3d081b4c4e8766d04da62f2fc5e05aa1f049f51c5510f",
-    "size": 81880551
+    "filename": "ocrmypdf--17.14.1.sources.tar.gz",
+    "sha256": "bfd789a5c2d0858d30dc0dbbb28bbf3dd6adac0e8007ccc6dca4cb53d81ad03f",
+    "size": 81878057
   },
   "tag": "sequoia",
-  "version": "17.14.0",
+  "version": "17.14.1",
   "version_scheme": 0,
-  "workflow_commit": "115e292b5a2331337a0b40d2ea4d7bd8f7ef3e3e"
+  "workflow_commit": "88e082132f57f07414445a3fc451574ceed4dea8"
 }
