@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "recon-ng--5.1.2_4.sequoia.bottle.tar.gz",
   "formula_sha256": "b55870247be2bc86cff7aa424fa7c677f86acf5ac53ae33337005cf94b902146",
   "license": "GPL-3.0-only",
   "name": "recon-ng",
   "pkg_version": "5.1.2_4",
   "recipe_sha256": "7a89ba397c23d5dc2b446539124580aba5804ac5d76a24f012b77c8fb734ed49",
-  "release": "intel-42330963652-1-recon-ng",
+  "release": "intel-42954810606-1-recon-ng",
   "revision": 4,
-  "run_id": "42330963652",
+  "run_id": "42954810606",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -29,9 +29,9 @@
       "pkg_version": "0.2.5"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "64e302eb495d7ad16fe7aa70d29281adcebf3799342d7626b3708a798df1e770",
-  "size": 8729553,
+  "sha256": "588536bb70969aecce7edeb1a4d602005e849a6835f8dc9dca350d9b0dc93251",
+  "size": 8729375,
   "source": {
     "filename": "recon-ng--5.1.2_4.sources.tar.gz",
-    "sha256": "f46e64ec19f69e51dca38255b7878e4e9d5bd1b483b90bb88da20858abeab487",
-    "size": 129982226
+    "sha256": "4873faeecf3b54d60cf350de149da7cf8aef1436f0863fafc8da7d65e646ca43",
+    "size": 129985045
   },
   "tag": "sequoia",
   "version": "5.1.2",
   "version_scheme": 0,
-  "workflow_commit": "5f11027c3b1d066cb16cbc59458a420b7994784e"
+  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
 }
