@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "0320d5a7ac3d7470022ac0bd0a855f485adab24f",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "pillow--13.0.0.sequoia.bottle.tar.gz",
   "formula_sha256": "7fd4c91aa6d3997eca23962ddf9cc37c142e1136de69e241808d35a5526c2a72",
   "license": "MIT-CMU",
   "name": "pillow",
   "pkg_version": "13.0.0",
   "recipe_sha256": "0f13063c842acb65a4e92bcfe83b3aaec1188cddbef4f1bc75882ccedaa0a09a",
-  "release": "intel-42450342182-1-pillow",
+  "release": "intel-42954810606-1-pillow",
   "revision": 0,
-  "run_id": "42450342182",
+  "run_id": "42954810606",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -159,9 +159,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9e64016a5c98b2bc1951b1832961cda869834e42120da37372e5aa185569b739",
-  "size": 1410792,
+  "sha256": "bf1f3ea0615ff3c79ecc7f44f7b7490f442db245a678d06c2e3827c277893717",
+  "size": 1410809,
   "source": {
     "filename": "pillow--13.0.0.sources.tar.gz",
-    "sha256": "41482bf10bcf01dcaf2228039cb7426128f85639799d3a023f28ba2c8db62029",
-    "size": 46981412
+    "sha256": "c45a435142ab1d9bc6d4f78421015901a01414489876950243b2baa4c60ba4b9",
+    "size": 46981414
   },
   "tag": "sequoia",
   "version": "13.0.0",
   "version_scheme": 0,
-  "workflow_commit": "873910090bf2de3eab3608de1fdeef32dce875df"
+  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
 }
