@@ -360,7 +360,12 @@ def download(url,target,expected_sha,expected_size):
     except (OSError,ValueError,http.client.IncompleteRead) as exc:
         raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
     if total!=expected_size or h.hexdigest()!=expected_sha:raise Error(f'Checksum/size mismatch; retained at {part}')
-    os.link(part,target);return target
+    os.link(part,target)
+    # The link leaves two names for one file; without this the bottle's space
+    # is not freed when the cache entry is deleted.
+    try:part.unlink()
+    except OSError:pass
+    return target
 
 def check_bottle(path,record,*,license_notices=None):
     validate_record(record,published=record['release'] is not None)
