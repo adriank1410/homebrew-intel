@@ -1,0 +1,39 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "hiredis--1.5.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "37c052ecf87bbfd2c38b867fe9faf7d755bca1a10f192f51b77cc0424834539c",
+  "license": "BSD-3-Clause",
+  "name": "hiredis",
+  "pkg_version": "1.5.0",
+  "recipe_sha256": "9c59e61e65ce308de1a45f31d9601cd95027c4be757592c289213b9da5ad4e59",
+  "release": "intel-43284413443-1-hiredis",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "e824e974c3a5d7cb66665cf560c6d7db5739cab9eb3dde29a404fbbf6ba2dfa2",
+  "size": 171723,
+  "source": {
+    "filename": "hiredis--1.5.0.sources.tar.gz",
+    "sha256": "d7d15ae011ce233831d27ae6e6025805dba9f5919040ed666027914abcbba4ab",
+    "size": 187695
+  },
+  "tag": "sequoia",
+  "version": "1.5.0",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
