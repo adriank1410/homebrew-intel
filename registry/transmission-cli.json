@@ -1,0 +1,59 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "transmission-cli--4.1.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "8103406e7d0e5fa5d5a6481ce8f68e799283432e5b16d3273fdf8039fe2048e8",
+  "license": {
+    "any_of": [
+      "GPL-2.0-only",
+      "GPL-3.0-only"
+    ]
+  },
+  "name": "transmission-cli",
+  "pkg_version": "4.1.4",
+  "recipe_sha256": "af191a16610c3c9034d0882fed47c821e94a33a7a82307ecf7b256bf59968613",
+  "release": "intel-43284413443-1-transmission-cli",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "1775e21e93e05895d0b882220bfb28eee1ed9f755a5d5cfe3da22f8007ccc1c5",
+      "name": "libevent",
+      "pkg_version": "2.1.13_1"
+    },
+    {
+      "formula_sha256": "6b6159d3bd8c455b132d2b1d492e9fb9b6a127f8c7eb4b045cd982446391ca45",
+      "name": "libpsl",
+      "pkg_version": "0.23.3"
+    },
+    {
+      "formula_sha256": "d170b92ccd01c5f2f66fa558873b9b96dc184952b75f404331bc2a3090be006f",
+      "name": "miniupnpc",
+      "pkg_version": "2.3.3"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "1a971042d920f041875b0131b62f41aa3f05807af1cfe9b1b3924093e97cfe1f",
+  "size": 5795728,
+  "source": {
+    "filename": "transmission-cli--4.1.4.sources.tar.gz",
+    "sha256": "7e3fc4cef4ddb59cba24f23891812182ee5522914c7a481c4eb44bdd3a4dc444",
+    "size": 11929524
+  },
+  "tag": "sequoia",
+  "version": "4.1.4",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
