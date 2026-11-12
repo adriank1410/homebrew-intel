@@ -1,0 +1,59 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "git-delta--0.20.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "ec4d4da0442c0e02b335352dcd70c7c221d2c1c4e1fe13e7c241ab7bdc963726",
+  "license": "MIT",
+  "name": "git-delta",
+  "pkg_version": "0.20.1",
+  "recipe_sha256": "1ee0bc22882b80092fd350c910a38599955a84f2581ae2e4f9f7be4be57440f6",
+  "release": "intel-43284413443-1-git-delta",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "04b7a084d3d8e07560656d34fb818210b165984366ff82cd2352d7a391c1452d",
+      "name": "libgit2",
+      "pkg_version": "1.9.7_2"
+    },
+    {
+      "formula_sha256": "1bb5700525084a6a5ad6e165cc132a145b0b290a2ea5361d596e6fc9b6b09859",
+      "name": "libssh2",
+      "pkg_version": "1.11.1_7"
+    },
+    {
+      "formula_sha256": "fb046c70a9ea6d7d0482c23904078dbcd6a6c56ea57b3c9907c16ac85ba83dc7",
+      "name": "llhttp",
+      "pkg_version": "9.4.3"
+    },
+    {
+      "formula_sha256": "9cde5399ef049c1bae8c7c789a792d09074da95d3582d582f34f61b6830bf1fe",
+      "name": "oniguruma",
+      "pkg_version": "6.9.10"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "b89375fcfcfd21229338ec48ab688d5d1062d5c5384288d041afa35c8ef6f6a2",
+  "size": 2953002,
+  "source": {
+    "filename": "git-delta--0.20.1.sources.tar.gz",
+    "sha256": "4c0994d3cf0065757f4e2f407ba3bf822922e5627a321224e583d7f79753463b",
+    "size": 24489300
+  },
+  "tag": "sequoia",
+  "version": "0.20.1",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
