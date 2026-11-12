@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any_skip_relocation",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "yq--4.54.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "524e124c403489ab70b8d1e0abe46079a9aaafebee60f78e3a1adaeda37eb36f",
+  "license": "MIT",
+  "name": "yq",
+  "pkg_version": "4.54.3",
+  "recipe_sha256": "b27547a760dde4b549e123cbbda610d2ef0731177f5bfd5f2736c73cfc7862b0",
+  "release": "intel-43284413443-1-yq",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "0c64b0bdb4aad30989753fff5f741a7f15996193484f03bbbce31be94da7f908",
+  "size": 6401974,
+  "source": {
+    "filename": "yq--4.54.3.sources.tar.gz",
+    "sha256": "5f9bc5418c8b12d68f285638296c0eab2bad8209420c4d934f00d7e820c53f16",
+    "size": 19380396
+  },
+  "tag": "sequoia",
+  "version": "4.54.3",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
