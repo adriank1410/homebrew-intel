@@ -1,0 +1,38 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any_skip_relocation",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "moreutils--0.70.sequoia.bottle.tar.gz",
+  "formula_sha256": "df4f7677857c9da6a7ed3fa6b8a7cf7b9118b2b12a8e98a79cfb25c035b354d7",
+  "license": {
+    "all_of": [
+      "GPL-2.0-or-later",
+      {
+        "any_of": [
+          "GPL-2.0-only",
+          "Artistic-2.0"
+        ]
+      }
+    ]
+  },
+  "name": "moreutils",
+  "pkg_version": "0.70",
+  "recipe_sha256": "68cc80414b733a7824402505332062a64943449bbc5364603249ace3af70c34f",
+  "release": "intel-43284413443-1-moreutils",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "02f8163db017bdd51b8cbb481c15a3b88c829ef1094be6352562c8be2d168c42",
+  "size": 131781,
+  "source": {
+    "filename": "moreutils--0.70.sources.tar.gz",
+    "sha256": "7de63bc04d9b3a719ec52d42c6f81c63ed8a07ff4ae27546c4f5747afa5ec2c7",
+    "size": 282982
+  },
+  "tag": "sequoia",
+  "version": "0.70",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
