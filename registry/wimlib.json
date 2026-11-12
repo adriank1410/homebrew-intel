@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "wimlib--1.14.5_2.sequoia.bottle.tar.gz",
+  "formula_sha256": "317293f55f5a33f5dae9b35f2e12887f1099a90c4faee9ab621af721a6a4b2d8",
+  "license": "GPL-3.0-or-later",
+  "name": "wimlib",
+  "pkg_version": "1.14.5_2",
+  "recipe_sha256": "9e9aae8c99b5301dba288c9ffcdf1feef7da47cf60372cdd66dc3a511556f092",
+  "release": "intel-43284413443-1-wimlib",
+  "revision": 2,
+  "run_id": "43284413443",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "4eb4aaf81ac6459a708b7fbdcd60bd4736918632c3d62235652648981804ed9d",
+  "size": 560610,
+  "source": {
+    "filename": "wimlib--1.14.5_2.sources.tar.gz",
+    "sha256": "d8ca6a611769f8fd64b8d728413b6523e28b4b32f593b7f4647b3ecc5c7311cd",
+    "size": 1099623
+  },
+  "tag": "sequoia",
+  "version": "1.14.5",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
