@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
-  "filename": "graphviz--16.1.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "9024b489a2ae2ccf591ae57ef96bf48acf9a1d3afbaf799323403d53322221c2",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "filename": "graphviz--16.1.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "16fdbfd338051620f270ddb2d7bbe448a9be13366cc5a5b2850a69e38f69c69c",
   "license": "EPL-1.0",
   "name": "graphviz",
-  "pkg_version": "16.1.0",
-  "recipe_sha256": "8f7ac8741a220d3dba6f404183dbd527f2698e0ea42c92773a6b7c7a5d64f517",
-  "release": "intel-42472248914-1-graphviz",
+  "pkg_version": "16.1.1",
+  "recipe_sha256": "7dca50fb0df2b695d693fe411df386d198ae537f4df12b37701ceb5d9d9764a2",
+  "release": "intel-42984772671-1-graphviz",
   "revision": 0,
-  "run_id": "42472248914",
+  "run_id": "42984772671",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -184,9 +184,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "3e450e767e8e7f9a8d04ddf8c1d021735e15ea07e0bb58410e7508f8af7c7b48",
@@ -240,15 +240,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e1fad11defe6ca5e76b72a11f933b1b934bf1b47eead3261a2268373e129362f",
-  "size": 3250815,
+  "sha256": "36aee5ca8af0791cc478be16875516c644214c4d67a8cdbe9d245b14558337a3",
+  "size": 3252903,
   "source": {
-    "filename": "graphviz--16.1.0.sources.tar.gz",
-    "sha256": "12e43ad7919f80ae8072543dd67fd594e140981c93883dacf7972c0488211e30",
-    "size": 21018989
+    "filename": "graphviz--16.1.1.sources.tar.gz",
+    "sha256": "985fe845cc7c43a1c4ab78f197d43d661a2a61af97d595359bb8d06b0de0be74",
+    "size": 21059039
   },
   "tag": "sequoia",
-  "version": "16.1.0",
+  "version": "16.1.1",
   "version_scheme": 1,
-  "workflow_commit": "5ea692bac90c2bde9f64284d0a2b5533d134ae92"
+  "workflow_commit": "795142db72100e655dbed769809644d8f46cdb4d"
 }

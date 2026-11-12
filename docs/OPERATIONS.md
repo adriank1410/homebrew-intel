@@ -138,6 +138,9 @@ When independent builds publish the same dependency, the controller can rebuild
 a conflicted registry branch from main after checking both attested manifests.
 It preserves the already-published dependency only when its recipe, version and
 provenance match; incompatible records or a changed main snapshot stop the repair.
+A record that `main` has not changed since the branch point, such as the older
+version of the root being updated, is replaced as a clean merge would replace it.
+A record that `main` did change still stops the repair, and the pull is closed as stale.
 
 Source and workflow PRs still need explicit owner approval to merge. The
 App-authored Homebrew pin update is the maintenance exception above, and the narrowly
@@ -219,7 +222,10 @@ boot JDK of `openjdk` 27.x with the pinned official x64 JDK 26.0.2.1. It is
 documented in the same file.
 Explicit small manual selections still force native verification; `all` uses the
 same native preflight. A manual single-root request has its own concurrency group,
-so an urgent repair can run alongside a sweep. Repeated requests for the same root
+so an urgent repair can run alongside a sweep. A manual multi-root request and a
+`policy/build-request.json` push each get a group of their own too: in the shared
+sweep group a waiting run is replaced by the next one, so the hourly schedule
+cancelled such a request while it waited behind a sweep. Repeated requests for the same root
 remain serialized through a lock on the canonical planned root, also shared with
 scheduled builds; aliases and whitespace cannot bypass it. Manual requests can
 temporarily add runners beyond the sweep's five-root limit.
@@ -252,6 +258,9 @@ Its JSON diagnostics on stderr include unique `missing_providers` with target
 and published versions, distinguishing absent records, version or scheme
 mismatches, changed recipes and runtime dependency drift. The plan on stdout
 keeps its existing shape.
+A formula blocked by the Mac's own state appears there with reason `pinned`,
+`installed_options_or_head`, `foreign_install` or `installed_newer`; only the
+roots that need it are skipped.
 Without it, incomplete coverage stops the whole operation. A separate
 `brew cleanup` can remove retained old kegs; it is never run by this client.
 

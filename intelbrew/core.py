@@ -278,6 +278,8 @@ def blocked_toolchain_source(plan, blocked=()):
             if other!=name and name in _runtime_test_deps(nodes.get(other)):return name
     return None
 
+# Installed-state reasons that stop a plan; the text is the client error message.
+LOCAL_BLOCKS={'installed_options_or_head':'Options/HEAD needs review','foreign_install':'Foreign install','installed_newer':'Refusing downgrade','pinned':'Pinned formula would change'}
 class Planner:
     def __init__(self,inspect,records,*,build=False,max_nodes=400,blocked=(),holds=(),allow_drift_as_missing=False):self.inspect=inspect;self.records=records;self.build=build;self.max_nodes=max_nodes;self.blocked=set(blocked);self.holds=validate_source_build_holds(holds);self.allow_drift_as_missing=allow_drift_as_missing;self.nodes={}
     def make(self,roots):
@@ -293,11 +295,13 @@ class Planner:
                 if m.get('name')!=name or m.get('tap')!='homebrew/core':raise Error(f'Non-core or renamed formula: {name}')
                 require_sha(m['formula_sha256'])
                 if m.get('disabled') or not m.get('version'):raise Error(f'Disabled/non-stable: {name}')
-                if m.get('installed_options') or m.get('installed_head'):raise Error(f'Options/HEAD needs review: {name}')
-                if m.get('foreign_install'):raise Error(f'Foreign install: {name}')
-                if m.get('installed_newer'):raise Error(f'Refusing downgrade: {name}')
-                if m.get('pinned') and not m.get('installed_current'):raise Error(f'Pinned formula would change: {name}')
+                blocked_state='installed_options_or_head' if m.get('installed_options') or m.get('installed_head') else 'foreign_install' if m.get('foreign_install') else 'installed_newer' if m.get('installed_newer') else 'pinned' if m.get('pinned') and not m.get('installed_current') else None
+                if blocked_state and not self.allow_drift_as_missing:raise Error(f'{LOCAL_BLOCKS[blocked_state]}: {name}')
                 if type(m.get('vcs_source')) is not bool:raise Error(f'Invalid source strategy metadata: {name}')
+                # Client `upgrade --available` only: a formula this Mac's state
+                # blocks is unavailable, so its roots are skipped like any
+                # other missing provider instead of stopping every root.
+                if blocked_state:m.update(provider='missing',dependencies=[],blocked=blocked_state);self.nodes[name]=m;continue
                 rec=matching_record(m,self.records)
                 provider='installed' if m.get('installed_current') and not self.build else 'official' if m.get('official_bottle') else 'personal' if rec else 'build' if self.build else 'missing'
                 if provider=='build' and name in self.blocked and name in requested:raise Error(f'Source build excluded by policy: {name}')
@@ -402,7 +406,12 @@ def download(url,target,expected_sha,expected_size):
     except (OSError,ValueError,http.client.IncompleteRead) as exc:
         raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
     if total!=expected_size or h.hexdigest()!=expected_sha:raise Error(f'Checksum/size mismatch; retained at {part}')
-    os.link(part,target);return target
+    os.link(part,target)
+    # The link leaves two names for one file; without this the bottle's space
+    # is not freed when the cache entry is deleted.
+    try:part.unlink()
+    except OSError:pass
+    return target
 
 def check_bottle(path,record,*,license_notices=None):
     validate_record(record,published=record['release'] is not None)

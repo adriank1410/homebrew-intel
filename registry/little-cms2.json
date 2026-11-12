@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
-  "filename": "little-cms2--2.19.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "little-cms2--2.20.sequoia.bottle.tar.gz",
+  "formula_sha256": "1a5465295ac2257d8d047105c0870fe0ea17c6e76a3e755c07d8c3d1bd786a0e",
   "license": "MIT",
   "name": "little-cms2",
-  "pkg_version": "2.19.1",
-  "recipe_sha256": "7af482e897b7d6703f41e8595684e59eb2d7799f55055101add65d7301bc569b",
-  "release": "intel-42036626130-1-little-cms2",
+  "pkg_version": "2.20",
+  "recipe_sha256": "cae38ed90fbf0bb4eef129bc0ae28582f208fd5f094414ff07754a3c4dcaeb47",
+  "release": "intel-43210078899-1-little-cms2",
   "revision": 0,
-  "run_id": "42036626130",
+  "run_id": "43210078899",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -34,9 +34,9 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dd7e568653f3219cd9419e86dfe2ab8ccf3b0dccfd61cd992d2925a19fb853f0",
-  "size": 430480,
+  "sha256": "fb1507dd615a0c27ccbeca6f1b5b10e2be50484c35515f1f28a2a724b5a44f7e",
+  "size": 432558,
   "source": {
-    "filename": "little-cms2--2.19.1.sources.tar.gz",
-    "sha256": "87fafa1e2a010b38a1684bc4019a514992db8531c44ad2d60462a38cfbf7e9e8",
-    "size": 5733389
+    "filename": "little-cms2--2.20.sources.tar.gz",
+    "sha256": "60920e21ab1971ca97f2f82b69adf87b08aacb6f6c20b8a4ab9cdf2e0591eabf",
+    "size": 5483031
   },
   "tag": "sequoia",
-  "version": "2.19.1",
+  "version": "2.20",
   "version_scheme": 1,
-  "workflow_commit": "60e2ae0e3fcbbe92a0e257ce0b2a31481f445635"
+  "workflow_commit": "e7015d7ddc52a8bb892ebeeaac54af9f56088afc"
 }

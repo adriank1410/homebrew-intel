@@ -62,7 +62,8 @@ jobs:
               scripts/quarantine-runner-links.py scripts/retry-fetch.sh \
               scripts/plan-workflow.py scripts/native-plan.py \
               .github/workflows/checks.yml .github/workflows/bottle-root.yml \
-              .github/workflows/bottles.yml 'tests/test_native*.py'; then
+              .github/workflows/bottles.yml 'tests/test_native*.py' \
+              tests/test_git_sources.py tests/test_source_mirrors.py; then
             echo 'native=false' >> "$GITHUB_OUTPUT"
           else
             code=$?
@@ -100,6 +101,9 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -p test_native_linking.py -v
           python3 -m unittest discover -s tests -p test_native_sources.py -v
+          # Local fixtures only: Git exports through `brew ruby`, mirror selection.
+          python3 -m unittest discover -s tests -p test_git_sources.py -v
+          python3 -m unittest discover -s tests -p test_source_mirrors.py -v
           python3 -m unittest discover -s tests -p test_native.py -k test_ci_metadata_preserves -v
       - name: Load real formulae and exercise Cargo fetch
         run: bash scripts/verify-homebrew-pins.sh

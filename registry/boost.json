@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
   "filename": "boost--1.92.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ea0ed2bb6e27be18ab1e1f0f852c2dadb0a2149369ad7f9847820b29c2ea357e",
   "license": "BSL-1.0",
   "name": "boost",
   "pkg_version": "1.92.0_1",
   "recipe_sha256": "de77f9901a1abb95ff48c2e42566500f8d94fccf967438ced7d34e7dc7a3385c",
-  "release": "intel-42068122922-1-jpeg-xl",
+  "release": "intel-42954810606-1-jpeg-xl",
   "revision": 1,
-  "run_id": "42068122922",
+  "run_id": "42954810606",
   "runtime_dependencies": [
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -19,9 +19,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f4676512559a8bcd2bd18301045239317c778f6867e04e8705f96950c7742f51",
-  "size": 61979328,
+  "sha256": "7ae8599830acec7f309bdba85a122a9290ff9ec194c10179e46aaa8c29aad1a0",
+  "size": 61980284,
   "source": {
     "filename": "boost--1.92.0_1.sources.tar.gz",
-    "sha256": "fbd0dcf40e6f34ffecb519af058e84fe6a1e02c1d05306be0193e3ede80503db",
-    "size": 52664541
+    "sha256": "51d4a1fc4d83ed9e9119e8777a293e9e140fdccb6d1dc24a3403a7ac2b02d17b",
+    "size": 52664538
   },
   "tag": "sequoia",
   "version": "1.92.0",
   "version_scheme": 0,
-  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
+  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
 }

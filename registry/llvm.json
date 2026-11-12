@@ -1,27 +1,27 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "2ea376f7715ede1a0b359340fbac713b899381a5",
   "build_profile": "llvm-no-pgo",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
-  "filename": "llvm--23.1.5.sequoia.bottle.tar.gz",
-  "formula_sha256": "2645efaa0a0ea21d615acef0ef8779e37194246033088f58f8817d15df9c16ed",
+  "core_commit": "791ee694fc9ef3099e9570d1f7eec6ecc03442b4",
+  "filename": "llvm--23.1.5_1.sequoia.bottle.tar.gz",
+  "formula_sha256": "66a88618f3e1f908aa12ae36156d332140d4028f242e384d5796a5d49b99cc6a",
   "license": {
     "Apache-2.0": {
       "with": "LLVM-exception"
     }
   },
   "name": "llvm",
-  "pkg_version": "23.1.5",
-  "recipe_sha256": "1f3d767ab814dd4bf0e12131a085572db2fa87e65cc97c3283fc2b9bd745e3ad",
-  "release": "intel-41998629461-1-llvm",
-  "revision": 0,
-  "run_id": "41998629461",
+  "pkg_version": "23.1.5_1",
+  "recipe_sha256": "f609c3d6b47b35ba829066f0b4938781c9573362ec4b20494790c98516d52eca",
+  "release": "intel-43037036968-1-llvm",
+  "revision": 1,
+  "run_id": "43037036968",
   "runtime_dependencies": [
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
@@ -29,9 +29,9 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "296075b88fe49c33d7d9c20abde13779eccedeef27418e25ca99b1b1e9e7c98d",
+      "formula_sha256": "cf2e2ca386b39de5d874c022a801372b84beba24f51f9fea5ce1a1705f2abd81",
       "name": "z3",
-      "pkg_version": "5.3.3"
+      "pkg_version": "5.4.1"
     },
     {
       "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fa4b1789ea6a43229f73cf8f24e605eb0967dcefa53c4425a06c6a078fcc63da",
-  "size": 356233202,
+  "sha256": "dc4fdab9e2520c1051fca4d4e496c22d4e5590b80e3bbfe8f066b847ab2bf92f",
+  "size": 356236345,
   "source": {
-    "filename": "llvm--23.1.5.sources.tar.gz",
-    "sha256": "988cf7164f124e6233b1f9bf39d8c7f9ed6688dfac1a93e78fa17b9d3ec9f50e",
-    "size": 179313515
+    "filename": "llvm--23.1.5_1.sources.tar.gz",
+    "sha256": "e86f9cc4dcb4c34e67048e9bfed3673b95b4e95b07f8a002eda7f5cb3cfd11d0",
+    "size": 179313547
   },
   "tag": "sequoia",
   "version": "23.1.5",
   "version_scheme": 0,
-  "workflow_commit": "03c380effb83f998555eb29150f23c0d53f4413a"
+  "workflow_commit": "3d621de39ac8419da2b5b1cf5235e3574db5a377"
 }

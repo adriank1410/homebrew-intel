@@ -71,7 +71,7 @@ module GitSources
     archive = temporary/"#{archive_index[0]}.tar"
     args = ["archive", "--format=tar", "--output", archive.to_s]
     args.concat(["--prefix", prefix]) unless prefix.empty?
-    run_git(repo, *args, revision)
+    without_export_attributes(repo) { run_git(repo, *args, revision) }
     result = [archive]
     entries.each do |entry|
       fields = entry.split("\t", 2)
@@ -96,11 +96,30 @@ module GitSources
     result
   end
 
+  # `git archive` drops paths marked export-ignore and expands $Format:$ in
+  # paths marked export-subst. Homebrew builds from the full checkout, so the
+  # published source has to be that checkout. $GIT_DIR/info/attributes
+  # outranks every .gitattributes file; one appended line switches both
+  # attributes off for the command, and the file is put back afterwards.
+  def without_export_attributes(repo)
+    path = Pathname(git(repo, "rev-parse", "--git-path", "info/attributes").chomp)
+    path = repo/path unless path.absolute?
+    raise "Unsafe Git attributes path" if path.symlink? || (path.exist? && !path.file?)
+    previous = path.file? ? path.binread : nil
+    path.dirname.mkpath
+    path.binwrite("#{previous}\n* -export-ignore -export-subst\n")
+    begin
+      yield
+    ensure
+      previous.nil? ? FileUtils.rm_f(path.to_s) : path.binwrite(previous)
+    end
+  end
+
   def run_tar(output, archives)
     command = ["/usr/bin/tar", "-cf", output.to_s, *archives.map { |item| "@#{item}" }]
     stdout, stderr, status = Open3.capture3(*command)
     raise "Tar command failed: #{stderr.strip}" unless status.success?
     stdout
   end
-  private_class_method :collect_archives, :git, :run_git, :run_tar
+  private_class_method :collect_archives, :git, :run_git, :run_tar, :without_export_attributes
 end

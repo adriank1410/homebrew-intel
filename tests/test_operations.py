@@ -59,6 +59,43 @@ class OperationTests(unittest.TestCase):
             if request['mode']=='install' and request['name']=='tool':raise Error('network failure')
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action):
             with self.assertRaisesRegex(Error,'Stopped after 1 package;'):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+    def test_upgrade_keeps_request_flags_of_installed_roots(self):
+        nodes={'tool':meta(runtime=['dep','fresh'],official=True,installed_versions=['0.9']),
+               'dep':meta('dep',official=True,installed_versions=['0.9']),'fresh':meta('fresh',official=True),
+               'new':meta('new',official=True)}
+        def flags(**kwargs):
+            p=Planner(lambda names:{n:copy.deepcopy(nodes[n]) for n in names},{}).make(['tool','dep','new'])
+            seen={}
+            def action(request,**_):
+                if request['mode']=='inspect':return nodes
+                if request['mode']=='receipt':return {'tap':'homebrew/core','poured_from_bottle':True}
+                seen[request['name']]=request['as_dependency']
+            with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action),redirect_stdout(io.StringIO()):
+                apply_plan(p,{},load_config(),cache=Path(d)/'cache',**kwargs)
+            return seen
+        # install: every named root is requested; only the pulled-in dependency is not.
+        self.assertEqual(flags(),{'tool':False,'dep':False,'new':False,'fresh':True})
+        # upgrade: roots that already have a keg keep whatever flag that keg has.
+        self.assertEqual(flags(keep_request_flags=True),{'tool':True,'dep':True,'new':False,'fresh':True})
+    def test_interrupt_reports_the_journal_and_exits_130_without_a_traceback(self):
+        from intelbrew import cli
+        nodes={'tool':meta(runtime=['dep'],official=True),'dep':meta('dep',official=True)};p=self.plan(nodes)
+        def action(request,**kwargs):
+            if request['mode']=='inspect':return nodes
+            if request['mode']=='receipt':return {'tap':'homebrew/core','poured_from_bottle':True}
+            if request['mode']=='install' and request['name']=='tool':raise KeyboardInterrupt
+        err=io.StringIO()
+        with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action),redirect_stderr(err):
+            with self.assertRaises(KeyboardInterrupt):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+            journal=[path for path in (Path(d)/'cache').iterdir() if path.name.startswith('transaction-')]
+            self.assertEqual(len(journal),1)
+            self.assertIn('Interrupted after 1 completed package;',err.getvalue())
+            self.assertIn(f'Journal: {journal[0]}.',err.getvalue())
+        err=io.StringIO()
+        with patch.object(cli.platform,'system',return_value='Darwin'),patch.object(cli.platform,'machine',return_value='x86_64'), \
+             patch.object(cli,'load_config',side_effect=KeyboardInterrupt),redirect_stderr(err):
+            self.assertEqual(cli.main(['plan','tool']),130)
+        self.assertIn('Interrupted.',err.getvalue())
     def test_attestation_identity_pinned(self):
         with patch('intelbrew.cli.shutil.which',return_value='/bin/gh'),patch('intelbrew.cli.run') as run:
             attest(Path('/file'), 'adriank1410/homebrew-intel',G);args=run.call_args.args[0]
@@ -597,6 +634,40 @@ class SourceBundleTests(unittest.TestCase):
             self.assertEqual(setup.args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install-bundler-gems", "--add-groups=bottle"])
             self.assertEqual(setup.kwargs["env"]["BUNDLE_RETRY"], "3")
             self.assertEqual(setup.kwargs["env"]["BUNDLE_TIMEOUT"], "30")
+            # The bottle work directory is freed once the bottle is in the output.
+            work = next(Path(d).glob("intelbrew-build-*"))
+            self.assertFalse((work / "fastfetch").exists())
+            self.assertTrue((out / manifest["packages"][0]["filename"]).is_file())
+
+    def test_free_scratch_removes_only_paths_inside_the_work_directory(self):
+        from intelbrew.ci import _free_scratch
+        with tempfile.TemporaryDirectory() as d:
+            base = Path(d); work = base / "work"; outside = base / "outside"
+            for folder in (work / "tool-cache/go/pkg/mod/readonly", work / "tool", outside / "keep"):
+                folder.mkdir(parents=True)
+            locked = work / "tool-cache/go/pkg/mod/readonly"
+            (locked / "module.go").write_text("package x\n")
+            os.chmod(locked / "module.go", 0o444); os.chmod(locked, 0o555)
+            (work / "tool/bottle.tar.gz").write_bytes(b"bottle")
+            (work / "single").write_text("file")
+            (outside / "keep/data").write_text("keep")
+            (work / "link").symlink_to(outside / "keep")
+            try:
+                _free_scratch(work, work / "tool-cache", work / "tool", work / "single", work / "missing",
+                              work / "link", outside / "keep", base, work)
+                self.assertEqual(sorted(path.name for path in work.iterdir()), ["link"])
+                self.assertEqual((outside / "keep/data").read_text(), "keep")
+            finally:
+                if locked.exists():
+                    os.chmod(locked, 0o755)
+
+    def test_free_scratch_never_raises(self):
+        from intelbrew.ci import _free_scratch
+        with tempfile.TemporaryDirectory() as d:
+            work = Path(d) / "work"; target = work / "tool-cache"; target.mkdir(parents=True)
+            with patch("intelbrew.ci.shutil.rmtree", side_effect=RuntimeError("boom")):
+                _free_scratch(work, target)
+            self.assertTrue(target.exists())
 
     def test_verify_does_not_install_transient_llvm(self):
         metadata = {'llvm': meta('llvm'), 'fastfetch': meta('fastfetch', build=['llvm'])}

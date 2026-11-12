@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "8679d30f156018b0b184c64ab21a784f64b1d880",
   "cellar": "any",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
-  "filename": "jpeg-xl--0.12.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "1e76478e13ef6cd18c73676e029f043cc0511386deeb07db11ddee7aa70217fd",
+  "core_commit": "a64765463a3f9357727c646cdf02ac74ad3e1f38",
+  "filename": "jpeg-xl--0.13.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "b6fd4f77548595c4bd4d8faeba1f3619f5223e4dc529e098c1331e3878be85ed",
   "license": "BSD-3-Clause",
   "name": "jpeg-xl",
-  "pkg_version": "0.12.0_1",
-  "recipe_sha256": "82fd333a823054833eef66c2b04a5b5961f1eb2c1275c4da8b66f61d2b3fa642",
-  "release": "intel-42068122922-1-jpeg-xl",
-  "revision": 1,
-  "run_id": "42068122922",
+  "pkg_version": "0.13.0",
+  "recipe_sha256": "9948bb4fab9e7ca54d8d763de518210cda37afbb44b1429b593ef50b692f6830",
+  "release": "intel-43140873652-1-jpeg-xl",
+  "revision": 0,
+  "run_id": "43140873652",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -59,9 +59,9 @@
       "pkg_version": "2.19.1"
     },
     {
-      "formula_sha256": "745caf6d52068ef269f41dd3445171baef7610dfdd657d1a19da7f27a930c7d8",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.11.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "a453358007471329f6598ad0cee0c3ba282f38f6fd17b8eeb16337c53c1d6c99",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "72ba89fcd57efbdabe4caec6cd1c104cdae22c786bf2231de3f6336d7614fea9",
-  "size": 18930311,
+  "sha256": "f7ea995487b37586887d57611c215e0f45bd8c10388f165389a95580f890fa00",
+  "size": 18767448,
   "source": {
-    "filename": "jpeg-xl--0.12.0_1.sources.tar.gz",
-    "sha256": "04a242308f71cb3913ec54579aed75314af2bad0beb03b77d91183700449c411",
-    "size": 4196930
+    "filename": "jpeg-xl--0.13.0.sources.tar.gz",
+    "sha256": "23c0be39c855e11b7d4e069c5342603f987636c13e2eeeeed79c9cf8841302e3",
+    "size": 4255773
   },
   "tag": "sequoia",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "version_scheme": 0,
-  "workflow_commit": "305ecc018a382d4c043bcb439a8f9b388183730c"
+  "workflow_commit": "71139b6847cf47eaba2846b232192a0945717878"
 }
