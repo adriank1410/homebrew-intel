@@ -1,0 +1,84 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any_skip_relocation",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "neovide--0.17.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "ddae7d2e1267cd978e8069e0dacb406ef3e32c68826eeb378c6469f7d9244225",
+  "license": "MIT",
+  "name": "neovide",
+  "pkg_version": "0.17.2",
+  "recipe_sha256": "a66c570a3a51500424bc36418a944a69ed90ec1a46cc5ca9c23f5ba2106de9c0",
+  "release": "intel-43284413443-1-neovide",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "name": "libunistring",
+      "pkg_version": "1.5"
+    },
+    {
+      "formula_sha256": "ce98fd5a27fe5e0d9114f0d31507c6735a5784974b4aa0f5a6fa59bece96bf84",
+      "name": "libuv",
+      "pkg_version": "1.53.0"
+    },
+    {
+      "formula_sha256": "0bd27d1c632675c48fce22dd201c98b13a72d60cbff0ce6504250f7b606b7b4a",
+      "name": "lpeg",
+      "pkg_version": "1.1.0_2"
+    },
+    {
+      "formula_sha256": "8db09bcffb7fb96b5766bda8689685da58b6bd9811a7efafda928c66422b7c2a",
+      "name": "luajit",
+      "pkg_version": "2.1.1794386141"
+    },
+    {
+      "formula_sha256": "524b1f58d41e8420a8244644a78755fd43fc073625af873843669c159e23e1fc",
+      "name": "luv",
+      "pkg_version": "1.53.0-1"
+    },
+    {
+      "formula_sha256": "606913db5b7f1001339be19ee46a907259aa72bc8ca08424602672f225df3092",
+      "name": "neovim",
+      "pkg_version": "0.12.6"
+    },
+    {
+      "formula_sha256": "51fbaa5b137cfeeb1e04882d7ba341913fe63a1aa6505189e017220a94faf8ce",
+      "name": "tree-sitter",
+      "pkg_version": "0.27.2"
+    },
+    {
+      "formula_sha256": "1f26d690916215f63a0c1b6ea80bde4b535c87cd81d280d5c7aff2584b575d63",
+      "name": "unibilium",
+      "pkg_version": "2.1.4"
+    },
+    {
+      "formula_sha256": "f5d8327be5ad5b71700af9011c1b0066950d524acd49820a4c3f0d24e6f1d1c0",
+      "name": "utf8proc",
+      "pkg_version": "2.12.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "eef601399d92f22c452759cd439f80fe1f2c21d068da70b55591d28fa532ffc6",
+  "size": 11180260,
+  "source": {
+    "filename": "neovide--0.17.2.sources.tar.gz",
+    "sha256": "caa8c6a1472295a752c71b8ddb974bdc1ea4d34663b397ded43f6620cc322fee",
+    "size": 67493109
+  },
+  "tag": "sequoia",
+  "version": "0.17.2",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
