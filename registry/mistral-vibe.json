@@ -1,0 +1,109 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "mistral-vibe--3.1.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "d3dffde985e275319a482d74950a8c2e1bb5ab55ab4c952e39440b19392922ac",
+  "license": "Apache-2.0",
+  "name": "mistral-vibe",
+  "pkg_version": "3.1.0",
+  "recipe_sha256": "d4a323b003ccdc4f7e4d761e5cecf940b1a48273875b55da7823b8ddc5034abe",
+  "release": "intel-43284413443-1-mistral-vibe",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "c278c562aaf26ff9c9742c8ce26c3c75117d85a5a5f7d323402bf5538c5e905a",
+      "name": "certifi",
+      "pkg_version": "2026.10.23"
+    },
+    {
+      "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
+      "name": "cffi",
+      "pkg_version": "2.1.1_1"
+    },
+    {
+      "formula_sha256": "598e810dcea0f60929c2237ad0b84805bdcfb5d4cca756a2e88ea9eef1ca5366",
+      "name": "cryptography",
+      "pkg_version": "50.0.2_2"
+    },
+    {
+      "formula_sha256": "1664ef8ed12ce548509600813e2fbcd8160e0b1015ac0876e3c7832f8e18dbb1",
+      "name": "libyaml",
+      "pkg_version": "0.2.5"
+    },
+    {
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "name": "lz4",
+      "pkg_version": "1.11.1"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    },
+    {
+      "formula_sha256": "e6c7e0b80da4ec762e81ad9ee9c64f9c08bd559b25fd5c784e756d7112ce7d1e",
+      "name": "pycparser",
+      "pkg_version": "3.12"
+    },
+    {
+      "formula_sha256": "3833cbad1bd3c444da54cffd9f60ea7b65d8997d3ce7af39e2b3b883e02fb6e9",
+      "name": "pydantic",
+      "pkg_version": "2.14.3"
+    },
+    {
+      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
+      "name": "python@3.15",
+      "pkg_version": "3.15.2"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "d9b503309069aba4e2f696dc0cb3e7d94385f35ca1bc4eeb6ccd7084122646ae",
+      "name": "rpds-py",
+      "pkg_version": "2026.9.1_1"
+    },
+    {
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "name": "sqlite",
+      "pkg_version": "3.54.1"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "a2bd51ce345480cc80c8c83124b48123aa871a30eed7bd77135e1a099fa3f781",
+  "size": 45083499,
+  "source": {
+    "filename": "mistral-vibe--3.1.0.sources.tar.gz",
+    "sha256": "07121dfa3cac81d0464e3a3dbfe8ae29f5f5667b7dac47010e47afa293f443d4",
+    "size": 199397087
+  },
+  "tag": "sequoia",
+  "version": "3.1.0",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
