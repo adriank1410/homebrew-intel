@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "libxml2--2.15.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "89be4274f173eefb8a55099842025b60fd989794442abaee611bc73e811e0332",
+  "license": "MIT",
+  "name": "libxml2",
+  "pkg_version": "2.15.4",
+  "recipe_sha256": "a5d4d08140462a1d31fc69681de04dac0c1a9ad7e8cf82dd7b4197c157935bdf",
+  "release": "intel-43284413443-1-libxml2",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    }
+  ],
+  "schema": 1,
+  "sha256": "2cb301f3b01092ae151fccc868eb864ac14915cf9d1dbc765182836c8e23bc3c",
+  "size": 668241,
+  "source": {
+    "filename": "libxml2--2.15.4.sources.tar.gz",
+    "sha256": "199da24f6986e814a29c8e517be4bece80b2ec18a84e2a5703b7fedcac7f7ca6",
+    "size": 3183986
+  },
+  "tag": "sequoia",
+  "version": "2.15.4",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
