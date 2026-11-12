@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any_skip_relocation",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "golangci-lint--2.15.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "0040d1b19fcbb5c14abb2fb1a749490290f0cd16ea9a8b6ce76e28da2e2c0c21",
+  "license": "GPL-3.0-only",
+  "name": "golangci-lint",
+  "pkg_version": "2.15.0",
+  "recipe_sha256": "686743794983be20b4c2dc5b6f5e10f5e920d5f29e9c51664828d75fc11fa783",
+  "release": "intel-43284413443-1-golangci-lint",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "ae522517785418859622cc75892aba101b62b3c0db467c87f1f16e7548730179",
+      "name": "go",
+      "pkg_version": "1.27.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "bddf17d7e09549e3934786c2e2634bd7543fe34dad7cd5864e73ab886f6fe025",
+  "size": 17448341,
+  "source": {
+    "filename": "golangci-lint--2.15.0.sources.tar.gz",
+    "sha256": "a66647b47154086e0a371472a312b77a6bb3ed72965cf34300a78e601e2bf655",
+    "size": 60419819
+  },
+  "tag": "sequoia",
+  "version": "2.15.0",
+  "version_scheme": 0,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
