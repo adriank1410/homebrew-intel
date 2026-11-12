@@ -69,6 +69,9 @@ class ValidationTests(unittest.TestCase):
             def __init__(self): self.reads = 0
             def __enter__(self): return self
             def __exit__(self, *args): return False
+            def getcode(self): return 200
+            @property
+            def headers(self): return {}
             def read(self, size):
                 self.reads += 1
                 return payload if self.reads == 1 else b''
@@ -99,6 +102,9 @@ class ValidationTests(unittest.TestCase):
             def __init__(self): self.reads = 0
             def __enter__(self): return self
             def __exit__(self, *args): return False
+            def getcode(self): return 200
+            @property
+            def headers(self): return {}
             def read(self, size):
                 self.reads += 1
                 return payload if self.reads == 1 else b''
@@ -130,6 +136,9 @@ class ValidationTests(unittest.TestCase):
             def __init__(self): self.reads = 0
             def __enter__(self): return self
             def __exit__(self, *args): return False
+            def getcode(self): return 200
+            @property
+            def headers(self): return {}
             def read(self, size):
                 self.reads += 1
                 return payload if self.reads == 1 else b''
@@ -164,6 +173,9 @@ class ValidationTests(unittest.TestCase):
                 self.reads = 0
             def __enter__(self): return self
             def __exit__(self, *args): return False
+            def getcode(self): return 200
+            @property
+            def headers(self): return {}
             def read(self, size):
                 if self.fail:
                     raise http.client.IncompleteRead(b'partial')
@@ -185,6 +197,242 @@ class ValidationTests(unittest.TestCase):
             download('https://github.com/a/b', target, expected, len(payload))
             self.assertEqual(target.read_bytes(), payload)
             self.assertEqual(opener.calls, 2)
+            sleep.assert_called_once_with(1)
+
+    def test_download_retries_repeated_http_504_with_download_backoff(self):
+        payload = b'retryable http 504 payload'
+        expected = hashlib.sha256(payload).hexdigest()
+
+        class Response:
+            def __init__(self): self.reads = 0
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def getcode(self): return 200
+            @property
+            def headers(self): return {}
+            def read(self, size):
+                self.reads += 1
+                return payload if self.reads == 1 else b''
+
+        class Opener:
+            def __init__(self): self.calls = 0
+            def open(self, url, timeout):
+                self.calls += 1
+                if self.calls < 5:
+                    raise urllib.error.HTTPError(url, 504, 'Gateway Time-out', {}, io.BytesIO(b''))
+                return Response()
+
+        opener = Opener()
+        with tempfile.TemporaryDirectory() as d, \
+             patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {
+                 "INTELBREW_DOWNLOAD_RETRY_ATTEMPTS": "6",
+                 "INTELBREW_DOWNLOAD_RETRY_DELAY": "1",
+             }, clear=False), \
+             patch('intelbrew.core.time.sleep') as sleep:
+            target = Path(d) / 'artifact'
+            download('https://github.com/a/b', target, expected, len(payload))
+            self.assertEqual(target.read_bytes(), payload)
+            self.assertEqual(opener.calls, 5)
+            self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 2, 4, 8])
+
+    def test_download_resumes_from_partial_after_incomplete_read(self):
+        import http.client
+        payload = b'resumable bottle payload bytes'
+        expected = hashlib.sha256(payload).hexdigest()
+        split = 10
+
+        class Headers(dict):
+            def get(self, key, default=None):
+                return super().get(key, default)
+
+        class Response:
+            def __init__(self, body, status=200, headers=None):
+                self.body = body
+                self.status = status
+                self._headers = Headers(headers or {})
+                self.reads = 0
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def getcode(self): return self.status
+            @property
+            def headers(self): return self._headers
+            def read(self, size):
+                if self.status == 200 and self.reads == 0 and len(self.body) < len(payload):
+                    self.reads += 1
+                    data = self.body
+                    # Simulate a truncated stream that already flushed some bytes.
+                    raise http.client.IncompleteRead(data)
+                self.reads += 1
+                if self.reads == 1:
+                    return self.body
+                return b''
+
+        class Opener:
+            def __init__(self):
+                self.calls = 0
+                self.requests = []
+            def open(self, request, timeout):
+                self.calls += 1
+                self.requests.append(request)
+                if self.calls == 1:
+                    # Write the prefix through the real download path by returning
+                    # a response whose first read raises IncompleteRead after the
+                    # caller already persisted earlier chunks. Emulate by writing
+                    # prefix ourselves is awkward; instead return a response that
+                    # yields the prefix once then raises on the next read.
+                    class First:
+                        def __init__(self):
+                            self.stage = 0
+                            self._headers = Headers()
+                        def __enter__(self): return self
+                        def __exit__(self, *args): return False
+                        def getcode(self): return 200
+                        @property
+                        def headers(self): return self._headers
+                        def read(self, size):
+                            self.stage += 1
+                            if self.stage == 1:
+                                return payload[:split]
+                            raise http.client.IncompleteRead(payload[:split])
+                    return First()
+                range_header = request.get_header('Range')
+                self.last_range = range_header
+                if range_header != f'bytes={split}-':
+                    raise AssertionError(f'unexpected Range: {range_header!r}')
+                return Response(
+                    payload[split:],
+                    status=206,
+                    headers={'Content-Range': f'bytes {split}-{len(payload)-1}/{len(payload)}'},
+                )
+
+        opener = Opener()
+        with tempfile.TemporaryDirectory() as d, \
+             patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {
+                 "INTELBREW_DOWNLOAD_RETRY_ATTEMPTS": "3",
+                 "INTELBREW_DOWNLOAD_RETRY_DELAY": "1",
+             }, clear=False), \
+             patch('intelbrew.core.time.sleep') as sleep:
+            target = Path(d) / 'artifact'
+            download('https://github.com/a/b', target, expected, len(payload))
+            self.assertEqual(target.read_bytes(), payload)
+            self.assertEqual(opener.calls, 2)
+            sleep.assert_called_once_with(1)
+
+    def test_download_reuses_complete_partial_after_incomplete_read_at_eof(self):
+        import http.client
+        import io
+        payload = b'complete bottle payload bytes for eof test'
+        expected = hashlib.sha256(payload).hexdigest()
+
+        class Headers(dict):
+            def get(self, key, default=None):
+                return super().get(key, default)
+
+        class Opener:
+            def __init__(self):
+                self.calls = 0
+
+            def open(self, request, timeout):
+                self.calls += 1
+                if self.calls == 1:
+                    class First:
+                        def __init__(self):
+                            self.stage = 0
+                            self._headers = Headers()
+                        def __enter__(self): return self
+                        def __exit__(self, *args): return False
+                        def getcode(self): return 200
+                        @property
+                        def headers(self): return self._headers
+                        def read(self, size):
+                            self.stage += 1
+                            if self.stage == 1:
+                                return payload
+                            raise http.client.IncompleteRead(payload)
+                    return First()
+                # If a second request is made, simulate server rejecting invalid Range with 416
+                raise urllib.error.HTTPError(request.full_url, 416, 'Range Not Satisfiable', {}, io.BytesIO(b''))
+
+        opener = Opener()
+        with tempfile.TemporaryDirectory() as d, \
+             patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {
+                 "INTELBREW_DOWNLOAD_RETRY_ATTEMPTS": "3",
+                 "INTELBREW_DOWNLOAD_RETRY_DELAY": "1",
+             }, clear=False), \
+             patch('intelbrew.core.time.sleep') as sleep:
+            target = Path(d) / 'artifact'
+            download('https://github.com/a/b', target, expected, len(payload))
+            self.assertEqual(target.read_bytes(), payload)
+            # The second attempt should accept the already complete and valid partial
+            # without making another HTTP request that would fail with 416.
+            self.assertEqual(opener.calls, 1)
+            sleep.assert_called_once_with(1)
+
+    def test_download_restarts_if_full_size_partial_has_corrupt_checksum(self):
+        import http.client
+        payload = b'valid bottle payload content'
+        expected = hashlib.sha256(payload).hexdigest()
+
+        class Headers(dict):
+            def get(self, key, default=None):
+                return super().get(key, default)
+
+        class Response:
+            def __init__(self, body):
+                self.body = body
+                self.reads = 0
+                self._headers = Headers()
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def getcode(self): return 200
+            @property
+            def headers(self): return self._headers
+            def read(self, size):
+                self.reads += 1
+                return self.body if self.reads == 1 else b''
+
+        class Opener:
+            def __init__(self):
+                self.calls = 0
+
+            def open(self, request, timeout):
+                self.calls += 1
+                if self.calls == 1:
+                    class CorruptFirst:
+                        def __init__(self):
+                            self.stage = 0
+                            self._headers = Headers()
+                        def __enter__(self): return self
+                        def __exit__(self, *args): return False
+                        def getcode(self): return 200
+                        @property
+                        def headers(self): return self._headers
+                        def read(self, size):
+                            self.stage += 1
+                            if self.stage == 1:
+                                return b'x' * len(payload)
+                            raise http.client.IncompleteRead(b'x' * len(payload))
+                    return CorruptFirst()
+                # Second call should download from scratch (no Range header)
+                self.last_range = request.get_header('Range')
+                return Response(payload)
+
+        opener = Opener()
+        with tempfile.TemporaryDirectory() as d, \
+             patch('intelbrew.core.urllib.request.build_opener', return_value=opener), \
+             patch.dict(os.environ, {
+                 "INTELBREW_DOWNLOAD_RETRY_ATTEMPTS": "3",
+                 "INTELBREW_DOWNLOAD_RETRY_DELAY": "1",
+             }, clear=False), \
+             patch('intelbrew.core.time.sleep') as sleep:
+            target = Path(d) / 'artifact'
+            download('https://github.com/a/b', target, expected, len(payload))
+            self.assertEqual(target.read_bytes(), payload)
+            self.assertEqual(opener.calls, 2)
+            self.assertIsNone(opener.last_range)
             sleep.assert_called_once_with(1)
 
     def test_is_transient_error_identifies_network_and_server_errors(self):
