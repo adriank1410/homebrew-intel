@@ -1,0 +1,59 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "cellar": "any",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "filename": "pyenv--2.8.15.sequoia.bottle.tar.gz",
+  "formula_sha256": "6b524b8cd3030065dff52c429a948b3007a0602d74a962d391dbbfc99cdf5dd0",
+  "license": "MIT",
+  "name": "pyenv",
+  "pkg_version": "2.8.15",
+  "recipe_sha256": "7e2e4caa720594466c247aa2afcc6065b9551f51a78ea9fc447aa214823ea251",
+  "release": "intel-43284413443-1-pyenv",
+  "revision": 0,
+  "run_id": "43284413443",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "cab75402095f9a65be6a5d3fc11a2f7a6a7fdf04189abee37bfc1c6e5adff499",
+      "name": "autoconf",
+      "pkg_version": "2.73"
+    },
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "dc9816d9da445bc0e866ebc4d22053d2de302976f8ebbed0bde2e842f3da69df",
+      "name": "m4",
+      "pkg_version": "1.4.21"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    },
+    {
+      "formula_sha256": "824cd395375109bfca1aa408774c9c91214ca7d7792c555b1a9fa0635f78893c",
+      "name": "pkgconf",
+      "pkg_version": "3.0.10"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    }
+  ],
+  "schema": 1,
+  "sha256": "d2155518e3a08977556a715ef44bf1f12b6e6de3b311a0e0696b6cb0c7162ab3",
+  "size": 2190089,
+  "source": {
+    "filename": "pyenv--2.8.15.sources.tar.gz",
+    "sha256": "917594ab199db2b1cb392977facf5f87e9b70c2db40ea064477c9f651ea426a5",
+    "size": 2000538
+  },
+  "tag": "sequoia",
+  "version": "2.8.15",
+  "version_scheme": 1,
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+}
