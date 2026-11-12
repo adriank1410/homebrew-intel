@@ -21,9 +21,20 @@ def retry_settings():
     if attempts<1 or delay<0:raise Error("Invalid INTELBREW_RETRY_ATTEMPTS or INTELBREW_RETRY_DELAY")
     return attempts,delay
 
-def retry_transient(operation):
+def download_retry_settings():
+    """Stronger defaults for release-asset downloads (CDN 5xx / timeouts)."""
+    try:
+        attempts=int(os.environ.get("INTELBREW_DOWNLOAD_RETRY_ATTEMPTS","6"))
+        delay=float(os.environ.get("INTELBREW_DOWNLOAD_RETRY_DELAY",
+                     os.environ.get("INTELBREW_RETRY_DELAY","0" if "unittest" in sys.modules else "5")))
+    except (TypeError,ValueError) as exc:
+        raise Error("Invalid INTELBREW_DOWNLOAD_RETRY_ATTEMPTS or INTELBREW_DOWNLOAD_RETRY_DELAY") from exc
+    if attempts<1 or delay<0:raise Error("Invalid INTELBREW_DOWNLOAD_RETRY_ATTEMPTS or INTELBREW_DOWNLOAD_RETRY_DELAY")
+    return attempts,delay
+
+def retry_transient(operation,settings=None):
     """Retry a network/CLI operation on classified transient failures."""
-    attempts,delay=retry_settings()
+    attempts,delay=settings if settings is not None else retry_settings()
     for attempt in range(attempts):
         if attempt>0 and delay>0:time.sleep(delay*(2**(attempt-1)))
         try:return operation()
@@ -348,18 +359,55 @@ def download(url,target,expected_sha,expected_size):
         raise Error(f'Existing cache file invalid; retained: {target}')
     target.parent.mkdir(parents=True,exist_ok=True);part=target.with_name(target.name+f'.partial-{os.getpid()}');opener=urllib.request.build_opener(SafeRedirect())
     h=hashlib.sha256();total=0
-    def pull():
+    def seed_from_partial():
         nonlocal h,total
         h=hashlib.sha256();total=0
-        part.unlink(missing_ok=True)
-        with opener.open(url,timeout=60) as response,part.open('xb') as out:
-            while True:
-                chunk=response.read(1024*1024)
-                if not chunk:break
-                total+=len(chunk)
-                if total>expected_size:raise Error('Artifact exceeds expected length')
-                out.write(chunk);h.update(chunk)
-    try:retry_transient(pull)
+        if not part.exists():return
+        if part.is_symlink() or not part.is_file():raise Error('Unsafe partial download')
+        size=part.stat().st_size
+        if size<=0 or size>expected_size:
+            part.unlink(missing_ok=True);return
+        with part.open('rb') as existing:
+            for chunk in iter(lambda:existing.read(1024*1024),b''):
+                total+=len(chunk);h.update(chunk)
+        if total!=size:
+            part.unlink(missing_ok=True);h=hashlib.sha256();total=0
+        elif total==expected_size:
+            if h.hexdigest()==expected_sha:
+                return
+            part.unlink(missing_ok=True);h=hashlib.sha256();total=0
+    def pull():
+        nonlocal h,total
+        seed_from_partial()
+        if total==expected_size and h.hexdigest()==expected_sha:
+            return
+        headers={}
+        if total>0:headers['Range']=f'bytes={total}-'
+        request=urllib.request.Request(url,headers=headers)
+        with opener.open(request,timeout=60) as response:
+            status=response.getcode()
+            if total>0 and status==200:
+                part.unlink(missing_ok=True);h=hashlib.sha256();total=0;mode='xb'
+            elif total>0 and status==206:
+                content_range=response.headers.get('Content-Range','')
+                match=re.fullmatch(r'bytes (\d+)-(\d+)/(\d+|\*)',content_range or '')
+                if not match or int(match.group(1))!=total:
+                    raise Error(f'Unexpected Content-Range for resume: {content_range!r}')
+                if match.group(3)!='*' and int(match.group(3))!=expected_size:
+                    raise Error(f'Unexpected Content-Range total: {content_range!r}')
+                mode='ab'
+            elif total>0:
+                raise Error(f'Unexpected resume HTTP status: {status}')
+            else:
+                mode='xb'
+            with part.open(mode) as out:
+                while True:
+                    chunk=response.read(1024*1024)
+                    if not chunk:break
+                    total+=len(chunk)
+                    if total>expected_size:raise Error('Artifact exceeds expected length')
+                    out.write(chunk);h.update(chunk)
+    try:retry_transient(pull,settings=download_retry_settings())
     except Error:raise
     except (OSError,ValueError,http.client.IncompleteRead) as exc:
         raise Error(f'Download failed; partial retained at {part}: {exc}') from exc
