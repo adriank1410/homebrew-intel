@@ -372,9 +372,15 @@ def download(url,target,expected_sha,expected_size):
                 total+=len(chunk);h.update(chunk)
         if total!=size:
             part.unlink(missing_ok=True);h=hashlib.sha256();total=0
+        elif total==expected_size:
+            if h.hexdigest()==expected_sha:
+                return
+            part.unlink(missing_ok=True);h=hashlib.sha256();total=0
     def pull():
         nonlocal h,total
         seed_from_partial()
+        if total==expected_size and h.hexdigest()==expected_sha:
+            return
         headers={}
         if total>0:headers['Range']=f'bytes={total}-'
         request=urllib.request.Request(url,headers=headers)
