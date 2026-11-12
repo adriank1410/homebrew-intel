@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "8679d30f156018b0b184c64ab21a784f64b1d880",
   "cellar": "any",
-  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
-  "filename": "jpeg-xl--0.12.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "1e76478e13ef6cd18c73676e029f043cc0511386deeb07db11ddee7aa70217fd",
+  "core_commit": "a64765463a3f9357727c646cdf02ac74ad3e1f38",
+  "filename": "jpeg-xl--0.13.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "b6fd4f77548595c4bd4d8faeba1f3619f5223e4dc529e098c1331e3878be85ed",
   "license": "BSD-3-Clause",
   "name": "jpeg-xl",
-  "pkg_version": "0.12.0_1",
-  "recipe_sha256": "82fd333a823054833eef66c2b04a5b5961f1eb2c1275c4da8b66f61d2b3fa642",
-  "release": "intel-42954810606-1-jpeg-xl",
-  "revision": 1,
-  "run_id": "42954810606",
+  "pkg_version": "0.13.0",
+  "recipe_sha256": "9948bb4fab9e7ca54d8d763de518210cda37afbb44b1429b593ef50b692f6830",
+  "release": "intel-43140873652-1-jpeg-xl",
+  "revision": 0,
+  "run_id": "43140873652",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a004740682d0974af1ae7b36fac58ff1d89c66eafa67c2c9c792041c2218b3f1",
-  "size": 18930266,
+  "sha256": "f7ea995487b37586887d57611c215e0f45bd8c10388f165389a95580f890fa00",
+  "size": 18767448,
   "source": {
-    "filename": "jpeg-xl--0.12.0_1.sources.tar.gz",
-    "sha256": "63c330d8aed4b20c8f7467715d8de1f980db16575e300ac52481433ddebc8e70",
-    "size": 4196921
+    "filename": "jpeg-xl--0.13.0.sources.tar.gz",
+    "sha256": "23c0be39c855e11b7d4e069c5342603f987636c13e2eeeeed79c9cf8841302e3",
+    "size": 4255773
   },
   "tag": "sequoia",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "version_scheme": 0,
-  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
+  "workflow_commit": "71139b6847cf47eaba2846b232192a0945717878"
 }
