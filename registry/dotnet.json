@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
   "filename": "dotnet--10.0.403.sequoia.bottle.tar.gz",
-  "formula_sha256": "a2d3f8b08b8510b6afc9142d78d45fe0da0a72f152e7e9f2f7483696e6df2aee",
+  "formula_sha256": "fec7099333ef120833d0ef9b34881aa94a43d22a210fc8ca634a1665e0d5e4b0",
   "license": "MIT",
   "name": "dotnet",
   "pkg_version": "10.0.403",
-  "recipe_sha256": "164037185baba6c8611f1b9ea47b288fb8db15bd76a62e7e93ab83d7a58381d7",
-  "release": "intel-42131922421-1-dotnet",
+  "recipe_sha256": "325f16e589481e740067327070216e0f4fa49cc8e6137efc8bda42d54aa20e53",
+  "release": "intel-43284413443-1-dotnet",
   "revision": 0,
-  "run_id": "42131922421",
+  "run_id": "43284413443",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3060ebaa8794df3789298e27ce4c154fc5c01d27d5103e65e0bdeb82f3f0ffaa",
-  "size": 230172169,
+  "sha256": "1ac2ba790e0446db984d77bbcf11e372dcb8d9029fd52d261ab401b614f94b20",
+  "size": 230174642,
   "source": {
     "filename": "dotnet--10.0.403.sources.tar.gz",
-    "sha256": "f53f6479e5cfd4f47424560fe8d0e233d207898d7130fe166ae59d5c72a40f34",
-    "size": 779472772
+    "sha256": "fe6daf1c3d7334424785536d63cb8542f11edc33eef519c914f264ad8730b067",
+    "size": 779472678
   },
   "tag": "sequoia",
   "version": "10.0.403",
   "version_scheme": 1,
-  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
+  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
 }
