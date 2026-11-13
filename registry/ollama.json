@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "cellar": "any",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "filename": "ollama--0.40.16.sequoia.bottle.tar.gz",
+  "formula_sha256": "cf4f0e6d2501e4b7e2454846fe8aee475f564846965e4fd7ce035d0bf047ef0c",
+  "license": "MIT",
+  "name": "ollama",
+  "pkg_version": "0.40.16",
+  "recipe_sha256": "8d5f9b8834facf3f7bc712957c6796078e132b1f843191818d3ecc90d2a1d770",
+  "release": "intel-43348951017-1-ollama",
+  "revision": 0,
+  "run_id": "43348951017",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "07b30f885654d30faab4ff094a6ec15fd1070c81a9e48b02a08c8bbef5c375b4",
+  "size": 24100171,
+  "source": {
+    "filename": "ollama--0.40.16.sources.tar.gz",
+    "sha256": "8c8bb54ea525aee3a3df4afaf4e5c1e2db5e93926c0cc7e590569683544f498e",
+    "size": 147819090
+  },
+  "tag": "sequoia",
+  "version": "0.40.16",
+  "version_scheme": 0,
+  "workflow_commit": "0ea2a80d9cd3d7cf677f753c20281aa45144483c"
+}
