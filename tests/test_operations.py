@@ -244,9 +244,10 @@ class OperationTests(unittest.TestCase):
                      'Info-ZIP']
         for expression in expressions:
             with self.subTest(expression=expression):self.assertTrue(allowed_redistribution(meta(license=expression),cfg))
-        nmap=meta(name='nmap',license='cannot_represent',formula_sha256='00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7')
+        nmap=meta(name='nmap',license='cannot_represent',formula_sha256='75ebf9e178c521a5ce5723abdd6a7f89519b301eee784e729f8ec1101102d03a')
         self.assertEqual(allowed_redistribution(nmap,cfg),('Nmap-Public-Source-License',))
         for changed in [{**nmap,'name':'other'},{**nmap,'license':'unknown'},{**nmap,'formula_sha256':'c'*64},
+                        {**nmap,'formula_sha256':'00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7'},
                         {**nmap,'formula_sha256':'54b920f77770308a11532d12645bd95151dc3e5bf873a52f47a89c137422890f'},
                         {**nmap,'formula_sha256':'a89ce9706632ebd88561c8ec32da8ab561813deaf8e388fe13ba94dfb11c7c11'}]:
             with self.assertRaises(Error):allowed_redistribution(changed,cfg)
