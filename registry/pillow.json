@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
   "filename": "pillow--13.0.0.sequoia.bottle.tar.gz",
   "formula_sha256": "7fd4c91aa6d3997eca23962ddf9cc37c142e1136de69e241808d35a5526c2a72",
   "license": "MIT-CMU",
   "name": "pillow",
   "pkg_version": "13.0.0",
   "recipe_sha256": "0f13063c842acb65a4e92bcfe83b3aaec1188cddbef4f1bc75882ccedaa0a09a",
-  "release": "intel-42954810606-1-pillow",
+  "release": "intel-43332389372-1-pillow",
   "revision": 0,
-  "run_id": "42954810606",
+  "run_id": "43332389372",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -154,9 +154,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+      "formula_sha256": "1a5465295ac2257d8d047105c0870fe0ea17c6e76a3e755c07d8c3d1bd786a0e",
       "name": "little-cms2",
-      "pkg_version": "2.19.1"
+      "pkg_version": "2.20"
     },
     {
       "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "bf1f3ea0615ff3c79ecc7f44f7b7490f442db245a678d06c2e3827c277893717",
-  "size": 1410809,
+  "sha256": "6bb11d8a49f222b6c2954866cb5204ccdf61c7daadc87a9f0a33dc23a8800c90",
+  "size": 1410779,
   "source": {
     "filename": "pillow--13.0.0.sources.tar.gz",
-    "sha256": "c45a435142ab1d9bc6d4f78421015901a01414489876950243b2baa4c60ba4b9",
-    "size": 46981414
+    "sha256": "89f7a7f8bafa19fe00137bee2769c23697f69d6b9ea6449d733aebe5c27f240e",
+    "size": 46981392
   },
   "tag": "sequoia",
   "version": "13.0.0",
   "version_scheme": 0,
-  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
 }
