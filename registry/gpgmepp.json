@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "60555dbc9b4a861c19f8b229211941675b8433df",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "0bb5dc7f80258bf6d8479b48f15f8c4879648cd0",
+  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
   "filename": "gpgmepp--2.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "eda4f9d9ec0ec54b2a8ab0575b7e049f1a818aa22aea44944f461a89eb1f8a0c",
   "license": "LGPL-2.1-or-later",
   "name": "gpgmepp",
   "pkg_version": "2.2.0",
   "recipe_sha256": "b7a441aff9864d1efb0365edec2934e3f8a1b6b2bb8fe9a202aeaffa8de52ae7",
-  "release": "intel-42762461527-1-gpgmepp",
+  "release": "intel-43371866360-2-gpgmepp",
   "revision": 0,
-  "run_id": "42762461527",
+  "run_id": "43371866360",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -99,9 +99,9 @@
       "pkg_version": "1.8"
     },
     {
-      "formula_sha256": "f417ea91e494ec02cc2c79284c80dd4f1b214ba6678a0669af531243aacdaded",
+      "formula_sha256": "0c48d6e5550b67c68430827698b7464781c1d9818432516fab4ef3b33e8f203f",
       "name": "p11-kit",
-      "pkg_version": "0.26.5"
+      "pkg_version": "0.26.6"
     },
     {
       "formula_sha256": "9996df274205c127dd10b34de43bbcea150ee0f61bbda30b0ea71d45ef048263",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d55809fe64b63195f8da5b6458acb62799050d0e6a510788f7d9503af65c515f",
-  "size": 206323,
+  "sha256": "336d0522b985da3d75eb1046cf935609ce207ba97be0b4783dd100ec6413fa55",
+  "size": 206314,
   "source": {
     "filename": "gpgmepp--2.2.0.sources.tar.gz",
-    "sha256": "76f7370414cc35d5b814723a09fa7e156d37ea255a324d521d3abe8bb0db080b",
-    "size": 142520
+    "sha256": "0ab8f1f58c9538350cfe07cbddbf95ee49529d0a85699ed0583b336db44e643d",
+    "size": 142516
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "eac5a30c7f2ee21a32d0cc5fe6764ee8401d138a"
+  "workflow_commit": "04d9b1f3f3f38b02e247417f75d71494195db24f"
 }
