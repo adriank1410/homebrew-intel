@@ -21,6 +21,16 @@
   },
   "source_build_holds": [
     {
+      "name": "archi-steam-farm",
+      "formula_sha256": "1d2fba0e814e9568b49f9f2d9454eca8ed7e15b9526608c6e3019d8303facac4",
+      "dependencies": [
+        {
+          "name": "dotnet",
+          "formula_sha256": "1db51a4ec77fdf642aedba497bd7045af1611c1ed3ac1dc738e215f54c4136aa"
+        }
+      ]
+    },
+    {
       "name": "hashcat",
       "formula_sha256": "106cea3252302ae8e17386d19f9f025e70d0e21e7210d5d4a33f9a2dec28e797",
       "dependencies": []

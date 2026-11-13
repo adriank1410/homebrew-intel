@@ -182,7 +182,10 @@ formulas requiring it (`qt`, `qtwebview`) cannot be built on standard runners.
 
 `source_build_holds` holds the `openjdk` 27.0.1 formula file (upstream now
 requires Arm on macOS) and the `hashcat` 8.0.0 formula file (its Metal test
-aborts on the Intel runner). Each hold expires when that file changes. The Qt
+aborts on the Intel runner). It also holds the `archi-steam-farm` 6.3.11.7
+formula file together with the `dotnet` 11.0.100 formula file (the .NET 11
+analyzers fail the build with CA1307 errors). Each hold expires when one of
+its files changes. The Qt
 6.11.2 and md4c 0.6.0 pair and the ocrmypdf 17.13.0 recipe hold were removed after Sequoia bottles for `qtbase`
 6.12.0_1 and `ocrmypdf` 17.13.0 were published. `blocked_source_builds` still
 excludes `llvm`, `qt`, `qtwebengine`, and `qtwebview`. See
