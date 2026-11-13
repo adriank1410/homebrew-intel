@@ -1,0 +1,74 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "filename": "ccache--4.14.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "6e1ce01de1a0065efabd6c12700f7d1957cb985e842f375dc3e9882404705dc4",
+  "license": "GPL-3.0-or-later",
+  "name": "ccache",
+  "pkg_version": "4.14.3",
+  "recipe_sha256": "cc0f277b686afe06a3759f7ed751afea21d36de2f0d44bdb162ca46b21f376ea",
+  "release": "intel-43332389372-1-ccache",
+  "revision": 0,
+  "run_id": "43332389372",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "4ee50a098a71187d2c4526095ee906893dc50d09a383dd22555f7b34ef4f3426",
+      "name": "blake3",
+      "pkg_version": "1.8.7"
+    },
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "7aced41e0896abf5f58833f3112a075b2364ead07735098488dac2f5a1000d6a",
+      "name": "fmt",
+      "pkg_version": "12.2.1"
+    },
+    {
+      "formula_sha256": "37c052ecf87bbfd2c38b867fe9faf7d755bca1a10f192f51b77cc0424834539c",
+      "name": "hiredis",
+      "pkg_version": "1.5.0"
+    },
+    {
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "name": "lz4",
+      "pkg_version": "1.11.1"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    },
+    {
+      "formula_sha256": "b0d23e37937384093f3b79a1f953602633ac89865f1b03ca3846c982fcf553ad",
+      "name": "xxhash",
+      "pkg_version": "0.8.4"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "91a7cd7c6456c7378ed423d9cc65c8ba6671aeda253ade8076279c6de8436118",
+  "size": 704715,
+  "source": {
+    "filename": "ccache--4.14.3.sources.tar.gz",
+    "sha256": "14263eacd75c0cf9e30736d83380ab9a536c8811d3a4f4f32c15d5e50f327de9",
+    "size": 582436
+  },
+  "tag": "sequoia",
+  "version": "4.14.3",
+  "version_scheme": 0,
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
+}
