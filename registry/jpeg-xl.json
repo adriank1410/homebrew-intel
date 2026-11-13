@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
   "filename": "jpeg-xl--0.13.0.sequoia.bottle.tar.gz",
   "formula_sha256": "b6fd4f77548595c4bd4d8faeba1f3619f5223e4dc529e098c1331e3878be85ed",
   "license": "BSD-3-Clause",
   "name": "jpeg-xl",
   "pkg_version": "0.13.0",
   "recipe_sha256": "9948bb4fab9e7ca54d8d763de518210cda37afbb44b1429b593ef50b692f6830",
-  "release": "intel-43284413443-1-jpeg-xl",
+  "release": "intel-43348951017-1-jpeg-xl",
   "revision": 0,
-  "run_id": "43284413443",
+  "run_id": "43348951017",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -64,9 +64,9 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "a453358007471329f6598ad0cee0c3ba282f38f6fd17b8eeb16337c53c1d6c99",
+      "formula_sha256": "3f4f6afa20e569d247b76dc9e0c7ba8ac1d8a250b9c91b31fbc5ac08355d3fdd",
       "name": "openexr",
-      "pkg_version": "3.5.3_1"
+      "pkg_version": "3.5.4"
     },
     {
       "formula_sha256": "2b035b8e8da68e81b737dbd95dc5b2a86fcd746404dd3a98d88b7a62734e11de",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "685c12e0497c05f90053b6f6b12eac46d2058f5ff008bf8f6661ce08178da64f",
-  "size": 18767432,
+  "sha256": "e2edbbc805984746f7a9449e31fc66310d093917a03de204478eb369512a0e38",
+  "size": 18767443,
   "source": {
     "filename": "jpeg-xl--0.13.0.sources.tar.gz",
-    "sha256": "f70455252d7af415f80e7be268e11e12d4982c053b5a92ea1a95631b938065d9",
-    "size": 4255785
+    "sha256": "065147a88227c6138522e08fdd364a187213d991ce9e684840c63a34c90e9448",
+    "size": 4255775
   },
   "tag": "sequoia",
   "version": "0.13.0",
   "version_scheme": 0,
-  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+  "workflow_commit": "0ea2a80d9cd3d7cf677f753c20281aa45144483c"
 }
