@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2ea376f7715ede1a0b359340fbac713b899381a5",
+  "brew_commit": "17e7532228bfd52094f9f5c463753eb1e111f99b",
   "cellar": "any",
-  "core_commit": "791ee694fc9ef3099e9570d1f7eec6ecc03442b4",
+  "core_commit": "f3756358aef6cf4b82302d0efa5c68614b60661e",
   "filename": "qtspeech--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "4a58b887be2ea9dc5af28d9bac9356c4d978ab2e3a4f3fc1a197b24df986c1a2",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtspeech",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "f671a14dd14825f3bc3d4f9d7cbec437b083578ff6de8e1c45d1ce0cd9210193",
-  "release": "intel-43018359984-1-qtspeech",
+  "release": "intel-43465380830-1-qtspeech",
   "revision": 1,
-  "run_id": "43018359984",
+  "run_id": "43465380830",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -45,9 +45,9 @@
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "f32f2de29dc4a6f56d401f6227c6d66f5b3601958566fe0e90ab6bdd006bd3b9",
+      "formula_sha256": "f50f72171201202d50373d166bfa57bc29921b03d4e6ba6b8c500999b486a5b6",
       "name": "dbus",
-      "pkg_version": "1.16.2_1"
+      "pkg_version": "1.16.4"
     },
     {
       "formula_sha256": "637f9f35235b227da8d6ce2c8bf5d51d54adf0aa7a0a93570e431387ad56e86a",
@@ -226,15 +226,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "49488eee44564455d9559e94f04877aa2a1ae95ddba09158774bebf3a164a64c",
-  "size": 142852,
+  "sha256": "67f72911bdc11670b1b2d477828b61a172079ee9469d8720d9b20096db038ff3",
+  "size": 142864,
   "source": {
     "filename": "qtspeech--6.12.0_1.sources.tar.gz",
-    "sha256": "c0445e165412a5478778014e9372058ffa159b8bdcc05c00365f7697cd7c4abc",
-    "size": 288442
+    "sha256": "8536f7248bfa9bb5c155d446ca80ae7be89bbc3bb9186928b40e3ab554ab5a61",
+    "size": 288441
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "5888d79465592feef9f0da06c508c0480e741800"
+  "workflow_commit": "f23ab333eb3bc29873fc63215ef2f99177296a7a"
 }
