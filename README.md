@@ -191,6 +191,21 @@ its files changes. The Qt
 excludes `llvm`, `qt`, `qtwebengine`, and `qtwebview`. See
 [build holds](docs/BUILD-HOLDS.md).
 
+CI also applies two standing renewals so these cases do not need a manual
+policy refresh on every recipe bump. Every CI `brew test` sets
+`HOMEBREW_GITHUB_ACTIONS=1` and unsets `GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED`,
+matching official Homebrew, so formulae such as `streamlink` use their GitHub
+Actions test path. A `source_required_formula_exceptions` entry is auto-renewed
+only when the new recipe's source checksum matches and the reviewed license
+file is bit-identical to the hash stored in the exception; otherwise the
+planner still skips the root for review. A repeatable, allowlisted compile
+failure of the same root and dependency-hash pair, seen twice in a row, holds
+that pair at runtime until either hash changes. The first failure stays red as
+evidence; later runs skip the compile, post a notice, and leave sibling roots
+green. Those runtime holds are not written to `source_build_holds` on `main`.
+See [redistribution review](docs/LICENSE-REVIEW.md) and
+[build holds](docs/BUILD-HOLDS.md).
+
 All 36 modular Qt6 module formulas (such as `qtbase`, `qtdeclarative`,
 `qttools`, and `qtsvg`) have verified bottle records in the registry.
 Those records may describe older versions. When core updates Qt, modules are

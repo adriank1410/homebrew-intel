@@ -291,7 +291,12 @@ class PlanWorkflowTests(unittest.TestCase):
                   "redistribution_exceptions": {}}
         self.assertEqual(native_plan.roots_needing_build(
             ["missing", "official"], inspector, {}, config), (["missing"], {}))
-        self.assertEqual(inspector.primed, [["missing", "official"]])
+        # Auto-hold lookup must not treat a fixture without "repository" as blocked,
+        # including on GitHub Actions where the lookup is otherwise enabled.
+        with patch.dict(os.environ, {"GITHUB_ACTIONS": "true"}):
+            self.assertEqual(native_plan.roots_needing_build(
+                ["missing", "official"], inspector, {}, config), (["missing"], {}))
+        self.assertEqual(inspector.primed, [["missing", "official"], ["missing", "official"]])
 
     def test_native_preflight_reports_blocked_root_without_hiding_valid_sibling(self):
         class Inspector:

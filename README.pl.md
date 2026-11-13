@@ -198,6 +198,24 @@ wpis dla przepisu ocrmypdf 17.13.0 usunięto po publikacji butelek Sequoia dla
 `llvm`, `qt`, `qtwebengine` i `qtwebview`. Szczegóły:
 [wstrzymania budowania](docs/BUILD-HOLDS.md).
 
+CI stosuje też dwa stałe odnowienia, żeby nie odświeżać tych przypadków ręcznie
+przy każdej zmianie przepisu. Każdy `brew test` w CI ustawia
+`HOMEBREW_GITHUB_ACTIONS=1` i usuwa `GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED`, tak
+jak oficjalny Homebrew, więc formuły takie jak `streamlink` idą ścieżką testu
+dla GitHub Actions. Wpis w `source_required_formula_exceptions` jest
+odnawiany automatycznie tylko wtedy, gdy suma kontrolna archiwum źródłowego
+zgadza się z nowym przepisem, a recenzowany plik licencji jest bitowo
+identyczny z hashem zapisanym w wyjątku; w przeciwnym razie planista nadal
+pomija pakiet do recenzji. Powtarzalny, dozwolony na liście błąd kompilacji
+tej samej pary hashy formuły i zależności, widziany dwa razy z rzędu,
+wstrzymuje tę parę w czasie działania, dopóki któryś hash się nie zmieni.
+Pierwsze niepowodzenie zostaje czerwone jako dowód; kolejne przebiegi pomijają
+kompilację, zgłaszają informację i pozostawiają sąsiednie pakiety zielone.
+Takich wstrzymań środowisko uruchomieniowe nie zapisuje w
+`source_build_holds` na `main`. Zobacz
+[dokumentację publikacji źródeł](docs/LICENSE-REVIEW.md) i
+[wstrzymania budowania](docs/BUILD-HOLDS.md).
+
 Wszystkie 36 modułowych pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`,
 `qttools` i `qtsvg`) mają w rejestrze zweryfikowane butelki.
 Wpisy mogą jednak dotyczyć starszych wersji. Po aktualizacji Qt w core moduły są

@@ -60,9 +60,11 @@ class AppWorkflowTests(unittest.TestCase):
 
     def test_candidate_artifacts_outlive_the_maximum_workflow_duration(self):
         document = workflow("bottle-root.yml")
-        for stage in ("build", "verify"):
+        expected = {"build": "candidate-${{ inputs.root }}", "verify": "verified-${{ inputs.root }}"}
+        for stage, artifact in expected.items():
             upload = next(step for step in document["jobs"][stage]["steps"]
-                          if step.get("uses", "").startswith("actions/upload-artifact@"))
+                          if step.get("uses", "").startswith("actions/upload-artifact@")
+                          and step.get("with", {}).get("name") == artifact)
             self.assertGreaterEqual(upload["with"]["retention-days"], 35)
 
     def test_source_branch_trials_do_not_queue_behind_main_publication(self):

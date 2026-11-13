@@ -141,8 +141,19 @@ moves the existing Subversion `head` URL into a `head` block that adds
 `https://nmap.org/dist/nmap-7.993.tar.bz2`,
 `270e55f04915bfcecb5db8feb959d4c5ba86a48c094520a4f1c07571e1c79c59`.
 `nmap-7.993/LICENSE` is byte-identical to `nmap-7.992/LICENSE`: NPSL 0.95,
-whose section 11 permits linking with any OpenSSL version. A later recipe hash
-still requires a new review.
+whose section 11 permits linking with any OpenSSL version. The exception now
+stores that reviewed license as `license_file` `nmap-*/LICENSE` (the path is
+slash-anchored, so `*` does not match a nested `LICENSE`) and
+`license_sha256`
+`9d9a9a763c0e6145172cfe7d8483e23b38ce60b6c79a82e4894242917bdae6d3`.
+
+When a later recipe hash no longer matches the pinned exception, CI may
+auto-renew it only if the source archive checksum matches the new recipe and
+the configured license file is bit-identical to that stored hash. The planner
+records the renewal in its step summary. If the source checksum cannot be
+verified, the license bytes differ, the path is missing or not unique, or the
+exception has no stored license hash, the current behaviour applies: the root
+is skipped and a new review is required.
 
 Additional primary texts:
 

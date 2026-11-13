@@ -168,6 +168,11 @@ module IntelbrewNative
     hold_root.find { |entry| leftover = true if entry.file? || entry.symlink? }
     FileUtils.rm_rf hold_root unless leftover
   end
+  def stable_source(name)
+    f=core_formula(name);r=f.stable.resource
+    raise "Stable source lacks a SHA-256 checksum" unless r.checksum&&r.checksum.hash_type==:sha256
+    {"name"=>f.name,"url"=>r.url.to_s,"sha256"=>r.checksum.hexdigest}
+  end
   def sources(name)
     f=core_formula(name);raise "Source collection requires local recipe" unless f.path.file?
     result=source_entries(f).map do |label,r|
@@ -234,6 +239,7 @@ begin
   when "inspect";names=request.fetch("names");raise "Too many formulae" unless names.is_a?(Array)&&names.length<=400;puts JSON.generate(names.to_h{|n|[n,IntelbrewNative.metadata(n)]})
   when "outdated";puts JSON.generate(Formula.installed.select{|f|f.tap&.name=="homebrew/core"&&!f.pinned?&&f.outdated?}.map(&:name).sort)
   when "receipt";puts JSON.generate(IntelbrewNative.receipt(request.fetch("name")))
+  when "stable-source";puts JSON.generate(IntelbrewNative.stable_source(request.fetch("name")))
   when "sources";saved=$stdout.dup;begin;$stdout.reopen($stderr);r=IntelbrewNative.sources(request.fetch("name"));ensure;$stdout.reopen(saved);saved.close;end;puts JSON.generate(r)
   when "coverage";puts JSON.generate(IntelbrewNative.coverage)
   when "build-context";puts JSON.generate(IntelbrewNative.build_context)

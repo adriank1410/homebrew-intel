@@ -722,6 +722,10 @@ class SourceBundleTests(unittest.TestCase):
             self.assertEqual(setup.args[0], ["bash", str(ROOT / "scripts/retry-fetch.sh"), "brew", "install-bundler-gems", "--add-groups=formula_test"])
             self.assertEqual(setup.kwargs["env"]["BUNDLE_RETRY"], "3")
             self.assertEqual(setup.kwargs["env"]["BUNDLE_TIMEOUT"], "30")
+            linkage = next(call for call in run.call_args_list if call.args[0][1:2] == ["linkage"])
+            self.assertEqual(first_test.kwargs["env"]["HOMEBREW_GITHUB_ACTIONS"], "1")
+            self.assertNotIn("GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED", first_test.kwargs["env"])
+            self.assertNotIn("HOMEBREW_GITHUB_ACTIONS", linkage.kwargs["env"])
 
     def test_verify_skips_tooling_bootstrap_for_empty_packages(self):
         env = {

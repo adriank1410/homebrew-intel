@@ -273,9 +273,42 @@ Any change to either file, for example a new ASF release or an upstream move to
 `dotnet@10`, expires the hold and the next run builds the root normally. After a
 successful publication, delete the stale entry.
 
+## Automatic runtime holds
+
+Writing a new `source_build_holds` entry to `main` from CI is too risky: a
+misclassified flake could hide a regression until someone noticed the policy
+file had changed. Runtime holds are therefore attested only by failure
+artifacts, never committed automatically.
+
+The build job classifies a compile failure against a tight allowlist
+(CA1307, "The arm64 architecture is required for this software", the hashcat
+Metal assertion "Target device architecture is nil", and a static assertion).
+If the same log also matches a transient pattern (timeout, cancellation, disk,
+TLS, HTTP 5xx, download failure), the failure stays red. The hold pair is the
+root formula hash plus at most two drifted dependency hashes; a wider graph is
+left unheld.
+
+The first classified failure stays red and uploads
+`intelbrew-failure-<root>`. The second consecutive matching record on that
+exact pair converts the job to a confirmed hold: the step exits 0, no bottle
+is uploaded or verified, and the job posts a `::notice` plus a step-summary
+entry. Later scheduled runs that see two matching records skip the compile
+before it starts. The planner lists automatically held roots in its summary
+and continues with eligible siblings, so the rest of the sweep can stay
+green. The hold expires when either formula hash changes.
+
+The build step uses `continue-on-error` only so a failed first compile can
+still upload its evidence artifact. The job is then failed unless
+`held=true`. This is not a blanket success conversion, and it does not weaken
+license, signature, or bottle-publish gates.
+
+Setting `HOMEBREW_GITHUB_ACTIONS=1` for CI `brew test` is not a source-build
+hold. It matches official Homebrew's GitHub Actions environment so formula
+tests take their documented CI path.
+
 ## Existing resource exclusions
 
 `qt`, `qtwebengine` and `qtwebview` retain their existing resource-policy
 exclusions. This incident does not change the supported platform or the client
 installation policy. Normal source failures on otherwise eligible roots still
-fail their jobs; no `continue-on-error` or blanket success conversion is added.
+fail their jobs, except for the classified runtime holds above.
