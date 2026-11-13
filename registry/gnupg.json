@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "60555dbc9b4a861c19f8b229211941675b8433df",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "0bb5dc7f80258bf6d8479b48f15f8c4879648cd0",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
   "filename": "gnupg--2.5.24_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532",
   "license": "GPL-3.0-or-later",
   "name": "gnupg",
   "pkg_version": "2.5.24_1",
   "recipe_sha256": "cb39cf745dea2547a67bb6e78175a6b29c0faa6f4c7ea5f0ad367a7e01f44d00",
-  "release": "intel-42751109029-1-gnupg",
+  "release": "intel-43348951017-1-gnupg",
   "revision": 1,
-  "run_id": "42751109029",
+  "run_id": "43348951017",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -89,9 +89,9 @@
       "pkg_version": "1.8"
     },
     {
-      "formula_sha256": "f417ea91e494ec02cc2c79284c80dd4f1b214ba6678a0669af531243aacdaded",
+      "formula_sha256": "0c48d6e5550b67c68430827698b7464781c1d9818432516fab4ef3b33e8f203f",
       "name": "p11-kit",
-      "pkg_version": "0.26.5"
+      "pkg_version": "0.26.6"
     },
     {
       "formula_sha256": "9996df274205c127dd10b34de43bbcea150ee0f61bbda30b0ea71d45ef048263",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2c12f779db55a7a3112285c2e7e61495e4af7bb8bfa311c6ca197b4419465362",
-  "size": 5773514,
+  "sha256": "ea8c8624209c61ae4ce385398076329b9fd173167968f1794f0a6bcab9339133",
+  "size": 5773490,
   "source": {
     "filename": "gnupg--2.5.24_1.sources.tar.gz",
-    "sha256": "7e601da6abcfd56a2d8964472430564f05a4ad23fcbb393055fe27ea899cb9d6",
-    "size": 8458494
+    "sha256": "e7aacf87ca8be137f059cb10c64858d46b790a4d12b34409509083e31de3fd01",
+    "size": 8458506
   },
   "tag": "sequoia",
   "version": "2.5.24",
   "version_scheme": 0,
-  "workflow_commit": "115e292b5a2331337a0b40d2ea4d7bd8f7ef3e3e"
+  "workflow_commit": "0ea2a80d9cd3d7cf677f753c20281aa45144483c"
 }
