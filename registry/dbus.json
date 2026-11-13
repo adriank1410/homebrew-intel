@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
+  "filename": "dbus--1.16.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "f50f72171201202d50373d166bfa57bc29921b03d4e6ba6b8c500999b486a5b6",
+  "license": {
+    "any_of": [
+      "AFL-2.1",
+      "GPL-2.0-or-later"
+    ]
+  },
+  "name": "dbus",
+  "pkg_version": "1.16.4",
+  "recipe_sha256": "d4b3311c6879b24f94ef7d6bc9adfd1d633b04ba3bf7519311956941e537f935",
+  "release": "intel-43363121413-1-dbus",
+  "revision": 0,
+  "run_id": "43363121413",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "fab5183396740d891dd38ecc4f32623b2926aabf5b096e56a84a05ed84ec8798",
+  "size": 561959,
+  "source": {
+    "filename": "dbus--1.16.4.sources.tar.gz",
+    "sha256": "0527fb60a6773854f06f343c1d373bd86b2ceaf8ad3dd5d60d4a096f9eb607f3",
+    "size": 1151035
+  },
+  "tag": "sequoia",
+  "version": "1.16.4",
+  "version_scheme": 0,
+  "workflow_commit": "7a584a99c28c9b920feffc7ecfc6007d589bba03"
+}
