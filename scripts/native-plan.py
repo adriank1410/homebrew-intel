@@ -196,16 +196,21 @@ def generate_step_summary(config, coverage):
 
 
 def _auto_hold_reason(root, plan, records, config):
-    descriptor = hold_descriptor(root, plan, records)
-    if descriptor is None:
+    # Lookup failures must not block an otherwise eligible root.
+    try:
+        descriptor = hold_descriptor(root, plan, records)
+        if descriptor is None:
+            return None
+        repository = config.get("repository")
+        history = load_failure_history(repository, root) if os.environ.get("GITHUB_ACTIONS") and repository else []
+        if len(history) < 2 or history[0].get("signature") != history[1].get("signature"):
+            return None
+        signature = history[0]["signature"]
+        if consecutive_matches(history, descriptor, signature) < 2:
+            return None
+        return describe_hold(descriptor, signature, 2)
+    except (Error, KeyError, OSError, TypeError, ValueError):
         return None
-    history = load_failure_history(config["repository"], root) if os.environ.get("GITHUB_ACTIONS") else []
-    if len(history) < 2 or history[0].get("signature") != history[1].get("signature"):
-        return None
-    signature = history[0]["signature"]
-    if consecutive_matches(history, descriptor, signature) < 2:
-        return None
-    return describe_hold(descriptor, signature, 2)
 
 
 def evaluate_roots_coverage(roots, inspector, records, config, *, max_roots=None):
