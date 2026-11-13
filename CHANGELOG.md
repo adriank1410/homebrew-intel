@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Hold source builds of the `archi-steam-farm` 6.3.11.7 recipe `1d2fba0e814e9568b49f9f2d9454eca8ed7e15b9526608c6e3019d8303facac4` when its `dotnet` dependency is the 11.0.100 recipe `1db51a4ec77fdf642aedba497bd7045af1611c1ed3ac1dc738e215f54c4136aa`. Homebrew-core moved `dotnet` to 11 without changing ASF, so the recipe now publishes for `net11.0` and the .NET 11 analyzers fail the build with CA1307 errors (run 43456114064). The hold matches only that pair, expires when either file changes, and does not publish a bottle.
 - Raise the daily release deletion cap from 100 to 200. The first run at 100, on 2026-11-11, took 3.5 minutes and left about 990 deletable releases, a backlog of about 25 days at that rate against about 60 new releases a day. At 200 it clears in about a week; after that the job deletes only what newly crosses the 30-day threshold.
 
 ## 0.2.10 – retention, source export and registry automation
