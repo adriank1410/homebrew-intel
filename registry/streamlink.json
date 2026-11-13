@@ -1,0 +1,84 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "17e7532228bfd52094f9f5c463753eb1e111f99b",
+  "cellar": "any",
+  "core_commit": "f3756358aef6cf4b82302d0efa5c68614b60661e",
+  "filename": "streamlink--8.6.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "dbdc697240b54f4828ad762af0e8c3c519fbf1de23474153bc3bb31ce6ba9a28",
+  "license": "BSD-2-Clause",
+  "name": "streamlink",
+  "pkg_version": "8.6.3",
+  "recipe_sha256": "2f374dc52850c647ddfa97978efc663ce1a59815aff7e81751df5d8264fdb1ca",
+  "release": "intel-43476453164-1-streamlink",
+  "revision": 0,
+  "run_id": "43476453164",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "c278c562aaf26ff9c9742c8ce26c3c75117d85a5a5f7d323402bf5538c5e905a",
+      "name": "certifi",
+      "pkg_version": "2026.10.23"
+    },
+    {
+      "formula_sha256": "89be4274f173eefb8a55099842025b60fd989794442abaee611bc73e811e0332",
+      "name": "libxml2",
+      "pkg_version": "2.15.4"
+    },
+    {
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "name": "lz4",
+      "pkg_version": "1.11.1"
+    },
+    {
+      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "name": "mpdecimal",
+      "pkg_version": "4.0.1"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    },
+    {
+      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
+      "name": "python@3.15",
+      "pkg_version": "3.15.2"
+    },
+    {
+      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "name": "readline",
+      "pkg_version": "8.3.6"
+    },
+    {
+      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "name": "sqlite",
+      "pkg_version": "3.54.1"
+    },
+    {
+      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    },
+    {
+      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "name": "zstd",
+      "pkg_version": "1.5.7_1"
+    }
+  ],
+  "schema": 1,
+  "sha256": "31b8f29282aabf0a435aed3485fecfec2f151ba45b4d4af6fe55c617b09fea0d",
+  "size": 12024037,
+  "source": {
+    "filename": "streamlink--8.6.3.sources.tar.gz",
+    "sha256": "a7a5b75d8f6642c57855682b619d118d20531b0f9bdcb63f15b7ad30bc26c7f7",
+    "size": 17794643
+  },
+  "tag": "sequoia",
+  "version": "8.6.3",
+  "version_scheme": 0,
+  "workflow_commit": "441866eca0f5ab7fed0aa3ea29c618e75d881365"
+}
