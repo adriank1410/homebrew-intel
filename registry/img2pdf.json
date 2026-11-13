@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
   "filename": "img2pdf--0.6.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "90c4ba7ad1d69500dad8bbc000f8b2c207d25cc4b3305cb2f55dbccaae12f288",
   "license": "LGPL-3.0-or-later",
   "name": "img2pdf",
   "pkg_version": "0.6.3_1",
   "recipe_sha256": "090f19d724578f6de713cd90b39c5627775418d0f69580a6576450a20496aa9e",
-  "release": "intel-42984772671-1-img2pdf",
+  "release": "intel-43348951017-1-img2pdf",
   "revision": 1,
-  "run_id": "42984772671",
+  "run_id": "43348951017",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -159,9 +159,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+      "formula_sha256": "1a5465295ac2257d8d047105c0870fe0ea17c6e76a3e755c07d8c3d1bd786a0e",
       "name": "little-cms2",
-      "pkg_version": "2.19.1"
+      "pkg_version": "2.20"
     },
     {
       "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0e1a099e99b50bdbcca524d19568fd15f8e2ecf3b9c5440e4c4e00177620569d",
+  "sha256": "18cd0961360e940689a39bcb6656766ac3023078c98feb1f5222b9b57011832f",
   "size": 2592789,
   "source": {
     "filename": "img2pdf--0.6.3_1.sources.tar.gz",
-    "sha256": "3e4fc9a419fb70dea7e4b1a5b4dd6d8c39f8c980cd15060a380ca3930aaa2d42",
+    "sha256": "2861081a8cc7f86571bf3049d89f85e3f01d80336d8f2abb3d427d3122122c11",
     "size": 14626721
   },
   "tag": "sequoia",
   "version": "0.6.3",
   "version_scheme": 0,
-  "workflow_commit": "795142db72100e655dbed769809644d8f46cdb4d"
+  "workflow_commit": "0ea2a80d9cd3d7cf677f753c20281aa45144483c"
 }
