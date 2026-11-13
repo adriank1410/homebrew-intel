@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "17e7532228bfd52094f9f5c463753eb1e111f99b",
   "cellar": "any",
-  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "core_commit": "f3756358aef6cf4b82302d0efa5c68614b60661e",
   "filename": "qtgraphs--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "e4b3321e3b3993055fb0f12e2ea3584d63191937f7b3b7520788087370b1d679",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtgraphs",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "3246e9fc018481ecb0b41216f874d39582ab56f22e047a4606b4baa181449dd1",
-  "release": "intel-43009153978-1-qtgraphs",
+  "release": "intel-43456114064-1-qtgraphs",
   "revision": 1,
-  "run_id": "43009153978",
+  "run_id": "43456114064",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -39,9 +39,9 @@
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "f32f2de29dc4a6f56d401f6227c6d66f5b3601958566fe0e90ab6bdd006bd3b9",
+      "formula_sha256": "f50f72171201202d50373d166bfa57bc29921b03d4e6ba6b8c500999b486a5b6",
       "name": "dbus",
-      "pkg_version": "1.16.2_1"
+      "pkg_version": "1.16.4"
     },
     {
       "formula_sha256": "637f9f35235b227da8d6ce2c8bf5d51d54adf0aa7a0a93570e431387ad56e86a",
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d534ba20aca65f5facb4ae8d3775f01bfe86187b8b90e9df298b78a1ecb1fae3",
-  "size": 1304054,
+  "sha256": "16f32f9c5fa3fbdef39d5dfbe8d9572c86f0bda16cb016568e0312b71305a705",
+  "size": 1304119,
   "source": {
     "filename": "qtgraphs--6.12.0_1.sources.tar.gz",
-    "sha256": "39036ce3fd05da46a559912ab3a46ee1205cd5956b1fd3b08d9634621630ab9e",
+    "sha256": "11399b73f5f7580f703679c498236b04f8ceedbb0610c338bb55a3cdd392fcda",
     "size": 9332648
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "88e082132f57f07414445a3fc451574ceed4dea8"
+  "workflow_commit": "19fdae36dcf0a78011c62a36fc71ed8f51c5f721"
 }
