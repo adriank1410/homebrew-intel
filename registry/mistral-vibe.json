@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
-  "filename": "mistral-vibe--3.1.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "d3dffde985e275319a482d74950a8c2e1bb5ab55ab4c952e39440b19392922ac",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "filename": "mistral-vibe--3.1.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "eb444ead45534635fd8a3ffa333f72ab4d0de62345f37fd1fd5344ab835dba31",
   "license": "Apache-2.0",
   "name": "mistral-vibe",
-  "pkg_version": "3.1.0",
-  "recipe_sha256": "d4a323b003ccdc4f7e4d761e5cecf940b1a48273875b55da7823b8ddc5034abe",
-  "release": "intel-43284413443-1-mistral-vibe",
+  "pkg_version": "3.1.2",
+  "recipe_sha256": "5a440b05f806631b1e29c66e69df0d67a12ba603727b54662871213817e6dbf9",
+  "release": "intel-43332389372-1-mistral-vibe",
   "revision": 0,
-  "run_id": "43284413443",
+  "run_id": "43332389372",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -95,15 +95,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a2bd51ce345480cc80c8c83124b48123aa871a30eed7bd77135e1a099fa3f781",
-  "size": 45083499,
+  "sha256": "65b04e9d8d8f2bcfa510d7be0e6ba476f962483693e9a4027d3adea3829cb06c",
+  "size": 44796853,
   "source": {
-    "filename": "mistral-vibe--3.1.0.sources.tar.gz",
-    "sha256": "07121dfa3cac81d0464e3a3dbfe8ae29f5f5667b7dac47010e47afa293f443d4",
-    "size": 199397087
+    "filename": "mistral-vibe--3.1.2.sources.tar.gz",
+    "sha256": "f21cb5a7a5cdbd7e688b5d965f23c4bf7f5ef4ff5d99fb772c513efffdf319ab",
+    "size": 198860390
   },
   "tag": "sequoia",
-  "version": "3.1.0",
+  "version": "3.1.2",
   "version_scheme": 0,
-  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
 }

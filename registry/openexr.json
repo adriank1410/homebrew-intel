@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "c5479ce06d940cab56516a8c0feee1679fcdce5a",
-  "filename": "openexr--3.5.3_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "a453358007471329f6598ad0cee0c3ba282f38f6fd17b8eeb16337c53c1d6c99",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "filename": "openexr--3.5.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "3f4f6afa20e569d247b76dc9e0c7ba8ac1d8a250b9c91b31fbc5ac08355d3fdd",
   "license": "BSD-3-Clause",
   "name": "openexr",
-  "pkg_version": "3.5.3_1",
-  "recipe_sha256": "17bc324db2584c52da1d92ac8329f520620051fb96cb6e251f19d862b7c6f114",
-  "release": "intel-42935398553-1-openexr",
-  "revision": 1,
-  "run_id": "42935398553",
+  "pkg_version": "3.5.4",
+  "recipe_sha256": "7b899b16feb2e00b8c6419c723fb78c59c0a9a7ad294c331f3775fef531e46cd",
+  "release": "intel-43332389372-1-openexr",
+  "revision": 0,
+  "run_id": "43332389372",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d36363f2c62e831b05f90753f989909f8a5ccc45c2216b2754c1d5c124a44a2b",
-  "size": 1303999,
+  "sha256": "9da0e1fc2bfe31cff0f772fa209d2888ff907a5045e94c3b15c095cfbfc30a1f",
+  "size": 1176062,
   "source": {
-    "filename": "openexr--3.5.3_1.sources.tar.gz",
-    "sha256": "cac34270726e049a5d722582e126814113baebb75b4c14291f4cc6fd987dcd69",
-    "size": 26430000
+    "filename": "openexr--3.5.4.sources.tar.gz",
+    "sha256": "fcb3127adf7d5f52d80a6d8d929fdae2e1f3e849b715e80ba4c94eb9d0915779",
+    "size": 26462884
   },
   "tag": "sequoia",
-  "version": "3.5.3",
+  "version": "3.5.4",
   "version_scheme": 0,
-  "workflow_commit": "2416e13506348eebcccccd464de0a2e09d710cf0"
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
 }
