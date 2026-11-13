@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any_skip_relocation",
-  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
-  "filename": "tailscale--1.104.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "ec3ca735c776726898c6b38967e57d2d183d0e08ec951d33f1c7303824610a15",
+  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
+  "filename": "tailscale--1.104.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "04121df3406c09bc2f2f7d2992303136ee6cb27a4252da49bddc09b66b10f71c",
   "license": "BSD-3-Clause",
   "name": "tailscale",
-  "pkg_version": "1.104.6",
-  "recipe_sha256": "d3a9bd0532aa3f33f7891816d84ffb397e3ed1d1db3b7300679b85714bf172c6",
-  "release": "intel-43284413443-1-tailscale",
+  "pkg_version": "1.104.7",
+  "recipe_sha256": "11b51dc5bd63dda96aecfff5a32330e40d1a837ec006eee6bd116f12c34814b5",
+  "release": "intel-43363121413-1-tailscale",
   "revision": 0,
-  "run_id": "43284413443",
+  "run_id": "43363121413",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "2f8f8d7eea5a16c83f35ca0095ca5d31070a7f48bf5ef4256e8c5504a22be29f",
-  "size": 16891852,
+  "sha256": "755eaa8759418855cac7c0d1f8fea50644d0374e9da87ac168a8421b9fa9ff87",
+  "size": 16891855,
   "source": {
-    "filename": "tailscale--1.104.6.sources.tar.gz",
-    "sha256": "ae42adb9c93ebb792d1e97eca3fa10f19c9752a3270c951e37d162cd389da7c1",
-    "size": 499579812
+    "filename": "tailscale--1.104.7.sources.tar.gz",
+    "sha256": "fac21f24a63b07db6b1f2874c5c60b5d62471aae1c9ba0050155699877fd9776",
+    "size": 499580395
   },
   "tag": "sequoia",
-  "version": "1.104.6",
+  "version": "1.104.7",
   "version_scheme": 0,
-  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+  "workflow_commit": "7a584a99c28c9b920feffc7ecfc6007d589bba03"
 }
