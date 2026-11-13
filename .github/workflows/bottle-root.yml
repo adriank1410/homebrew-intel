@@ -22,6 +22,10 @@ jobs:
     timeout-minutes: 360
     permissions:
       contents: read
+      actions: read
+    outputs:
+      held: ${{ steps.build.outputs.held }}
+      repeatable_hold: ${{ steps.build.outputs.repeatable_hold }}
     env:
       INTELBREW_CORE_COMMIT: ${{ inputs.core_commit }}
       ROOT_FORMULA: ${{ inputs.root }}
@@ -38,11 +42,33 @@ jobs:
       - name: Exercise the native bridge before building
         run: INTELBREW_NATIVE_TESTS=1 /usr/bin/python3 -m unittest discover -s tests -p 'test_native*.py' -v
       - name: Build only missing bottles, with bounded licensing policy
+        id: build
+        # continue-on-error lets a first classified failure upload its evidence
+        # artifact. The job is still failed below unless a confirmed hold applies.
+        continue-on-error: true
         run: /usr/bin/python3 -m intelbrew.ci build --root "$ROOT_FORMULA" --output "$RUNNER_TEMP/candidate"
+      - name: Record whether a classified failure artifact is present
+        id: failure-record
+        run: |
+          if [ -f "$RUNNER_TEMP/intelbrew-failure/intelbrew-failure.json" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Upload a classified failure record when the compile produced one
+        if: steps.failure-record.outputs.present == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: intelbrew-failure-${{ inputs.root }}
+          path: ${{ runner.temp }}/intelbrew-failure/intelbrew-failure.json
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 0
       # Check outcome, not conclusion. continue-on-error makes conclusion
       # success, so a conclusion check would skip the remaining attempts.
       - name: Upload the candidate bottle
         id: upload-candidate-1
+        if: steps.build.outcome == 'success' && steps.build.outputs.held != 'true'
         continue-on-error: true
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
@@ -81,11 +107,15 @@ jobs:
           compression-level: 0
           overwrite: true
       - name: Fail the job when the candidate upload did not succeed
-        if: steps.upload-candidate-1.outcome != 'success' && steps.upload-candidate-2.outcome != 'success' && steps.upload-candidate-3.outcome != 'success'
+        if: steps.build.outcome == 'success' && steps.build.outputs.held != 'true' && steps.upload-candidate-1.outcome != 'success' && steps.upload-candidate-2.outcome != 'success' && steps.upload-candidate-3.outcome != 'success'
+        run: exit 1
+      - name: Fail the job when the build failed and was not a confirmed repeatable hold
+        if: steps.build.outcome != 'success' && steps.build.outputs.held != 'true'
         run: exit 1
   verify:
     name: verify (${{ inputs.root }})
     needs: build
+    if: needs.build.result == 'success' && needs.build.outputs.held != 'true'
     runs-on: macos-15-intel
     timeout-minutes: 180
     permissions:

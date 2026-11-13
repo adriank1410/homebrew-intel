@@ -147,6 +147,8 @@ def load_config():
     if c.get('schema')!=1 or c.get('repository')!='adriank1410/homebrew-intel':raise Error('Unexpected configuration')
     require_sha(c['brew_commit'],git=True);require_sha(c['core_commit'],git=True)
     c['source_build_holds']=validate_source_build_holds(c.get('source_build_holds',[]))
+    from .license_exceptions import validate_source_required_formula_exceptions
+    c['source_required_formula_exceptions']=validate_source_required_formula_exceptions(c.get('source_required_formula_exceptions',{}))
     profiles=c.setdefault('build_profiles',{})
     if not isinstance(profiles,dict) or any(APPROVED_BUILD_PROFILES.get(name)!=value for name,value in profiles.items()):raise Error('Unsupported build profiles')
     return c
@@ -198,6 +200,14 @@ def brew_env(*,ci=False):
     for k in ('HOMEBREW_BUILD_FROM_SOURCE','HOMEBREW_INSTALL_FROM_API','HOMEBREW_DEVELOPER','HOMEBREW_DEBUG','RUBYOPT','RUBYLIB','GH_TOKEN','GITHUB_TOKEN','GH_ENTERPRISE_TOKEN','ACTIONS_ID_TOKEN_REQUEST_TOKEN','ACTIONS_ID_TOKEN_REQUEST_URL'):env.pop(k,None)
     env.update(HOMEBREW_NO_AUTO_UPDATE='1',HOMEBREW_NO_INSTALL_CLEANUP='1',HOMEBREW_NO_ANALYTICS='1',HOMEBREW_NO_ENV_HINTS='1',HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK='1',HOMEBREW_NO_ASK='1')
     if ci:env.update(HOMEBREW_NO_INSTALL_FROM_API='1',BUNDLE_RETRY='3',BUNDLE_TIMEOUT='30')
+    return env
+
+def formula_test_env(*,ci=False):
+    """Environment for `brew test` in CI, matching official Homebrew GitHub Actions."""
+    env=brew_env(ci=ci)
+    if ci:
+        env['HOMEBREW_GITHUB_ACTIONS']='1'
+        env.pop('GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED',None)
     return env
 
 def run(args,*,capture=True,input_text=None,env=None,cwd=None,timeout=None,echo=False):
