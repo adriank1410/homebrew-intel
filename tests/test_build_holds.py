@@ -37,8 +37,18 @@ INCIDENT_HOLDS = [
 
 # The 26 October 2026 holds (run 40329905222, core f046c3cb8a): openjdk 27.0.1
 # requires arm64 on macOS since core 2d52dc6671; hashcat 8.0.0 aborts on a Metal
-# assertion in its formula test.
+# assertion in its formula test. The 13 November 2026 pair (run 43456114064,
+# core f3756358ae): archi-steam-farm 6.3.11.7 fails CA1307 analyzer errors when
+# published for net11.0 with dotnet 11.0.100.
 LIVE_HOLDS = [
+    {
+        "name": "archi-steam-farm",
+        "formula_sha256": "1d2fba0e814e9568b49f9f2d9454eca8ed7e15b9526608c6e3019d8303facac4",
+        "dependencies": [{
+            "name": "dotnet",
+            "formula_sha256": "1db51a4ec77fdf642aedba497bd7045af1611c1ed3ac1dc738e215f54c4136aa",
+        }],
+    },
     {
         "name": "hashcat",
         "formula_sha256": "106cea3252302ae8e17386d19f9f025e70d0e21e7210d5d4a33f9a2dec28e797",
@@ -106,25 +116,42 @@ class SourceBuildHoldTests(unittest.TestCase):
         for name in ("deno", "rust", "qtsvg", "qtdeclarative", "qttools"):
             self.assertNotIn(name, self.blocked)
 
+    def held_nodes(self, hold, formula_sha256=None):
+        name = hold["name"]
+        deps = hold["dependencies"]
+        nodes = {name: meta(name, formula_sha256=formula_sha256 or hold["formula_sha256"],
+                            runtime=[dep["name"] for dep in deps])}
+        for dep in deps:
+            nodes[dep["name"]] = meta(dep["name"], formula_sha256=dep["formula_sha256"],
+                                      official=True)
+        return nodes
+
     def test_live_holds_stop_openjdk_and_hashcat_only_for_their_recipe_files(self):
         for hold in LIVE_HOLDS:
             name = hold["name"]
             with self.subTest(name=name):
-                held = {name: meta(name, formula_sha256=hold["formula_sha256"])}
                 with self.assertRaisesRegex(Error, f"Source build excluded by policy: {name}"):
-                    self.plan(held, [name])
-                changed = self.plan({name: meta(name, formula_sha256="e" * 64)}, [name])
+                    self.plan(self.held_nodes(hold), [name])
+                changed = self.plan(self.held_nodes(hold, "e" * 64), [name])
                 self.assertEqual(changed["nodes"][name]["provider"], "build")
                 self.assertNotIn(name, self.blocked)
-        nodes = {
-            "openjdk": meta("openjdk", formula_sha256=LIVE_HOLDS[1]["formula_sha256"]),
-            "hashcat": meta("hashcat", formula_sha256=LIVE_HOLDS[0]["formula_sha256"]),
-            "simdutf": meta("simdutf"),
-        }
+        nodes = {"simdutf": meta("simdutf")}
+        for hold in LIVE_HOLDS:
+            nodes.update(self.held_nodes(hold))
         selected, blocked = native_plan.roots_needing_build(
-            ["hashcat", "openjdk", "simdutf"], Inspector(nodes), {}, self.config)
+            ["archi-steam-farm", "hashcat", "openjdk", "simdutf"], Inspector(nodes), {}, self.config)
         self.assertEqual(selected, ["simdutf"])
-        self.assertEqual(set(blocked), {"hashcat", "openjdk"})
+        self.assertEqual(set(blocked), {"archi-steam-farm", "hashcat", "openjdk"})
+
+    def test_archi_steam_farm_hold_needs_the_dotnet_11_recipe(self):
+        hold = LIVE_HOLDS[0]
+        self.assertEqual(hold["name"], "archi-steam-farm")
+        nodes = self.held_nodes(hold)
+        nodes["dotnet"]["formula_sha256"] = "d" * 64
+        plan = self.plan(nodes, ["archi-steam-farm"])
+        self.assertEqual(plan["nodes"]["archi-steam-farm"]["provider"], "build")
+        self.assertNotIn("archi-steam-farm", self.blocked)
+        self.assertNotIn("dotnet", self.blocked)
 
     def test_direct_source_holds_stop_before_fetching_dependency_metadata(self):
         inspector = Inspector({"llvm": meta("llvm", build=["must-not-inspect"])})

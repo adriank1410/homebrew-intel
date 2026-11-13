@@ -130,6 +130,20 @@ bundle Npcap. The verified archive is
 whose section 11 permits linking with any OpenSSL version. A later recipe hash
 still requires a new review.
 
+The 2026-11-13 review refreshes that exception again for core commit
+`f3756358aef6cf4b82302d0efa5c68614b60661e`: Nmap `7.993`, formula SHA-256
+`75ebf9e178c521a5ce5723abdd6a7f89519b301eee784e729f8ec1101102d03a`.
+The recipe bumps the source archive, updates official bottle metadata, and
+moves the existing Subversion `head` URL into a `head` block that adds
+`autoconf` as a build dependency. Install flags stay the same: OpenSSL 4,
+`python@3.15` for ndiff, the macOS SDK libpcap, `--without-nmap-update` and
+`--without-zenmap`, and no Npcap bundle. The verified archive is
+`https://nmap.org/dist/nmap-7.993.tar.bz2`,
+`270e55f04915bfcecb5db8feb959d4c5ba86a48c094520a4f1c07571e1c79c59`.
+`nmap-7.993/LICENSE` is byte-identical to `nmap-7.992/LICENSE`: NPSL 0.95,
+whose section 11 permits linking with any OpenSSL version. A later recipe hash
+still requires a new review.
+
 Additional primary texts:
 
 - EUPL 1.2: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017D0863

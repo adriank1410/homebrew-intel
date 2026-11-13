@@ -16,7 +16,9 @@ No target, existing registry record, release, source guard, signature check,
 license requirement or recipe is removed or weakened by these holds.
 
 `source_build_holds` currently holds two formula files from the
-26 October 2026 incident below: `openjdk` 27.0.1 and `hashcat` 8.0.0. The Qt
+26 October 2026 incident below, `openjdk` 27.0.1 and `hashcat` 8.0.0, and the
+`archi-steam-farm` 6.3.11.7 / `dotnet` 11.0.100 pair from the 13 November 2026
+incident. The Qt
 6.11.2 pair and the ocrmypdf 17.13.0 recipe below were removed from
 `source_build_holds` after publication.
 
@@ -238,6 +240,38 @@ To lift a hold early, delete its entry from `source_build_holds` in
 `policy/config.json` (or revert the pull request that added it). Once the
 recipe file changes or a matching bottle is published, delete the stale
 entry so the policy file does not keep a hash that can no longer occur.
+
+## Incident: 13 November 2026
+
+Evidence: [Sequoia Intel bottles run 43456114064](https://github.com/adriank1410/homebrew-intel/actions/runs/43456114064)
+(head `19fdae3`, core pin `f3756358aef6cf4b82302d0efa5c68614b60661e`),
+[`archi-steam-farm` job 131991822535](https://github.com/adriank1410/homebrew-intel/actions/runs/43456114064/job/131991822535).
+
+### archi-steam-farm: .NET 11 analyzers reject the 6.3.11.7 source
+
+Homebrew-core moved `dotnet` to 11.0.100 (`2496e00ac`) without changing
+`archi-steam-farm.rb`. The published `archi-steam-farm` 6.3.11.7 bottle depends
+on `dotnet` 10.0.403, so dependency drift schedules a rebuild. The recipe
+publishes with `--framework net#{dotnet.version.major_minor}`, now `net11.0`,
+and `dotnet publish ArchiSteamFarm` stops with nine `error CA1307`
+diagnostics (`string.IndexOf(char)`, `LastIndexOf(char)` and `EndsWith(char)`
+without a `StringComparison`) in `SteamUtilities.cs`, `ArchiWebHandler.cs`,
+`CardsFarmer.cs` and `Commands.cs`. ArchiSteamFarm 6.3.x targets .NET 10; the
+.NET 11 line is still in V7 pre-releases. Repeating the same pair of recipe
+files does not change the result.
+
+The failure needs both files, so the hold is a pair, like the Qt and md4c pair
+above: `archi-steam-farm` 6.3.11.7
+`1d2fba0e814e9568b49f9f2d9454eca8ed7e15b9526608c6e3019d8303facac4` together with `dotnet` 11.0.100
+`1db51a4ec77fdf642aedba497bd7045af1611c1ed3ac1dc738e215f54c4136aa`. The recipe is not patched,
+the analyzers are not switched off and `dotnet@10` is not substituted for the
+dependency named by core. The published 6.3.11.7 record is not changed and stays
+subject to the normal dependency drift checks. The scheduler reports the root as
+blocked and continues with its siblings.
+
+Any change to either file, for example a new ASF release or an upstream move to
+`dotnet@10`, expires the hold and the next run builds the root normally. After a
+successful publication, delete the stale entry.
 
 ## Existing resource exclusions
 
