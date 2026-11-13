@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
   "filename": "tesseract--5.5.4.sequoia.bottle.tar.gz",
   "formula_sha256": "0e8b9ae80c4ff4a0e2887316599e63539f9d2ee1e76641d70ba1f51231685c7b",
   "license": "Apache-2.0",
   "name": "tesseract",
   "pkg_version": "5.5.4",
   "recipe_sha256": "1caefce31f4a699a5e278c2b6bfeeb6f2b6b8181491cde0b9dfb94bf0ba9532d",
-  "release": "intel-42954810606-1-tesseract",
+  "release": "intel-43332389372-1-tesseract",
   "revision": 0,
-  "run_id": "42954810606",
+  "run_id": "43332389372",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -149,9 +149,9 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+      "formula_sha256": "1a5465295ac2257d8d047105c0870fe0ea17c6e76a3e755c07d8c3d1bd786a0e",
       "name": "little-cms2",
-      "pkg_version": "2.19.1"
+      "pkg_version": "2.20"
     },
     {
       "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "41babacb608e3ae82cdad3a314dfdfb231d7fb2d118884ddb5a72fc5b7a2f894",
+  "sha256": "5dd9c8ea14a4782cf8544972e290a868c2f4ff77296d48a89ad73afe30527064",
   "size": 10380368,
   "source": {
     "filename": "tesseract--5.5.4.sources.tar.gz",
-    "sha256": "0c1749209d9efbbf123c642d60a23835aa85297ac2ef19d832d90d36555e65fe",
-    "size": 8239373
+    "sha256": "1c2a9d0cbc0354440c10fed800e0d20d98c0c9348910109f598babd66b94858a",
+    "size": 8239362
   },
   "tag": "sequoia",
   "version": "5.5.4",
   "version_scheme": 0,
-  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
 }
