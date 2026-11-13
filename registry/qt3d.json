@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
   "filename": "qt3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "2813a24a126e27af416c7f82ef814ea8936f2aec61841dad798329ace2850e81",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qt3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "bd60edcc60ccce108f37a33c1308c69fce3ea714f04100bb8871fce03f21113f",
-  "release": "intel-42954810606-1-qt3d",
+  "release": "intel-43399686263-1-qt3d",
   "revision": 1,
-  "run_id": "42954810606",
+  "run_id": "43399686263",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -46,9 +46,9 @@
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "f32f2de29dc4a6f56d401f6227c6d66f5b3601958566fe0e90ab6bdd006bd3b9",
+      "formula_sha256": "f50f72171201202d50373d166bfa57bc29921b03d4e6ba6b8c500999b486a5b6",
       "name": "dbus",
-      "pkg_version": "1.16.2_1"
+      "pkg_version": "1.16.4"
     },
     {
       "formula_sha256": "637f9f35235b227da8d6ce2c8bf5d51d54adf0aa7a0a93570e431387ad56e86a",
@@ -212,15 +212,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6adee23f7780c4f0d986fd95dd30e1e8b776e63807cc0dcd0c5322ec3a76fea9",
-  "size": 3769604,
+  "sha256": "51d26f1849fdc7dc6fb5cafc5339e51dbcd69b660a81afe4f5166b017c02ae89",
+  "size": 3769453,
   "source": {
     "filename": "qt3d--6.12.0_1.sources.tar.gz",
-    "sha256": "a4c5aa207fae4e16acf9fe8aca6d78764c90b5cf592a0a74d8016efe140b7fc9",
-    "size": 141960273
+    "sha256": "2d66949717767761558543ea88b2d9ecbb0717baa0948a00f235c90786407779",
+    "size": 141960278
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
+  "workflow_commit": "e25fa2b1b3236224eb5de9f5cf5aafb97ee12ea6"
 }
