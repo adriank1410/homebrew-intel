@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "cellar": "any_skip_relocation",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "filename": "cabextract--1.12.sequoia.bottle.tar.gz",
+  "formula_sha256": "3151a8043097dc2fd18b6227724364fd3978cbd628ccc204af02c231f48235dc",
+  "license": "GPL-3.0-or-later",
+  "name": "cabextract",
+  "pkg_version": "1.12",
+  "recipe_sha256": "03b15001039ff400bd7658832bc1c19ca614f7e13c884423db39c88dae36c78a",
+  "release": "intel-43332389372-1-cabextract",
+  "revision": 0,
+  "run_id": "43332389372",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "032fde8c595f32ff0476caf6c7eb74e76dbf2b0f4df22861aedeb9df687024e4",
+  "size": 63656,
+  "source": {
+    "filename": "cabextract--1.12.sources.tar.gz",
+    "sha256": "0150b4b024c2c9ee48b2594d5daa8ac82ff1132e0a536585f4369bd98d81ac6d",
+    "size": 510709
+  },
+  "tag": "sequoia",
+  "version": "1.12",
+  "version_scheme": 0,
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
+}
