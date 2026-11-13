@@ -15,6 +15,9 @@ bypass a source hold. The client still refuses an incomplete bottle graph.
 No target, existing registry record, release, source guard, signature check,
 license requirement or recipe is removed or weakened by these holds.
 
+The formula-test GitHub Actions entries later in this document are a separate
+mechanism. They do not hold a source build and they do not skip `brew test`.
+
 `source_build_holds` currently holds two formula files from the
 26 October 2026 incident below, `openjdk` 27.0.1 and `hashcat` 8.0.0, and the
 `archi-steam-farm` 6.3.11.7 / `dotnet` 11.0.100 pair from the 13 November 2026
@@ -279,3 +282,49 @@ successful publication, delete the stale entry.
 exclusions. This incident does not change the supported platform or the client
 installation policy. Normal source failures on otherwise eligible roots still
 fail their jobs; no `continue-on-error` or blanket success conversion is added.
+
+## Formula-test GitHub Actions flag
+
+These entries in `policy/config.json` apply only to `brew test` during
+verification. They are not source-build holds and they do not skip the
+formula test, linkage, receipts, source validation or attestation. A match
+sets `HOMEBREW_GITHUB_ACTIONS=1` and unsets `GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED`
+for that one `brew test` invocation, and only when the formula file hash
+matches. Other formulae keep the ordinary test environment. Other failures
+of the same formula test still fail the job. No `continue-on-error` or
+blanket success conversion is added.
+
+### Incident: 13 November 2026
+
+Evidence: nine `verify (streamlink)` jobs on 13 November 2026, including
+[`verify` job 132018836969](https://github.com/adriank1410/homebrew-intel/actions/runs/43456114064/job/132018836969)
+on [Sequoia Intel bottles run 43456114064](https://github.com/adriank1410/homebrew-intel/actions/runs/43456114064).
+The pinned core was `f3756358aef6cf4b82302d0efa5c68614b60661e`. `streamlink`
+8.6.3 poured and linkage passed. The formula test then ran
+`streamlink https://www.youtube.com/watch?v=IVdyt2pNxn8 worst -o video.mp4`
+and YouTube returned `LOGIN_REQUIRED: Sign in to confirm you're not a bot`.
+
+The recipe already has a GitHub Actions branch for that exact case. When
+`HOMEBREW_GITHUB_ACTIONS` is set and `GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED`
+is not, the test expects exit status 1 and `Could not get video info - LOGIN_REQUIRED`,
+then returns. The verification job did not set that flag, so the recipe took
+the live-download path and the job failed. The same result repeated on runs
+43348951017, 43363121413, 43371866360, 43378048129, 43387334309, 43399686263,
+43416195993, 43423216075 and 43456114064.
+
+The entry is the `streamlink` 8.6.3 formula file alone:
+`dbdc697240b54f4828ad762af0e8c3c519fbf1de23474153bc3bb31ce6ba9a28`.
+The recipe is not patched. `HOMEBREW_GITHUB_ACTIONS` is not set for any other
+formula, and an unmatched streamlink test failure still fails the job.
+
+### Expiry and removal
+
+The entry matches only that exact formula file. Any change to `streamlink.rb`
+picked up by pin maintenance expires it, and the next run uses the ordinary
+test environment. If the new recipe still has the official GitHub Actions
+branch and the same YouTube check fails, add an entry for the new file hash
+rather than setting the flag globally or ignoring a different error. To lift
+the entry early, delete it from `formula_test_github_actions` in
+`policy/config.json` (or revert the pull request that added it). Once the
+recipe file changes, delete the stale hash so the policy file does not keep
+a hash that can no longer occur.

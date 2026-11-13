@@ -191,6 +191,14 @@ its files changes. The Qt
 excludes `llvm`, `qt`, `qtwebengine`, and `qtwebview`. See
 [build holds](docs/BUILD-HOLDS.md).
 
+`formula_test_github_actions` applies only to `brew test` for the `streamlink`
+8.6.3 recipe `dbdc697240b54f4828ad762af0e8c3c519fbf1de23474153bc3bb31ce6ba9a28`.
+That pinned test already expects YouTube's `LOGIN_REQUIRED` response when
+`HOMEBREW_GITHUB_ACTIONS` is set. The entry sets that flag for this formula
+file alone, so a GitHub runner IP blocked by YouTube does not fail
+verification. Other streamlink test failures still fail the job, and other
+formulae are unchanged. The entry expires when the formula file changes.
+
 All 36 modular Qt6 module formulas (such as `qtbase`, `qtdeclarative`,
 `qttools`, and `qtsvg`) have verified bottle records in the registry.
 Those records may describe older versions. When core updates Qt, modules are

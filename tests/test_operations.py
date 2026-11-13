@@ -736,6 +736,86 @@ class SourceBundleTests(unittest.TestCase):
             verify("fastfetch", Path(d) / "candidate", Path(d) / "verified")
             self.assertFalse(any("install-bundler-gems" in call.args[0] for call in run.call_args_list))
 
+    def _verify_named_package(self, name, *, formula_sha256, config, environ=None):
+        metadata = {name: meta(name, formula_sha256=formula_sha256)}
+        plan = Planner(lambda names: {item: metadata[item] for item in names}, {}, build=True).make([name])
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+        }
+        if environ:
+            env.update(environ)
+        manifest = {"root": name, "core_commit": env["INTELBREW_CORE_COMMIT"],
+                    "workflow_commit": env["GITHUB_SHA"], "packages": [record(name=name, formula_sha256=formula_sha256)],
+                    "plan": plan, "verified": False}
+        def fake_native(request, **kwargs):
+            if request["mode"] == "inspect": return {item: metadata[item] for item in request["names"]}
+            if request["mode"] == "receipt": return {"tap": "homebrew/core", "poured_from_bottle": True}
+            return {}
+        captured = {}
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, env, clear=True), \
+             patch("intelbrew.ci.validate_candidate", return_value=manifest), \
+             patch("intelbrew.ci.load_config", return_value=config), \
+             patch("intelbrew.ci.registry", return_value={}), patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.install_binary"), \
+             patch("intelbrew.ci.run") as run, patch("intelbrew.ci.shutil.copyfile"), patch("intelbrew.ci.write_json_new"):
+            verify(name, Path(d) / "candidate", Path(d) / "verified")
+            captured["run"] = run
+        return captured["run"]
+
+    def test_verify_sets_github_actions_env_only_for_pinned_streamlink_test(self):
+        streamlink_sha = "dbdc697240b54f4828ad762af0e8c3c519fbf1de23474153bc3bb31ce6ba9a28"
+        config = load_config()
+        run = self._verify_named_package("streamlink", formula_sha256=streamlink_sha, config=config)
+        linkage = next(call for call in run.call_args_list if call.args[0][1:2] == ["linkage"])
+        test = next(call for call in run.call_args_list if call.args[0][1:2] == ["test"])
+        self.assertNotIn("HOMEBREW_GITHUB_ACTIONS", linkage.kwargs["env"])
+        self.assertEqual(test.kwargs["env"]["HOMEBREW_GITHUB_ACTIONS"], "1")
+        self.assertNotIn("GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED", test.kwargs["env"])
+        self.assertEqual(test.args[0], ["brew", "test", "homebrew/core/streamlink"])
+
+    def test_verify_does_not_set_github_actions_env_for_other_formulae_or_expired_hashes(self):
+        config = load_config()
+        other = self._verify_named_package("fastfetch", formula_sha256=H, config=config)
+        expired = self._verify_named_package(
+            "streamlink", formula_sha256=H, config=config,
+            environ={"GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED": "1"})
+        other_test = next(call for call in other.call_args_list if call.args[0][1:2] == ["test"])
+        expired_test = next(call for call in expired.call_args_list if call.args[0][1:2] == ["test"])
+        self.assertNotIn("HOMEBREW_GITHUB_ACTIONS", other_test.kwargs["env"])
+        self.assertNotIn("HOMEBREW_GITHUB_ACTIONS", expired_test.kwargs["env"])
+        self.assertEqual(expired_test.kwargs["env"].get("GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"), "1")
+
+    def test_verify_still_fails_other_streamlink_test_errors(self):
+        streamlink_sha = "dbdc697240b54f4828ad762af0e8c3c519fbf1de23474153bc3bb31ce6ba9a28"
+        config = load_config()
+        metadata = {"streamlink": meta("streamlink", formula_sha256=streamlink_sha)}
+        plan = Planner(lambda names: {item: metadata[item] for item in names}, {}, build=True).make(["streamlink"])
+        env = {
+            "GITHUB_ACTIONS": "true", "RUNNER_ENVIRONMENT": "github-hosted", "RUNNER_OS": "macOS",
+            "RUNNER_ARCH": "X64", "INTELBREW_CORE_COMMIT": "a" * 40, "GITHUB_SHA": "b" * 40,
+        }
+        manifest = {"root": "streamlink", "core_commit": env["INTELBREW_CORE_COMMIT"],
+                    "workflow_commit": env["GITHUB_SHA"],
+                    "packages": [record(name="streamlink", formula_sha256=streamlink_sha)],
+                    "plan": plan, "verified": False}
+        def fake_native(request, **kwargs):
+            if request["mode"] == "inspect": return {item: metadata[item] for item in request["names"]}
+            if request["mode"] == "receipt": return {"tap": "homebrew/core", "poured_from_bottle": True}
+            return {}
+        def fake_run(args, **kwargs):
+            if args[:2] == ["brew", "test"]:
+                raise Error("brew failed (1): error: No plugin found")
+        with tempfile.TemporaryDirectory() as d, patch.dict(os.environ, env, clear=True), \
+             patch("intelbrew.ci.validate_candidate", return_value=manifest), \
+             patch("intelbrew.ci.load_config", return_value=config), \
+             patch("intelbrew.ci.registry", return_value={}), patch("intelbrew.ci.native", side_effect=fake_native), \
+             patch("intelbrew.ci.install_binary"), \
+             patch("intelbrew.ci.run", side_effect=fake_run), patch("intelbrew.ci.shutil.copyfile"), \
+             patch("intelbrew.ci.write_json_new"):
+            with self.assertRaisesRegex(Error, "No plugin found"):
+                verify("streamlink", Path(d) / "candidate", Path(d) / "verified")
+
     def test_build_prepares_sources_in_order_after_dependencies_are_installed(self):
         events = []
         env = {

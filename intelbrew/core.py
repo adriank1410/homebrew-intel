@@ -142,11 +142,37 @@ def source_build_held(holds,name,nodes):
         if all(isinstance(nodes.get(dep['name']),dict) and nodes[dep['name']].get('formula_sha256')==dep['formula_sha256'] for dep in hold['dependencies']):return True
     return False
 
+def validate_formula_test_github_actions(entries):
+    if not entries:return []
+    if isinstance(entries,tuple):entries=list(entries)
+    if not isinstance(entries,list) or len(entries)>50:raise Error('Invalid formula-test GitHub Actions entries')
+    seen=set();normalized=[]
+    for entry in entries:
+        if not isinstance(entry,dict) or set(entry)!={'name','formula_sha256'}:raise Error('Invalid formula-test GitHub Actions entry')
+        name=canonical_name(entry['name'])
+        if name in seen:raise Error('Duplicate formula-test GitHub Actions entry')
+        seen.add(name);require_sha(entry['formula_sha256'])
+        normalized.append({**entry,'name':name})
+    return normalized
+
+def formula_test_uses_github_actions(name,meta,config):
+    sha=meta.get('formula_sha256') if isinstance(meta,dict) else None
+    return any(entry['name']==name and entry['formula_sha256']==sha for entry in config.get('formula_test_github_actions',[]))
+
+def formula_test_github_actions_env(name,meta,config,*,ci=True):
+    """Return brew test env, with upstream's GitHub Actions flag only for a pinned recipe."""
+    env=brew_env(ci=ci)
+    if formula_test_uses_github_actions(name,meta,config):
+        env['HOMEBREW_GITHUB_ACTIONS']='1'
+        env.pop('GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED',None)
+    return env
+
 def load_config():
     c=read_json(ROOT/'policy/config.json')
     if c.get('schema')!=1 or c.get('repository')!='adriank1410/homebrew-intel':raise Error('Unexpected configuration')
     require_sha(c['brew_commit'],git=True);require_sha(c['core_commit'],git=True)
     c['source_build_holds']=validate_source_build_holds(c.get('source_build_holds',[]))
+    c['formula_test_github_actions']=validate_formula_test_github_actions(c.get('formula_test_github_actions',[]))
     profiles=c.setdefault('build_profiles',{})
     if not isinstance(profiles,dict) or any(APPROVED_BUILD_PROFILES.get(name)!=value for name,value in profiles.items()):raise Error('Unsupported build profiles')
     return c

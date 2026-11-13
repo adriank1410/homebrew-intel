@@ -41,6 +41,12 @@
       "dependencies": []
     }
   ],
+  "formula_test_github_actions": [
+    {
+      "name": "streamlink",
+      "formula_sha256": "dbdc697240b54f4828ad762af0e8c3c519fbf1de23474153bc3bb31ce6ba9a28"
+    }
+  ],
   "scheduled_batch_size": 24,
   "permissive_license_tokens": [
     "0BSD",

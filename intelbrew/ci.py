@@ -13,7 +13,8 @@ from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, block
                    brew_env, canonical_name, check_bottle, digest, download, load_config, native,
                    read_json, registry, require_sha, retry_transient, run, transient_source_builds,
                    validate_record, write_json_new, source_build_blocklist, LLVM_NO_PGO,
-                   APPROVED_BUILD_PROFILES, OPENJDK_INTEL_BOOT_JDK_26)
+                   APPROVED_BUILD_PROFILES, OPENJDK_INTEL_BOOT_JDK_26,
+                   formula_test_github_actions_env, formula_test_uses_github_actions)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
@@ -625,7 +626,11 @@ def verify(root:str,candidate:Path,output:Path)->None:
         for name in local:
             receipt=native({"mode":"receipt","name":name},ci=True)
             if receipt["tap"]!="homebrew/core" or not receipt["poured_from_bottle"]:raise Error("Core bottle verification failed")
-            run(["brew","linkage","--test",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True));run(["brew","test",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True))
+            run(["brew","linkage","--test",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True))
+            test_env=formula_test_github_actions_env(name,plan["nodes"][name],config)
+            if formula_test_uses_github_actions(name,plan["nodes"][name],config):
+                print(f"intelbrew CI: using upstream GitHub Actions formula test for {name}",file=sys.stderr)
+            run(["brew","test",f"homebrew/core/{name}"],capture=False,env=test_env)
     for rec in manifest["packages"]:
         for filename in (rec["filename"],rec["source"]["filename"]):shutil.copyfile(candidate/filename,output/filename)
     out=copy.deepcopy(manifest);out["verified"]=True;write_json_new(output/"manifest.json",out);validate_candidate(output,expected_root=root,verified=True)

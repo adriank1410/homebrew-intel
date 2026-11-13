@@ -198,6 +198,15 @@ wpis dla przepisu ocrmypdf 17.13.0 usunięto po publikacji butelek Sequoia dla
 `llvm`, `qt`, `qtwebengine` i `qtwebview`. Szczegóły:
 [wstrzymania budowania](docs/BUILD-HOLDS.md).
 
+`formula_test_github_actions` dotyczy wyłącznie `brew test` dla przepisu
+`streamlink` 8.6.3 o sumie
+`dbdc697240b54f4828ad762af0e8c3c519fbf1de23474153bc3bb31ce6ba9a28`.
+Ten przypięty test już oczekuje odpowiedzi YouTube `LOGIN_REQUIRED`, gdy
+ustawione jest `HOMEBREW_GITHUB_ACTIONS`. Wpis ustawia tę flagę tylko dla
+tego pliku formuły, więc zablokowany adres IP runnera GitHub nie kończy
+weryfikacji niepowodzeniem. Inne błędy testu streamlink nadal kończą zadanie niepowodzeniem,
+a pozostałe formuły zostają bez zmian. Wpis wygasa, gdy plik formuły się zmieni.
+
 Wszystkie 36 modułowych pakietów Qt6 (takich jak `qtbase`, `qtdeclarative`,
 `qttools` i `qtsvg`) mają w rejestrze zweryfikowane butelki.
 Wpisy mogą jednak dotyczyć starszych wersji. Po aktualizacji Qt w core moduły są
