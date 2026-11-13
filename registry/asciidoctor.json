@@ -1,49 +1,49 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9811f64e2cccd62fd8a981c1fed5248b9705fea4",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any_skip_relocation",
-  "core_commit": "4f1c6ce8be2781088b13cc240069ca331f089df3",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
   "filename": "asciidoctor--2.0.26.sequoia.bottle.tar.gz",
-  "formula_sha256": "28bfc66731a80cb1ec98589ead7635a743096ad91a81de7cb21a569b46fa8a30",
+  "formula_sha256": "bc9ed3c96a5802b8f5587c83b61370c520d1397adbe3c547e8987c686cff0c33",
   "license": "MIT",
   "name": "asciidoctor",
   "pkg_version": "2.0.26",
-  "recipe_sha256": "f5298b1d8f746cbae0911cfe3cda9bbfd5770c78e33c0e2c5a21ed30e367be12",
-  "release": "intel-39873474223-1-git-lfs",
+  "recipe_sha256": "69fec9dea035baca35a84fd050e571c8dbcad865d3942bfee1b4a2a05116beea",
+  "release": "intel-43332389372-1-ccache",
   "revision": 0,
-  "run_id": "39873474223",
+  "run_id": "43332389372",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "dfad02f7f8f65dff0f00fee6ca2d99b59309ad8c7bc6f2148ae60788f2bf8a79",
+      "formula_sha256": "1664ef8ed12ce548509600813e2fbcd8160e0b1015ac0876e3c7832f8e18dbb1",
       "name": "libyaml",
       "pkg_version": "0.2.5"
     },
     {
-      "formula_sha256": "9e6998cc58157aa31b16144b11b67d686caccd3032d7882a76eccb53ce0730f7",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
-      "pkg_version": "4.0.3"
+      "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "7b4108878b27ced859f7312606a9f71944789f5b81756748d488a7b544a8e0c4",
+      "formula_sha256": "8a13e947f67526c6cee5edc6a830582675ea645a89e36369e553724282c70623",
       "name": "ruby",
-      "pkg_version": "4.0.8"
+      "pkg_version": "4.0.9"
     }
   ],
   "schema": 1,
-  "sha256": "f8cc0d0fe5a1208951182b8c1802842d0fb525328aef77888b88baf832b8ed3b",
-  "size": 13809766,
+  "sha256": "50452393883d49038b15afbbc169d3efa2b3ff6469ff52e02fcf969e9f96c50c",
+  "size": 13809746,
   "source": {
     "filename": "asciidoctor--2.0.26.sources.tar.gz",
-    "sha256": "7935d3c74c9944329c143c93a0133c5d8755332166841ebd3776a71b102b8898",
-    "size": 8133102
+    "sha256": "540956ec87bc5db70e23a7dc64eefc630b840a7c1911b3bc6c59a873d81cc91a",
+    "size": 8133125
   },
   "tag": "sequoia",
   "version": "2.0.26",
   "version_scheme": 0,
-  "workflow_commit": "4a7157f7bf80b3a884879f8a40062e67bfa8ea27"
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
 }
