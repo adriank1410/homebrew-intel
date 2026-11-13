@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
-  "filename": "p11-kit--0.26.5.sequoia.bottle.tar.gz",
-  "formula_sha256": "f417ea91e494ec02cc2c79284c80dd4f1b214ba6678a0669af531243aacdaded",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "filename": "p11-kit--0.26.6.sequoia.bottle.tar.gz",
+  "formula_sha256": "0c48d6e5550b67c68430827698b7464781c1d9818432516fab4ef3b33e8f203f",
   "license": "BSD-3-Clause",
   "name": "p11-kit",
-  "pkg_version": "0.26.5",
-  "recipe_sha256": "da0da1b3ea97b6a58a0a86efea95fe59ec99f5ef17c19ec0ef24c14fb704f10d",
-  "release": "intel-42314323352-1-p11-kit",
+  "pkg_version": "0.26.6",
+  "recipe_sha256": "66d6a587103c3e9987ef33382f5f2b23e809b039eeff5479fa53da5220c3d056",
+  "release": "intel-43332389372-1-p11-kit",
   "revision": 0,
-  "run_id": "42314323352",
+  "run_id": "43332389372",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2448442796336fcfb975af03fd4d3c5a7e37215cb6a5a90e0719c6aafcd99016",
-  "size": 1053703,
+  "sha256": "240c4e3680af2d071ba9520270fe137c7a3005cd4cc0dc918437d7b681681ca9",
+  "size": 1081028,
   "source": {
-    "filename": "p11-kit--0.26.5.sources.tar.gz",
-    "sha256": "02fa4fd2c0726085afe6802866b6d8f971f136ae6ab9441710c4670673d720b3",
-    "size": 1087999
+    "filename": "p11-kit--0.26.6.sources.tar.gz",
+    "sha256": "1e64436301f8e31dc8f7506063b57176b4c997d3c43d6af20c5d10de0a3a6745",
+    "size": 1155450
   },
   "tag": "sequoia",
-  "version": "0.26.5",
+  "version": "0.26.6",
   "version_scheme": 0,
-  "workflow_commit": "faf96751c5ec14dc108f0b70a52b975748d5575e"
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
 }
