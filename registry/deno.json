@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
   "cellar": "any",
-  "core_commit": "a0e81476182f50c666089733b9437bf86b825607",
+  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
   "filename": "deno--2.9.8.sequoia.bottle.tar.gz",
   "formula_sha256": "bd807084794cc89ef75696bef58f6b6cb6519a6ed9c1f2a78163bf3b7c331035",
   "license": "MIT",
   "name": "deno",
   "pkg_version": "2.9.8",
   "recipe_sha256": "f309c34c36d3ba08847214324ff0c4e4b06d8a6b3f4340e38fcf66f9c85feaf6",
-  "release": "intel-42954810606-1-deno",
+  "release": "intel-43332389372-1-deno",
   "revision": 0,
-  "run_id": "42954810606",
+  "run_id": "43332389372",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -34,9 +34,9 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "3fb1fecbc829bddbbadb586f38596b5cd0d6b953469fe56139faabd6fecc35fe",
+      "formula_sha256": "1a5465295ac2257d8d047105c0870fe0ea17c6e76a3e755c07d8c3d1bd786a0e",
       "name": "little-cms2",
-      "pkg_version": "2.19.1"
+      "pkg_version": "2.20"
     },
     {
       "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8cab6b6e06f5b1ca9bd818055e76f01f0e180c380a6ff8ac95f46d34c1fd59db",
-  "size": 47971084,
+  "sha256": "749b7c270e2f8ad4b30cff28fb0970b98806139c849699d5cb26ac9f83cb63d2",
+  "size": 47971124,
   "source": {
     "filename": "deno--2.9.8.sources.tar.gz",
-    "sha256": "ee02dfca7da708d46f72c9c3964520e0f3e20d35cd421bad9cd63ad0b4c2056c",
-    "size": 188204743
+    "sha256": "c75d5a043c051784d5eb319745c1d521a02b01f99b815add6fefcda4972c92a1",
+    "size": 188207009
   },
   "tag": "sequoia",
   "version": "2.9.8",
   "version_scheme": 0,
-  "workflow_commit": "39042c093793b9165227ef8e0f9ba28832f55782"
+  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
 }
