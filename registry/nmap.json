@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "c5b9f65d0b679d719545df334e8d433a5b6ded3f",
+  "brew_commit": "17e7532228bfd52094f9f5c463753eb1e111f99b",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "38f38edc332e3ca65a2a8ae83171dd6e1caa7e26",
-  "filename": "nmap--7.992.sequoia.bottle.tar.gz",
-  "formula_sha256": "00a1d74c9e243d46184a8b5e8537f8ff4200b0928f78e8898545383475a820f7",
+  "core_commit": "f3756358aef6cf4b82302d0efa5c68614b60661e",
+  "filename": "nmap--7.993.sequoia.bottle.tar.gz",
+  "formula_sha256": "75ebf9e178c521a5ce5723abdd6a7f89519b301eee784e729f8ec1101102d03a",
   "license": "cannot_represent",
   "name": "nmap",
-  "pkg_version": "7.992",
-  "recipe_sha256": "8d4a1a8d9d12bbfa43b24a1021288893f72df7d0a84a63f58760bfdaa59c1126",
-  "release": "intel-40188852486-1-nmap",
+  "pkg_version": "7.993",
+  "recipe_sha256": "d87fdf7d6763b554aa431d0ea5e270e49f95a7aeda8b895e270f6554c644eabb",
+  "release": "intel-43473346651-1-nmap",
   "revision": 0,
-  "run_id": "40188852486",
+  "run_id": "43473346651",
   "runtime_dependencies": [
     {
-      "formula_sha256": "535300ac0e99511a36340454bd5287cfff097191de9d7b9675ed924f3a692317",
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
       "name": "ca-certificates",
-      "pkg_version": "2026-10-20"
+      "pkg_version": "2026-11-05"
     },
     {
       "formula_sha256": "c61881db3b4f812d90c3dd5f7f042dca218d47b52e0ca4b61fb250cd8c5d891e",
@@ -24,7 +24,7 @@
       "pkg_version": "2.50"
     },
     {
-      "formula_sha256": "eecf497120b0b28aad11f0536ac3c7759fe0d02db6ef972a811a7fc198ade8d3",
+      "formula_sha256": "1bb5700525084a6a5ad6e165cc132a145b0b290a2ea5361d596e6fc9b6b09859",
       "name": "libssh2",
       "pkg_version": "1.11.1_7"
     },
@@ -34,9 +34,9 @@
       "pkg_version": "5.5.1"
     },
     {
-      "formula_sha256": "b45023020f34ac622d84d10e44f1d972f742d5c741098f6ee828b6ab79bd19e4",
+      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
       "name": "lz4",
-      "pkg_version": "1.10.0"
+      "pkg_version": "1.11.1"
     },
     {
       "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
@@ -44,7 +44,7 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "91e18f2f14ecf16a9bbdb7547700f1f1d76b09e01bb461897191e2d2027cc8b9",
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -54,9 +54,9 @@
       "pkg_version": "10.49"
     },
     {
-      "formula_sha256": "120a8ba26507071d3571f60d16ae679aa3a2ce357ecd80f2afd1177b961a188b",
+      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
       "name": "python@3.15",
-      "pkg_version": "3.15.1"
+      "pkg_version": "3.15.2"
     },
     {
       "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
@@ -80,15 +80,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "76fb5038b2b7db5b6c44f82b9939be60b0dc8ce86daf3d5fee4d75cd88fc45af",
-  "size": 8363515,
+  "sha256": "f4406a0a0324985f843dd179e5e6375d6bc0704fb868d9bb49b01089330a25d7",
+  "size": 8363321,
   "source": {
-    "filename": "nmap--7.992.sources.tar.gz",
-    "sha256": "1e0d4a045cfaa440a51cd70dc73f1124602f06edba9ef3fc2f4613002f7ce8b1",
-    "size": 12954846
+    "filename": "nmap--7.993.sources.tar.gz",
+    "sha256": "563ed11551d6778bd73bd8957375743ba7cc4adbf376c15a8807e7c6199fae5d",
+    "size": 12951152
   },
   "tag": "sequoia",
-  "version": "7.992",
+  "version": "7.993",
   "version_scheme": 0,
-  "workflow_commit": "978c0ca8b0259b4cc5e1058764f394432e644a7c"
+  "workflow_commit": "2140a1df894ef51b5a012806f6e5bac8ff8d07f5"
 }
