@@ -107,13 +107,23 @@ class RootWorkflowTests(unittest.TestCase):
         self.assertEqual(build["name"], "build (${{ inputs.root }})")
         self.assertEqual(build["runs-on"], "macos-15-intel")
         self.assertNotIn("needs", build)
+        self.assertEqual(build.get("outputs"), {
+            "held": "${{ steps.build.outputs.held }}",
+            "repeatable_hold": "${{ steps.build.outputs.repeatable_hold }}",
+        })
+        self.assertEqual(build["permissions"]["actions"], "read")
         build_upload = next(step for step in build["steps"]
-                            if step.get("uses", "").startswith("actions/upload-artifact@"))
+                            if step.get("uses", "").startswith("actions/upload-artifact@")
+                            and step.get("with", {}).get("name") == "candidate-${{ inputs.root }}")
         self.assertEqual(build_upload["with"]["name"], "candidate-${{ inputs.root }}")
 
         verify = jobs["verify"]
         self.assertEqual(verify["name"], "verify (${{ inputs.root }})")
         self.assertEqual(verify["needs"], "build")
+        self.assertEqual(
+            verify.get("if"),
+            "needs.build.result == 'success' && needs.build.outputs.held != 'true'",
+        )
         self.assertEqual(verify["runs-on"], "macos-15-intel")
         download = next(step for step in verify["steps"]
                         if step.get("uses", "").startswith("actions/download-artifact@"))
@@ -156,7 +166,8 @@ class RootWorkflowTests(unittest.TestCase):
         for stage, (artifact, prefix) in expected.items():
             steps = document["jobs"][stage]["steps"]
             uploads = [step for step in steps
-                       if step.get("uses", "").startswith("actions/upload-artifact@")]
+                       if step.get("uses", "").startswith("actions/upload-artifact@")
+                       and step.get("with", {}).get("name") == artifact]
             self.assertEqual([step["id"] for step in uploads],
                              [f"{prefix}-1", f"{prefix}-2", f"{prefix}-3"])
             for step in uploads:
@@ -166,7 +177,13 @@ class RootWorkflowTests(unittest.TestCase):
                 self.assertEqual(step["with"]["if-no-files-found"], "error")
                 self.assertGreaterEqual(step["with"]["retention-days"], 35)
                 self.assertEqual(step["with"]["compression-level"], 0)
-            self.assertNotIn("if", uploads[0])
+            if stage == "build":
+                self.assertEqual(
+                    uploads[0]["if"],
+                    "steps.build.outcome == 'success' && steps.build.outputs.held != 'true'",
+                )
+            else:
+                self.assertNotIn("if", uploads[0])
             self.assertIs(uploads[0].get("continue-on-error"), True)
             self.assertNotIn("overwrite", uploads[0]["with"])
             self.assertEqual(uploads[1]["if"], f"steps.{prefix}-1.outcome == 'failure'")
@@ -186,13 +203,40 @@ class RootWorkflowTests(unittest.TestCase):
                 waits = [step for step in steps[earlier + 1:later] if step.get("run") == pause]
                 self.assertEqual([(step.get("if"), step.get("run")) for step in waits], [(wait_for, pause)])
             guard = steps[positions[2] + 1]
-            self.assertEqual(guard.get("if"), (
+            upload_failed = (
                 f"steps.{prefix}-1.outcome != 'success' && "
                 f"steps.{prefix}-2.outcome != 'success' && "
                 f"steps.{prefix}-3.outcome != 'success'"
-            ))
+            )
+            if stage == "build":
+                self.assertEqual(guard.get("if"), (
+                    "steps.build.outcome == 'success' && steps.build.outputs.held != 'true' && "
+                    + upload_failed
+                ))
+            else:
+                self.assertEqual(guard.get("if"), upload_failed)
             self.assertEqual(guard.get("run"), "exit 1")
             self.assertNotIn("continue-on-error", guard)
+
+        build_steps = document["jobs"]["build"]["steps"]
+        compile_step = next(step for step in build_steps if step.get("id") == "build")
+        self.assertIs(compile_step.get("continue-on-error"), True)
+        self.assertIn("intelbrew.ci build", compile_step["run"])
+        failure_upload = next(
+            step for step in build_steps
+            if step.get("with", {}).get("name") == "intelbrew-failure-${{ inputs.root }}"
+        )
+        self.assertEqual(failure_upload["if"], "steps.failure-record.outputs.present == 'true'")
+        self.assertGreaterEqual(failure_upload["with"]["retention-days"], 35)
+        fail_if_not_hold = next(
+            step for step in build_steps
+            if step.get("name") == "Fail the job when the build failed and was not a confirmed repeatable hold"
+        )
+        self.assertEqual(
+            fail_if_not_hold["if"],
+            "steps.build.outcome != 'success' && steps.build.outputs.held != 'true'",
+        )
+        self.assertEqual(fail_if_not_hold.get("run"), "exit 1")
 
 
 if __name__ == "__main__":

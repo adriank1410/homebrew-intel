@@ -175,6 +175,8 @@ class BuildReportingTests(unittest.TestCase):
         self.assertEqual(run["stdout"]["counts"]["covered"], 2)
         self.assertIn("Coverage Complete | Yes", run["summary"])
         self.assertIn("*(no blocked roots)*", run["summary"])
+        self.assertIn("*(no automatic holds)*", run["summary"])
+        self.assertIn("*(no license exceptions were auto-renewed)*", run["summary"])
 
     def test_coverage_all_blocked_no_selected(self):
         items = {
@@ -369,8 +371,8 @@ class BuildReportingTests(unittest.TestCase):
         self.assertEqual(
             set(data),
             {"inspected_roots", "build_candidates", "selected_roots", "blocked_roots",
-             "covered_roots", "eligible_roots", "waiting_roots", "deferred_roots",
-             "coverage_complete", "counts"},
+             "held_roots", "license_renewals", "covered_roots", "eligible_roots",
+             "waiting_roots", "deferred_roots", "coverage_complete", "counts"},
         )
 
     def test_summary_includes_pinned_hashes_and_lag_disclaimer(self):

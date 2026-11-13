@@ -10,16 +10,72 @@ from .build_profiles import (prepare_build_profile, profile_recipe_name, profile
                              recipe_sha256, variant_recipe)
 from .cli import attest
 from .core import (MAX_JSON, ROOT, Error, Planner, artifact_url, basename, blocked_toolchain_source,
-                   brew_env, canonical_name, check_bottle, digest, download, load_config, native,
+                   brew_env, formula_test_env, canonical_name, check_bottle, digest, download, load_config, native,
                    read_json, registry, require_sha, retry_transient, run, transient_source_builds,
                    validate_record, write_json_new, source_build_blocklist, LLVM_NO_PGO,
                    APPROVED_BUILD_PROFILES, OPENJDK_INTEL_BOOT_JDK_26)
+from .license_exceptions import (
+    fetch_verified_https, resolve_source_requirement, stable_source_from_native)
+from .repeatable_holds import (
+    RepeatableHold, classify_build_failure, consecutive_matches, describe_hold,
+    hold_descriptor, load_failure_history, make_failure_record, write_failure_record)
 
 BOTTLE_OPTIONS = ("--json", "--no-rebuild")
 # Large dependency bundles (notably Node plus its npm tree) can contain many
 # notice paths, most of them carrying identical text. Deduplicate each source
 # archive by content and retain a finite bound for genuinely distinct notices.
 MAX_SOURCE_NOTICES = 100_000
+
+
+def _failure_dir() -> Path:
+    base=Path(os.environ.get("INTELBREW_FAILURE_DIR") or os.environ.get("RUNNER_TEMP") or tempfile.gettempdir())
+    return base/"intelbrew-failure"
+
+
+def _write_github_output(**values):
+    path=os.environ.get("GITHUB_OUTPUT")
+    if not path:
+        return
+    with open(path,"a",encoding="utf-8") as handle:
+        for key,value in values.items():
+            handle.write(f"{key}={value}\n")
+
+
+def _notice(message:str)->None:
+    print(f"::notice::{message}",file=sys.stderr,flush=True)
+    summary=os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary,"a",encoding="utf-8") as handle:
+            handle.write("\n### Repeatable source-build hold\n\n")
+            handle.write(message+"\n")
+
+
+def _maybe_raise_prior_hold(root,plan,records,config)->None:
+    descriptor=hold_descriptor(root,plan,records)
+    if descriptor is None:
+        return
+    history=load_failure_history(config["repository"],root) if os.environ.get("GITHUB_ACTIONS") else []
+    # Without a signature we only skip when two records already agree on this pair.
+    if len(history)<2 or history[0].get("signature")!=history[1].get("signature"):
+        return
+    if consecutive_matches(history,descriptor,history[0]["signature"])<2:
+        return
+    record=make_failure_record(descriptor,history[0]["signature"],os.environ.get("GITHUB_RUN_ID",""))
+    write_failure_record(_failure_dir(),record)
+    raise RepeatableHold(describe_hold(descriptor,history[0]["signature"],2))
+
+
+def _maybe_convert_repeatable_hold(root,plan,records,config,output:str)->None:
+    signature=classify_build_failure(output)
+    descriptor=hold_descriptor(root,plan,records)
+    if signature is None or descriptor is None:
+        return
+    history=load_failure_history(config["repository"],root) if os.environ.get("GITHUB_ACTIONS") else []
+    evidence=consecutive_matches(history,descriptor,signature)
+    record=make_failure_record(descriptor,signature,os.environ.get("GITHUB_RUN_ID",""))
+    write_failure_record(_failure_dir(),record)
+    if evidence>=1:
+        raise RepeatableHold(describe_hold(descriptor,signature,evidence+1))
 
 
 def require_ci_mac() -> None:
@@ -142,16 +198,36 @@ def _license_requirements(expression,config:dict,*,depth:int=0):
     return None
 
 
-def allowed_redistribution(meta:dict,config:dict)->tuple[str,...]:
+def _license_renewal_helpers():
+    if not os.environ.get("GITHUB_ACTIONS"):
+        return {}
+    return {
+        "stable_source": lambda name: stable_source_from_native(name, native),
+        "fetch_archive": fetch_verified_https,
+    }
+
+
+def allowed_redistribution(meta:dict,config:dict,log=None)->tuple[str,...]:
     expression=meta.get("license")
     requirements=_license_requirements(expression,config)
     if requirements is not None:return requirements
-    source_exception=config.get("source_required_formula_exceptions",{}).get(meta["name"],{})
-    if (source_exception.get("formula_sha256")==meta["formula_sha256"]
-            and source_exception.get("license")==expression
-            and isinstance(source_exception.get("requirement"),str) and source_exception["requirement"]
-            and isinstance(source_exception.get("review"),str) and len(source_exception["review"].strip())>=30):
-        return (source_exception["requirement"],)
+    helpers=_license_renewal_helpers()
+    before=len(log) if log is not None else 0
+    requirements=resolve_source_requirement(meta,config,log=log,**helpers)
+    if requirements is not None:
+        if log is not None and len(log)>before:
+            event=log[-1]
+            print(
+                f"intelbrew CI: renewed source-required exception for {event['name']} "
+                f"(formula {event['previous_formula_sha256'][:12]} -> {event['formula_sha256'][:12]}, "
+                f"license file unchanged)",
+                file=sys.stderr, flush=True)
+            print(
+                f"::notice::Renewed source-required exception for {event['name']}: "
+                f"source checksum matches the recipe and {event['license_file']} is bit-identical "
+                f"to the reviewed license ({event['license_sha256']})",
+                file=sys.stderr, flush=True)
+        return requirements
     exception=config["redistribution_exceptions"].get(meta["name"],{})
     if exception.get("formula_sha256")==meta["formula_sha256"] and isinstance(exception.get("review"),str) and len(exception["review"].strip())>=30:return ()
     raise Error(f'{meta["name"]}: redistribution review required for {expression!r}')
@@ -502,7 +578,7 @@ def install_binary(name,meta,*,local=None,sha=None,as_dependency=True):
 
 
 def build(root:str,output:Path)->None:
-    require_ci_mac();config=load_config();allowed=read_json(ROOT/"policy/targets.json")["formulae"]
+    require_ci_mac();_write_github_output(held="false",repeatable_hold="false");config=load_config();allowed=read_json(ROOT/"policy/targets.json")["formulae"]
     if root not in allowed:raise Error("Root is not in reviewed target list")
     if output.exists():raise Error("Build output must be fresh")
     output.mkdir(parents=True);registry_commit=sync_registry();records=registry();inspector=lambda batch:native({"mode":"inspect","names":batch},ci=True)
@@ -512,7 +588,9 @@ def build(root:str,output:Path)->None:
     transient=transient_builds(plan)
     to_build=[n for n in plan["order"] if plan["nodes"][n]["provider"]=="build"]
     if len(to_build)>config["max_source_builds"]:raise Error("Source build budget exceeded")
-    license_requirements={name:allowed_redistribution(plan["nodes"][name],config) for name in to_build}
+    _maybe_raise_prior_hold(root, plan, records, config)
+    renewal_log=[]
+    license_requirements={name:allowed_redistribution(plan["nodes"][name],config,log=renewal_log) for name in to_build}
     core_commit=require_sha(os.environ["INTELBREW_CORE_COMMIT"],git=True);workflow_commit=require_sha(os.environ["GITHUB_SHA"],git=True)
     manifest={"schema":1,"root":root,"core_commit":core_commit,"brew_commit":config["brew_commit"],"workflow_commit":workflow_commit,"registry_commit":registry_commit,"plan":plan,"packages":[],"verified":False}
     if not to_build:
@@ -548,7 +626,11 @@ def build(root:str,output:Path)->None:
         with scope as sources:
             if profile==OPENJDK_INTEL_BOOT_JDK_26:sources=_profile_sources(name,sources,cache)
             _prefetch_build_inputs(name, env)
-            run(_brew_install_args(name,transient),capture=False,env=env)
+            try:
+                run(_brew_install_args(name,transient),capture=True,echo=True,env=env)
+            except Error as exc:
+                _maybe_convert_repeatable_hold(root, plan, records, config, str(exc))
+                raise
         scratch=[work/f"{name}-cache",work/f"{name}-previous-sources",work/f"{name}-source-seeds"]
         if name in transient:_free_scratch(work,*scratch);continue
         context=native({"mode":"build-context"},ci=True,cache=cache)
@@ -625,7 +707,8 @@ def verify(root:str,candidate:Path,output:Path)->None:
         for name in local:
             receipt=native({"mode":"receipt","name":name},ci=True)
             if receipt["tap"]!="homebrew/core" or not receipt["poured_from_bottle"]:raise Error("Core bottle verification failed")
-            run(["brew","linkage","--test",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True));run(["brew","test",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True))
+            run(["brew","linkage","--test",f"homebrew/core/{name}"],capture=False,env=brew_env(ci=True))
+            run(["brew","test",f"homebrew/core/{name}"],capture=False,env=formula_test_env(ci=True))
     for rec in manifest["packages"]:
         for filename in (rec["filename"],rec["source"]["filename"]):shutil.copyfile(candidate/filename,output/filename)
     out=copy.deepcopy(manifest);out["verified"]=True;write_json_new(output/"manifest.json",out);validate_candidate(output,expected_root=root,verified=True)
@@ -643,6 +726,8 @@ def main()->int:
                 with open(os.environ["GITHUB_OUTPUT"],"a") as h:h.write(f'has_bottles={str(bool(m["packages"])).lower()}\n')
             print(json.dumps({"has_bottles":bool(m["packages"]),"root":root}))
         return 0
+    except RepeatableHold as exc:
+        print(f"intelbrew CI: {exc}",file=sys.stderr);_write_github_output(held="true",repeatable_hold="true");_notice(str(exc));return 0
     except (Error,OSError,KeyError,TypeError,ValueError,AttributeError) as exc:
         print(f"intelbrew CI: {exc}",file=sys.stderr);return 1
 

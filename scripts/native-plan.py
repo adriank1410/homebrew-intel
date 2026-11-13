@@ -8,6 +8,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from intelbrew.ci import allowed_redistribution, sync_registry
+from intelbrew.repeatable_holds import (
+    consecutive_matches, describe_hold, hold_descriptor, load_failure_history)
+
 from intelbrew.core import (
     Error,
     Planner,
@@ -112,6 +115,8 @@ def generate_step_summary(config, coverage):
         f"| Waiting Roots (Batch Cap) | {counts.get('waiting', 0)} |",
         f"| Deferred Roots (Dependency Waves) | {counts.get('deferred', 0)} |",
         f"| Blocked Roots | {counts.get('blocked', 0)} |",
+        f"| Automatically Held Roots | {counts.get('held', 0)} |",
+        f"| License Exception Renewals | {counts.get('license_renewals', 0)} |",
         f"| Coverage Complete | {'Yes' if coverage.get('coverage_complete') else 'No'} |",
         "",
     ]
@@ -155,13 +160,65 @@ def generate_step_summary(config, coverage):
         lines.append("*(no blocked roots)*")
     lines.append("")
 
+    held = coverage.get("held_roots", {})
+    lines.append("### Automatically Held Roots")
+    lines.append("")
+    if held:
+        lines.append("| Formula | Cause |")
+        lines.append("| :--- | :--- |")
+        for name in sorted(held):
+            lines.append(
+                f"| {escape_markdown_table_cell(name)} | "
+                f"{escape_markdown_table_cell(held[name])} |"
+            )
+    else:
+        lines.append("*(no automatic holds)*")
+    lines.append("")
+
+    renewals = coverage.get("license_renewals", [])
+    lines.append("### License Exception Auto-Renewals")
+    lines.append("")
+    if renewals:
+        lines.append("| Formula | Previous recipe | New recipe | License file |")
+        lines.append("| :--- | :--- | :--- | :--- |")
+        for event in renewals:
+            lines.append(
+                f"| {escape_markdown_table_cell(event.get('name', ''))} | "
+                f"{escape_markdown_table_cell(event.get('previous_formula_sha256', ''))} | "
+                f"{escape_markdown_table_cell(event.get('formula_sha256', ''))} | "
+                f"{escape_markdown_table_cell(event.get('license_file', ''))} |"
+            )
+    else:
+        lines.append("*(no license exceptions were auto-renewed)*")
+    lines.append("")
+
     return "\n".join(lines)
+
+
+def _auto_hold_reason(root, plan, records, config):
+    # Lookup failures must not block an otherwise eligible root.
+    try:
+        descriptor = hold_descriptor(root, plan, records)
+        if descriptor is None:
+            return None
+        repository = config.get("repository")
+        history = load_failure_history(repository, root) if os.environ.get("GITHUB_ACTIONS") and repository else []
+        if len(history) < 2 or history[0].get("signature") != history[1].get("signature"):
+            return None
+        signature = history[0]["signature"]
+        if consecutive_matches(history, descriptor, signature) < 2:
+            return None
+        return describe_hold(descriptor, signature, 2)
+    except (Error, KeyError, OSError, TypeError, ValueError):
+        return None
 
 
 def evaluate_roots_coverage(roots, inspector, records, config, *, max_roots=None):
     inspector.prime(roots)
     candidates = {}
     blocked = {}
+    held = {}
+    renewals = []
     covered = []
     for root in roots:
         try:
@@ -182,8 +239,12 @@ def evaluate_roots_coverage(roots, inspector, records, config, *, max_roots=None
                 continue
             if len(builds) > config['max_source_builds']:
                 raise Error(f'{root}: source build budget exceeded')
+            auto_hold = _auto_hold_reason(root, plan, records, config)
+            if auto_hold:
+                held[root] = auto_hold
+                continue
             for name in builds:
-                allowed_redistribution(plan['nodes'][name], config)
+                allowed_redistribution(plan['nodes'][name], config, log=renewals)
             candidates[root] = builds
         except (Error, KeyError, OSError, TypeError, ValueError) as exc:
             blocked[root] = str(exc)
@@ -221,6 +282,8 @@ def evaluate_roots_coverage(roots, inspector, records, config, *, max_roots=None
         'waiting_roots': waiting,
         'deferred_roots': deferred,
         'blocked_roots': blocked,
+        'held_roots': held,
+        'license_renewals': renewals,
         'counts': {
             'inspected': len(roots),
             'covered': len(covered),
@@ -229,6 +292,8 @@ def evaluate_roots_coverage(roots, inspector, records, config, *, max_roots=None
             'waiting': len(waiting),
             'deferred': len(deferred),
             'blocked': len(blocked),
+            'held': len(held),
+            'license_renewals': len(renewals),
         },
         'coverage_complete': coverage_complete,
     }
@@ -276,8 +341,11 @@ def main():
 
         if not coverage_complete:
             parts = []
+            held = coverage['held_roots']
             if blocked:
                 parts.append(f"{len(blocked)} blocked")
+            if held:
+                parts.append(f"{len(held)} automatically held")
             if deferred:
                 parts.append(f"{len(deferred)} deferred")
             if waiting:
@@ -296,6 +364,8 @@ def main():
             'build_candidates': len(eligible),
             'selected_roots': selected,
             'blocked_roots': blocked,
+            'held_roots': coverage['held_roots'],
+            'license_renewals': coverage['license_renewals'],
             'covered_roots': covered,
             'eligible_roots': eligible,
             'waiting_roots': waiting,
