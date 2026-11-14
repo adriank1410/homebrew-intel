@@ -63,6 +63,13 @@ class FormulaTestEnvTests(unittest.TestCase):
         local = formula_test_env(ci=False)
         self.assertNotIn("HOMEBREW_GITHUB_ACTIONS", local)
 
+    def test_ci_brew_test_timeout_covers_slow_intel_test_resources(self):
+        with patch.dict(os.environ, {"HOMEBREW_TEST_TIMEOUT_SECS": "1"}, clear=False):
+            env = formula_test_env(ci=True)
+            self.assertEqual(env["HOMEBREW_TEST_TIMEOUT_SECS"], "1200")
+            self.assertGreater(int(env["HOMEBREW_TEST_TIMEOUT_SECS"]), 5 * 60)
+            self.assertNotEqual(brew_env(ci=True).get("HOMEBREW_TEST_TIMEOUT_SECS"), "1200")
+
 
 class RepeatableHoldTests(unittest.TestCase):
     def test_classifier_accepts_only_the_allowlisted_signatures(self):

@@ -305,6 +305,9 @@ license, signature, or bottle-publish gates.
 Setting `HOMEBREW_GITHUB_ACTIONS=1` for CI `brew test` is not a source-build
 hold. It matches official Homebrew's GitHub Actions environment so formula
 tests take their documented CI path.
+CI `brew test` also sets `HOMEBREW_TEST_TIMEOUT_SECS=1200` (20 minutes instead
+of Homebrew's 5-minute default) because Intel runners build some Python test
+resources, such as `curl-impersonate`'s `curl-cffi` check, from source.
 
 ## Existing resource exclusions
 

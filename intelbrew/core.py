@@ -202,12 +202,18 @@ def brew_env(*,ci=False):
     if ci:env.update(HOMEBREW_NO_INSTALL_FROM_API='1',BUNDLE_RETRY='3',BUNDLE_TIMEOUT='30')
     return env
 
+# Homebrew's default `brew test` limit is 5 minutes, sized for official arm64
+# runners. Intel runners often build Python test resources from source (for
+# example curl-impersonate's curl-cffi check, run 43592403848), which overruns it.
+CI_FORMULA_TEST_TIMEOUT_SECS=20*60
+
 def formula_test_env(*,ci=False):
     """Environment for `brew test` in CI, matching official Homebrew GitHub Actions."""
     env=brew_env(ci=ci)
     if ci:
         env['HOMEBREW_GITHUB_ACTIONS']='1'
         env.pop('GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED',None)
+        env['HOMEBREW_TEST_TIMEOUT_SECS']=str(CI_FORMULA_TEST_TIMEOUT_SECS)
     return env
 
 def run(args,*,capture=True,input_text=None,env=None,cwd=None,timeout=None,echo=False):
