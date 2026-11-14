@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "097e0b5957555b85dc4194eef06218a2aeab851f",
+  "cellar": "any",
+  "core_commit": "43bfcc9b54eeb568071438e38eeab760b8177366",
+  "filename": "curl-impersonate--2.3.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "507321eeedebdf1026236b871a99724eba3d91ac351ca9ee06ed66375458d1f4",
+  "license": {
+    "all_of": [
+      "MIT",
+      "Apache-2.0",
+      "BSD-3-Clause",
+      "curl",
+      "Zlib",
+      {
+        "any_of": [
+          "GPL-2.0-or-later",
+          "LGPL-3.0-or-later"
+        ]
+      },
+      {
+        "all_of": [
+          "Unicode-TOU",
+          "Unicode-DFS-2016"
+        ]
+      }
+    ]
+  },
+  "name": "curl-impersonate",
+  "pkg_version": "2.3.2",
+  "recipe_sha256": "b0b6b89a9c536a17a70423d9b1b2d3de86f1e71dfa76e7241d42397d025bb303",
+  "release": "intel-43592403848-2-yt-dlp",
+  "revision": 0,
+  "run_id": "43592403848",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    }
+  ],
+  "schema": 1,
+  "sha256": "35f83e94cbe94eadcf1c234bfd5c41a7f93552d3f572349f17bb8c4767b8c04b",
+  "size": 7218663,
+  "source": {
+    "filename": "curl-impersonate--2.3.2.sources.tar.gz",
+    "sha256": "c93b3ba20d5f1c1235967e573c40a327165454c697ed8c6f4b8801c59c526d00",
+    "size": 89784236
+  },
+  "tag": "sequoia",
+  "version": "2.3.2",
+  "version_scheme": 0,
+  "workflow_commit": "9e2931e680402901a4dfa798d39b34189b0b1abf"
+}
