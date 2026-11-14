@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ef701b4e99c9b36985d12df36ec25742e9abc0a",
+  "brew_commit": "097e0b5957555b85dc4194eef06218a2aeab851f",
   "cellar": "any",
-  "core_commit": "78bcab03977dac4a8fcd2024c8aa8aa3f1a33da1",
-  "filename": "pandoc--3.13.sequoia.bottle.tar.gz",
-  "formula_sha256": "6c30644260590119ec84ea33fe4816ad06bcb1806960199d0484bf855c0d8a46",
+  "core_commit": "43bfcc9b54eeb568071438e38eeab760b8177366",
+  "filename": "pandoc--3.14.sequoia.bottle.tar.gz",
+  "formula_sha256": "c88dd9f04fc02e677afddb802325a6f05124f6e93eedbfd13851ce13815c2b05",
   "license": "GPL-2.0-or-later",
   "name": "pandoc",
-  "pkg_version": "3.13",
-  "recipe_sha256": "0970df0b08b76ea4e47934bb8eb689d10a1187761071cc93ea1c13463e9dde11",
-  "release": "intel-40856018876-1-pandoc",
+  "pkg_version": "3.14",
+  "recipe_sha256": "cb80fc7bfab6f21ae4fbbf996d39937895ea0ff51d23bdd49cf3ee700bc3e72d",
+  "release": "intel-43586686790-1-pandoc",
   "revision": 0,
-  "run_id": "40856018876",
+  "run_id": "43586686790",
   "runtime_dependencies": [
     {
       "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "69f00d086c42ad7d590519b52bf74c2ff8ad76acc973db475ed68ac0309857e7",
-  "size": 35965378,
+  "sha256": "55394352b37dfd1c8ef265914c4b2299207520eb0eb8c8c6c552ee377b2c9907",
+  "size": 36610351,
   "source": {
-    "filename": "pandoc--3.13.sources.tar.gz",
-    "sha256": "74ff55ee8dd32b9d974bcda7b892281de5ddf6d871a0de22c15a65c21ebbe409",
-    "size": 9280064
+    "filename": "pandoc--3.14.sources.tar.gz",
+    "sha256": "6b6d72c2666d4ff8620c22627355751e9c6debcb01e0d5f630e2f4c3902501f3",
+    "size": 8118485
   },
   "tag": "sequoia",
-  "version": "3.13",
+  "version": "3.14",
   "version_scheme": 0,
-  "workflow_commit": "d2a2514e3c35a3eb523f6ef8f70e7da2cba6c03a"
+  "workflow_commit": "5e7557c6362a874b282312ceaa2639dc31b6b721"
 }
