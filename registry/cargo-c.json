@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
+  "brew_commit": "fc51ba6b2f144ecc94a7bf3f0b7b95c8477a5738",
   "cellar": "any",
-  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
+  "core_commit": "148aa75dfcc6edc97b198e64e746d636b4c3a75f",
   "filename": "cargo-c--0.10.26.sequoia.bottle.tar.gz",
   "formula_sha256": "f30c41f5592b52b0696a0a882db5ea7571ffc344112b408f65381558b73eac1f",
   "license": "MIT",
   "name": "cargo-c",
   "pkg_version": "0.10.26",
   "recipe_sha256": "2638b4ef6b62bc4789b57a4c4a792fde4125162f6ed97aa6516b886932ca35ec",
-  "release": "intel-42382430330-1-librsvg",
+  "release": "intel-43556047066-1-cargo-c",
   "revision": 0,
-  "run_id": "42382430330",
+  "run_id": "43556047066",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -29,9 +29,9 @@
       "pkg_version": "1.11.1_7"
     },
     {
-      "formula_sha256": "fb046c70a9ea6d7d0482c23904078dbcd6a6c56ea57b3c9907c16ac85ba83dc7",
+      "formula_sha256": "3c689c532deef5ec39b23a702e7d51ed09748f338fe163cc8d5fb4b65a7070f8",
       "name": "llhttp",
-      "pkg_version": "9.4.3"
+      "pkg_version": "9.4.4"
     },
     {
       "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "28df96aeed02847384eb664ebd559cff4125a1a040885c3996a870cce38af380",
-  "size": 45159283,
+  "sha256": "829a6f52d08a8812c47473f578d115d47273da6aa0483903b6dd697a07c27d41",
+  "size": 45159337,
   "source": {
     "filename": "cargo-c--0.10.26.sources.tar.gz",
-    "sha256": "83be33899bceccdbfb62585c5dd69a622d4c578a892952e93a7766a6c1b8e32e",
-    "size": 49627787
+    "sha256": "6a28998e461103e4b14ac266527f74c1193e8a39063db650d1cf43d624e777e4",
+    "size": 49630512
   },
   "tag": "sequoia",
   "version": "0.10.26",
   "version_scheme": 0,
-  "workflow_commit": "7a512919837e129ef5efe833a7070e3e722b3566"
+  "workflow_commit": "f85bdbcc507cd7f764baeed2d8283a07c3703297"
 }
