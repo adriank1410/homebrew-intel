@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2ea376f7715ede1a0b359340fbac713b899381a5",
+  "brew_commit": "fc51ba6b2f144ecc94a7bf3f0b7b95c8477a5738",
   "cellar": "any",
-  "core_commit": "791ee694fc9ef3099e9570d1f7eec6ecc03442b4",
+  "core_commit": "148aa75dfcc6edc97b198e64e746d636b4c3a75f",
   "filename": "rust--1.99.1.sequoia.bottle.tar.gz",
   "formula_sha256": "b3e6ec47bc327e7d9f132be8b5ee880b64e8128ef3eedb70459677bdedabd18a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "rust",
   "pkg_version": "1.99.1",
   "recipe_sha256": "aece397ba5dfeb11c93fc0d7ff2afe6ae3128da5c60f557a72196ab620f40bea",
-  "release": "intel-43081111182-1-rust",
+  "release": "intel-43544222911-1-rust",
   "revision": 0,
-  "run_id": "43081111182",
+  "run_id": "43544222911",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -34,9 +34,9 @@
       "pkg_version": "1.11.1_7"
     },
     {
-      "formula_sha256": "fb046c70a9ea6d7d0482c23904078dbcd6a6c56ea57b3c9907c16ac85ba83dc7",
+      "formula_sha256": "3c689c532deef5ec39b23a702e7d51ed09748f338fe163cc8d5fb4b65a7070f8",
       "name": "llhttp",
-      "pkg_version": "9.4.3"
+      "pkg_version": "9.4.4"
     },
     {
       "formula_sha256": "66a88618f3e1f908aa12ae36156d332140d4028f242e384d5796a5d49b99cc6a",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f59fcbf29b9411a368281567fa79a2e34368cb18517c9dce5e63ba9b5ea3d412",
-  "size": 111590011,
+  "sha256": "f9e7347aef48d6ca0ced359e63be37b1a495d7b4d65ff40d0b94d2dcb135b4d9",
+  "size": 111590274,
   "source": {
     "filename": "rust--1.99.1.sources.tar.gz",
-    "sha256": "5256a204e968eaae9d24810fc0b28d5bafaf772ed8ccdce70b3319c0e4ccb47d",
-    "size": 657788413
+    "sha256": "97a8e92115b2d3ab19960d01bee1f238dc95a713434d77f414b4fc634c5d2d78",
+    "size": 657788467
   },
   "tag": "sequoia",
   "version": "1.99.1",
   "version_scheme": 0,
-  "workflow_commit": "4acb9afa2502863ec6653f8a4113f4fdff41134a"
+  "workflow_commit": "b53cf9942e5caf53707eca0e994bf4af0cd615e6"
 }
