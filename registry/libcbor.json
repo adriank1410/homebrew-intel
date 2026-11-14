@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
+  "cellar": "any",
+  "core_commit": "be5a7e565e7e3c3e8f8cc025b584d47860019ff5",
+  "filename": "libcbor--0.14.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "93ca53d00084dfd8c42c4a79214569144011d21eda68e5e1463f474070448ee0",
+  "license": "MIT",
+  "name": "libcbor",
+  "pkg_version": "0.14.1",
+  "recipe_sha256": "c21ada30242dd7519079400036ed2c5a4122eb3e1e07b796c562797207698691",
+  "release": "intel-43649176154-1-libcbor",
+  "revision": 0,
+  "run_id": "43649176154",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "ac73c0d9d4a19af6c7c48cee21c0acf72c8a6ad3b723f4d5403dca4240cfba1b",
+  "size": 50081,
+  "source": {
+    "filename": "libcbor--0.14.1.sources.tar.gz",
+    "sha256": "d0062f79c74767a4cf39c9d57cf1290887b00026901ef62d0c4b07a2236cf8d0",
+    "size": 322663
+  },
+  "tag": "sequoia",
+  "version": "0.14.1",
+  "version_scheme": 0,
+  "workflow_commit": "d68db414cdf42fe9c09a8d5617aed9c32f68ca0d"
+}
