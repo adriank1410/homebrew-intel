@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
+  "cellar": "any",
+  "core_commit": "be5a7e565e7e3c3e8f8cc025b584d47860019ff5",
+  "filename": "libffi--3.8.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "1b972649c2618bd03b52a4ed2e7ee8e3a736dbbb2859d0602a3fc8dbbddcca61",
+  "license": "MIT",
+  "name": "libffi",
+  "pkg_version": "3.8.1",
+  "recipe_sha256": "60d95264c36dbfedb893808a8c9b24f9434b12bad14dc881f89f2f3dcfb39183",
+  "release": "intel-43649176154-1-libffi",
+  "revision": 0,
+  "run_id": "43649176154",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "290e0f45a4a0a06e096ccb90852d45f0859a13a89c406641ed0e97a8b87dbb8c",
+  "size": 320675,
+  "source": {
+    "filename": "libffi--3.8.1.sources.tar.gz",
+    "sha256": "c9a2bf349ecf26bd538c606a4de09d82bbf00db4019ff51c806500ac85c52101",
+    "size": 1663584
+  },
+  "tag": "sequoia",
+  "version": "3.8.1",
+  "version_scheme": 0,
+  "workflow_commit": "d68db414cdf42fe9c09a8d5617aed9c32f68ca0d"
+}
