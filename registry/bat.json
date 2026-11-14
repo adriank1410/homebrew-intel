@@ -1,0 +1,64 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
+  "cellar": "any",
+  "core_commit": "3ae36bde8abdf91ed84123f2a4121aa01d488137",
+  "filename": "bat--0.26.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "d81001b15670875cc9fe20583e91737c23ba8e38c05968f9a1f2588bb2456668",
+  "license": {
+    "any_of": [
+      "Apache-2.0",
+      "MIT"
+    ]
+  },
+  "name": "bat",
+  "pkg_version": "0.26.1",
+  "recipe_sha256": "16b5c646599831826e14c44116e26c4f64f12f92b745fc2539d453cdeebf7cfd",
+  "release": "intel-43642031220-1-bat",
+  "revision": 0,
+  "run_id": "43642031220",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "04b7a084d3d8e07560656d34fb818210b165984366ff82cd2352d7a391c1452d",
+      "name": "libgit2",
+      "pkg_version": "1.9.7_2"
+    },
+    {
+      "formula_sha256": "1bb5700525084a6a5ad6e165cc132a145b0b290a2ea5361d596e6fc9b6b09859",
+      "name": "libssh2",
+      "pkg_version": "1.11.1_7"
+    },
+    {
+      "formula_sha256": "3c689c532deef5ec39b23a702e7d51ed09748f338fe163cc8d5fb4b65a7070f8",
+      "name": "llhttp",
+      "pkg_version": "9.4.4"
+    },
+    {
+      "formula_sha256": "9cde5399ef049c1bae8c7c789a792d09074da95d3582d582f34f61b6830bf1fe",
+      "name": "oniguruma",
+      "pkg_version": "6.9.10"
+    },
+    {
+      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "name": "openssl@4",
+      "pkg_version": "4.1.0"
+    }
+  ],
+  "schema": 1,
+  "sha256": "cece21130cfea8df22fd065212fcc27f75724e0e34f6c91ecf0c98e16f412ac0",
+  "size": 2854611,
+  "source": {
+    "filename": "bat--0.26.1.sources.tar.gz",
+    "sha256": "9b7b8939fde3e340d22b2451aabd9af7a72227eed5cb1ed1a11583f03b04021a",
+    "size": 21042011
+  },
+  "tag": "sequoia",
+  "version": "0.26.1",
+  "version_scheme": 0,
+  "workflow_commit": "9402d73809f35afb291a1446a57588b9da7f74f7"
+}
