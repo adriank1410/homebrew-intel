@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
-  "cellar": "any_skip_relocation",
-  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "brew_commit": "097e0b5957555b85dc4194eef06218a2aeab851f",
+  "cellar": "any",
+  "core_commit": "43bfcc9b54eeb568071438e38eeab760b8177366",
   "filename": "yt-dlp--2026.10.26.sequoia.bottle.tar.gz",
-  "formula_sha256": "01c80cd2905986b661787b691fb44a81e71014ed2c7fabd8feffcfaeda22016a",
+  "formula_sha256": "5263b1de7d48e095baa21641eabffd67ab8d8806f0b874454b3ee68fa908a2e7",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.10.26",
-  "recipe_sha256": "e280e8043453857dc20ebc63b929049eb0c2976052bf7bc3af8747afc4f16db5",
-  "release": "intel-43348951017-1-yt-dlp",
+  "recipe_sha256": "df839c981b72be35f0591927436b027aaa2d6ae1641ebe0c97e592bd70c7b742",
+  "release": "intel-43592403848-2-yt-dlp",
   "revision": 0,
-  "run_id": "43348951017",
+  "run_id": "43592403848",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -27,6 +27,11 @@
       "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
       "name": "cffi",
       "pkg_version": "2.1.1_1"
+    },
+    {
+      "formula_sha256": "507321eeedebdf1026236b871a99724eba3d91ac351ca9ee06ed66375458d1f4",
+      "name": "curl-impersonate",
+      "pkg_version": "2.3.2"
     },
     {
       "formula_sha256": "bd807084794cc89ef75696bef58f6b6cb6519a6ed9c1f2a78163bf3b7c331035",
@@ -110,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cab7e465a0b7081bb48106087133894095f0586fb66c215d10806dd11f74c7aa",
-  "size": 8595618,
+  "sha256": "17b149d5002df28bfb9eb5deca9a6e299366732576e0b71be1bf28da39528f9e",
+  "size": 5573059,
   "source": {
     "filename": "yt-dlp--2026.10.26.sources.tar.gz",
-    "sha256": "30c1ff24d833db8a478cf71a1423bb2c9e64ef192e8b730024faf96b58193f82",
-    "size": 18178652
+    "sha256": "5a17eaf4fa9a739482e3ec7ecdbf4bfa2aa9ac4eda65394fdf98cdb26e7b7e69",
+    "size": 18178850
   },
   "tag": "sequoia",
   "version": "2026.10.26",
   "version_scheme": 0,
-  "workflow_commit": "0ea2a80d9cd3d7cf677f753c20281aa45144483c"
+  "workflow_commit": "9e2931e680402901a4dfa798d39b34189b0b1abf"
 }
