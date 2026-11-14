@@ -724,6 +724,7 @@ class SourceBundleTests(unittest.TestCase):
             self.assertEqual(setup.kwargs["env"]["BUNDLE_TIMEOUT"], "30")
             linkage = next(call for call in run.call_args_list if call.args[0][1:2] == ["linkage"])
             self.assertEqual(first_test.kwargs["env"]["HOMEBREW_GITHUB_ACTIONS"], "1")
+            self.assertEqual(first_test.kwargs["env"]["HOMEBREW_TEST_TIMEOUT_SECS"], "1200")
             self.assertNotIn("GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED", first_test.kwargs["env"])
             self.assertNotIn("HOMEBREW_GITHUB_ACTIONS", linkage.kwargs["env"])
 
