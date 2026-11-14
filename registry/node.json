@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "brew_commit": "fc51ba6b2f144ecc94a7bf3f0b7b95c8477a5738",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "core_commit": "148aa75dfcc6edc97b198e64e746d636b4c3a75f",
   "filename": "node--26.13.1.sequoia.bottle.tar.gz",
   "formula_sha256": "6a18533cfc17343b69582bb63966940ac8566837c491f3bb8447e96a485d8037",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.13.1",
   "recipe_sha256": "d2d4b421d5dad4d57a751dbbd1457ea300ede8a7231ddf19cd0f61413a4376f6",
-  "release": "intel-43210078899-1-node",
+  "release": "intel-43556047066-1-node",
   "revision": 0,
-  "run_id": "43210078899",
+  "run_id": "43556047066",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -74,9 +74,9 @@
       "pkg_version": "1.53.0"
     },
     {
-      "formula_sha256": "fb046c70a9ea6d7d0482c23904078dbcd6a6c56ea57b3c9907c16ac85ba83dc7",
+      "formula_sha256": "3c689c532deef5ec39b23a702e7d51ed09748f338fe163cc8d5fb4b65a7070f8",
       "name": "llhttp",
-      "pkg_version": "9.4.3"
+      "pkg_version": "9.4.4"
     },
     {
       "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "03166ed7500ac6e17cc252af23a8abc48aa732904ee8451e6047c49a3659ca79",
-  "size": 21770354,
+  "sha256": "651fe4bf42d0d35f202aa9078df77e38696388c08aa51b847e93124731c840bf",
+  "size": 21770338,
   "source": {
     "filename": "node--26.13.1.sources.tar.gz",
-    "sha256": "8081ff18424d309cdb18e728140c6ea9a31b62b84ed9345feb117a5f165689c8",
-    "size": 66618567
+    "sha256": "24881f1b3d75e8172a57f0608c9ad906574cbc3413699d68cc328eae389cea5d",
+    "size": 66618569
   },
   "tag": "sequoia",
   "version": "26.13.1",
   "version_scheme": 0,
-  "workflow_commit": "e7015d7ddc52a8bb892ebeeaac54af9f56088afc"
+  "workflow_commit": "f85bdbcc507cd7f764baeed2d8283a07c3703297"
 }
