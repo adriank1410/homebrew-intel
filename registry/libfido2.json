@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "be5a7e565e7e3c3e8f8cc025b584d47860019ff5",
   "filename": "libfido2--1.17.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "d85b699fad3f7d994ce9379224a73938ca8e6772f5c22e3dc9e67e481edcdddf",
   "license": "BSD-2-Clause",
   "name": "libfido2",
   "pkg_version": "1.17.0_1",
   "recipe_sha256": "d6c7d2b1463ee34b79aa6348a4096a0d309a6283b0690a43613446b68550336e",
-  "release": "intel-42131922421-1-libfido2",
+  "release": "intel-43654636243-1-libfido2",
   "revision": 1,
-  "run_id": "42131922421",
+  "run_id": "43654636243",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "d54d3c9601ea3d00219616dd8a5123885851150a9ef9e461df7ce8fb1da8e8f5",
+      "formula_sha256": "93ca53d00084dfd8c42c4a79214569144011d21eda68e5e1463f474070448ee0",
       "name": "libcbor",
-      "pkg_version": "0.14.0"
+      "pkg_version": "0.14.1"
     },
     {
       "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0e038245646bc32fb58686d22676c00ebce5fdf977b23c1bbf8064d2074df11d",
-  "size": 362750,
+  "sha256": "8dd7abd75e65c6a3502eea120bf0307585100e0a71087e5e98d42e5e24b7333e",
+  "size": 362751,
   "source": {
     "filename": "libfido2--1.17.0_1.sources.tar.gz",
-    "sha256": "ccdd9598425cd76481f0877aaa6dfad85d0cf6c5eedbba5120f1d57cf78945f6",
-    "size": 715675
+    "sha256": "c4729fd5e62dddf91641f075f2aa1edb293451d4d83109748185b2785537d80e",
+    "size": 715673
   },
   "tag": "sequoia",
   "version": "1.17.0",
   "version_scheme": 0,
-  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
+  "workflow_commit": "36ac4e011b6dcc8dbabb0d601ec74ed22ad48b36"
 }
