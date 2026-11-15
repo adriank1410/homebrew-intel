@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
+  "cellar": "any_skip_relocation",
+  "core_commit": "d980922ad17a08e17e26cbeedccd7e88285269f1",
+  "filename": "lemmeknow--0.8.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "ed2a4a766ac6acb9467fc37dba16443248e6ddeae5bbdd4b5a1791ac0d180cc3",
+  "license": "MIT",
+  "name": "lemmeknow",
+  "pkg_version": "0.8.0",
+  "recipe_sha256": "a4562411402fff51eac10b6256fec18164b17e2ac0f18c9ab7b402582484942a",
+  "release": "intel-43687444326-1-lemmeknow",
+  "revision": 0,
+  "run_id": "43687444326",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "9d48724dea0bc06df9b7e40c9a40b3cb3ce6e949d22c93e626c82547af837198",
+  "size": 830304,
+  "source": {
+    "filename": "lemmeknow--0.8.0.sources.tar.gz",
+    "sha256": "ade48332717d0948a8c3cd51b3348c54e987074f6b74b05cfe0f6f55dd092853",
+    "size": 6023452
+  },
+  "tag": "sequoia",
+  "version": "0.8.0",
+  "version_scheme": 0,
+  "workflow_commit": "4ced079ef7f7416dea8176ab1b6c7a8f18a5908d"
+}
