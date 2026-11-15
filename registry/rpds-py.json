@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "48aad73a001b7f2b8d0620c4b4090b87aa924519",
   "cellar": "any",
-  "core_commit": "83d6e753a35f8572863e53b9d73de1797d5020b2",
+  "core_commit": "0d406593ad16e61d853778fa6827f50178660217",
   "filename": "rpds-py--2026.9.1_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "d9b503309069aba4e2f696dc0cb3e7d94385f35ca1bc4eeb6ccd7084122646ae",
+  "formula_sha256": "c5646cf71af7a872236531773c35d024f4eef004e03ccdca4e52f0e28ce6878e",
   "license": "MIT",
   "name": "rpds-py",
   "pkg_version": "2026.9.1_1",
-  "recipe_sha256": "a5b30b72e235e581341455fbe01f7a8b7a8bd1b500249af9b5142efd93d5212f",
-  "release": "intel-38539139440-1-rpds-py",
+  "recipe_sha256": "abe35cab429358d663d724119ccf504e22a91736e4403768add2c36ddaddb226",
+  "release": "intel-43772569993-1-rpds-py",
   "revision": 1,
-  "run_id": "38539139440",
+  "run_id": "43772569993",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "6697c39cb3bd52c37f1134d3ad250e42fa8c26cc1e890497ce0ef96b31aef3af",
-  "size": 671779,
+  "sha256": "01ee294d798950f9db76f37b19b3e138958e683770bd54cfe07c6101a0652704",
+  "size": 673328,
   "source": {
     "filename": "rpds-py--2026.9.1_1.sources.tar.gz",
-    "sha256": "c4b7f1f4e09d6142b9b69e7f0a3552dc2e98eed5c196b046a6acca8bfa257f2c",
-    "size": 3348593
+    "sha256": "9ed7b8775bccdb045bfb95becfdaf82fe9807c10664d85b52617d5de22ae6489",
+    "size": 3349891
   },
   "tag": "sequoia",
   "version": "2026.9.1",
   "version_scheme": 0,
-  "workflow_commit": "b1ba109c2ef91cfc8a781d91530e50bc6d3bd63a"
+  "workflow_commit": "cec67677c379432b20deedb93e3efbee7903c24f"
 }
