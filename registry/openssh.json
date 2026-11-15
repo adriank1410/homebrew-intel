@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "95d4938386e5b1536b3b961baa9d0267abd57047",
+  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "c5479ce06d940cab56516a8c0feee1679fcdce5a",
+  "core_commit": "be5a7e565e7e3c3e8f8cc025b584d47860019ff5",
   "filename": "openssh--10.6p2.sequoia.bottle.tar.gz",
   "formula_sha256": "3ecaf8eedc77d0b56ba42baa9846fdf8c0da27851f9c538a92430316e6297ce4",
   "license": "SSH-OpenSSH",
   "name": "openssh",
   "pkg_version": "10.6p2",
   "recipe_sha256": "bdbba8e73a330538b999836cb096e412aece52f3270c49e7b7fea44187241365",
-  "release": "intel-42935398553-1-openssh",
+  "release": "intel-43674929628-1-openssh",
   "revision": 0,
-  "run_id": "42935398553",
+  "run_id": "43674929628",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -24,9 +24,9 @@
       "pkg_version": "1.9.2_1"
     },
     {
-      "formula_sha256": "d54d3c9601ea3d00219616dd8a5123885851150a9ef9e461df7ce8fb1da8e8f5",
+      "formula_sha256": "93ca53d00084dfd8c42c4a79214569144011d21eda68e5e1463f474070448ee0",
       "name": "libcbor",
-      "pkg_version": "0.14.0"
+      "pkg_version": "0.14.1"
     },
     {
       "formula_sha256": "d85b699fad3f7d994ce9379224a73938ca8e6772f5c22e3dc9e67e481edcdddf",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "180b41f34ac4937becca90d6b5b783c2dee6388aac0720db7f95f6450a733358",
-  "size": 3284283,
+  "sha256": "4f0e2caceec31a1569f51e4b94514bd67492af8cadb805b0d40b59f4cc3a9db8",
+  "size": 3284270,
   "source": {
     "filename": "openssh--10.6p2.sources.tar.gz",
-    "sha256": "0cab832179fcc0b04a22a0db72ca7c2e2d2646bb2997079a9d22ec7a746ce4fc",
-    "size": 2361675
+    "sha256": "de7fcd7a63997f511ee2244c0fb32bc66310c5b3e58018a26f48b311da05fb5e",
+    "size": 2361679
   },
   "tag": "sequoia",
   "version": "10.6p2",
   "version_scheme": 0,
-  "workflow_commit": "2416e13506348eebcccccd464de0a2e09d710cf0"
+  "workflow_commit": "c7760bff3ca171dffc8c9f33765409efa378b701"
 }
