@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
   "cellar": "any",
-  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
+  "core_commit": "be5a7e565e7e3c3e8f8cc025b584d47860019ff5",
   "filename": "chafa--1.18.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "20d045959aa94854a989f4d559fefbc3e4c156172b9d90960621ab93cfba1c11",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3_1",
   "recipe_sha256": "c1b5ac197ce0e9a98993d1c3315bf081cb8059e41009399baf1f2922fc04035a",
-  "release": "intel-43363121413-1-chafa",
+  "release": "intel-43654636243-1-chafa",
   "revision": 1,
-  "run_id": "43363121413",
+  "run_id": "43654636243",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -129,9 +129,9 @@
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "4ec0d20111f91fbc092f70c95895ae0740d8d30688d9d61c47649eeae43e94d0",
+      "formula_sha256": "bc398e895131e017c119b1f96d0a20b3a55a889e06e27ff0bd9edc7de63a7596",
       "name": "librsvg",
-      "pkg_version": "2.63.4"
+      "pkg_version": "2.63.4_1"
     },
     {
       "formula_sha256": "7b47dc61081b0b0e712475313e4a3b782b549a5a1dcbbd4a19a01c047bf1a7e4",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "fb919913afc23eaa56be499a411af38048d74348e32d328e13d46a4891963da3",
-  "size": 535070,
+  "sha256": "fa43420263fc43d32c14cf81fb9d6d7224299502b732af657a0cb2a2c44a9ba7",
+  "size": 535098,
   "source": {
     "filename": "chafa--1.18.3_1.sources.tar.gz",
-    "sha256": "b83d91720951d2c811fd95ce796478852546e7a8e507d1159462ca24f1e03f64",
-    "size": 1091694
+    "sha256": "01e4fa03dc8cda6abf0eaf2641dc38b1f0d74cc45bb3683c09abdcf8b3aa7754",
+    "size": 1091687
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "7a584a99c28c9b920feffc7ecfc6007d589bba03"
+  "workflow_commit": "36ac4e011b6dcc8dbabb0d601ec74ed22ad48b36"
 }
