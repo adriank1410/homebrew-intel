@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "48aad73a001b7f2b8d0620c4b4090b87aa924519",
   "cellar": "any",
-  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "core_commit": "0d406593ad16e61d853778fa6827f50178660217",
   "filename": "mistral-vibe--3.1.2.sequoia.bottle.tar.gz",
   "formula_sha256": "eb444ead45534635fd8a3ffa333f72ab4d0de62345f37fd1fd5344ab835dba31",
   "license": "Apache-2.0",
   "name": "mistral-vibe",
   "pkg_version": "3.1.2",
   "recipe_sha256": "5a440b05f806631b1e29c66e69df0d67a12ba603727b54662871213817e6dbf9",
-  "release": "intel-43332389372-1-mistral-vibe",
+  "release": "intel-43777092872-1-mistral-vibe",
   "revision": 0,
-  "run_id": "43332389372",
+  "run_id": "43777092872",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -74,7 +74,7 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "d9b503309069aba4e2f696dc0cb3e7d94385f35ca1bc4eeb6ccd7084122646ae",
+      "formula_sha256": "c5646cf71af7a872236531773c35d024f4eef004e03ccdca4e52f0e28ce6878e",
       "name": "rpds-py",
       "pkg_version": "2026.9.1_1"
     },
@@ -95,15 +95,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "65b04e9d8d8f2bcfa510d7be0e6ba476f962483693e9a4027d3adea3829cb06c",
-  "size": 44796853,
+  "sha256": "f14e1e57a75f521f5d51923d40527a67883a08844bafa1ddbe41798d6d78b1e9",
+  "size": 44797543,
   "source": {
     "filename": "mistral-vibe--3.1.2.sources.tar.gz",
-    "sha256": "f21cb5a7a5cdbd7e688b5d965f23c4bf7f5ef4ff5d99fb772c513efffdf319ab",
-    "size": 198860390
+    "sha256": "1bfb4886f87e4aff02c0ddc3929538650722404fb85605f6178f9de4bd4730fd",
+    "size": 198862880
   },
   "tag": "sequoia",
   "version": "3.1.2",
   "version_scheme": 0,
-  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
+  "workflow_commit": "3e614d3ddff13310676d4ea209b5cce9840ece01"
 }

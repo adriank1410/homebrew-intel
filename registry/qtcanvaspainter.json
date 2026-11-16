@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "48aad73a001b7f2b8d0620c4b4090b87aa924519",
   "cellar": "any",
-  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
+  "core_commit": "0d406593ad16e61d853778fa6827f50178660217",
   "filename": "qtcanvaspainter--6.12.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "a44f02f2e93380ec2a2322cddd1a68822091f3e88f7cdf90bcada2af8aa13fb5",
+  "formula_sha256": "2bfa8688eb84e2fd4b539858413be72e4ce65ced74cbb23c4f7e80d8630383b8",
   "license": {
     "all_of": [
       "GPL-3.0-only",
@@ -19,10 +19,10 @@
   },
   "name": "qtcanvaspainter",
   "pkg_version": "6.12.0_1",
-  "recipe_sha256": "6c01bf319a298d4646b5f3f695af4e19acadf1c3f17874e69b0b17cac1f47716",
-  "release": "intel-43399686263-1-qtcanvaspainter",
+  "recipe_sha256": "71794f907e67de16952d7b45d929c533281d19f27b98aaa3d56c8df1fe1ab87d",
+  "release": "intel-43804445908-1-qtcanvaspainter",
   "revision": 1,
-  "run_id": "43399686263",
+  "run_id": "43804445908",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -170,17 +170,17 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "cec17022b9a75b196ecf11b7dd5a60a2446a2b9f43e8362081c6c0f185c60698",
+      "formula_sha256": "db773a7c815172da2601524bdf30c77fa7185b9629b3ece7e5b1d1f7edafa960",
       "name": "qtbase",
       "pkg_version": "6.12.0_2"
     },
     {
-      "formula_sha256": "d5e6a52b15baf0bc33b220a7d4586c9a4dc387dc883657312c855fd6f0a9e049",
+      "formula_sha256": "19d071979e99514fb4ac3421efae132862c35a858a032084931f50b7bdba88aa",
       "name": "qtdeclarative",
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "409cece157cb9725288e5c2fe76f6f2b0f6cbf830f9a91371c3c4b02778f4b58",
+      "formula_sha256": "405cb3b988ab34d15549d32fa06897416fb5a5e7f6c88fb05f2b0ceb4509a61f",
       "name": "qtsvg",
       "pkg_version": "6.12.0_1"
     },
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b34f8ab22c4ccd3da6ccb021d6525c9ab05d3f33d500d92904b720dec3b26145",
-  "size": 583924,
+  "sha256": "15ddfd75dc78759936dbfefc4ea0d4fc8a081bceedf39ec3ca78e28a6b949aa9",
+  "size": 583896,
   "source": {
     "filename": "qtcanvaspainter--6.12.0_1.sources.tar.gz",
-    "sha256": "b2a34857cf50e45258b86d3dffa3212612fbbe1fb585a45b92549f0d61acb4c7",
-    "size": 1171391
+    "sha256": "fb01d4076904a93c19addd8640eb72f8742304c661846566944b569f47fb995e",
+    "size": 1171373
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "e25fa2b1b3236224eb5de9f5cf5aafb97ee12ea6"
+  "workflow_commit": "cc50fd9ffdfceb77d370724bc5229c345a48fdcd"
 }

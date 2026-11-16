@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
+  "brew_commit": "3014a11f612e627a6edfccf3551fbd1d42d767a0",
   "cellar": "any",
-  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
-  "filename": "merve--1.2.2_4.sequoia.bottle.tar.gz",
-  "formula_sha256": "5c3df22d858d3120b3a6ca76283124fa1aea1e879c00e855e144f7b83a9c8c16",
+  "core_commit": "0a752f1cebe5c6700d050b7ab5a86a03d26bc0c6",
+  "filename": "merve--1.2.2_5.sequoia.bottle.tar.gz",
+  "formula_sha256": "1a78708af65bca077b45cb5ce2d44ee227ca3ba3290d0852b6ea5309006c30f7",
   "license": "Apache-2.0",
   "name": "merve",
-  "pkg_version": "1.2.2_4",
-  "recipe_sha256": "cc9125e576d227393962fc859d5162acd3b3b9befe1d984c7c15fb9ce9aa8fa3",
-  "release": "intel-41114503008-1-merve",
-  "revision": 4,
-  "run_id": "41114503008",
+  "pkg_version": "1.2.2_5",
+  "recipe_sha256": "3f3bf62f721b3d8ff99473f60141f19c407a395d922f04b2d5c0fac30b490d84",
+  "release": "intel-43737729189-1-merve",
+  "revision": 5,
+  "run_id": "43737729189",
   "runtime_dependencies": [
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -19,21 +19,21 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "200d28856006f626a019e48cf7ff69cea53e982dc51377001b58cc3b929bacd6",
+      "formula_sha256": "01a345e082759402a18eb08f12eb67400b4b8b1c91ad39a272431c9f6439a0b2",
       "name": "simdutf",
-      "pkg_version": "9.3.3"
+      "pkg_version": "9.4.0"
     }
   ],
   "schema": 1,
-  "sha256": "f8e76e3f34ec01dfe624260db9044135fd084815e7d8a68751806c8b316fd62f",
-  "size": 34140,
+  "sha256": "53b6450d506ee1e814aec6bf94a37284fdfc966469426645dfbafcaadb9d3d76",
+  "size": 34154,
   "source": {
-    "filename": "merve--1.2.2_4.sources.tar.gz",
-    "sha256": "e080e3f7429d8a33cbffbf07741c942f458a9b47f97e8bd5acf771abbc6ff0bc",
-    "size": 77339
+    "filename": "merve--1.2.2_5.sources.tar.gz",
+    "sha256": "b3973638a1287c549ba7e40f97cc3615080d89d9b792e4aa28af5964bfb2ec42",
+    "size": 77349
   },
   "tag": "sequoia",
   "version": "1.2.2",
   "version_scheme": 0,
-  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
+  "workflow_commit": "07f475156e1bf8c9a6a059496bacead5cb5f5538"
 }
