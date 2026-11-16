@@ -59,6 +59,30 @@ class OperationTests(unittest.TestCase):
             if request['mode']=='install' and request['name']=='tool':raise Error('network failure')
         with tempfile.TemporaryDirectory() as d,patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action):
             with self.assertRaisesRegex(Error,'Stopped after 1 package;'):apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+    def test_missing_libexec_adds_actionable_hint_on_install_failure(self):
+        from intelbrew import cli
+        nodes={'tool':meta(official=True)};p=self.plan(nodes)
+        def action(request,**kwargs):
+            if request['mode']=='inspect':return nodes
+            if request['mode']=='install':raise Error('brew failed (1): see output')
+        with tempfile.TemporaryDirectory() as d:
+            prefix=Path(d)/'prefix';prefix.mkdir()
+            with patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action), \
+                 patch('intelbrew.cli.HOMEBREW_PREFIX',prefix),patch('intelbrew.cli.os.access',return_value=False):
+                with self.assertRaisesRegex(Error,r'libexec is missing.*sudo mkdir -p .*libexec'):
+                    cli.apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+            (prefix/'libexec').mkdir()
+            with patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action), \
+                 patch('intelbrew.cli.HOMEBREW_PREFIX',prefix),patch('intelbrew.cli.os.access',return_value=False):
+                with self.assertRaises(Error) as ctx:
+                    cli.apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+                self.assertNotIn('sudo mkdir -p',str(ctx.exception))
+            (prefix/'libexec').rmdir()
+            with patch('intelbrew.cli.run'),patch('intelbrew.cli.native',side_effect=action), \
+                 patch('intelbrew.cli.HOMEBREW_PREFIX',prefix),patch('intelbrew.cli.os.access',return_value=True):
+                with self.assertRaises(Error) as ctx:
+                    cli.apply_plan(p,{},load_config(),cache=Path(d)/'cache')
+                self.assertNotIn('sudo mkdir -p',str(ctx.exception))
     def test_upgrade_keeps_request_flags_of_installed_roots(self):
         nodes={'tool':meta(runtime=['dep','fresh'],official=True,installed_versions=['0.9']),
                'dep':meta('dep',official=True,installed_versions=['0.9']),'fresh':meta('fresh',official=True),

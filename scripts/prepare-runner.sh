@@ -27,4 +27,8 @@ for old_dir in /usr/local/Cellar /usr/local/opt /usr/local/var/homebrew/linked /
   if [[ -e "$old_dir" || -L "$old_dir" ]];then /usr/bin/sudo /bin/mv "$old_dir" "$backup_dir/$(basename "$old_dir")";fi
   /usr/bin/sudo /bin/mkdir -p "$old_dir";/usr/bin/sudo /usr/sbin/chown "$(id -u):$(id -g)" "$old_dir"
 done
+# Homebrew >= 7.0.14 creates $(brew --prefix)/libexec before sandboxed post-install,
+# which fails when /usr/local is owned by root and /usr/local/libexec does not exist.
+/usr/bin/sudo /bin/mkdir -p /usr/local/libexec
+/usr/bin/sudo /usr/sbin/chown "$(id -u):$(id -g)" /usr/local/libexec
 printf 'Preseeded state retained at: %s\n' "$backup_dir";brew config

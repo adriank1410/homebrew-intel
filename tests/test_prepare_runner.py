@@ -190,6 +190,11 @@ class FetchRetryTests(unittest.TestCase):
         self.assertIn('["core_commit"]', script)
         self.assertIn('INTELBREW_CORE_COMMIT:-$configured_core_commit', script)
 
+    def test_prepare_runner_ensures_prefix_libexec_exists_for_postinstall(self):
+        script = (ROOT / "scripts/prepare-runner.sh").read_text()
+        self.assertIn("/usr/bin/sudo /bin/mkdir -p /usr/local/libexec", script)
+        self.assertIn('/usr/bin/sudo /usr/sbin/chown "$(id -u):$(id -g)" /usr/local/libexec', script)
+
     def test_native_pin_gate_refuses_user_machines_before_calling_brew(self):
         with tempfile.TemporaryDirectory() as raw:
             folder = Path(raw)
