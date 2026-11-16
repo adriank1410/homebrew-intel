@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "92b8ea8ebd828289f5841508d88e43a190a17ee7",
+  "brew_commit": "48aad73a001b7f2b8d0620c4b4090b87aa924519",
   "cellar": "any_skip_relocation",
-  "core_commit": "7a1756c5548a951f86a0eb0a68abe9078e4aeeab",
+  "core_commit": "0d406593ad16e61d853778fa6827f50178660217",
   "filename": "qttranslations--6.12.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "37cdf2e52c3f51b1457142a5ba45590dae6738dc442114c405534db84dfaf5f4",
+  "formula_sha256": "1deca042eaa8d47a7123233b54a160ebe65d1f4b696830df80c5d7458b633de7",
   "license": "BSD-3-Clause",
   "name": "qttranslations",
   "pkg_version": "6.12.0",
-  "recipe_sha256": "e86a4da1ea3c59aec7714c53704783d76dfed1ed7164b9ef1350ecd0211c7432",
-  "release": "intel-38562177045-1-qttranslations",
+  "recipe_sha256": "b18ddf2f1425564d2cd062d0ce9b069eacbe3998249fd367d1bf81781f7dcf49",
+  "release": "intel-43814834019-1-qttranslations",
   "revision": 0,
-  "run_id": "38562177045",
+  "run_id": "43814834019",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "b52d74a3035efd2572fa6f254ad2024bff7e661228a11a4fa45a22aa05cac5fa",
-  "size": 4553265,
+  "sha256": "ae01b2007f2c07274a186ba583c6e68bfdb0229eeea3709fee9cd781b03e3482",
+  "size": 4553308,
   "source": {
     "filename": "qttranslations--6.12.0.sources.tar.gz",
-    "sha256": "048033e86feceb70a352d840effebc9012a5bd2c24b3b8222426a6f70633660d",
-    "size": 1765407
+    "sha256": "d8b398105fa57874dcbfff26b790041963a26d707a7ebe5bb448d659a10cf90f",
+    "size": 1765385
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "6d1d55371940f3e9a0fe65eb7c28e7ba5b317e5e"
+  "workflow_commit": "24c6c82887a1660c9a1a4cc8a7532dea8c9ed7df"
 }
