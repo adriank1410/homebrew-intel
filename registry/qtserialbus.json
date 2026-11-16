@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "48aad73a001b7f2b8d0620c4b4090b87aa924519",
   "cellar": "any",
-  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
+  "core_commit": "0d406593ad16e61d853778fa6827f50178660217",
   "filename": "qtserialbus--6.12.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "0dd72f3f642932f3ce01a6f97bb46d8ee7c4e5edc5c4b85b27e0dbe8e963f9ae",
+  "formula_sha256": "15bdc3ab47f0cf90a57412a32a7994c3c6744c7933efe0da4ed1d80849487a4e",
   "license": {
     "all_of": [
       {
@@ -24,10 +24,10 @@
   },
   "name": "qtserialbus",
   "pkg_version": "6.12.0_1",
-  "recipe_sha256": "e2e66ac9ea7a8e0a25a4bb85dc7da3b7150cceb9afe978833f713732879c6bff",
-  "release": "intel-43387334309-1-qtserialbus",
+  "recipe_sha256": "1b8f4178f60e855f85d11688bdf31141f5924899b64064d4723ab4aa589c4352",
+  "release": "intel-43796124304-1-qtserialbus",
   "revision": 1,
-  "run_id": "43387334309",
+  "run_id": "43796124304",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -175,12 +175,12 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "cec17022b9a75b196ecf11b7dd5a60a2446a2b9f43e8362081c6c0f185c60698",
+      "formula_sha256": "db773a7c815172da2601524bdf30c77fa7185b9629b3ece7e5b1d1f7edafa960",
       "name": "qtbase",
       "pkg_version": "6.12.0_2"
     },
     {
-      "formula_sha256": "2ccb94b01d85cc634973f08d22c50a4b322cd1e8cf906123659014df6e81d04c",
+      "formula_sha256": "8fecb6d763c6924b06f3cbc5b4df2d8c6a876f0ce2d6df261ee9682013ea889e",
       "name": "qtserialport",
       "pkg_version": "6.12.0_1"
     },
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f23494e478aa6727aee9e0fd0f2ba5fc0e90ad2d7e5fe8753cdbf162f00c9766",
-  "size": 315423,
+  "sha256": "87343b2ec81bfa5cb6d2318618d73c5e83482a0577f1dcc45075a785b6ea8ef4",
+  "size": 315428,
   "source": {
     "filename": "qtserialbus--6.12.0_1.sources.tar.gz",
-    "sha256": "eb11663a5213a1532ec63c010a9e93884e5d510c8c8c8705e42241a3d11a4d89",
-    "size": 569567
+    "sha256": "7775bdce33899e046bcdbc084349e22b3e7c6725a3fd9931a78ca320d17337ac",
+    "size": 569541
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "3cbc8ba6e08f5f2ec42cb7fa3ce907cf4f3933b6"
+  "workflow_commit": "707ffd7c7055a5a95891c8de38e12bfc6402f4f6"
 }
