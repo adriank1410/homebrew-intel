@@ -22,6 +22,8 @@ from .core import (LOCAL_BLOCKS, Error, Planner, artifact_url, brew_env, check_b
 from .formatting import (BOLD, BOLD_BLUE, BOLD_CYAN, BOLD_GREEN, BOLD_RED,
                          BOLD_YELLOW, DIM, is_color_enabled, ohai, onoe, opoo, style)
 
+HOMEBREW_PREFIX = Path("/usr/local")
+
 
 def attest(path: Path, repository: str, workflow_commit: str, *, token: str | None = None,
            verbose: bool = False) -> None:
@@ -351,6 +353,17 @@ def render_sync(report: dict, *, apply: bool, stream: Any = None) -> None:
             print("No new coverage PR needed.", file=stream)
 
 
+def missing_libexec_hint(prefix: Path | None = None) -> str | None:
+    """Explain Homebrew >= 7.0.14 post-install failure when /usr/local/libexec cannot be created."""
+    root = HOMEBREW_PREFIX if prefix is None else prefix
+    libexec = root / "libexec"
+    if libexec.exists() or libexec.is_symlink() or not root.is_dir() or os.access(root, os.W_OK):
+        return None
+    return (f"{libexec} is missing and {root} is not writable "
+            f"(required by Homebrew >= 7.0.14 post-install). "
+            f"Run once: sudo mkdir -p {libexec} && sudo chown \"$(id -un):$(id -gn)\" {libexec}")
+
+
 def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose: bool = False,
                keep_request_flags: bool = False) -> None:
     ensure_complete(plan)
@@ -427,8 +440,10 @@ def apply_plan(plan: dict, records: dict, config: dict, *, cache: Path, verbose:
                 completed += 1
         except Error as exc:
             packages = "package" if completed == 1 else "packages"
+            hint = missing_libexec_hint()
+            suffix = f" {hint}" if hint else ""
             raise Error(f"Stopped after {completed} {packages}; this is not a transaction rollback. "
-                        f"Old versioned kegs are retained. Journal: {journal_dir}. {exc}") from exc
+                        f"Old versioned kegs are retained. Journal: {journal_dir}. {exc}{suffix}") from exc
         except KeyboardInterrupt:
             # Without this the journal path is lost behind a Python traceback.
             packages = "package" if completed == 1 else "packages"
