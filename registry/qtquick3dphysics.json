@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "17e7532228bfd52094f9f5c463753eb1e111f99b",
+  "brew_commit": "7d562e1c8f8d233c822eb029c33a6ce1a4a147d6",
   "cellar": "any",
-  "core_commit": "f3756358aef6cf4b82302d0efa5c68614b60661e",
+  "core_commit": "c9b7dd72533f340d7ebab4816c1b3c098c65de83",
   "filename": "qtquick3dphysics--6.12.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "0ebaa147b040e16217dc12d7806138118d6b4f0603813d2deedb9fbf5fb0177f",
+  "formula_sha256": "e3f7f58613e362a3b4da2a807c47637e8fd8741f084bbfce8d7980d62f5fc09f",
   "license": {
     "all_of": [
       "GPL-3.0-only",
@@ -18,10 +18,10 @@
   },
   "name": "qtquick3dphysics",
   "pkg_version": "6.12.0_1",
-  "recipe_sha256": "7e9788ce69378155b65577ee23a4c312d983a103f0a94934a33fb79a0b115d7e",
-  "release": "intel-43456114064-1-qtquick3dphysics",
+  "recipe_sha256": "4feac8c106eaf7ed74768b93fafe5dc1abc5ed0d7d958b80bec187783e39e00a",
+  "release": "intel-43820517594-1-qtquick3dphysics",
   "revision": 1,
-  "run_id": "43456114064",
+  "run_id": "43820517594",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -174,32 +174,32 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "cec17022b9a75b196ecf11b7dd5a60a2446a2b9f43e8362081c6c0f185c60698",
+      "formula_sha256": "db773a7c815172da2601524bdf30c77fa7185b9629b3ece7e5b1d1f7edafa960",
       "name": "qtbase",
       "pkg_version": "6.12.0_2"
     },
     {
-      "formula_sha256": "d5e6a52b15baf0bc33b220a7d4586c9a4dc387dc883657312c855fd6f0a9e049",
+      "formula_sha256": "19d071979e99514fb4ac3421efae132862c35a858a032084931f50b7bdba88aa",
       "name": "qtdeclarative",
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "4985ce50502737d4d3a5628ae4712a4b13868b26b0308c5a56ef453438e88fbb",
+      "formula_sha256": "b3d3c1225debfd163daf9d9d42f321529754cd254348f01c4c748d2d8e6b8ad8",
       "name": "qtquick3d",
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "63dc55532f0a4771580a9b6c78bbcf337dbfdf292ceec34ae0b0cc2e7435cb68",
+      "formula_sha256": "88d9890e77d7ed8975a8a4d612ad086b553e294827e424ca29aa171a36a78dce",
       "name": "qtquicktimeline",
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "c33a2969534c129bc1cae357e85b41f81338f73679ce65bddebf0e13ba702a88",
+      "formula_sha256": "89a63132037c0e4ea2da4ead98ea366ff22a4e3fb8f707a2d141614359244ae5",
       "name": "qtshadertools",
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "409cece157cb9725288e5c2fe76f6f2b0f6cbf830f9a91371c3c4b02778f4b58",
+      "formula_sha256": "405cb3b988ab34d15549d32fa06897416fb5a5e7f6c88fb05f2b0ceb4509a61f",
       "name": "qtsvg",
       "pkg_version": "6.12.0_1"
     },
@@ -220,15 +220,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cb0e3632a29158084759fa0ca8052053d168a9e8bef307a9298ac4259456ec5f",
-  "size": 5066288,
+  "sha256": "8ea19c375ef811bda3ad3c4ea7d3fde22b3a5a9650e0ef1065e715c2ca4497e7",
+  "size": 5066331,
   "source": {
     "filename": "qtquick3dphysics--6.12.0_1.sources.tar.gz",
-    "sha256": "3a8f82771c68c79d4b06a0f2a270dbc5e5f3b2fcbd4dbf3a50de9bfe76b3d5d0",
-    "size": 4734799
+    "sha256": "11a08b20ea25a2386958f8512393d70e4c2bddd67ffd7a5de5a45fd58c5a25d2",
+    "size": 4734762
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "19fdae36dcf0a78011c62a36fc71ed8f51c5f721"
+  "workflow_commit": "ef0a03b637c1f694418ee3f8262bada9f0298751"
 }
