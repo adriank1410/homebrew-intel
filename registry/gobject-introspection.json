@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
+  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
   "filename": "gobject-introspection--1.86.0_6.sequoia.bottle.tar.gz",
   "formula_sha256": "d4a89b9c75de975f2beb6f9acb1bd980247d62bca37652235b6be65d8b0f5fb2",
   "license": {
@@ -15,9 +15,9 @@
   "name": "gobject-introspection",
   "pkg_version": "1.86.0_6",
   "recipe_sha256": "93e086e34ae96b6b4c518b596940a30ed267fd51b1d68e6dbe88d35c0f30b626",
-  "release": "intel-44074449291-1-gobject-introspection",
+  "release": "intel-44151682983-1-gobject-introspection",
   "revision": 6,
-  "run_id": "44074449291",
+  "run_id": "44151682983",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -130,7 +130,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "7c76b52adfa2b4741d8e3afd0c5ce910052d0cd658383b23c9ce32946585d77d",
+      "formula_sha256": "61d01429d413f85ab375157ace97d44d8bd7cb2ce805000b8ca869c7556405ad",
       "name": "pkgconf",
       "pkg_version": "3.0.11"
     },
@@ -166,15 +166,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "84352858b46db9b5d41845b0d9319215f5fc581172b3924034164bbe8125a888",
-  "size": 1372953,
+  "sha256": "cc78bd935fe7d121fb1ed4e02d6274a7c12333cf1df203b127b15a90bc4e73c2",
+  "size": 1372890,
   "source": {
     "filename": "gobject-introspection--1.86.0_6.sources.tar.gz",
-    "sha256": "2b5e50c12459b279a7a7152ef6a43287ed96c5f8474b5e3f2dbdf54da2fca0e6",
-    "size": 3405064
+    "sha256": "53bd2341e4c53ad3f819bacd718625917f1985b076d1891de68067fbf576f97f",
+    "size": 3405062
   },
   "tag": "sequoia",
   "version": "1.86.0",
   "version_scheme": 0,
-  "workflow_commit": "347914b5bf86dcced69fbd00b3a98bbd7985d941"
+  "workflow_commit": "ba51e7141694e8b5c9875aae5bb13973eaad05a8"
 }
