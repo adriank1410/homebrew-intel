@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
   "filename": "radare2--6.2.6.sequoia.bottle.tar.gz",
   "formula_sha256": "8ca982941b118e9042c74b693da717420dc6c19818295c91914d6bab44ab157e",
   "license": "LGPL-3.0-only",
   "name": "radare2",
   "pkg_version": "6.2.6",
   "recipe_sha256": "c9607dab316dc4bb73c27955294c234b01b0d7b2134324586a01a1ff09af0370",
-  "release": "intel-42131922421-1-radare2",
+  "release": "intel-44074449291-1-radare2",
   "revision": 0,
-  "run_id": "42131922421",
+  "run_id": "44074449291",
   "runtime_dependencies": [
     {
-      "formula_sha256": "824cd395375109bfca1aa408774c9c91214ca7d7792c555b1a9fa0635f78893c",
+      "formula_sha256": "7c76b52adfa2b4741d8e3afd0c5ce910052d0cd658383b23c9ce32946585d77d",
       "name": "pkgconf",
-      "pkg_version": "3.0.10"
+      "pkg_version": "3.0.11"
     }
   ],
   "schema": 1,
-  "sha256": "819b7c259e9e208de7fd75c913a187aae1e4fef2e0283ae24ce9a50e035f845b",
-  "size": 11277327,
+  "sha256": "9008469a075958003e5ea412dffb28a989edb88e5ac754056c7331b5f76bcc5d",
+  "size": 11277340,
   "source": {
     "filename": "radare2--6.2.6.sources.tar.gz",
-    "sha256": "338a4cef3560a2069fa52a9107f034e559b76ab1d3635a87093f358f1aa3b3c8",
-    "size": 12020243
+    "sha256": "ed6a59e8249425fe5b5689815380d3da54290bcf4f5665a80e3de51c37299c22",
+    "size": 12020252
   },
   "tag": "sequoia",
   "version": "6.2.6",
   "version_scheme": 0,
-  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
+  "workflow_commit": "347914b5bf86dcced69fbd00b3a98bbd7985d941"
 }
