@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
   "filename": "zbar--0.23.95.sequoia.bottle.tar.gz",
   "formula_sha256": "3f034ae9558468bcb2c7ebfceaa47928482e538a53541b2f5d046133c8eb4923",
   "license": "LGPL-2.1-only",
   "name": "zbar",
   "pkg_version": "0.23.95",
   "recipe_sha256": "2f6e7840c3b1485ecc7431fd30a32b998407a13e45d87f8a2fd3613b67513b07",
-  "release": "intel-43332389372-1-zbar",
+  "release": "intel-44099960069-1-zbar",
   "revision": 0,
-  "run_id": "43332389372",
+  "run_id": "44099960069",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -49,9 +49,9 @@
       "pkg_version": "2.90.1"
     },
     {
-      "formula_sha256": "fdd210e2ffda446b87e865cf107c0f495bcd1f945a5692b40bfe579e14b0a139",
+      "formula_sha256": "436a1bfa2a5b332e308b817969594f3f95d4cc0cd4e66c7fd7cbad6fa790f89e",
       "name": "imagemagick",
-      "pkg_version": "7.1.2-35"
+      "pkg_version": "7.1.2-36"
     },
     {
       "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
@@ -150,15 +150,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8fee2fdc9fe711ab6df510e0a9a6fcfc916e7f700c5a5755abded9d7ff381ee4",
-  "size": 324377,
+  "sha256": "4fd522856c56287f6ada69d68777030ca56b3d36a9d71d79605c0b1fad3567b7",
+  "size": 324372,
   "source": {
     "filename": "zbar--0.23.95.sources.tar.gz",
-    "sha256": "a2e6e2be628759e2a7485b5cd26532621f003fc659c2262c24128741f6a6a052",
-    "size": 1031868
+    "sha256": "3f3dc9152cbfe44c528aeb75ccc08b2107290ad42364a41dc4d6414d79e353e4",
+    "size": 1031862
   },
   "tag": "sequoia",
   "version": "0.23.95",
   "version_scheme": 0,
-  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
+  "workflow_commit": "b0e7fe650a29ae3c8a51b886c3b69f12bec8640f"
 }
