@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
-  "filename": "imagemagick--7.1.2-35.sequoia.bottle.tar.gz",
-  "formula_sha256": "fdd210e2ffda446b87e865cf107c0f495bcd1f945a5692b40bfe579e14b0a139",
+  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
+  "filename": "imagemagick--7.1.2-36.sequoia.bottle.tar.gz",
+  "formula_sha256": "436a1bfa2a5b332e308b817969594f3f95d4cc0cd4e66c7fd7cbad6fa790f89e",
   "license": "ImageMagick",
   "name": "imagemagick",
-  "pkg_version": "7.1.2-35",
-  "recipe_sha256": "f69836b76e2e5e12d0e244cde7c01ece7af19ab040fd50239a1d8f3ba06a7107",
-  "release": "intel-43284413443-1-imagemagick",
+  "pkg_version": "7.1.2-36",
+  "recipe_sha256": "97b8f151f08f346f0a38c3ccc318a2efda6eb8d61d78612a6b4c436b365f0dc2",
+  "release": "intel-44074449291-1-imagemagick",
   "revision": 0,
-  "run_id": "43284413443",
+  "run_id": "44074449291",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "02cd470e4e778fe607174d33b6f7e66835f33e70a67eee0a1767d3725b75d26c",
-  "size": 11089682,
+  "sha256": "ac9c41db2edf16d37d4a1305a3cb747bf6428e3104e5e9f8896931ac35f54601",
+  "size": 11116892,
   "source": {
-    "filename": "imagemagick--7.1.2-35.sources.tar.gz",
-    "sha256": "6ee49a9bac3b22064bad641ca10b55dd88c255205cddae7159b7d75c7de5db88",
-    "size": 10285897
+    "filename": "imagemagick--7.1.2-36.sources.tar.gz",
+    "sha256": "b189065d391ef1b6c0a1950db06ca4d47cbd1119bd84e85d947a0b5357f455b2",
+    "size": 10322703
   },
   "tag": "sequoia",
-  "version": "7.1.2-35",
+  "version": "7.1.2-36",
   "version_scheme": 0,
-  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+  "workflow_commit": "347914b5bf86dcced69fbd00b3a98bbd7985d941"
 }
