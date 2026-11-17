@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fa83b3406d72d3c504950fa9917aab828c183753",
+  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
   "cellar": "any_skip_relocation",
-  "core_commit": "398b250a60f6e839b9791c7ace3ffc96e4dc184c",
-  "filename": "docker-compose--5.7.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "7e64ad343329c730167bd4f2b5a5b992833d19a8ca50a318527100960ffb98f4",
+  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "filename": "docker-compose--5.8.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "e2abef6bdcb5951251ced5a8310031d24e8989160d4b65d2ba129aa76b01a001",
   "license": "Apache-2.0",
   "name": "docker-compose",
-  "pkg_version": "5.7.1",
-  "recipe_sha256": "71ad1edc738042a861bc4a25ac2fa899453ffc66758c6a64edceee60f5cbfd40",
-  "release": "intel-43091533023-1-docker-compose",
+  "pkg_version": "5.8.0",
+  "recipe_sha256": "3863175742de01b5ac37fdffe8080061bd7f6c9091f264ad979ec239bfe5ae6f",
+  "release": "intel-44141732480-1-docker-compose",
   "revision": 0,
-  "run_id": "43091533023",
+  "run_id": "44141732480",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "582a09791429b5c086fe98111d397949572196b3ee48e53e9f7e6df510f34640",
-  "size": 11131568,
+  "sha256": "3615d34239ba7ec0556618a06c1c2a33f1e2ca1be6328e576c4a694bdbeab1d6",
+  "size": 11259441,
   "source": {
-    "filename": "docker-compose--5.7.1.sources.tar.gz",
-    "sha256": "02762cbd2a4def9636e7dc1bf4c0fedbdee38e72cf9b11cac47af2e14a693133",
-    "size": 84872613
+    "filename": "docker-compose--5.8.0.sources.tar.gz",
+    "sha256": "a1fc6351ffd02f84a19748205e450571eb4ca12934b702d9f42cf74680b91304",
+    "size": 85286948
   },
   "tag": "sequoia",
-  "version": "5.7.1",
+  "version": "5.8.0",
   "version_scheme": 0,
-  "workflow_commit": "7c33ae773a6619720de0045b8d72f5f37a94fff9"
+  "workflow_commit": "ff2fdbbf8019d623f5170c05d5529d88ec52e034"
 }
