@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
   "filename": "ruby--4.0.9.sequoia.bottle.tar.gz",
-  "formula_sha256": "8a13e947f67526c6cee5edc6a830582675ea645a89e36369e553724282c70623",
+  "formula_sha256": "331cfecae020a69b5e744dd87132994779f54948978595cf7f5b0de34b230989",
   "license": "Ruby",
   "name": "ruby",
   "pkg_version": "4.0.9",
-  "recipe_sha256": "46dd92452d8c61172f3da3c27e09e94c6a9230d61de4d76cfacf561464eb8b8b",
-  "release": "intel-42330963652-1-ruby",
+  "recipe_sha256": "2cd329d5875e519e3578a0c7a00cd8a47a3b652595f03106471acd24c716990a",
+  "release": "intel-44099960069-1-ruby",
   "revision": 0,
-  "run_id": "42330963652",
+  "run_id": "44099960069",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1cd69f7d6dd3ba4fd163c638887c1ff6d849caf4a5bc8d2087b9b816244d4a31",
-  "size": 17084417,
+  "sha256": "94ec375038a6272caade553aed708b7390c8c1293749e3f1d556d2e1e00e59d1",
+  "size": 17083776,
   "source": {
     "filename": "ruby--4.0.9.sources.tar.gz",
-    "sha256": "39a28021e9d95d6b3ee5a914aedd91b769b2745e86d12a7d44974e3514d8b9aa",
-    "size": 24411989
+    "sha256": "784b716e1547e96aae291531a1825724caee6d11695da950b192bc1395d2af48",
+    "size": 24411991
   },
   "tag": "sequoia",
   "version": "4.0.9",
   "version_scheme": 0,
-  "workflow_commit": "5f11027c3b1d066cb16cbc59458a420b7994784e"
+  "workflow_commit": "b0e7fe650a29ae3c8a51b886c3b69f12bec8640f"
 }
