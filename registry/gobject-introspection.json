@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
+  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
   "filename": "gobject-introspection--1.86.0_6.sequoia.bottle.tar.gz",
   "formula_sha256": "d4a89b9c75de975f2beb6f9acb1bd980247d62bca37652235b6be65d8b0f5fb2",
   "license": {
@@ -15,9 +15,9 @@
   "name": "gobject-introspection",
   "pkg_version": "1.86.0_6",
   "recipe_sha256": "93e086e34ae96b6b4c518b596940a30ed267fd51b1d68e6dbe88d35c0f30b626",
-  "release": "intel-44151682983-1-gobject-introspection",
+  "release": "intel-44407407355-1-gobject-introspection",
   "revision": 6,
-  "run_id": "44151682983",
+  "run_id": "44407407355",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -35,9 +35,9 @@
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -166,15 +166,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cc78bd935fe7d121fb1ed4e02d6274a7c12333cf1df203b127b15a90bc4e73c2",
-  "size": 1372890,
+  "sha256": "756d6c03b5d428e8a2562892572df652c3b21c045d54388d4ffb93101d2e4e31",
+  "size": 1372913,
   "source": {
     "filename": "gobject-introspection--1.86.0_6.sources.tar.gz",
-    "sha256": "53bd2341e4c53ad3f819bacd718625917f1985b076d1891de68067fbf576f97f",
-    "size": 3405062
+    "sha256": "f528f880ba2b6e3b517ee9fbe15ec2c6aaf3fe0c2d86cdefce12ece8eb2f391c",
+    "size": 3405073
   },
   "tag": "sequoia",
   "version": "1.86.0",
   "version_scheme": 0,
-  "workflow_commit": "ba51e7141694e8b5c9875aae5bb13973eaad05a8"
+  "workflow_commit": "170409b11766e671a7d95d2c607cab878ca27f4f"
 }
