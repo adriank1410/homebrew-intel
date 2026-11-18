@@ -1,22 +1,22 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "2595f4b142e7554924bbce5697f47cdc3f2f2ce5",
   "build_profile": "llvm-no-pgo",
   "cellar": "any",
-  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
-  "filename": "llvm--23.1.5_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "97f5e846964867df1e90d419d304e79775a5b230032140db5549c6268f7997fc",
+  "core_commit": "7d1b2c96c93cc8bfbf27d31cb67b863503b05de9",
+  "filename": "llvm--23.1.6.sequoia.bottle.tar.gz",
+  "formula_sha256": "b81307bf3ed3f44fc8a25522e1fa37e97a79de0dbb2b6f038981612aad791652",
   "license": {
     "Apache-2.0": {
       "with": "LLVM-exception"
     }
   },
   "name": "llvm",
-  "pkg_version": "23.1.5_1",
-  "recipe_sha256": "46968daa60c67d605ddb95e1ab2839ba8929234d9d758149c4ee9933f16653a7",
-  "release": "intel-44014503539-1-llvm",
-  "revision": 1,
-  "run_id": "44014503539",
+  "pkg_version": "23.1.6",
+  "recipe_sha256": "7f97d73ae7f5fcc61ffde9eb5887e82d82bd30c68d723f7da5a03454bfbe83a8",
+  "release": "intel-44300178263-1-llvm",
+  "revision": 0,
+  "run_id": "44300178263",
   "runtime_dependencies": [
     {
       "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "bb8916ea5ffcb260a977f55907606aa47b9ebfd062da27fca51c7174f5fa1bfa",
-  "size": 356236964,
+  "sha256": "76001a16db1237d79611b04513cfd33b534a01e5bc14d01c016ca03b2f30b787",
+  "size": 356232885,
   "source": {
-    "filename": "llvm--23.1.5_1.sources.tar.gz",
-    "sha256": "91967eb3fa536b4de2cac712faafc90e8e55c7731ed5f5dd2111e93f86107f10",
-    "size": 179313516
+    "filename": "llvm--23.1.6.sources.tar.gz",
+    "sha256": "30fa9791b684285e7ef4e891d27960c310200d9960d9640b8e662c7c48f7a387",
+    "size": 179265580
   },
   "tag": "sequoia",
-  "version": "23.1.5",
+  "version": "23.1.6",
   "version_scheme": 0,
-  "workflow_commit": "fc6e39854d26262b3dac23b8ca14a7eae21d76ae"
+  "workflow_commit": "7693e02c7c1aa13199c0651cf450c6a1d7324d8b"
 }
