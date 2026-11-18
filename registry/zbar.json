@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
   "filename": "zbar--0.23.95.sequoia.bottle.tar.gz",
   "formula_sha256": "3f034ae9558468bcb2c7ebfceaa47928482e538a53541b2f5d046133c8eb4923",
   "license": "LGPL-2.1-only",
   "name": "zbar",
   "pkg_version": "0.23.95",
   "recipe_sha256": "2f6e7840c3b1485ecc7431fd30a32b998407a13e45d87f8a2fd3613b67513b07",
-  "release": "intel-44099960069-1-zbar",
+  "release": "intel-44236071090-1-zbar",
   "revision": 0,
-  "run_id": "44099960069",
+  "run_id": "44236071090",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -79,9 +79,9 @@
       "pkg_version": "0.4.3"
     },
     {
-      "formula_sha256": "903e28ea02af580caa857ec6b1e16770dac89bf4448f2345e44866a712a09c4f",
+      "formula_sha256": "fd6bf2ce343e16a08c3ed5295e3b26cce10677c990d00a75bbb2b2f4c89f93d5",
       "name": "libomp",
-      "pkg_version": "23.1.5"
+      "pkg_version": "23.1.6"
     },
     {
       "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
@@ -150,15 +150,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4fd522856c56287f6ada69d68777030ca56b3d36a9d71d79605c0b1fad3567b7",
-  "size": 324372,
+  "sha256": "6110c7b3b828c67a2dc576731c8a898ffa88fff9297476042c77c04132f4fbf5",
+  "size": 324365,
   "source": {
     "filename": "zbar--0.23.95.sources.tar.gz",
-    "sha256": "3f3dc9152cbfe44c528aeb75ccc08b2107290ad42364a41dc4d6414d79e353e4",
-    "size": 1031862
+    "sha256": "00d7cfcea577f202e6d383637cef0d041e9a2ef0463bf5b1b5bb6f2af8f970b5",
+    "size": 1031863
   },
   "tag": "sequoia",
   "version": "0.23.95",
   "version_scheme": 0,
-  "workflow_commit": "b0e7fe650a29ae3c8a51b886c3b69f12bec8640f"
+  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
 }
