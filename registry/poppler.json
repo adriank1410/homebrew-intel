@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4ad70807fd43bd586ca3f627d99a45cde5d836c8",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
   "filename": "poppler--26.11.0.sequoia.bottle.tar.gz",
   "formula_sha256": "337eeaf41b47ed75f430f8804d429853ffcc7ddcf04d67561548f0d43470d8d6",
   "license": {
@@ -14,9 +14,9 @@
   "name": "poppler",
   "pkg_version": "26.11.0",
   "recipe_sha256": "66de2a8ddddbb41083c9059ce9458452fd40863b3959535a4b041eacb78db5ca",
-  "release": "intel-43985609699-1-poppler",
+  "release": "intel-44275478088-1-poppler",
   "revision": 0,
-  "run_id": "43985609699",
+  "run_id": "44275478088",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -129,9 +129,9 @@
       "pkg_version": "2.3.8"
     },
     {
-      "formula_sha256": "3c0b50b243cd3107c72d32d1a46621eac0263296d8b9b3a49268a94d7bae6c08",
+      "formula_sha256": "620ebfca4b5d000d7b02ef6699ddc621a7e2fec4cb8abed13ae3322978a51ae9",
       "name": "libksba",
-      "pkg_version": "1.8.1"
+      "pkg_version": "1.9.0"
     },
     {
       "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
@@ -275,15 +275,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c2d31d7a13f6452d9f130c344a335173f159baf0df1892710cc8df135118194f",
-  "size": 10042801,
+  "sha256": "1b33e082633d9f71d0c5e84991e451060a7c0d88d8404169f9ffa78720baa0f0",
+  "size": 10042574,
   "source": {
     "filename": "poppler--26.11.0.sources.tar.gz",
-    "sha256": "e5e92a7552e66730c711c1732c0d0c26038360e2d834f8b7b3e9fafd0baaf636",
-    "size": 6507660
+    "sha256": "4b01741a6ed68b929135c6a06994aaa4965fa6e82cb5356c84d2aa91492699c5",
+    "size": 6507651
   },
   "tag": "sequoia",
   "version": "26.11.0",
   "version_scheme": 0,
-  "workflow_commit": "d39a2dde485ab698fd0de1083b7e4003a4e5ce7f"
+  "workflow_commit": "7c2295b20689c9f0e6c58982b3af6cb73313a7d8"
 }
