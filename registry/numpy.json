@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
   "cellar": "any",
-  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
   "filename": "numpy--2.5.5.sequoia.bottle.tar.gz",
   "formula_sha256": "82117c84ae0abe8e556733c17be6093cc348cfae2015cf77e955f9f28774d370",
   "license": {
@@ -17,9 +17,9 @@
   "name": "numpy",
   "pkg_version": "2.5.5",
   "recipe_sha256": "ffd67f3db7a2cb027fb852e2ca6b6620cc6cc6d5f846e3f1f9989218021fbb63",
-  "release": "intel-44141732480-1-numpy",
+  "release": "intel-44236071090-1-numpy",
   "revision": 0,
-  "run_id": "44141732480",
+  "run_id": "44236071090",
   "runtime_dependencies": [
     {
       "formula_sha256": "ea82c027fa80b3b6d2c6a5a8bf057b15c2c8df004639716afd99799ccecb662b",
@@ -42,9 +42,9 @@
       "pkg_version": "1.4.1"
     },
     {
-      "formula_sha256": "903e28ea02af580caa857ec6b1e16770dac89bf4448f2345e44866a712a09c4f",
+      "formula_sha256": "fd6bf2ce343e16a08c3ed5295e3b26cce10677c990d00a75bbb2b2f4c89f93d5",
       "name": "libomp",
-      "pkg_version": "23.1.5"
+      "pkg_version": "23.1.6"
     },
     {
       "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
@@ -73,15 +73,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "651cc64893e4889467709a9d69d7daa9e4c316bbcc781e458003af4da867112f",
-  "size": 11188055,
+  "sha256": "645d031b12ff27338ba35f82f15bb33c403181e90ccc4576753caff65fdcbf59",
+  "size": 11188232,
   "source": {
     "filename": "numpy--2.5.5.sources.tar.gz",
-    "sha256": "994f5198af18765242cc672d46365aa2de967cc8d971e30b271ef33e03088cb4",
-    "size": 20858982
+    "sha256": "084c2afadc2f38bb83b454c401aee15e24fb53309a7e3af4a0a5e8a875404c67",
+    "size": 20858983
   },
   "tag": "sequoia",
   "version": "2.5.5",
   "version_scheme": 0,
-  "workflow_commit": "ff2fdbbf8019d623f5170c05d5529d88ec52e034"
+  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
 }
