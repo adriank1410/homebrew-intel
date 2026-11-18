@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
   "cellar": "any",
-  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
   "filename": "pillow--13.0.0.sequoia.bottle.tar.gz",
   "formula_sha256": "7fd4c91aa6d3997eca23962ddf9cc37c142e1136de69e241808d35a5526c2a72",
   "license": "MIT-CMU",
   "name": "pillow",
   "pkg_version": "13.0.0",
   "recipe_sha256": "0f13063c842acb65a4e92bcfe83b3aaec1188cddbef4f1bc75882ccedaa0a09a",
-  "release": "intel-43332389372-1-pillow",
+  "release": "intel-44236071090-1-pillow",
   "revision": 0,
-  "run_id": "43332389372",
+  "run_id": "44236071090",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -29,9 +29,9 @@
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "ceaebbf22c54822f9e1ff2d4fa6a5c26f3556dc6f5005ab77a335dfc185cbae6",
+      "formula_sha256": "2d542cfd1a910902555d03a239e5203f469d4df4d0bf7b8c020913e61f34e0ed",
       "name": "dav1d",
-      "pkg_version": "1.5.4"
+      "pkg_version": "1.5.5"
     },
     {
       "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6bb11d8a49f222b6c2954866cb5204ccdf61c7daadc87a9f0a33dc23a8800c90",
-  "size": 1410779,
+  "sha256": "91189f8d3004629e919c0ae3b6c4dc234075ef0dc3fdef0010ce4851e8c29640",
+  "size": 1410808,
   "source": {
     "filename": "pillow--13.0.0.sources.tar.gz",
-    "sha256": "89f7a7f8bafa19fe00137bee2769c23697f69d6b9ea6449d733aebe5c27f240e",
-    "size": 46981392
+    "sha256": "3103c63e368c44a2de3edd85df085f9af789c32dacfe765469b2bcf932e4326c",
+    "size": 46981410
   },
   "tag": "sequoia",
   "version": "13.0.0",
   "version_scheme": 0,
-  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
+  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
 }
