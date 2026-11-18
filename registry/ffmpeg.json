@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "d9287800cf7871864f5f82ca6885b3ac83de460f",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "cc6e2d6b8ebbe15061baf39dea095290298a5b89",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
   "filename": "ffmpeg--9.0.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1f3e7264a319af3096a9487b6847cf8dc1f888c7798a66b5f91bde1459a7a421",
   "license": "GPL-3.0-or-later",
   "name": "ffmpeg",
   "pkg_version": "9.0.2_1",
   "recipe_sha256": "af2c76ee6026cda4df125d2245cff9d24731d54fb969c193e53d4b0a94f63362",
-  "release": "intel-42740149239-1-ffmpeg",
+  "release": "intel-44236071090-1-ffmpeg",
   "revision": 1,
-  "run_id": "42740149239",
+  "run_id": "44236071090",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "ceaebbf22c54822f9e1ff2d4fa6a5c26f3556dc6f5005ab77a335dfc185cbae6",
+      "formula_sha256": "2d542cfd1a910902555d03a239e5203f469d4df4d0bf7b8c020913e61f34e0ed",
       "name": "dav1d",
-      "pkg_version": "1.5.4"
+      "pkg_version": "1.5.5"
     },
     {
       "formula_sha256": "762921e87c90333888230f226d90968b40a06c5120c1e8b29865cde27a214d08",
@@ -85,15 +85,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a0db050bdcdca3d105d3892fd0e5bc8469589afd80f04acb92baffe58f40903a",
-  "size": 22173586,
+  "sha256": "ba5e59264913278bf515c45c81c428bdb9be362daf956d1a3abeab3ba55fffa3",
+  "size": 22173641,
   "source": {
     "filename": "ffmpeg--9.0.2_1.sources.tar.gz",
-    "sha256": "a929ab3a21f55854e2baf66c6dd4a9119790745c8eaf0915bddef857972741da",
-    "size": 12077489
+    "sha256": "1513d2066e3aa5aa6653ebf391e687a7afed5c4f3dd134cf05394c3e262f3c0e",
+    "size": 12077475
   },
   "tag": "sequoia",
   "version": "9.0.2",
   "version_scheme": 0,
-  "workflow_commit": "5e48c58bcd28a2abab6efd9b41c66bde36dedca2"
+  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
 }
