@@ -1,0 +1,54 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "cellar": "any",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "filename": "libksba--1.9.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "620ebfca4b5d000d7b02ef6699ddc621a7e2fec4cb8abed13ae3322978a51ae9",
+  "license": {
+    "any_of": [
+      "LGPL-3.0-or-later",
+      "GPL-2.0-or-later"
+    ]
+  },
+  "name": "libksba",
+  "pkg_version": "1.9.0",
+  "recipe_sha256": "96cdd6fdac4f0d6040fa63bd4d26692b2dd5f8bad017932201659a1f039b98ee",
+  "release": "intel-44234856980-1-libksba",
+  "revision": 0,
+  "run_id": "44234856980",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "a92983fd472dc51e72a3f0abeec1165decc4f7d4c6aa95db9ca6f49ba76f68ef",
+      "name": "libgpg-error",
+      "pkg_version": "1.61"
+    },
+    {
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "name": "libunistring",
+      "pkg_version": "1.5"
+    }
+  ],
+  "schema": 1,
+  "sha256": "0436dec1c7483485272bfc6e094878ff6b6835c828f46a655fe73e7516955072",
+  "size": 199608,
+  "source": {
+    "filename": "libksba--1.9.0.sources.tar.gz",
+    "sha256": "967b456a23779c88e961a833e3ffb13597a4b6dcb603e385d5da6f52098fd7ab",
+    "size": 791667
+  },
+  "tag": "sequoia",
+  "version": "1.9.0",
+  "version_scheme": 0,
+  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
+}
