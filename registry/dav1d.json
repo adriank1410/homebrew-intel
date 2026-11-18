@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "cellar": "any",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "filename": "dav1d--1.5.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "2d542cfd1a910902555d03a239e5203f469d4df4d0bf7b8c020913e61f34e0ed",
+  "license": "BSD-2-Clause",
+  "name": "dav1d",
+  "pkg_version": "1.5.5",
+  "recipe_sha256": "057fd3418d3e015b098fd1504209328a741adbe16ce333e5d3cf1b9b5d5ae7ef",
+  "release": "intel-44234856980-1-dav1d",
+  "revision": 0,
+  "run_id": "44234856980",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "e49cc86ec3828f3cca89b9ba90ea2f821166330c9bd1d179613c7a4e379d04c4",
+  "size": 817904,
+  "source": {
+    "filename": "dav1d--1.5.5.sources.tar.gz",
+    "sha256": "a5816262534ab4c03904fe022e07878d571788f0db19e30684ba1c3dd9f29b4a",
+    "size": 1245341
+  },
+  "tag": "sequoia",
+  "version": "1.5.5",
+  "version_scheme": 0,
+  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
+}
