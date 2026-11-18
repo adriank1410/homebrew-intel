@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
   "filename": "zbar--0.23.95.sequoia.bottle.tar.gz",
   "formula_sha256": "3f034ae9558468bcb2c7ebfceaa47928482e538a53541b2f5d046133c8eb4923",
   "license": "LGPL-2.1-only",
   "name": "zbar",
   "pkg_version": "0.23.95",
   "recipe_sha256": "2f6e7840c3b1485ecc7431fd30a32b998407a13e45d87f8a2fd3613b67513b07",
-  "release": "intel-44236071090-1-zbar",
+  "release": "intel-44401833423-1-zbar",
   "revision": 0,
-  "run_id": "44236071090",
+  "run_id": "44401833423",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -24,9 +24,9 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -150,15 +150,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6110c7b3b828c67a2dc576731c8a898ffa88fff9297476042c77c04132f4fbf5",
-  "size": 324365,
+  "sha256": "4700c51e3e262ad2f89e4ea1a9fad7ee24af4f109cba5a4f017c45ad7557da37",
+  "size": 324367,
   "source": {
     "filename": "zbar--0.23.95.sources.tar.gz",
-    "sha256": "00d7cfcea577f202e6d383637cef0d041e9a2ef0463bf5b1b5bb6f2af8f970b5",
-    "size": 1031863
+    "sha256": "f85b3337a9a52a3573c32155bc01d084f38625b042adddeb949f2896e5b5b8ba",
+    "size": 1031864
   },
   "tag": "sequoia",
   "version": "0.23.95",
   "version_scheme": 0,
-  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
+  "workflow_commit": "99b4b205d020fcbd860cca62381bd28ef6980547"
 }
