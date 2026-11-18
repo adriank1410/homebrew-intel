@@ -1,0 +1,67 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
+  "cellar": "/usr/local/Cellar",
+  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
+  "filename": "fontconfig--2.18.4.sequoia.bottle.tar.gz",
+  "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
+  "license": {
+    "all_of": [
+      "HPND-sell-variant",
+      "Unicode-3.0",
+      "MIT-Modern-Variant",
+      "MIT",
+      "public_domain"
+    ]
+  },
+  "name": "fontconfig",
+  "pkg_version": "2.18.4",
+  "recipe_sha256": "eeaa2c4247365c60b9a7d8f9e4334f5f718021f250f447117bb0e539f5f48d30",
+  "release": "intel-44397321404-1-fontconfig",
+  "revision": 0,
+  "run_id": "44397321404",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
+      "name": "brotli",
+      "pkg_version": "1.2.1"
+    },
+    {
+      "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
+      "name": "freetype",
+      "pkg_version": "2.15.0"
+    },
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
+      "name": "libpng",
+      "pkg_version": "1.6.59"
+    },
+    {
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "name": "libunistring",
+      "pkg_version": "1.5"
+    }
+  ],
+  "schema": 1,
+  "sha256": "ee0f65f256e2a3644585e97882a949339959f278b7e87814eda184e50ac0e37e",
+  "size": 443256,
+  "source": {
+    "filename": "fontconfig--2.18.4.sources.tar.gz",
+    "sha256": "3816bd53acb7ecfb3743a5231252b56d85b4e4e3956e35c38cc8e349828abea5",
+    "size": 674842
+  },
+  "tag": "sequoia",
+  "version": "2.18.4",
+  "version_scheme": 0,
+  "workflow_commit": "fe196cdf9b8952f2b2d56c5cb3c762e14f64536f"
+}
