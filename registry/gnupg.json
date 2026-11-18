@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
   "filename": "gnupg--2.5.24_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532",
   "license": "GPL-3.0-or-later",
   "name": "gnupg",
   "pkg_version": "2.5.24_1",
   "recipe_sha256": "cb39cf745dea2547a67bb6e78175a6b29c0faa6f4c7ea5f0ad367a7e01f44d00",
-  "release": "intel-43348951017-1-gnupg",
+  "release": "intel-44236071090-1-gnupg",
   "revision": 1,
-  "run_id": "43348951017",
+  "run_id": "44236071090",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -59,9 +59,9 @@
       "pkg_version": "2.3.8"
     },
     {
-      "formula_sha256": "3c0b50b243cd3107c72d32d1a46621eac0263296d8b9b3a49268a94d7bae6c08",
+      "formula_sha256": "620ebfca4b5d000d7b02ef6699ddc621a7e2fec4cb8abed13ae3322978a51ae9",
       "name": "libksba",
-      "pkg_version": "1.8.1"
+      "pkg_version": "1.9.0"
     },
     {
       "formula_sha256": "ed078be38ddf16705fd0e9cc3a60a310d31f935cfbee6893dccb05b16fc9bcb7",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ea8c8624209c61ae4ce385398076329b9fd173167968f1794f0a6bcab9339133",
-  "size": 5773490,
+  "sha256": "2a9bbc8eb04af8ecb449d6fc1ddad91be396a0ca545358d0975bda8d6db614ac",
+  "size": 5773503,
   "source": {
     "filename": "gnupg--2.5.24_1.sources.tar.gz",
-    "sha256": "e7aacf87ca8be137f059cb10c64858d46b790a4d12b34409509083e31de3fd01",
-    "size": 8458506
+    "sha256": "67333c868a92be4c08298c8814fc21139a54b0746749066245f81e501f442304",
+    "size": 8458495
   },
   "tag": "sequoia",
   "version": "2.5.24",
   "version_scheme": 0,
-  "workflow_commit": "0ea2a80d9cd3d7cf677f753c20281aa45144483c"
+  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
 }
