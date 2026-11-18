@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
   "cellar": "any",
-  "core_commit": "0320d5a7ac3d7470022ac0bd0a855f485adab24f",
+  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
   "filename": "harfbuzz--15.1.0.sequoia.bottle.tar.gz",
   "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
   "license": "MIT",
   "name": "harfbuzz",
   "pkg_version": "15.1.0",
   "recipe_sha256": "53f78918f9017795c8678485127a95140afeb1e60b56fe0d6d620fcb4b1a03ee",
-  "release": "intel-42448122003-1-harfbuzz",
+  "release": "intel-44417898083-1-harfbuzz",
   "revision": 0,
-  "run_id": "42448122003",
+  "run_id": "44417898083",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -24,9 +24,9 @@
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -120,15 +120,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cbcdc4b90ed884db8c2639a4c08e6904444aff04ed1bc543ed094964bfa897d7",
-  "size": 4837669,
+  "sha256": "aaa6d274dc404c0de1ef9643cf908b4f0d5df5445e5cd5c01caca6b957368ca6",
+  "size": 4837693,
   "source": {
     "filename": "harfbuzz--15.1.0.sources.tar.gz",
-    "sha256": "c5d0be041578f37caa20b4c48b71a079876e22f2db3f82024e5bbe1c3ae4c74b",
-    "size": 20533767
+    "sha256": "04e9969abb404c2be3561d83c66de6a8437a0eca45a1f6c8efb71dd1b3a56ae0",
+    "size": 20533770
   },
   "tag": "sequoia",
   "version": "15.1.0",
   "version_scheme": 0,
-  "workflow_commit": "69bb2dad779a2dc3194a2e06f5c7310f92b47cf7"
+  "workflow_commit": "5ba50d1e1e9401b86b595422d78ec63ead54549d"
 }
