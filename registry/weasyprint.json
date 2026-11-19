@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any_skip_relocation",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "weasyprint--70.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "eb5e28a12ba4b7abde5d5ffa553df6c4d0c30fa3b95ca5f82035fc04ff71cfb6",
   "license": "BSD-3-Clause",
   "name": "weasyprint",
   "pkg_version": "70.0_1",
   "recipe_sha256": "ce7d66a2b910c384250feba4bd0fc471a0498bf551d615fe3c414537599ca5c4",
-  "release": "intel-44247841193-1-weasyprint",
+  "release": "intel-44446321743-1-weasyprint",
   "revision": 1,
-  "run_id": "44247841193",
+  "run_id": "44446321743",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -44,9 +44,9 @@
       "pkg_version": "1.5.5"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -265,15 +265,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3c4fab8ab99f915fa765bf4c0300bf2e5310c400bb98397e432a173937f64166",
-  "size": 4076646,
+  "sha256": "dff5413f5e19abacc3522b3542d3211a9bcee3d149275d69e6eb89cc8111f6e4",
+  "size": 4076658,
   "source": {
     "filename": "weasyprint--70.0_1.sources.tar.gz",
-    "sha256": "835f5a9ee789e856319663e4a3a5e7a78cb13f297779638c88fa00a85d86767d",
-    "size": 15279341
+    "sha256": "d999afb1778cabc0c0e5c05b4e1e51c2040373515a7531fea150c31595d67bfa",
+    "size": 15279349
   },
   "tag": "sequoia",
   "version": "70.0",
   "version_scheme": 0,
-  "workflow_commit": "76d4512a39fc8802d662cc463a201299cd81a298"
+  "workflow_commit": "ae9968ab770a830fba4548e1867ae23d3156c009"
 }
