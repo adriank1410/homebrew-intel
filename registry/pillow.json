@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
   "cellar": "any",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
   "filename": "pillow--13.0.0.sequoia.bottle.tar.gz",
   "formula_sha256": "7fd4c91aa6d3997eca23962ddf9cc37c142e1136de69e241808d35a5526c2a72",
   "license": "MIT-CMU",
   "name": "pillow",
   "pkg_version": "13.0.0",
   "recipe_sha256": "0f13063c842acb65a4e92bcfe83b3aaec1188cddbef4f1bc75882ccedaa0a09a",
-  "release": "intel-44236071090-1-pillow",
+  "release": "intel-44422976794-1-pillow",
   "revision": 0,
-  "run_id": "44236071090",
+  "run_id": "44422976794",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -34,9 +34,9 @@
       "pkg_version": "1.5.5"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "91189f8d3004629e919c0ae3b6c4dc234075ef0dc3fdef0010ce4851e8c29640",
-  "size": 1410808,
+  "sha256": "5306293994fd610b0d02057b2aa867d60866b96596855b8b1a448aef64e590d1",
+  "size": 1410774,
   "source": {
     "filename": "pillow--13.0.0.sources.tar.gz",
-    "sha256": "3103c63e368c44a2de3edd85df085f9af789c32dacfe765469b2bcf932e4326c",
-    "size": 46981410
+    "sha256": "f901494207834f22d250c814c93b5fedf6b2ea83808761e567abbf237884ee56",
+    "size": 46981416
   },
   "tag": "sequoia",
   "version": "13.0.0",
   "version_scheme": 0,
-  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
+  "workflow_commit": "9368473e7bd123f13a21ca7042766540cc2f9196"
 }
