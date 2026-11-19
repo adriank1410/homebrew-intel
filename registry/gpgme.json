@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
   "cellar": "any",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "d925c2e8af65c601ec518b0dfc22c2c50c6de91f",
   "filename": "gpgme--2.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "d24f49eb367fe4dd4c8ab848cd9c43b3a09c6b9ae2e19ad8938daf021eab3158",
   "license": "LGPL-2.1-or-later",
   "name": "gpgme",
   "pkg_version": "2.2.0",
   "recipe_sha256": "bb934f25c5dd8277bf6286443a75606795d40bb2be7be72e073ae66d32021eee",
-  "release": "intel-44247841193-1-gpgme",
+  "release": "intel-44623346730-1-gpgme",
   "revision": 0,
-  "run_id": "44247841193",
+  "run_id": "44623346730",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -64,9 +64,9 @@
       "pkg_version": "2.3.8"
     },
     {
-      "formula_sha256": "620ebfca4b5d000d7b02ef6699ddc621a7e2fec4cb8abed13ae3322978a51ae9",
+      "formula_sha256": "ec5d83529607cf3f0bde978c45c08e9382516dfdea9018440f39183778a9855c",
       "name": "libksba",
-      "pkg_version": "1.9.0"
+      "pkg_version": "1.9.1"
     },
     {
       "formula_sha256": "ed078be38ddf16705fd0e9cc3a60a310d31f935cfbee6893dccb05b16fc9bcb7",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3c0dbe278663e351c8cd8343db1bea7a31dff05c86cffd0d17942ac360b3aa65",
-  "size": 786289,
+  "sha256": "64c38d93f753c957dc9c81c3675da72f8d5bf6954d919ebecca39cd405f6a016",
+  "size": 786291,
   "source": {
     "filename": "gpgme--2.2.0.sources.tar.gz",
-    "sha256": "26d046d6fb03e96f2a4cefdd521ab7faca3230399456f148646562668400b23d",
-    "size": 1439559
+    "sha256": "485f37a373a12c512f8b491e41e05f1584e03a6322b524e233302e2a2757147f",
+    "size": 1439550
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "76d4512a39fc8802d662cc463a201299cd81a298"
+  "workflow_commit": "639dbaaaf5bd2f54576a5e6b11ab54d053070f89"
 }
