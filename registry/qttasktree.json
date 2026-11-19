@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "qttasktree--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "6d0047508a3cff31a2ee71996a67fcf9a502103ab25ede73803961d4911c05b5",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qttasktree",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "7bdf42ed88b585e5a18bd8ce2da59810f649bafa288d95cadc444a02a752f1d0",
-  "release": "intel-44099960069-1-qttasktree",
+  "release": "intel-44446321743-1-qttasktree",
   "revision": 1,
-  "run_id": "44099960069",
+  "run_id": "44446321743",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -50,9 +50,9 @@
       "pkg_version": "3.4.0"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "22016d347b8e28ea843c4b55ac5a4b0f1d4f9331e0c289e524aeff5cf58ae7fa",
-  "size": 137993,
+  "sha256": "4590a5949e48f2a10a863a35626ff6a5020b7e0fe4e2ef2f0f8f9298a6b45c56",
+  "size": 137975,
   "source": {
     "filename": "qttasktree--6.12.0_1.sources.tar.gz",
-    "sha256": "c4daac3a46cbcc994a5088a05de1f7004d46db1a6bd321395d42e572ce8924ac",
+    "sha256": "662fc0252b561d4a35ee3c4620c090df316351df8364bcddf82cd16feb6a3865",
     "size": 291674
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "b0e7fe650a29ae3c8a51b886c3b69f12bec8640f"
+  "workflow_commit": "ae9968ab770a830fba4548e1867ae23d3156c009"
 }
