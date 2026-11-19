@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "qtspeech--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1e004776ce0d131f53d79527eb6830f76363b750f248cf2740460129411b8832",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtspeech",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "af90f993ac68e7e0e7928a3b29f7986877ffd57ffcce6ae4e28e82587cc660a1",
-  "release": "intel-44234856980-1-qtspeech",
+  "release": "intel-44495920392-1-qtspeech",
   "revision": 1,
-  "run_id": "44234856980",
+  "run_id": "44495920392",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -55,9 +55,9 @@
       "pkg_version": "3.4.0"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -226,15 +226,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5f70733fa60f0b611fa8502285c4c74399a2a1092ce40ee90dbff82f5fff5a6d",
-  "size": 142824,
+  "sha256": "2784e8072b26ae44cb35b370925cf875f97ea97437b29d867a1d470ef9af65ce",
+  "size": 142823,
   "source": {
     "filename": "qtspeech--6.12.0_1.sources.tar.gz",
-    "sha256": "0dbd3b2de3f6d2b0c947ea33c14e74191a4ad1c6a8faf080458ee2142ed04af5",
-    "size": 288427
+    "sha256": "925d1c5d0112cdbd97858d0eef8562ea6df5358fa374ea4cec9f285a184bceac",
+    "size": 288429
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
+  "workflow_commit": "8a09dc7b8f5f78ffa3788be3df7d4d60d24c7d29"
 }
