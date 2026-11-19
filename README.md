@@ -180,7 +180,7 @@ Specifically, `qtwebengine` (Chromium engine with ~40,000 translation units,
 requiring more than 35 GB disk space and 8–10 hours of CPU compilation) and
 formulas requiring it (`qt`, `qtwebview`) cannot be built on standard runners.
 
-`source_build_holds` holds the `openjdk` 27.0.1 formula file (upstream now
+`source_build_holds` holds the `openjdk` 27.0.1.1 formula file (upstream now
 requires Arm on macOS) and the `hashcat` 8.0.0 formula file (its Metal test
 aborts on the Intel runner). It also holds the `archi-steam-farm` 6.3.11.7
 formula file together with the `dotnet` 11.0.100 formula file (the .NET 11
