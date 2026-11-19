@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "qtvirtualkeyboard--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "6e76fbffad123f436dc898eeb14c194a6cf5c4b89e0a10a38026b4beeaffbaf6",
   "license": {
@@ -15,9 +15,9 @@
   "name": "qtvirtualkeyboard",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "e48da6095249ee23c239123a8b5352d7a4b1102fd7b3fd88b64f1ffe3ea3a8bf",
-  "release": "intel-44234856980-1-qtvirtualkeyboard",
+  "release": "intel-44495920392-1-qtvirtualkeyboard",
   "revision": 1,
-  "run_id": "44234856980",
+  "run_id": "44495920392",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -50,9 +50,9 @@
       "pkg_version": "3.4.0"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -231,15 +231,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1cc85a1db901569a8611044366bba58fb700a9b9915bf4a7771101bcdb0ed741",
-  "size": 3030411,
+  "sha256": "5eeed0afe32dc8ec67dd834a6e5b4273f352695bdec548471b2d03576931df03",
+  "size": 3030382,
   "source": {
     "filename": "qtvirtualkeyboard--6.12.0_1.sources.tar.gz",
-    "sha256": "901dbbc14b69fe1fe163469d13ef93d044fb60412c886004e0d38fe2bae8b4ac",
-    "size": 3317695
+    "sha256": "1135ab8ee1700f0e5b9b582184e171ad79b96e617cd334d285cbe704ad87c9da",
+    "size": 3317698
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
+  "workflow_commit": "8a09dc7b8f5f78ffa3788be3df7d4d60d24c7d29"
 }
