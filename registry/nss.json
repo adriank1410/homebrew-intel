@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "1f8f55ce63f7fec6a65ecbf00d032a48d3b7ad80",
   "cellar": "any",
-  "core_commit": "4ad70807fd43bd586ca3f627d99a45cde5d836c8",
-  "filename": "nss--3.133.sequoia.bottle.tar.gz",
-  "formula_sha256": "7f4018fbbe6b55ecaf8c45a62342f5323498798f9cd0b87cba989da8bc778bca",
+  "core_commit": "b966daf54c1c10728b976b640a1c615ada5c3e5f",
+  "filename": "nss--3.134.sequoia.bottle.tar.gz",
+  "formula_sha256": "aa1c20da84712e47d31b055c8a256a36a052bd002aa0ccc6b7193b1b7f5a8c01",
   "license": "MPL-2.0",
   "name": "nss",
-  "pkg_version": "3.133",
-  "recipe_sha256": "9307129d0e3e678a484d7122229afbc0eb44488982779352e44b0155a6bf3c1c",
-  "release": "intel-43943203760-1-nss",
+  "pkg_version": "3.134",
+  "recipe_sha256": "e20ce36c98d075c51a7a39084752b474c1206e8bb7e46c11efe1d299ba83dd10",
+  "release": "intel-44523953372-1-nss",
   "revision": 0,
-  "run_id": "43943203760",
+  "run_id": "44523953372",
   "runtime_dependencies": [
     {
-      "formula_sha256": "3fb80d12cefbea785a47c34b751270d2fe424b33edf050fa8ffcab45f0cd6d4a",
+      "formula_sha256": "862aeb4b27a0edadd440027f6d17c360bc697d7ff7ac06e427ff76581fbc1c16",
       "name": "nspr",
-      "pkg_version": "4.40"
+      "pkg_version": "4.41"
     }
   ],
   "schema": 1,
-  "sha256": "c08b4f1cb78ff8824aa0752e1b294f774949b7d1588561ccf4e695a032220e27",
-  "size": 6349055,
+  "sha256": "f5e3fcde3f152f6c29d09ce7b6449b83e7c5e8124c47d250fc84a7192ae281ca",
+  "size": 6312812,
   "source": {
-    "filename": "nss--3.133.sources.tar.gz",
-    "sha256": "91a9bd3c646fde593b794dc575cf8f6da78bea3a3d0476bc957755e7d0aa5963",
-    "size": 87775482
+    "filename": "nss--3.134.sources.tar.gz",
+    "sha256": "0c517b0e17f250355b26bfdfa3c39263da0a104baa72d4f972847b864b19a9c8",
+    "size": 87643485
   },
   "tag": "sequoia",
-  "version": "3.133",
+  "version": "3.134",
   "version_scheme": 0,
-  "workflow_commit": "83c5839987f20ba071a3770032b86b4238304667"
+  "workflow_commit": "8308335ab2bac916a180d3455572eda4313c8a3a"
 }
