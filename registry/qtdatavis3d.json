@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "qtdatavis3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "b855c4b5e1bdb4adf7e9ee54dc11759ba26947823ca7efb4ab59c730a295585e",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtdatavis3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "85fe04d229f0d40fb3aafc990abb450414517d8ad88533f36c54b5d73de04ebd",
-  "release": "intel-44151682983-1-qtdatavis3d",
+  "release": "intel-44469078383-1-qtdatavis3d",
   "revision": 1,
-  "run_id": "44151682983",
+  "run_id": "44469078383",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -44,9 +44,9 @@
       "pkg_version": "3.4.0"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -195,15 +195,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "366398c2f859dfbcf1b606badccf0f26f1565154e53310c7fb6a047eb3c27165",
-  "size": 768388,
+  "sha256": "9aa504a5eaac36364f5e7f2819c70b7af2afcc520691fd74e5b3286c6d037c32",
+  "size": 768373,
   "source": {
     "filename": "qtdatavis3d--6.12.0_1.sources.tar.gz",
-    "sha256": "b7e8f51ccb09d3c765139172323838380f24f664838b25b9b260a1ee4ce345b2",
-    "size": 3966403
+    "sha256": "fb82e1f600f0521afdee5eb94e241ad79a1800085996fb42af3fcf104f4dc2b9",
+    "size": 3966399
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "ba51e7141694e8b5c9875aae5bb13973eaad05a8"
+  "workflow_commit": "49e2338be6bb1fc48d88d3bd871aec365c01f32c"
 }

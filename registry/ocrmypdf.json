@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "ocrmypdf--17.14.2.sequoia.bottle.tar.gz",
   "formula_sha256": "75d60702aa3b7031bdbf92e1f759835533133d8fbc0f13d65182ede41d8ad23f",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.14.2",
   "recipe_sha256": "fcac9172692b81be7d4a6bf636262532d86353eca1a1cf45e058e45a2c3a3dbf",
-  "release": "intel-44264934551-1-ocrmypdf",
+  "release": "intel-44469078383-1-ocrmypdf",
   "revision": 0,
-  "run_id": "44264934551",
+  "run_id": "44469078383",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -54,9 +54,9 @@
       "pkg_version": "9.0.2_1"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9caef2ab3d709f2e6b294a798815df9a2681e4fbf2a3f9b122f0e934c508d29d",
-  "size": 18184485,
+  "sha256": "26008a56549ccf4831f449829ac160ffd0229b715e19e33120397d6685bd4340",
+  "size": 18184405,
   "source": {
     "filename": "ocrmypdf--17.14.2.sources.tar.gz",
-    "sha256": "dc9a4ac5bf858edaeeb8e0bf38d4832ea305eb269f31e9631a990ac864b84d64",
-    "size": 82043876
+    "sha256": "70d52568b94d225a729eb79206e1819ed8392cd5aaa69adc76612e2d356aaa92",
+    "size": 82043882
   },
   "tag": "sequoia",
   "version": "17.14.2",
   "version_scheme": 0,
-  "workflow_commit": "cf0c451f937a270fb66c9c00f6279900e318a564"
+  "workflow_commit": "49e2338be6bb1fc48d88d3bd871aec365c01f32c"
 }
