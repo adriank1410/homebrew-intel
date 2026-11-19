@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "qt3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1ac22fcea55b345f2020b76d0a08c08feb6d605a3e35df43d68bbe9aed1dd8e9",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qt3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "ef2028f1651c39d64bde312830b9b09f91a6c47012b7352550a6555ad979b299",
-  "release": "intel-44151682983-1-qt3d",
+  "release": "intel-44469078383-1-qt3d",
   "revision": 1,
-  "run_id": "44151682983",
+  "run_id": "44469078383",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -56,9 +56,9 @@
       "pkg_version": "3.4.0"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -212,15 +212,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4ab922d9227a2f251efad3cef0a04b53b6363a09e05bee03eb3e560cf9aa9ce6",
-  "size": 3769690,
+  "sha256": "fa17d877d8e09d6bf19bebea05b51ada4a7470d31e5f0f8a9894c7afa87ad50b",
+  "size": 3769457,
   "source": {
     "filename": "qt3d--6.12.0_1.sources.tar.gz",
-    "sha256": "e0a2f96e068578b6aec486f18b973b778b008fbc7fd0f3ba40b4b3c482320bdc",
-    "size": 141960237
+    "sha256": "7ef3117b3bb92e3c15bfdc548e0f77f76efda883303b073747dd2a4232f443c1",
+    "size": 141960247
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "ba51e7141694e8b5c9875aae5bb13973eaad05a8"
+  "workflow_commit": "49e2338be6bb1fc48d88d3bd871aec365c01f32c"
 }
