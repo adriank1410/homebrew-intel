@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b43c73f8231d0308a0ce047bd8ad6e8dc6309f24",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "156bc81a267a4e0160c401b37bb5f5a1da4ba780",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "chafa--1.18.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "20d045959aa94854a989f4d559fefbc3e4c156172b9d90960621ab93cfba1c11",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3_1",
   "recipe_sha256": "c1b5ac197ce0e9a98993d1c3315bf081cb8059e41009399baf1f2922fc04035a",
-  "release": "intel-44236071090-1-chafa",
+  "release": "intel-44461266093-1-chafa",
   "revision": 1,
-  "run_id": "44236071090",
+  "run_id": "44461266093",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -34,9 +34,9 @@
       "pkg_version": "1.5.5"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4d9897a120dd8c2693054fccf9bc7bf6822b0cc62a045e3627a23b166d0088dd",
-  "size": 535068,
+  "sha256": "3020eb756810250a607da770279e4121712472c01369cefbf80aa50b01bd1814",
+  "size": 535067,
   "source": {
     "filename": "chafa--1.18.3_1.sources.tar.gz",
-    "sha256": "ee452ff8e6d92abf29e34deb3e22b5978c85a5c353d9d0394d9071909ba9804e",
-    "size": 1091684
+    "sha256": "a933929603051c34605a486971b1ba1dc3a70cf1406513e26f5d0b9000bb5abe",
+    "size": 1091686
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "5fd09a09ee074763560e446c449e661c393636be"
+  "workflow_commit": "f505c7596a83a5904f09cffb92daf6bcdcb7b6a4"
 }
