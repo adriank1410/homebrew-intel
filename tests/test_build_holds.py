@@ -35,11 +35,13 @@ INCIDENT_HOLDS = [
     },
 ]
 
-# The 26 October 2026 holds (run 40329905222, core f046c3cb8a): openjdk 27.0.1
-# requires arm64 on macOS since core 2d52dc6671; hashcat 8.0.0 aborts on a Metal
-# assertion in its formula test. The 13 November 2026 pair (run 43456114064,
-# core f3756358ae): archi-steam-farm 6.3.11.7 fails CA1307 analyzer errors when
-# published for net11.0 with dotnet 11.0.100.
+# The 26 October 2026 holds (run 40329905222, core f046c3cb8a), with the
+# openjdk recipe hash refreshed on 19 November 2026 (run 44535018658, core
+# b966daf54c1c): openjdk 27.0.1.1 still requires arm64 on macOS since core
+# 2d52dc6671; hashcat 8.0.0 aborts on a Metal assertion in its formula test.
+# The 13 November 2026 pair (run 43456114064, core f3756358ae):
+# archi-steam-farm 6.3.11.7 fails CA1307 analyzer errors when published for
+# net11.0 with dotnet 11.0.100.
 LIVE_HOLDS = [
     {
         "name": "archi-steam-farm",
@@ -56,7 +58,7 @@ LIVE_HOLDS = [
     },
     {
         "name": "openjdk",
-        "formula_sha256": "0fea82ef0501c239c6c228105f59f9c01a4895b6c98db274955213d8c79329ad",
+        "formula_sha256": "dd7a5484168f8af7f68b68752e9538b89258c5f1e50ce6ff71e80fb04da83ed6",
         "dependencies": [],
     },
 ]

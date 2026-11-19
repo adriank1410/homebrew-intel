@@ -16,7 +16,8 @@ No target, existing registry record, release, source guard, signature check,
 license requirement or recipe is removed or weakened by these holds.
 
 `source_build_holds` currently holds two formula files from the
-26 October 2026 incident below, `openjdk` 27.0.1 and `hashcat` 8.0.0, and the
+26 October 2026 incident below, `openjdk` 27.0.1.1 (hash refreshed after the
+19 November 2026 pin bump) and `hashcat` 8.0.0, and the
 `archi-steam-farm` 6.3.11.7 / `dotnet` 11.0.100 pair from the 13 November 2026
 incident. The Qt
 6.11.2 pair and the ocrmypdf 17.13.0 recipe below were removed from
@@ -211,8 +212,16 @@ it does not get past this requirement. A client would also reject a bottle
 built from this recipe at its requirement check. The arm64 requirement is not
 removed or patched: that alternative was rejected.
 
-The hold is the `openjdk` 27.0.1 formula file alone:
+The hold was first recorded for the `openjdk` 27.0.1 formula file alone:
 `0fea82ef0501c239c6c228105f59f9c01a4895b6c98db274955213d8c79329ad`.
+On 19 November 2026 pin maintenance moved core to
+`b966daf54c1c10728b976b640a1c615ada5c3e5f` (`openjdk` 27.0.1.1). That expires
+the 27.0.1 hash, so the scheduler selected `openjdk` again. [Sequoia Intel
+bottles run 44535018658](https://github.com/adriank1410/homebrew-intel/actions/runs/44535018658)
+failed at the same requirement check: "openjdk: The arm64 architecture is
+required for this software." The current hold is the `openjdk` 27.0.1.1
+formula file alone:
+`dd7a5484168f8af7f68b68752e9538b89258c5f1e50ce6ff71e80fb04da83ed6`.
 The published `openjdk` record is not changed and remains subject to the normal
 dependency drift checks.
 

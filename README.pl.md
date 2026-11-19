@@ -187,7 +187,7 @@ W szczególności `qtwebengine` (silnik Chromium liczący ~40 000 jednostek komp
 wymagający ponad 35 GB miejsca na dysku i 8–10 godzin czasu procesora) oraz formuły od niego zależne
 (`qt`, `qtwebview`) nie mogą być budowane na standardowych runnerach.
 
-`source_build_holds` wstrzymuje plik formuły `openjdk` 27.0.1 (upstream wymaga
+`source_build_holds` wstrzymuje plik formuły `openjdk` 27.0.1.1 (upstream wymaga
 teraz Arm na macOS) oraz plik formuły `hashcat` 8.0.0 (jego test Metal przerywa
 się na runnerze Intel). Wstrzymuje też plik formuły `archi-steam-farm` 6.3.11.7
 razem z plikiem formuły `dotnet` 11.0.100 (analizatory .NET 11 przerywają

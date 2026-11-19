@@ -37,7 +37,7 @@
     },
     {
       "name": "openjdk",
-      "formula_sha256": "0fea82ef0501c239c6c228105f59f9c01a4895b6c98db274955213d8c79329ad",
+      "formula_sha256": "dd7a5484168f8af7f68b68752e9538b89258c5f1e50ce6ff71e80fb04da83ed6",
       "dependencies": []
     }
   ],
