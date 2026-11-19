@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
+  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
   "cellar": "any",
-  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
   "filename": "qtscxml--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "324d26fb1a34cfaf76813862af7fc425f1563e732b68c7978f143df1bb0a31a7",
   "license": {
@@ -25,9 +25,9 @@
   "name": "qtscxml",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "0f61b6c1b9ad8022a635eaad991f8a7a85e9746458de10f5fe71dd8c2548268f",
-  "release": "intel-44151682983-1-qtscxml",
+  "release": "intel-44469078383-1-qtscxml",
   "revision": 1,
-  "run_id": "44151682983",
+  "run_id": "44469078383",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -55,9 +55,9 @@
       "pkg_version": "3.4.0"
     },
     {
-      "formula_sha256": "377fd40fc05503009a2ecc23e447b7413e6aca2e99eabe277a18689c0340bcc9",
+      "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
       "name": "fontconfig",
-      "pkg_version": "2.18.3"
+      "pkg_version": "2.18.4"
     },
     {
       "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
@@ -206,15 +206,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3e21f70319af0a1e34181284e38f03046eb78bf9141bd474460abcfdf220d58b",
-  "size": 659403,
+  "sha256": "a5f30977e9f76a1f52d05f4e05c0114e33d6c6d1d4ab084270cdb1740a164349",
+  "size": 659363,
   "source": {
     "filename": "qtscxml--6.12.0_1.sources.tar.gz",
-    "sha256": "3d2bf8e877cc1a09fda15ea0335c22e6410f406381e0405b3c26a0df3cb0babc",
-    "size": 591754
+    "sha256": "c045e886b637090d2d658a593f8a1633f9da4268ed3cbcdf557c435cd716ad26",
+    "size": 591757
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "ba51e7141694e8b5c9875aae5bb13973eaad05a8"
+  "workflow_commit": "49e2338be6bb1fc48d88d3bd871aec365c01f32c"
 }
