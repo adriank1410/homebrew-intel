@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "1f8f55ce63f7fec6a65ecbf00d032a48d3b7ad80",
+  "cellar": "any",
+  "core_commit": "b966daf54c1c10728b976b640a1c615ada5c3e5f",
+  "filename": "nspr--4.41.sequoia.bottle.tar.gz",
+  "formula_sha256": "862aeb4b27a0edadd440027f6d17c360bc697d7ff7ac06e427ff76581fbc1c16",
+  "license": "MPL-2.0",
+  "name": "nspr",
+  "pkg_version": "4.41",
+  "recipe_sha256": "cf481c5c9de14821be1aa299a30b3aad26cdd01323f52d2da964991c170fce56",
+  "release": "intel-44519542309-1-nspr",
+  "revision": 0,
+  "run_id": "44519542309",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "ab38439df946dd9672bf178da8777f0c904abb343711f18f9deb9bf7488e26f6",
+  "size": 333140,
+  "source": {
+    "filename": "nspr--4.41.sources.tar.gz",
+    "sha256": "b1f16109148ac2abe61521b379d6d77ca91f30dd0ec4a88b433c56b477a044be",
+    "size": 1022946
+  },
+  "tag": "sequoia",
+  "version": "4.41",
+  "version_scheme": 0,
+  "workflow_commit": "62b36b495ac75e165e9307a507f2fb0313cc0e11"
+}
