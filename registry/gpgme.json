@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
+  "brew_commit": "68a3990f7aa3b3a1bc067df3ea348619945fe732",
   "cellar": "any",
-  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
-  "filename": "gpgme--2.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "d24f49eb367fe4dd4c8ab848cd9c43b3a09c6b9ae2e19ad8938daf021eab3158",
+  "core_commit": "6784026285aed6e54105a5659b0703ec545ac7a1",
+  "filename": "gpgme--2.3.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "ae82d468eefb7b9e113c84ebc2f884aca1c4e85d8934d437dfcae4f7724a9e23",
   "license": "LGPL-2.1-or-later",
   "name": "gpgme",
-  "pkg_version": "2.2.0",
-  "recipe_sha256": "bb934f25c5dd8277bf6286443a75606795d40bb2be7be72e073ae66d32021eee",
-  "release": "intel-44679213156-1-gpgme",
+  "pkg_version": "2.3.1",
+  "recipe_sha256": "d70271192b0104cf29f7e09a478da3cb2f66d9622a06b8423bdefe190fca6ebb",
+  "release": "intel-44812711843-1-gpgme",
   "revision": 0,
-  "run_id": "44679213156",
+  "run_id": "44812711843",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "74bfbb26e1f250d389d5a6b5299884ec3aaf1230c615c22e55705b10864fa068",
-  "size": 786274,
+  "sha256": "94b0598c6f4e95f04f796e1014dbec11748e98f4a78adfc41cc81e2180a70339",
+  "size": 787626,
   "source": {
-    "filename": "gpgme--2.2.0.sources.tar.gz",
-    "sha256": "6e514ea06a9dbcfb945c043a1b3956ed0689d58ede0ccc7c3b23d7bfef803de3",
-    "size": 1439552
+    "filename": "gpgme--2.3.1.sources.tar.gz",
+    "sha256": "f9e60d5ab010346462da16767b654059305d2abf45cc2ee38b4f7d29cc0ae553",
+    "size": 1444272
   },
   "tag": "sequoia",
-  "version": "2.2.0",
+  "version": "2.3.1",
   "version_scheme": 0,
-  "workflow_commit": "a1b1be745fc87c8f65dc39edecb1a643802a363b"
+  "workflow_commit": "309f858b7a05d185e0e86f44c1cef8cefbc4d756"
 }
