@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
   "cellar": "any",
-  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
-  "filename": "hiredis--1.5.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "37c052ecf87bbfd2c38b867fe9faf7d755bca1a10f192f51b77cc0424834539c",
+  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "filename": "hiredis--1.5.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "a593f395c20996a0142dd1732dbbaa64bddc989219b05ea2fbf2a0ce138dd3ec",
   "license": "BSD-3-Clause",
   "name": "hiredis",
-  "pkg_version": "1.5.0",
-  "recipe_sha256": "9c59e61e65ce308de1a45f31d9601cd95027c4be757592c289213b9da5ad4e59",
-  "release": "intel-43284413443-1-hiredis",
+  "pkg_version": "1.5.1",
+  "recipe_sha256": "c75083bc0b5987bd665509496092b80801ec8bf6c50df001fa430b30d8f6f38a",
+  "release": "intel-44661039102-1-hiredis",
   "revision": 0,
-  "run_id": "43284413443",
+  "run_id": "44661039102",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e824e974c3a5d7cb66665cf560c6d7db5739cab9eb3dde29a404fbbf6ba2dfa2",
-  "size": 171723,
+  "sha256": "39f942baa81b12b0d2be20919efcc7da0519d320af315752c6017edc2711b288",
+  "size": 172613,
   "source": {
-    "filename": "hiredis--1.5.0.sources.tar.gz",
-    "sha256": "d7d15ae011ce233831d27ae6e6025805dba9f5919040ed666027914abcbba4ab",
-    "size": 187695
+    "filename": "hiredis--1.5.1.sources.tar.gz",
+    "sha256": "cef20706c89898163d3e5b590a7e50f1adcd409b4bc4844e83374a8cdeb80cbe",
+    "size": 188766
   },
   "tag": "sequoia",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "version_scheme": 0,
-  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+  "workflow_commit": "409af8c374ac83bad0b3839f9edaee52c621d2f6"
 }
