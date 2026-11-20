@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
   "cellar": "any_skip_relocation",
-  "core_commit": "e9e970a6894f23a16eaea5b7132dfd0627c870c1",
-  "filename": "bun--1.4.4_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "8d5549ebc350cb339e759b02014738257428a0e0f807fdada23d1093a3289829",
+  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "filename": "bun--1.4.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "c1915914f14ff44fc1226593cecad60eb53df6eee27f9b3cd358e1e7aaa62e00",
   "license": {
     "all_of": [
       "MIT",
@@ -13,6 +13,7 @@
       "BSD-2-Clause",
       "BSD-3-Clause",
       "IJG",
+      "ISC",
       "LGPL-2.1-or-later",
       "Zlib",
       {
@@ -23,22 +24,22 @@
     ]
   },
   "name": "bun",
-  "pkg_version": "1.4.4_1",
-  "recipe_sha256": "1f5da8d7c62888a0da0e733d9291005c43f52d71b899c75ef06a2f9917ec89a4",
-  "release": "intel-41178370459-1-bun",
-  "revision": 1,
-  "run_id": "41178370459",
+  "pkg_version": "1.4.5",
+  "recipe_sha256": "e620105bd5dad3fe9109e16d8f3dc03bb2d7cb51173de757016456dc2da2e833",
+  "release": "intel-44666435744-1-bun",
+  "revision": 0,
+  "run_id": "44666435744",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "f16c3841d154b6b1d979b41480f6e9e516f9eb2a55d95086c96ee0786a652ca6",
-  "size": 41226460,
+  "sha256": "0b790a585adb66d46b004e13b52e458460ecc54969ba0fb999d3dc0e2bbd6dc7",
+  "size": 41259310,
   "source": {
-    "filename": "bun--1.4.4_1.sources.tar.gz",
-    "sha256": "b501592d3841024499739c462d8711b4a262c2ae5791ab1e5ee47d9762669ea7",
-    "size": 134635331
+    "filename": "bun--1.4.5.sources.tar.gz",
+    "sha256": "9b1cb8bdc1ae8284608cdd2c2113b2e6c2c6604d5b1e6fd2224d7e119ea80cb6",
+    "size": 147847227
   },
   "tag": "sequoia",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "version_scheme": 0,
-  "workflow_commit": "6bf0e99b3f373088de894b726ce55fd7d6cc51b4"
+  "workflow_commit": "578b5bc4ed8555d6a193d18a1a525c2fd7673669"
 }
