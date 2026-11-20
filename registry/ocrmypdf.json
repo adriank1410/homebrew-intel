@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
+  "brew_commit": "68a3990f7aa3b3a1bc067df3ea348619945fe732",
   "cellar": "any",
-  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
+  "core_commit": "6784026285aed6e54105a5659b0703ec545ac7a1",
   "filename": "ocrmypdf--17.14.2.sequoia.bottle.tar.gz",
   "formula_sha256": "75d60702aa3b7031bdbf92e1f759835533133d8fbc0f13d65182ede41d8ad23f",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.14.2",
   "recipe_sha256": "fcac9172692b81be7d4a6bf636262532d86353eca1a1cf45e058e45a2c3a3dbf",
-  "release": "intel-44469078383-1-ocrmypdf",
+  "release": "intel-44818144895-1-ocrmypdf",
   "revision": 0,
-  "run_id": "44469078383",
+  "run_id": "44818144895",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -319,9 +319,9 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "3833cbad1bd3c444da54cffd9f60ea7b65d8997d3ce7af39e2b3b883e02fb6e9",
+      "formula_sha256": "6a96c05f76aada70a4f76c970de6a5c0937e8e99ba45a62b4e1a33397af989b0",
       "name": "pydantic",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.14.4"
     },
     {
       "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
@@ -405,15 +405,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "26008a56549ccf4831f449829ac160ffd0229b715e19e33120397d6685bd4340",
-  "size": 18184405,
+  "sha256": "89087849252f2f853ad426d79dfd62a97f077088a76b019a00ff7085d330bdef",
+  "size": 18184345,
   "source": {
     "filename": "ocrmypdf--17.14.2.sources.tar.gz",
-    "sha256": "70d52568b94d225a729eb79206e1819ed8392cd5aaa69adc76612e2d356aaa92",
-    "size": 82043882
+    "sha256": "1de642dfae1832d8de158ab3389b222e4bdc5409672f10faa5eff6708efe066a",
+    "size": 82043851
   },
   "tag": "sequoia",
   "version": "17.14.2",
   "version_scheme": 0,
-  "workflow_commit": "49e2338be6bb1fc48d88d3bd871aec365c01f32c"
+  "workflow_commit": "0e6c84e77a13bffa8646fe5cae7d9b14427338c8"
 }
