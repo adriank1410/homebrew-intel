@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3014a11f612e627a6edfccf3551fbd1d42d767a0",
+  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
   "cellar": "any",
-  "core_commit": "0a752f1cebe5c6700d050b7ab5a86a03d26bc0c6",
-  "filename": "ada-url--4.0.0_2.sequoia.bottle.tar.gz",
-  "formula_sha256": "4256a9516bf2d0e38fc8561b487c8a07d2e402298090d00ec7a59e03141db98d",
+  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "filename": "ada-url--4.1.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "c92f084dba4edbdc489fd780c2a3c5d08ae0d988dea9c55b06d0f983d12ad0a4",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -12,11 +12,11 @@
     ]
   },
   "name": "ada-url",
-  "pkg_version": "4.0.0_2",
-  "recipe_sha256": "196d6c346c0bab51070b8c48567975f9f85e91290d8ce2d8e394bcdebc0af939",
-  "release": "intel-43737729189-1-ada-url",
-  "revision": 2,
-  "run_id": "43737729189",
+  "pkg_version": "4.1.1",
+  "recipe_sha256": "39f27e694d9dc74e0a83bbc48f080048537b557b5acf1c5b9e76762f4d64e145",
+  "release": "intel-44666435744-1-ada-url",
+  "revision": 0,
+  "run_id": "44666435744",
   "runtime_dependencies": [
     {
       "formula_sha256": "7aced41e0896abf5f58833f3112a075b2364ead07735098488dac2f5a1000d6a",
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "74a1835662a0e47c1ec26551eda72e936131b6b55a82bb254b6444d355e9ff83",
-  "size": 350159,
+  "sha256": "3fd37ff02dd353d1ed37b60f606ba31930821a48c9d123bdab42a4d169ead1f7",
+  "size": 435056,
   "source": {
-    "filename": "ada-url--4.0.0_2.sources.tar.gz",
-    "sha256": "76520d21ea7406ecb149dc272e8678a9a00d6dec825724bc87662d85ab102ab9",
-    "size": 533340
+    "filename": "ada-url--4.1.1.sources.tar.gz",
+    "sha256": "7699b8385e1f36ca79c44287fb568418e76972ed5587dab5ca7be1da402b8850",
+    "size": 633492
   },
   "tag": "sequoia",
-  "version": "4.0.0",
+  "version": "4.1.1",
   "version_scheme": 0,
-  "workflow_commit": "07f475156e1bf8c9a6a059496bacead5cb5f5538"
+  "workflow_commit": "578b5bc4ed8555d6a193d18a1a525c2fd7673669"
 }
