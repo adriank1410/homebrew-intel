@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "48aad73a001b7f2b8d0620c4b4090b87aa924519",
+  "brew_commit": "68a3990f7aa3b3a1bc067df3ea348619945fe732",
   "cellar": "any",
-  "core_commit": "0d406593ad16e61d853778fa6827f50178660217",
+  "core_commit": "6784026285aed6e54105a5659b0703ec545ac7a1",
   "filename": "mistral-vibe--3.1.2.sequoia.bottle.tar.gz",
   "formula_sha256": "eb444ead45534635fd8a3ffa333f72ab4d0de62345f37fd1fd5344ab835dba31",
   "license": "Apache-2.0",
   "name": "mistral-vibe",
   "pkg_version": "3.1.2",
   "recipe_sha256": "5a440b05f806631b1e29c66e69df0d67a12ba603727b54662871213817e6dbf9",
-  "release": "intel-43777092872-1-mistral-vibe",
+  "release": "intel-44818144895-1-mistral-vibe",
   "revision": 0,
-  "run_id": "43777092872",
+  "run_id": "44818144895",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -59,9 +59,9 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "3833cbad1bd3c444da54cffd9f60ea7b65d8997d3ce7af39e2b3b883e02fb6e9",
+      "formula_sha256": "6a96c05f76aada70a4f76c970de6a5c0937e8e99ba45a62b4e1a33397af989b0",
       "name": "pydantic",
-      "pkg_version": "2.14.3"
+      "pkg_version": "2.14.4"
     },
     {
       "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
@@ -95,15 +95,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "f14e1e57a75f521f5d51923d40527a67883a08844bafa1ddbe41798d6d78b1e9",
-  "size": 44797543,
+  "sha256": "d0aee602dc344fde1b427f501712ac6a986245c01e200743658f676c29fe0fd8",
+  "size": 44805466,
   "source": {
     "filename": "mistral-vibe--3.1.2.sources.tar.gz",
-    "sha256": "1bfb4886f87e4aff02c0ddc3929538650722404fb85605f6178f9de4bd4730fd",
-    "size": 198862880
+    "sha256": "f5d67f588c4145a3f4d119c8fb1d28bc8937ddeee7d0f3fe70fe620fb4d1f171",
+    "size": 198871916
   },
   "tag": "sequoia",
   "version": "3.1.2",
   "version_scheme": 0,
-  "workflow_commit": "3e614d3ddff13310676d4ea209b5cce9840ece01"
+  "workflow_commit": "0e6c84e77a13bffa8646fe5cae7d9b14427338c8"
 }
