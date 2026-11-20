@@ -1,0 +1,79 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
+  "cellar": "any",
+  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "filename": "gnutls--3.8.14.sequoia.bottle.tar.gz",
+  "formula_sha256": "6f81e70f704d7d46cf642e5233f19d5b1fc580a7b5804384ce315974bcfd7219",
+  "license": {
+    "all_of": [
+      "LGPL-2.1-or-later",
+      "GPL-3.0-only"
+    ]
+  },
+  "name": "gnutls",
+  "pkg_version": "3.8.14",
+  "recipe_sha256": "c0ca455623824d4334308a850b7767a163582de82cbe9436e442623c47fb941a",
+  "release": "intel-44661039102-1-gnutls",
+  "revision": 0,
+  "run_id": "44661039102",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "name": "ca-certificates",
+      "pkg_version": "2026-11-05"
+    },
+    {
+      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "name": "gettext",
+      "pkg_version": "1.0"
+    },
+    {
+      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "name": "gmp",
+      "pkg_version": "6.3.0"
+    },
+    {
+      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "name": "json-c",
+      "pkg_version": "0.19"
+    },
+    {
+      "formula_sha256": "ec612e2853549a7735d514b215bee957cebd1f63db243ce70393b948d8052f07",
+      "name": "libidn2",
+      "pkg_version": "2.3.8"
+    },
+    {
+      "formula_sha256": "ed078be38ddf16705fd0e9cc3a60a310d31f935cfbee6893dccb05b16fc9bcb7",
+      "name": "libtasn1",
+      "pkg_version": "4.21.0"
+    },
+    {
+      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "name": "libunistring",
+      "pkg_version": "1.5"
+    },
+    {
+      "formula_sha256": "087bd49b2efaa8892d7ad9b13d596c985dfeeaaede2084dccfeda52f528be428",
+      "name": "nettle",
+      "pkg_version": "4.0"
+    },
+    {
+      "formula_sha256": "0c48d6e5550b67c68430827698b7464781c1d9818432516fab4ef3b33e8f203f",
+      "name": "p11-kit",
+      "pkg_version": "0.26.6"
+    }
+  ],
+  "schema": 1,
+  "sha256": "edf5cb6573f60235b1414396117133f12fafebfe507cf4619736d5d7b595e9cd",
+  "size": 3220529,
+  "source": {
+    "filename": "gnutls--3.8.14.sources.tar.gz",
+    "sha256": "f5ed5e4049da2c541687dc12ecddbd98fd163ed94041d9d34f32cb4c2e09f6f0",
+    "size": 7404063
+  },
+  "tag": "sequoia",
+  "version": "3.8.14",
+  "version_scheme": 0,
+  "workflow_commit": "409af8c374ac83bad0b3839f9edaee52c621d2f6"
+}
