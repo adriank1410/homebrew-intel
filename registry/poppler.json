@@ -2,7 +2,7 @@
   "arch": "x86_64",
   "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "d925c2e8af65c601ec518b0dfc22c2c50c6de91f",
+  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
   "filename": "poppler--26.11.0.sequoia.bottle.tar.gz",
   "formula_sha256": "337eeaf41b47ed75f430f8804d429853ffcc7ddcf04d67561548f0d43470d8d6",
   "license": {
@@ -14,9 +14,9 @@
   "name": "poppler",
   "pkg_version": "26.11.0",
   "recipe_sha256": "66de2a8ddddbb41083c9059ce9458452fd40863b3959535a4b041eacb78db5ca",
-  "release": "intel-44630152186-1-poppler",
+  "release": "intel-44705397103-1-poppler",
   "revision": 0,
-  "run_id": "44630152186",
+  "run_id": "44705397103",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -69,9 +69,9 @@
       "pkg_version": "2.5.24_1"
     },
     {
-      "formula_sha256": "720a0b82acbc9f97fe2950c6b919ea5e9383b491c8ef7b7f06a7f3e16c9b8c07",
+      "formula_sha256": "6f81e70f704d7d46cf642e5233f19d5b1fc580a7b5804384ce315974bcfd7219",
       "name": "gnutls",
-      "pkg_version": "3.8.13_2"
+      "pkg_version": "3.8.14"
     },
     {
       "formula_sha256": "d24f49eb367fe4dd4c8ab848cd9c43b3a09c6b9ae2e19ad8938daf021eab3158",
@@ -275,15 +275,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "483772053ea5c45846aaba59380d60b6f42bbf8c53ffa71321976ef529443f82",
-  "size": 10042598,
+  "sha256": "cae2201ffb28f05a9af699b6e715c2ad0159bb26672780c7235a30992b97ed39",
+  "size": 10042495,
   "source": {
     "filename": "poppler--26.11.0.sources.tar.gz",
-    "sha256": "aa9514fe16ac07b6b89325dfbfc69082986e3cf8bd2c737d13fecc3f1c3284ce",
-    "size": 6507655
+    "sha256": "57891448eb243a53bbb10199cf9d259a884f06f9767454cf74a2813ea4001e38",
+    "size": 6507653
   },
   "tag": "sequoia",
   "version": "26.11.0",
   "version_scheme": 0,
-  "workflow_commit": "a100fde40a2060100c43c41ee303edc376dd1c09"
+  "workflow_commit": "3522b6974f9a8b2c51e372eb16d85ffed614687d"
 }
