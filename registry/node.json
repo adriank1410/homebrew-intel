@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
+  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
   "filename": "node--26.13.1_2.sequoia.bottle.tar.gz",
   "formula_sha256": "fee099f49797fbf9d29680aa2506b8cba75c4c15e285cd38b3d420e50d8e1de0",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.13.1_2",
   "recipe_sha256": "f286b0dc8d4bac2bc9e1b7257d1ce9e0c79089abb36565844bde16d6e42e2979",
-  "release": "intel-44199166067-1-node",
+  "release": "intel-44679213156-1-node",
   "revision": 2,
-  "run_id": "44199166067",
+  "run_id": "44679213156",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -19,9 +19,9 @@
       "pkg_version": "20260817.0"
     },
     {
-      "formula_sha256": "4256a9516bf2d0e38fc8561b487c8a07d2e402298090d00ec7a59e03141db98d",
+      "formula_sha256": "c92f084dba4edbdc489fd780c2a3c5d08ae0d988dea9c55b06d0f983d12ad0a4",
       "name": "ada-url",
-      "pkg_version": "4.0.0_2"
+      "pkg_version": "4.1.1"
     },
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8fe623bead2063c9aa513837bdfa9cefbda06f4c59e93aa8e62528e67be1e5d0",
-  "size": 21762372,
+  "sha256": "0033c8952376a8f90004204863c8b1a91f1bf38bc8d347b08eb7f33ca791c45e",
+  "size": 21763183,
   "source": {
     "filename": "node--26.13.1_2.sources.tar.gz",
-    "sha256": "4bf7990a56a2ee6e5046467d417f731e223a1db27d7b890f5382e3f53d78b0a1",
-    "size": 66618779
+    "sha256": "22961c778f4b95aedfba8b709c9f9debc670df4011a2f1c71a1506d112079a75",
+    "size": 66618749
   },
   "tag": "sequoia",
   "version": "26.13.1",
   "version_scheme": 0,
-  "workflow_commit": "033d5fc5e6b22e137e03c78a8c86ae4cf74d9100"
+  "workflow_commit": "a1b1be745fc87c8f65dc39edecb1a643802a363b"
 }
