@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
+  "brew_commit": "e40c695f619441e4c13b6cf51f8f0484ea091dd5",
   "cellar": "any",
-  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
+  "core_commit": "56dd16fd5823de24fb86e814f84500f0c4c08c79",
   "filename": "qtscxml--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "324d26fb1a34cfaf76813862af7fc425f1563e732b68c7978f143df1bb0a31a7",
   "license": {
@@ -25,9 +25,9 @@
   "name": "qtscxml",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "0f61b6c1b9ad8022a635eaad991f8a7a85e9746458de10f5fe71dd8c2548268f",
-  "release": "intel-44469078383-1-qtscxml",
+  "release": "intel-44880574425-1-qtscxml",
   "revision": 1,
-  "run_id": "44469078383",
+  "run_id": "44880574425",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -80,9 +80,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
+      "formula_sha256": "96cd1945dcf88b61ab17cc1d1f4764e79c7693bfd573e963b46f014a9f5fb54c",
       "name": "harfbuzz",
-      "pkg_version": "15.1.0"
+      "pkg_version": "15.2.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -206,15 +206,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a5f30977e9f76a1f52d05f4e05c0114e33d6c6d1d4ab084270cdb1740a164349",
-  "size": 659363,
+  "sha256": "c002b9bdb6966f6613168335f96d9d6b0f9bd6275d70a05b75031a631a5c8957",
+  "size": 659390,
   "source": {
     "filename": "qtscxml--6.12.0_1.sources.tar.gz",
-    "sha256": "c045e886b637090d2d658a593f8a1633f9da4268ed3cbcdf557c435cd716ad26",
-    "size": 591757
+    "sha256": "495d58d9c4c5a6200932cda3d89d2f61f5a395c8a2fb4b7ebdc79121ff060f17",
+    "size": 591748
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "49e2338be6bb1fc48d88d3bd871aec365c01f32c"
+  "workflow_commit": "b2de7ef8446c3f235346fb4739a32bd74c6d434f"
 }
