@@ -1,39 +1,39 @@
 {
   "arch": "x86_64",
-  "brew_commit": "d9287800cf7871864f5f82ca6885b3ac83de460f",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "cc6e2d6b8ebbe15061baf39dea095290298a5b89",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "openldap--2.7.2.sequoia.bottle.tar.gz",
   "formula_sha256": "1f9fb757afcfdfabd496e7326edc42afdc7dc5b531bcaec107b1a779e82e20de",
   "license": "OLDAP-2.8",
   "name": "openldap",
   "pkg_version": "2.7.2",
   "recipe_sha256": "072946e4110812658fa2c5ce962be19cc8bb9cf5c39d7c4c90b094f6a7b25c6c",
-  "release": "intel-42740149239-1-openldap",
+  "release": "intel-44901803975-1-openldap",
   "revision": 0,
-  "run_id": "42740149239",
+  "run_id": "44901803975",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "b0f3cd2dd6c837c54652f47cfe09269f5880e065e527c56607bdf655713abfc1",
-  "size": 3350987,
+  "sha256": "9029da729298b3ec2838bdffcfaaae414c472a075077eb4632bf848682aaec01",
+  "size": 3350907,
   "source": {
     "filename": "openldap--2.7.2.sources.tar.gz",
-    "sha256": "0c47fe87ead19785ec4db68b947ebc76f62fc36d1a4176914b0726adf67ac43f",
+    "sha256": "897ab630fa2caac2d7d3f8d010e568f388955bfcdd551b72cdbc6531c9a49a70",
     "size": 6486181
   },
   "tag": "sequoia",
   "version": "2.7.2",
   "version_scheme": 0,
-  "workflow_commit": "5e48c58bcd28a2abab6efd9b41c66bde36dedca2"
+  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
 }
