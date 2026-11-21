@@ -1,39 +1,39 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "hiredis--1.5.1.sequoia.bottle.tar.gz",
   "formula_sha256": "a593f395c20996a0142dd1732dbbaa64bddc989219b05ea2fbf2a0ce138dd3ec",
   "license": "BSD-3-Clause",
   "name": "hiredis",
   "pkg_version": "1.5.1",
   "recipe_sha256": "c75083bc0b5987bd665509496092b80801ec8bf6c50df001fa430b30d8f6f38a",
-  "release": "intel-44661039102-1-hiredis",
+  "release": "intel-44901803975-1-hiredis",
   "revision": 0,
-  "run_id": "44661039102",
+  "run_id": "44901803975",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "39f942baa81b12b0d2be20919efcc7da0519d320af315752c6017edc2711b288",
-  "size": 172613,
+  "sha256": "ce34cd86922a8fb47899699c0976e4ffd525e78d1381384d8770f43527c4bda9",
+  "size": 172625,
   "source": {
     "filename": "hiredis--1.5.1.sources.tar.gz",
-    "sha256": "cef20706c89898163d3e5b590a7e50f1adcd409b4bc4844e83374a8cdeb80cbe",
-    "size": 188766
+    "sha256": "82de720710e1c2ec7d8789f5df38b8678e213d5842ff90a4ddce46f84a33d759",
+    "size": 188768
   },
   "tag": "sequoia",
   "version": "1.5.1",
   "version_scheme": 0,
-  "workflow_commit": "409af8c374ac83bad0b3839f9edaee52c621d2f6"
+  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
 }
