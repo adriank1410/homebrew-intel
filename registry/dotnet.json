@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "17e7532228bfd52094f9f5c463753eb1e111f99b",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "f3756358aef6cf4b82302d0efa5c68614b60661e",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "dotnet--11.0.100.sequoia.bottle.tar.gz",
   "formula_sha256": "1db51a4ec77fdf642aedba497bd7045af1611c1ed3ac1dc738e215f54c4136aa",
   "license": "MIT",
   "name": "dotnet",
   "pkg_version": "11.0.100",
   "recipe_sha256": "18d53d31e9ed5e38262b4cdc810d0432359eba5a8bff9cf50b691fe784636fc9",
-  "release": "intel-43423216075-1-dotnet",
+  "release": "intel-44916853797-1-dotnet",
   "revision": 0,
-  "run_id": "43423216075",
+  "run_id": "44916853797",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -19,7 +19,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -29,17 +29,17 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5fdcb83ccb71b1c0375c238c28c7a4b981d452e2d79e18ab9955747ad80aeea1",
-  "size": 274257177,
+  "sha256": "f56148b1b496accac86ef15cbea84eaf6921b5711ed9040a3d66c120cb36a4a6",
+  "size": 274261409,
   "source": {
     "filename": "dotnet--11.0.100.sources.tar.gz",
-    "sha256": "7c59dd895aa4ce849e71cb803ffff4be60f0f9d6c6006db9884dee1627a62006",
-    "size": 972754496
+    "sha256": "b9bbd20be0118e1a777cc34fdbfff4380f0b8c56a690bca1bc1d19e2c61b4f63",
+    "size": 972754517
   },
   "tag": "sequoia",
   "version": "11.0.100",
   "version_scheme": 1,
-  "workflow_commit": "6e484a1d7047ef43061d1adea75d4f45c887855c"
+  "workflow_commit": "0306fc93763f4293ebd8e98a492692b4ba73290c"
 }
