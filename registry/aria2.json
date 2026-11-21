@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "aria2--1.37.0_3.sequoia.bottle.tar.gz",
   "formula_sha256": "4519c6e4b241e18f4e42acd2bffc8e8a3fc19c3853985d6440f99e52ddbba622",
   "license": "GPL-2.0-or-later",
   "name": "aria2",
   "pkg_version": "1.37.0_3",
   "recipe_sha256": "e56d9531a03980d69b7c0da8aa356b1c0f176f991e3f36bdebbe706b1b7ed7d6",
-  "release": "intel-42317576294-1-aria2",
+  "release": "intel-44935322683-1-aria2",
   "revision": 3,
-  "run_id": "42317576294",
+  "run_id": "44935322683",
   "runtime_dependencies": [
     {
       "formula_sha256": "0d6e516cdfac37e00bf121e61db1252ef4e8e89593568039862f081bd639e239",
@@ -19,7 +19,7 @@
       "pkg_version": "1.34.9"
     },
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -44,31 +44,31 @@
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "formula_sha256": "a64a84eedd14491bbc11a6caa925f3081193acd986f60c9ee4b961c0f0478a64",
       "name": "sqlite",
       "pkg_version": "3.54.1"
     }
   ],
   "schema": 1,
-  "sha256": "a4fd5c5f90151651ea1b03e511ef6b0647fd28ac95c6ab2128f9b97bcc58d023",
-  "size": 1768854,
+  "sha256": "da1a3981ed88f34f2bdaebd4dbd10822edff49d0474040f0abe77d28bc04c12a",
+  "size": 1768846,
   "source": {
     "filename": "aria2--1.37.0_3.sources.tar.gz",
-    "sha256": "f3e4a056025f26e9b7ef8750ead96956382e8369a6e67a40071271d1475cb84f",
-    "size": 1720908
+    "sha256": "4d7072829d5168a16bb629e2e706acac4b15d934151f5e419632e984e620498e",
+    "size": 1720929
   },
   "tag": "sequoia",
   "version": "1.37.0",
   "version_scheme": 0,
-  "workflow_commit": "091ad3bc5e7e87c5435730bc0f24f265cd015f7c"
+  "workflow_commit": "ecd73483e97b55f68e189104e25be5eb12f0b90d"
 }
