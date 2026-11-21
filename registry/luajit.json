@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e40c695f619441e4c13b6cf51f8f0484ea091dd5",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "56dd16fd5823de24fb86e814f84500f0c4c08c79",
+  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
   "filename": "luajit--2.1.1795119671.sequoia.bottle.tar.gz",
-  "formula_sha256": "6f0dd95e3e262c93ff445f5fc551d98794df16d021e1c3de2f0c7e750c0f9857",
+  "formula_sha256": "b5a72046e80df140d0272542984d1e99524a816becb686b93a758cca3a4b356a",
   "license": "MIT",
   "name": "luajit",
   "pkg_version": "2.1.1795119671",
-  "recipe_sha256": "76c3237874429485a8983cea58ca2088ad9789726de47f7ac20171e362bb83e2",
-  "release": "intel-44856642053-1-luajit",
+  "recipe_sha256": "91795803e145e48c5157749edde58c7c470a3ff559e3af923fd0865bd6ad3df8",
+  "release": "intel-44947157274-1-luajit",
   "revision": 0,
-  "run_id": "44856642053",
+  "run_id": "44947157274",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "60cfa89278d12d79fc706af8a4435df00ece1c3638a347f9af838fb3028fa360",
-  "size": 911204,
+  "sha256": "90380f6ffd2b641b429ab40ceb6091d7dfdaafc3397f5edfac03ac1ffb1679d1",
+  "size": 911234,
   "source": {
     "filename": "luajit--2.1.1795119671.sources.tar.gz",
-    "sha256": "d98b4315985106df02c4f3af25033cf737146a2bceed8b9df10bb781d58c0110",
-    "size": 1110656
+    "sha256": "5a6d426a89adcd4025c1d1e715f7e8b732f75ba904b31d4e6cb57467d77ddbd0",
+    "size": 1110639
   },
   "tag": "sequoia",
   "version": "2.1.1795119671",
   "version_scheme": 0,
-  "workflow_commit": "be84fb5fe449b5b0216d955637842497bc4f0b99"
+  "workflow_commit": "2299825da81617f900d7416eacb8900931b5742d"
 }
