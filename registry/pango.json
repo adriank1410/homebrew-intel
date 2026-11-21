@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
+  "brew_commit": "e40c695f619441e4c13b6cf51f8f0484ea091dd5",
   "cellar": "any",
-  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
+  "core_commit": "56dd16fd5823de24fb86e814f84500f0c4c08c79",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-44422976794-1-pango",
+  "release": "intel-44859232112-1-pango",
   "revision": 0,
-  "run_id": "44422976794",
+  "run_id": "44859232112",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -54,9 +54,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
+      "formula_sha256": "96cd1945dcf88b61ab17cc1d1f4764e79c7693bfd573e963b46f014a9f5fb54c",
       "name": "harfbuzz",
-      "pkg_version": "15.1.0"
+      "pkg_version": "15.2.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "636685680ecd967b4216ef67a13c64b439b575c1cdf0c27cac70d62da21c621c",
-  "size": 882845,
+  "sha256": "436508cd6ada21f98849c2e713510ebc4257133c1d358a0f8258bc28932576e4",
+  "size": 882802,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "60b0b52a062d53abfa288515cd9d1681d492afb6baa6e4359622b292d2d96b2a",
-    "size": 1932733
+    "sha256": "201f533c90716220a2e9c181b6956fec7ce577bae9dd4d95753f7327bf3268d5",
+    "size": 1932736
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "9368473e7bd123f13a21ca7042766540cc2f9196"
+  "workflow_commit": "d0edbea5c4e900eb2b9c2d914fabc2cf23f9bb22"
 }
