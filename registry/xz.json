@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "c2f4c17d59611cb0d53cfcf9924dc20abb5f0d43",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "xz--5.8.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+  "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
   "license": {
     "all_of": [
       "0BSD",
@@ -14,20 +14,20 @@
   "name": "xz",
   "pkg_version": "5.8.4",
   "recipe_sha256": "0a0ec0394575eadc853cdb509c8ababc01c8926b973bd76841a1f6f254e1ebdf",
-  "release": "intel-34713813577-1-ffmpeg",
+  "release": "intel-44899550451-1-xz",
   "revision": 0,
-  "run_id": "34713813577",
+  "run_id": "44899550451",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "c570449db1be4342607f72b50e2181abefd395351092be0b93016c63e4e5d8a4",
-  "size": 776431,
+  "sha256": "76b191be44a2e4c79624cbce6ea80facdaa79ee629c0270ecdcc49625b17469b",
+  "size": 776422,
   "source": {
     "filename": "xz--5.8.4.sources.tar.gz",
-    "sha256": "9781c6276d658e44930745c9b3b24580d3273796abaa8ea4aed53654542f3dd7",
-    "size": 2833282
+    "sha256": "1335ed77db277a27ff16add2fe88a6e4fda565f13f386a89b313f8c373f54276",
+    "size": 2833347
   },
   "tag": "sequoia",
   "version": "5.8.4",
   "version_scheme": 1,
-  "workflow_commit": "62906eeea58b5d87a89991ef8854163c5f810542"
+  "workflow_commit": "58e9c7577f629f325c1b44296caf4b312e771fe4"
 }
