@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
+  "brew_commit": "68a3990f7aa3b3a1bc067df3ea348619945fe732",
   "cellar": "any",
-  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "core_commit": "6784026285aed6e54105a5659b0703ec545ac7a1",
   "filename": "gpgmepp--2.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "eda4f9d9ec0ec54b2a8ab0575b7e049f1a818aa22aea44944f461a89eb1f8a0c",
   "license": "LGPL-2.1-or-later",
   "name": "gpgmepp",
   "pkg_version": "2.2.0",
   "recipe_sha256": "b7a441aff9864d1efb0365edec2934e3f8a1b6b2bb8fe9a202aeaffa8de52ae7",
-  "release": "intel-44702521153-1-gpgmepp",
+  "release": "intel-44818144895-1-gpgmepp",
   "revision": 0,
-  "run_id": "44702521153",
+  "run_id": "44818144895",
   "runtime_dependencies": [
     {
       "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
@@ -39,9 +39,9 @@
       "pkg_version": "3.8.14"
     },
     {
-      "formula_sha256": "d24f49eb367fe4dd4c8ab848cd9c43b3a09c6b9ae2e19ad8938daf021eab3158",
+      "formula_sha256": "ae82d468eefb7b9e113c84ebc2f884aca1c4e85d8934d437dfcae4f7724a9e23",
       "name": "gpgme",
-      "pkg_version": "2.2.0"
+      "pkg_version": "2.3.1"
     },
     {
       "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "5e743167aaff728eef0369aa7da6ba3aa1e86c5e8d329847cc65e4c47fe79549",
-  "size": 206305,
+  "sha256": "0946d28288212ffcd2b532da19275a1faa5a6560a37a0d4acfef3ea96c359d30",
+  "size": 206308,
   "source": {
     "filename": "gpgmepp--2.2.0.sources.tar.gz",
-    "sha256": "f5c369761328af0481d5f08ced1cb7f06af4e8d4f46ff06ac5609c6695987c79",
-    "size": 142508
+    "sha256": "f552f8956833f5be6c7af14614c7d77ba701803457cda923251b8fe341e9db55",
+    "size": 142509
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "f4f85960aa9932bbfde210d6a49f536c1ad1b1a9"
+  "workflow_commit": "0e6c84e77a13bffa8646fe5cae7d9b14427338c8"
 }
