@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7cce6eac8d897b0b8440e16f33dbcb21770da7cf",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "279c62b6d0e053968dd4c5948f6e0519c72092e0",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "calc--2.17.0.2.sequoia.bottle.tar.gz",
   "formula_sha256": "00c9e9dabe9001c07840599701b9de57e1822175b0a30fe24363e7d3c32c915f",
   "license": "LGPL-2.1-or-later",
   "name": "calc",
   "pkg_version": "2.17.0.2",
   "recipe_sha256": "5df1bed5dae162554d84dd2fc72bb54e70bb722b250f3d31dc040759be938e6f",
-  "release": "intel-36723380579-1-calc",
+  "release": "intel-44901803975-1-calc",
   "revision": 0,
-  "run_id": "36723380579",
+  "run_id": "44901803975",
   "runtime_dependencies": [
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     }
   ],
   "schema": 1,
-  "sha256": "d762d51618b24684f13539ca143156efbaf623ca51b2d0d3e640e9df377f632d",
-  "size": 1696013,
+  "sha256": "1505247964f1a632c256a5d61eadbaab9164451405903644597f5a28ea86109b",
+  "size": 1696114,
   "source": {
     "filename": "calc--2.17.0.2.sources.tar.gz",
-    "sha256": "b56162d7821dc063df79795dbc14a084205fcd89f8806f9a40d304751671025a",
-    "size": 1323584
+    "sha256": "82ff3cb8cf1e11338e6b96d33bbb735a009054ef89e507435e5c110b940b4289",
+    "size": 1323595
   },
   "tag": "sequoia",
   "version": "2.17.0.2",
   "version_scheme": 0,
-  "workflow_commit": "9cbc7790f05bce8e660c366037863b636b996a6d"
+  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
 }
