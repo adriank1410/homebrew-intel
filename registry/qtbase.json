@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
+  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
   "filename": "qtbase--6.12.0_2.sequoia.bottle.tar.gz",
-  "formula_sha256": "db773a7c815172da2601524bdf30c77fa7185b9629b3ece7e5b1d1f7edafa960",
+  "formula_sha256": "b012587461d260e0641ac9ea486a69de30dc123d600b0c37e407bcafe0571c50",
   "license": {
     "all_of": [
       {
@@ -25,10 +25,10 @@
   },
   "name": "qtbase",
   "pkg_version": "6.12.0_2",
-  "recipe_sha256": "650260f7f76be6d3568407cbf3e31d13ecb4e09e30e1ba4b20433deab34c5b07",
-  "release": "intel-44901803975-1-qtbase",
+  "recipe_sha256": "12389f1795c5d7149e9b499f118134453d498fcdabe9c2fa799437e059e354b4",
+  "release": "intel-44948720879-1-qtbase",
   "revision": 2,
-  "run_id": "44901803975",
+  "run_id": "44948720879",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -192,15 +192,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4599866fde5dbbd40b4cfea89921385302d789b595ed8eb27f926468c5308072",
-  "size": 17643577,
+  "sha256": "a38ff5544e1d19f3094d7c9fcab07461ab859415c59d0360f2c9b6411d72e89e",
+  "size": 17643563,
   "source": {
     "filename": "qtbase--6.12.0_2.sources.tar.gz",
-    "sha256": "ba57ce5c86334683cce025bdacf59289d4f724e6299d2fdfdac89cbbd3306ff4",
-    "size": 51420503
+    "sha256": "ec48999fdd92e83a31a9754703d2322a7c481801b7eb191fbef2f97fe1ac269e",
+    "size": 51420527
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
+  "workflow_commit": "52dba3e073b12192efedb0ee6e83b58c73a202b0"
 }
