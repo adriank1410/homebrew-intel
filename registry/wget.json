@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "wget--1.25.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "4ebbabbb6d2eb5fafd7ccd814d408b7c2ae5074804863cdd59b684a10165bacd",
   "license": "GPL-3.0-or-later",
   "name": "wget",
   "pkg_version": "1.25.0_2",
   "recipe_sha256": "3b24cf8b043c870dfd0630721503f40b744ac87af71ffbbecf6e63af963f054d",
-  "release": "intel-42131922421-1-wget",
+  "release": "intel-44916853797-1-wget",
   "revision": 2,
-  "run_id": "42131922421",
+  "run_id": "44916853797",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -44,21 +44,21 @@
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "ce97c6adbe9d3428bd4db8dbf521a35a00e9a5b9d911be54193cf933956ccf8e",
-  "size": 1615431,
+  "sha256": "d86ba7990c025e60d060e5f676017401ac685ba715dd60dd4a1d4a91d4a7ba95",
+  "size": 1615428,
   "source": {
     "filename": "wget--1.25.0_2.sources.tar.gz",
-    "sha256": "3ff6f00656d784ca5a6a16a871f9e30373772cf4e856c639acbb013b0cf91b4b",
+    "sha256": "19804f4d7d219c9edff141bb4da57935dbcd0451086e20520b0e8f104fdf1745",
     "size": 5278752
   },
   "tag": "sequoia",
   "version": "1.25.0",
   "version_scheme": 0,
-  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
+  "workflow_commit": "0306fc93763f4293ebd8e98a492692b4ba73290c"
 }
