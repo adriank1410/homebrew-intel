@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "4076b8a422854fb7ad80941ef3de5f42ba7cc5d3",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "hunspell--1.7.6.sequoia.bottle.tar.gz",
   "formula_sha256": "ed4a27e0062e2eb0aab3e7be508e8b17078bd56bd68b74daaa7889a56c2ea82b",
   "license": {
@@ -15,9 +15,9 @@
   "name": "hunspell",
   "pkg_version": "1.7.6",
   "recipe_sha256": "14d0cfd65d19afe6fed7e0bb1ff3e504aaae6d9a29eb845d0d58115ef2e4706f",
-  "release": "intel-41138860341-1-hunspell",
+  "release": "intel-44916853797-1-hunspell",
   "revision": 0,
-  "run_id": "41138860341",
+  "run_id": "44916853797",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -35,21 +35,21 @@
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     }
   ],
   "schema": 1,
-  "sha256": "566236be8269c9b06cac6d624b8f7696fa419b3aba0f39de0df9045d0f89a784",
-  "size": 725352,
+  "sha256": "22f3b0c59e934cda0dd30f1505495c8622b1245a448334de04f2d13a5621569d",
+  "size": 725339,
   "source": {
     "filename": "hunspell--1.7.6.sources.tar.gz",
-    "sha256": "45629952126ce147402b5689c538263d416ca4acea831a3a616b7cf7e3ed85cf",
-    "size": 1184823
+    "sha256": "600ad391a377660dc3d976a265754f3a7d74ff6476bd94a23b562cf275d20f5d",
+    "size": 1184819
   },
   "tag": "sequoia",
   "version": "1.7.6",
   "version_scheme": 0,
-  "workflow_commit": "e53c9fd8b9c9f1c75d8c91d223f069c9a8a190cb"
+  "workflow_commit": "0306fc93763f4293ebd8e98a492692b4ba73290c"
 }
