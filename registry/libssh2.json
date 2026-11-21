@@ -1,39 +1,39 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "libssh2--1.11.1_7.sequoia.bottle.tar.gz",
   "formula_sha256": "1bb5700525084a6a5ad6e165cc132a145b0b290a2ea5361d596e6fc9b6b09859",
   "license": "BSD-3-Clause",
   "name": "libssh2",
   "pkg_version": "1.11.1_7",
   "recipe_sha256": "499b1018053d3bde61b8de69889b56d4d3965000e55372ff828e3263f6b835e2",
-  "release": "intel-42314323352-1-libssh2",
+  "release": "intel-44901803975-1-libssh2",
   "revision": 7,
-  "run_id": "42314323352",
+  "run_id": "44901803975",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "ae2d64b92f9daa5d5b8010a572b4198f16babc17514ffc93c10f68e6667c2963",
-  "size": 427790,
+  "sha256": "54e70d8522471e314e0d9112ca64c48f324878ef54cc501b3bce87fca06c8cbe",
+  "size": 427836,
   "source": {
     "filename": "libssh2--1.11.1_7.sources.tar.gz",
-    "sha256": "541b8411d5fa577872dcd2d5bd639ecda9d948a6e92fd90e5d3159fafb686b2b",
-    "size": 1104263
+    "sha256": "3663da6b52ed62418ae8cd0acd14782a4917f35c1d170171736ceca0a008316f",
+    "size": 1104264
   },
   "tag": "sequoia",
   "version": "1.11.1",
   "version_scheme": 0,
-  "workflow_commit": "faf96751c5ec14dc108f0b70a52b975748d5575e"
+  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
 }
