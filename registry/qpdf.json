@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "qpdf--12.4.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1a013dfcaf66b899ddaaf87472345f149daa4c66fd7deecfa128be56cf72d808",
   "license": "Apache-2.0",
   "name": "qpdf",
   "pkg_version": "12.4.2_1",
   "recipe_sha256": "02f1c3e48230d6257b702874d23d0d16aa22d87bc076916c88eeabb1c998fe49",
-  "release": "intel-42131922421-1-qpdf",
+  "release": "intel-44901803975-1-qpdf",
   "revision": 1,
-  "run_id": "42131922421",
+  "run_id": "44901803975",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -24,21 +24,21 @@
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "10851443145f709ad85ece52f72d55f6c1b9a1170ff04741e0912d4690751561",
+  "sha256": "e9e185b46dce783c7cea1c0d07fa9dbe1e1f7b741d843627723c6313a7972bd0",
   "size": 2838731,
   "source": {
     "filename": "qpdf--12.4.2_1.sources.tar.gz",
-    "sha256": "f653d017ca1e3efb81fed42cc755e06be234a2b61c378f43a6837862b88cd8c4",
-    "size": 19355037
+    "sha256": "b78efef372aba722df0da842a83309babeb1d4fcc3888254c3b8967581787e7f",
+    "size": 19355018
   },
   "tag": "sequoia",
   "version": "12.4.2",
   "version_scheme": 0,
-  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
+  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
 }
