@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b4671083fe6ff4e258056163765888d001efe178",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any_skip_relocation",
-  "core_commit": "0dcd29edadc63581f83c6e7af8ada02a57a444b2",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "pyenv-virtualenv--1.4.1.sequoia.bottle.tar.gz",
   "formula_sha256": "5b68277507d1a713350901b83bca2dfeab49db3374f7f36afe3c0adb3a31d5da",
   "license": "MIT",
   "name": "pyenv-virtualenv",
   "pkg_version": "1.4.1",
   "recipe_sha256": "102c7fa43c3222e2859aa8f14e709b0af933143b2e55e28a857f96d11a476595",
-  "release": "intel-44199166067-1-pyenv-virtualenv",
+  "release": "intel-44916853797-1-pyenv-virtualenv",
   "revision": 0,
-  "run_id": "44199166067",
+  "run_id": "44916853797",
   "runtime_dependencies": [
     {
       "formula_sha256": "cab75402095f9a65be6a5d3fc11a2f7a6a7fdf04189abee37bfc1c6e5adff499",
@@ -19,7 +19,7 @@
       "pkg_version": "2.73"
     },
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -39,12 +39,12 @@
       "pkg_version": "1.4.21"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "61d01429d413f85ab375157ace97d44d8bd7cb2ce805000b8ca869c7556405ad",
+      "formula_sha256": "256447821237fe1467862235b0cfd55ce380168040a8804df16015f8ec0c5eba",
       "name": "pkgconf",
       "pkg_version": "3.0.11"
     },
@@ -54,21 +54,21 @@
       "pkg_version": "2.8.15"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     }
   ],
   "schema": 1,
-  "sha256": "8f68f67fdcb7ad697452f97877d27df9c1f0b42ac62a4c89b7cb9acbd7c4dace",
-  "size": 23746,
+  "sha256": "33c0f61f6a38d2f6af8f5f422a3687e9479357b98113bf77a107f31ff61cef66",
+  "size": 23743,
   "source": {
     "filename": "pyenv-virtualenv--1.4.1.sources.tar.gz",
-    "sha256": "73b210a27c3fcad8cd44f2b6bbf1288850c43f5ecbe01f173e784a8d9414da68",
-    "size": 42072
+    "sha256": "a96daf05dbebb53eb5c8b59f018a4d5b93214c02c3e423a8cca87b85d2012368",
+    "size": 42074
   },
   "tag": "sequoia",
   "version": "1.4.1",
   "version_scheme": 1,
-  "workflow_commit": "033d5fc5e6b22e137e03c78a8c86ae4cf74d9100"
+  "workflow_commit": "0306fc93763f4293ebd8e98a492692b4ba73290c"
 }
