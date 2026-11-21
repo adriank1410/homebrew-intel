@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4958f775c8df0f8882445d464de2c3178acfb8c6",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "imagemagick--7.1.2-36.sequoia.bottle.tar.gz",
   "formula_sha256": "436a1bfa2a5b332e308b817969594f3f95d4cc0cd4e66c7fd7cbad6fa790f89e",
   "license": "ImageMagick",
   "name": "imagemagick",
   "pkg_version": "7.1.2-36",
   "recipe_sha256": "97b8f151f08f346f0a38c3ccc318a2efda6eb8d61d78612a6b4c436b365f0dc2",
-  "release": "intel-44074449291-1-imagemagick",
+  "release": "intel-44935322683-1-imagemagick",
   "revision": 0,
-  "run_id": "44074449291",
+  "run_id": "44935322683",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -74,7 +74,7 @@
       "pkg_version": "2.20"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -94,7 +94,7 @@
       "pkg_version": "4.3"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ac9c41db2edf16d37d4a1305a3cb747bf6428e3104e5e9f8896931ac35f54601",
-  "size": 11116892,
+  "sha256": "2d2ba9719d8ef2b03c15f158822594482af56ced50f2e4348bd7257a600e35b1",
+  "size": 11116820,
   "source": {
     "filename": "imagemagick--7.1.2-36.sources.tar.gz",
-    "sha256": "b189065d391ef1b6c0a1950db06ca4d47cbd1119bd84e85d947a0b5357f455b2",
-    "size": 10322703
+    "sha256": "e08c495d68bb5b2bebd188c6517582b9950531f8380fa92278cedcba4ec419c1",
+    "size": 10322704
   },
   "tag": "sequoia",
   "version": "7.1.2-36",
   "version_scheme": 0,
-  "workflow_commit": "347914b5bf86dcced69fbd00b3a98bbd7985d941"
+  "workflow_commit": "ecd73483e97b55f68e189104e25be5eb12f0b90d"
 }
