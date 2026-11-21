@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e40c695f619441e4c13b6cf51f8f0484ea091dd5",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "56dd16fd5823de24fb86e814f84500f0c4c08c79",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "openjdk@21--21.0.13.1.sequoia.bottle.tar.gz",
   "formula_sha256": "78aed74272b6d38450722218e8b5701cf8fa0a3980c1bdb05c1322e710dedfb9",
   "license": {
@@ -13,9 +13,9 @@
   "name": "openjdk@21",
   "pkg_version": "21.0.13.1",
   "recipe_sha256": "5b2ec1d4b6c8ab189ad859e3ddb2285592972ddb968dc41fcb92428c0f116b10",
-  "release": "intel-44859232112-1-openjdk-at-21",
+  "release": "intel-44935322683-1-openjdk-at-21",
   "revision": 0,
-  "run_id": "44859232112",
+  "run_id": "44935322683",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -128,7 +128,7 @@
       "pkg_version": "2.20"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -158,7 +158,7 @@
       "pkg_version": "2026.1"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -169,15 +169,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "364b6b30f4f9968589e377197317ceb032e4a4dc0b2f7c342b44e61eeb04e246",
-  "size": 202498145,
+  "sha256": "d0cc7733d6f2212c0d3bd76f31d50e168a412077d8b9e339ceb406eb3baf502b",
+  "size": 202498351,
   "source": {
     "filename": "openjdk@21--21.0.13.1.sources.tar.gz",
-    "sha256": "10192f531b7c85a752909f15f435b10153b21be7e7e9272d6977aaac5b8c6813",
-    "size": 309841662
+    "sha256": "e617c10ef645658b24f11e248d61ff32f707a76734eda1099575adc711eef247",
+    "size": 309841679
   },
   "tag": "sequoia",
   "version": "21.0.13.1",
   "version_scheme": 0,
-  "workflow_commit": "d0edbea5c4e900eb2b9c2d914fabc2cf23f9bb22"
+  "workflow_commit": "ecd73483e97b55f68e189104e25be5eb12f0b90d"
 }
