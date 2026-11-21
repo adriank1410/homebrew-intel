@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "tmux--3.8.sequoia.bottle.tar.gz",
   "formula_sha256": "ba3f7933d0f68eced1d9104341d218c6538000fd358b0363d41ecccf72ad681e",
   "license": "ISC",
   "name": "tmux",
   "pkg_version": "3.8",
   "recipe_sha256": "ae7a4844a7903932b80cdff21ad49dd6ec2537d0783c2871ade1d2a56a5cf229",
-  "release": "intel-42169382172-1-tmux",
+  "release": "intel-44916853797-1-tmux",
   "revision": 0,
-  "run_id": "42169382172",
+  "run_id": "44916853797",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -34,7 +34,7 @@
       "pkg_version": "6.6"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cca17db9b8658a0e112ae9f0abf4e93b6486a05b7521423b55ea7fe13f16f7aa",
-  "size": 647512,
+  "sha256": "a8b638786ff2dcf442b8cfa3811c0e43f59c5dabd5eb9bc409056ae2626ca755",
+  "size": 647521,
   "source": {
     "filename": "tmux--3.8.sources.tar.gz",
-    "sha256": "d37fa9b82d6a8ad26521bc5b209c54aac5c8a0f29a3d8b92da2566a225138e9d",
-    "size": 900685
+    "sha256": "38d6487317b46ba5ba4325bbcab2d4362a1ce5f539536feeee7a39ea0c9c59d0",
+    "size": 900694
   },
   "tag": "sequoia",
   "version": "3.8",
   "version_scheme": 0,
-  "workflow_commit": "39eae45a48ba620093ea25596982c084c72d7600"
+  "workflow_commit": "0306fc93763f4293ebd8e98a492692b4ba73290c"
 }
