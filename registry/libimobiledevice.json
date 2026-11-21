@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "48aad73a001b7f2b8d0620c4b4090b87aa924519",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "0d406593ad16e61d853778fa6827f50178660217",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "libimobiledevice--1.4.0_3.sequoia.bottle.tar.gz",
   "formula_sha256": "9630595eb4594d7bfc8970753e9998c2002c86381b36368dd10779251c22f925",
   "license": "LGPL-2.1-or-later",
   "name": "libimobiledevice",
   "pkg_version": "1.4.0_3",
   "recipe_sha256": "6691add95282eb08c79dc13780d867a2f4f0e4a9e01add5b7c2f25993bf5e9f8",
-  "release": "intel-43772569993-1-libimobiledevice",
+  "release": "intel-44901803975-1-libimobiledevice",
   "revision": 3,
-  "run_id": "43772569993",
+  "run_id": "44901803975",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -44,21 +44,21 @@
       "pkg_version": "2.1.1_1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "e0a6a69796e8a0eecbc6a1f051cd6c09c7a649cdf57713ba6ec61b162bb7dab9",
-  "size": 496834,
+  "sha256": "707978d1313ed41af579d090a12ca2781ebb41178705976c6940fcbdf8d01870",
+  "size": 496825,
   "source": {
     "filename": "libimobiledevice--1.4.0_3.sources.tar.gz",
-    "sha256": "6cd3b70574af8085044a3bb41cd3496a5cc23ec822f0ec4f5e597147112c9ac5",
-    "size": 732129
+    "sha256": "33f23ad719e5beb701278cceb74108757bb74c4c500ca01f902083e1718bd5c3",
+    "size": 732138
   },
   "tag": "sequoia",
   "version": "1.4.0",
   "version_scheme": 0,
-  "workflow_commit": "cec67677c379432b20deedb93e3efbee7903c24f"
+  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
 }
