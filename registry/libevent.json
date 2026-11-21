@@ -1,39 +1,39 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "libevent--2.1.13_1.sequoia.bottle.tar.gz",
   "formula_sha256": "1775e21e93e05895d0b882220bfb28eee1ed9f755a5d5cfe3da22f8007ccc1c5",
   "license": "BSD-3-Clause",
   "name": "libevent",
   "pkg_version": "2.1.13_1",
   "recipe_sha256": "3928380b80ab48d86f6d0f3059c8b7658140eb02d9866f0fce169e2654d48f6b",
-  "release": "intel-42131922421-1-libevent",
+  "release": "intel-44901803975-1-libevent",
   "revision": 1,
-  "run_id": "42131922421",
+  "run_id": "44901803975",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "12e282ae3e2e17b20301d0c578b7e3fd3a5be112d0a5d9b6d463c2190ce4fb14",
-  "size": 723286,
+  "sha256": "e20eab4417c98ee4e08e16ebf3ecff334ba7d2a1a0cd89ecf9db1f1f128a96f9",
+  "size": 723272,
   "source": {
     "filename": "libevent--2.1.13_1.sources.tar.gz",
-    "sha256": "adf6a91bc2189dfd1275d3730b9042535b84aa329a2c679786b774f21a8071ba",
-    "size": 1133259
+    "sha256": "b50eedbb4504d24072dca8a6d3f8fea06d25e7f3710faa66628e3707257b3d2f",
+    "size": 1133273
   },
   "tag": "sequoia",
   "version": "2.1.13",
   "version_scheme": 0,
-  "workflow_commit": "42a33412f3a8a99905d6eb604b849d5dbf5eba14"
+  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
 }
