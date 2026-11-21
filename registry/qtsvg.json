@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
+  "brew_commit": "e40c695f619441e4c13b6cf51f8f0484ea091dd5",
   "cellar": "any",
-  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
+  "core_commit": "56dd16fd5823de24fb86e814f84500f0c4c08c79",
   "filename": "qtsvg--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "405cb3b988ab34d15549d32fa06897416fb5a5e7f6c88fb05f2b0ceb4509a61f",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsvg",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "6e33d625d2bdd01171dd1e3a3ed6e8f7b2f9816fc5b7bf0e92f46548787d59b9",
-  "release": "intel-44446321743-1-qtsvg",
+  "release": "intel-44865968017-1-qtsvg",
   "revision": 1,
-  "run_id": "44446321743",
+  "run_id": "44865968017",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -75,9 +75,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
+      "formula_sha256": "96cd1945dcf88b61ab17cc1d1f4764e79c7693bfd573e963b46f014a9f5fb54c",
       "name": "harfbuzz",
-      "pkg_version": "15.1.0"
+      "pkg_version": "15.2.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "438491ac827e6a54b19fa4b9cf68bee91511d59bcea1cd06927d24e35b57a2ad",
-  "size": 317510,
+  "sha256": "19b84dbd5fb38aa64a4d25b8e10408b6de92dcc9491bf02c37de9aaa5822b71b",
+  "size": 317500,
   "source": {
     "filename": "qtsvg--6.12.0_1.sources.tar.gz",
-    "sha256": "2b93a7b533716443860fa16ef8164073202cb2d9578f211d8039fa1d41f600ea",
-    "size": 2376034
+    "sha256": "4c05e1c2a7621b27012366513f2f346254448398de7ab980ae261f3e5232efe3",
+    "size": 2376030
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "ae9968ab770a830fba4548e1867ae23d3156c009"
+  "workflow_commit": "5ccf53bea84fefd816201bf4ea9daf9fd246b700"
 }
