@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3e47189a707c739ee1278a28a3b845f5834574e6",
+  "brew_commit": "e40c695f619441e4c13b6cf51f8f0484ea091dd5",
   "cellar": "any",
-  "core_commit": "4f112efcefe0c161454d5c390ab5327253f54ef0",
+  "core_commit": "56dd16fd5823de24fb86e814f84500f0c4c08c79",
   "filename": "librsvg--2.63.4_1.sequoia.bottle.tar.gz",
   "formula_sha256": "3b74644206ceee146e94758c54bbea191cfc10767d45ed6112564173d396144d",
   "license": "LGPL-2.1-or-later",
   "name": "librsvg",
   "pkg_version": "2.63.4_1",
   "recipe_sha256": "c7b7cd025d66274e937e8963560cf2a18429dfe2dd2ec6ac2738e6f2dbe03780",
-  "release": "intel-44446321743-1-librsvg",
+  "release": "intel-44865968017-1-librsvg",
   "revision": 1,
-  "run_id": "44446321743",
+  "run_id": "44865968017",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -64,9 +64,9 @@
       "pkg_version": "1.3.15"
     },
     {
-      "formula_sha256": "252b4932970ba69e8655ffca3664a6cb0c70a83ce531171ff7a9088e86c0a080",
+      "formula_sha256": "96cd1945dcf88b61ab17cc1d1f4764e79c7693bfd573e963b46f014a9f5fb54c",
       "name": "harfbuzz",
-      "pkg_version": "15.1.0"
+      "pkg_version": "15.2.0"
     },
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1e111974bf06b08a37b692e95ff96a091b1a7ff090cc7be0aa04e9a8404a46fa",
-  "size": 5041400,
+  "sha256": "840ccf8c3a20e81c894fed1a3f564d5b94866559b074478b19463f2f209bf263",
+  "size": 5041394,
   "source": {
     "filename": "librsvg--2.63.4_1.sources.tar.gz",
-    "sha256": "e295d8bf160608bd66ca1bfff192a8387a5faa0453282d37a6d23023604408be",
-    "size": 32645166
+    "sha256": "807d280102fc9c8f6498347cf186c86fc09a480ed80e9dd6054c1b533574cafe",
+    "size": 32646448
   },
   "tag": "sequoia",
   "version": "2.63.4",
   "version_scheme": 0,
-  "workflow_commit": "ae9968ab770a830fba4548e1867ae23d3156c009"
+  "workflow_commit": "5ccf53bea84fefd816201bf4ea9daf9fd246b700"
 }
