@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "8f6b4bc20a75802324114b265bb034699a69d76d",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "openexr--3.5.4.sequoia.bottle.tar.gz",
   "formula_sha256": "3f4f6afa20e569d247b76dc9e0c7ba8ac1d8a250b9c91b31fbc5ac08355d3fdd",
   "license": "BSD-3-Clause",
   "name": "openexr",
   "pkg_version": "3.5.4",
   "recipe_sha256": "7b899b16feb2e00b8c6419c723fb78c59c0a9a7ad294c331f3775fef531e46cd",
-  "release": "intel-43332389372-1-openexr",
+  "release": "intel-44935322683-1-openexr",
   "revision": 0,
-  "run_id": "43332389372",
+  "run_id": "44935322683",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -44,7 +44,7 @@
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -59,7 +59,7 @@
       "pkg_version": "1.6.0"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9da0e1fc2bfe31cff0f772fa209d2888ff907a5045e94c3b15c095cfbfc30a1f",
-  "size": 1176062,
+  "sha256": "f3cf62fd14e1b52d50c98efb99f3e596641d1dfd86066af85040b8865504ef25",
+  "size": 1176059,
   "source": {
     "filename": "openexr--3.5.4.sources.tar.gz",
-    "sha256": "fcb3127adf7d5f52d80a6d8d929fdae2e1f3e849b715e80ba4c94eb9d0915779",
-    "size": 26462884
+    "sha256": "fed46fe0bab4c12377ce71aa4ecb5a57a02f3c97dd5fc59d85a4031f630c8fde",
+    "size": 26462889
   },
   "tag": "sequoia",
   "version": "3.5.4",
   "version_scheme": 0,
-  "workflow_commit": "bf3b29e4f526b285e7237062cb3d808752a34416"
+  "workflow_commit": "ecd73483e97b55f68e189104e25be5eb12f0b90d"
 }
