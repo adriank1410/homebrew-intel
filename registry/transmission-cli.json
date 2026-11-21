@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1f8f55ce63f7fec6a65ecbf00d032a48d3b7ad80",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "b966daf54c1c10728b976b640a1c615ada5c3e5f",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "transmission-cli--4.1.4.sequoia.bottle.tar.gz",
   "formula_sha256": "8103406e7d0e5fa5d5a6481ce8f68e799283432e5b16d3273fdf8039fe2048e8",
   "license": {
@@ -14,12 +14,12 @@
   "name": "transmission-cli",
   "pkg_version": "4.1.4",
   "recipe_sha256": "af191a16610c3c9034d0882fed47c821e94a33a7a82307ecf7b256bf59968613",
-  "release": "intel-44523953372-1-transmission-cli",
+  "release": "intel-44916853797-1-transmission-cli",
   "revision": 0,
-  "run_id": "44523953372",
+  "run_id": "44916853797",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -39,21 +39,21 @@
       "pkg_version": "2.3.5"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "b2ed71eb3a52e37a3d3d38ead8e630c7e8cd53bd8a7e474848fe51953d1be651",
-  "size": 5795737,
+  "sha256": "51091d4749328b3c3f7473c3985ec23afebd8c13f9fe30491e5771dc6264d22d",
+  "size": 5795727,
   "source": {
     "filename": "transmission-cli--4.1.4.sources.tar.gz",
-    "sha256": "958e79ad4a56d0ee403e7ba6667af2d75e82d8dad0a2f2e1031ef78e50493cde",
-    "size": 11929516
+    "sha256": "c421c53af345f373f8bde0d8b049dba862613212b055c76bbd0703d9ec7d0363",
+    "size": 11929524
   },
   "tag": "sequoia",
   "version": "4.1.4",
   "version_scheme": 0,
-  "workflow_commit": "8308335ab2bac916a180d3455572eda4313c8a3a"
+  "workflow_commit": "0306fc93763f4293ebd8e98a492692b4ba73290c"
 }
