@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
+  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
   "filename": "gobject-introspection--1.86.0_6.sequoia.bottle.tar.gz",
   "formula_sha256": "d4a89b9c75de975f2beb6f9acb1bd980247d62bca37652235b6be65d8b0f5fb2",
   "license": {
@@ -15,9 +15,9 @@
   "name": "gobject-introspection",
   "pkg_version": "1.86.0_6",
   "recipe_sha256": "93e086e34ae96b6b4c518b596940a30ed267fd51b1d68e6dbe88d35c0f30b626",
-  "release": "intel-44407407355-1-gobject-introspection",
+  "release": "intel-44956300339-1-gobject-introspection",
   "revision": 6,
-  "run_id": "44407407355",
+  "run_id": "44956300339",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -25,7 +25,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -100,7 +100,7 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -115,7 +115,7 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -130,22 +130,22 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "61d01429d413f85ab375157ace97d44d8bd7cb2ce805000b8ca869c7556405ad",
+      "formula_sha256": "df299552d29cc257d26487e39c98788fd9a51b000c6215c49e650605aa27223a",
       "name": "pkgconf",
       "pkg_version": "3.0.11"
     },
     {
-      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
+      "formula_sha256": "f9fa25491a32c1d9546b393101c09f7e8f54b1d88f6a01d220ced032160c1c69",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "formula_sha256": "a64a84eedd14491bbc11a6caa925f3081193acd986f60c9ee4b961c0f0478a64",
       "name": "sqlite",
       "pkg_version": "3.54.1"
     },
@@ -155,7 +155,7 @@
       "pkg_version": "2026.1"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -166,15 +166,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "756d6c03b5d428e8a2562892572df652c3b21c045d54388d4ffb93101d2e4e31",
-  "size": 1372913,
+  "sha256": "ce1b75bedc82520a673098e2624cea2cf2b85c53e6a6f7e05b8f92cc7ebc8ee6",
+  "size": 1372852,
   "source": {
     "filename": "gobject-introspection--1.86.0_6.sources.tar.gz",
-    "sha256": "f528f880ba2b6e3b517ee9fbe15ec2c6aaf3fe0c2d86cdefce12ece8eb2f391c",
-    "size": 3405073
+    "sha256": "edbced1832163e1be2a3a36f9c07f5ddddf407127233f031b898d437b3ab4afc",
+    "size": 3405075
   },
   "tag": "sequoia",
   "version": "1.86.0",
   "version_scheme": 0,
-  "workflow_commit": "170409b11766e671a7d95d2c607cab878ca27f4f"
+  "workflow_commit": "a084bd11fc0ba688cc6d61da1c68b51c64a8a169"
 }
