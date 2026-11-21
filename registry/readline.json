@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
   "cellar": "any",
-  "core_commit": "60c96449fbeac9a1ba6df78cecc8eb2a3267e2b1",
+  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
   "filename": "readline--8.3.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+  "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
   "license": "GPL-3.0-or-later",
   "name": "readline",
   "pkg_version": "8.3.6",
   "recipe_sha256": "a65ebe6faf79ab5f39e02d263cac7ec93d9813c4617658453f0ca341922555a0",
-  "release": "intel-34985326995-1-readline",
+  "release": "intel-44899550451-1-readline",
   "revision": 0,
-  "run_id": "34985326995",
+  "run_id": "44899550451",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "6086372794560aebd7dd198c235c60149845a36fbb5ef903d7bf0cc94bd8ac05",
-  "size": 740045,
+  "sha256": "f0d778a560f61fdecbda806517999a112ad40af69525c23d43769cf018cb7689",
+  "size": 740019,
   "source": {
     "filename": "readline--8.3.6.sources.tar.gz",
-    "sha256": "6e11c9d90b52bcaadf9affddcc23fb87fe47a7b8d5dd6788a10c3f5b1484b795",
-    "size": 3442985
+    "sha256": "e05a631e63974ad052bb09d7844b7c5314010f29820940b75c423f736c7f0b31",
+    "size": 3443068
   },
   "tag": "sequoia",
   "version": "8.3.6",
   "version_scheme": 0,
-  "workflow_commit": "78b969de603f48115d3a457d40f3e72b7169b2dc"
+  "workflow_commit": "58e9c7577f629f325c1b44296caf4b312e771fe4"
 }
