@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "86f1f0c2fbb26a19bdcb6429b18763853aa73d37",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "ca2f7afb64b039d4803a5e27cdf29d87e654fd87",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
   "filename": "retdec--5.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "5daec87c56f24de93479553b6ead95a4624f1473c0a2a5db69a63623fe0bc8f2",
   "license": {
@@ -14,31 +14,31 @@
   "name": "retdec",
   "pkg_version": "5.0_1",
   "recipe_sha256": "fcaa3c0115be1b27beb8e117e8fa035cf1706d7d329954a5981bb164295690fc",
-  "release": "intel-42169382172-1-retdec",
+  "release": "intel-44987573281-1-retdec",
   "revision": 1,
-  "run_id": "42169382172",
+  "run_id": "44987573281",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "1d3691d489c5d5ff41884973c32b1e7ba86d6c6064edc065feda4423431c5a70",
-  "size": 270452859,
+  "sha256": "0fd90d586e3bbe0bc75aed71807aa6cb0dbe3e6b5a1500e77661533360e6af4e",
+  "size": 270452341,
   "source": {
     "filename": "retdec--5.0_1.sources.tar.gz",
-    "sha256": "a7c817fc26c90bc5e5372dd0944a3e95f3d99937cea871ab1300444f042e0242",
-    "size": 26988089
+    "sha256": "f4ae7e75e914144eb4bd9eeead1ae07185323e1e3d087a7b017eaf0432a8fbd1",
+    "size": 26988088
   },
   "tag": "sequoia",
   "version": "5.0",
   "version_scheme": 0,
-  "workflow_commit": "39eae45a48ba620093ea25596982c084c72d7600"
+  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
 }
