@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fcdfa0476e180b23cbf4b3a75e7bea76d93ad70d",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "e9e970a6894f23a16eaea5b7132dfd0627c870c1",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
   "filename": "maturin--1.16.0.sequoia.bottle.tar.gz",
   "formula_sha256": "258cea9ac8a63535c4045e68e0444927a950dfde09db5fb4d488d2be2c001b04",
   "license": {
@@ -14,26 +14,26 @@
   "name": "maturin",
   "pkg_version": "1.16.0",
   "recipe_sha256": "5572dfd28f535c6f95cc5fb9411dfd663828bbddedd565356216270f07112cc4",
-  "release": "intel-41178370459-1-maturin",
+  "release": "intel-45016539561-1-maturin",
   "revision": 0,
-  "run_id": "41178370459",
+  "run_id": "45016539561",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     }
   ],
   "schema": 1,
-  "sha256": "85c7f9dd86f5e894e5e21bbd2ce997ef5718ad66ff3258ce0141ac2ed0695c8b",
-  "size": 10800920,
+  "sha256": "e04fbafe16f8d54613f6369b17611b501f985c7029be5f9afe1716a356599109",
+  "size": 10768159,
   "source": {
     "filename": "maturin--1.16.0.sources.tar.gz",
-    "sha256": "d90c356c0b3ae60b2a63319346936ea6438cc6948b67a120e13f70518ff9d67b",
-    "size": 32449894
+    "sha256": "33166953d9b3b7b78d6024171807a2c27d6c97e7b4da35b79d6d083e8c873492",
+    "size": 32459984
   },
   "tag": "sequoia",
   "version": "1.16.0",
   "version_scheme": 0,
-  "workflow_commit": "6bf0e99b3f373088de894b726ce55fd7d6cc51b4"
+  "workflow_commit": "b0028bdadcaeb9de98ee4930be0c7288ebaf712d"
 }
