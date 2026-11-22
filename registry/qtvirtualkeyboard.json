@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "e40c695f619441e4c13b6cf51f8f0484ea091dd5",
+  "brew_commit": "ee6a2b27c01aa5a9fa3a8421a8cc2effc3a0b95d",
   "cellar": "any",
-  "core_commit": "56dd16fd5823de24fb86e814f84500f0c4c08c79",
+  "core_commit": "1a01a3858a2b1bef412c7624f229bcdccb4c1139",
   "filename": "qtvirtualkeyboard--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "6e76fbffad123f436dc898eeb14c194a6cf5c4b89e0a10a38026b4beeaffbaf6",
   "license": {
@@ -15,9 +15,9 @@
   "name": "qtvirtualkeyboard",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "e48da6095249ee23c239123a8b5352d7a4b1102fd7b3fd88b64f1ffe3ea3a8bf",
-  "release": "intel-44896092417-1-qtvirtualkeyboard",
+  "release": "intel-45075362308-1-qtvirtualkeyboard",
   "revision": 1,
-  "run_id": "44896092417",
+  "run_id": "45075362308",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -30,7 +30,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -145,7 +145,7 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -160,7 +160,7 @@
       "pkg_version": "0.6.0"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -175,7 +175,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "db773a7c815172da2601524bdf30c77fa7185b9629b3ece7e5b1d1f7edafa960",
+      "formula_sha256": "b012587461d260e0641ac9ea486a69de30dc123d600b0c37e407bcafe0571c50",
       "name": "qtbase",
       "pkg_version": "6.12.0_2"
     },
@@ -185,7 +185,7 @@
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "88803920b8627710c4a9bf5f392f0b7f06fe5b4487e8e0d52aac331458fdfbf9",
+      "formula_sha256": "34bdb5d70807a69ef72be2581147df00c3d81f0857994a94242d3682b39df40a",
       "name": "qtmultimedia",
       "pkg_version": "6.12.0_1"
     },
@@ -210,7 +210,7 @@
       "pkg_version": "6.12.0_1"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     },
@@ -220,7 +220,7 @@
       "pkg_version": "2026.1"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -231,15 +231,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6036fbddfc94b17599d085c012e06fc333c0e1bd6528e65d74aba0bf0f25e155",
-  "size": 3030316,
+  "sha256": "7a8a98630cad93a8cca8e547bface9d32e04e893e498e27b83b6560bb61d5602",
+  "size": 3030402,
   "source": {
     "filename": "qtvirtualkeyboard--6.12.0_1.sources.tar.gz",
-    "sha256": "05c9a7f2f4044671bdcaa70b5a580de15c710d99fcb2cb3f4ed219f6871c74c6",
-    "size": 3317697
+    "sha256": "364b9f6ab309ded0f2581cfc2fb9cfa61483d749af87a7b0d1d5035f1c26ce28",
+    "size": 3317692
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "902e8e2564899410a6b397d195f1c59d8e79bb06"
+  "workflow_commit": "bcd0401c73ee04a1bb025e1929251449041b9bb3"
 }
