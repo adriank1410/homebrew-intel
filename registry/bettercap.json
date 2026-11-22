@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "cellar": "any",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
+  "filename": "bettercap--2.42.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "8803afcac1019e0cbf7524892f80b88a8222bf8371d4f0ca4a51c30c53a8f362",
+  "license": "GPL-3.0-only",
+  "name": "bettercap",
+  "pkg_version": "2.42.0",
+  "recipe_sha256": "d3b128df9177a512919ca71464e724f3167fb4114db29c917fb85a775b686d7a",
+  "release": "intel-44987573281-1-bettercap",
+  "revision": 0,
+  "run_id": "44987573281",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "513c20f992711ced872639a391fbb0b3194e397ffddc4968b9f9b1e4f03b48ee",
+      "name": "libusb",
+      "pkg_version": "1.0.30"
+    }
+  ],
+  "schema": 1,
+  "sha256": "4b6f8ace547c2f379e58f9ee8c9eec4e5a519e446b5f872df0de97557ceee8fd",
+  "size": 27073308,
+  "source": {
+    "filename": "bettercap--2.42.0.sources.tar.gz",
+    "sha256": "78f3f2a739c8108839b1650d51229ecb0654a075cbcda66e22eabb2d7021d616",
+    "size": 33340374
+  },
+  "tag": "sequoia",
+  "version": "2.42.0",
+  "version_scheme": 0,
+  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
+}
