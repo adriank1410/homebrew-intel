@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any_skip_relocation",
-  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
+  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
   "filename": "httpie--3.2.4_13.sequoia.bottle.tar.gz",
   "formula_sha256": "7d20200c7ab9c6c10a5b9fbbf624d599d9c297ee15701670e9841a74a2b175be",
   "license": "BSD-3-Clause",
   "name": "httpie",
   "pkg_version": "3.2.4_13",
   "recipe_sha256": "fbfdaec1be5612c9986445e106a7d2d2ea9809b2e4b1e5261fc7d21e6b1bef76",
-  "release": "intel-44956300339-1-httpie",
+  "release": "intel-45043414167-1-httpie",
   "revision": 13,
-  "run_id": "44956300339",
+  "run_id": "45043414167",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "1265986c047169359d0d1cd532a0277a9faf2b73af4e7a39346bf3ec0f4a0846",
+      "formula_sha256": "af22f232df97633adcd5cb9f222240d5bdd5196dc970496596dbb02bf9d81103",
       "name": "certifi",
-      "pkg_version": "2026.10.23"
+      "pkg_version": "2026.11.20"
     },
     {
       "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "220d521155a7a2ab45869fa8f033cc2b699c7765764f8bd718153ebc638463ab",
-  "size": 2681315,
+  "sha256": "583b0eea74e7bcb33e9c7218ebb2d73e1b226b240efd05d4dbd98cfd815a8ec4",
+  "size": 2681395,
   "source": {
     "filename": "httpie--3.2.4_13.sources.tar.gz",
-    "sha256": "ab991e02adeda443c6c6c2df1f10024a2fb945509aae9fe806695ca4dde9a9cc",
-    "size": 9779762
+    "sha256": "9f6e97783c71d8a4018ed4158dd7a37bb93fa933c5a51b3da027e2fd6f9f1c8d",
+    "size": 9779788
   },
   "tag": "sequoia",
   "version": "3.2.4",
   "version_scheme": 0,
-  "workflow_commit": "a084bd11fc0ba688cc6d61da1c68b51c64a8a169"
+  "workflow_commit": "8283e8831cecd8130e8d9c6823eff54fe41423c3"
 }
