@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
   "filename": "gnutls--3.8.14.sequoia.bottle.tar.gz",
   "formula_sha256": "6f81e70f704d7d46cf642e5233f19d5b1fc580a7b5804384ce315974bcfd7219",
   "license": {
@@ -14,12 +14,12 @@
   "name": "gnutls",
   "pkg_version": "3.8.14",
   "recipe_sha256": "c0ca455623824d4334308a850b7767a163582de82cbe9436e442623c47fb941a",
-  "release": "intel-44661039102-1-gnutls",
+  "release": "intel-44987573281-1-gnutls",
   "revision": 0,
-  "run_id": "44661039102",
+  "run_id": "44987573281",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "edf5cb6573f60235b1414396117133f12fafebfe507cf4619736d5d7b595e9cd",
-  "size": 3220529,
+  "sha256": "6a581af44be2812e228f01a8d307a374572767db1712428a5aa7bedcb1a1b211",
+  "size": 3220320,
   "source": {
     "filename": "gnutls--3.8.14.sources.tar.gz",
-    "sha256": "f5ed5e4049da2c541687dc12ecddbd98fd163ed94041d9d34f32cb4c2e09f6f0",
-    "size": 7404063
+    "sha256": "3ab9cdea8ee23dc5e6e4f7dbca7622a40d79cebcade43505cc814a99bf3c44e7",
+    "size": 7404057
   },
   "tag": "sequoia",
   "version": "3.8.14",
   "version_scheme": 0,
-  "workflow_commit": "409af8c374ac83bad0b3839f9edaee52c621d2f6"
+  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
 }
