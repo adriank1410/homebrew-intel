@@ -1,27 +1,27 @@
 {
   "arch": "x86_64",
-  "brew_commit": "68a3990f7aa3b3a1bc067df3ea348619945fe732",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "6784026285aed6e54105a5659b0703ec545ac7a1",
+  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
   "filename": "mistral-vibe--3.1.2.sequoia.bottle.tar.gz",
   "formula_sha256": "eb444ead45534635fd8a3ffa333f72ab4d0de62345f37fd1fd5344ab835dba31",
   "license": "Apache-2.0",
   "name": "mistral-vibe",
   "pkg_version": "3.1.2",
   "recipe_sha256": "5a440b05f806631b1e29c66e69df0d67a12ba603727b54662871213817e6dbf9",
-  "release": "intel-44818144895-1-mistral-vibe",
+  "release": "intel-45059163998-1-mistral-vibe",
   "revision": 0,
-  "run_id": "44818144895",
+  "run_id": "45059163998",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "c278c562aaf26ff9c9742c8ce26c3c75117d85a5a5f7d323402bf5538c5e905a",
+      "formula_sha256": "af22f232df97633adcd5cb9f222240d5bdd5196dc970496596dbb02bf9d81103",
       "name": "certifi",
-      "pkg_version": "2026.10.23"
+      "pkg_version": "2026.11.20"
     },
     {
       "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
@@ -39,7 +39,7 @@
       "pkg_version": "0.2.5"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -49,12 +49,12 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "e6c7e0b80da4ec762e81ad9ee9c64f9c08bd559b25fd5c784e756d7112ce7d1e",
+      "formula_sha256": "42c458be08feba3c02eda68f960ae949c56407674a6c95fb4f5ed55c9566ce04",
       "name": "pycparser",
       "pkg_version": "3.12"
     },
@@ -64,12 +64,12 @@
       "pkg_version": "2.14.4"
     },
     {
-      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
+      "formula_sha256": "f9fa25491a32c1d9546b393101c09f7e8f54b1d88f6a01d220ced032160c1c69",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     },
@@ -79,12 +79,12 @@
       "pkg_version": "2026.9.1_1"
     },
     {
-      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "formula_sha256": "a64a84eedd14491bbc11a6caa925f3081193acd986f60c9ee4b961c0f0478a64",
       "name": "sqlite",
       "pkg_version": "3.54.1"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -95,15 +95,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d0aee602dc344fde1b427f501712ac6a986245c01e200743658f676c29fe0fd8",
-  "size": 44805466,
+  "sha256": "41ac75250e0e1281052de79f68a702ef7f55c5bad34403800b8adc88ffb58748",
+  "size": 44804894,
   "source": {
     "filename": "mistral-vibe--3.1.2.sources.tar.gz",
-    "sha256": "f5d67f588c4145a3f4d119c8fb1d28bc8937ddeee7d0f3fe70fe620fb4d1f171",
-    "size": 198871916
+    "sha256": "b2d2cd9ca7f54ec50d2d4608ee01f15dfa768d5ebfe50674805a0b2b8d013d78",
+    "size": 198874332
   },
   "tag": "sequoia",
   "version": "3.1.2",
   "version_scheme": 0,
-  "workflow_commit": "0e6c84e77a13bffa8646fe5cae7d9b14427338c8"
+  "workflow_commit": "cb3ae3eecba8a64d2568396c2abf8eb8082cae1c"
 }
