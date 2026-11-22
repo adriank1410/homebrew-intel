@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any_skip_relocation",
-  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
+  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
   "filename": "sherlock--0.16.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "476b43958465cadcbf54f8cd90d04e9c0fe0b85a9315b8f94d26ac6befdb4e99",
   "license": "MIT",
   "name": "sherlock",
   "pkg_version": "0.16.2_1",
   "recipe_sha256": "27503168383111a9c4b107963c155c73a89dd297a8a57584ceaeee5836142c04",
-  "release": "intel-44987573281-1-sherlock",
+  "release": "intel-45043414167-1-sherlock",
   "revision": 1,
-  "run_id": "44987573281",
+  "run_id": "45043414167",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "1265986c047169359d0d1cd532a0277a9faf2b73af4e7a39346bf3ec0f4a0846",
+      "formula_sha256": "af22f232df97633adcd5cb9f222240d5bdd5196dc970496596dbb02bf9d81103",
       "name": "certifi",
-      "pkg_version": "2026.10.23"
+      "pkg_version": "2026.11.20"
     },
     {
       "formula_sha256": "ea82c027fa80b3b6d2c6a5a8bf057b15c2c8df004639716afd99799ccecb662b",
@@ -105,15 +105,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "760393edd1a679975b5f4c8428914b3d5d55581493c222d86147f28176a91f0f",
-  "size": 11946975,
+  "sha256": "a2cddd58f7da2ff2289c44d97e8f5d05d157d77328c443d5d68977bb87f49e8b",
+  "size": 11947004,
   "source": {
     "filename": "sherlock--0.16.2_1.sources.tar.gz",
-    "sha256": "36bc1bc43e58e393e2979351376ef4e7fe55e1697ae4812163485e0d7b956a4a",
-    "size": 9840685
+    "sha256": "4bbc700a0c1e358591e78b05aacb850a91d0fea90adb46da5fef613b8935be4a",
+    "size": 9840687
   },
   "tag": "sequoia",
   "version": "0.16.2",
   "version_scheme": 0,
-  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
+  "workflow_commit": "8283e8831cecd8130e8d9c6823eff54fe41423c3"
 }
