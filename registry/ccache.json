@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b39ed2c1958182c9fc90fa87366d4510021ecf75",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "5017003ed9a150e7532792a8b35f6c0326473970",
+  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
   "filename": "ccache--4.14.3.sequoia.bottle.tar.gz",
   "formula_sha256": "6e1ce01de1a0065efabd6c12700f7d1957cb985e842f375dc3e9882404705dc4",
   "license": "GPL-3.0-or-later",
   "name": "ccache",
   "pkg_version": "4.14.3",
   "recipe_sha256": "cc0f277b686afe06a3759f7ed751afea21d36de2f0d44bdb162ca46b21f376ea",
-  "release": "intel-44666435744-1-ccache",
+  "release": "intel-45059163998-1-ccache",
   "revision": 0,
-  "run_id": "44666435744",
+  "run_id": "45059163998",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ee50a098a71187d2c4526095ee906893dc50d09a383dd22555f7b34ef4f3426",
@@ -19,7 +19,7 @@
       "pkg_version": "1.8.7"
     },
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -34,12 +34,12 @@
       "pkg_version": "1.5.1"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -49,7 +49,7 @@
       "pkg_version": "0.8.4"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b0b7ee8e21b191edbfdbd42cd565df9a8ae847f5e17f8ea64ebaa455782f1b4c",
-  "size": 705377,
+  "sha256": "f6d43fb5c8ad938bba6f44aa1355c6391428f97d2db5a305dbe0ba5c50814123",
+  "size": 705355,
   "source": {
     "filename": "ccache--4.14.3.sources.tar.gz",
-    "sha256": "12ca1aa309afa4bb4312847d5b862a65736797561d71240948c5877ce85f0221",
-    "size": 582428
+    "sha256": "a979ca0aef811df89ff790d1fb4c631436c5f4cce9bc02761df7ba3005622ac1",
+    "size": 582435
   },
   "tag": "sequoia",
   "version": "4.14.3",
   "version_scheme": 0,
-  "workflow_commit": "578b5bc4ed8555d6a193d18a1a525c2fd7673669"
+  "workflow_commit": "cb3ae3eecba8a64d2568396c2abf8eb8082cae1c"
 }
