@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "3ae36bde8abdf91ed84123f2a4121aa01d488137",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
   "filename": "bat--0.26.1.sequoia.bottle.tar.gz",
   "formula_sha256": "d81001b15670875cc9fe20583e91737c23ba8e38c05968f9a1f2588bb2456668",
   "license": {
@@ -14,12 +14,12 @@
   "name": "bat",
   "pkg_version": "0.26.1",
   "recipe_sha256": "16b5c646599831826e14c44116e26c4f64f12f92b745fc2539d453cdeebf7cfd",
-  "release": "intel-43642031220-1-bat",
+  "release": "intel-45016539561-1-bat",
   "revision": 0,
-  "run_id": "43642031220",
+  "run_id": "45016539561",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -44,21 +44,21 @@
       "pkg_version": "6.9.10"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     }
   ],
   "schema": 1,
-  "sha256": "cece21130cfea8df22fd065212fcc27f75724e0e34f6c91ecf0c98e16f412ac0",
-  "size": 2854611,
+  "sha256": "4ac315f6ef277ed2179fa3c6d85e2af405be69647bda61a8cd6e4f5ce275aa8a",
+  "size": 2854475,
   "source": {
     "filename": "bat--0.26.1.sources.tar.gz",
-    "sha256": "9b7b8939fde3e340d22b2451aabd9af7a72227eed5cb1ed1a11583f03b04021a",
-    "size": 21042011
+    "sha256": "27a7c56d10e1d72ceecfaaed531d044f3e5c0e1e886a9128caf89ab3c4734fcc",
+    "size": 21043530
   },
   "tag": "sequoia",
   "version": "0.26.1",
   "version_scheme": 0,
-  "workflow_commit": "9402d73809f35afb291a1446a57588b9da7f74f7"
+  "workflow_commit": "b0028bdadcaeb9de98ee4930be0c7288ebaf712d"
 }
