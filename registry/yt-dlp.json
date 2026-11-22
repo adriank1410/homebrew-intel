@@ -1,27 +1,27 @@
 {
   "arch": "x86_64",
-  "brew_commit": "097e0b5957555b85dc4194eef06218a2aeab851f",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "43bfcc9b54eeb568071438e38eeab760b8177366",
+  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
   "filename": "yt-dlp--2026.10.26.sequoia.bottle.tar.gz",
   "formula_sha256": "5263b1de7d48e095baa21641eabffd67ab8d8806f0b874454b3ee68fa908a2e7",
   "license": "Unlicense",
   "name": "yt-dlp",
   "pkg_version": "2026.10.26",
   "recipe_sha256": "df839c981b72be35f0591927436b027aaa2d6ae1641ebe0c97e592bd70c7b742",
-  "release": "intel-43592403848-2-yt-dlp",
+  "release": "intel-45059163998-1-yt-dlp",
   "revision": 0,
-  "run_id": "43592403848",
+  "run_id": "45059163998",
   "runtime_dependencies": [
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "c278c562aaf26ff9c9742c8ce26c3c75117d85a5a5f7d323402bf5538c5e905a",
+      "formula_sha256": "af22f232df97633adcd5cb9f222240d5bdd5196dc970496596dbb02bf9d81103",
       "name": "certifi",
-      "pkg_version": "2026.10.23"
+      "pkg_version": "2026.11.20"
     },
     {
       "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
@@ -29,7 +29,7 @@
       "pkg_version": "2.1.1_1"
     },
     {
-      "formula_sha256": "507321eeedebdf1026236b871a99724eba3d91ac351ca9ee06ed66375458d1f4",
+      "formula_sha256": "53254e991b90ad169b653f982cb7ed9fa796862e44cc92f0efbbe44d60ad649b",
       "name": "curl-impersonate",
       "pkg_version": "2.3.2"
     },
@@ -64,7 +64,7 @@
       "pkg_version": "2.20"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -74,27 +74,27 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "e6c7e0b80da4ec762e81ad9ee9c64f9c08bd559b25fd5c784e756d7112ce7d1e",
+      "formula_sha256": "42c458be08feba3c02eda68f960ae949c56407674a6c95fb4f5ed55c9566ce04",
       "name": "pycparser",
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
+      "formula_sha256": "f9fa25491a32c1d9546b393101c09f7e8f54b1d88f6a01d220ced032160c1c69",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "formula_sha256": "a64a84eedd14491bbc11a6caa925f3081193acd986f60c9ee4b961c0f0478a64",
       "name": "sqlite",
       "pkg_version": "3.54.1"
     },
@@ -104,7 +104,7 @@
       "pkg_version": "1.6.0"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "17b149d5002df28bfb9eb5deca9a6e299366732576e0b71be1bf28da39528f9e",
-  "size": 5573059,
+  "sha256": "ffe931e73a201daa7491d96e9f0f4bd0feca7f9294e0a1541bdb3eb4efe1536b",
+  "size": 5573056,
   "source": {
     "filename": "yt-dlp--2026.10.26.sources.tar.gz",
-    "sha256": "5a17eaf4fa9a739482e3ec7ecdbf4bfa2aa9ac4eda65394fdf98cdb26e7b7e69",
-    "size": 18178850
+    "sha256": "0ea24899dc1f735950a203b3d61d6d1c26d92ff93f7aa44071593e38470242de",
+    "size": 18178830
   },
   "tag": "sequoia",
   "version": "2026.10.26",
   "version_scheme": 0,
-  "workflow_commit": "9e2931e680402901a4dfa798d39b34189b0b1abf"
+  "workflow_commit": "cb3ae3eecba8a64d2568396c2abf8eb8082cae1c"
 }
