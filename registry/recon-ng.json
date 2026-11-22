@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
+  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
   "filename": "recon-ng--5.1.2_4.sequoia.bottle.tar.gz",
   "formula_sha256": "b55870247be2bc86cff7aa424fa7c677f86acf5ac53ae33337005cf94b902146",
   "license": "GPL-3.0-only",
   "name": "recon-ng",
   "pkg_version": "5.1.2_4",
   "recipe_sha256": "7a89ba397c23d5dc2b446539124580aba5804ac5d76a24f012b77c8fb734ed49",
-  "release": "intel-45016539561-1-recon-ng",
+  "release": "intel-45043414167-1-recon-ng",
   "revision": 4,
-  "run_id": "45016539561",
+  "run_id": "45043414167",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "1265986c047169359d0d1cd532a0277a9faf2b73af4e7a39346bf3ec0f4a0846",
+      "formula_sha256": "af22f232df97633adcd5cb9f222240d5bdd5196dc970496596dbb02bf9d81103",
       "name": "certifi",
-      "pkg_version": "2026.10.23"
+      "pkg_version": "2026.11.20"
     },
     {
       "formula_sha256": "1664ef8ed12ce548509600813e2fbcd8160e0b1015ac0876e3c7832f8e18dbb1",
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9d6e06ec77dcb3bc64a42bfca287815646ed6c5e013f56194b3b3af13b6f4be3",
-  "size": 8729440,
+  "sha256": "7376d331dfeed1d44be149446ccd5409fa5c3fe9ad00a62bc9b0ceeac41b6189",
+  "size": 8729441,
   "source": {
     "filename": "recon-ng--5.1.2_4.sources.tar.gz",
-    "sha256": "3f1d98682aaba7ef30647290736b2b960f678b4ffe6f941e9cf0d8eafc4c8364",
-    "size": 129991901
+    "sha256": "55f550b91c71493e8a3b43be533ef00e2b66c4cb5bbd8ec27c8c7594f57701d5",
+    "size": 129992375
   },
   "tag": "sequoia",
   "version": "5.1.2",
   "version_scheme": 0,
-  "workflow_commit": "b0028bdadcaeb9de98ee4930be0c7288ebaf712d"
+  "workflow_commit": "8283e8831cecd8130e8d9c6823eff54fe41423c3"
 }
