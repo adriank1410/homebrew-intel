@@ -2,16 +2,16 @@
   "arch": "x86_64",
   "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
   "filename": "bandit--1.9.4_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "8359d8da6489ffe3974aa2c43d12de7b5bc04392a37cd0363da6dcb05b264b1a",
+  "formula_sha256": "5cb10c1b22de642abb8023256fd81c6a2f0d98c03d01bb04f396d17091dec17c",
   "license": "Apache-2.0",
   "name": "bandit",
   "pkg_version": "1.9.4_1",
-  "recipe_sha256": "9e191c80016e5e1a66bc86493eefff6e24f69ff107cb6186fd0541eeb24987ab",
-  "release": "intel-44956300339-1-bandit",
+  "recipe_sha256": "f73724a571176f3d7f5f2f6297180162791091cedbbb33723efb15e90caeda9f",
+  "release": "intel-44987573281-1-bandit",
   "revision": 1,
-  "run_id": "44956300339",
+  "run_id": "44987573281",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "14a969398e082dffe14fa18920eb1c05a0a8eb71cdd538704290c54e556bcb61",
-  "size": 1669614,
+  "sha256": "3ebc8386261f6cfe56ee4aadd0bb7ed5fd8ef7f4bcb4cc266f8c1a214a7f0406",
+  "size": 1669689,
   "source": {
     "filename": "bandit--1.9.4_1.sources.tar.gz",
-    "sha256": "6f0b3e9e98037f84a7443bc8ba95a696be8efe2178cff407c724e21478f9f161",
-    "size": 10227980
+    "sha256": "83adf431157b5813d0167a1ca7c2b349eeda812262411f2658f567839e7e5e28",
+    "size": 10228017
   },
   "tag": "sequoia",
   "version": "1.9.4",
   "version_scheme": 0,
-  "workflow_commit": "a084bd11fc0ba688cc6d61da1c68b51c64a8a169"
+  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
 }
