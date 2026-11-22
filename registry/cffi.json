@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7685477141b47ac22179324b774b5fc230470a98",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any_skip_relocation",
-  "core_commit": "3aa17c6cb938813ff54413a8e3ba0a003b2773e8",
+  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
   "filename": "cffi--2.1.1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
   "license": "MIT-0",
   "name": "cffi",
   "pkg_version": "2.1.1_1",
   "recipe_sha256": "42c45ea4ac801b8974ba6ec19ade431bc349684022e1a486d8d0ad2df9ccb917",
-  "release": "intel-40003976797-1-cffi",
+  "release": "intel-44956300339-1-cffi",
   "revision": 1,
-  "run_id": "40003976797",
+  "run_id": "44956300339",
   "runtime_dependencies": [
     {
-      "formula_sha256": "e6c7e0b80da4ec762e81ad9ee9c64f9c08bd559b25fd5c784e756d7112ce7d1e",
+      "formula_sha256": "42c458be08feba3c02eda68f960ae949c56407674a6c95fb4f5ed55c9566ce04",
       "name": "pycparser",
       "pkg_version": "3.12"
     }
   ],
   "schema": 1,
-  "sha256": "e31f1b7d82557eddd85ce820bff5311861eec9ff4121bdc7e7f0ec660b0e9849",
-  "size": 356056,
+  "sha256": "5078498bbb16525a4efdb3f301d6f7eb540b7aa13d1c39dfa484317c73d8be21",
+  "size": 356010,
   "source": {
     "filename": "cffi--2.1.1_1.sources.tar.gz",
-    "sha256": "2223334673aee3f8a06451cbcbe75c761215e90b2184235a834b4fb8c4b907e7",
-    "size": 535600
+    "sha256": "e0fc5f48bf788ff480ca07858ea6dc1f68aab0182d9d18f7e1a8a715ac43b49c",
+    "size": 535612
   },
   "tag": "sequoia",
   "version": "2.1.1",
   "version_scheme": 0,
-  "workflow_commit": "1a9dcb1177a627d91a6d30cc07470ddf1695023f"
+  "workflow_commit": "a084bd11fc0ba688cc6d61da1c68b51c64a8a169"
 }
