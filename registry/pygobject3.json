@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
   "filename": "pygobject3--3.58.1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "9f5106eb00e116c364b082e488c21008f54c90221a586c39e6c8faf41f75c90f",
   "license": "LGPL-2.1-or-later",
   "name": "pygobject3",
   "pkg_version": "3.58.1_1",
   "recipe_sha256": "634b054f92c123f8b36a0157910bc4ed08497fc3d3ea1e15e818fe6c454489ed",
-  "release": "intel-44413266528-1-pygobject3",
+  "release": "intel-44987573281-1-pygobject3",
   "revision": 1,
-  "run_id": "44413266528",
+  "run_id": "44987573281",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -19,7 +19,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3",
+      "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
       "name": "ca-certificates",
       "pkg_version": "2026-11-05"
     },
@@ -99,7 +99,7 @@
       "pkg_version": "0.9.13"
     },
     {
-      "formula_sha256": "ddb14ca1abd07e8b55e30b047dfd3564916c89057b66816009f814daeeb1e5c0",
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
       "name": "lz4",
       "pkg_version": "1.11.1"
     },
@@ -114,7 +114,7 @@
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049",
+      "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
       "name": "openssl@4",
       "pkg_version": "4.1.0"
     },
@@ -129,7 +129,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "61d01429d413f85ab375157ace97d44d8bd7cb2ce805000b8ca869c7556405ad",
+      "formula_sha256": "df299552d29cc257d26487e39c98788fd9a51b000c6215c49e650605aa27223a",
       "name": "pkgconf",
       "pkg_version": "3.0.11"
     },
@@ -139,17 +139,17 @@
       "pkg_version": "1.29.2_1"
     },
     {
-      "formula_sha256": "2c3ed4f0cce258986a9dadfe26c660c1c6f728696a31537c540477a38054c304",
+      "formula_sha256": "f9fa25491a32c1d9546b393101c09f7e8f54b1d88f6a01d220ced032160c1c69",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "ead60941ba0f81334499b208e26382eefda15eb1b9614c417d70f1d827dc2e64",
+      "formula_sha256": "fd64c83fb1998710ca1ec5a3e711061934c86315a73994370033ea2e7996a971",
       "name": "readline",
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "cb22e585906d9ef444d357c8ae68e64697365447011333bd336d5fb15838a116",
+      "formula_sha256": "a64a84eedd14491bbc11a6caa925f3081193acd986f60c9ee4b961c0f0478a64",
       "name": "sqlite",
       "pkg_version": "3.54.1"
     },
@@ -159,7 +159,7 @@
       "pkg_version": "2026.1"
     },
     {
-      "formula_sha256": "e5b8bbf09dccb4a1f2ee333ed65b13ee773350a26735ef594ca859d2cf85248e",
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
       "name": "xz",
       "pkg_version": "5.8.4"
     },
@@ -170,15 +170,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2fade7207f48b901e8c86f70123b7cc607a47ce3ad8fbd19e32bd696e879d4a8",
-  "size": 470385,
+  "sha256": "1dc306d32ca490430635152889b4681a6f9af0261efd08a18c2695476e849733",
+  "size": 470380,
   "source": {
     "filename": "pygobject3--3.58.1_1.sources.tar.gz",
-    "sha256": "648ab0e12649ed4c8911112c6d40fc95a45d940dd27a63b681179ea56377b41b",
-    "size": 1434362
+    "sha256": "cf4afc157860e1ebd8b7c6e6d804465534151d72379d98e21f541621a4ff44c8",
+    "size": 1434378
   },
   "tag": "sequoia",
   "version": "3.58.1",
   "version_scheme": 0,
-  "workflow_commit": "b011ff045f0eaab7b53ce755263cfa4572fef70c"
+  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
 }
