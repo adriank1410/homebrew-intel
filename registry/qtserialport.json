@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
+  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
   "cellar": "any",
-  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
+  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
   "filename": "qtserialport--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "8fecb6d763c6924b06f3cbc5b4df2d8c6a876f0ce2d6df261ee9682013ea889e",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtserialport",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "bf3cd74f985fef9a20b0c92b348903e84d3475140a914f6890811d75a69fea91",
-  "release": "intel-44916853797-1-qtserialport",
+  "release": "intel-44987573281-1-qtserialport",
   "revision": 1,
-  "run_id": "44916853797",
+  "run_id": "44987573281",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -170,7 +170,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "db773a7c815172da2601524bdf30c77fa7185b9629b3ece7e5b1d1f7edafa960",
+      "formula_sha256": "b012587461d260e0641ac9ea486a69de30dc123d600b0c37e407bcafe0571c50",
       "name": "qtbase",
       "pkg_version": "6.12.0_2"
     },
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ae1c1a455d71cb1071e9c645817cd174d50182b12e9c32c992be9b6b9eec9641",
-  "size": 63894,
+  "sha256": "5f46b1faa330749825a8ee95a78012da5c6eb87276fba214b26cd4cafa330c62",
+  "size": 63893,
   "source": {
     "filename": "qtserialport--6.12.0_1.sources.tar.gz",
-    "sha256": "d5343a60796674dbba7f0a3f130fc36547aa271cceb330d0a14fc70c702a6e9c",
-    "size": 299538
+    "sha256": "0eebf197a392c945936fd5c6cc5bcb8cb1d061b0d3b9837e44c51c3794964398",
+    "size": 299533
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "0306fc93763f4293ebd8e98a492692b4ba73290c"
+  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
 }
