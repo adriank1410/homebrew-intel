@@ -1,0 +1,34 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "7de9ab657487a5fc579bfe14350bc6787fe86442",
+  "cellar": "any",
+  "core_commit": "e6889467dad303a7bfddb637f3004ca1bc5167b3",
+  "filename": "ripgrep--16.0.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "63423a5a6891848f1271292f9d49d09e731848f26b6005e3e7dde95594958a7e",
+  "license": "Unlicense",
+  "name": "ripgrep",
+  "pkg_version": "16.0.0",
+  "recipe_sha256": "bc3db09c582cb93bf4fabe17a0a6d3cadb84b78bfb02f4ca88503b2c53ae1794",
+  "release": "intel-45097160432-1-ripgrep",
+  "revision": 0,
+  "run_id": "45097160432",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
+      "name": "pcre2",
+      "pkg_version": "10.49"
+    }
+  ],
+  "schema": 1,
+  "sha256": "887c507522dabd3f6eb3de8745f9b284debfb6eed85cb2832a123691d98a7410",
+  "size": 2219301,
+  "source": {
+    "filename": "ripgrep--16.0.0.sources.tar.gz",
+    "sha256": "39fae56602487773da42d4c6fa2c93c433a1927fcf6a7d0598eeca6d6e58d8cb",
+    "size": 6706640
+  },
+  "tag": "sequoia",
+  "version": "16.0.0",
+  "version_scheme": 0,
+  "workflow_commit": "29d7b1821b2a128db3265be553b2ce77e07333ed"
+}
