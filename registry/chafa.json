@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "7ef183d10e7d6e5620d7124b744b1dfbf69fc108",
   "cellar": "any",
-  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
+  "core_commit": "9575b2295e8b309added7320c50141fa4eac761b",
   "filename": "chafa--1.18.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "20d045959aa94854a989f4d559fefbc3e4c156172b9d90960621ab93cfba1c11",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3_1",
   "recipe_sha256": "c1b5ac197ce0e9a98993d1c3315bf081cb8059e41009399baf1f2922fc04035a",
-  "release": "intel-45059163998-1-chafa",
+  "release": "intel-45194257023-1-chafa",
   "revision": 1,
-  "run_id": "45059163998",
+  "run_id": "45194257023",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -199,9 +199,9 @@
       "pkg_version": "2.10"
     },
     {
-      "formula_sha256": "3f4f6afa20e569d247b76dc9e0c7ba8ac1d8a250b9c91b31fbc5ac08355d3fdd",
+      "formula_sha256": "92b7e8eec3257da45611aa5ee01902836066d2554fab076e1f0f109c7db14b91",
       "name": "openexr",
-      "pkg_version": "3.5.4"
+      "pkg_version": "3.5.5"
     },
     {
       "formula_sha256": "2b035b8e8da68e81b737dbd95dc5b2a86fcd746404dd3a98d88b7a62734e11de",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ecc13649baa61c0bef5e909196f9e8177904fbeaea5a4a05b0028a91559c85a2",
-  "size": 535070,
+  "sha256": "ab907be6db605a088f652ee9fe04de4c3a21a2fb47004ba0a3cffdc643a77898",
+  "size": 535111,
   "source": {
     "filename": "chafa--1.18.3_1.sources.tar.gz",
-    "sha256": "7b33da1ca6eb8d86593ce67bb3ec455579fe330d9e73d8dc4bd431706a20277b",
-    "size": 1091685
+    "sha256": "ce43ebebe450f74139fd5759c82ced0a8243ce13257085b61ed1118b6353cf53",
+    "size": 1091684
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "cb3ae3eecba8a64d2568396c2abf8eb8082cae1c"
+  "workflow_commit": "9a8a7bd3594d2da518d25b1c5335601767d68830"
 }
