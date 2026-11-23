@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "7ef183d10e7d6e5620d7124b744b1dfbf69fc108",
   "cellar": "any",
-  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
+  "core_commit": "9575b2295e8b309added7320c50141fa4eac761b",
   "filename": "jpeg-xl--0.13.0.sequoia.bottle.tar.gz",
   "formula_sha256": "b6fd4f77548595c4bd4d8faeba1f3619f5223e4dc529e098c1331e3878be85ed",
   "license": "BSD-3-Clause",
   "name": "jpeg-xl",
   "pkg_version": "0.13.0",
   "recipe_sha256": "9948bb4fab9e7ca54d8d763de518210cda37afbb44b1429b593ef50b692f6830",
-  "release": "intel-45016539561-1-jpeg-xl",
+  "release": "intel-45188134429-1-jpeg-xl",
   "revision": 0,
-  "run_id": "45016539561",
+  "run_id": "45188134429",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -64,9 +64,9 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "3f4f6afa20e569d247b76dc9e0c7ba8ac1d8a250b9c91b31fbc5ac08355d3fdd",
+      "formula_sha256": "92b7e8eec3257da45611aa5ee01902836066d2554fab076e1f0f109c7db14b91",
       "name": "openexr",
-      "pkg_version": "3.5.4"
+      "pkg_version": "3.5.5"
     },
     {
       "formula_sha256": "2b035b8e8da68e81b737dbd95dc5b2a86fcd746404dd3a98d88b7a62734e11de",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6d69eb7ee792631aaea12f7f11d07071e70ff57eb72ff9bd5dc73b620afd44b3",
-  "size": 18767385,
+  "sha256": "1ad128d713f43ddd78cf7b29d0a679b3af5e470c2ad233ea4a3fe6fc2e87c43c",
+  "size": 18767401,
   "source": {
     "filename": "jpeg-xl--0.13.0.sources.tar.gz",
-    "sha256": "a8ebe1ad7b80b1d7979d9262de0a6efbacd9a55f4aa949d84bf7c1d99aaf6290",
-    "size": 4255789
+    "sha256": "b0d35749922d52c28409d304ede24d8d72e3ce4f6335b2c70fded321d0e499a0",
+    "size": 4255777
   },
   "tag": "sequoia",
   "version": "0.13.0",
   "version_scheme": 0,
-  "workflow_commit": "b0028bdadcaeb9de98ee4930be0c7288ebaf712d"
+  "workflow_commit": "8916102650e0c1126e6822c07e35f124078c5299"
 }
