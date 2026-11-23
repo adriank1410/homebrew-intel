@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "7ef183d10e7d6e5620d7124b744b1dfbf69fc108",
   "cellar": "any",
-  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
-  "filename": "git-delta--0.21.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "29fd87ac5f720fafe71ac384071b9167f5879095b55dab1be3dbfcd4b414fde0",
+  "core_commit": "9575b2295e8b309added7320c50141fa4eac761b",
+  "filename": "git-delta--0.22.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "0274d8794d5cf1b9b09de2a04bceca7f61fb2dc4c3e02220e5cee5adafda346a",
   "license": "MIT",
   "name": "git-delta",
-  "pkg_version": "0.21.2",
-  "recipe_sha256": "bc5be807aa969f722bab9324a2a300a72fcaf767b59aa3a573352a9b81302f39",
-  "release": "intel-45016539561-1-git-delta",
+  "pkg_version": "0.22.0",
+  "recipe_sha256": "a2b37ad45b8adba6abf594545e2ac9d3023f55548bb25191557b6f5db101929e",
+  "release": "intel-45182312029-1-git-delta",
   "revision": 0,
-  "run_id": "45016539561",
+  "run_id": "45182312029",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "1da1388c8f9e9e2924827f284096831c3fc252b0bdb64943e1a623a5f6cc3390",
-  "size": 4301238,
+  "sha256": "e55a1d91e9a0a5c401a69fedf37600809456eb1401dfef290ecf44f8fad27be5",
+  "size": 4518108,
   "source": {
-    "filename": "git-delta--0.21.2.sources.tar.gz",
-    "sha256": "ef90ee828d20fff1989c81fc06ba0cc2bf2fe69338aaec45c61e453eaaf1c0ca",
-    "size": 30210847
+    "filename": "git-delta--0.22.0.sources.tar.gz",
+    "sha256": "3a9a096f4a910ad745262868b184f3c2e431356d23ebcc536e7efcf64473e396",
+    "size": 30638260
   },
   "tag": "sequoia",
-  "version": "0.21.2",
+  "version": "0.22.0",
   "version_scheme": 0,
-  "workflow_commit": "b0028bdadcaeb9de98ee4930be0c7288ebaf712d"
+  "workflow_commit": "45fb284a80d7527f7cedae61ee31f9dab19ce6b6"
 }
