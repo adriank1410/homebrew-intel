@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
   "filename": "aria2--1.37.0_3.sequoia.bottle.tar.gz",
   "formula_sha256": "4519c6e4b241e18f4e42acd2bffc8e8a3fc19c3853985d6440f99e52ddbba622",
   "license": "GPL-2.0-or-later",
   "name": "aria2",
   "pkg_version": "1.37.0_3",
   "recipe_sha256": "e56d9531a03980d69b7c0da8aa356b1c0f176f991e3f36bdebbe706b1b7ed7d6",
-  "release": "intel-45335743885-1-aria2",
+  "release": "intel-45450771531-1-aria2",
   "revision": 3,
-  "run_id": "45335743885",
+  "run_id": "45450771531",
   "runtime_dependencies": [
     {
-      "formula_sha256": "0d6e516cdfac37e00bf121e61db1252ef4e8e89593568039862f081bd639e239",
+      "formula_sha256": "48ce8ac98699a8efa890a0198101bd41f93c907cfa11192d1091fd85bd7f725a",
       "name": "c-ares",
       "pkg_version": "1.34.9"
     },
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "be2e4f521346093e0c62f9fa421a11b58c503150b5684017546e52d37773ac1f",
-  "size": 1768860,
+  "sha256": "55e6ab6ea8d56ad1a32366ff87029dd5f35d4a519d47e3e487679cbb6c28b6a3",
+  "size": 1768829,
   "source": {
     "filename": "aria2--1.37.0_3.sources.tar.gz",
-    "sha256": "0943d741b8256eb313bcc276e6dcaf902915194b0511830ed2b36700ad35fb52",
-    "size": 1720923
+    "sha256": "f3312da8e41d71efe7e8ea1ab520e0107d54cf45d6d3bdc6ab40ba5eb21fd3a7",
+    "size": 1720927
   },
   "tag": "sequoia",
   "version": "1.37.0",
   "version_scheme": 0,
-  "workflow_commit": "0a2a90f88bda7ccdcae83e2236b6c5ec143cf419"
+  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
 }
