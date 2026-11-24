@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "fontforge--20251009_2.sequoia.bottle.tar.gz",
   "formula_sha256": "e83e3a2ede4bed1f21d7435b0bef0abb96c3b9fa73ddf8f254245f8ea61d586a",
   "license": "GPL-3.0-or-later",
   "name": "fontforge",
   "pkg_version": "20251009_2",
   "recipe_sha256": "e4e2a8c148bc8ded219db500b20e813f568b0e36183cfbe55ff26962abb86112",
-  "release": "intel-44956300339-1-fontforge",
+  "release": "intel-45335743885-1-fontforge",
   "revision": 2,
-  "run_id": "44956300339",
+  "run_id": "45335743885",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -194,7 +194,7 @@
       "pkg_version": "0.46.4"
     },
     {
-      "formula_sha256": "f9fa25491a32c1d9546b393101c09f7e8f54b1d88f6a01d220ced032160c1c69",
+      "formula_sha256": "75a937345ba05b51353f167440ce2d31bb1a0ed4aeeba7b05970d5276118008f",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -229,21 +229,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
       "name": "zstd",
       "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "38b376467064f21cbd3f93f963244d46054ac28bda3d1bbd40bffadf801cad5d",
-  "size": 5858183,
+  "sha256": "64d2cf71c567fcd50971da73880c6a20787b5d79f7c384b7cf4bd09d150a9666",
+  "size": 5858185,
   "source": {
     "filename": "fontforge--20251009_2.sources.tar.gz",
-    "sha256": "48db36f2abd5bde3024c8e7fbb91c3b7388646111c625bc872ccc3249fb7a247",
+    "sha256": "d0b4ee0d8e795baec0f15ec1f730427a1095f1e37272111d0d4c567a695b0c0a",
     "size": 14132301
   },
   "tag": "sequoia",
   "version": "20251009",
   "version_scheme": 0,
-  "workflow_commit": "a084bd11fc0ba688cc6d61da1c68b51c64a8a169"
+  "workflow_commit": "0a2a90f88bda7ccdcae83e2236b6c5ec143cf419"
 }
