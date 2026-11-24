@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "any",
-  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "retdec--5.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "5daec87c56f24de93479553b6ead95a4624f1473c0a2a5db69a63623fe0bc8f2",
+  "formula_sha256": "723ee77c0d47a66cabe05805929c25b0b7efa624fc00a4d8b8639b4618e1f272",
   "license": {
     "all_of": [
       "MIT",
@@ -13,10 +13,10 @@
   },
   "name": "retdec",
   "pkg_version": "5.0_1",
-  "recipe_sha256": "fcaa3c0115be1b27beb8e117e8fa035cf1706d7d329954a5981bb164295690fc",
-  "release": "intel-44987573281-1-retdec",
+  "recipe_sha256": "ca6a67c4dc64519d14d27b81ce746b40b6793c0b2bd9ff0d771119455278aa21",
+  "release": "intel-45381359585-1-retdec",
   "revision": 1,
-  "run_id": "44987573281",
+  "run_id": "45381359585",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0fd90d586e3bbe0bc75aed71807aa6cb0dbe3e6b5a1500e77661533360e6af4e",
-  "size": 270452341,
+  "sha256": "b0b97df4e26b9b86684fc14617f8f6cf9c38c1eb9b0f85f815849698342e3b3b",
+  "size": 270452903,
   "source": {
     "filename": "retdec--5.0_1.sources.tar.gz",
-    "sha256": "f4ae7e75e914144eb4bd9eeead1ae07185323e1e3d087a7b017eaf0432a8fbd1",
-    "size": 26988088
+    "sha256": "41eaf2e14ab2f1d6d087b3cec990c98a9951b2bbbeb2b99590b3b170f8564f59",
+    "size": 26988136
   },
   "tag": "sequoia",
   "version": "5.0",
   "version_scheme": 0,
-  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
+  "workflow_commit": "1a282e8f0265fa7f010b72588ebc48261baea58f"
 }
