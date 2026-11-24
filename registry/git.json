@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fa83b3406d72d3c504950fa9917aab828c183753",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "398b250a60f6e839b9791c7ace3ffc96e4dc184c",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "git--2.56.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "d7659666a0827d341f9322372333a04facd85d359404abcf5e994a71241fc835",
+  "formula_sha256": "15be086bacc8182024c9f522203b2c4802ccf536c5d89a75c9e6cadfd6da9b07",
   "license": {
     "all_of": [
       "GPL-2.0-only",
@@ -16,10 +16,10 @@
   },
   "name": "git",
   "pkg_version": "2.56.1",
-  "recipe_sha256": "c8c08d43d17860d9c49bacd9eedb161a064d5e612fe9d4ce2aaf1f58aa3a30fe",
-  "release": "intel-43091533023-1-git",
+  "recipe_sha256": "cb7f86e5e39dac718c8b4ade45a373a976226c836b9a7098834e584c6dedc1cf",
+  "release": "intel-45312177023-1-git",
   "revision": 0,
-  "run_id": "43091533023",
+  "run_id": "45312177023",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -43,15 +43,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4bff7acec75c004c3cc9bd55b6cbe58825f8dd90423f8b4dc2048db2fbf6d0f8",
-  "size": 24989357,
+  "sha256": "e89254c54d1591d6cc725eccd7532cadaef151ff13a76bd352bea637c09f6721",
+  "size": 24989140,
   "source": {
     "filename": "git--2.56.1.sources.tar.gz",
-    "sha256": "bf2ab9d337550d95636c4969f0e627cd0e1de36d0cfe9a769d6cb998cae7bbeb",
-    "size": 10947105
+    "sha256": "22d5acf5eee8ae80574af7ef1d5ebf338c314e3b245246cfaac22fe22e5d6154",
+    "size": 10947098
   },
   "tag": "sequoia",
   "version": "2.56.1",
   "version_scheme": 0,
-  "workflow_commit": "7c33ae773a6619720de0045b8d72f5f37a94fff9"
+  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
 }
