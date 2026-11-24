@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
   "cellar": "any_skip_relocation",
-  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
   "filename": "neovide--0.17.3.sequoia.bottle.tar.gz",
   "formula_sha256": "8b5dd3695f1671e22ef534b095b2b012c09b755913bc7b588403d867c3105c18",
   "license": "MIT",
   "name": "neovide",
   "pkg_version": "0.17.3",
   "recipe_sha256": "86bc3988a7689353e8f17f27c3adb40bf357bef893065d17c11dfbfee307d338",
-  "release": "intel-45016539561-1-neovide",
+  "release": "intel-45450771531-1-neovide",
   "revision": 0,
-  "run_id": "45016539561",
+  "run_id": "45450771531",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -34,7 +34,7 @@
       "pkg_version": "1.53.0"
     },
     {
-      "formula_sha256": "0bd27d1c632675c48fce22dd201c98b13a72d60cbff0ce6504250f7b606b7b4a",
+      "formula_sha256": "875b739d1909a112fd8e8bbfbdcb0981fadd355494b26f788b192e97070737ce",
       "name": "lpeg",
       "pkg_version": "1.1.0_2"
     },
@@ -70,15 +70,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "35e054ff905f2fbee08c4465da4d93fac01fac82f3750fe375a127985ec240c3",
-  "size": 11193158,
+  "sha256": "e6235a948bd8a0fab8f104958234d98dfcc9dc2f1510342ee2403a1a037cbc72",
+  "size": 11193145,
   "source": {
     "filename": "neovide--0.17.3.sources.tar.gz",
-    "sha256": "81dba53875851fbbbd80a685b10b833765566e0d27b6361990d111c06067f88c",
-    "size": 68591086
+    "sha256": "e7a4fff843179e4ecc4bc7b9a2fc717347ffb3e2d5a850c86b64d37dd994d243",
+    "size": 68591520
   },
   "tag": "sequoia",
   "version": "0.17.3",
   "version_scheme": 0,
-  "workflow_commit": "b0028bdadcaeb9de98ee4930be0c7288ebaf712d"
+  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
 }
