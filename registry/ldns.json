@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "any",
-  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "ldns--1.9.2_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "5a3903436fefc6c88b033f3fd5fc64a258a1a9b560ac824dc89c019b6190c3ba",
+  "formula_sha256": "77d2b7b4b17014457d7070af3afa9c11cf5c7f31484f89ad7fbf40cbeea5c65d",
   "license": "BSD-3-Clause",
   "name": "ldns",
   "pkg_version": "1.9.2_1",
-  "recipe_sha256": "3dcf15bf8c9cf8eff5b8ef12d3c1bd234eb4d1135f5f5b54a301def4b5a3e874",
-  "release": "intel-44956300339-1-ldns",
+  "recipe_sha256": "efe0f2b4c7e8367d83a8605c966e7c0fed1eb81b2fba93b22ac788c7ef56de44",
+  "release": "intel-45335743885-1-ldns",
   "revision": 1,
-  "run_id": "44956300339",
+  "run_id": "45335743885",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -34,7 +34,7 @@
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "f9fa25491a32c1d9546b393101c09f7e8f54b1d88f6a01d220ced032160c1c69",
+      "formula_sha256": "75a937345ba05b51353f167440ce2d31bb1a0ed4aeeba7b05970d5276118008f",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -54,21 +54,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
       "name": "zstd",
       "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "f3a515327a4ca20574237f31754d65dfd23739329cad3f87ff680f10018d59ad",
-  "size": 1308830,
+  "sha256": "db76e747ea8708c37d6cdd6cc02a74cf7603a3b10e34a52368deb2f672f05883",
+  "size": 1308919,
   "source": {
     "filename": "ldns--1.9.2_1.sources.tar.gz",
-    "sha256": "99ffadabb24835370c0891ab81a4ba8379cceac333e78d7467d172841071631b",
-    "size": 1314539
+    "sha256": "b5b58980d937dc355b685c6d483e9d86b397289de76a0e643999b47bd4256cba",
+    "size": 1314551
   },
   "tag": "sequoia",
   "version": "1.9.2",
   "version_scheme": 0,
-  "workflow_commit": "a084bd11fc0ba688cc6d61da1c68b51c64a8a169"
+  "workflow_commit": "0a2a90f88bda7ccdcae83e2236b6c5ec143cf419"
 }
