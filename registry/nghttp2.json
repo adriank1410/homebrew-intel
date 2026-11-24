@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
   "cellar": "any",
-  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
   "filename": "nghttp2--1.71.0.sequoia.bottle.tar.gz",
   "formula_sha256": "7d5ed05ac5779e712ed8da19bce12eccd37df6196f7b1ffe155328ed1ccc5e35",
   "license": "MIT",
   "name": "nghttp2",
   "pkg_version": "1.71.0",
   "recipe_sha256": "693c3cd558da86f560e967fe0db3e06c1320533a46e5272f7179944fa1519106",
-  "release": "intel-44901803975-1-nghttp2",
+  "release": "intel-45450771531-1-nghttp2",
   "revision": 0,
-  "run_id": "44901803975",
+  "run_id": "45450771531",
   "runtime_dependencies": [
     {
-      "formula_sha256": "0d6e516cdfac37e00bf121e61db1252ef4e8e89593568039862f081bd639e239",
+      "formula_sha256": "48ce8ac98699a8efa890a0198101bd41f93c907cfa11192d1091fd85bd7f725a",
       "name": "c-ares",
       "pkg_version": "1.34.9"
     },
@@ -45,15 +45,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "da41a4a15b352fd281cb113fa54f8912a2d396f9d78b8811bb80db9cc3b5440b",
-  "size": 987356,
+  "sha256": "2a2596055d4b70d776b0153b3df568236b02a1561c8dd8956e0e040ecfe18b76",
+  "size": 987355,
   "source": {
     "filename": "nghttp2--1.71.0.sources.tar.gz",
-    "sha256": "d33c3846f83a76678df0bc97568a76317f6e35ff09117d3db90872cbf5d46814",
-    "size": 3094452
+    "sha256": "51a254738ce063c6efb56fa4b71a738739fd428e4046e0fe35ff9ac89436a9c3",
+    "size": 3094444
   },
   "tag": "sequoia",
   "version": "1.71.0",
   "version_scheme": 0,
-  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
+  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
 }
