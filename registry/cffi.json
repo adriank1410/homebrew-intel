@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
   "cellar": "any_skip_relocation",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
   "filename": "cffi--2.1.1_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "5fcbefa60142df3feb38a656039856db32bb9ba497e17de85c428d388e4a7444",
+  "formula_sha256": "395c62177c3d87949c1de27fe08304bda3c94ad5f1c5be6f04c48ac89b86a7a4",
   "license": "MIT-0",
   "name": "cffi",
   "pkg_version": "2.1.1_1",
-  "recipe_sha256": "ad277e0ce6096cc1d5635044f86a6ee940a40251ce56a9bab0bb188ec705007b",
-  "release": "intel-45335743885-1-cffi",
+  "recipe_sha256": "42c81e97b4184901cc85ca46b281c2c9aecb50e136ca0f9fde14b01d7740071f",
+  "release": "intel-45424144272-1-cffi",
   "revision": 1,
-  "run_id": "45335743885",
+  "run_id": "45424144272",
   "runtime_dependencies": [
     {
       "formula_sha256": "42c458be08feba3c02eda68f960ae949c56407674a6c95fb4f5ed55c9566ce04",
@@ -20,15 +20,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4bbb6db6102930ad72b44483eff7e39635ef244ebe11f226447a501561604b96",
-  "size": 355978,
+  "sha256": "e23c996e5f3c44ddfcfdca98670d12d72074aabb80e35f3578df8c37db51a3a6",
+  "size": 355983,
   "source": {
     "filename": "cffi--2.1.1_1.sources.tar.gz",
-    "sha256": "8fc9060396e3344fd172f2e2d289cdce0f0b8a5270e80902279d8c7ebb3fb11c",
-    "size": 535520
+    "sha256": "6ed34abc37f77ebef634ce0840a16702b4c5b04cff3ca22efc9677beaace5614",
+    "size": 535555
   },
   "tag": "sequoia",
   "version": "2.1.1",
   "version_scheme": 0,
-  "workflow_commit": "0a2a90f88bda7ccdcae83e2236b6c5ec143cf419"
+  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
 }

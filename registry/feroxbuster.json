@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "53c5856230b72e866ee4da77cfb9d39880291a99",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
   "cellar": "any_skip_relocation",
-  "core_commit": "afdee9d9ff7929af272d36ff5887e24f83b751d8",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
   "filename": "feroxbuster--2.14.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "25a2a7026facc84ebcf05bff8d3eb1c66052532d7b3d8a22a69025ed1ee9b5af",
+  "formula_sha256": "d0b45439845811dd01fb2f30c5e18988e76bd7028c8f5d564c1e3175abced9da",
   "license": "MIT",
   "name": "feroxbuster",
   "pkg_version": "2.14.0",
-  "recipe_sha256": "eb3bf172e67b9e3a8093114f8481da743113f2b33dfa9e97a62424cb16c5936e",
-  "release": "intel-43363121413-1-feroxbuster",
+  "recipe_sha256": "2d8962e0d9f0abe19abb1288d2ee4aefe9a950c2c7e7e3a5cf5d98deee7150fa",
+  "release": "intel-45424144272-1-feroxbuster",
   "revision": 0,
-  "run_id": "43363121413",
+  "run_id": "45424144272",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "8adde599907a0ae9c0fec98ac00d50e91263a4073b804152fa8f9ef619aeaff5",
-  "size": 4561522,
+  "sha256": "109af4c61707900afaa57c3906a30970d57bb85a3ecfeddef97cadadb293dd08",
+  "size": 4561811,
   "source": {
     "filename": "feroxbuster--2.14.0.sources.tar.gz",
-    "sha256": "3621bbf811a3177a63f265e0856b6e6d95443c9189e58d6d0007bdcb8e7de65a",
-    "size": 58957448
+    "sha256": "04d68d43a63564d0d784bba7997597176bc8f0b820c9c0b04cb1a9d723f2071e",
+    "size": 58963434
   },
   "tag": "sequoia",
   "version": "2.14.0",
   "version_scheme": 0,
-  "workflow_commit": "7a584a99c28c9b920feffc7ecfc6007d589bba03"
+  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
 }
