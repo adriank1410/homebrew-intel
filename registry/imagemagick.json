@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7de9ab657487a5fc579bfe14350bc6787fe86442",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "e6889467dad303a7bfddb637f3004ca1bc5167b3",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "imagemagick--7.1.2-36.sequoia.bottle.tar.gz",
   "formula_sha256": "bbdb84cd09e73fe70bca79c886194d042475ba4673550fe8b2defcf8432572af",
   "license": "ImageMagick",
   "name": "imagemagick",
   "pkg_version": "7.1.2-36",
   "recipe_sha256": "c3fd7c1cea609f6d4f895cc88bb279b4a439dd3d7e01579da910f51dc594b0e7",
-  "release": "intel-45097160432-1-imagemagick",
+  "release": "intel-45381359585-1-imagemagick",
   "revision": 0,
-  "run_id": "45097160432",
+  "run_id": "45381359585",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -99,21 +99,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
       "name": "zstd",
       "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "cddd2b77d0bda5a716f2a5796d6ae3d63aff2a0c3a7d6b8deab2cc903ef44766",
-  "size": 11116899,
+  "sha256": "94a1f049f1565e644494a0b8e1a67752ee12a9f894d5ce2acd70a43fe3a10bd6",
+  "size": 11116796,
   "source": {
     "filename": "imagemagick--7.1.2-36.sources.tar.gz",
-    "sha256": "a3835cf501c325850fcff6bc141be2303de0b104fd3f29512db8f83d87374b4c",
-    "size": 10322768
+    "sha256": "5c7720ec89b5712e7f95dc2ebb22aa53f7f0dbfa56e449126703735488e3ea9b",
+    "size": 10322766
   },
   "tag": "sequoia",
   "version": "7.1.2-36",
   "version_scheme": 0,
-  "workflow_commit": "29d7b1821b2a128db3265be553b2ce77e07333ed"
+  "workflow_commit": "1a282e8f0265fa7f010b72588ebc48261baea58f"
 }
