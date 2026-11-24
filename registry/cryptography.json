@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
   "cellar": "any",
-  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
   "filename": "cryptography--50.0.2_2.sequoia.bottle.tar.gz",
-  "formula_sha256": "598e810dcea0f60929c2237ad0b84805bdcfb5d4cca756a2e88ea9eef1ca5366",
+  "formula_sha256": "b855dc21183f7c5c948aa80fd60e5cae96623cf9f316130d4c60bf09b29dc055",
   "license": {
     "any_of": [
       "Apache-2.0",
@@ -13,10 +13,10 @@
   },
   "name": "cryptography",
   "pkg_version": "50.0.2_2",
-  "recipe_sha256": "1023765a15ee73cba3f87cec1eab9bbb6674e3c4fbbab78eb8e3bcfc71376f5e",
-  "release": "intel-45043414167-1-cryptography",
+  "recipe_sha256": "57ca1f5064fe480faa04fddfe422c235bb45d5af229314d5436767b54c7c81df",
+  "release": "intel-45450771531-1-cryptography",
   "revision": 2,
-  "run_id": "45043414167",
+  "run_id": "45450771531",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -24,7 +24,7 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
+      "formula_sha256": "395c62177c3d87949c1de27fe08304bda3c94ad5f1c5be6f04c48ac89b86a7a4",
       "name": "cffi",
       "pkg_version": "2.1.1_1"
     },
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "b3fdf8f2505d1e98c882b55fd1ce8d43f2179524bbbe9cc08a67f9d2236291b5",
-  "size": 4019799,
+  "sha256": "3ca20afa8d592bc1f98f53159ea4b9c3635bca5f4b7d6d5d8d033c9eaf410377",
+  "size": 4019685,
   "source": {
     "filename": "cryptography--50.0.2_2.sources.tar.gz",
-    "sha256": "984a581d6f1886c5e050d8e5a1ea944c25cbf77b69d327a20d2a7020dee4668e",
-    "size": 5211699
+    "sha256": "62c548af267dbe48ad4fd53184a779f2a0a58c4032c1f9ba8275347eaa53001a",
+    "size": 5211593
   },
   "tag": "sequoia",
   "version": "50.0.2",
   "version_scheme": 0,
-  "workflow_commit": "8283e8831cecd8130e8d9c6823eff54fe41423c3"
+  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
 }
