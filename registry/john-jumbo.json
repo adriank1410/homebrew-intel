@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "john-jumbo--1.9.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "356a0f76c6415723651e229f005a967fe439eb10fa5f9a33548b8ee98539c785",
+  "formula_sha256": "279bc10c393900a553543c2c31623933091ce25d45308da62ddd3cf547894be0",
   "license": "GPL-2.0-or-later",
   "name": "john-jumbo",
   "pkg_version": "1.9.0_1",
-  "recipe_sha256": "781145b56f5dc394d08f8ec6735550d6a87e3d1c0fc8e600d3970a1fd49a01e1",
-  "release": "intel-44948720879-1-john-jumbo",
+  "recipe_sha256": "aa7ccfb0a7c53a31188cf29e1503e2f3c97cfc8314cd203d7937f67261de193a",
+  "release": "intel-45312177023-1-john-jumbo",
   "revision": 1,
-  "run_id": "44948720879",
+  "run_id": "45312177023",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "63995561b79b74e23e58133b3f26e18fb3d6bb66f4e6b07daa275ffb9b1a4304",
-  "size": 42495779,
+  "sha256": "1c77e317c5315d06e5b8893f1dd916b9fc98f8ccbbc0e5c9e758f8d27eeeb4ac",
+  "size": 42495606,
   "source": {
     "filename": "john-jumbo--1.9.0_1.sources.tar.gz",
-    "sha256": "780cb635803011fbc6931fa2a310b7a560c9081b4a874bb68f736736ac400cf8",
-    "size": 33668728
+    "sha256": "b2010496aabc323b36025a0355ff451bd55737267a29b0d235e9495b96cc390f",
+    "size": 33668730
   },
   "tag": "sequoia",
   "version": "1.9.0",
   "version_scheme": 0,
-  "workflow_commit": "52dba3e073b12192efedb0ee6e83b58c73a202b0"
+  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
 }
