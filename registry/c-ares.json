@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "14b6b228f7fd8921d3d4e4660e6a2d1dde922764",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
   "cellar": "any",
-  "core_commit": "a6a9a75565556333b39415f2a4ebb74f3ee5da3b",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
   "filename": "c-ares--1.34.9.sequoia.bottle.tar.gz",
-  "formula_sha256": "0d6e516cdfac37e00bf121e61db1252ef4e8e89593568039862f081bd639e239",
+  "formula_sha256": "48ce8ac98699a8efa890a0198101bd41f93c907cfa11192d1091fd85bd7f725a",
   "license": "MIT",
   "name": "c-ares",
   "pkg_version": "1.34.9",
-  "recipe_sha256": "38ecf54f8588649b70797e5c47265da78a9fe65baabfb914d7e678637ec6d238",
-  "release": "intel-39395805139-1-c-ares",
+  "recipe_sha256": "a29a6317fae8c915ddb30e55fb053665165825adb4958592bf7d520f1dd2b59c",
+  "release": "intel-45424144272-1-c-ares",
   "revision": 0,
-  "run_id": "39395805139",
+  "run_id": "45424144272",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "b56528a7b1fbc11d42254786a32658c31b69996724bc3b6cf94d33917827b0ac",
-  "size": 327358,
+  "sha256": "2270fab9b9ecb32c6dbda46f9ff359ad04b9b45aec83f05f6841452bf0f14f14",
+  "size": 327369,
   "source": {
     "filename": "c-ares--1.34.9.sources.tar.gz",
-    "sha256": "bd4a2461a6a46b6d0d168f952b49d0173ab2d22d5665b7d5f73dd39071ddfb17",
-    "size": 1087286
+    "sha256": "7679a64e4e9d26ab9cd2b2664805ccc925c217fc014dcaa179104538228d19e1",
+    "size": 1087307
   },
   "tag": "sequoia",
   "version": "1.34.9",
   "version_scheme": 0,
-  "workflow_commit": "7e54d8e2225fde60de0a57ac104aeb9dfef0b477"
+  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
 }
