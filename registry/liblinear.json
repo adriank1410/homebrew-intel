@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "cellar": "any",
+  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "filename": "liblinear--2.50.sequoia.bottle.tar.gz",
+  "formula_sha256": "b72b7ded9394d7e3b4ddcdd14f1372666e4294ff47ad6b03eeac45bfae4c8fe7",
+  "license": "BSD-3-Clause",
+  "name": "liblinear",
+  "pkg_version": "2.50",
+  "recipe_sha256": "81456aa3fd906bc17044b721b58f5d61a90263d98b73e4f6f13c40e1ea452435",
+  "release": "intel-45424144272-1-liblinear",
+  "revision": 0,
+  "run_id": "45424144272",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "9dd1ef6898a65681f518ad0a9ed65adef13d7c09130c2bba92a39f1570842cef",
+  "size": 108001,
+  "source": {
+    "filename": "liblinear--2.50.sources.tar.gz",
+    "sha256": "29f767756e8be1b8da3667b9e6b9a1e93d0c007f45942381dcabf06d56f78382",
+    "size": 78963
+  },
+  "tag": "sequoia",
+  "version": "2.50",
+  "version_scheme": 0,
+  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
+}
