@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "apr-util--1.6.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "ef482589865369d028ded77d7d5a981c69c924512bf0a95f9844d4842332f8b7",
+  "formula_sha256": "e511a159d0bcbd43608b37f332d033b14f8dacf81cd78de21973685b285e04eb",
   "license": "Apache-2.0",
   "name": "apr-util",
   "pkg_version": "1.6.6",
-  "recipe_sha256": "c5e9f4f804ceddee89c84e55f188d93128eaf5f4e09f634aa175ceaa0046b104",
-  "release": "intel-44901803975-1-apr-util",
+  "recipe_sha256": "61347625f78040b6cd25b98fecaf445e595fca9fa3e40a6cda9cb1c666c1e182",
+  "release": "intel-45312177023-1-apr-util",
   "revision": 0,
-  "run_id": "44901803975",
+  "run_id": "45312177023",
   "runtime_dependencies": [
     {
       "formula_sha256": "ad73aa819d91760761c65d44ee7716c44743b1b901360e8967c0277e140c5bdd",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "3c1970347b936b08649015561693157e6e41d4db704f636f7f4b8b4ec1a31233",
-  "size": 247402,
+  "sha256": "e32ad0a6b867375ccd4ba4ccc7031f46e896e14da199c9711b442d061a8e3112",
+  "size": 247425,
   "source": {
     "filename": "apr-util--1.6.6.sources.tar.gz",
-    "sha256": "29300604c1ac9644bc447c0267663c644c8ec5bae361ef9d62741be5b7836deb",
-    "size": 452684
+    "sha256": "3e3cb674b62082ce383ec46ebfc27f0bbe9ee5d9256386354ba0915cf6eba939",
+    "size": 452709
   },
   "tag": "sequoia",
   "version": "1.6.6",
   "version_scheme": 0,
-  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
+  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
 }
