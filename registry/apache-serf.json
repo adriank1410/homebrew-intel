@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "any",
-  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "apache-serf--1.3.10_1.sequoia.bottle.tar.gz",
   "formula_sha256": "044cede44a92aaf5890c5b8464266b38482898681683ada2760875d3d83530d4",
   "license": "Apache-2.0",
   "name": "apache-serf",
   "pkg_version": "1.3.10_1",
   "recipe_sha256": "6d026f6faf703f28a9df784e7f6580e712b483516a93ba93244419293e2fe10c",
-  "release": "intel-44956300339-1-apache-serf",
+  "release": "intel-45335743885-1-apache-serf",
   "revision": 1,
-  "run_id": "44956300339",
+  "run_id": "45335743885",
   "runtime_dependencies": [
     {
       "formula_sha256": "ad73aa819d91760761c65d44ee7716c44743b1b901360e8967c0277e140c5bdd",
@@ -19,7 +19,7 @@
       "pkg_version": "1.7.6"
     },
     {
-      "formula_sha256": "ef482589865369d028ded77d7d5a981c69c924512bf0a95f9844d4842332f8b7",
+      "formula_sha256": "e511a159d0bcbd43608b37f332d033b14f8dacf81cd78de21973685b285e04eb",
       "name": "apr-util",
       "pkg_version": "1.6.6"
     },
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "975d9b05313c8b2f68cb1136fa91cdccb5cc9b360a899f7482e2279492699194",
-  "size": 320857,
+  "sha256": "a57dbaf93527e7e84e55e37b044a91abb0585e2e59a35e1ef3400bbb8e32328e",
+  "size": 320851,
   "source": {
     "filename": "apache-serf--1.3.10_1.sources.tar.gz",
-    "sha256": "b5141390cfc07e958df5c25f59af317f0ffae447fc6f88e5cc799388994eba28",
-    "size": 158663
+    "sha256": "a26d7bf22387faf080d533c94ecfd8dbad17a9a2cda956861f8a7e8dc54f83ff",
+    "size": 158670
   },
   "tag": "sequoia",
   "version": "1.3.10",
   "version_scheme": 0,
-  "workflow_commit": "a084bd11fc0ba688cc6d61da1c68b51c64a8a169"
+  "workflow_commit": "0a2a90f88bda7ccdcae83e2236b6c5ec143cf419"
 }
