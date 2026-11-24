@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
+  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
   "cellar": "any",
-  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
+  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
   "filename": "py3cairo--1.29.2_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "1f039864443a499d2ba9fd12f545548c0aa3d581e10993e44fb26b10e21d9e6c",
+  "formula_sha256": "cae6d40806300efcc86e8d477611842e246c021fd9d3efc4313679cd539de30a",
   "license": {
     "any_of": [
       "LGPL-2.1-only",
@@ -13,10 +13,10 @@
   },
   "name": "py3cairo",
   "pkg_version": "1.29.2_1",
-  "recipe_sha256": "03655e58cf912d065926342e5e598868ab8093c2c39b56dbf7b000f9cfa42892",
-  "release": "intel-44407407355-1-py3cairo",
+  "recipe_sha256": "7a8e9226ebd1094557e27402acbabae8bdd6c945fee26f49a2a2d2ef2e7ebbb2",
+  "release": "intel-45335743885-1-py3cairo",
   "revision": 1,
-  "run_id": "44407407355",
+  "run_id": "45335743885",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c9945cc0b2559dfafb4e560536e087b963aea6d7cfabad2e37c3ef796db4eba3",
-  "size": 257965,
+  "sha256": "c8666d6b98d17bc0f22fae2b93092acba75d6f409f14f22e9247a4d5d275bf8a",
+  "size": 257888,
   "source": {
     "filename": "py3cairo--1.29.2_1.sources.tar.gz",
-    "sha256": "9229e1feafc5e48d6660fb339bf35a748b875af2fb1cf56b4a33aa776753b461",
-    "size": 688444
+    "sha256": "d76f2aff25ed1ff9fa5520480e201a18d9d0d145fc5e0338222dd65fa18e7e63",
+    "size": 688373
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "170409b11766e671a7d95d2c607cab878ca27f4f"
+  "workflow_commit": "0a2a90f88bda7ccdcae83e2236b6c5ec143cf419"
 }
