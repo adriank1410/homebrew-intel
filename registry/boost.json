@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "any",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
   "filename": "boost--1.92.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "ccefee4b83733c3a63ac9e8e7e33f099e9104cef07b5dd9eb4cc4736fd815f18",
   "license": "BSL-1.0",
   "name": "boost",
   "pkg_version": "1.92.0_1",
   "recipe_sha256": "2aa6533404be26245347f79918c925c716397623f167f16a0f7665be14f7f6ef",
-  "release": "intel-45312177023-1-boost",
+  "release": "intel-45582887964-1-boost",
   "revision": 1,
-  "run_id": "45312177023",
+  "run_id": "45582887964",
   "runtime_dependencies": [
     {
       "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
@@ -29,21 +29,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "60af8656482e30c11e35d83708811c95a83b7b6352c37c48a5c0469df2c84ef2",
-  "size": 61980454,
+  "sha256": "050e0e101c20333cabfb57ae7fad72d11f9abb9b1744dfe7708e663223305ecb",
+  "size": 61980830,
   "source": {
     "filename": "boost--1.92.0_1.sources.tar.gz",
-    "sha256": "d7153159459ad8418b295e10c31bac5d599d7eee141269ba72f54f6a346c0a6b",
-    "size": 52664531
+    "sha256": "3effce00d20bc22c709ed9faad99e4df8116343713d302c641ec7bc9e9cf8cac",
+    "size": 52664519
   },
   "tag": "sequoia",
   "version": "1.92.0",
   "version_scheme": 0,
-  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
+  "workflow_commit": "16f71ca4e7126b9477f1bc9a416526d80b91f614"
 }
