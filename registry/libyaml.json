@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "cellar": "any",
+  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "filename": "libyaml--0.2.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "0e6e343f6b705b39e000924796c535b055ad67334a10b7bf76b43d6bc2bbfaef",
+  "license": "MIT",
+  "name": "libyaml",
+  "pkg_version": "0.2.7",
+  "recipe_sha256": "5b23661ef778a46a7b442363a41b0b5f495aba8e4d0e6364cbaaaa6472383a72",
+  "release": "intel-45580648210-1-libyaml",
+  "revision": 0,
+  "run_id": "45580648210",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "b96cb09c8427ef111f71e6dee71751efc4d78400267837e75e9ada733ccbc9b9",
+  "size": 108510,
+  "source": {
+    "filename": "libyaml--0.2.7.sources.tar.gz",
+    "sha256": "86faaf21abaceebe64c7752db44e6195fff671fea13642aaa8dc24d9862a4a28",
+    "size": 126409
+  },
+  "tag": "sequoia",
+  "version": "0.2.7",
+  "version_scheme": 0,
+  "workflow_commit": "98135666f88fbab6b257fd6c7935fd7f483d5345"
+}
