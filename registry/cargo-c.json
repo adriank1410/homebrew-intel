@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
-  "filename": "cargo-c--0.10.26.sequoia.bottle.tar.gz",
-  "formula_sha256": "9f3c36e75a22d2aa4dba6f39651d5383f7472d5576285180287d20781e194afe",
+  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
+  "filename": "cargo-c--0.10.28.sequoia.bottle.tar.gz",
+  "formula_sha256": "4d07909e6d81f08695ba887b99104efc438b613f3aaf260c06272d9f28e4922f",
   "license": "MIT",
   "name": "cargo-c",
-  "pkg_version": "0.10.26",
-  "recipe_sha256": "45f9dd7669f5712e7622510e46396f1181bfaada3b70e95a59928cddd3d7b70b",
-  "release": "intel-45424144272-1-cargo-c",
+  "pkg_version": "0.10.28",
+  "recipe_sha256": "693c51584003350e647467f7e778af8e92dec924f822f16684522fc7f185e3b7",
+  "release": "intel-45520565137-1-cargo-c",
   "revision": 0,
-  "run_id": "45424144272",
+  "run_id": "45520565137",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d47a81eefb87b0a8b0e0381d26e9ceb1f408e7d983b859a7610aa3d87d946cbe",
-  "size": 45234637,
+  "sha256": "cd7b6c2cc1e2021280c68501cd4fc7280fc779432246705e91d879afc3184e4c",
+  "size": 45194819,
   "source": {
-    "filename": "cargo-c--0.10.26.sources.tar.gz",
-    "sha256": "d7ec83a0fbb7f8f8d1899fb4842953e7ec310633be7bd2271c98c2fcc0ae2a4f",
-    "size": 49642319
+    "filename": "cargo-c--0.10.28.sources.tar.gz",
+    "sha256": "d2fa08343de8dc7b1bc54bd64e8f54b94c6d744006d60b1032c680a34b214b8a",
+    "size": 47872048
   },
   "tag": "sequoia",
-  "version": "0.10.26",
+  "version": "0.10.28",
   "version_scheme": 0,
-  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
+  "workflow_commit": "b8a03871b4c8ed73209552205db544669d57ed09"
 }
