@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "aa9f0cef9ac1cc8291e6a1ae240c9c4703b32a49",
+  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
   "filename": "python@3.14--3.14.10.sequoia.bottle.tar.gz",
-  "formula_sha256": "35d59880b0dcc90e9cbb914b58bd0523d08b1f361fb399b757219fc7c09c2390",
+  "formula_sha256": "db9667b9c5a304e95c986ca613ca389426375308c5f17d40688117aa1f0c033f",
   "license": "Python-2.0",
   "name": "python@3.14",
   "pkg_version": "3.14.10",
-  "recipe_sha256": "b067e5a1541e77542cc9c57554a3fe0bca264668697797bab9b82896bd25c707",
-  "release": "intel-44948720879-1-python-at-3.14",
+  "recipe_sha256": "0407d017bd47dea37c07635833c4b2f12097d65038a3d215ad34b495e74eb9d0",
+  "release": "intel-45582887964-1-python-at-3.14",
   "revision": 0,
-  "run_id": "44948720879",
+  "run_id": "45582887964",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -49,21 +49,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "ff1afc1761c5fbdadab2ed3250aebbe174026fbba3867a3b1622a78654e43c56",
-  "size": 19372782,
+  "sha256": "4db9a835d7d988b1704e14568968a84315d702e3a14be86ea677d97986c9cbd7",
+  "size": 19369654,
   "source": {
     "filename": "python@3.14--3.14.10.sources.tar.gz",
-    "sha256": "c8b2a6643e9d51c7cd52a14bc9061000de73b8cc2a2b7dc88523a3ac0122499a",
-    "size": 33886287
+    "sha256": "4c0745bdc55d54193d2c704fe43c0c900f30636bf1b0c59a48d9772686bcb0c9",
+    "size": 33886270
   },
   "tag": "sequoia",
   "version": "3.14.10",
   "version_scheme": 0,
-  "workflow_commit": "52dba3e073b12192efedb0ee6e83b58c73a202b0"
+  "workflow_commit": "16f71ca4e7126b9477f1bc9a416526d80b91f614"
 }
