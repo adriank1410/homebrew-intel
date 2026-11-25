@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "any",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
   "filename": "qtshadertools--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "89a63132037c0e4ea2da4ead98ea366ff22a4e3fb8f707a2d141614359244ae5",
   "license": {
@@ -44,9 +44,9 @@
   "name": "qtshadertools",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "1e16cae751d278ffa593eb9641fa576439e789700ac7b29973affb85daae8c03",
-  "release": "intel-45381359585-1-qtshadertools",
+  "release": "intel-45532188189-1-qtshadertools",
   "revision": 1,
-  "run_id": "45381359585",
+  "run_id": "45532188189",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -59,7 +59,7 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
+      "formula_sha256": "b3570dde6ce8d6d74b06f87254e2afe3bca2e285f05ae666fa28db05328359a3",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -215,15 +215,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8627286f6aeebb75bda0a0ea7ecfe227c43b7f34f47b2039d267d3eef1148182",
-  "size": 1810564,
+  "sha256": "c1596b8ecddc18e46235e9cb89cb785086461a0b2d24d49f473983991d8ea2ae",
+  "size": 1810555,
   "source": {
     "filename": "qtshadertools--6.12.0_1.sources.tar.gz",
-    "sha256": "bbc0a3368ab3a895789399dafc4a9d9916ab0edb32868e8ccdf83436b1852b93",
-    "size": 1310102
+    "sha256": "cf386a94c50b5a5c097c79b22f0b71c37aee2d2066b31620c0296d996e1925dc",
+    "size": 1310097
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "1a282e8f0265fa7f010b72588ebc48261baea58f"
+  "workflow_commit": "77852bc0291c1b22b096e6a3f0374bcbaff3cadb"
 }
