@@ -185,31 +185,33 @@ class RepeatableHoldTests(unittest.TestCase):
     def test_history_loader_reads_newest_artifact_records_and_keeps_tokens_out_of_argv(self):
         descriptor = hold_descriptor("archi-steam-farm", asf_plan(), asf_records())
         record = make_failure_record(descriptor, "dotnet_analyzer_CA1307", "9")
-        with tempfile.TemporaryDirectory() as folder:
-            archive = Path(folder) / "artifact.zip"
-            with zipfile.ZipFile(archive, "w") as zf:
-                zf.writestr("intelbrew-failure.json", json.dumps(record))
-            calls = []
+        calls = []
 
-            def fake_run(args, **kwargs):
-                calls.append(args)
-                self.assertNotIn("secret-token", args)
-                if args[:3] == ["gh", "api", "repos/adriank1410/homebrew-intel/actions/artifacts"]:
-                    return json.dumps({"artifacts": [
-                        {"id": 1, "name": "intelbrew-failure-archi-steam-farm",
-                         "expired": False, "created_at": "2026-11-13T10:00:00Z"},
-                    ]})
-                if "--output" in args:
-                    Path(args[args.index("--output") + 1]).write_bytes(archive.read_bytes())
-                    return ""
-                raise AssertionError(args)
+        def fake_run(args, **kwargs):
+            calls.append(args)
+            self.assertNotIn("secret-token", args)
+            if args[:2] == ["gh", "api"]:
+                # Listing must be an explicit GET: -f/-F alone make gh api POST (404).
+                self.assertEqual(args[2:5], ["--method", "GET", "repos/adriank1410/homebrew-intel/actions/artifacts"])
+                return json.dumps({"artifacts": [
+                    {"id": 1, "name": "intelbrew-failure-archi-steam-farm", "expired": False,
+                     "created_at": "2026-11-13T10:00:00Z", "workflow_run": {"id": 9}},
+                ]})
+            if args[:3] == ["gh", "run", "download"]:
+                self.assertNotIn("--output", args)
+                self.assertEqual(args[3], "9")
+                self.assertEqual(args[args.index("--name") + 1], "intelbrew-failure-archi-steam-farm")
+                folder = Path(args[args.index("--dir") + 1])
+                (folder / "intelbrew-failure.json").write_text(json.dumps(record))
+                return ""
+            raise AssertionError(args)
 
-            history = load_failure_history(
-                "adriank1410/homebrew-intel", "archi-steam-farm", run=fake_run,
-                env={"GH_TOKEN": "secret-token"},
-            )
-            self.assertEqual(history[0]["run_id"], "9")
-            self.assertTrue(any(arg == "--output" for args in calls for arg in args))
+        history = load_failure_history(
+            "adriank1410/homebrew-intel", "archi-steam-farm", run=fake_run,
+            env={"GH_TOKEN": "secret-token"},
+        )
+        self.assertEqual(history[0]["run_id"], "9")
+        self.assertEqual(consecutive_matches(history, descriptor, "dotnet_analyzer_CA1307"), 1)
 
     def test_history_loader_does_not_call_github_without_a_token(self):
         def boom(*args, **kwargs):
