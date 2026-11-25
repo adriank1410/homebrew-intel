@@ -5,8 +5,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import zipfile
-from io import BytesIO
 from pathlib import Path
 
 from .core import Error, canonical_name, require_sha, run
@@ -175,7 +173,8 @@ def load_failure_history(repository, root, *, run=run, env=None):
     name = artifact_name(root)
     try:
         payload = run(
-            ["gh", "api", f"repos/{repository}/actions/artifacts",
+            # -f/-F switch gh api to POST unless the method is explicit.
+            ["gh", "api", "--method", "GET", f"repos/{repository}/actions/artifacts",
              "-f", f"name={name}", "-F", "per_page=20"],
             env=env if env is not None else _gh_env(),
         )
@@ -196,32 +195,32 @@ def load_failure_history(repository, root, *, run=run, env=None):
             break
         if not isinstance(artifact, dict) or artifact.get("expired") or artifact.get("name") != name:
             continue
-        artifact_id = artifact.get("id")
-        if not artifact_id:
+        workflow_run = artifact.get("workflow_run")
+        run_id = workflow_run.get("id") if isinstance(workflow_run, dict) else None
+        if not run_id:
             continue
-        record = _download_failure_record(repository, artifact_id, run=run, env=env)
+        record = _download_failure_record(repository, run_id, name, run=run, env=env)
         if record is not None:
             records.append(record)
     return records
 
 
-def _download_failure_record(repository, artifact_id, *, run, env):
+def _download_failure_record(repository, run_id, name, *, run, env):
+    # gh api has no --output flag; gh run download fetches and unpacks the artifact.
     try:
         import tempfile
         with tempfile.TemporaryDirectory(prefix="intelbrew-failure-art-") as folder:
-            archive = Path(folder) / "artifact.zip"
             run(
-                ["gh", "api", f"repos/{repository}/actions/artifacts/{artifact_id}/zip",
-                 "--output", str(archive)],
+                ["gh", "run", "download", str(int(run_id)), "--repo", repository,
+                 "--name", name, "--dir", folder],
                 env=env if env is not None else _gh_env(),
             )
-            with zipfile.ZipFile(archive) as zf:
-                names = [item for item in zf.namelist() if item.endswith("intelbrew-failure.json")]
-                if len(names) != 1:
-                    return None
-                record = json.loads(zf.read(names[0]).decode("utf-8"))
+            paths = list(Path(folder).rglob("intelbrew-failure.json"))
+            if len(paths) != 1:
+                return None
+            record = json.loads(paths[0].read_text(encoding="utf-8"))
         return validate_failure_record(record)
-    except (Error, OSError, ValueError, TypeError, KeyError, zipfile.BadZipFile, json.JSONDecodeError):
+    except (Error, OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
         return None
 
 
