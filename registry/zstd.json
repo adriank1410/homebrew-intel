@@ -1,0 +1,50 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "cellar": "any",
+  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "filename": "zstd--1.6.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
+  "license": {
+    "all_of": [
+      {
+        "any_of": [
+          "BSD-3-Clause",
+          "GPL-2.0-only"
+        ]
+      },
+      "BSD-2-Clause",
+      "MIT"
+    ]
+  },
+  "name": "zstd",
+  "pkg_version": "1.6.0",
+  "recipe_sha256": "4c5128ea49d4bb18f44acb352d80c7143a9c088205ffe6b885e364db498ab914",
+  "release": "intel-45580648210-1-zstd",
+  "revision": 0,
+  "run_id": "45580648210",
+  "runtime_dependencies": [
+    {
+      "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
+      "name": "lz4",
+      "pkg_version": "1.11.1"
+    },
+    {
+      "formula_sha256": "b46274b02361452f897a3cdbd084aed44474f58ec53a53ca67dda99b992cd520",
+      "name": "xz",
+      "pkg_version": "5.8.4"
+    }
+  ],
+  "schema": 1,
+  "sha256": "2ec2b283d9de414886ad54a429c80d8ecd2b856358d38d9f8a4ac193748293cd",
+  "size": 1107899,
+  "source": {
+    "filename": "zstd--1.6.0.sources.tar.gz",
+    "sha256": "f7ff2fbf3ceb398815b234a23ac94b671a1bf99e9b141e56bae0618dad2aeb1d",
+    "size": 2593282
+  },
+  "tag": "sequoia",
+  "version": "1.6.0",
+  "version_scheme": 0,
+  "workflow_commit": "98135666f88fbab6b257fd6c7935fd7f483d5345"
+}
