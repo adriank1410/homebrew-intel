@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "any",
-  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
-  "filename": "expat--2.10.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "67e42a0460fdc2dbe8d1e147816d3cd9592f53809b893d2b604f4ee19714dfe8",
+  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
+  "filename": "expat--2.11.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "8873c6c9cd583c0c5d82fef4a09c6c927d21a553db4619ac935b35bda0431d02",
   "license": "MIT",
   "name": "expat",
-  "pkg_version": "2.10.0",
-  "recipe_sha256": "8e3578ba631db1d8c2cf743fb71b0b6de5d5b80eee4d868df0c551d715730ec8",
-  "release": "intel-41532187650-1-expat",
+  "pkg_version": "2.11.0",
+  "recipe_sha256": "fcf538a6a3c6cc5fbc7628a4a0a529ffc14e92ac34a40b7a6f7b884f60bb18bf",
+  "release": "intel-45520565137-1-expat",
   "revision": 0,
-  "run_id": "41532187650",
+  "run_id": "45520565137",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "3477e68577e4f15dec812fcdca5f97326f6235e199420a5d4b26c6ee7ea4561b",
-  "size": 270054,
+  "sha256": "bd3ce68c8b67d53f0d16dc7c9f8714403b2d7ffa9c8951e5adcdb57f686a5653",
+  "size": 282885,
   "source": {
-    "filename": "expat--2.10.0.sources.tar.gz",
-    "sha256": "eb1877eed4e32571909b454e9e9df2fd6c3da1cb7e73c12e80bc263cb5cb0e78",
-    "size": 548700
+    "filename": "expat--2.11.0.sources.tar.gz",
+    "sha256": "2358f6c8b9eb0d8230e208f79888345f8256bcb754b950b3828266726d552df7",
+    "size": 565192
   },
   "tag": "sequoia",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "version_scheme": 0,
-  "workflow_commit": "63b1d766c35f8a210a999afdc3783b7b92aca519"
+  "workflow_commit": "b8a03871b4c8ed73209552205db544669d57ed09"
 }
