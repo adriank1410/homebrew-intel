@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "cellar": "any_skip_relocation",
+  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
+  "filename": "cue--0.18.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "5ec923c15666069f38d4c03ee769689d458667a343c7a0d0e6cd92c50d283dda",
+  "license": "Apache-2.0",
+  "name": "cue",
+  "pkg_version": "0.18.0",
+  "recipe_sha256": "bfa0c7970faeec80540f8bdf44f86a964387cd76637cbe43fa2c90c5f8515319",
+  "release": "intel-45520565137-1-cue",
+  "revision": 0,
+  "run_id": "45520565137",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "4a85a2afb9955bb60de0d4b48e20ea5272e7b47963f143b61d87acaed41e0f46",
+  "size": 10416337,
+  "source": {
+    "filename": "cue--0.18.0.sources.tar.gz",
+    "sha256": "42ee5a567a3877ffa97f8e930b413bf97388319f2e28e35e31d1ee09fbaa0fa4",
+    "size": 34654297
+  },
+  "tag": "sequoia",
+  "version": "0.18.0",
+  "version_scheme": 0,
+  "workflow_commit": "b8a03871b4c8ed73209552205db544669d57ed09"
+}
