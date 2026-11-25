@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "any",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
   "filename": "qtconnectivity--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "f5f35bece45a77ec04a6b61a0e3614102984bcb70aea88d3ae1f45fb4d304033",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtconnectivity",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "2fa8928debb66ec8208872ec190e33668a84440cce5be84d0e6b633ead1aa049",
-  "release": "intel-45381359585-1-qtconnectivity",
+  "release": "intel-45532188189-1-qtconnectivity",
   "revision": 1,
-  "run_id": "45381359585",
+  "run_id": "45532188189",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -35,7 +35,7 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
+      "formula_sha256": "b3570dde6ce8d6d74b06f87254e2afe3bca2e285f05ae666fa28db05328359a3",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "cef720299a7be7fcced1c2b0601d629569168109fe27f7eaab1027fe0c1ff1e4",
-  "size": 435320,
+  "sha256": "5a41f9fb77d56fb9dc1c6eb0b0c9dd68c4b56b05d956688706f76c3ead7db88a",
+  "size": 435347,
   "source": {
     "filename": "qtconnectivity--6.12.0_1.sources.tar.gz",
-    "sha256": "2815e2a7e5072bff051c1b8678f860907e62439e3aabac9c11b346ef0cf81102",
-    "size": 1103433
+    "sha256": "bc6821f0104de32f26448c546ac198150de739bf9b9b8cf2dc91c9386bfdc106",
+    "size": 1103434
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "1a282e8f0265fa7f010b72588ebc48261baea58f"
+  "workflow_commit": "77852bc0291c1b22b096e6a3f0374bcbaff3cadb"
 }
