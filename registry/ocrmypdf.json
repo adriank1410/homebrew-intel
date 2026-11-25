@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "any",
-  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
+  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
   "filename": "ocrmypdf--17.14.2.sequoia.bottle.tar.gz",
   "formula_sha256": "75d60702aa3b7031bdbf92e1f759835533133d8fbc0f13d65182ede41d8ad23f",
   "license": "MPL-2.0",
   "name": "ocrmypdf",
   "pkg_version": "17.14.2",
   "recipe_sha256": "fcac9172692b81be7d4a6bf636262532d86353eca1a1cf45e058e45a2c3a3dbf",
-  "release": "intel-45059163998-1-ocrmypdf",
+  "release": "intel-45552764429-1-ocrmypdf",
   "revision": 0,
-  "run_id": "45059163998",
+  "run_id": "45552764429",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -29,17 +29,17 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
+      "formula_sha256": "b3570dde6ce8d6d74b06f87254e2afe3bca2e285f05ae666fa28db05328359a3",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
     {
-      "formula_sha256": "7a6f9d7e2e2382b3fd876445965af5cbcca91bf37b08583aa5c19530ed9a4b80",
+      "formula_sha256": "395c62177c3d87949c1de27fe08304bda3c94ad5f1c5be6f04c48ac89b86a7a4",
       "name": "cffi",
       "pkg_version": "2.1.1_1"
     },
     {
-      "formula_sha256": "598e810dcea0f60929c2237ad0b84805bdcfb5d4cca756a2e88ea9eef1ca5366",
+      "formula_sha256": "b855dc21183f7c5c948aa80fd60e5cae96623cf9f316130d4c60bf09b29dc055",
       "name": "cryptography",
       "pkg_version": "50.0.2_2"
     },
@@ -49,9 +49,9 @@
       "pkg_version": "1.5.5"
     },
     {
-      "formula_sha256": "1f3e7264a319af3096a9487b6847cf8dc1f888c7798a66b5f91bde1459a7a421",
+      "formula_sha256": "073adf5442e10c663c4d24e74a46bb2f03b0c787b11491373912cae821699a9c",
       "name": "ffmpeg",
-      "pkg_version": "9.0.2_1"
+      "pkg_version": "9.1"
     },
     {
       "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
@@ -294,7 +294,7 @@
       "pkg_version": "10.49"
     },
     {
-      "formula_sha256": "7fd4c91aa6d3997eca23962ddf9cc37c142e1136de69e241808d35a5526c2a72",
+      "formula_sha256": "2f04afdff8fb73acd67d439d7bed2d390d04865563c618f9e8bdd5857ed20f1f",
       "name": "pillow",
       "pkg_version": "13.0.0"
     },
@@ -309,7 +309,7 @@
       "pkg_version": "3.0.3"
     },
     {
-      "formula_sha256": "285eb54ec96293bebfa446ae058e25cd02243e94da5e71edf4862ed2a3863a86",
+      "formula_sha256": "6873bf8a55dbb83dfccb338f59f3cd1d3d95715ad505cf85906aa6e202c30289",
       "name": "pybind11",
       "pkg_version": "3.1.0_1"
     },
@@ -319,12 +319,12 @@
       "pkg_version": "3.12"
     },
     {
-      "formula_sha256": "6a96c05f76aada70a4f76c970de6a5c0937e8e99ba45a62b4e1a33397af989b0",
+      "formula_sha256": "7789edc1a1c771b9923d31c51e89865fcd40fd4cd9de166b13edd46f8e45839b",
       "name": "pydantic",
       "pkg_version": "2.14.4"
     },
     {
-      "formula_sha256": "f9fa25491a32c1d9546b393101c09f7e8f54b1d88f6a01d220ced032160c1c69",
+      "formula_sha256": "75a937345ba05b51353f167440ce2d31bb1a0ed4aeeba7b05970d5276118008f",
       "name": "python@3.15",
       "pkg_version": "3.15.2"
     },
@@ -339,7 +339,7 @@
       "pkg_version": "8.3.6"
     },
     {
-      "formula_sha256": "c5646cf71af7a872236531773c35d024f4eef004e03ccdca4e52f0e28ce6878e",
+      "formula_sha256": "f7e2dd93a55c7c89a7b04f15bcd72ac80f0a2090d2b0fa1832557fc4ed964d56",
       "name": "rpds-py",
       "pkg_version": "2026.9.1_1"
     },
@@ -399,21 +399,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
       "name": "zstd",
       "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "556c9a6315cb002121e9891f65c213657d70d00854ddc9c74bde9b8d5ca1ed0d",
-  "size": 18184420,
+  "sha256": "93264f42604233d8c4e38e096f08914b480072de44fd8831a747a93b3920af32",
+  "size": 18184371,
   "source": {
     "filename": "ocrmypdf--17.14.2.sources.tar.gz",
-    "sha256": "2501bd847e28aa282ce6ac8a1738e174744b9b92c0adb473d24332a973e6ed13",
-    "size": 82043888
+    "sha256": "e9ea0d29e8db3ce5df9762f09e321706cafeb5805bd9e208955ccadc0f9d71b3",
+    "size": 82043885
   },
   "tag": "sequoia",
   "version": "17.14.2",
   "version_scheme": 0,
-  "workflow_commit": "cb3ae3eecba8a64d2568396c2abf8eb8082cae1c"
+  "workflow_commit": "7c673079c3d03f99d5460822a102a588a5f07be9"
 }
