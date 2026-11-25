@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "7ef183d10e7d6e5620d7124b744b1dfbf69fc108",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "any",
-  "core_commit": "9575b2295e8b309added7320c50141fa4eac761b",
+  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
   "filename": "chafa--1.18.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "20d045959aa94854a989f4d559fefbc3e4c156172b9d90960621ab93cfba1c11",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3_1",
   "recipe_sha256": "c1b5ac197ce0e9a98993d1c3315bf081cb8059e41009399baf1f2922fc04035a",
-  "release": "intel-45194257023-1-chafa",
+  "release": "intel-45544994512-1-chafa",
   "revision": 1,
-  "run_id": "45194257023",
+  "run_id": "45544994512",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -24,7 +24,7 @@
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "41465242f15e628a91c5a27268de21555cba72553fe50a6b198d584048fe9b3a",
+      "formula_sha256": "b3570dde6ce8d6d74b06f87254e2afe3bca2e285f05ae666fa28db05328359a3",
       "name": "cairo",
       "pkg_version": "1.18.6"
     },
@@ -239,21 +239,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "e40f1de5b4e53faf64cad3d24dd74e28948d674caf96b3229310ce78e66b030e",
+      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
       "name": "zstd",
       "pkg_version": "1.5.7_1"
     }
   ],
   "schema": 1,
-  "sha256": "ab907be6db605a088f652ee9fe04de4c3a21a2fb47004ba0a3cffdc643a77898",
-  "size": 535111,
+  "sha256": "d5d6a31c2433235579454fb51edbc5f9462a7f9fb665d711a9ede36d7dc67376",
+  "size": 535068,
   "source": {
     "filename": "chafa--1.18.3_1.sources.tar.gz",
-    "sha256": "ce43ebebe450f74139fd5759c82ced0a8243ce13257085b61ed1118b6353cf53",
-    "size": 1091684
+    "sha256": "1e4020aebdcd80860432111bb49200d7b0b5cb22cc1db817fa3e4071e0252b51",
+    "size": 1091695
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "9a8a7bd3594d2da518d25b1c5335601767d68830"
+  "workflow_commit": "ceb9077f3cb8fbc69d7e0666f29f3a4b49bc5416"
 }
