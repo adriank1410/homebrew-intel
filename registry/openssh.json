@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
   "filename": "openssh--10.6p2.sequoia.bottle.tar.gz",
   "formula_sha256": "379a42ad0e323ac28b5602f0f6809ac4aa3f74b1112cbccb3d49de035f15bc37",
   "license": "SSH-OpenSSH",
   "name": "openssh",
   "pkg_version": "10.6p2",
   "recipe_sha256": "5426a5534199ea12f570e393a00c1ab3735eb2a8594f82814b88d3959b2a8102",
-  "release": "intel-45381359585-1-openssh",
+  "release": "intel-45683572450-1-openssh",
   "revision": 0,
-  "run_id": "45381359585",
+  "run_id": "45683572450",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -69,21 +69,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "174c0dd259c1fb24d4e9e3c64d56141733e1a09444c0d63f874b568c8195e2b2",
-  "size": 3284279,
+  "sha256": "e8acf902d6e6cf56d14b9e3f95401e62efc27d2bd05016b5b86243c514c1891f",
+  "size": 3284289,
   "source": {
     "filename": "openssh--10.6p2.sources.tar.gz",
-    "sha256": "006380c8a09192fd8dc0b30bbb89a24e04a1292945b8fcf10e82e404111447dd",
-    "size": 2361694
+    "sha256": "d0aeb33b0e17ec3c831c36b8364931597c4f1cd491e485f061727a665d16699c",
+    "size": 2361687
   },
   "tag": "sequoia",
   "version": "10.6p2",
   "version_scheme": 0,
-  "workflow_commit": "1a282e8f0265fa7f010b72588ebc48261baea58f"
+  "workflow_commit": "8880a63ba1f800b76ffb810e55e34354d3afd18b"
 }
