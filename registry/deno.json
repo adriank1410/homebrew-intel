@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
   "filename": "deno--2.9.8.sequoia.bottle.tar.gz",
   "formula_sha256": "bd807084794cc89ef75696bef58f6b6cb6519a6ed9c1f2a78163bf3b7c331035",
   "license": "MIT",
   "name": "deno",
   "pkg_version": "2.9.8",
   "recipe_sha256": "f309c34c36d3ba08847214324ff0c4e4b06d8a6b3f4340e38fcf66f9c85feaf6",
-  "release": "intel-45424144272-1-deno",
+  "release": "intel-45719874251-1-deno",
   "revision": 0,
-  "run_id": "45424144272",
+  "run_id": "45719874251",
   "runtime_dependencies": [
     {
       "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
@@ -64,21 +64,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "470b402c3a223e7652780fb8546eb28a53fbd8b9a98d4d921be97cabd86c311f",
-  "size": 47950158,
+  "sha256": "056851cb4da093004c4af99e72c6897a00c981ef6eb5faef4f525fcf3fda1496",
+  "size": 47949949,
   "source": {
     "filename": "deno--2.9.8.sources.tar.gz",
-    "sha256": "8a5cba99af01bc94d8cbbf61485bae89e67c96af59a4eaf681fa8ed25ba00c52",
-    "size": 188229551
+    "sha256": "9eb673b286691e7c2868066aea625a3f29a360a11ca719db9a33484938cbc17b",
+    "size": 188231283
   },
   "tag": "sequoia",
   "version": "2.9.8",
   "version_scheme": 0,
-  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
+  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
 }
