@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
   "cellar": "any",
-  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
+  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
   "filename": "img2pdf--0.6.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "90c4ba7ad1d69500dad8bbc000f8b2c207d25cc4b3305cb2f55dbccaae12f288",
   "license": "LGPL-3.0-or-later",
   "name": "img2pdf",
   "pkg_version": "0.6.3_1",
   "recipe_sha256": "090f19d724578f6de713cd90b39c5627775418d0f69580a6576450a20496aa9e",
-  "release": "intel-45532188189-1-img2pdf",
+  "release": "intel-45750552016-1-img2pdf",
   "revision": 1,
-  "run_id": "45532188189",
+  "run_id": "45750552016",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -239,21 +239,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "13f6c229561d47686a4ddd7f11ab65d68adb02af9429d6252fca88701864577d",
-  "size": 2592778,
+  "sha256": "8db415e88c33edf001e9a141086183803dd017aa32179eb0ca9401e8c4601a66",
+  "size": 2592752,
   "source": {
     "filename": "img2pdf--0.6.3_1.sources.tar.gz",
-    "sha256": "d61a796ed3c29906f7e40076124c48e46839ce8043ee349332df730e65d189ef",
-    "size": 14626728
+    "sha256": "6e1e397a37e7d3c994736b651164c16f9fcf9c829e52441925feab3dadbca280",
+    "size": 14626729
   },
   "tag": "sequoia",
   "version": "0.6.3",
   "version_scheme": 0,
-  "workflow_commit": "77852bc0291c1b22b096e6a3f0374bcbaff3cadb"
+  "workflow_commit": "9f030b64eda58c43e50de04a545372dab1aac75b"
 }
