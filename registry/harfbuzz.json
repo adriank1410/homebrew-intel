@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
   "filename": "harfbuzz--15.2.0.sequoia.bottle.tar.gz",
   "formula_sha256": "96cd1945dcf88b61ab17cc1d1f4764e79c7693bfd573e963b46f014a9f5fb54c",
   "license": "MIT",
   "name": "harfbuzz",
   "pkg_version": "15.2.0",
   "recipe_sha256": "458898a2cea6434480a664aa8a399b13b23b61f8caef60baeb9da686a4f4f178",
-  "release": "intel-45510049198-1-harfbuzz",
+  "release": "intel-45857387171-1-harfbuzz",
   "revision": 0,
-  "run_id": "45510049198",
+  "run_id": "45857387171",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -39,9 +39,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -120,15 +120,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d5180e44ea7c608faa4df134646e473b15e83b3f43741a7ffe93cbf53548f1ae",
-  "size": 4933262,
+  "sha256": "b1b1e61dfad6fab93b0ae53db0485e80510bc8f27f8d19dbc69467a1f34e8406",
+  "size": 4933276,
   "source": {
     "filename": "harfbuzz--15.2.0.sources.tar.gz",
-    "sha256": "18d5bd682d520d572d056ea91eac44ba4e40e3a20b125ded1cf9f91f284a3626",
-    "size": 20780262
+    "sha256": "70904425ad40a0da153c1bda0273f21253c7af22806170a40cc5b5c235b207d0",
+    "size": 20780258
   },
   "tag": "sequoia",
   "version": "15.2.0",
   "version_scheme": 0,
-  "workflow_commit": "aebe65671e2d544f22ace21d6cbb7fe4238f87c8"
+  "workflow_commit": "8338d1dd17fa2af3e7262cefe96f9894aea2ce08"
 }
