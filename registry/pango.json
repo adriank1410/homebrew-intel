@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
   "cellar": "any",
-  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
+  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
   "filename": "pango--1.58.2.sequoia.bottle.tar.gz",
   "formula_sha256": "d3bbc69122793bfff00b8a73eb67b601ca5aa6eb73af7827a76ee9a897bc6f76",
   "license": "LGPL-2.0-or-later",
   "name": "pango",
   "pkg_version": "1.58.2",
   "recipe_sha256": "76a53ae335049f16d35ec276bcc72d31f03a8e159bac858e4d0fdb911fb10d78",
-  "release": "intel-45520565137-1-pango",
+  "release": "intel-45864021132-1-pango",
   "revision": 0,
-  "run_id": "45520565137",
+  "run_id": "45864021132",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -44,9 +44,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -140,15 +140,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4616c19836b0739f3c2cec227781ea0939d50d5c053aba96b5a759f44ae83227",
-  "size": 882841,
+  "sha256": "73e35d6418c17197b62cb143b79b0d6176309c90bd914353190003dae69ff7d9",
+  "size": 882822,
   "source": {
     "filename": "pango--1.58.2.sources.tar.gz",
-    "sha256": "2b60c07a2f9d9743524ffb27afc8469bf75c1effd2c00c7bde8cc204692431fd",
-    "size": 1932743
+    "sha256": "69f6a4ebc95e1f4305e70984067eb54549b0db238fad9d322da8a530994c7920",
+    "size": 1932737
   },
   "tag": "sequoia",
   "version": "1.58.2",
   "version_scheme": 0,
-  "workflow_commit": "b8a03871b4c8ed73209552205db544669d57ed09"
+  "workflow_commit": "6bcdcc8108c491aa9a95f4e8f1ecdc69701cd3ec"
 }
