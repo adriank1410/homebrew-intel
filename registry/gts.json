@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
   "filename": "gts--0.7.6_4.sequoia.bottle.tar.gz",
   "formula_sha256": "9f96b0add0376ef2ff3a639c5ef9aa39c20b7459900284d48b841dbc4ebe6029",
   "license": "LGPL-2.0-or-later",
   "name": "gts",
   "pkg_version": "0.7.6_4",
   "recipe_sha256": "018ef6238ed29972628b043e1b8db765b36921bc7b7b7358ed9a90de931a01b6",
-  "release": "intel-45683572450-1-gts",
+  "release": "intel-45767643558-1-gts",
   "revision": 4,
-  "run_id": "45683572450",
+  "run_id": "45767643558",
   "runtime_dependencies": [
     {
       "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
@@ -24,9 +24,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "820f24b91bfe445426e39da65f50100a95dfa56e4a59e4805127931573152b1e",
@@ -90,15 +90,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6fbd6d947271801f6fd96008842e122c3036f7bd6dbba49a0c5eb21f649fc599",
-  "size": 431598,
+  "sha256": "ea17f7051b4d4fa511848a4993cbdca588b42371d985b1464de5738ed3db6dbb",
+  "size": 431590,
   "source": {
     "filename": "gts--0.7.6_4.sources.tar.gz",
-    "sha256": "3a0a53e11b86f9ddb7bfaf8fb172e78ed4b1c4c2681849b5311eff2d0bd47d07",
-    "size": 959605
+    "sha256": "3fcff760229d00907eb1eb28c81124e271fb7c1c39ba2964f5e2c6ffbbfefe38",
+    "size": 959606
   },
   "tag": "sequoia",
   "version": "0.7.6",
   "version_scheme": 0,
-  "workflow_commit": "8880a63ba1f800b76ffb810e55e34354d3afd18b"
+  "workflow_commit": "712ef8134b7882031414333ea1de9252531f1581"
 }
