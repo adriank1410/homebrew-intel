@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
   "filename": "cairo--1.18.6.sequoia.bottle.tar.gz",
   "formula_sha256": "b3570dde6ce8d6d74b06f87254e2afe3bca2e285f05ae666fa28db05328359a3",
   "license": {
@@ -14,9 +14,9 @@
   "name": "cairo",
   "pkg_version": "1.18.6",
   "recipe_sha256": "31a78b5281a972ebb2384541828caf9b121e5582c4620ebdef77e1419f0c61f1",
-  "release": "intel-45424144272-1-cairo",
+  "release": "intel-45767643558-1-cairo",
   "revision": 0,
-  "run_id": "45424144272",
+  "run_id": "45767643558",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -39,9 +39,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
@@ -110,15 +110,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "14b72247fa2207d48f681099eb19eb673b9a7f105422a1b3be1482ef596cdc27",
-  "size": 1648650,
+  "sha256": "a88d35ee3a3ec41a30b33a15d2c9afca84c7e5c952f747080c718de980b6af87",
+  "size": 1648638,
   "source": {
     "filename": "cairo--1.18.6.sources.tar.gz",
-    "sha256": "8f573fc9acb1ff05883505eed4a228048e2f849f7273c1710c9e8af2de5ad236",
-    "size": 32764034
+    "sha256": "bf05045784cbc3ab8ed69cde848fccd242a789d4b3cc5092006feeb97cfd9060",
+    "size": 32764066
   },
   "tag": "sequoia",
   "version": "1.18.6",
   "version_scheme": 0,
-  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
+  "workflow_commit": "712ef8134b7882031414333ea1de9252531f1581"
 }
