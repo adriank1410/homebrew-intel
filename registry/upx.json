@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "2833c25c11846269f89b8c0bd90abf58bcba89fe",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any_skip_relocation",
-  "core_commit": "3731c916d5263af6800a4247924d9cb454fd636a",
-  "filename": "upx--5.3.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "37ad4b700d899f0469be48d692b8626e30bfd6e81d2139491c36db29264e9331",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
+  "filename": "upx--5.3.1.sequoia.bottle.tar.gz",
+  "formula_sha256": "1ed06869a26ab97e366cf8a52ca725be8266f7162720450c48008853c2ad59dd",
   "license": "GPL-2.0-or-later",
   "name": "upx",
-  "pkg_version": "5.3.0",
-  "recipe_sha256": "03750ff4ed9464e16f4131b7394529c1e48736f45b04826bee430394f12549d2",
-  "release": "intel-40802566607-1-upx",
+  "pkg_version": "5.3.1",
+  "recipe_sha256": "a9a934f5aadadeb478e0f7368bb6556568d6a2d210d6400b488e710ab314d3bf",
+  "release": "intel-45872504486-1-upx",
   "revision": 0,
-  "run_id": "40802566607",
+  "run_id": "45872504486",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "6d0ef7896fc55581f1acecac5610ab000a17ac504af3fe5af30e2b58061b11e0",
-  "size": 1085319,
+  "sha256": "74944005cd54dfdd5bb339788b25233ec778fde2a3a269df5e7812e47d308668",
+  "size": 1084315,
   "source": {
-    "filename": "upx--5.3.0.sources.tar.gz",
-    "sha256": "f24609c64afe1f79eb249bc6c1505c55cdb0a5a25dd1725cfc327c26cd72e9ce",
-    "size": 1872994
+    "filename": "upx--5.3.1.sources.tar.gz",
+    "sha256": "7c0626e4f3f16bdf749be62bd8cbbdc378b533a576f3daaeeb42fc7fa67d6abf",
+    "size": 1886391
   },
   "tag": "sequoia",
-  "version": "5.3.0",
+  "version": "5.3.1",
   "version_scheme": 0,
-  "workflow_commit": "d8805f024a17443690d0e194e419b502b64960ff"
+  "workflow_commit": "93e195c2875c3dd2b1f0373476d7d42eb08cf021"
 }
