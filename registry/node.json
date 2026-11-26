@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "node--26.13.1_4.sequoia.bottle.tar.gz",
   "formula_sha256": "5e44e0602fc416e8a68b676a9e964ee723de7f3c73c4f6684057a085c0faa5e1",
   "license": "MIT",
   "name": "node",
   "pkg_version": "26.13.1_4",
   "recipe_sha256": "32c64d7b4d2c5511d65b703b18eacd71acff2109f440d32cfb5ddff0c2de7b78",
-  "release": "intel-45719874251-1-node",
+  "release": "intel-45889913035-1-node",
   "revision": 4,
-  "run_id": "45719874251",
+  "run_id": "45889913035",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -59,9 +59,9 @@
       "pkg_version": "79.1"
     },
     {
-      "formula_sha256": "1b972649c2618bd03b52a4ed2e7ee8e3a736dbbb2859d0602a3fc8dbbddcca61",
+      "formula_sha256": "96090dd0b9619004f3ac02156cf6c20a291537c9e1b79400a056adec23beb5ad",
       "name": "libffi",
-      "pkg_version": "3.8.1"
+      "pkg_version": "3.8.2"
     },
     {
       "formula_sha256": "ad7f105d2df6c62cd286220d88428a99cd763933c0880c8e1049fbb858092e17",
@@ -135,15 +135,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "0f1623ebccb2f2e944270298565a918b619aa7c559f57bd68c8af09afcf75f26",
-  "size": 21763599,
+  "sha256": "e604aac1f76963a37ebb4849bc33ffab92e44e2b5af89499de86287b0cb8877d",
+  "size": 21764089,
   "source": {
     "filename": "node--26.13.1_4.sources.tar.gz",
-    "sha256": "0dbe73844b85ab8e1929bc53561e58a5eda015c9c1ff8ea17eb45c0ded7075c6",
-    "size": 66618777
+    "sha256": "d87fd47643397353498eb88a4ba46d6eebaadc80c29f178535c8020e6b34b118",
+    "size": 66618787
   },
   "tag": "sequoia",
   "version": "26.13.1",
   "version_scheme": 0,
-  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
+  "workflow_commit": "2675516b95d883326e827c624e6a6dbae98fdf81"
 }
