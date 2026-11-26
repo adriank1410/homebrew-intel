@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "chafa--1.18.3_1.sequoia.bottle.tar.gz",
   "formula_sha256": "20d045959aa94854a989f4d559fefbc3e4c156172b9d90960621ab93cfba1c11",
   "license": "LGPL-3.0-or-later",
   "name": "chafa",
   "pkg_version": "1.18.3_1",
   "recipe_sha256": "c1b5ac197ce0e9a98993d1c3315bf081cb8059e41009399baf1f2922fc04035a",
-  "release": "intel-45750552016-1-chafa",
+  "release": "intel-45889913035-1-chafa",
   "revision": 1,
-  "run_id": "45750552016",
+  "run_id": "45889913035",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -64,9 +64,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -245,15 +245,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "53f8064025b5abc5ae58612ef9e68a21b58863ec10538bfbfc3f0c4a446abdb1",
-  "size": 535074,
+  "sha256": "c8ab186a0deed3422cf4093258997e0daadba4465a58884319c33bde0511b71e",
+  "size": 535069,
   "source": {
     "filename": "chafa--1.18.3_1.sources.tar.gz",
-    "sha256": "60b19c97eb91fa1f6d6e8c95276f12800077c12bc85ff06398f22c1d163b7314",
-    "size": 1091686
+    "sha256": "a7fa112fd3dc64917f56fbe336d3447abe372d0c0fae2d793668738689bf2344",
+    "size": 1091693
   },
   "tag": "sequoia",
   "version": "1.18.3",
   "version_scheme": 0,
-  "workflow_commit": "9f030b64eda58c43e50de04a545372dab1aac75b"
+  "workflow_commit": "2675516b95d883326e827c624e6a6dbae98fdf81"
 }
