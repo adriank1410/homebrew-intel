@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1cd7b3e1341b257955f5d31106637d7696019129",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "be5a7e565e7e3c3e8f8cc025b584d47860019ff5",
-  "filename": "libffi--3.8.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "1b972649c2618bd03b52a4ed2e7ee8e3a736dbbb2859d0602a3fc8dbbddcca61",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
+  "filename": "libffi--3.8.2.sequoia.bottle.tar.gz",
+  "formula_sha256": "96090dd0b9619004f3ac02156cf6c20a291537c9e1b79400a056adec23beb5ad",
   "license": "MIT",
   "name": "libffi",
-  "pkg_version": "3.8.1",
-  "recipe_sha256": "60d95264c36dbfedb893808a8c9b24f9434b12bad14dc881f89f2f3dcfb39183",
-  "release": "intel-43649176154-1-libffi",
+  "pkg_version": "3.8.2",
+  "recipe_sha256": "bdffeb779af3070b43df88ff249983288a71d6b039d45d516297e094fd370c92",
+  "release": "intel-45872504486-1-libffi",
   "revision": 0,
-  "run_id": "43649176154",
+  "run_id": "45872504486",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "290e0f45a4a0a06e096ccb90852d45f0859a13a89c406641ed0e97a8b87dbb8c",
-  "size": 320675,
+  "sha256": "aba38edf02671f09605482f1aa07d8c9f6fa1abec75f022b2fe9ffb383ef093e",
+  "size": 334708,
   "source": {
-    "filename": "libffi--3.8.1.sources.tar.gz",
-    "sha256": "c9a2bf349ecf26bd538c606a4de09d82bbf00db4019ff51c806500ac85c52101",
-    "size": 1663584
+    "filename": "libffi--3.8.2.sources.tar.gz",
+    "sha256": "0ff386856e0294c9341c4a00ac32a4e7cfe007cd91022d8b2737875129e657e9",
+    "size": 1688948
   },
   "tag": "sequoia",
-  "version": "3.8.1",
+  "version": "3.8.2",
   "version_scheme": 0,
-  "workflow_commit": "d68db414cdf42fe9c09a8d5617aed9c32f68ca0d"
+  "workflow_commit": "93e195c2875c3dd2b1f0373476d7d42eb08cf021"
 }
