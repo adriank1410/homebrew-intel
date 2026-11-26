@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
   "filename": "qtbase--6.12.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "b012587461d260e0641ac9ea486a69de30dc123d600b0c37e407bcafe0571c50",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtbase",
   "pkg_version": "6.12.0_2",
   "recipe_sha256": "12389f1795c5d7149e9b499f118134453d498fcdabe9c2fa799437e059e354b4",
-  "release": "intel-45582887964-1-qtbase",
+  "release": "intel-45864021132-1-qtbase",
   "revision": 2,
-  "run_id": "45582887964",
+  "run_id": "45864021132",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -71,9 +71,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -192,15 +192,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "21e7e55b1de7e4512b8e1574c4a0c561adf7034d38f0c45dd18cc066e5509f3b",
-  "size": 17643744,
+  "sha256": "0cdc4d9df03c09b1b37dc782d36ce1ac18179d2b45d9b4e7ad4196ad0adb0282",
+  "size": 17643969,
   "source": {
     "filename": "qtbase--6.12.0_2.sources.tar.gz",
-    "sha256": "95d1f313553062348b7d440b042bdf134373f57a51225b831bdd425c1b27f0e3",
-    "size": 51420536
+    "sha256": "1a577772a33e86988fc32886e96273659ba04f0fea83ce148eee26bb37b30288",
+    "size": 51420525
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "16f71ca4e7126b9477f1bc9a416526d80b91f614"
+  "workflow_commit": "6bcdcc8108c491aa9a95f4e8f1ecdc69701cd3ec"
 }
