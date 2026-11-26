@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "qtsvg--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "405cb3b988ab34d15549d32fa06897416fb5a5e7f6c88fb05f2b0ceb4509a61f",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsvg",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "6e33d625d2bdd01171dd1e3a3ed6e8f7b2f9816fc5b7bf0e92f46548787d59b9",
-  "release": "intel-45615855726-1-qtsvg",
+  "release": "intel-45872504486-1-qtsvg",
   "revision": 1,
-  "run_id": "45615855726",
+  "run_id": "45872504486",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -65,9 +65,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -191,15 +191,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "20ef40a0eb3e7a3a6378c32d1524f8d35c0cbe1983bd0558d27a389382c6b7aa",
-  "size": 317542,
+  "sha256": "42bf922786c94efe658a2f611bcd7c777e5751b77c63b0f12627dfda60bf64b0",
+  "size": 317525,
   "source": {
     "filename": "qtsvg--6.12.0_1.sources.tar.gz",
-    "sha256": "6cd044657d965777574dee1a83cad9be966113ffe1b2af4fbec3bd98bff091ea",
-    "size": 2376024
+    "sha256": "f231b80db8cf97b55f3a94aa32b9eb9d311b4b8f6a180d641cbeaf69d9ca9b78",
+    "size": 2376033
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "2a815039222fdba7fc0e9edf726d54ca02eb3293"
+  "workflow_commit": "93e195c2875c3dd2b1f0373476d7d42eb08cf021"
 }
