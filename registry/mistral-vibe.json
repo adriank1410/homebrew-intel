@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
   "filename": "mistral-vibe--3.1.2.sequoia.bottle.tar.gz",
   "formula_sha256": "eb444ead45534635fd8a3ffa333f72ab4d0de62345f37fd1fd5344ab835dba31",
   "license": "Apache-2.0",
   "name": "mistral-vibe",
   "pkg_version": "3.1.2",
   "recipe_sha256": "5a440b05f806631b1e29c66e69df0d67a12ba603727b54662871213817e6dbf9",
-  "release": "intel-45468660980-1-mistral-vibe",
+  "release": "intel-45719874251-1-mistral-vibe",
   "revision": 0,
-  "run_id": "45468660980",
+  "run_id": "45719874251",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -34,9 +34,9 @@
       "pkg_version": "50.0.2_2"
     },
     {
-      "formula_sha256": "1664ef8ed12ce548509600813e2fbcd8160e0b1015ac0876e3c7832f8e18dbb1",
+      "formula_sha256": "0e6e343f6b705b39e000924796c535b055ad67334a10b7bf76b43d6bc2bbfaef",
       "name": "libyaml",
-      "pkg_version": "0.2.5"
+      "pkg_version": "0.2.7"
     },
     {
       "formula_sha256": "75292ba5186536dd958c784412a10c8591149e8c541879669159684385721a3b",
@@ -89,21 +89,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "ed7c3c340f5373937f19f6fe21f09a8c8abf4fd78a42fcbceafec5f0e94a2545",
-  "size": 44805124,
+  "sha256": "92cfdd69fc0f64ec6780618c82017c98b3352fc9dd73786b281e573d6a156dab",
+  "size": 44805387,
   "source": {
     "filename": "mistral-vibe--3.1.2.sources.tar.gz",
-    "sha256": "150858a0de3d5e75f74e254a5d8235adedf52bac653ec445158cbf4fc6bd49f0",
-    "size": 198878067
+    "sha256": "eb7dc62a94a47e7ca5e1825806497f86e854251127fff938cdb16b669cdf303f",
+    "size": 198878303
   },
   "tag": "sequoia",
   "version": "3.1.2",
   "version_scheme": 0,
-  "workflow_commit": "5a9344bbefad9d6c2aba9bbacf2c6173b47ef99e"
+  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
 }
