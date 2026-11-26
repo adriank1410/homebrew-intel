@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
   "filename": "ccache--4.14.3.sequoia.bottle.tar.gz",
   "formula_sha256": "6e1ce01de1a0065efabd6c12700f7d1957cb985e842f375dc3e9882404705dc4",
   "license": "GPL-3.0-or-later",
   "name": "ccache",
   "pkg_version": "4.14.3",
   "recipe_sha256": "cc0f277b686afe06a3759f7ed751afea21d36de2f0d44bdb162ca46b21f376ea",
-  "release": "intel-45312177023-1-ccache",
+  "release": "intel-45764662722-1-ccache",
   "revision": 0,
-  "run_id": "45312177023",
+  "run_id": "45764662722",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ee50a098a71187d2c4526095ee906893dc50d09a383dd22555f7b34ef4f3426",
@@ -54,21 +54,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "f30e2dff70009ac38f3faba816f6a952ba02cc07bdfd4e0d6db35eadbc681245",
-  "size": 705371,
+  "sha256": "fe9e8299cb3149cbec2922cf5ac50261e0b63d561ef8fec54fc51f8ea651d76c",
+  "size": 705365,
   "source": {
     "filename": "ccache--4.14.3.sources.tar.gz",
-    "sha256": "d92fa2036782ba06bc692774f326880b87d59f0b9d802fcf099952d95ba6df92",
-    "size": 582435
+    "sha256": "0dd19f3dea6c031adbf935dbae73e59401fa6c9645a9a169d0b67c610076c7d2",
+    "size": 582425
   },
   "tag": "sequoia",
   "version": "4.14.3",
   "version_scheme": 0,
-  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
+  "workflow_commit": "2cd35567b08db3b89037f74bcea3208b760587f3"
 }
