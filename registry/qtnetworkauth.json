@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "qtnetworkauth--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "4c535ddccd100b0ae6447e341b4608483417f8084c200a9910c6828ce6c5a349",
   "license": {
@@ -14,9 +14,9 @@
   "name": "qtnetworkauth",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "0d30e63213db1811c20d488071283be84a32ed255526f5c11a09257410e41d03",
-  "release": "intel-45615855726-1-qtnetworkauth",
+  "release": "intel-45872504486-1-qtnetworkauth",
   "revision": 1,
-  "run_id": "45615855726",
+  "run_id": "45872504486",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -59,9 +59,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -185,15 +185,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "7ef0c7d3dc765fd2cb9aecfa0401f0273c8a806bf0ccb4e79b494afe8ddac0cd",
-  "size": 138465,
+  "sha256": "ffb5b4c98ca33797978debbd592109d56ce4894b4843c89f35fd4d6bf500a063",
+  "size": 138468,
   "source": {
     "filename": "qtnetworkauth--6.12.0_1.sources.tar.gz",
-    "sha256": "7051942d91c352ad910e78da8cd4cee076690a14d16e7f6a7f51ad2ce9a38042",
+    "sha256": "17513896f544b027be94a21ea056b0d3019dd91ae1c23d9a792cda01caaac175",
     "size": 462576
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "2a815039222fdba7fc0e9edf726d54ca02eb3293"
+  "workflow_commit": "93e195c2875c3dd2b1f0373476d7d42eb08cf021"
 }
