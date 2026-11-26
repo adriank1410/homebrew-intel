@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "tesseract--5.5.4.sequoia.bottle.tar.gz",
   "formula_sha256": "0e8b9ae80c4ff4a0e2887316599e63539f9d2ee1e76641d70ba1f51231685c7b",
   "license": "Apache-2.0",
   "name": "tesseract",
   "pkg_version": "5.5.4",
   "recipe_sha256": "1caefce31f4a699a5e278c2b6bfeeb6f2b6b8181491cde0b9dfb94bf0ba9532d",
-  "release": "intel-45750552016-1-tesseract",
+  "release": "intel-45872504486-1-tesseract",
   "revision": 0,
-  "run_id": "45750552016",
+  "run_id": "45872504486",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -49,9 +49,9 @@
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "c20a87f77bfb72e93030c5db92eccb9a7b69724bcb3f06545883244ff62df0c5",
-  "size": 10380350,
+  "sha256": "108baa79431600b30ccee7f08a597b1e04b28b5ccbc9c21b11653903367d9463",
+  "size": 10380349,
   "source": {
     "filename": "tesseract--5.5.4.sources.tar.gz",
-    "sha256": "f94e5976b29a55e035e7f810603174e88c81feb8396bb7aad770b5eede5bfc09",
-    "size": 8239369
+    "sha256": "7f5b0424ce5fa0b2a524fdcad92b808215e5ccc166ad3802b6842fe4148b35a8",
+    "size": 8239355
   },
   "tag": "sequoia",
   "version": "5.5.4",
   "version_scheme": 0,
-  "workflow_commit": "9f030b64eda58c43e50de04a545372dab1aac75b"
+  "workflow_commit": "93e195c2875c3dd2b1f0373476d7d42eb08cf021"
 }
