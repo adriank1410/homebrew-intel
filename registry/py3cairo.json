@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
   "filename": "py3cairo--1.29.2_1.sequoia.bottle.tar.gz",
   "formula_sha256": "cae6d40806300efcc86e8d477611842e246c021fd9d3efc4313679cd539de30a",
   "license": {
@@ -14,9 +14,9 @@
   "name": "py3cairo",
   "pkg_version": "1.29.2_1",
   "recipe_sha256": "7a8e9226ebd1094557e27402acbabae8bdd6c945fee26f49a2a2d2ef2e7ebbb2",
-  "release": "intel-45450771531-1-py3cairo",
+  "release": "intel-45846235492-1-py3cairo",
   "revision": 1,
-  "run_id": "45450771531",
+  "run_id": "45846235492",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -44,9 +44,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "06a93419bd9c74fb8b9bc18af378e715dc9d78ad92d3ae02d7cb9e4d889f239f",
-  "size": 257897,
+  "sha256": "9f46a68a3f3b405b0ef9cb7ccc4bae5f620538ed5ac139cea2c70dcdac11b27e",
+  "size": 257886,
   "source": {
     "filename": "py3cairo--1.29.2_1.sources.tar.gz",
-    "sha256": "4a677fdb3ff2a231ef47b17f14d9ce05c261b9e5bc13e35618c3772329fa662c",
-    "size": 688382
+    "sha256": "8aeecf1fa5a6ee4bd3d9baa234032bc6fc4b0d489d2b50a466019e30d33952bf",
+    "size": 688375
   },
   "tag": "sequoia",
   "version": "1.29.2",
   "version_scheme": 0,
-  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
+  "workflow_commit": "2a3c4f1b5ae865ce1af5ab6422626a9accf08e39"
 }
