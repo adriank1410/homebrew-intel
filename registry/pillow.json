@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
   "cellar": "any",
-  "core_commit": "74a830e676a67f4da7788f14a12b3877a754e873",
+  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
   "filename": "pillow--13.0.0.sequoia.bottle.tar.gz",
   "formula_sha256": "2f04afdff8fb73acd67d439d7bed2d390d04865563c618f9e8bdd5857ed20f1f",
   "license": "MIT-CMU",
   "name": "pillow",
   "pkg_version": "13.0.0",
   "recipe_sha256": "27a90cac9604a1e0010c9b87b1e2a00473af92914432a6ae1af86bc49abc3458",
-  "release": "intel-45520565137-1-pillow",
+  "release": "intel-45719874251-1-pillow",
   "revision": 0,
-  "run_id": "45520565137",
+  "run_id": "45719874251",
   "runtime_dependencies": [
     {
       "formula_sha256": "4e0022eb623e33a862b612237eaec8bae138876dde6f9ca6d164d36678f46b23",
@@ -199,21 +199,21 @@
       "pkg_version": "5.8.4"
     },
     {
-      "formula_sha256": "9226e0d79b2ac4c38b3d079668e67a5e091870c96cfa0bccf42c8bd8a2652a7b",
+      "formula_sha256": "428ad5db144f1ab51b39eca7e2d79180957644af5ddbfd8f882b2b8e47367c60",
       "name": "zstd",
-      "pkg_version": "1.5.7_1"
+      "pkg_version": "1.6.0"
     }
   ],
   "schema": 1,
-  "sha256": "d36d856839e6cda8d995a9b579a74bdbddfc09c65b2875ec4844b0b6f3c38675",
-  "size": 1410703,
+  "sha256": "9394c13705015bc97c688397bf49c6262d742f71b3792dbafc82a495c193489c",
+  "size": 1410682,
   "source": {
     "filename": "pillow--13.0.0.sources.tar.gz",
-    "sha256": "832539d2ad7a5f5defae3e105e925cfc51186af844d83a49f5aaf344ea437edd",
-    "size": 46981328
+    "sha256": "e8e7a2e383f6bc45ff73ec14d09b08b484b973c8466e74019022d8dab7b71558",
+    "size": 46981323
   },
   "tag": "sequoia",
   "version": "13.0.0",
   "version_scheme": 0,
-  "workflow_commit": "b8a03871b4c8ed73209552205db544669d57ed09"
+  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
 }
