@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
+  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
   "filename": "ruby--4.0.10.sequoia.bottle.tar.gz",
   "formula_sha256": "49d8624feb937c8639a52782e955dc12da8f9e41f12826da3c13963c7738567c",
   "license": "Ruby",
   "name": "ruby",
   "pkg_version": "4.0.10",
   "recipe_sha256": "129b8f26977a6d15dfb27368366bc1aea60a3995570b45d6f7a3fff7ccd7be85",
-  "release": "intel-45043414167-1-ruby",
+  "release": "intel-45750552016-1-ruby",
   "revision": 0,
-  "run_id": "45043414167",
+  "run_id": "45750552016",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,9 +19,9 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "1664ef8ed12ce548509600813e2fbcd8160e0b1015ac0876e3c7832f8e18dbb1",
+      "formula_sha256": "0e6e343f6b705b39e000924796c535b055ad67334a10b7bf76b43d6bc2bbfaef",
       "name": "libyaml",
-      "pkg_version": "0.2.5"
+      "pkg_version": "0.2.7"
     },
     {
       "formula_sha256": "7b48db33b52344c39aaea06c20b239f3e0c5fab1556adf966d5d129347e91eaa",
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "804a020fa75bc5f2dbd8227d81edff2666a682fcf3d1200afc0847baf0b88292",
-  "size": 17153339,
+  "sha256": "2c3b50ee1baabe5b4101cb4fef843535183899fe0805f4e6f09ba4f07f777234",
+  "size": 17153121,
   "source": {
     "filename": "ruby--4.0.10.sources.tar.gz",
-    "sha256": "fca8d065740a24ce56d5cb934f60b1aa6fabd302d252ba2183abad82320e9f24",
-    "size": 24382263
+    "sha256": "a5552b026bf6d5e7f355958604e4c130c815e5715a48450740d483e4b9acf7ed",
+    "size": 24382260
   },
   "tag": "sequoia",
   "version": "4.0.10",
   "version_scheme": 0,
-  "workflow_commit": "8283e8831cecd8130e8d9c6823eff54fe41423c3"
+  "workflow_commit": "9f030b64eda58c43e50de04a545372dab1aac75b"
 }
