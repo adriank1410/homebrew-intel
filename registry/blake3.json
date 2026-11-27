@@ -1,0 +1,33 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "ac86092f0d4f5e331e1a7d58cd0ba86a29983edc",
+  "cellar": "any",
+  "core_commit": "bb8be67efd4cdcea38d7624f148cdbbdf2d8f258",
+  "filename": "blake3--1.8.8.sequoia.bottle.tar.gz",
+  "formula_sha256": "dd4cc81f6e67b6d9b0d6b9cd01dfd99dfb85bc021e4d557d19f74b0ebc5ba7a3",
+  "license": {
+    "any_of": [
+      "CC0-1.0",
+      "Apache-2.0"
+    ]
+  },
+  "name": "blake3",
+  "pkg_version": "1.8.8",
+  "recipe_sha256": "98ce01645fa37df49685bbb041b18f091487d0d97e98bd8ddf195232b586c293",
+  "release": "intel-46001826777-1-blake3",
+  "revision": 0,
+  "run_id": "46001826777",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "61be16e2a207a5ac0bead447216055b9fb83d73cc0a07a7b374d7bcbed51280e",
+  "size": 31311,
+  "source": {
+    "filename": "blake3--1.8.8.sources.tar.gz",
+    "sha256": "9a823a105cd507fe63dbe982eb17463d6cc6924aa01bd40c41329df2a87e2e16",
+    "size": 277982
+  },
+  "tag": "sequoia",
+  "version": "1.8.8",
+  "version_scheme": 0,
+  "workflow_commit": "3c3d5cd01ae244129ce2ab59cc506e46eac9a834"
+}
