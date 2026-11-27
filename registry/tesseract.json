@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
+  "brew_commit": "fac07434ab04730ca0c6cb9e87f511f12bf5e5c6",
   "cellar": "any",
-  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
-  "filename": "tesseract--5.5.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "0e8b9ae80c4ff4a0e2887316599e63539f9d2ee1e76641d70ba1f51231685c7b",
+  "core_commit": "2fee07326c3e03715d2ef9d2fedd20509e50a12f",
+  "filename": "tesseract--5.5.5.sequoia.bottle.tar.gz",
+  "formula_sha256": "783750c4fc8625d8f64480ee98a10af1c70b9832244f2729c97def27c3fdd95c",
   "license": "Apache-2.0",
   "name": "tesseract",
-  "pkg_version": "5.5.4",
-  "recipe_sha256": "1caefce31f4a699a5e278c2b6bfeeb6f2b6b8181491cde0b9dfb94bf0ba9532d",
-  "release": "intel-45872504486-1-tesseract",
+  "pkg_version": "5.5.5",
+  "recipe_sha256": "6628dc5d146dba3890f547ca1911937cb8773a0b330ed4e28c310e74e5c80a5b",
+  "release": "intel-45925183151-1-tesseract",
   "revision": 0,
-  "run_id": "45872504486",
+  "run_id": "45925183151",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -205,15 +205,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "108baa79431600b30ccee7f08a597b1e04b28b5ccbc9c21b11653903367d9463",
-  "size": 10380349,
+  "sha256": "d19cbfb254dd2e142333a5453632f50da7afaca1e3c50627c03af3912da31912",
+  "size": 10514484,
   "source": {
-    "filename": "tesseract--5.5.4.sources.tar.gz",
-    "sha256": "7f5b0424ce5fa0b2a524fdcad92b808215e5ccc166ad3802b6842fe4148b35a8",
-    "size": 8239355
+    "filename": "tesseract--5.5.5.sources.tar.gz",
+    "sha256": "24f769b225701696c2dca65fe0eae7c36604a6b90778b5520c08be57de78737d",
+    "size": 8360735
   },
   "tag": "sequoia",
-  "version": "5.5.4",
+  "version": "5.5.5",
   "version_scheme": 0,
-  "workflow_commit": "93e195c2875c3dd2b1f0373476d7d42eb08cf021"
+  "workflow_commit": "7695722a8d6906fdea74a78b820b5463fd8c7a21"
 }
