@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "qtsensors--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "7276fdb2d3e1aba5b2e893baaf50d075190f1b83007f6e77c308406a837c6834",
   "license": {
@@ -20,9 +20,9 @@
   "name": "qtsensors",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "975abd2922ddaf73e5a0b8bc9e091e5e2cb8ebf66c3c83ea95baf21a337db298",
-  "release": "intel-45719874251-1-qtsensors",
+  "release": "intel-45913055744-1-qtsensors",
   "revision": 1,
-  "run_id": "45719874251",
+  "run_id": "45913055744",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -65,9 +65,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -201,15 +201,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "d289c26bdeecd4d90ccf1e000e0745e7f680d918f7d6a911dc783abbe8348710",
-  "size": 227667,
+  "sha256": "4db71858a47a0ab506ede3be29eb65df5cb3976f1ecfc82be2b52d2fe176811d",
+  "size": 227659,
   "source": {
     "filename": "qtsensors--6.12.0_1.sources.tar.gz",
-    "sha256": "1fa15a10b48342879bb92136c139ba812361305d1bac2ddb5ae2f9f5468ac96b",
-    "size": 1528880
+    "sha256": "75546af26f1726d31663d476291027563be6e55fd4641e676dea07f11192707c",
+    "size": 1528867
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
+  "workflow_commit": "2030e44c885e522a491a4b188986651382df1dce"
 }
