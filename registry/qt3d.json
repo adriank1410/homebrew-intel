@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "qt3d--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "a85f78ebabbd1aa3bac058004e7564e4e5bbde20c5e99c6b9c8762529c17ed04",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qt3d",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "31a1c896e6b6228de4283c7773c5849e7a0e50fc563bb122e3cebcc8131f4cb7",
-  "release": "intel-45719874251-1-qt3d",
+  "release": "intel-45913055744-1-qt3d",
   "revision": 1,
-  "run_id": "45719874251",
+  "run_id": "45913055744",
   "runtime_dependencies": [
     {
       "formula_sha256": "03db28ab587629b2f1cce2c386b3457d21dba7e196b11702ad36753072e89de0",
@@ -71,9 +71,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -212,15 +212,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9a352d6380e097f8cb19d575a1ae39a782193bde8179f26a2709a28b7dd204b6",
-  "size": 3769490,
+  "sha256": "bd6fde61bda87f369e33001560399b5ad3cc4a181666ffa8c33d2f6cc81125fe",
+  "size": 3769574,
   "source": {
     "filename": "qt3d--6.12.0_1.sources.tar.gz",
-    "sha256": "fa780a956ab2352769154ea23375905b965151c21aa6a195e6899cb3c4924402",
-    "size": 141960271
+    "sha256": "ab17e1f2cc694da9894a0d789d293651767755aa5c031929e6ddb172361336e8",
+    "size": 141960254
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
+  "workflow_commit": "2030e44c885e522a491a4b188986651382df1dce"
 }
