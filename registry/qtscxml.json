@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "qtscxml--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "324d26fb1a34cfaf76813862af7fc425f1563e732b68c7978f143df1bb0a31a7",
   "license": {
@@ -25,9 +25,9 @@
   "name": "qtscxml",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "0f61b6c1b9ad8022a635eaad991f8a7a85e9746458de10f5fe71dd8c2548268f",
-  "release": "intel-45719874251-1-qtscxml",
+  "release": "intel-45913055744-1-qtscxml",
   "revision": 1,
-  "run_id": "45719874251",
+  "run_id": "45913055744",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -70,9 +70,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -206,15 +206,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8d13e4317465a811431cf96d75cddcd3f97039fc663923fd778042477f426db2",
-  "size": 659431,
+  "sha256": "ad19fddb67674f13fb6515cd7630f6ebd179fa67db46e2367cb02e8112422b13",
+  "size": 659421,
   "source": {
     "filename": "qtscxml--6.12.0_1.sources.tar.gz",
-    "sha256": "835dffde462354be1baae158915298b55f70935fc9aa60a7751a2a86f7f3a6bd",
-    "size": 591748
+    "sha256": "076aca75498de12ae1346e1e99ed8793b317b2ae85ef62246bf5fc5592bcf940",
+    "size": 591746
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
+  "workflow_commit": "2030e44c885e522a491a4b188986651382df1dce"
 }
