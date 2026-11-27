@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "qtgrpc--6.12.0_1.sequoia.bottle.tar.gz",
   "formula_sha256": "e533b561a6cc2a4300753d68d26b489eb6e2a9f74477513a143ddf95eb67054b",
   "license": {
@@ -26,9 +26,9 @@
   "name": "qtgrpc",
   "pkg_version": "6.12.0_1",
   "recipe_sha256": "20537015b87bf9e8f8da003d93bc127fb98da02163cd77e74cdbd6069701f0a7",
-  "release": "intel-45719874251-1-qtgrpc",
+  "release": "intel-45913055744-1-qtgrpc",
   "revision": 1,
-  "run_id": "45719874251",
+  "run_id": "45913055744",
   "runtime_dependencies": [
     {
       "formula_sha256": "593fc7901a8949808a470c6b505b095cb0944367e64b2db876ea73661e59b3e7",
@@ -76,9 +76,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -217,15 +217,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8f463a2808a6b4a01354dd02375bb103e410174299c07c335f5564c6636d66f8",
-  "size": 1138806,
+  "sha256": "b3ae503e81d9e334e4e828cd579d09661710c668ad9e82c4f53ece0ee8646c75",
+  "size": 1138788,
   "source": {
     "filename": "qtgrpc--6.12.0_1.sources.tar.gz",
-    "sha256": "db64911a2c523f2719ec3e7850ffd185b389476bfc39513ea629fc9b81f0bf59",
-    "size": 805757
+    "sha256": "e257db47f263f18046141d6250449841d1d87dc8cf4c11252852b9efb016e148",
+    "size": 805768
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
+  "workflow_commit": "2030e44c885e522a491a4b188986651382df1dce"
 }

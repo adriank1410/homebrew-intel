@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cc5db66abe5cf301baa1f3b618824e1e20f11ceb",
+  "brew_commit": "754c632229276b7b3a547e5183225fb70f2f110d",
   "cellar": "any",
-  "core_commit": "4f6f99f2e10678f019234009ed2ecdf75bfd913d",
+  "core_commit": "57c5c2127835f3ee7a52ad31ec5593f3555001d8",
   "filename": "qt5compat--6.12.0_2.sequoia.bottle.tar.gz",
   "formula_sha256": "437de1e771c1b15078a1b09d4218027d7fb2ea47de952c24b0ddf16e77c6f67f",
   "license": {
@@ -21,9 +21,9 @@
   "name": "qt5compat",
   "pkg_version": "6.12.0_2",
   "recipe_sha256": "096fd38a04e67b11aa65ce327a306c6ff1f934dcca827d7ef1ee96dfba0396e5",
-  "release": "intel-45719874251-1-qt5compat",
+  "release": "intel-45913055744-1-qt5compat",
   "revision": 2,
-  "run_id": "45719874251",
+  "run_id": "45913055744",
   "runtime_dependencies": [
     {
       "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
@@ -66,9 +66,9 @@
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e6c6094ef287cd9dd51af16a4e69cb899b732cdf92da900eb9371339099df005",
+      "formula_sha256": "b1047aae6c243d65972a48f3fe0462f220abc2f7b9e899d877ddb4d622532727",
       "name": "glib",
-      "pkg_version": "2.90.1"
+      "pkg_version": "2.90.2"
     },
     {
       "formula_sha256": "03675be4528ba906d483d7e5ccc189a77ded3a6f6016b2037bc65c55de50ea12",
@@ -207,15 +207,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "29bbf82f00c782d54f6d6184a15d4de83b03c81b71bb0aa246816f349a6f486f",
-  "size": 739269,
+  "sha256": "32ac2e353e3c020851888bd2f939c19a99327eafdb9de9aae3c62f0f50b54ca8",
+  "size": 739258,
   "source": {
     "filename": "qt5compat--6.12.0_2.sources.tar.gz",
-    "sha256": "ce53f5321ebaaf247497301618c032519a86af18cc78bff02a9210ceda8382a8",
-    "size": 14674444
+    "sha256": "9900ec6dd08cc3d5970cb91e73210f5150b869f593d583b23c4486b30958d7d3",
+    "size": 14674438
   },
   "tag": "sequoia",
   "version": "6.12.0",
   "version_scheme": 0,
-  "workflow_commit": "d03888ebc2be9dd9231f673e38a13af7e9556f52"
+  "workflow_commit": "2030e44c885e522a491a4b188986651382df1dce"
 }
