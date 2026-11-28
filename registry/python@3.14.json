@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "python@3.14--3.14.10.sequoia.bottle.tar.gz",
-  "formula_sha256": "db9667b9c5a304e95c986ca613ca389426375308c5f17d40688117aa1f0c033f",
+  "formula_sha256": "02560b26d05d5ccdf4082f1e9dfa7ffc91ac768430bd0243afd4dfadb593c663",
   "license": "Python-2.0",
   "name": "python@3.14",
   "pkg_version": "3.14.10",
   "recipe_sha256": "0407d017bd47dea37c07635833c4b2f12097d65038a3d215ad34b495e74eb9d0",
-  "release": "intel-45582887964-1-python-at-3.14",
+  "release": "intel-46108518082-1-python-at-3.14",
   "revision": 0,
-  "run_id": "45582887964",
+  "run_id": "46108518082",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -24,7 +24,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -55,15 +55,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "4db9a835d7d988b1704e14568968a84315d702e3a14be86ea677d97986c9cbd7",
-  "size": 19369654,
+  "sha256": "d9419bb62f90c63feafe5f40d97680547664dcdd64bc4f8ff2a6edc626f66818",
+  "size": 19373803,
   "source": {
     "filename": "python@3.14--3.14.10.sources.tar.gz",
-    "sha256": "4c0745bdc55d54193d2c704fe43c0c900f30636bf1b0c59a48d9772686bcb0c9",
-    "size": 33886270
+    "sha256": "250ed78e500e0d4e8a3013ca426a578490ad515e34374b2d5151f4e167aa4244",
+    "size": 33886326
   },
   "tag": "sequoia",
   "version": "3.14.10",
   "version_scheme": 0,
-  "workflow_commit": "16f71ca4e7126b9477f1bc9a416526d80b91f614"
+  "workflow_commit": "02f075d982a966c7dfead7d8c843c0e1ef79409f"
 }
