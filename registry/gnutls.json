@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "7afb77d35cc4c0fac5f0bc20abb44b370bea3975",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "gnutls--3.8.14.sequoia.bottle.tar.gz",
-  "formula_sha256": "6f81e70f704d7d46cf642e5233f19d5b1fc580a7b5804384ce315974bcfd7219",
+  "formula_sha256": "6d57b8e58e59852ef85ad395b38338dee691a5c1be1d9e3bc3d95298f037b2d4",
   "license": {
     "all_of": [
       "LGPL-2.1-or-later",
@@ -14,9 +14,9 @@
   "name": "gnutls",
   "pkg_version": "3.8.14",
   "recipe_sha256": "c0ca455623824d4334308a850b7767a163582de82cbe9436e442623c47fb941a",
-  "release": "intel-44987573281-1-gnutls",
+  "release": "intel-46133509957-1-gnutls",
   "revision": 0,
-  "run_id": "44987573281",
+  "run_id": "46133509957",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -24,56 +24,56 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "formula_sha256": "8a73e85d8ff0a88024b482ccbe8332e323459cfb95702c926d07b1a1188e88e5",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "formula_sha256": "60659e5a21da08e05c3ac0b7a924aa6af769ea3952aafddaa39078d5924a1f90",
       "name": "gmp",
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
       "name": "json-c",
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "ec612e2853549a7735d514b215bee957cebd1f63db243ce70393b948d8052f07",
+      "formula_sha256": "1cc5293447570e7996182dce79af594354dc6eaf8c6aea14d98ebafa36103167",
       "name": "libidn2",
       "pkg_version": "2.3.8"
     },
     {
-      "formula_sha256": "ed078be38ddf16705fd0e9cc3a60a310d31f935cfbee6893dccb05b16fc9bcb7",
+      "formula_sha256": "7610ff43d6190b8df4ed308faf777bda98bf84ede69966f270c62df31597b724",
       "name": "libtasn1",
       "pkg_version": "4.21.0"
     },
     {
-      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "formula_sha256": "a5f9474431a9422be5a7fe744dde97f0ccd4eac10092aa17562265be2e956b5f",
       "name": "libunistring",
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "087bd49b2efaa8892d7ad9b13d596c985dfeeaaede2084dccfeda52f528be428",
+      "formula_sha256": "322cb951b5853e3463dd8fb4f8d45aed93448e277ebb0fb1d5ddf3aaf7489747",
       "name": "nettle",
       "pkg_version": "4.0"
     },
     {
-      "formula_sha256": "0c48d6e5550b67c68430827698b7464781c1d9818432516fab4ef3b33e8f203f",
+      "formula_sha256": "d90dde59bba23694ada1aef1cabcb5f7037db64a4415542fea66a86db4d2b5cf",
       "name": "p11-kit",
       "pkg_version": "0.26.6"
     }
   ],
   "schema": 1,
-  "sha256": "6a581af44be2812e228f01a8d307a374572767db1712428a5aa7bedcb1a1b211",
-  "size": 3220320,
+  "sha256": "4558c59df553fbe82f1533bce60fc0d2e8a0007f6249494169f33e878db65336",
+  "size": 3220274,
   "source": {
     "filename": "gnutls--3.8.14.sources.tar.gz",
-    "sha256": "3ab9cdea8ee23dc5e6e4f7dbca7622a40d79cebcade43505cc814a99bf3c44e7",
-    "size": 7404057
+    "sha256": "1d9843bedfd5ae1e308af314e61f715bf0c0cfad904b0c20a3849ea2da6c56a4",
+    "size": 7404141
   },
   "tag": "sequoia",
   "version": "3.8.14",
   "version_scheme": 0,
-  "workflow_commit": "9984a9c98df31be5c09043d1e0a0a2316e947c10"
+  "workflow_commit": "8f550def5f531ec2e09b912d0220806832ef3ce6"
 }
