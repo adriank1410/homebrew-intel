@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
+  "brew_commit": "f6daa52483fad3cf7dc41da4401438bc49d08f69",
   "cellar": "any_skip_relocation",
-  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
-  "filename": "mupdf-tools--1.28.6.sequoia.bottle.tar.gz",
-  "formula_sha256": "900ce5a64c3a34572049cf50275982921874a04ceaf3f0eeb930a09dbd0111fa",
+  "core_commit": "2ecad2755b1cf8935ccdd90de1d57aef38981328",
+  "filename": "mupdf-tools--1.28.7.sequoia.bottle.tar.gz",
+  "formula_sha256": "a3749eaeb6b2157a6056d84012e2519804f23fdce4cbf6c3d8c49efd115ce909",
   "license": "AGPL-3.0-or-later",
   "name": "mupdf-tools",
-  "pkg_version": "1.28.6",
-  "recipe_sha256": "96328ece1ecf288e9dbaea8361396b6ec3a5d1d952b2de5c97154f2cd4c20de1",
-  "release": "intel-46095064862-1-mupdf-tools",
+  "pkg_version": "1.28.7",
+  "recipe_sha256": "84b35bb6dadb396320e5726914e4cef13a133af93af39dbe0a04ebfc16be25c5",
+  "release": "intel-46172082468-1-mupdf-tools",
   "revision": 0,
-  "run_id": "46095064862",
+  "run_id": "46172082468",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "98c5793d929a9d18ca17eadc2746cde4ee879639f9e5e35d2a0baaab7242f2a6",
-  "size": 71278979,
+  "sha256": "428b2e394a10cb841ff3036aff7c7ac430f8e1ca157839ffd365399d272386d9",
+  "size": 71281843,
   "source": {
-    "filename": "mupdf-tools--1.28.6.sources.tar.gz",
-    "sha256": "148bce98db169f02a5260c1bebec6b30da4ab24af92d853cd80b7e4782eb5f87",
-    "size": 68474530
+    "filename": "mupdf-tools--1.28.7.sources.tar.gz",
+    "sha256": "ce40a9c432a285dab3005e111f50931300c9716d04fabaccb6bdd36ebc49b30a",
+    "size": 68480588
   },
   "tag": "sequoia",
-  "version": "1.28.6",
+  "version": "1.28.7",
   "version_scheme": 0,
-  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
+  "workflow_commit": "6f3d5aaa5dd50fb7b895d84ac02c11de661e235a"
 }
