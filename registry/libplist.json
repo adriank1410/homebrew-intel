@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "libplist--2.8.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "48f475b338eb556fd2aabf48fd7b073ed3abd48c64d52a5de80c29418dac1570",
+  "formula_sha256": "efab1a2a28825cd2fd1c68e938fba76bab30a2354ae6a5d38219d8bc4db9c2cd",
   "license": "LGPL-2.1-or-later",
   "name": "libplist",
   "pkg_version": "2.8.1",
   "recipe_sha256": "5112762f986b1e9e2e921040120f167ee529e9865c4a17749f327d7a26ff9713",
-  "release": "intel-42272692752-1-libplist",
+  "release": "intel-46089295242-1-libplist",
   "revision": 0,
-  "run_id": "42272692752",
+  "run_id": "46089295242",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "d3ef10bca254cc832d0cf0d5dbf58c107530fcaceb1780ad73c320b3445770a8",
-  "size": 185188,
+  "sha256": "c342e50bd68a8d655d55f0d4fb9b6cdf2df342026ac02ddecf0b02022700fdc7",
+  "size": 185176,
   "source": {
     "filename": "libplist--2.8.1.sources.tar.gz",
-    "sha256": "e2d0ec237340bd1b8532357881f10cb6c7849d5998683be65de507e1f04baad0",
-    "size": 537338
+    "sha256": "cdbdee36c8ae5a8e160209cf3ef08c82acf45ceb62dbad8ccb4b25c2d9f7b1fd",
+    "size": 537383
   },
   "tag": "sequoia",
   "version": "2.8.1",
   "version_scheme": 0,
-  "workflow_commit": "ac4d46f2c613033e84e5739dc0b75fb5b793ea53"
+  "workflow_commit": "f4367588553afbe806136ed566a01f0365fb0439"
 }
