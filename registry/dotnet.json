@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "dotnet--11.0.100.sequoia.bottle.tar.gz",
-  "formula_sha256": "3778cc8e8a7ea69479f7caa92200248fea3f13f479f1b2483dc88e15cfb83c78",
+  "formula_sha256": "6c0550d0db9621bcf3c4faf725b2cd170f6805f774f7ba64d0539a40235a8e9b",
   "license": "MIT",
   "name": "dotnet",
   "pkg_version": "11.0.100",
   "recipe_sha256": "21424f79d41547f7e61a3960d5c0532e35aaa0f8a48d5227f31d05d67806ea38",
-  "release": "intel-45582887964-1-dotnet",
+  "release": "intel-46114253316-1-dotnet",
   "revision": 0,
-  "run_id": "45582887964",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
-      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
+      "formula_sha256": "1514b6c42d18d1f4f0458ed4479cbb55fa35d76b571f330d55a01f97424562d0",
       "name": "brotli",
       "pkg_version": "1.2.1"
     },
@@ -24,7 +24,7 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "formula_sha256": "a9af6f84f74b1ec3464369bee4ace1f6b6bc843b1acb08e11781da898c32b15b",
       "name": "icu4c@79",
       "pkg_version": "79.1"
     },
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e7b67eebeca9425f8bf237b77ca14fa3f130f502659637ad2a42a9a173664ac7",
-  "size": 274256162,
+  "sha256": "0fdd5292a1b5ecd9dd9f20f35ce8edb752ce56ced298460ac5339fc3f869d80e",
+  "size": 274263478,
   "source": {
     "filename": "dotnet--11.0.100.sources.tar.gz",
-    "sha256": "1ff0fa16d540f860e4f49f4ee8bdc35d6eb20d1c686af228f4ced306a3bfe94a",
-    "size": 972754649
+    "sha256": "d21846dc63d12b6f62aaef86d069c97783424e458f215fbcf168c504fd9aad2b",
+    "size": 972754264
   },
   "tag": "sequoia",
   "version": "11.0.100",
   "version_scheme": 1,
-  "workflow_commit": "16f71ca4e7126b9477f1bc9a416526d80b91f614"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
