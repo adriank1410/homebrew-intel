@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3014a11f612e627a6edfccf3551fbd1d42d767a0",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "0a752f1cebe5c6700d050b7ab5a86a03d26bc0c6",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "aklomp-base64--0.5.3.sequoia.bottle.tar.gz",
-  "formula_sha256": "3c7efd812e3fa5601c23ef782dd624804e9a26910b10e74029a896f2870ce126",
+  "formula_sha256": "84a3684b7c96a9f59eff40497515999a1c2ae53c74265be181db3367e5a89870",
   "license": "BSD-2-Clause",
   "name": "aklomp-base64",
   "pkg_version": "0.5.3",
   "recipe_sha256": "135f6d4cfec48c5bce6a8d1190990355d9b6008f148bd0d362289144388c8d69",
-  "release": "intel-43736216310-1-simdutf",
+  "release": "intel-46141256182-1-simdutf",
   "revision": 0,
-  "run_id": "43736216310",
+  "run_id": "46141256182",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "b137667e2a07f6e798fe71d63a7ae54dbf9fd0b2b96f86192f03c4ff6b59da63",
-  "size": 35257,
+  "sha256": "7b215b74000bbfabdc4c99edaa077f033b4607b123bb9aa54cd51c7e2b49a763",
+  "size": 35261,
   "source": {
     "filename": "aklomp-base64--0.5.3.sources.tar.gz",
-    "sha256": "6c6669f7930798304375fdb2a0feef36a9c950657c37f46031ed07cdfdd3a790",
-    "size": 97836
+    "sha256": "c99ecac190affd0cfc199dc0299c6baf5f042f1693379f97bba397f2e1d10a7e",
+    "size": 97894
   },
   "tag": "sequoia",
   "version": "0.5.3",
   "version_scheme": 0,
-  "workflow_commit": "046adee17fea663784cba85a1cb8a28f5e8b82d7"
+  "workflow_commit": "f710d5999185719317c0c98aa1f3baf70bd97d22"
 }
