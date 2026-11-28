@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "openssh--10.6p2.sequoia.bottle.tar.gz",
-  "formula_sha256": "379a42ad0e323ac28b5602f0f6809ac4aa3f74b1112cbccb3d49de035f15bc37",
+  "formula_sha256": "b8a9cbd6df3208d0f73875539abe84595395e8777add4c6cc7532698001b17ba",
   "license": "SSH-OpenSSH",
   "name": "openssh",
   "pkg_version": "10.6p2",
   "recipe_sha256": "5426a5534199ea12f570e393a00c1ab3735eb2a8594f82814b88d3959b2a8102",
-  "release": "intel-45683572450-1-openssh",
+  "release": "intel-46147334438-1-openssh",
   "revision": 0,
-  "run_id": "45683572450",
+  "run_id": "46147334438",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,17 +19,17 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "77d2b7b4b17014457d7070af3afa9c11cf5c7f31484f89ad7fbf40cbeea5c65d",
+      "formula_sha256": "45d05876ab6984112a762809532d70f772c78bb51126719c72992330a74e73aa",
       "name": "ldns",
       "pkg_version": "1.9.2_1"
     },
     {
-      "formula_sha256": "24a4801746486c2aa11ca16c2231d938e9eb05a3885db7470eac57b3c606b5cd",
+      "formula_sha256": "eed180134987af674fe6bbbba90f45d98bb11e2a9b35e7c2e82396f32157dab7",
       "name": "libcbor",
       "pkg_version": "0.15.0"
     },
     {
-      "formula_sha256": "085bead228d99cfc2fdd768b7b717dfa8683bfc202934391c3c015456aee85db",
+      "formula_sha256": "8adfef79df46c5ab40e0f33c17d5b2c972e6ac6a33f897e2bd22fd0703a0e0c1",
       "name": "libfido2",
       "pkg_version": "1.17.0_2"
     },
@@ -39,7 +39,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "e8acf902d6e6cf56d14b9e3f95401e62efc27d2bd05016b5b86243c514c1891f",
-  "size": 3284289,
+  "sha256": "ba3d7d6709f7367019bd6b06adac46759ab86a1748ff623cdf522ddb911504d2",
+  "size": 3284269,
   "source": {
     "filename": "openssh--10.6p2.sources.tar.gz",
-    "sha256": "d0aeb33b0e17ec3c831c36b8364931597c4f1cd491e485f061727a665d16699c",
-    "size": 2361687
+    "sha256": "d88c3eceedafd0f28ea8851157b179aec82662099940a9e06fe9b383c873eb53",
+    "size": 2361737
   },
   "tag": "sequoia",
   "version": "10.6p2",
   "version_scheme": 0,
-  "workflow_commit": "8880a63ba1f800b76ffb810e55e34354d3afd18b"
+  "workflow_commit": "3c4001ab0aa88e7ffb0cb5e10c599744e53c9158"
 }
