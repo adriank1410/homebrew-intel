@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
-  "filename": "curl-impersonate--2.3.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "53254e991b90ad169b653f982cb7ed9fa796862e44cc92f0efbbe44d60ad649b",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
+  "filename": "curl-impersonate--2.3.3.sequoia.bottle.tar.gz",
+  "formula_sha256": "2e26d0b8d5271ca4f712116537d0ea397b82996b9e8863de70f9835bfe9ed58c",
   "license": {
     "all_of": [
       "MIT",
@@ -27,11 +27,11 @@
     ]
   },
   "name": "curl-impersonate",
-  "pkg_version": "2.3.2",
-  "recipe_sha256": "ae5777fef021ea18ebd8753a611d07be4bd9468d9a0b343109603010674c6f19",
-  "release": "intel-45059163998-1-yt-dlp",
+  "pkg_version": "2.3.3",
+  "recipe_sha256": "ac518894a5a80c037d3ab8f2fe94d248cdb2fb912de4d812616967937163ffc0",
+  "release": "intel-46114253316-1-curl-impersonate",
   "revision": 0,
-  "run_id": "45059163998",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "33c8d946dfd32c1b9d89706ff6b7d6ab649d550696432f4ef5c70eadce74a380",
-  "size": 7218722,
+  "sha256": "bef0c2b6619a1c587d932be94164589a0513a7382a9dc392bbe0e767cb338f40",
+  "size": 7045624,
   "source": {
-    "filename": "curl-impersonate--2.3.2.sources.tar.gz",
-    "sha256": "1c4fd363c37e27598fce2027791434848c1681fca0976235b9ed3f1d1027e3cd",
-    "size": 89784248
+    "filename": "curl-impersonate--2.3.3.sources.tar.gz",
+    "sha256": "518f2ed7ef4e2a70a1ed891a76bc610ad7d22fe4247ea7c24a881b16ec496cec",
+    "size": 89920682
   },
   "tag": "sequoia",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "version_scheme": 0,
-  "workflow_commit": "cb3ae3eecba8a64d2568396c2abf8eb8082cae1c"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }

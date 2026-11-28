@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any_skip_relocation",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "cffi--2.1.1_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "395c62177c3d87949c1de27fe08304bda3c94ad5f1c5be6f04c48ac89b86a7a4",
+  "formula_sha256": "be9784276c80b0258d83d77a41455cf8cbf01a995e16b61a8bb5ee550fe31b5c",
   "license": "MIT-0",
   "name": "cffi",
   "pkg_version": "2.1.1_1",
   "recipe_sha256": "42c81e97b4184901cc85ca46b281c2c9aecb50e136ca0f9fde14b01d7740071f",
-  "release": "intel-45424144272-1-cffi",
+  "release": "intel-46114253316-1-cffi",
   "revision": 1,
-  "run_id": "45424144272",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
-      "formula_sha256": "42c458be08feba3c02eda68f960ae949c56407674a6c95fb4f5ed55c9566ce04",
+      "formula_sha256": "89735257c94bdbf7360bab6063538b89509a920cb57460b1238553c25aec6b85",
       "name": "pycparser",
       "pkg_version": "3.12"
     }
   ],
   "schema": 1,
-  "sha256": "e23c996e5f3c44ddfcfdca98670d12d72074aabb80e35f3578df8c37db51a3a6",
-  "size": 355983,
+  "sha256": "6c35d510cd0f68a714b10aaf69218fd1381eba5c1bc321e849067ee7e8be5683",
+  "size": 355959,
   "source": {
     "filename": "cffi--2.1.1_1.sources.tar.gz",
-    "sha256": "6ed34abc37f77ebef634ce0840a16702b4c5b04cff3ca22efc9677beaace5614",
-    "size": 535555
+    "sha256": "5382e53a731a350f7fc7c1eb2210777b8efd6a9681d0add712748808fd77a028",
+    "size": 535624
   },
   "tag": "sequoia",
   "version": "2.1.1",
   "version_scheme": 0,
-  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
