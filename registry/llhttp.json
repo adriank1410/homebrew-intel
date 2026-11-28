@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "fc51ba6b2f144ecc94a7bf3f0b7b95c8477a5738",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "148aa75dfcc6edc97b198e64e746d636b4c3a75f",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "llhttp--9.4.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "3c689c532deef5ec39b23a702e7d51ed09748f338fe163cc8d5fb4b65a7070f8",
+  "formula_sha256": "bb604c0d4dfdddf0d9f80b585381db4fa72ce1add9802fdc633ece9596b0434f",
   "license": "MIT",
   "name": "llhttp",
   "pkg_version": "9.4.4",
   "recipe_sha256": "2b3eecbc05ab529af40a65f1aea8410d21f43ea7c17be482d7bef47f19b651e2",
-  "release": "intel-43541487552-1-llhttp",
+  "release": "intel-46089295242-1-llhttp",
   "revision": 0,
-  "run_id": "43541487552",
+  "run_id": "46089295242",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "99cc77e7903e3bf289910b523a74848abb7ec825186f7deee5e47e5d3116ed1c",
-  "size": 38576,
+  "sha256": "e215a2087ac0f67617642b00ba2e2be4d94f5ca34056da52dd9710f8a16ed5cc",
+  "size": 38575,
   "source": {
     "filename": "llhttp--9.4.4.sources.tar.gz",
-    "sha256": "f762c4687626b18d67edf2d59faf13ec8a06863ae54e6fcd19a152d818547c3a",
-    "size": 45186
+    "sha256": "0b576d3ac974c5ca3d1a09eb6bb7a61f7c99654255afbac6fe79f84195936dbf",
+    "size": 45254
   },
   "tag": "sequoia",
   "version": "9.4.4",
   "version_scheme": 0,
-  "workflow_commit": "15563c169bc011b650188418bee56b57039d7d06"
+  "workflow_commit": "f4367588553afbe806136ed566a01f0365fb0439"
 }
