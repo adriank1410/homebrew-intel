@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "libusbmuxd--2.1.1_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "56a12a1ec7bf87a3ac122e166b6b436067948e81b342a170271e0b6d37916ae7",
+  "formula_sha256": "ffaab29fb0b37d7de41a8cd5b020642a2255237415ef7e20b6af196e49847458",
   "license": {
     "all_of": [
       "GPL-2.0-or-later",
@@ -14,31 +14,31 @@
   "name": "libusbmuxd",
   "pkg_version": "2.1.1_1",
   "recipe_sha256": "2037e3e1f7a1628effdf85b29e294553e9b8d191de71df57f75871773c2f8dc7",
-  "release": "intel-42291947077-1-libusbmuxd",
+  "release": "intel-46108518082-1-libusbmuxd",
   "revision": 1,
-  "run_id": "42291947077",
+  "run_id": "46108518082",
   "runtime_dependencies": [
     {
-      "formula_sha256": "50936aca24b49d5777e8fa6ceaacb96a206774b081fd5bb72c4ba80a12d31491",
+      "formula_sha256": "f4b7b8e0e81e2ef9ff2a8ed42859b872f42ad618f69bf1465280d83da4e8aabb",
       "name": "libimobiledevice-glue",
       "pkg_version": "1.3.3"
     },
     {
-      "formula_sha256": "48f475b338eb556fd2aabf48fd7b073ed3abd48c64d52a5de80c29418dac1570",
+      "formula_sha256": "efab1a2a28825cd2fd1c68e938fba76bab30a2354ae6a5d38219d8bc4db9c2cd",
       "name": "libplist",
       "pkg_version": "2.8.1"
     }
   ],
   "schema": 1,
-  "sha256": "9b11a341b5a6269e8671759c5c67dfdbcaf49a6db4a1823b865469461b041825",
-  "size": 52664,
+  "sha256": "e2ad94b7eb04e3e50a35dd1b998366241b613976d81a053419fd78e07ebcab93",
+  "size": 52652,
   "source": {
     "filename": "libusbmuxd--2.1.1_1.sources.tar.gz",
-    "sha256": "fa004710b360116a92999448b51ad2212806d9c2273c957fcbd52323beda2b58",
-    "size": 338641
+    "sha256": "b61e3cf135b9e9a67d00a7e53815b5f11ac12f9fab6463f8e6f8c4de0f8939a5",
+    "size": 338695
   },
   "tag": "sequoia",
   "version": "2.1.1",
   "version_scheme": 0,
-  "workflow_commit": "83afa84b49f342f01a01d35c578bdaabffe6ba56"
+  "workflow_commit": "02f075d982a966c7dfead7d8c843c0e1ef79409f"
 }
