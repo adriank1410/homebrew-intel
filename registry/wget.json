@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "wget--1.25.0_2.sequoia.bottle.tar.gz",
-  "formula_sha256": "2f060e8d304ec9239060e8f43a8e4b1dd2c711a77de3e8bf02e41b98ed7e7d65",
+  "formula_sha256": "72e5762a4a5a89a412c729e9b274eb818d9a09dbfdb98a5a0bc32482498d4ccd",
   "license": "GPL-3.0-or-later",
   "name": "wget",
   "pkg_version": "1.25.0_2",
   "recipe_sha256": "b7f226a99cf6c3d973922434ab73eb3e847835d80ec158e0fbc6d5eb5c5845de",
-  "release": "intel-45424144272-1-wget",
+  "release": "intel-46141256182-1-wget",
   "revision": 2,
-  "run_id": "45424144272",
+  "run_id": "46141256182",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,27 +19,27 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "formula_sha256": "8a73e85d8ff0a88024b482ccbe8332e323459cfb95702c926d07b1a1188e88e5",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
       "name": "json-c",
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "ec612e2853549a7735d514b215bee957cebd1f63db243ce70393b948d8052f07",
+      "formula_sha256": "1cc5293447570e7996182dce79af594354dc6eaf8c6aea14d98ebafa36103167",
       "name": "libidn2",
       "pkg_version": "2.3.8"
     },
     {
-      "formula_sha256": "13b964615ae7ccee3c7e0282d33bdf49703aea69266f41f95a9080311e6917ff",
+      "formula_sha256": "f3877754c8c8e38719d6a78c2e8bea61869536d3d908524ad0be6d36d62107b7",
       "name": "libpsl",
       "pkg_version": "0.23.3"
     },
     {
-      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "formula_sha256": "a5f9474431a9422be5a7fe744dde97f0ccd4eac10092aa17562265be2e956b5f",
       "name": "libunistring",
       "pkg_version": "1.5"
     },
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "a9cd39b0b20513ba88552b14223ae3ade48bb3fbd82fa21858b6695e09a135b1",
-  "size": 1615491,
+  "sha256": "2e8ecd1675f78341464bed9e28aaad096bbfbe08c6db4575efb33b71e51adc90",
+  "size": 1615356,
   "source": {
     "filename": "wget--1.25.0_2.sources.tar.gz",
-    "sha256": "5f628f1635795d5fc9435a5888b8af9ab67ea0d023c9fd10f44b145b94908523",
-    "size": 5278765
+    "sha256": "0ae43c97f5135bb86aa7e1a1f11418c64696dc0fecb2de88701e07b58658cb8d",
+    "size": 5278822
   },
   "tag": "sequoia",
   "version": "1.25.0",
   "version_scheme": 0,
-  "workflow_commit": "691e747f8107c0d81f80a4bde174e16d01a929b6"
+  "workflow_commit": "f710d5999185719317c0c98aa1f3baf70bd97d22"
 }
