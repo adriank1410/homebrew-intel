@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any_skip_relocation",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "httpie--3.2.4_13.sequoia.bottle.tar.gz",
-  "formula_sha256": "7d20200c7ab9c6c10a5b9fbbf624d599d9c297ee15701670e9841a74a2b175be",
+  "formula_sha256": "0c09ca007679eeb4180114d2a6ba0df1e322b6ce21c636d80a8c83653c67917b",
   "license": "BSD-3-Clause",
   "name": "httpie",
   "pkg_version": "3.2.4_13",
   "recipe_sha256": "fbfdaec1be5612c9986445e106a7d2d2ea9809b2e4b1e5261fc7d21e6b1bef76",
-  "release": "intel-45615855726-1-httpie",
+  "release": "intel-46114253316-1-httpie",
   "revision": 13,
-  "run_id": "45615855726",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -29,7 +29,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dd58487ae0f5538fbd8e6d1bb569def6cd0bbf42bbe30da0d315c67706932c66",
-  "size": 2681278,
+  "sha256": "e8b806c2a9873cae4719c9f8f634536227c45d731380d1511c63f5077e3dfd39",
+  "size": 2681043,
   "source": {
     "filename": "httpie--3.2.4_13.sources.tar.gz",
-    "sha256": "ce94efd001613dc76f9802ca8a982b6bd2718d957ddcd4b641de9f71c5890d7c",
-    "size": 9779808
+    "sha256": "827037317ebf47a674af29771371332cac5c3398c2f32cbb4c8288e6ae3c59ce",
+    "size": 9779846
   },
   "tag": "sequoia",
   "version": "3.2.4",
   "version_scheme": 0,
-  "workflow_commit": "2a815039222fdba7fc0e9edf726d54ca02eb3293"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
