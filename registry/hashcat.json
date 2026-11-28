@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "6fd35bcbb4fcd61f4a7b5c51671b86ffcb181a7b",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "hashcat--8.0.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "c0dbbc5bd566150310d7c9bcb79923f7e9e518b6f6b034d54359eeeee981b50e",
+  "formula_sha256": "1bde25e59d2abbbe5a52daaf6c855a24f006f86f7958693de94cb89370125164",
   "license": {
     "all_of": [
       "MIT",
@@ -15,20 +15,20 @@
   "name": "hashcat",
   "pkg_version": "8.0.0",
   "recipe_sha256": "6d9d50b66b36508d35b8e22363102849715e133db9b2ce96cda2a9baea952fcf",
-  "release": "intel-42472248914-1-hashcat",
+  "release": "intel-46083558041-1-hashcat",
   "revision": 0,
-  "run_id": "42472248914",
+  "run_id": "46083558041",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "3ee55de231e14cf226ba0d7af2070b899b109cd540438f4b7455232fa8980329",
-  "size": 29291659,
+  "sha256": "3b0af027e685603c1badb62912fa477399e32b9c5388ab160277df3bc52694df",
+  "size": 29291502,
   "source": {
     "filename": "hashcat--8.0.0.sources.tar.gz",
-    "sha256": "7fc78c1009d6f74fe1859e047718a134c21e71eef2e1d56eb681ed7db344deb0",
-    "size": 24319468
+    "sha256": "3817d8f423790e2e85774219b0229bfb3176b7ec082d4caa3a745fba794287e7",
+    "size": 24319539
   },
   "tag": "sequoia",
   "version": "8.0.0",
   "version_scheme": 1,
-  "workflow_commit": "5ea692bac90c2bde9f64284d0a2b5533d134ae92"
+  "workflow_commit": "5f5ce9667716bf575e9565ac7eb5f695381917af"
 }
