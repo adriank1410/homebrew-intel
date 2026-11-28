@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "179af39908f6b3e0c24bf77572d26ab104f704c8",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "91e1765981cd394e1af71decd5c67f8cff5c438c",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "fontconfig--2.18.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "168e49c03d729eaba920f220503613a0dc55a77fad54a4a933d0a7da3ff7b8c9",
+  "formula_sha256": "4b6e4cab1dba0182ed5aa9d556e20fa3d06071ec54473662bd332eb8b51b3dc4",
   "license": {
     "all_of": [
       "HPND-sell-variant",
@@ -17,51 +17,51 @@
   "name": "fontconfig",
   "pkg_version": "2.18.4",
   "recipe_sha256": "eeaa2c4247365c60b9a7d8f9e4334f5f718021f250f447117bb0e539f5f48d30",
-  "release": "intel-44397321404-1-fontconfig",
+  "release": "intel-46114253316-1-fontconfig",
   "revision": 0,
-  "run_id": "44397321404",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
-      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
+      "formula_sha256": "1514b6c42d18d1f4f0458ed4479cbb55fa35d76b571f330d55a01f97424562d0",
       "name": "brotli",
       "pkg_version": "1.2.1"
     },
     {
-      "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
+      "formula_sha256": "94ef1c31b0cb11704d66436f1a5529db8f73b15aead701c89162875cbaf79e4b",
       "name": "freetype",
       "pkg_version": "2.15.0"
     },
     {
-      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "formula_sha256": "8a73e85d8ff0a88024b482ccbe8332e323459cfb95702c926d07b1a1188e88e5",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
       "name": "json-c",
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
+      "formula_sha256": "35e225a1296594d2b09cd433bd50b4950fd577ffd51889210ee13f52f31f72cc",
       "name": "libpng",
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "formula_sha256": "a5f9474431a9422be5a7fe744dde97f0ccd4eac10092aa17562265be2e956b5f",
       "name": "libunistring",
       "pkg_version": "1.5"
     }
   ],
   "schema": 1,
-  "sha256": "ee0f65f256e2a3644585e97882a949339959f278b7e87814eda184e50ac0e37e",
-  "size": 443256,
+  "sha256": "5f047dfd1392710313449570b7718d0a451ccdd09c8483670c6eb6711f1c0234",
+  "size": 443266,
   "source": {
     "filename": "fontconfig--2.18.4.sources.tar.gz",
-    "sha256": "3816bd53acb7ecfb3743a5231252b56d85b4e4e3956e35c38cc8e349828abea5",
-    "size": 674842
+    "sha256": "1035e366b8471921ed2fc8cdc878e047996962ba0acfd4e26914b2230df43128",
+    "size": 674910
   },
   "tag": "sequoia",
   "version": "2.18.4",
   "version_scheme": 0,
-  "workflow_commit": "fe196cdf9b8952f2b2d56c5cb3c762e14f64536f"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
