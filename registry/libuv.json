@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "ddc6726c17186ec5c48041817f29e11454d22220",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "3ebddf0aedd662b65e6ee98a8e18577ae2f44c4d",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "libuv--1.53.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "ce98fd5a27fe5e0d9114f0d31507c6735a5784974b4aa0f5a6fa59bece96bf84",
+  "formula_sha256": "1f434a29891ef89b8b8bdb6e29009156d6a795540f7006d346da20a7a5e97eff",
   "license": "MIT",
   "name": "libuv",
   "pkg_version": "1.53.0",
   "recipe_sha256": "7855db8a9df9dfee18b1522953c4fbbfeb94b044c2a58a1cfbb4361cda4bbc47",
-  "release": "intel-36174289244-1-libuv",
+  "release": "intel-46141256182-1-libuv",
   "revision": 0,
-  "run_id": "36174289244",
+  "run_id": "46141256182",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "9160c46b3cf2673d337480d5ca66c4641a311b6550cc743e3ca802aad9d0bd3b",
-  "size": 384785,
+  "sha256": "2b565fd16542b23d7d1d12b58edc22e9dabd064687120adaac620a18e02034c8",
+  "size": 384809,
   "source": {
     "filename": "libuv--1.53.0.sources.tar.gz",
-    "sha256": "ed81c620dc80f6c5b1e020ac0dfe369c50e86fda3d4ab39e9a6d2ab0b273043f",
-    "size": 1427581
+    "sha256": "874f7cb15d134e6a48edc3855819a76d304a4f8171120c0c6f3ac306e1c1e68c",
+    "size": 1427655
   },
   "tag": "sequoia",
   "version": "1.53.0",
   "version_scheme": 0,
-  "workflow_commit": "5f993268430124c2bff072dd011978d5e322d643"
+  "workflow_commit": "f710d5999185719317c0c98aa1f3baf70bd97d22"
 }
