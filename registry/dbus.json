@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "b63354cf393a1779a8e0d7ab6a52eed05c61171d",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "4ad70807fd43bd586ca3f627d99a45cde5d836c8",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "dbus--1.16.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "e0a42e4a334258145f4fe5bf8d8910a0e4e07c414306f3779575d39483608793",
+  "formula_sha256": "9ee6281d3518015e77f2700b0b6dd72c4a0233db806fc2428c778f58523aaace",
   "license": {
     "any_of": [
       "AFL-2.1",
@@ -14,20 +14,20 @@
   "name": "dbus",
   "pkg_version": "1.16.4",
   "recipe_sha256": "061fbffc9abb7b99a0b33fab1e580586a62585f8136f3fcf04348602f78fe66a",
-  "release": "intel-43985609699-1-dbus",
+  "release": "intel-46141256182-1-dbus",
   "revision": 0,
-  "run_id": "43985609699",
+  "run_id": "46141256182",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "607ac6dc8f5de1dfda9e07b467834f930c0229c291acf32e395c84d610084cc8",
-  "size": 561973,
+  "sha256": "284e49b90cefbcf1cd55419e509be600eefb26304944b07346d0a4531f858c0f",
+  "size": 561972,
   "source": {
     "filename": "dbus--1.16.4.sources.tar.gz",
-    "sha256": "1a178aa4721109e560cf2860c6bb28936b513358733f737b9ac8354514ab4491",
-    "size": 1151028
+    "sha256": "3c735d600a85b6d21a18c10afd2eb93d7a99618a8deb6501952a3d9116e6a48b",
+    "size": 1151084
   },
   "tag": "sequoia",
   "version": "1.16.4",
   "version_scheme": 0,
-  "workflow_commit": "d39a2dde485ab698fd0de1083b7e4003a4e5ce7f"
+  "workflow_commit": "f710d5999185719317c0c98aa1f3baf70bd97d22"
 }
