@@ -1,35 +1,35 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "bash--5.3.20.sequoia.bottle.tar.gz",
-  "formula_sha256": "1e439a2d96db5460f5146e0652f480da856e8640eb59eec02f7ff5a46c107788",
+  "formula_sha256": "fad240859167757283eaa75e9ad409517e2537322ae973af50aa144aadd7e2e4",
   "license": "GPL-3.0-or-later",
   "name": "bash",
   "pkg_version": "5.3.20",
   "recipe_sha256": "b8d43aa83ce49cf6a27f2dcb11425dddafc1e640d83c849febf7800c888d6c27",
-  "release": "intel-44901803975-1-bash",
+  "release": "intel-46108518082-1-bash",
   "revision": 0,
-  "run_id": "44901803975",
+  "run_id": "46108518082",
   "runtime_dependencies": [
     {
-      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "formula_sha256": "8a73e85d8ff0a88024b482ccbe8332e323459cfb95702c926d07b1a1188e88e5",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
       "name": "json-c",
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "formula_sha256": "a5f9474431a9422be5a7fe744dde97f0ccd4eac10092aa17562265be2e956b5f",
       "name": "libunistring",
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "2e35152ac8c0b209f90373090ad3d3a64d7818fc965d6f58142ab1d9fa95f824",
+      "formula_sha256": "ddcb15ab97430faec8d550f11869e26718d45b4b7805eaa6cc155bb0224823e2",
       "name": "ncurses",
       "pkg_version": "6.6"
     },
@@ -40,15 +40,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "74f63ce877958c23c300f128cb9182194b8b59d45784087b0c47694c07a7cd4a",
-  "size": 3421035,
+  "sha256": "de02da8797e44fd2889884044c78a6b537122d339cbe34c4b4b5686a0abd7ad9",
+  "size": 3420936,
   "source": {
     "filename": "bash--5.3.20.sources.tar.gz",
-    "sha256": "954a59dda6be06b5d4302ddfd8f9d83eb75888c8ef86068495de38c519755d5c",
-    "size": 11397352
+    "sha256": "b190911e58426f783a3bfb4f8ddfa817b633aaf9c387a433c723ca5e87936ef8",
+    "size": 11397400
   },
   "tag": "sequoia",
   "version": "5.3.20",
   "version_scheme": 0,
-  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
+  "workflow_commit": "02f075d982a966c7dfead7d8c843c0e1ef79409f"
 }
