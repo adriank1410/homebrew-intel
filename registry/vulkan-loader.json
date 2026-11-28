@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a59d9fc5f8361dccde817ce1c066fdf365c8df3e",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "21be5f289b83af0efa40c20a9a08781971ff907c",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "vulkan-loader--1.4.363.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "e17b99bb7e073a873e6c6548f524da74d419b737d0f4c944690da4b35088fad9",
+  "formula_sha256": "e5580650479608313394e63582f3a6f4c313655291fb438f7bf9b8a0259c19b6",
   "license": "Apache-2.0",
   "name": "vulkan-loader",
   "pkg_version": "1.4.363.0",
   "recipe_sha256": "87ebe5451f96caa57e30dbd3b2f189ee01112fe5c99f093c465e37ccca5dcd44",
-  "release": "intel-40647079024-1-vulkan-loader",
+  "release": "intel-46141256182-1-vulkan-loader",
   "revision": 0,
-  "run_id": "40647079024",
+  "run_id": "46141256182",
   "runtime_dependencies": [
     {
-      "formula_sha256": "3d0ebe030c2e4025e227143160562e67a8f65172bc2ad699c1dbd828b1a3909f",
+      "formula_sha256": "e2a27a65c4c27cf2bcfb881f570f8a417ec969cd5e9293be7a23ce286a40994e",
       "name": "vulkan-headers",
       "pkg_version": "1.4.363.0"
     }
   ],
   "schema": 1,
-  "sha256": "03cb5002b24030362cb7e45a956d372b57e75d74a3dac878129909ca4c924029",
-  "size": 400444,
+  "sha256": "bf99eca2f67454af1dc32a8e1a01ee6c4ce325d6f2d5b865ac51bc8a055de4d5",
+  "size": 400445,
   "source": {
     "filename": "vulkan-loader--1.4.363.0.sources.tar.gz",
-    "sha256": "fe14ef4ff1a9ccacaf13e46b111ac51004710440ed9cff7e61b913841455fb12",
-    "size": 1865180
+    "sha256": "0526308c1b1831432800d82c55a816a8975db6a9d5f88820bd9eb23fa2ce8ecf",
+    "size": 1865231
   },
   "tag": "sequoia",
   "version": "1.4.363.0",
   "version_scheme": 0,
-  "workflow_commit": "a073571e401db12b4091a9015f4bd0ca708c032c"
+  "workflow_commit": "f710d5999185719317c0c98aa1f3baf70bd97d22"
 }
