@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "d1a9d67b00bbe914fae8ce665ddcb75dde08fd6e",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "litehtml--0.10_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "7c8ab1c97d3d2d4afbbf1327f21001c41513d03d815fdcddd4a3d4b4459b66db",
+  "formula_sha256": "f516dab729e34eed2aae67cc4a37fa971722da583b012b882f23a5a4ce332d3e",
   "license": "BSD-3-Clause",
   "name": "litehtml",
   "pkg_version": "0.10_1",
   "recipe_sha256": "fccd4569e57a98afaeb17226b3347928bfacdc996b3dc9977b79144808122c26",
-  "release": "intel-40976752251-1-litehtml",
+  "release": "intel-46095064862-1-litehtml",
   "revision": 1,
-  "run_id": "40976752251",
+  "run_id": "46095064862",
   "runtime_dependencies": [
     {
-      "formula_sha256": "bcf76efcff739b4bd15e68444e0236e75ac822592315642243e3da1537d70398",
+      "formula_sha256": "afe8127514636edf93dff9fabbcc392fc2545dc4a4a589863d328443a425057f",
       "name": "gumbo-parser",
       "pkg_version": "0.14.1"
     }
   ],
   "schema": 1,
-  "sha256": "7e36cef7f04dc27c0da10e9d3154a13d87d7523fefb3b9a5133f73adf065e139",
-  "size": 505807,
+  "sha256": "22a19ffec79da228c1e255083174fd58f2e40ff88bc5e1a6d87e9d7df779231f",
+  "size": 505805,
   "source": {
     "filename": "litehtml--0.10_1.sources.tar.gz",
-    "sha256": "1bf205c59074ed0443a236e216b590931a6ccd9bcdd42009dac890cd16f97a07",
-    "size": 814550
+    "sha256": "ce280d8832ee86cdf7769273b6ec53624d84a92c831be85e1caccd6e678c6a1c",
+    "size": 814616
   },
   "tag": "sequoia",
   "version": "0.10",
   "version_scheme": 0,
-  "workflow_commit": "082beab1dfac4d9450e077ac2104e8636560b609"
+  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
 }
