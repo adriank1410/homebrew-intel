@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "3ccfa1d071435faf83990f0788d18920ab90d817",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "6e92844e6b94717b535d9fb729181b855dd4bed5",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "fmt--12.2.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "7aced41e0896abf5f58833f3112a075b2364ead07735098488dac2f5a1000d6a",
+  "formula_sha256": "c1dc2e5d9900dae26e4da28468a8c857018d773a0b12695b1386798056f160c0",
   "license": "MIT",
   "name": "fmt",
   "pkg_version": "12.2.1",
   "recipe_sha256": "bc5e3a024491f9e3e61ba3e6253df55328a246201862af28bd4206abd70c568a",
-  "release": "intel-42406923991-1-fmt",
+  "release": "intel-46089295242-1-fmt",
   "revision": 0,
-  "run_id": "42406923991",
+  "run_id": "46089295242",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "db1a2850233aef3df82a178eb34a73f5db93bf756fbc0f8ffa7c17456b0c847e",
-  "size": 291559,
+  "sha256": "a69af76f0e34b8f9a18f8cb02da596620eeb20c72167a21092c97126c9b6c731",
+  "size": 291563,
   "source": {
     "filename": "fmt--12.2.1.sources.tar.gz",
-    "sha256": "c46ad1156d3e9a4d601befb1ac217eaee1d4465f70fe479bdcc999881f47dc84",
-    "size": 1457603
+    "sha256": "9a9f1f9aec8561f6ced55a80d124b8027606392a56588f7904e71c5e39cee822",
+    "size": 1457689
   },
   "tag": "sequoia",
   "version": "12.2.1",
   "version_scheme": 0,
-  "workflow_commit": "5f057da9a799dffab551aa3b4bdd134bf0ab83e9"
+  "workflow_commit": "f4367588553afbe806136ed566a01f0365fb0439"
 }
