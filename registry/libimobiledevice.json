@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ee88bcfe930a17c9d1cee74d46bf24ef8c4144d",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "8076a578a06e782488296d7417ea459e619a566d",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "libimobiledevice--1.4.0_3.sequoia.bottle.tar.gz",
-  "formula_sha256": "9630595eb4594d7bfc8970753e9998c2002c86381b36368dd10779251c22f925",
+  "formula_sha256": "ea100f1160b536192fdb50007998b3dedf2bdb9b5230f9aae32a515cea4cebc9",
   "license": "LGPL-2.1-or-later",
   "name": "libimobiledevice",
   "pkg_version": "1.4.0_3",
   "recipe_sha256": "6691add95282eb08c79dc13780d867a2f4f0e4a9e01add5b7c2f25993bf5e9f8",
-  "release": "intel-44901803975-1-libimobiledevice",
+  "release": "intel-46114253316-1-libimobiledevice",
   "revision": 3,
-  "run_id": "44901803975",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,27 +19,27 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "50936aca24b49d5777e8fa6ceaacb96a206774b081fd5bb72c4ba80a12d31491",
+      "formula_sha256": "f4b7b8e0e81e2ef9ff2a8ed42859b872f42ad618f69bf1465280d83da4e8aabb",
       "name": "libimobiledevice-glue",
       "pkg_version": "1.3.3"
     },
     {
-      "formula_sha256": "48f475b338eb556fd2aabf48fd7b073ed3abd48c64d52a5de80c29418dac1570",
+      "formula_sha256": "efab1a2a28825cd2fd1c68e938fba76bab30a2354ae6a5d38219d8bc4db9c2cd",
       "name": "libplist",
       "pkg_version": "2.8.1"
     },
     {
-      "formula_sha256": "ed078be38ddf16705fd0e9cc3a60a310d31f935cfbee6893dccb05b16fc9bcb7",
+      "formula_sha256": "7610ff43d6190b8df4ed308faf777bda98bf84ede69966f270c62df31597b724",
       "name": "libtasn1",
       "pkg_version": "4.21.0"
     },
     {
-      "formula_sha256": "64879919b47298dfedb02f0fa845047a373c8a6e42b37720cadc3d7f814a8c67",
+      "formula_sha256": "8143c0ec8a6dddc425dc438a4e434b3d2e8ca382f589402a52316384fd5a6381",
       "name": "libtatsu",
       "pkg_version": "1.1.1"
     },
     {
-      "formula_sha256": "56a12a1ec7bf87a3ac122e166b6b436067948e81b342a170271e0b6d37916ae7",
+      "formula_sha256": "ffaab29fb0b37d7de41a8cd5b020642a2255237415ef7e20b6af196e49847458",
       "name": "libusbmuxd",
       "pkg_version": "2.1.1_1"
     },
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "707978d1313ed41af579d090a12ca2781ebb41178705976c6940fcbdf8d01870",
-  "size": 496825,
+  "sha256": "d4af504a3f208ac94eb1a72602ddcf52026f6ed708bdb336ee5949b69a28293e",
+  "size": 496802,
   "source": {
     "filename": "libimobiledevice--1.4.0_3.sources.tar.gz",
-    "sha256": "33f23ad719e5beb701278cceb74108757bb74c4c500ca01f902083e1718bd5c3",
-    "size": 732138
+    "sha256": "2ad66fc1747ffccd33ac857d9a34615eb934cbe47a753adffd97a06a3bd15f55",
+    "size": 732179
   },
   "tag": "sequoia",
   "version": "1.4.0",
   "version_scheme": 0,
-  "workflow_commit": "9ba616c35c2c6a0956877312261e8438c3adc9b0"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }

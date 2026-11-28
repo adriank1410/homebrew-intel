@@ -1,10 +1,10 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "numpy--2.5.5.sequoia.bottle.tar.gz",
-  "formula_sha256": "055aafb2cb09f32dfa90b25756d44a22aa0cddacf823d003814028b96991daa2",
+  "formula_sha256": "378b34798bb7846b29b6cfb82228887f84f47e7718fac232fdf5d61ab1392f19",
   "license": {
     "all_of": [
       "BSD-3-Clause",
@@ -17,32 +17,32 @@
   "name": "numpy",
   "pkg_version": "2.5.5",
   "recipe_sha256": "ea1c134111cb1bcd58f2baf565fbb19289570610e178546d01d1d51fb4701e07",
-  "release": "intel-45615855726-1-numpy",
+  "release": "intel-46114253316-1-numpy",
   "revision": 0,
-  "run_id": "45615855726",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
-      "formula_sha256": "ea82c027fa80b3b6d2c6a5a8bf057b15c2c8df004639716afd99799ccecb662b",
+      "formula_sha256": "fe4dcf423d2d5c3201c893f7a7a07d8040b50b87f665e3f98436976ce3189f20",
       "name": "gcc",
       "pkg_version": "16.2.0"
     },
     {
-      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "formula_sha256": "60659e5a21da08e05c3ac0b7a924aa6af769ea3952aafddaa39078d5924a1f90",
       "name": "gmp",
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "ae2f243901f133c7c0766e7cfd828b3a2a5d9684125c609828c159db6e3e21a2",
+      "formula_sha256": "f57cd052677727e6934fe7723f0cde1a2629bda401346ac448d74fc6a70ea5c1",
       "name": "isl",
       "pkg_version": "0.28"
     },
     {
-      "formula_sha256": "87472e4caf45867add454ee69553eafb1f52cbcefc602b67c4304a74d82306d6",
+      "formula_sha256": "5fccb67e14332b83e07e3d6fddc6119c88ad23c3a72fc20838732b99b168f13d",
       "name": "libmpc",
       "pkg_version": "1.4.1"
     },
     {
-      "formula_sha256": "fd6bf2ce343e16a08c3ed5295e3b26cce10677c990d00a75bbb2b2f4c89f93d5",
+      "formula_sha256": "265612ff660661228ca2a8ef6267565b7a42773ec5894d2e98bd1efaece583ca",
       "name": "libomp",
       "pkg_version": "23.1.6"
     },
@@ -52,12 +52,12 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "35ac684468efbedf81c16eb0dbea380e977720a9b234276da1847219aa767aa4",
+      "formula_sha256": "6153b8a0eb604abb1e39f058a3f822c0bce64a353091241f4b7985a4f30f44f8",
       "name": "mpfr",
       "pkg_version": "4.2.2"
     },
     {
-      "formula_sha256": "a9df5fa47015b4814c0ea8616127e248e48cc5a1136c1f33b13f5cdbe2da454e",
+      "formula_sha256": "ef228e5f457206c22350e1600ae20bc71edffa0871c66ebdcfe46f5d601faf2c",
       "name": "openblas",
       "pkg_version": "0.3.34"
     },
@@ -73,15 +73,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "dbfbb3c1533fe0b3f2afee236d3fbf32af17d3b13f2809a31182466fc1e14e42",
-  "size": 11188286,
+  "sha256": "7947b7807b0840baec3cd6202d4924294810631e169f10e67f74265655f33b52",
+  "size": 11188188,
   "source": {
     "filename": "numpy--2.5.5.sources.tar.gz",
-    "sha256": "2ae250e70f11c573b01de2b49251eb4dc493017379daf774f584ab74918a09d4",
-    "size": 20858970
+    "sha256": "c3f5aebbc55e82697341cab2540d49fa8a52d4b8948adbb072c2ea59463d7452",
+    "size": 20859063
   },
   "tag": "sequoia",
   "version": "2.5.5",
   "version_scheme": 0,
-  "workflow_commit": "2a815039222fdba7fc0e9edf726d54ca02eb3293"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
