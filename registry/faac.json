@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5665d31fe207c79364a38abb3107d767b0d3884a",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "ab070e10eb214e85fe4a53de45359cdea24bc379",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "faac--2.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "35b29dc5c85b11b5dadb42337c79a87798d33112e940af3f512ef1ca67c8b70c",
+  "formula_sha256": "1a24fc24aaaa09536e75a612ed2f364a200af45f5ce36996a73924ec74e28634",
   "license": "LGPL-2.1-or-later",
   "name": "faac",
   "pkg_version": "2.2",
   "recipe_sha256": "ca7f0f925bc490ce6021649f8301bd74c135aa844b03b626ed5012d4d17adc72",
-  "release": "intel-37123136954-1-faac",
+  "release": "intel-46114253316-1-faac",
   "revision": 0,
-  "run_id": "37123136954",
+  "run_id": "46114253316",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "6bb619bc710fa78609481932b28586fe7d038b9d513ef75abb1e192b7764a7cb",
-  "size": 155835,
+  "sha256": "79295931e17fa6d9b1a972ed25d436d9004b418380be1b1956b7076ed12b9e62",
+  "size": 155827,
   "source": {
     "filename": "faac--2.2.sources.tar.gz",
-    "sha256": "be48f8f8e85933385e58efa7fbec5b1876b03ea35a5f8a80a4f99487ec25c1c8",
-    "size": 206459
+    "sha256": "1f87ba0e85b9f98ac524ba27e6dfb5e4246dd3df68a64461572f545703f61028",
+    "size": 206515
   },
   "tag": "sequoia",
   "version": "2.2",
   "version_scheme": 0,
-  "workflow_commit": "09a735044a308d68731097e118a8574fa622132d"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
