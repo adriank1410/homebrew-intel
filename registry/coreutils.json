@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "coreutils--9.12_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "fbd3045f139d5a3394b70c1fb1f06d1484ee3dafdb8d98cdff4ac60218ea38b1",
+  "formula_sha256": "e7fe3001ec39d078dd179cd7293a451e0d85154565db6b8a639d17af6efc942d",
   "license": "GPL-3.0-or-later",
   "name": "coreutils",
   "pkg_version": "9.12_1",
   "recipe_sha256": "435f9bdac6838c8664ead35b1a495191e0c6e0482f38cfbf8cb78cd29ea6cc74",
-  "release": "intel-45312177023-1-coreutils",
+  "release": "intel-46095064862-1-coreutils",
   "revision": 1,
-  "run_id": "45312177023",
+  "run_id": "46095064862",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,7 +19,7 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "formula_sha256": "60659e5a21da08e05c3ac0b7a924aa6af769ea3952aafddaa39078d5924a1f90",
       "name": "gmp",
       "pkg_version": "6.3.0"
     },
@@ -30,15 +30,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "2fe30a27ee6547c3a90ce4134a44df0d44f2bc1f9d22949a24994db16d25fd33",
-  "size": 5396495,
+  "sha256": "1a25a931a523dc265c7e4b44c9e6d042b2b1fa93b0e378f7833edcdbcbceef6e",
+  "size": 5396415,
   "source": {
     "filename": "coreutils--9.12_1.sources.tar.gz",
-    "sha256": "da8831b28539525fa26ad45d63a813a12806a116f23abc97b75d406dfd9a1a48",
-    "size": 6728179
+    "sha256": "7f7a4797ad4290c13b1a4356885b7fc0e7318e8a8be8d018e96609e3ce3cd7cc",
+    "size": 6728252
   },
   "tag": "sequoia",
   "version": "9.12",
   "version_scheme": 0,
-  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
+  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
 }
