@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "9226bdf05510313eb45e6c5e78b304e5a1ddec4b",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "09d9e9447fcae7f0d0e3d8d49deb6625592b7834",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "luv--1.53.0-1.sequoia.bottle.tar.gz",
-  "formula_sha256": "524b1f58d41e8420a8244644a78755fd43fc073625af873843669c159e23e1fc",
+  "formula_sha256": "a9eecebb8e264c102e5f9e420b62c3d28b57d248f45d6ef4f46070a0a84e718e",
   "license": "Apache-2.0",
   "name": "luv",
   "pkg_version": "1.53.0-1",
   "recipe_sha256": "5ecdafce8584f9baad90bf9fbbf7421967d6f3a0770bbc78382b0062f8e7259d",
-  "release": "intel-40992348183-1-neovim",
+  "release": "intel-46147334438-1-luv",
   "revision": 0,
-  "run_id": "40992348183",
+  "run_id": "46147334438",
   "runtime_dependencies": [
     {
-      "formula_sha256": "ce98fd5a27fe5e0d9114f0d31507c6735a5784974b4aa0f5a6fa59bece96bf84",
+      "formula_sha256": "1f434a29891ef89b8b8bdb6e29009156d6a795540f7006d346da20a7a5e97eff",
       "name": "libuv",
       "pkg_version": "1.53.0"
     }
   ],
   "schema": 1,
-  "sha256": "1498e87c28be201042ad423409bd3e53d2b5959631504dbfad6e73f373ef6614",
-  "size": 247706,
+  "sha256": "207a33e6ad22f485eaef205f7df44fcacfffb04e4fc0d4c86a60a39df7c17d94",
+  "size": 247714,
   "source": {
     "filename": "luv--1.53.0-1.sources.tar.gz",
-    "sha256": "ad6a5b1f53dc82c49341cb007e6c8a9cbd313a961344f68ca642b17328b03953",
-    "size": 300397
+    "sha256": "c50838b3c3fcc750b9730a54375e124cdb6e3c910598e7d1409a06169404a37d",
+    "size": 300425
   },
   "tag": "sequoia",
   "version": "1.53.0-1",
   "version_scheme": 0,
-  "workflow_commit": "f98aa7e65fea8fd91fda477386046c1efc761425"
+  "workflow_commit": "3c4001ab0aa88e7ffb0cb5e10c599744e53c9158"
 }
