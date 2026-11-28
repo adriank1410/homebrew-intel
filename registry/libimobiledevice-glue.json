@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "f101d8893c193069012d6a017601baca04ea4c83",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "ff4b87a68db264867c8c57bfcab702bea3397158",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "libimobiledevice-glue--1.3.3.sequoia.bottle.tar.gz",
-  "formula_sha256": "50936aca24b49d5777e8fa6ceaacb96a206774b081fd5bb72c4ba80a12d31491",
+  "formula_sha256": "f4b7b8e0e81e2ef9ff2a8ed42859b872f42ad618f69bf1465280d83da4e8aabb",
   "license": "LGPL-2.1-or-later",
   "name": "libimobiledevice-glue",
   "pkg_version": "1.3.3",
   "recipe_sha256": "9b58819da432444a8c0afbeffc1a5db394a74c742c9c41a01717d8ecdce1d6e6",
-  "release": "intel-42288846666-1-libimobiledevice-glue",
+  "release": "intel-46095064862-1-libimobiledevice-glue",
   "revision": 0,
-  "run_id": "42288846666",
+  "run_id": "46095064862",
   "runtime_dependencies": [
     {
-      "formula_sha256": "48f475b338eb556fd2aabf48fd7b073ed3abd48c64d52a5de80c29418dac1570",
+      "formula_sha256": "efab1a2a28825cd2fd1c68e938fba76bab30a2354ae6a5d38219d8bc4db9c2cd",
       "name": "libplist",
       "pkg_version": "2.8.1"
     }
   ],
   "schema": 1,
-  "sha256": "e74db9e12c6f419ece41e3c3e2b42eb4f1a1727f15eb593d1e19af6dc382003c",
-  "size": 75581,
+  "sha256": "0ed4d2f5d1ec99944276556a094dd2d6a33168266538a2df3cbc9a0afb0a07d0",
+  "size": 75568,
   "source": {
     "filename": "libimobiledevice-glue--1.3.3.sources.tar.gz",
-    "sha256": "73fb1d9aea3e4a51699a298a5051e47acc18010e661e4c7041ff6c312a7e633b",
-    "size": 358116
+    "sha256": "9397a901929382790dc1464b96a39f32440000e6cbd5d08a13140bb5d50f16a2",
+    "size": 358196
   },
   "tag": "sequoia",
   "version": "1.3.3",
   "version_scheme": 0,
-  "workflow_commit": "cbeb04640c9a9dc3dcc68dbfb18d4aec5c0dcdf1"
+  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
 }
