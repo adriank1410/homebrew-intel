@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6363864742b5434858d92aa954b96e51826dea19",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "a7a3d46c11d7940e0e988ad8379a09c3d41c0257",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "pcre2--10.49.sequoia.bottle.tar.gz",
-  "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
+  "formula_sha256": "00be3a25fd559acfe901c0aa451ded5f46ab071b9b8e387536c867b94aa9f738",
   "license": "BSD-3-Clause",
   "name": "pcre2",
   "pkg_version": "10.49",
   "recipe_sha256": "94c19a0d869da4990a8f3f371e37c986ad72124d2d94032e061c4a9019f9e174",
-  "release": "intel-36593061706-1-pcre2",
+  "release": "intel-46108518082-1-pcre2",
   "revision": 0,
-  "run_id": "36593061706",
+  "run_id": "46108518082",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "0b1adc14e52dd030a1bf8244dfb00f7ab54d9e237ef0b22ed8b826978a47f289",
-  "size": 2510390,
+  "sha256": "2c6f6720480ef3563df3dece0d6f0639e5ce5db770071b792b9ac3b7ae6891c9",
+  "size": 2510314,
   "source": {
     "filename": "pcre2--10.49.sources.tar.gz",
-    "sha256": "5730a0307dde08def9ee64812cf561c762a20a43a237fce035a16828b74b764b",
-    "size": 2187171
+    "sha256": "6b0ef015dd7dd74ed4d9318794d8c9d6ee11aa37620b030a29e2bb752ef31b79",
+    "size": 2187230
   },
   "tag": "sequoia",
   "version": "10.49",
   "version_scheme": 0,
-  "workflow_commit": "1c2348aa5be6e1b2ef11ba73efa4123055ecdb08"
+  "workflow_commit": "02f075d982a966c7dfead7d8c843c0e1ef79409f"
 }
