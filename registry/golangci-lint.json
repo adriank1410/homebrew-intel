@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a6fea6bd59bbddf1cbc758d81b5ad9aadf943a30",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any_skip_relocation",
-  "core_commit": "af6548f063a71fc8be20f15bc5c6500870002f5f",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "golangci-lint--2.15.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "0040d1b19fcbb5c14abb2fb1a749490290f0cd16ea9a8b6ce76e28da2e2c0c21",
+  "formula_sha256": "d65e669b2b7b82839a3cb2af78a67d061e7e383f35fa438466ef4aee19f537f5",
   "license": "GPL-3.0-only",
   "name": "golangci-lint",
   "pkg_version": "2.15.0",
   "recipe_sha256": "686743794983be20b4c2dc5b6f5e10f5e920d5f29e9c51664828d75fc11fa783",
-  "release": "intel-43284413443-1-golangci-lint",
+  "release": "intel-46089295242-1-golangci-lint",
   "revision": 0,
-  "run_id": "43284413443",
+  "run_id": "46089295242",
   "runtime_dependencies": [
     {
-      "formula_sha256": "ae522517785418859622cc75892aba101b62b3c0db467c87f1f16e7548730179",
+      "formula_sha256": "212116b5b280072426dd8fd35be017fb4213d682952e2596d8d8290b4ec1a4d3",
       "name": "go",
       "pkg_version": "1.27.4"
     }
   ],
   "schema": 1,
-  "sha256": "bddf17d7e09549e3934786c2e2634bd7543fe34dad7cd5864e73ab886f6fe025",
-  "size": 17448341,
+  "sha256": "4966b5d35e5ad5cc633e1df806187dca2e6c84f50dde70866b6f2c27ccc3f54b",
+  "size": 17448317,
   "source": {
     "filename": "golangci-lint--2.15.0.sources.tar.gz",
-    "sha256": "a66647b47154086e0a371472a312b77a6bb3ed72965cf34300a78e601e2bf655",
-    "size": 60419819
+    "sha256": "598d834fdb37b96644fc311d8aecf9a17b29a0c607e5641269f4225ea54a8ff6",
+    "size": 60419581
   },
   "tag": "sequoia",
   "version": "2.15.0",
   "version_scheme": 0,
-  "workflow_commit": "de95038de04ef7d34ee8fdcd507e44631ec7a97f"
+  "workflow_commit": "f4367588553afbe806136ed566a01f0365fb0439"
 }
