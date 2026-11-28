@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "57cac9d0f89289866fd8bbd66614e20f67a08175",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "1f63c70facd968dc8248775eef5b78bbd5458b8c",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "libnghttp3--1.19.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "9e892ed65ed3595791fb18e8ee6eee756b4d32e4d7227046ba5196762a77162f",
+  "formula_sha256": "25954f4675c343fc36af721d47b5ee692089f0ea965432db5d77d7f5d15a10f7",
   "license": "MIT",
   "name": "libnghttp3",
   "pkg_version": "1.19.0",
   "recipe_sha256": "fae62c56b0bfdf9df0b4f021cea095884d7aa7dd546a8bfe0c30ed658f1e3909",
-  "release": "intel-41532187650-1-libnghttp3",
+  "release": "intel-46089295242-1-libnghttp3",
   "revision": 0,
-  "run_id": "41532187650",
+  "run_id": "46089295242",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "08c6c583aa5cf6b93da509c9ff771f964a8524c608051f56e365ed87474a03b1",
-  "size": 192170,
+  "sha256": "977ec9c9cff7519de7f1aa4c4314c4b21d872728c286aa9c3f21952fdea39dda",
+  "size": 192162,
   "source": {
     "filename": "libnghttp3--1.19.0.sources.tar.gz",
-    "sha256": "1f9b17dcded55acf187b3f0a78192361d408015eb4188b13b061efc8a853c2f6",
-    "size": 423789
+    "sha256": "6f79a46add5914d2464525430aaf9ec8a8629b9783a059129968cb72fcb61225",
+    "size": 423857
   },
   "tag": "sequoia",
   "version": "1.19.0",
   "version_scheme": 0,
-  "workflow_commit": "63b1d766c35f8a210a999afdc3783b7b92aca519"
+  "workflow_commit": "f4367588553afbe806136ed566a01f0365fb0439"
 }
