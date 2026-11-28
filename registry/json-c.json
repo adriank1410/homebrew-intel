@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "5312c5c6d962d1b8c1a97eede0a1edf2d0e28cda",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "ac9efd65d206d0dc6572bd66a0b9763fba191d3e",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "json-c--0.19.sequoia.bottle.tar.gz",
-  "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+  "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
   "license": "MIT",
   "name": "json-c",
   "pkg_version": "0.19",
   "recipe_sha256": "5bd71a4186486764c33d574542b0b09d4833fe08338c0d02b2833ea2248464d6",
-  "release": "intel-41114503008-1-json-c",
+  "release": "intel-46089295242-1-json-c",
   "revision": 0,
-  "run_id": "41114503008",
+  "run_id": "46089295242",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "acbafd58bdc92156496317b3a70a56dc49e6c9e66d3f1e0f6371a6290cd2aaee",
-  "size": 108458,
+  "sha256": "fbaf438cd500848fde6712d9a95054385274081557274e6463ecb06c7f03ba6c",
+  "size": 108469,
   "source": {
     "filename": "json-c--0.19.sources.tar.gz",
-    "sha256": "220bc56db776840828c9b694264a59af3125ed4e7aab111cc6802e0c93cb0b73",
-    "size": 465700
+    "sha256": "e674a72835fc9704451fb6e10fac36c0da2ac8842f5248f9ca3cb3d27468f8eb",
+    "size": 465759
   },
   "tag": "sequoia",
   "version": "0.19",
   "version_scheme": 0,
-  "workflow_commit": "7cb61e5e8fc2770415fa504150835d3e5acbe51f"
+  "workflow_commit": "f4367588553afbe806136ed566a01f0365fb0439"
 }
