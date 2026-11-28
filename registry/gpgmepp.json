@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "62a9ad2642e0cf2fe1104d955069c78b7d990cd2",
+  "brew_commit": "f6daa52483fad3cf7dc41da4401438bc49d08f69",
   "cellar": "any",
-  "core_commit": "61965b5c6afcf27f5f794743410fc34450c10f3a",
+  "core_commit": "2ecad2755b1cf8935ccdd90de1d57aef38981328",
   "filename": "gpgmepp--2.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "eda4f9d9ec0ec54b2a8ab0575b7e049f1a818aa22aea44944f461a89eb1f8a0c",
+  "formula_sha256": "763e3dad95d596b98d5600fa0a58d090695574a427dac2f04dfd8814098cec05",
   "license": "LGPL-2.1-or-later",
   "name": "gpgmepp",
   "pkg_version": "2.2.0",
   "recipe_sha256": "b7a441aff9864d1efb0365edec2934e3f8a1b6b2bb8fe9a202aeaffa8de52ae7",
-  "release": "intel-45059163998-1-gpgmepp",
+  "release": "intel-46172082468-1-gpgmepp",
   "revision": 0,
-  "run_id": "45059163998",
+  "run_id": "46172082468",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,92 +19,92 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "formula_sha256": "8a73e85d8ff0a88024b482ccbe8332e323459cfb95702c926d07b1a1188e88e5",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "a7a712aab26d2b88865ebd9c06f4eeb131c53815f3b6e467578b32ab66ac3b18",
+      "formula_sha256": "60659e5a21da08e05c3ac0b7a924aa6af769ea3952aafddaa39078d5924a1f90",
       "name": "gmp",
       "pkg_version": "6.3.0"
     },
     {
-      "formula_sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532",
+      "formula_sha256": "8a26f91ff56cf186dd00e1d558f5dc174be14196b16da4333fe3971087a80b3b",
       "name": "gnupg",
       "pkg_version": "2.5.24_1"
     },
     {
-      "formula_sha256": "6f81e70f704d7d46cf642e5233f19d5b1fc580a7b5804384ce315974bcfd7219",
+      "formula_sha256": "6d57b8e58e59852ef85ad395b38338dee691a5c1be1d9e3bc3d95298f037b2d4",
       "name": "gnutls",
       "pkg_version": "3.8.14"
     },
     {
-      "formula_sha256": "ae82d468eefb7b9e113c84ebc2f884aca1c4e85d8934d437dfcae4f7724a9e23",
+      "formula_sha256": "537b946299d68a06e4e4b7018bf1e01eff1f42eac03634e5ec360ce4eb80bf34",
       "name": "gpgme",
       "pkg_version": "2.3.1"
     },
     {
-      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
       "name": "json-c",
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "4b2eb520d9bfdfd49ac34e30674f4db66db386562694486e14e346fd0bccb30b",
+      "formula_sha256": "08141963138b828dffaef6fe8eabaef17d7035354d80b044023aa0daa9df51e3",
       "name": "libassuan",
       "pkg_version": "3.0.2"
     },
     {
-      "formula_sha256": "55b4df6ecb663fbe8bcb0783017fcc960477f0d8b7442c79c2fad730b800648b",
+      "formula_sha256": "7e393cae80f1dbf54a26ffce27ea02c04ecda1f27edc29be0822dab6dbc3bb4e",
       "name": "libgcrypt",
       "pkg_version": "1.12.4"
     },
     {
-      "formula_sha256": "a92983fd472dc51e72a3f0abeec1165decc4f7d4c6aa95db9ca6f49ba76f68ef",
+      "formula_sha256": "da74deab0b2bed589a95b2f176cb061d0fa21e6e04493e1988beb3478b3d719e",
       "name": "libgpg-error",
       "pkg_version": "1.61"
     },
     {
-      "formula_sha256": "ec612e2853549a7735d514b215bee957cebd1f63db243ce70393b948d8052f07",
+      "formula_sha256": "1cc5293447570e7996182dce79af594354dc6eaf8c6aea14d98ebafa36103167",
       "name": "libidn2",
       "pkg_version": "2.3.8"
     },
     {
-      "formula_sha256": "ec5d83529607cf3f0bde978c45c08e9382516dfdea9018440f39183778a9855c",
+      "formula_sha256": "62962cb79d6cee652cac1eaf6d0a2cdd5ded21c27831b7cfcfb5ac79b6f267eb",
       "name": "libksba",
       "pkg_version": "1.9.1"
     },
     {
-      "formula_sha256": "ed078be38ddf16705fd0e9cc3a60a310d31f935cfbee6893dccb05b16fc9bcb7",
+      "formula_sha256": "7610ff43d6190b8df4ed308faf777bda98bf84ede69966f270c62df31597b724",
       "name": "libtasn1",
       "pkg_version": "4.21.0"
     },
     {
-      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "formula_sha256": "a5f9474431a9422be5a7fe744dde97f0ccd4eac10092aa17562265be2e956b5f",
       "name": "libunistring",
       "pkg_version": "1.5"
     },
     {
-      "formula_sha256": "513c20f992711ced872639a391fbb0b3194e397ffddc4968b9f9b1e4f03b48ee",
+      "formula_sha256": "4ceff0771b07b6ccaf9bd350b52661731a4f04ffe3f67ec1e1c0d351d468b89a",
       "name": "libusb",
       "pkg_version": "1.0.30"
     },
     {
-      "formula_sha256": "087bd49b2efaa8892d7ad9b13d596c985dfeeaaede2084dccfeda52f528be428",
+      "formula_sha256": "322cb951b5853e3463dd8fb4f8d45aed93448e277ebb0fb1d5ddf3aaf7489747",
       "name": "nettle",
       "pkg_version": "4.0"
     },
     {
-      "formula_sha256": "dbee901e05fa128f34120d4cd426d611b6532f40ca71caff9c65d8510c93a572",
+      "formula_sha256": "73fcaff67843d1aecd8a47f4e24dd322dc90d3e8ded61c09da45a272a1519075",
       "name": "npth",
       "pkg_version": "1.8"
     },
     {
-      "formula_sha256": "0c48d6e5550b67c68430827698b7464781c1d9818432516fab4ef3b33e8f203f",
+      "formula_sha256": "d90dde59bba23694ada1aef1cabcb5f7037db64a4415542fea66a86db4d2b5cf",
       "name": "p11-kit",
       "pkg_version": "0.26.6"
     },
     {
-      "formula_sha256": "9996df274205c127dd10b34de43bbcea150ee0f61bbda30b0ea71d45ef048263",
+      "formula_sha256": "c8ac068d1e92e47e46ddcba664853709932938b4f5f2ba1f564e9af71d942259",
       "name": "pinentry",
       "pkg_version": "1.3.3"
     },
@@ -115,15 +115,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "aa5f6799ced4b3c6d16f058aad9e1af57731ff240432acae479f32616063012d",
-  "size": 206307,
+  "sha256": "906b2efdbd38fc3ff5d3098996546ff3d30fac1a2593fabbbd3e51831c220d2a",
+  "size": 206312,
   "source": {
     "filename": "gpgmepp--2.2.0.sources.tar.gz",
-    "sha256": "e018daf04e69512f72dfd80c7a1b3bd4a1725b49a1b09667fe1418520916dc75",
-    "size": 142507
+    "sha256": "ce9fb39e52488c164278ff9d9792d6b4d7b902b1658b91d73897a0d701e97679",
+    "size": 142565
   },
   "tag": "sequoia",
   "version": "2.2.0",
   "version_scheme": 0,
-  "workflow_commit": "cb3ae3eecba8a64d2568396c2abf8eb8082cae1c"
+  "workflow_commit": "6f3d5aaa5dd50fb7b895d84ac02c11de661e235a"
 }
