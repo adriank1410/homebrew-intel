@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "bandit--1.9.4_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "5cb10c1b22de642abb8023256fd81c6a2f0d98c03d01bb04f396d17091dec17c",
+  "formula_sha256": "a15623afdff4709da5f94957216c969cc0c5cc66501471db1c952e00209c267d",
   "license": "Apache-2.0",
   "name": "bandit",
   "pkg_version": "1.9.4_1",
   "recipe_sha256": "f73724a571176f3d7f5f2f6297180162791091cedbbb33723efb15e90caeda9f",
-  "release": "intel-45615855726-1-bandit",
+  "release": "intel-46114253316-1-bandit",
   "revision": 1,
-  "run_id": "45615855726",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -29,7 +29,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "076fad49eaaa9b656bd91634332fc75e51a560418d9a1f9d9c488aa89f132606",
-  "size": 1669650,
+  "sha256": "43fa0d4f8cc2b5bfafeac91455eb8d80897f7ab2d6ea0001c666e0bae639f29b",
+  "size": 1669609,
   "source": {
     "filename": "bandit--1.9.4_1.sources.tar.gz",
-    "sha256": "3c60f6f30f01313a1039aec834dd77eceba5e1eb69d639468867d988a4b7aef0",
-    "size": 10228017
+    "sha256": "29920316b60c7ca0f5a93582ffe7461e8b3e0ffd113421b2711b5c6644600a08",
+    "size": 10228107
   },
   "tag": "sequoia",
   "version": "1.9.4",
   "version_scheme": 0,
-  "workflow_commit": "2a815039222fdba7fc0e9edf726d54ca02eb3293"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
