@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "71f6877d19f2179cf47caea84565083cdc950cc2",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "a5a3dff1dcd5766accd3aba78e3eeb871300f3a8",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "libvpx--1.17.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "da99e55001e2a5494e8c27f80dc5ce54469b07af5a2dcbc428bc8dcb4a225833",
+  "formula_sha256": "dee78834a488e187611115c347fe9f7b5db6f86b5b9e6a2c1b11985697014687",
   "license": "BSD-3-Clause",
   "name": "libvpx",
   "pkg_version": "1.17.0",
   "recipe_sha256": "ba588d5d2b2751a239a4d2d122d1c62ff47fa8aea89dddca6914e55c402b9ad4",
-  "release": "intel-35629367624-1-libvpx",
+  "release": "intel-46083558041-1-libvpx",
   "revision": 0,
-  "run_id": "35629367624",
+  "run_id": "46083558041",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "552bc35683c74b790283d4ef1f7174af6dc2280f7b0884ba424498333a54e3c6",
-  "size": 2043529,
+  "sha256": "28608c976feca2d05d41d11b45df892b8b998ebae055adc4f3057efa34435849",
+  "size": 2042796,
   "source": {
     "filename": "libvpx--1.17.0.sources.tar.gz",
-    "sha256": "6b279cfbbc9f27feaeeac6584772222b22d849a8c3bb9f602aba7f485a0d6a4f",
-    "size": 5660090
+    "sha256": "1ebf9bd3b37c12ede67f821949acd20a27a2fed196c8ab903abf7b5099934615",
+    "size": 5660168
   },
   "tag": "sequoia",
   "version": "1.17.0",
   "version_scheme": 0,
-  "workflow_commit": "70677a7de6ba5d9553840445c6d4092b73613582"
+  "workflow_commit": "5f5ce9667716bf575e9565ac7eb5f695381917af"
 }
