@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "d4824f13d18d0d978eff714588ab59919793e4d3",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "24bd80530c4270536ee7cecdf60c82e71b2f6aad",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "minizip--1.4.sequoia.bottle.tar.gz",
-  "formula_sha256": "8a1fa64baf8b87b0432ecd0eb4b3dbf878041a04e17a94a5f21b200479484693",
+  "formula_sha256": "e31085c4d09606ebabc6d23f3bdd1748b8676289a9851422c1b2a8c6440e2685",
   "license": "Zlib",
   "name": "minizip",
   "pkg_version": "1.4",
   "recipe_sha256": "0aaddc2f2805f9e8863966897cf12d1f08edc54207b4dbefffa5a3927b3cd8e5",
-  "release": "intel-42093193393-1-minizip",
+  "release": "intel-46095064862-1-minizip",
   "revision": 0,
-  "run_id": "42093193393",
+  "run_id": "46095064862",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "91d4a2d08ae2ac5eeecc85cd4b4f1dcb403a1ff02d305d7985c67dafab196e04",
-  "size": 86210,
+  "sha256": "c218c8aab5c96f0d742928f50e88be9e4d431649bdac900f1d60dfcf7f10ebb6",
+  "size": 86211,
   "source": {
     "filename": "minizip--1.4.sources.tar.gz",
-    "sha256": "2ace1f1274454719600a4522b58044f5efd0cb9de1ac00933dab4da4af828118",
-    "size": 1514804
+    "sha256": "a076c02daca6e01e18d93567b9b6317f308e8b1693548ffebc545a191215dd8b",
+    "size": 1514893
   },
   "tag": "sequoia",
   "version": "1.4",
   "version_scheme": 0,
-  "workflow_commit": "029b6a853799af47947dd2f95d9c827e074e7330"
+  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
 }
