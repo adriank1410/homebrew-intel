@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any_skip_relocation",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "sphinx-doc--9.2.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "dd2090da9e7f583369eecb370be309db24e9343515fa5a8b4d1b7e88b89034ed",
+  "formula_sha256": "638b0e13b07c2f9d91bba52171215fa7938cf7628f4765c92b7ba158c5f863d3",
   "license": "BSD-2-Clause",
   "name": "sphinx-doc",
   "pkg_version": "9.2.0",
   "recipe_sha256": "6d08c30d4a5e8ca3829505bcf756c5cb399b73818a2f52ebab239aa5fb6535f2",
-  "release": "intel-45683572450-1-sphinx-doc",
+  "release": "intel-46133509957-1-sphinx-doc",
   "revision": 0,
-  "run_id": "45683572450",
+  "run_id": "46133509957",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -29,7 +29,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -65,15 +65,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9925e41ece82a6667c4cbbce012f0887254c2fd5b461cbab6ae5e94cd3beee4e",
-  "size": 15836221,
+  "sha256": "b2525a44b69b684eabf88d8ffa2e0aa1f71d04fa2628f1c462bba19194db1c34",
+  "size": 15836064,
   "source": {
     "filename": "sphinx-doc--9.2.0.sources.tar.gz",
-    "sha256": "9823bc0bb5b9c51da282536420d854093d8346d2c2b7fc248984ac1ba2da7d11",
-    "size": 30000523
+    "sha256": "76e181e9556c4776c5c25487d1f32b067289f7ae4694e401c2ec3e2b1e99562e",
+    "size": 30000581
   },
   "tag": "sequoia",
   "version": "9.2.0",
   "version_scheme": 0,
-  "workflow_commit": "8880a63ba1f800b76ffb810e55e34354d3afd18b"
+  "workflow_commit": "8f550def5f531ec2e09b912d0220806832ef3ce6"
 }
