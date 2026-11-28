@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "python@3.10--3.10.22_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "9a177f50850259b0854825e04611d0dbd7391aa1f9726767fabe8817c4a51982",
+  "formula_sha256": "6902439e4534de58936cc563e98f7571aa307b0eb9c44690772ecb320c565f7b",
   "license": "Python-2.0",
   "name": "python@3.10",
   "pkg_version": "3.10.22_1",
   "recipe_sha256": "559e694def5d193dc038580e311d401b6789e523523c3d36774e93324198b522",
-  "release": "intel-45312177023-1-python-at-3.10",
+  "release": "intel-46114253316-1-python-at-3.10",
   "revision": 1,
-  "run_id": "45312177023",
+  "run_id": "46114253316",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,17 +19,17 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "5f471a5d1ef908ab73a022e46a87aff63156af19b2c9c818e708003f4929a372",
+      "formula_sha256": "a3150586159dea0ef95ae132e49ab2e82e057bfabd392ce71e0633762c6d13a3",
       "name": "gdbm",
       "pkg_version": "1.26"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
     {
-      "formula_sha256": "ff38ac43aa86a0484a12bace87feca515c745b3caf38a5b0738288b56fb86c97",
+      "formula_sha256": "f17048f19516010da6fa291dc766a1261b5a441790f642bb2aeb2eb70e984715",
       "name": "openssl@3",
       "pkg_version": "3.5.9"
     },
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "9cdd9c70bd506af50e48efcf0b6d42401886d89e7e1a7697d98e27d55c47e153",
-  "size": 14618635,
+  "sha256": "d6f277d361fbae1c3e1ad9aa58fd1eee162b43c6c8c1325fc83f42cbca859834",
+  "size": 14618228,
   "source": {
     "filename": "python@3.10--3.10.22_1.sources.tar.gz",
-    "sha256": "89c5519181347497b66d7530a29cd5646e9038465c8aad04ca54fa755616ef57",
-    "size": 29392870
+    "sha256": "46d1eba06ab972faa170fdf1e5d3b331f2d77458e7e8db0243c21e844d29ef19",
+    "size": 29392939
   },
   "tag": "sequoia",
   "version": "3.10.22",
   "version_scheme": 0,
-  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
+  "workflow_commit": "edfdb414828de94dc17f22418120b54d82d22b9c"
 }
