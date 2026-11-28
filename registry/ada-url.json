@@ -1,8 +1,8 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "ada-url--4.1.1_1.sequoia.bottle.tar.gz",
   "formula_sha256": "2cec676a7b0c3f07bb2c942458310db0cc219f18b6693e8be3fbfc451288609c",
   "license": {
@@ -14,17 +14,17 @@
   "name": "ada-url",
   "pkg_version": "4.1.1_1",
   "recipe_sha256": "011df1f8103c2ecc319f608a6db07bb0a0065a897a15c39b69b4597f7b9aceed",
-  "release": "intel-45450771531-1-ada-url",
+  "release": "intel-46147334438-1-ada-url",
   "revision": 1,
-  "run_id": "45450771531",
+  "run_id": "46147334438",
   "runtime_dependencies": [
     {
-      "formula_sha256": "7aced41e0896abf5f58833f3112a075b2364ead07735098488dac2f5a1000d6a",
+      "formula_sha256": "c1dc2e5d9900dae26e4da28468a8c857018d773a0b12695b1386798056f160c0",
       "name": "fmt",
       "pkg_version": "12.2.1"
     },
     {
-      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "formula_sha256": "a9af6f84f74b1ec3464369bee4ace1f6b6bc843b1acb08e11781da898c32b15b",
       "name": "icu4c@79",
       "pkg_version": "79.1"
     },
@@ -35,15 +35,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "ca38442191b993ced9cf7cb30d11c23733a3e63ed9670fe7c01ebd6a77577417",
-  "size": 435082,
+  "sha256": "e1604e7ebc24322f5168b8a6207d75c62d0e6058ff0eb9dcaa48b3c2235b9896",
+  "size": 435088,
   "source": {
     "filename": "ada-url--4.1.1_1.sources.tar.gz",
-    "sha256": "bd35793987b7fbdc34e2129a75765024428cea034dd86769124e4bf2a0bc5b49",
-    "size": 633574
+    "sha256": "572fb2914426b85ee2752b6c8eecb122adc3f8c0e1d6ffd97928bdff330daa4f",
+    "size": 633572
   },
   "tag": "sequoia",
   "version": "4.1.1",
   "version_scheme": 0,
-  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
+  "workflow_commit": "3c4001ab0aa88e7ffb0cb5e10c599744e53c9158"
 }
