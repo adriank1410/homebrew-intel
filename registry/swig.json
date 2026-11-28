@@ -1,34 +1,34 @@
 {
   "arch": "x86_64",
-  "brew_commit": "a9d43520339db6b3502437003358754645d97d42",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "41d6911e1ecc2c5b7626017ae572b70ba28acdc9",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "swig--4.5.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "b7f3fbdf363f5f313da22035401a9dd2833e7ca0d1786b4910335c6ccf19a34e",
+  "formula_sha256": "9d7533c860cdc75d93420f2daa3e0d276e1c93243eebd3b9a999d438d117461c",
   "license": "GPL-3.0-or-later",
   "name": "swig",
   "pkg_version": "4.5.1",
   "recipe_sha256": "a48522a1a82b444f14f8ccb8b7cbeaf34e77cd72244f062a5640b9f2def2b915",
-  "release": "intel-41998629461-1-ldns",
+  "release": "intel-46133509957-1-swig",
   "revision": 0,
-  "run_id": "41998629461",
+  "run_id": "46133509957",
   "runtime_dependencies": [
     {
-      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
+      "formula_sha256": "00be3a25fd559acfe901c0aa451ded5f46ab071b9b8e387536c867b94aa9f738",
       "name": "pcre2",
       "pkg_version": "10.49"
     }
   ],
   "schema": 1,
-  "sha256": "d31cd44dd47e4e163f082c9b1a4187044e67f99d9bb5dbae69c447c5b65b8384",
-  "size": 1780842,
+  "sha256": "fa8a4440072ee6d01893a07822bdefde9f4bb5ffb6991700c6d35484b0812079",
+  "size": 1780833,
   "source": {
     "filename": "swig--4.5.1.sources.tar.gz",
-    "sha256": "6b7e3331e2932bf5d0ab7b9e0314e3a762785e6810f1bc536fda0d2cd0cb3719",
-    "size": 9214776
+    "sha256": "2f9d45dd98de91e0f35c834976bd08573fc2e69ff02e301fa604d20531bb1909",
+    "size": 9214863
   },
   "tag": "sequoia",
   "version": "4.5.1",
   "version_scheme": 0,
-  "workflow_commit": "03c380effb83f998555eb29150f23c0d53f4413a"
+  "workflow_commit": "8f550def5f531ec2e09b912d0220806832ef3ce6"
 }
