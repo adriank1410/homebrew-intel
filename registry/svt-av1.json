@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "856ce8c40ae1d336da27940b08bb549798454ba1",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "184a6c38682139b48cdb80d5f3db0df843cae326",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "svt-av1--4.3.0.sequoia.bottle.tar.gz",
-  "formula_sha256": "3a319df1bd4c653d8673debdfb7959a41289fee36bee9d540518303164a35e9d",
+  "formula_sha256": "31ea8185b2bd02d28bf6f83734e9456e36816daeda775a85fb455c3277665a22",
   "license": "BSD-3-Clause",
   "name": "svt-av1",
   "pkg_version": "4.3.0",
   "recipe_sha256": "b2257e616925a4cfb29a9862a64b1a2632904e965469f3802e12d0e0c335a6ad",
-  "release": "intel-41437286408-1-svt-av1",
+  "release": "intel-46133509957-1-svt-av1",
   "revision": 0,
-  "run_id": "41437286408",
+  "run_id": "46133509957",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "795d158817214a9b7724828d0d7477657de803994b74d8f8bbfcc0e995803550",
-  "size": 2205393,
+  "sha256": "7953caf225c9c6927a8e988c78fdd6c67ef7d47268336a17d03e032015ab4cfd",
+  "size": 2205406,
   "source": {
     "filename": "svt-av1--4.3.0.sources.tar.gz",
-    "sha256": "45acfc794905234ddf25ada44c6771eed628cb01fe2165d474718a95e55e7334",
-    "size": 10415585
+    "sha256": "9395126d970dda9e5e6a067f6d0c6639d9967ac6fe3bbb9ac8b24b1ef683c85d",
+    "size": 10415685
   },
   "tag": "sequoia",
   "version": "4.3.0",
   "version_scheme": 0,
-  "workflow_commit": "a82703a2670b0f0af58a8e4c3b88851aa30219eb"
+  "workflow_commit": "8f550def5f531ec2e09b912d0220806832ef3ce6"
 }
