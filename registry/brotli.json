@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1ef73bbf695bfa42a4a26b19eeeb3f890f3cfbee",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "a3c406ef9ed72fbdfd92be5106d9140e8ba4ce87",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "brotli--1.2.1.sequoia.bottle.tar.gz",
-  "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
+  "formula_sha256": "1514b6c42d18d1f4f0458ed4479cbb55fa35d76b571f330d55a01f97424562d0",
   "license": "MIT",
   "name": "brotli",
   "pkg_version": "1.2.1",
   "recipe_sha256": "5e2f806ea663cf0b0e8d403236e043855619c22e0c646a23fbbb716461a872b3",
-  "release": "intel-39735106802-1-brotli",
+  "release": "intel-46089295242-1-brotli",
   "revision": 0,
-  "run_id": "39735106802",
+  "run_id": "46089295242",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "76ff19449ec1f8220eb802f04a06e0cc41ed2185125a7d62374054a13edbcce1",
-  "size": 811185,
+  "sha256": "c1808f0d3dd2ae3769caefda6a82d1c85833a6b52948e72336bdaa5324c63cca",
+  "size": 811178,
   "source": {
     "filename": "brotli--1.2.1.sources.tar.gz",
-    "sha256": "6aec3c6519f6606c65273603702cf7cc95910d3c7950c96c8561f464ae9286f4",
-    "size": 648033
+    "sha256": "a34fbd7cb1fd9a9c977076aac54b0417a25cf8184a590b34111a058502eaaad0",
+    "size": 648120
   },
   "tag": "sequoia",
   "version": "1.2.1",
   "version_scheme": 0,
-  "workflow_commit": "788febf13745615cbfdaecca2dd9bb77983d381b"
+  "workflow_commit": "f4367588553afbe806136ed566a01f0365fb0439"
 }
