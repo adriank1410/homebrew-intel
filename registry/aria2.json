@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "aria2--1.37.0_3.sequoia.bottle.tar.gz",
-  "formula_sha256": "4519c6e4b241e18f4e42acd2bffc8e8a3fc19c3853985d6440f99e52ddbba622",
+  "formula_sha256": "55ec9efe9b21b7237c155de9e862fdae57adb73987f924a294c2bc2f6e572f13",
   "license": "GPL-2.0-or-later",
   "name": "aria2",
   "pkg_version": "1.37.0_3",
   "recipe_sha256": "e56d9531a03980d69b7c0da8aa356b1c0f176f991e3f36bdebbe706b1b7ed7d6",
-  "release": "intel-45450771531-1-aria2",
+  "release": "intel-46108518082-1-aria2",
   "revision": 3,
-  "run_id": "45450771531",
+  "run_id": "46108518082",
   "runtime_dependencies": [
     {
-      "formula_sha256": "48ce8ac98699a8efa890a0198101bd41f93c907cfa11192d1091fd85bd7f725a",
+      "formula_sha256": "45a76b45880b4887fe1331583c0d16be809e7cb9cabe6b7648873c2d40c843cd",
       "name": "c-ares",
       "pkg_version": "1.34.9"
     },
@@ -24,22 +24,22 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "formula_sha256": "8a73e85d8ff0a88024b482ccbe8332e323459cfb95702c926d07b1a1188e88e5",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
       "name": "json-c",
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "ac287fb92212b06c591c4dcd007190b90987f5904e2ee564a506f0dd94ae7867",
+      "formula_sha256": "16b13b6bba34f49314ff0f55d7f43eb8f0e128273f64f59f35661db65beaa7ac",
       "name": "libssh2",
       "pkg_version": "1.11.1_7"
     },
     {
-      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "formula_sha256": "a5f9474431a9422be5a7fe744dde97f0ccd4eac10092aa17562265be2e956b5f",
       "name": "libunistring",
       "pkg_version": "1.5"
     },
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "55e6ab6ea8d56ad1a32366ff87029dd5f35d4a519d47e3e487679cbb6c28b6a3",
-  "size": 1768829,
+  "sha256": "72fc453bc2a4200a5b1900964d9d5e7a23fa0ac6cde08477bfd9ac9a0a73df00",
+  "size": 1768789,
   "source": {
     "filename": "aria2--1.37.0_3.sources.tar.gz",
-    "sha256": "f3312da8e41d71efe7e8ea1ab520e0107d54cf45d6d3bdc6ab40ba5eb21fd3a7",
-    "size": 1720927
+    "sha256": "cc2e10b69021191d5650245dbeb8149a20f02cca41d1218cd3cbb142823b9ec8",
+    "size": 1720993
   },
   "tag": "sequoia",
   "version": "1.37.0",
   "version_scheme": 0,
-  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
+  "workflow_commit": "02f075d982a966c7dfead7d8c843c0e1ef79409f"
 }
