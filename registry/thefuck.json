@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any_skip_relocation",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "thefuck--3.32.sequoia.bottle.tar.gz",
-  "formula_sha256": "5ac5c9825238d0113ee6a8892cf818005e5d34a968c9eb070614ea4f1bc50885",
+  "formula_sha256": "2681b8ec9c880a4fa947b4e52c52cd8909b75c53b125b7a203f94d13a69c4a4b",
   "license": "MIT",
   "name": "thefuck",
   "pkg_version": "3.32",
   "recipe_sha256": "d95a4ee571ce6f0bf152058ed06cdd22e389b9669365b4cfe2e10cfce2035217",
-  "release": "intel-45683572450-1-thefuck",
+  "release": "intel-46133509957-1-thefuck",
   "revision": 0,
-  "run_id": "45683572450",
+  "run_id": "46133509957",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -24,7 +24,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -60,15 +60,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "6d9b4ebb7b36a87a932719c865334d8212fd69417c196da6c145db9f6e644662",
-  "size": 836779,
+  "sha256": "c0689860df9a716e5afedaf5d0e9b594c6840200893b679d27b6c83dd1a3a5b5",
+  "size": 836759,
   "source": {
     "filename": "thefuck--3.32.sources.tar.gz",
-    "sha256": "55bf3faeb415c9dab9ebdeac25d75019b8f06b7373600e6a20fd3d4d3133800e",
-    "size": 1721157
+    "sha256": "0d4f768974fb4d74fc0a58ea1f469096abfb19a9cc911c1e516b4af27675b182",
+    "size": 1721233
   },
   "tag": "sequoia",
   "version": "3.32",
   "version_scheme": 0,
-  "workflow_commit": "8880a63ba1f800b76ffb810e55e34354d3afd18b"
+  "workflow_commit": "8f550def5f531ec2e09b912d0220806832ef3ce6"
 }
