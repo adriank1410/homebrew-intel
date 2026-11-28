@@ -1,17 +1,17 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "dnsperf--2.16.0_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "253ed3d428cf22458b9a0fcf1a41065173cbda0599a66ed4e3278c62a017e8ca",
+  "formula_sha256": "a893b4c8b7404cb22eedd948bd935d5ba5b48b9f5c31a0e7f7c70bcbbd26c436",
   "license": "Apache-2.0",
   "name": "dnsperf",
   "pkg_version": "2.16.0_1",
   "recipe_sha256": "ec244f51ecfb986e7ee9a74afc89cc03b78594d60f40bc64c2af6c143e2241ff",
-  "release": "intel-45683572450-1-dnsperf",
+  "release": "intel-46147334438-1-dnsperf",
   "revision": 1,
-  "run_id": "45683572450",
+  "run_id": "46147334438",
   "runtime_dependencies": [
     {
       "formula_sha256": "4ad4a8c011a19cc5764c5328747187c56fc724116b7cd3da2f2e109846c8499b",
@@ -19,17 +19,17 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "31fe8debce0ef9dc8cb96d5888690500633b9f8626d894b576cfa6171cdafb16",
+      "formula_sha256": "8c9a250c86e5c73aba5d1fcd45fe5d79d7a219f7be68a937f20ac110d6370442",
       "name": "concurrencykit",
       "pkg_version": "0.7.2"
     },
     {
-      "formula_sha256": "77d2b7b4b17014457d7070af3afa9c11cf5c7f31484f89ad7fbf40cbeea5c65d",
+      "formula_sha256": "45d05876ab6984112a762809532d70f772c78bb51126719c72992330a74e73aa",
       "name": "ldns",
       "pkg_version": "1.9.2_1"
     },
     {
-      "formula_sha256": "ad7f105d2df6c62cd286220d88428a99cd763933c0880c8e1049fbb858092e17",
+      "formula_sha256": "ba6babc8d541ae73fd185d5cae7757cd4ab46fd47ce4ec87290eca5b8d72f1c9",
       "name": "libnghttp2",
       "pkg_version": "1.71.0"
     },
@@ -39,7 +39,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -75,15 +75,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "454b8a16f61083f13a426ee7607a2316c7f9a19c6be05641261d61f0b1bc1720",
-  "size": 132799,
+  "sha256": "e00e0e9486edde8f9fa74e0314e07ae927ec4c7faf61a047a25e4b9eab0c58f7",
+  "size": 132792,
   "source": {
     "filename": "dnsperf--2.16.0_1.sources.tar.gz",
-    "sha256": "7888781738a6f7ccd860ad49bd4a6aa23a41c4d23b1adb61035864396d501baa",
-    "size": 486547
+    "sha256": "003508accc086cb3ffd62273159c02591dfdd25584123e2f37a1852f4e84bdc1",
+    "size": 486619
   },
   "tag": "sequoia",
   "version": "2.16.0",
   "version_scheme": 0,
-  "workflow_commit": "8880a63ba1f800b76ffb810e55e34354d3afd18b"
+  "workflow_commit": "3c4001ab0aa88e7ffb0cb5e10c599744e53c9158"
 }
