@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "038f8a18bc3167cf4d6ad2a1c782559781f592cf",
+  "brew_commit": "f6daa52483fad3cf7dc41da4401438bc49d08f69",
   "cellar": "any",
-  "core_commit": "afd0c4b2b880c517d5bcdfd483b303b25df86790",
+  "core_commit": "2ecad2755b1cf8935ccdd90de1d57aef38981328",
   "filename": "pyqt@5--5.15.11_3.sequoia.bottle.tar.gz",
-  "formula_sha256": "1fc7fe2f3ca2f3329c71b2d6387856d09e74d038a84541c2209d968f3fd91535",
+  "formula_sha256": "fc3e131bc88633c58a7c7510649c9c931022a35d56cb87821f1359eb074f107f",
   "license": "GPL-3.0-only",
   "name": "pyqt@5",
   "pkg_version": "5.15.11_3",
   "recipe_sha256": "100ad4b4ea77dadfe98aa87a64897a0f616c6527de27bd6653104d3f6fc61e25",
-  "release": "intel-45767643558-1-pyqt-at-5",
+  "release": "intel-46172082468-1-pyqt-at-5",
   "revision": 3,
-  "run_id": "45767643558",
+  "run_id": "46172082468",
   "runtime_dependencies": [
     {
-      "formula_sha256": "dd52c7983ad63e4f322a3d44f610dec3ada3448583c3c66e35030ebbaee3433c",
+      "formula_sha256": "1514b6c42d18d1f4f0458ed4479cbb55fa35d76b571f330d55a01f97424562d0",
       "name": "brotli",
       "pkg_version": "1.2.1"
     },
@@ -24,17 +24,17 @@
       "pkg_version": "2026-11-05"
     },
     {
-      "formula_sha256": "3a364845db270a142aebec903bec52c87252faa61f6fbf1137aaa94b9f67538b",
+      "formula_sha256": "94ef1c31b0cb11704d66436f1a5529db8f73b15aead701c89162875cbaf79e4b",
       "name": "freetype",
       "pkg_version": "2.15.0"
     },
     {
-      "formula_sha256": "9c90f7cf5a45c828e2a66d9339b25b781302cf49316e939d029e6079e1b9d916",
+      "formula_sha256": "8a73e85d8ff0a88024b482ccbe8332e323459cfb95702c926d07b1a1188e88e5",
       "name": "gettext",
       "pkg_version": "1.0"
     },
     {
-      "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
+      "formula_sha256": "efd55a1cf82ea85db05c7e23bd8140c9e68d759554f89768c36fa0ca15775cfe",
       "name": "giflib",
       "pkg_version": "6.1.3"
     },
@@ -44,27 +44,27 @@
       "pkg_version": "2.90.2"
     },
     {
-      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
+      "formula_sha256": "0cb728004994d208d6f1019a42fe01842fa42d0f0a117bc529e94b058c7f1bf3",
       "name": "jpeg-turbo",
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "e03b308ea392958d3d9d71fd196bebf64f39be569283dc93010ffa07504ccda8",
+      "formula_sha256": "f61243b94980d609475e48ad3c9bd2c2a308125acc8fdbb031fa28163c8b4c48",
       "name": "json-c",
       "pkg_version": "0.19"
     },
     {
-      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
+      "formula_sha256": "35e225a1296594d2b09cd433bd50b4950fd577ffd51889210ee13f52f31f72cc",
       "name": "libpng",
       "pkg_version": "1.6.59"
     },
     {
-      "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+      "formula_sha256": "d91ffbd6e6a71c90e05f16165dc78ddd2c2b2a41ebb38beb57c545138fab84cb",
       "name": "libtiff",
       "pkg_version": "4.7.2"
     },
     {
-      "formula_sha256": "e19b8847465634aa2ab365c7fa641216450ad26cc02bddfce08c8d17342d21dc",
+      "formula_sha256": "a5f9474431a9422be5a7fe744dde97f0ccd4eac10092aa17562265be2e956b5f",
       "name": "libunistring",
       "pkg_version": "1.5"
     },
@@ -74,12 +74,12 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "0fda7ee9fa68cad87939ff0bc9207d611e21441c9b27e98af1d6943cbcf7a72b",
+      "formula_sha256": "14b86ce5b00cf68e400355e8168b647df534b35c21ce82e05c1d8288628c5db2",
       "name": "md4c",
       "pkg_version": "0.6.0"
     },
     {
-      "formula_sha256": "b7e3a231899466088e6dfc6ad4c82bffe8dc38c623b2a4a0ef4de388bd68c1fb",
+      "formula_sha256": "298ce48275ac18f3443a05eaa38f6ee6e3db231c33c0a94e905db2c1dc65543e",
       "name": "mpdecimal",
       "pkg_version": "4.0.1"
     },
@@ -89,7 +89,7 @@
       "pkg_version": "4.1.0"
     },
     {
-      "formula_sha256": "2dcb74b4bc19dc81ace51feac7bb626b679c7b730eca1d3492d73fe822134fb8",
+      "formula_sha256": "00be3a25fd559acfe901c0aa451ded5f46ab071b9b8e387536c867b94aa9f738",
       "name": "pcre2",
       "pkg_version": "10.49"
     },
@@ -99,7 +99,7 @@
       "pkg_version": "3.15.2"
     },
     {
-      "formula_sha256": "ac7c3a0117a74045e9b19673a16380febbf4c3ed06862d70cdb4e95c3f14b61e",
+      "formula_sha256": "40a465fbeb25e9398671998108a9e128f9ce87448f9c5b4d01d0f0136f4550b6",
       "name": "qt@5",
       "pkg_version": "5.15.19"
     },
@@ -114,7 +114,7 @@
       "pkg_version": "3.54.1"
     },
     {
-      "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
+      "formula_sha256": "34677b519578961755505f160f15fa20cf7774e0d6c63640b58be033e8c9e154",
       "name": "webp",
       "pkg_version": "1.6.0"
     },
@@ -130,15 +130,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "8ea03be4e2c2f4e070ff37bafe982814941ebbfd83a09b820242ef4c41384ade",
-  "size": 7031902,
+  "sha256": "9fc631606f955e642996150a6b996920f8e844115e1c35c274c9fa8049ca3f46",
+  "size": 7031855,
   "source": {
     "filename": "pyqt@5--5.15.11_3.sources.tar.gz",
-    "sha256": "76b241be665b68f576ce0f1d629377f11c5d12853609e319f487652535ab8fc4",
-    "size": 11141909
+    "sha256": "244579528a6e28e6805593e7e56d4257a5084b96be490b73df7d4a4209023a9f",
+    "size": 11141985
   },
   "tag": "sequoia",
   "version": "5.15.11",
   "version_scheme": 0,
-  "workflow_commit": "712ef8134b7882031414333ea1de9252531f1581"
+  "workflow_commit": "6f3d5aaa5dd50fb7b895d84ac02c11de661e235a"
 }
