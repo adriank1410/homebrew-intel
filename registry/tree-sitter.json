@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "47b42777c81a72198fd0598a2e5fb02f1701c63a",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "38b5c3c2afacd27835a3ec536d29a4073e0829ec",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "tree-sitter--0.27.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "51fbaa5b137cfeeb1e04882d7ba341913fe63a1aa6505189e017220a94faf8ce",
+  "formula_sha256": "92899516791782677b07e69bb62f3edb89bd0c1ad821f9af33657f48a5aef29c",
   "license": "MIT",
   "name": "tree-sitter",
   "pkg_version": "0.27.2",
   "recipe_sha256": "b17a7c3fbec6cddf155ba4b28e4eb7c419c510db295ac62b05dbfd3be29f0e28",
-  "release": "intel-42382430330-1-neovim",
+  "release": "intel-46133509957-1-tree-sitter",
   "revision": 0,
-  "run_id": "42382430330",
+  "run_id": "46133509957",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "16ad8618d59221790fbdf2ca2f3f5cda962080714c3819989b9c463278d2cb3b",
-  "size": 209695,
+  "sha256": "4a0a5e70ade44c43f3ed4999e9393da22a990098cc48158933aaa27f263d56eb",
+  "size": 209700,
   "source": {
     "filename": "tree-sitter--0.27.2.sources.tar.gz",
-    "sha256": "0dffa531f08d0a33f0f936baf8165462368dc6418894dcbc2c13db3d97d7145a",
-    "size": 1043573
+    "sha256": "01848fd19c4ffe575db474846b6a853fed6759efba14acf174eb209a71f8fa57",
+    "size": 1043626
   },
   "tag": "sequoia",
   "version": "0.27.2",
   "version_scheme": 0,
-  "workflow_commit": "7a512919837e129ef5efe833a7070e3e722b3566"
+  "workflow_commit": "8f550def5f531ec2e09b912d0220806832ef3ce6"
 }
