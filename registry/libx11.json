@@ -1,49 +1,49 @@
 {
   "arch": "x86_64",
-  "brew_commit": "249ee750f775457ff68ab004c64ea21c6cb8e93c",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "/usr/local/Cellar",
-  "core_commit": "2412f8078530098ff79306a0d95ace57cbdbb764",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "libx11--1.8.14.sequoia.bottle.tar.gz",
-  "formula_sha256": "b3d2b0c2f372e613a4b315e2f18d231fbcf073550b1fa8d23e9287f173240b45",
+  "formula_sha256": "a9f467f59bf11a130dd4c8922a5121fa1d594c3ba83bc6259b37a8aeed78a2ec",
   "license": "MIT",
   "name": "libx11",
   "pkg_version": "1.8.14",
   "recipe_sha256": "981d2902e9761b397dcf6378f86a3afabc7c1fe89039fb71de93a42e5bd8c94e",
-  "release": "intel-42314323352-1-libx11",
+  "release": "intel-46147334438-1-libx11",
   "revision": 0,
-  "run_id": "42314323352",
+  "run_id": "46147334438",
   "runtime_dependencies": [
     {
-      "formula_sha256": "8ca9895eaabb56d62ae10c3b1d34f4532d69e61eacc0c78eb523f0c7023c7b35",
+      "formula_sha256": "2f299e5a149cc0a3332691e6620d033e5be1cccce318b370555391bcc1a553c7",
       "name": "libxau",
       "pkg_version": "1.0.12"
     },
     {
-      "formula_sha256": "49a4793187901f49fe16e60ac3c9040c82836f8a5be786c00ae0b571631e1c84",
+      "formula_sha256": "bb91f685a6bbdcf04412c0055a599fcb24fb0288820d526fbfeda76dd926b7cc",
       "name": "libxcb",
       "pkg_version": "1.17.0"
     },
     {
-      "formula_sha256": "6c7550dfd486b333431bd061008c6cfae4a68fcecd809e4ac8ac9c84e14f6b86",
+      "formula_sha256": "d4913ccbc0963f18143d80f2f9987fdf3b8c57cb04637b06bf016f9e89d30ec9",
       "name": "libxdmcp",
       "pkg_version": "1.1.5"
     },
     {
-      "formula_sha256": "34141b84ad901dc8b65297d2351572f64db55520c0dbc6b75477110783eef797",
+      "formula_sha256": "93c653e874403dae25612322b0faee2fe4fd2c2387c76b7ccf91e3b6738e5393",
       "name": "xorgproto",
       "pkg_version": "2026.1"
     }
   ],
   "schema": 1,
-  "sha256": "db4d9d483b4fb062664f265729f37d774117cb32384c427a89873edb02a44c26",
-  "size": 2344671,
+  "sha256": "b60306551c90bc2d0fff9b11b5abddbe9a73960b4e06ce69f22ed72f72cd2609",
+  "size": 2344678,
   "source": {
     "filename": "libx11--1.8.14.sources.tar.gz",
-    "sha256": "448a55364e9385ac4f1946b644fd756d7c3a5d7459fb443146b0e39ffd406b49",
-    "size": 3199785
+    "sha256": "2b9a206f90a483bfe4b031253fabac82e4f4ee160179660ab73709b5efcf2907",
+    "size": 3199874
   },
   "tag": "sequoia",
   "version": "1.8.14",
   "version_scheme": 0,
-  "workflow_commit": "faf96751c5ec14dc108f0b70a52b975748d5575e"
+  "workflow_commit": "3c4001ab0aa88e7ffb0cb5e10c599744e53c9158"
 }
