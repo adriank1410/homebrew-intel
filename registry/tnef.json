@@ -1,0 +1,28 @@
+{
+  "arch": "x86_64",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
+  "cellar": "any_skip_relocation",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
+  "filename": "tnef--1.5.0.sequoia.bottle.tar.gz",
+  "formula_sha256": "8dce652684b540819f28176339fe2ef3511e8b3e44f8927d789c682f98957331",
+  "license": "GPL-2.0-or-later",
+  "name": "tnef",
+  "pkg_version": "1.5.0",
+  "recipe_sha256": "7ff64cc11d0596e0db9d2931dc88e00ff1bcc84b62f37deb2a223bce942bc5b8",
+  "release": "intel-46133509957-1-tnef",
+  "revision": 0,
+  "run_id": "46133509957",
+  "runtime_dependencies": [],
+  "schema": 1,
+  "sha256": "413d59dc8cb39cdbe76a7e1c9b7b5c648fb44cb452012480ba4d5a325e529c84",
+  "size": 47336,
+  "source": {
+    "filename": "tnef--1.5.0.sources.tar.gz",
+    "sha256": "7619d4bd3bd0ce0f6ba6df383b09a71382671d1ab6690ee9964e52bb1fdeb521",
+    "size": 8138682
+  },
+  "tag": "sequoia",
+  "version": "1.5.0",
+  "version_scheme": 0,
+  "workflow_commit": "8f550def5f531ec2e09b912d0220806832ef3ce6"
+}
