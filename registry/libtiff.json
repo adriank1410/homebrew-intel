@@ -1,30 +1,30 @@
 {
   "arch": "x86_64",
-  "brew_commit": "6973e0be90cdc54a0cd12da71a534ad6db8d5cc7",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "556505f6307ac5f8668f90f255dd3ce14c0ce180",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "libtiff--4.7.2.sequoia.bottle.tar.gz",
-  "formula_sha256": "8acf5e0f22700b2c18fb5419721ccc0bf7a202dfc27d5b36543166222589ec3d",
+  "formula_sha256": "d91ffbd6e6a71c90e05f16165dc78ddd2c2b2a41ebb38beb57c545138fab84cb",
   "license": "libtiff",
   "name": "libtiff",
   "pkg_version": "4.7.2",
   "recipe_sha256": "fc00430585b1c694cc6c2749f0479a910cbc0a4dcc0e5dcb0d77efd5db6fa8ae",
-  "release": "intel-45582887964-1-libtiff",
+  "release": "intel-46147334438-1-libtiff",
   "revision": 0,
-  "run_id": "45582887964",
+  "run_id": "46147334438",
   "runtime_dependencies": [
     {
-      "formula_sha256": "d07af08a16f8bcbe3405e94af9c60ba48f0d4e2540008174a86068e728c9b584",
+      "formula_sha256": "efd55a1cf82ea85db05c7e23bd8140c9e68d759554f89768c36fa0ca15775cfe",
       "name": "giflib",
       "pkg_version": "6.1.3"
     },
     {
-      "formula_sha256": "417b865aed8adfe7e5acd8f17baa35ff02a0901e8e7707f9f908da101fbb5b0b",
+      "formula_sha256": "0cb728004994d208d6f1019a42fe01842fa42d0f0a117bc529e94b058c7f1bf3",
       "name": "jpeg-turbo",
       "pkg_version": "3.2.1"
     },
     {
-      "formula_sha256": "b4c719b087e0ba9c8f724846b984b51e9edb2d71926bf65a654a0c54d339eac1",
+      "formula_sha256": "35e225a1296594d2b09cd433bd50b4950fd577ffd51889210ee13f52f31f72cc",
       "name": "libpng",
       "pkg_version": "1.6.59"
     },
@@ -34,7 +34,7 @@
       "pkg_version": "1.11.1"
     },
     {
-      "formula_sha256": "41b28d58db0c173be8b8cf18e2de50057c92eaff9c0a1ad6a28d3d998a2ec8fd",
+      "formula_sha256": "34677b519578961755505f160f15fa20cf7774e0d6c63640b58be033e8c9e154",
       "name": "webp",
       "pkg_version": "1.6.0"
     },
@@ -50,15 +50,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "af106089cd63b46817b9bb7294d13dbc5f5e17bf35e7cfc6ec661522827765df",
-  "size": 1995594,
+  "sha256": "1873fdcf57cbf7622c26d7cae467339cb380a18d45d312ed30072356a58f4815",
+  "size": 1995578,
   "source": {
     "filename": "libtiff--4.7.2.sources.tar.gz",
-    "sha256": "b6371a6861236a3a57fedb75b2c4bf2d063c5f062d5edd5b6349e80033d6ae56",
-    "size": 4085482
+    "sha256": "1844aa26feaa7a694b251b52245cc4b3ea0ac2b4929f9f608c39e068d95b9da2",
+    "size": 4085568
   },
   "tag": "sequoia",
   "version": "4.7.2",
   "version_scheme": 0,
-  "workflow_commit": "16f71ca4e7126b9477f1bc9a416526d80b91f614"
+  "workflow_commit": "3c4001ab0aa88e7ffb0cb5e10c599744e53c9158"
 }
