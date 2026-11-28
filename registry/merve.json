@@ -1,20 +1,20 @@
 {
   "arch": "x86_64",
-  "brew_commit": "cbb28f390db6b51ba7fab5c4a4fdf2d60f889fd6",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "67ce6e57120c0b0e1706194c094bb7e6022bdfcd",
+  "core_commit": "a4c6b5013f3169085ce466b387f3c55c04f1e1e4",
   "filename": "merve--1.2.2_6.sequoia.bottle.tar.gz",
   "formula_sha256": "d5d8f0d4bd25eedee50ac18033aa7c466e29c14c83a6d69cec2f792d7953b469",
   "license": "Apache-2.0",
   "name": "merve",
   "pkg_version": "1.2.2_6",
   "recipe_sha256": "00f963529cdcb5c39fcd338879f64821c431f2d03df011dde1328f77d2749318",
-  "release": "intel-45450771531-1-merve",
+  "release": "intel-46147334438-1-merve",
   "revision": 6,
-  "run_id": "45450771531",
+  "run_id": "46147334438",
   "runtime_dependencies": [
     {
-      "formula_sha256": "501b5029e184ab296555618fb394762996c08090b0ad1a44f675d97abf38afa1",
+      "formula_sha256": "a9af6f84f74b1ec3464369bee4ace1f6b6bc843b1acb08e11781da898c32b15b",
       "name": "icu4c@79",
       "pkg_version": "79.1"
     },
@@ -25,15 +25,15 @@
     }
   ],
   "schema": 1,
-  "sha256": "537850ba9293e4c2046696ece7a3d4a00a639ec9f1bb5ef048087f8d60145277",
-  "size": 34154,
+  "sha256": "de5016a33e1fdc33e32e4fc72ff66b35d624276ff23f09bd4324b01487a5a382",
+  "size": 34149,
   "source": {
     "filename": "merve--1.2.2_6.sources.tar.gz",
-    "sha256": "bbf2a7c19aad3543119f1d9d76cfc524c5871877446e1faa991cc79847d75556",
-    "size": 77414
+    "sha256": "bde2b9118a5e54b904d2d6b8ca4d45be67f0c2c04edeb7b0da06ebf72e6833fb",
+    "size": 77406
   },
   "tag": "sequoia",
   "version": "1.2.2",
   "version_scheme": 0,
-  "workflow_commit": "9a2b080d8c4319fc64a83864da85a08d2a21e4e0"
+  "workflow_commit": "3c4001ab0aa88e7ffb0cb5e10c599744e53c9158"
 }
