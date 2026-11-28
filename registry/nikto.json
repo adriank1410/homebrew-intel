@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "84ace426c2fe028183ce1092f1d673d91cb29938",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any_skip_relocation",
-  "core_commit": "93dc702fa9650b31d393a6ae6014d20504b296b8",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "nikto--2.6.1_1.sequoia.bottle.tar.gz",
-  "formula_sha256": "56db56cd00c51f8ed51d6b05cca6d579c97d490d0734076cf3a8165c4a3dca20",
+  "formula_sha256": "8cb2bad64a1ce4d6da20ae56f0650370f847e28f9af212d34cd5f0d4354d860f",
   "license": "GPL-3.0-only",
   "name": "nikto",
   "pkg_version": "2.6.1_1",
   "recipe_sha256": "8ac8c8414984e0296c93fbd60d15f31276ae886e92333ff078c0ad9f3b93b8b6",
-  "release": "intel-45312177023-1-nikto",
+  "release": "intel-46095064862-1-nikto",
   "revision": 1,
-  "run_id": "45312177023",
+  "run_id": "46095064862",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "845e0fe3e7685a40f58d45ba14fca3882b25a5f29fcb3cdb3171f7c1c8bac8e7",
-  "size": 415471,
+  "sha256": "ffb45f1fcf9f10ce1c05e8b5c6690e451a7cec38810b1533b409dd97a5f1ffc7",
+  "size": 415483,
   "source": {
     "filename": "nikto--2.6.1_1.sources.tar.gz",
-    "sha256": "1dc6aeb4fada083855e3763ef6e3bd48546456b6e4c36daf9d00becfb11e1167",
-    "size": 420650
+    "sha256": "4ca74d3bc7c65768f9a6ea78846e198eb6f87811d9c7c399d30c4807e9e127e3",
+    "size": 420705
   },
   "tag": "sequoia",
   "version": "2.6.1",
   "version_scheme": 0,
-  "workflow_commit": "587c6680a4b24c47598046650279efd2a24b82a5"
+  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
 }
