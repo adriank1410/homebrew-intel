@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "68a3990f7aa3b3a1bc067df3ea348619945fe732",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "6784026285aed6e54105a5659b0703ec545ac7a1",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "nbytes--0.1.5.sequoia.bottle.tar.gz",
-  "formula_sha256": "150132cf2b3e69cea6a2f77aa5628f9579c60b9f8ad8c30b5d3c9b211c811d56",
+  "formula_sha256": "67b186f755b99f2c8bc012ecd990355ed71ac185efca344db6dac7efbc6167ee",
   "license": "MIT",
   "name": "nbytes",
   "pkg_version": "0.1.5",
   "recipe_sha256": "aafadb062b3ce22f05a8df2410b94530b5eded8fa097d78218f0a6615a36c9e5",
-  "release": "intel-44812711843-1-nbytes",
+  "release": "intel-46095064862-1-nbytes",
   "revision": 0,
-  "run_id": "44812711843",
+  "run_id": "46095064862",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "c59db601d54e515f80dca0a60bf9e1f52bcf5bdddd0ff0f009406e2496e996ba",
-  "size": 13469,
+  "sha256": "f0cc62e00486e5816820312de81771d4d00ff4fd15e9c1686967e52390d7e8c8",
+  "size": 13468,
   "source": {
     "filename": "nbytes--0.1.5.sources.tar.gz",
-    "sha256": "4a89fe08315d2f8ef928b48085425c7d968eee640740b72663857159e2135f84",
-    "size": 20051
+    "sha256": "1bc2bc873900725d9ee949be0faa3fbda90c0edae9453a217e4b5f20be9696e6",
+    "size": 20133
   },
   "tag": "sequoia",
   "version": "0.1.5",
   "version_scheme": 0,
-  "workflow_commit": "309f858b7a05d185e0e86f44c1cef8cefbc4d756"
+  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
 }

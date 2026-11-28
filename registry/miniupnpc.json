@@ -1,28 +1,28 @@
 {
   "arch": "x86_64",
-  "brew_commit": "1f8f55ce63f7fec6a65ecbf00d032a48d3b7ad80",
+  "brew_commit": "96c963e7eb934ecb61c3ee668b3f77d91be59131",
   "cellar": "any",
-  "core_commit": "b966daf54c1c10728b976b640a1c615ada5c3e5f",
+  "core_commit": "310a8735f63eb49df327d4a5251f96fb94cb3658",
   "filename": "miniupnpc--2.3.5.sequoia.bottle.tar.gz",
-  "formula_sha256": "5248d3a7fee1f47c51d706bbea79d0ef1aff81dc8b0f9ac18fee4ab4f05e28fd",
+  "formula_sha256": "ae1ca49ee911cc04baddea4156d9fd54564f6d569112ea3444694135e9a1b7b7",
   "license": "BSD-3-Clause",
   "name": "miniupnpc",
   "pkg_version": "2.3.5",
   "recipe_sha256": "ea43d442335ea1cdd09c7843f69456d45cf94e2fb4570f420f7b38a6cc01e103",
-  "release": "intel-44519542309-1-miniupnpc",
+  "release": "intel-46095064862-1-miniupnpc",
   "revision": 0,
-  "run_id": "44519542309",
+  "run_id": "46095064862",
   "runtime_dependencies": [],
   "schema": 1,
-  "sha256": "13a2a01688894e4e9671ff79c67cb3812cad19f0112d9055c3e818fd6b3e34b1",
-  "size": 80039,
+  "sha256": "0a72db8d6cd9674b92822debda8b155a4cba6e5eea13dce2f039377accab3b4d",
+  "size": 80045,
   "source": {
     "filename": "miniupnpc--2.3.5.sources.tar.gz",
-    "sha256": "0384cbda25e5f777a5eaf29db4e6620385ebcb024b86c7a2a4b3b57959e3337c",
-    "size": 147687
+    "sha256": "da012a1a25ac6560db362ded999fcb85c949e955c97e36b86fca9cd15ab208a5",
+    "size": 147753
   },
   "tag": "sequoia",
   "version": "2.3.5",
   "version_scheme": 0,
-  "workflow_commit": "62b36b495ac75e165e9307a507f2fb0313cc0e11"
+  "workflow_commit": "569e80426011c6387c1cdc42f0dc1e45f9677ecc"
 }
